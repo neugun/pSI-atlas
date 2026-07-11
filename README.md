@@ -18,9 +18,7 @@ The pSI overlay is the Allen CCFv3 SI mask within approximately AP −0.7 to −
 - a paper anatomy/circuit page grouped into localization, inputs, outputs/pathway tests, and atlas context;
 - supplied panels from 2021 Figures 1D, 4D–E, 7B, the full S8 output map and S10 input map; 2024 Figures 2C and 4O; and a Franklin–Paxinos/Allen coordinate crosswalk;
 - concise cross-species SI links and a reference explaining that the AmgC/M territory substantially overlaps with and is largely the same anatomical territory as pSI;
-- the HCN1 single-cell preprint is cited as Li, K., Zhu, Z., et al.;
-- ongoing spatial transcriptomics is described as a search for a more selective pSI marker or marker combination;
-- shareable coordinate URLs and a self-contained HTML build.
+- shareable coordinate URLs and website https://neugun.github.io/pSI-atlas/.
 
 ## Development
 
