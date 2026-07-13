@@ -6,19 +6,27 @@ An interactive Allen Mouse CCFv3 reference for localizing posterior substantia i
 
 > pSI is the posterior part of Allen substantia innominata (SI) corresponding to the region targeted and validated in the experiments.
 
-The pSI overlay is the Allen CCFv3 SI mask within approximately AP −0.7 to −1.6 mm from bregma. The website is a targeting and histology aid; the final site should be checked in tissue.
+The published coordinates are Franklin–Paxinos surgical references. The live viewer loads real Allen CCFv3 histology and annotation slices and reports a bregma-referenced crosshair position together with the corresponding 50-µm CCF voxel. pSI is selected from the posterior Allen SI annotation and neighboring landmarks.
 
-## Version 2.8
+## Version 2.15
 
+- new "Gene expression & spatial profile" page presenting MERFISH spatial-transcriptomics and Allen ABC WMB-10Xv3 scRNA-seq results for pSI: cell-type composition and spatial layout among its five anatomical neighbours, differential expression by functional gene category (GPCRs, ion channels, neuropeptides, neurotransmitter machinery, transcription-factor markers), and cross-neighbour specificity;
+- the same analysis pipeline applied to two more regions as a generalization check: VTA as a full unmodified replication, and ACA as an instructive case where a registry acronym bug and a centroid-sphere neighbour-definition limitation were found and fixed;
+- a visible dated caveat noting that the page's figures/tables are an archived centroid-500-µm-neighbour-definition snapshot, since superseded by a nearest-cell-distance method in the underlying pipeline;
 - real Allen Mouse CCFv3 50-µm histology and annotation sections;
+- the v2.5 bregma-to-CCF conversion is restored: AP/ML/DV index real Allen CCFv3 slices and the corresponding CCF voxel is shown at the crosshair;
+- the AP −0.90, ML 2.2–2.3, DV −4.50 mm values remain clearly labeled as Franklin–Paxinos surgical references;
+- Page 3 shows eight full-resolution PAG-retrograde sections from bregma −0.70 to −1.40 mm and retains the downloadable PDF;
 - synchronized coronal and sagittal crosshairs with AP/ML/DV controls;
 - exact Allen structure, structure hierarchy, and nearby annotated regions at the crosshair;
-- cyan posterior-SI overlay that remains visible over red hypothalamic annotation colors;
-- Page 2 is a practical tissue-identification workflow using bright transmitted light, Nissl/DAPI, caudal GP/internal capsule, optic tract, MeA, CeA/CeM, LH, tracing, and post hoc placement;
-- a paper anatomy/circuit page grouped into localization, inputs, outputs/pathway tests, and atlas context;
-- supplied panels from 2021 Figures 1D, 4D–E, 7B, the full S8 output map and S10 input map; 2024 Figures 2C and 4O; and a Franklin–Paxinos/Allen coordinate crosswalk;
+- one two-pixel cyan contour around the exact posterior Allen SI mask; the annotation, structure labels, and coordinate readouts are unchanged;
+- Page 2 lists the histological criteria used to assign pSI: bright transmitted light, Nissl/DAPI, caudal GP/internal capsule, optic tract, MeA, CeA/CeM, LH, tracing, and post hoc placement;
+- Page 3 is grouped into localization and targeting, input anatomy, and circuit maps;
+- Page 3 includes the PAG-retrograde series, high-resolution pSI–PAG targeting images, 2024 Figures 2C and 4O, human SI atlas sections, and the full S8 output and S10 input maps;
 - concise cross-species SI links and a reference explaining that the AmgC/M territory substantially overlaps with and is largely the same anatomical territory as pSI;
-- shareable coordinate URLs and website https://neugun.github.io/pSI-atlas/.
+- the HCN1 single-cell preprint is cited as Li, K., Zhu, Z., et al.;
+- ongoing spatial transcriptomics is described as a search for a more selective pSI marker or marker combination;
+- shareable coordinate URLs and a self-contained HTML build.
 
 ## Development
 
@@ -32,7 +40,7 @@ npm run dev -- --host 127.0.0.1
 
 ## Static deployment
 
-`npm run build` writes the multi-file production site to `dist/`. Deploy the contents of `dist/` to any static host. The default viewer loads CCFv3 Zarr data from the source configured in `src/lib/ccfData.ts`; set `VITE_CCF_BASE_URL` for self-hosted data.
+`npm run build` writes the multi-file production site to `dist/`. Deploy the contents of `dist/` to any static host. For GitHub Pages, upload the contents of `dist/` at the repository root and include an empty `.nojekyll` file. The default viewer loads CCFv3 Zarr data from the source configured in `src/lib/ccfData.ts`; set `VITE_CCF_BASE_URL` for self-hosted data.
 
 To create the single-file application shell with all figure images embedded:
 
