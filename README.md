@@ -11,8 +11,6 @@ The published coordinates are Franklin–Paxinos surgical references. The live v
 ## Version 2.15
 
 - new "Gene expression & spatial profile" page presenting MERFISH spatial-transcriptomics and Allen ABC WMB-10Xv3 scRNA-seq results for pSI: cell-type composition and spatial layout among its five anatomical neighbours, differential expression by functional gene category (GPCRs, ion channels, neuropeptides, neurotransmitter machinery, transcription-factor markers), and cross-neighbour specificity;
-- the same analysis pipeline applied to two more regions as a generalization check: VTA as a full unmodified replication, and ACA as an instructive case where a registry acronym bug and a centroid-sphere neighbour-definition limitation were found and fixed;
-- a visible dated caveat noting that the page's figures/tables are an archived centroid-500-µm-neighbour-definition snapshot, since superseded by a nearest-cell-distance method in the underlying pipeline;
 - real Allen Mouse CCFv3 50-µm histology and annotation sections;
 - the v2.5 bregma-to-CCF conversion is restored: AP/ML/DV index real Allen CCFv3 slices and the corresponding CCF voxel is shown at the crosshair;
 - the AP −0.90, ML 2.2–2.3, DV −4.50 mm values remain clearly labeled as Franklin–Paxinos surgical references;
