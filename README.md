@@ -8,6 +8,12 @@ An interactive Allen Mouse CCFv3 reference for localizing posterior substantia i
 
 The published coordinates are Franklin–Paxinos surgical references. The live viewer loads real Allen CCFv3 histology and annotation slices and reports a bregma-referenced crosshair position together with the corresponding 50-µm CCF voxel. pSI is selected from the posterior Allen SI annotation and neighboring landmarks.
 
+## Version 2.16
+
+- new "Neural firing (Neuropixels)" page: how pSI single units fire around task events (cue, action, reward vs. omission) in the IBL Brain-Wide Map, baseline-normalized and compared against the same five anatomical neighbours — pSI is low-firing (~3.9 Hz, below pallidum and anterior SI) with a mild biphasic outcome response;
+- "Gene expression & spatial profile" refreshed to the nearest-cell neighbour method (the five pSI neighbours are identical to the original validated set), with updated cell counts, a full-transcriptome scRNA differential-expression section (ion channels/GPCRs the imaging panel omits), and new marker-gene violin figures at both MERFISH and scRNA levels;
+- the gene-expression and electrophysiology pages share one neighbour set (CEAl/CEAm/GPe/GPi/MEA), so molecular and functional distinctiveness of pSI can be read side by side;
+
 ## Version 2.15
 
 - new "Gene expression & spatial profile" page presenting MERFISH spatial-transcriptomics and Allen ABC WMB-10Xv3 scRNA-seq results for pSI: cell-type composition and spatial layout among its five anatomical neighbours, differential expression by functional gene category (GPCRs, ion channels, neuropeptides, neurotransmitter machinery, transcription-factor markers), and cross-neighbour specificity;
