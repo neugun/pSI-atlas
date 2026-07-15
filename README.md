@@ -8,6 +8,12 @@ An interactive Allen Mouse CCFv3 reference for localizing posterior substantia i
 
 The published coordinates are Franklin–Paxinos surgical references. The live viewer loads real Allen CCFv3 histology and annotation slices and reports a bregma-referenced crosshair position together with the corresponding 50-µm CCF voxel. pSI is selected from the posterior Allen SI annotation and neighboring landmarks.
 
+## Version 2.17
+
+- nav renamed: "How to identify pSI" → "Locating pSI", "Paper anatomy & circuits" → "Anatomy & circuits";
+- "Neural firing (Neuropixels)" page extended with two new sections: a target-position diagram showing where the recorded units actually sit anatomically (pSI and its 5 neighbours, sagittal/coronal-like/horizontal-like CCF views), and a condition-response manifold analysis — PCA on each unit's cue+action+reward+omission z-scored response (top-10 PCs explain 93.6% of variance) shows pSI's population manifold is significantly separated from all 5 neighbours (permutation test, p 0.006–0.029) with a modest linear-decode effect size (58.8% balanced accuracy vs. 50% chance, p=0.013), and its reward-aligned response trajectory travels a distinctly shorter path through state-space than GPe/GPi/MEA;
+- source: `F:\pSI_IBL\pipeline\07_manifold_analysis.py`, `08_probe_location_diagram.py`.
+
 ## Version 2.16
 
 - new "Neural firing (Neuropixels)" page: how pSI single units fire around task events (cue, action, reward vs. omission) in the IBL Brain-Wide Map, baseline-normalized and compared against the same five anatomical neighbours — pSI is low-firing (~3.9 Hz, below pallidum and anterior SI) with a mild biphasic outcome response;
