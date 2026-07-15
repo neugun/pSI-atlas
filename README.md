@@ -1,42 +1,22 @@
 # pSI Localization Atlas
 
-An interactive Allen Mouse CCFv3 reference for localizing posterior substantia innominata (pSI), checking the site in tissue, and reviewing the main anatomy/circuit figures from the 2021 and 2024 studies.
+A reference site for posterior substantia innominata (pSI) in the mouse brain: where it is, how to find it in tissue, what its circuits look like, and what's known about its gene expression and firing.
 
-## Scientific definition
+> pSI is the posterior part of Allen substantia innominata (SI), corresponding to the region targeted and validated in our experiments (Allen SI id 342, AP −0.7 to −1.6 mm from bregma).
 
-> pSI is the posterior part of Allen substantia innominata (SI) corresponding to the region targeted and validated in the experiments.
+## Pages
 
-The published coordinates are Franklin–Paxinos surgical references. The live viewer loads real Allen CCFv3 histology and annotation slices and reports a bregma-referenced crosshair position together with the corresponding 50-µm CCF voxel. pSI is selected from the posterior Allen SI annotation and neighboring landmarks.
+**CCFv3 Locator.** An interactive Allen Mouse CCFv3 viewer (50 µm resolution). Enter an AP/ML/DV coordinate or a Franklin–Paxinos surgical reference and see the matching coronal and sagittal slices, with the corresponding CCF voxel, structure name, and nearby annotated regions read out at the crosshair. Coordinates are shareable as URLs.
 
-## Version 2.17
+**Locating pSI.** The histological criteria used to identify pSI under the microscope: transmitted light, Nissl/DAPI landmarks, and the surrounding structures (caudal GP, internal capsule, optic tract, MeA, CeA/CeM, LH) that place it in a section.
 
-- nav renamed: "How to identify pSI" → "Locating pSI", "Paper anatomy & circuits" → "Anatomy & circuits";
-- "Neural firing (Neuropixels)" page extended with two new sections: a target-position diagram showing where the recorded units actually sit anatomically (pSI and its 5 neighbours, sagittal/coronal-like/horizontal-like CCF views), and a condition-response manifold analysis — PCA on each unit's cue+action+reward+omission z-scored response (top-10 PCs explain 93.6% of variance) shows pSI's population manifold is significantly separated from all 5 neighbours (permutation test, p 0.006–0.029) with a modest linear-decode effect size (58.8% balanced accuracy vs. 50% chance, p=0.013), and its reward-aligned response trajectory travels a distinctly shorter path through state-space than GPe/GPi/MEA;
-- source: `F:\pSI_IBL\pipeline\07_manifold_analysis.py`, `08_probe_location_diagram.py`.
+**Anatomy & circuits.** Figures from the underlying papers, organized into localization/targeting, input anatomy, and circuit maps — including the PAG-retrograde series and the high-resolution pSI–PAG targeting images.
 
-## Version 2.16
+**Gene expression & spatial profile.** MERFISH spatial transcriptomics and Allen ABC (WMB-10Xv3) single-cell RNA-seq for pSI, compared against its five nearest anatomical neighbours (CEAl, CEAm, GPe, GPi, MEA) and anterior SI. Covers cell-type composition, differential expression by functional gene category, and cross-neighbour marker specificity, at both the MERFISH panel and full-transcriptome level.
 
-- new "Neural firing (Neuropixels)" page: how pSI single units fire around task events (cue, action, reward vs. omission) in the IBL Brain-Wide Map, baseline-normalized and compared against the same five anatomical neighbours — pSI is low-firing (~3.9 Hz, below pallidum and anterior SI) with a mild biphasic outcome response;
-- "Gene expression & spatial profile" refreshed to the nearest-cell neighbour method (the five pSI neighbours are identical to the original validated set), with updated cell counts, a full-transcriptome scRNA differential-expression section (ion channels/GPCRs the imaging panel omits), and new marker-gene violin figures at both MERFISH and scRNA levels;
-- the gene-expression and electrophysiology pages share one neighbour set (CEAl/CEAm/GPe/GPi/MEA), so molecular and functional distinctiveness of pSI can be read side by side;
+**Neural firing (Neuropixels).** How pSI units fire around behavioural events (cue, action, reward vs. omission), using public IBL Brain-Wide Map recordings, compared against the same five neighbours. Includes the prior in vivo tetrode data this analysis builds on, where the recorded units are located anatomically, and a population-level response-manifold analysis (PCA over each unit's event-aligned firing) asking whether pSI occupies a distinguishable region of response state-space.
 
-## Version 2.15
-
-- new "Gene expression & spatial profile" page presenting MERFISH spatial-transcriptomics and Allen ABC WMB-10Xv3 scRNA-seq results for pSI: cell-type composition and spatial layout among its five anatomical neighbours, differential expression by functional gene category (GPCRs, ion channels, neuropeptides, neurotransmitter machinery, transcription-factor markers), and cross-neighbour specificity;
-- real Allen Mouse CCFv3 50-µm histology and annotation sections;
-- the v2.5 bregma-to-CCF conversion is restored: AP/ML/DV index real Allen CCFv3 slices and the corresponding CCF voxel is shown at the crosshair;
-- the AP −0.90, ML 2.2–2.3, DV −4.50 mm values remain clearly labeled as Franklin–Paxinos surgical references;
-- Page 3 shows eight full-resolution PAG-retrograde sections from bregma −0.70 to −1.40 mm and retains the downloadable PDF;
-- synchronized coronal and sagittal crosshairs with AP/ML/DV controls;
-- exact Allen structure, structure hierarchy, and nearby annotated regions at the crosshair;
-- one two-pixel cyan contour around the exact posterior Allen SI mask; the annotation, structure labels, and coordinate readouts are unchanged;
-- Page 2 lists the histological criteria used to assign pSI: bright transmitted light, Nissl/DAPI, caudal GP/internal capsule, optic tract, MeA, CeA/CeM, LH, tracing, and post hoc placement;
-- Page 3 is grouped into localization and targeting, input anatomy, and circuit maps;
-- Page 3 includes the PAG-retrograde series, high-resolution pSI–PAG targeting images, 2024 Figures 2C and 4O, human SI atlas sections, and the full S8 output and S10 input maps;
-- concise cross-species SI links and a reference explaining that the AmgC/M territory substantially overlaps with and is largely the same anatomical territory as pSI;
-- the HCN1 single-cell preprint is cited as Li, K., Zhu, Z., et al.;
-- ongoing spatial transcriptomics is described as a search for a more selective pSI marker or marker combination;
-- shareable coordinate URLs and a self-contained HTML build.
+**References & other species.** Source papers, cross-species SI links, and background on regions (e.g. AmgC/M) that overlap anatomically with pSI.
 
 ## Development
 
@@ -50,20 +30,20 @@ npm run dev -- --host 127.0.0.1
 
 ## Static deployment
 
-`npm run build` writes the multi-file production site to `dist/`. Deploy the contents of `dist/` to any static host. For GitHub Pages, upload the contents of `dist/` at the repository root and include an empty `.nojekyll` file. The default viewer loads CCFv3 Zarr data from the source configured in `src/lib/ccfData.ts`; set `VITE_CCF_BASE_URL` for self-hosted data.
+`npm run build` writes the production site to `dist/`. Deploy the contents of `dist/` to any static host. For GitHub Pages, upload the contents of `dist/` at the repository root and include an empty `.nojekyll` file. The Locator loads CCFv3 Zarr data from the source configured in `src/lib/ccfData.ts`; set `VITE_CCF_BASE_URL` to point at self-hosted data instead.
 
-To create the single-file application shell with all figure images embedded:
+To build a single-file version with all figures embedded:
 
 ```bash
 npx vite build --config vite.single.config.ts
 node scripts/make-standalone.mjs
 ```
 
-The HTML shell and figure images are self-contained. Live CCFv3 slices still require internet access unless a local CCF data root is configured.
+The resulting HTML is self-contained; only the live CCFv3 slices in the Locator still need network access, unless a local CCF data root is configured.
 
 ## Primary sources
 
 - Zhu, Z., Ma, Q., Miao, L., Yang, H., et al. (2021), DOI: 10.1016/j.neuron.2021.03.002
 - Zhu, Z., Miao, L., et al. (2024), DOI: 10.1016/j.neuron.2024.06.022
 - Li, K., Zhu, Z., et al. (2024), bioRxiv 10.1101/2024.12.07.627305
-- Valerie Michael et al. (2020), eLife 63493, AmgC/M–PAG projection-defined targeting and its anatomical overlap with pSI
+- Michael, V., et al. (2020), eLife 63493 — AmgC/M–PAG projection-defined targeting and its anatomical overlap with pSI
