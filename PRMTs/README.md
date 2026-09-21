@@ -26,8 +26,12 @@ Each source zip unpacks to a single folder (`pSI-localization-atlas-vX.Y.Z-sourc
 unzip pSI-localization-atlas-v2.17.1-source.zip
 cd pSI-localization-atlas-v2.17.1-source
 npm ci
+npm test        # vitest, 41 tests
 npm run build   # output in dist/
 ```
+
+The top-level [README](../README.md) explains how the Locator works, how to use each page, and
+which source files hold the pSI-specific constants if you want to adapt the site to another region.
 
 ## Scientific definition (unchanged across versions)
 
