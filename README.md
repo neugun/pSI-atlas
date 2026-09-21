@@ -6,6 +6,17 @@ A web atlas for finding the posterior substantia innominata (pSI) in the mouse b
 
 > pSI is the posterior part of Allen substantia innominata (SI), corresponding to the region targeted and validated in our experiments (Allen SI id 342, AP −0.7 to −1.6 mm from bregma).
 
+### At a glance
+
+| | |
+| --- | --- |
+| **Purpose** | Find and confirm the posterior substantia innominata (pSI) in the mouse brain: turn a bregma-referenced coordinate into an Allen CCFv3 voxel, show the slices through it with pSI outlined, and name the structure under the crosshair. |
+| **Who it is for** | Anyone planning or verifying an injection, fiber, or probe in pSI; anyone reading pSI histology; developers who want a small CCFv3 locator for another structure. |
+| **Input** | AP, ML, DV in mm from bregma (typed, preset buttons, clicks on a slice, or a URL query). Nothing is uploaded. |
+| **Output** | Coronal and sagittal CCFv3 views with the pSI contour; a readout (Allen structure, ID, hierarchy, neighbours within 0.5 mm); a shareable URL. The site writes no files. |
+| **Runs where** | Any modern browser at https://neugun.github.io/pSI-atlas/ (needs internet for the CCFv3 planes). Locally with Node.js: `npm ci && npm run dev` in the unzipped source. |
+| **Source location** | `PRMTs/pSI-localization-atlas-v2.17.1-source.zip` (React + TypeScript + Vite). The repository root holds the built site that GitHub Pages serves. |
+
 ## What this is and what problem it solves
 
 The **substantia innominata (SI)** is a thin region at the base of the mouse forebrain. Its posterior part, **pSI**, is the region studied in the 2021 and 2024 Neuron papers listed under [Primary sources](#primary-sources). pSI is small, has no sharp border of its own, and is wedged between the globus pallidus (GP), internal capsule, optic tract, amygdala (MeA, CeA/CeM) and lateral hypothalamus (LH). Hitting it with an injection needle, optical fiber or electrode, and then confirming the hit in tissue sections, is hard.
@@ -13,6 +24,16 @@ The **substantia innominata (SI)** is a thin region at the base of the mouse for
 Two coordinate systems make it harder. Surgical coordinates in the papers are given in the **Franklin–Paxinos** stereotaxic convention (millimetres from *bregma*, a landmark on the skull). The standard digital mouse brain, the **Allen Mouse Common Coordinate Framework v3 (CCFv3)**, is a 3-D reference volume with every voxel labelled by brain structure. The two are not voxel-identical. This site puts them side by side: it converts a bregma-referenced coordinate into a CCFv3 voxel, shows the coronal and sagittal slices through that voxel with the posterior SI outlined, names the structure at the crosshair, and keeps the published surgical coordinates as separate presets. The other pages collect the histological landmarks, paper figures, gene-expression and firing data needed to confirm a pSI site.
 
 The site is a targeting and histology aid. Final localization still has to be checked in tissue.
+
+![Figure 1: where pSI is and how the two coordinate systems relate](docs/img/brain_coordinates_schematic.png)
+
+*Figure 1. Where pSI is and how the two coordinate systems relate.* (A) Side view of skull and brain with bregma; the blue band is the pSI AP window, −0.7 to −1.6 mm behind bregma (`PSI_AP_RANGE`). (B) Coronal outline at AP −0.90 mm with real ML/DV axes: the 2021 and 2024 preset crosses (`presets`, `src/lib/coordinates.ts:18-20`) sit in the CCFv3 GPe annotation, while the Allen SI centroid found by **Center on Allen SI** lies about 0.4 mm more medial and 0.9 mm deeper (ML 1.91, DV −5.37). (C) The Franklin–Paxinos and CCFv3 coordinate systems and the exact arithmetic of `stereotaxicToVoxel` / `voxelToStereotaxic` (`src/lib/ccfCoordinates.ts:23-37`). Brain shapes are schematic, not traced from the atlas; all numbers come from the source code or from the offline render in [Example result](#example-result). Regenerate with `python docs/figures/make_brain_coordinates_schematic.py`.
+
+### Planning a pSI injection? Start here
+
+1. **Which coordinates do I use?** The published surgical centres are Franklin–Paxinos coordinates from bregma: **2021: AP −0.90, ML 2.30, DV −4.50 mm** and **2024: AP −0.90, ML 2.20, DV −4.50 mm** (`presets` in `src/lib/coordinates.ts:18-20`; the **References & other species** tab shows them with the targeting schematic and histology). The target region spans AP −0.7 to −1.6 mm; drag the *Posterior SI A–P series* slider on the Locator to see each level.
+2. **Why does the Locator say GPe at the 2021 preset, and what do I do?** The site converts mm-from-bregma to a CCFv3 voxel by scale and shift around one fixed bregma landmark (Figure 1C). It does not register Franklin–Paxinos to CCFv3, and the two atlases do not agree voxel-for-voxel in this region, so the CCFv3 voxel under the preset carries the Allen label GPe (id 1022), not SI (id 342). Follow the site's own rule (`src/components/Locator.tsx:164`): *use the published coordinates for surgery; assign the site from the Allen SI annotation and the surrounding anatomy*. Concretely: keep the published coordinates for the surgery; press **Center on Allen SI** to see where CCFv3 puts SI at that AP level (ML 1.91, DV −5.37 at AP −0.90); and confirm the site in your own sections with the landmarks on the **Locating pSI** tab (caudal GP and internal capsule above, optic tract, MeA / CeA / CeM lateral and ventral, LH medial). Do not move a surgical coordinate to the CCFv3 centroid on the strength of the atlas alone.
+3. **How do I rebuild or change the site?** Five commands, listed in [Rebuilding from source](#rebuilding-from-source): unzip the source, `npm ci`, `npm test`, `npm run build`, `npm run dev`. The pSI-specific constants are in two files, listed in [Adapting](#adapting-to-another-brain-region-or-other-uses).
 
 ## How it works
 
@@ -32,6 +53,10 @@ flowchart LR
   C --> K["Output: shareable link with the same coordinates"]
 ```
 
+![Figure 2: CCFv3 Locator data flow](docs/img/app_dataflow_schematic.png)
+
+*Figure 2. What the Locator does with one coordinate, module by module.* Input or URL state (`Locator.tsx`, `parseAtlasState`) is clamped and converted to a voxel (`coordinates.ts`, `ccfCoordinates.ts`); exactly two planes, one coronal and one sagittal, are fetched from the public CCFv3 Zarr mirror (`ccfData.ts`; the array is 228 × 160 × 264 voxels in 64³ chunks, so only the chunks cut by those planes are downloaded); the same annotation plane feeds both the drawing (`CcfCanvas.tsx`) and the readout (`structures.ts`). **Center on Allen SI** (`ccfSelection.ts`) writes a new ML/DV back into the state. Schematic; module and function names are real. Regenerate with `python docs/figures/make_app_dataflow_schematic.py`.
+
 Key facts, all from the source in `PRMTs/pSI-localization-atlas-v2.17.1-source.zip`:
 
 - **Data.** The Locator reads the 50 µm Allen CCFv3 average template and annotation volumes as Zarr arrays from the public mirror `https://thewtex.github.io/allen-ccf-itk-vtk-zarr` (`src/lib/ccfData.ts`). The stored shape is 228 × 160 × 264 voxels in ML × DV × AP order. Only the one coronal and one sagittal plane currently displayed are downloaded, then cached. Nothing is bundled for the CCF itself; without internet the Locator shows a "CCFv3 data could not be loaded" message with a Retry button and deliberately draws no substitute anatomy.
@@ -42,6 +67,8 @@ Key facts, all from the source in `PRMTs/pSI-localization-atlas-v2.17.1-source.z
 - **Presets.** The two published surgical centres (2021: AP −0.90, ML 2.30, DV −4.50; 2024: AP −0.90, ML 2.20, DV −4.50) are stored in `presets` in `src/lib/coordinates.ts`. They are Franklin–Paxinos references and are *not* treated as identical to CCFv3 positions.
 
 ## Example result
+
+The figures above are schematics. The images below are rendered from real data: the first from the public CCFv3 volumes with the site's own code, the other two from the deployed build.
 
 ![Locator views rendered from the same CCFv3 data](docs/img/locator-ccf-render.png)
 
@@ -60,6 +87,10 @@ The two `assets/` images are files of the deployed build; their hashed names cha
 ## Step by step: how to use the site
 
 The site is a single page with six tabs in the top navigation bar. Only the Locator state is stored in the URL; the other tabs are reached by clicking.
+
+![Figure 3: site map of the six tabs](docs/img/site_map_schematic.png)
+
+*Figure 3. The six tabs, what each shows, and the data behind it.* Tab labels are the `navigation` array in `src/App.tsx:13-18`; each tile names its component file and the assets it imports. Only tab 1 (**CCFv3 Locator**) is interactive and talks to a server; the other five are text, figures and tables fixed at build time. Schematic; regenerate with `python docs/figures/make_site_map_schematic.py`.
 
 1. Open https://neugun.github.io/pSI-atlas/. The **CCFv3 Locator** tab opens by default, at the 2021 preset (`?ap=-0.90&ml=2.30&dv=-4.50&side=right`). Wait for "Loading Allen CCFv3 slices…" to finish.
 2. **Set a position.** In the *Coordinates* panel type AP, ML and DV in mm (step 0.05, or use the − / + buttons), pick the hemisphere (*Left* / *Right*), or drag the *Posterior SI A–P series* slider (AP −1.6 to −0.7). Or press one of the *Published Paxinos centers* buttons (**2021**, **2024**). You can also click directly in the coronal panel (sets ML and DV) or the sagittal panel (sets AP and DV).
@@ -168,7 +199,8 @@ Other uses of the same parts:
 | --- | --- |
 | `index.html`, `assets/` | Production build (Vite output) of the current release, **v2.17.1**. This is what https://neugun.github.io/pSI-atlas/ serves. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is (no Jekyll processing). |
-| `docs/img/` | Images used by this README (offline render of the Locator view). Not part of the site. |
+| `docs/img/` | Images used by this README: the three schematic figures and the offline render of the Locator view. Not part of the site. |
+| `docs/figures/` | `make_brain_coordinates_schematic.py`, `make_app_dataflow_schematic.py`, `make_site_map_schematic.py` and the shared `schematic_style.py`. Run `python docs/figures/make_<name>.py` from the repository root (needs numpy and matplotlib) to regenerate the PNGs in `docs/img/`. |
 | `PRMTs/pSI-localization-atlas-v2.17.1-source.zip` | **Current editable source** (React + TypeScript + Vite). Use this to rebuild or extend the site. |
 | `PRMTs/pSI-localization-atlas-v2.14-source.zip` … `v2.17-source.zip` | Older source snapshots, kept for reference only. |
 | `PRMTs/pSI-localization-atlas-v2.14-production.zip` | Older production build (v2.14), kept for reference only. |
