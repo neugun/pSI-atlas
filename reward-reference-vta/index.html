@@ -690,113 +690,165 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Value versus action</div>
-        <h2>The sustained dopamine signal is not pure value — and not reducible to licking</h2>
+        <h2>What does sustained VTA dopamine represent: value, action, or both?</h2>
       </div>
       <p>
-        Reward value, feeding persistence and licking are naturally coupled. The key question is therefore not
-        whether licking correlates with dopamine — it does — but whether recent reward history still contributes
-        after temporally appropriate action controls, and whether action itself retains independent information.
+        Licking is not a trivial nuisance variable here. It is simultaneously the route through which reward is sampled,
+        a source of sensory/motor feedback, and a behavioral output that can itself lie downstream of value and dopamine.
+        The correct test is therefore whether current action <em>absorbs</em> the history/reference effect—not whether action correlates with dopamine.
       </p>
     </div>
 
     <div class="cards-3">
       <article class="card warn">
-        <div class="metric-label">The confound is real</div>
-        <div class="metric">r ≈ .61</div>
+        <div class="metric-label">The coupling is real</div>
+        <div class="metric">r = .61</div>
         <p>
-          RWstate correlates strongly with whole-bout lick count (r=.611) and bout duration (r=.599).
-          Whole-bout lick count also correlates with sustained DA (r=.392). These variables cannot be treated as unrelated nuisance terms.
+          Whole-bout lick count correlates with reference state (r=.611) and sustained DA (r=.392);
+          bout duration correlates with reference state at r=.599. A pure “value versus movement” dichotomy is therefore biologically unrealistic.
         </p>
       </article>
       <article class="card good">
-        <div class="metric-label">Joint model</div>
-        <div class="metric">3 independent terms</div>
+        <div class="metric-label">Primary neural endpoint</div>
+        <div class="metric">fixed 2–5 s mean</div>
         <p>
-          RWstate remains significant (β=2.283, P=.00172), but early 0–2 s licks (β=.376, P=.0165)
-          and concurrent 2–5 s licks (β=.554, P=.000457) also contribute independently.
+          The main action-confound test uses mean DA in a fixed three-second window, not whole-bout AUC.
+          It therefore does not mechanically grow because a bout is longer or contains more total licks.
         </p>
       </article>
       <article class="card info">
-        <div class="metric-label">Preferred interpretation</div>
-        <div class="metric">Value + action</div>
+        <div class="metric-label">Integrated interpretation</div>
+        <div class="metric">reference + action</div>
         <p>
-          The population signal is best described as multiplexed:
-          a reference-dependent value component plus an ongoing consummatory/action component.
+          Sustained population DA is best described as a multiplexed signal:
+          substantial ongoing sampling/action information plus a learned reward-reference component that current action does not absorb.
         </p>
       </article>
     </div>
 
     <div class="callout">
-      <strong>Why 0–2 s licking is the primary confound control:</strong>
-      the neural outcome is 2–5 s DA. Final bout duration and total lick count include behavior occurring after that neural window.
-      If value/reference changes sustained DA and DA helps sustain feeding, whole-bout controls are partly downstream and can over-control the biological effect.
-      Early action is therefore the cleaner causal nuisance; whole-bout action is retained as a conservative sensitivity test.
+      <strong>Causal-order rule:</strong>
+      0–2 s licking is the preferred nuisance control for a 2–5 s neural endpoint.
+      Concurrent 2–5 s licking is a stricter sensitivity analysis.
+      Final bout duration and total lick count are deliberately treated as <em>over-control</em> because they include behavior occurring after the neural window begins
+      and may partly sit downstream of dopamine-dependent persistence.
     </div>
 
     <figure class="figure">
-      <img src="assets/NEURON_ED_value_vs_action_adjudication_v1.png" alt="Value versus action adjudication for sustained VTA dopamine">
+      <img src="assets/NEURON_ED_value_vs_action_adjudication_v2.png" alt="Extended Data value versus action adjudication for sustained VTA dopamine">
       <figcaption>
         <strong>Value/action adjudication.</strong>
-        A, action becomes progressively coupled to both reference and dopamine later in the bout.
-        B, reference information survives 0–2 s action control, 0–5 s early+concurrent action control, and conservative whole-bout over-control.
-        C, reference, early licking and concurrent licking all contribute independently in one joint model.
-        D, exact action-matched pairs retain a positive reference effect; exact matching through the entire neural window becomes low-power.
+        A, action and reference explain largely distinct portions of sustained-DA variance.
+        B, within-bout sampling/action becomes strong before a later history-reference component emerges.
+        C, current reward U and learned reference R retain opposite signs under temporally appropriate action controls.
+        D, the reference effect survives nonlinear cross-fitted removal of action-related structure.
       </figcaption>
     </figure>
 
-    <div class="cards-2">
+    <div class="cards-3">
       <article class="card good">
-        <div class="metric-label">Exact early-action strata</div>
-        <div class="metric">P = .00609</div>
+        <div class="metric-label">Partial variance</div>
+        <div class="metric">.049 vs .108</div>
         <p>
-          Holding animal, current reward identity and exact 0–2 s lick count fixed leaves 166 bouts across 39 exact-action strata.
-          Continuous RWstate still predicts sustained DA: β=2.216, clustered P=.00609.
+          With flexible early+concurrent action terms, reference contributes unique ΔR²=.04895 and action contributes unique ΔR²=.10791;
+          their shared component is only ≈.00214. Action is substantial, but it is not the same information as reference.
         </p>
       </article>
-      <article class="card warn">
-        <div class="metric-label">Exact concurrent-action strata</div>
-        <div class="metric">β ≈ 2.13, P=.168</div>
+      <article class="card good">
+        <div class="metric-label">Conditional permutation</div>
+        <div class="metric">P = .0449</div>
         <p>
-          Holding both 0–2 s and 2–5 s lick counts exactly fixed leaves 104 bouts across 40 strata.
-          The RW point estimate remains close to the unrestricted model but the interval widens and the test is no longer significant.
-          This is directional support, not a definitive action-independent proof.
+          Reference remains after 0–2 s + 2–5 s action control: unique ΔR²=.04895, conditional P=.0449.
+          Even whole-bout lick-count/rate/duration over-control leaves ΔR²=.03299, P=.0357.
+        </p>
+      </article>
+      <article class="card info">
+        <div class="metric-label">Joint model</div>
+        <div class="metric">all three contribute</div>
+        <p>
+          RWstate β=2.283 (P=.00171), 0–2 s licks β=.376 (P=.0165), and 2–5 s licks β=.554 (P=.000457).
+          The data directly reject both “only value” and “only licking.”
+        </p>
+      </article>
+    </div>
+
+    <div class="split" style="margin-top:18px">
+      <article class="card good">
+        <div class="metric-label">Relative-value signature after action control</div>
+        <h3>Current reward stays positive; learned reference stays negative</h3>
+        <p>
+          With early + concurrent action main effects controlled, current reward remains positive
+          (U=+.815, P=8.6×10⁻⁵) and learned reference remains negative (R=−2.211, P=.00153).
+          The corresponding U−R contrast is strongly positive (β=1.513, P=5.9×10⁻⁵).
+        </p>
+        <p>
+          If reward×action interactions are made extremely flexible, U becomes unstable because reward strongly drives action;
+          critically, R remains negative (−2.054, P=.00253). That is the more diagnostic history term.
+        </p>
+      </article>
+      <article class="card info">
+        <div class="metric-label">Temporal decomposition</div>
+        <h3>Sampling/action comes first; reference appears later</h3>
+        <p>
+          In 0.5-s bins, prior within-bout sampling becomes FDR-significant from approximately 1–1.5 s onward.
+          The reference coefficient turns positive around 3 s and is nominally significant through 4.5 s.
+          Across ten exploratory bins those late reference tests reach BH q≈.076, so this is mechanistic timing evidence—not a separate corrected discovery.
         </p>
       </article>
     </div>
 
     <div class="cards-3" style="margin-top:16px">
       <article class="card good">
-        <div class="metric-label">Conditional permutation</div>
-        <div class="metric">P = .0449</div>
+        <div class="metric-label">Exact early-action matching</div>
+        <div class="metric">9 / 11</div>
         <p>
-          After flexible 0–2 s plus 2–5 s action controls, reference state still adds ΔR²=.04895.
-          Even the whole-bout lick-count/rate/duration over-control leaves ΔR²=.03299, P=.0357.
+          Matching high- versus low-reference bouts within animal and reward on identical 0–2 s lick count leaves 55 pairs;
+          9/11 animal effects are positive and the one-sided exact Wilcoxon P=.0415.
         </p>
       </article>
-      <article class="card info">
-        <div class="metric-label">Parsimony</div>
-        <div class="metric">BIC 867.9</div>
+      <article class="card violet">
+        <div class="metric-label">Nonlinear sensitivity</div>
+        <div class="metric">3 / 3 learners</div>
         <p>
-          Base+one-dimensional reference has the best BIC (867.9), compared with base 877.2,
-          action-only 907.4 and joint 895.9. AIC/adjusted R² prefer the richer joint model.
-          The data therefore support both components while favoring reference as the compact state variable.
+          Random Forest, ExtraTrees and HistGradientBoosting all leave a positive residual reference slope after nonlinear action removal;
+          conditional permutation P=.0100, .0172 and .00170, respectively.
+          Their held-animal DA nuisance prediction is weak, so this is a functional-form robustness test—not a prediction benchmark.
         </p>
       </article>
       <article class="card warn">
         <div class="metric-label">Prediction boundary</div>
         <div class="metric">OOF R² ≈ .05</div>
         <p>
-          On this strict 192-bout subset, none of the action/reference variants gives a strong held-animal prediction gain.
-          Use these analyses for mechanistic adjudication, not as a cross-animal prediction headline.
+          On this strict 192-bout subset, held-animal prediction gains are not stable.
+          These analyses answer a mechanistic confound question; they should not be presented as a cross-animal prediction headline.
         </p>
       </article>
     </div>
 
     <div class="callout warn">
-      <strong>Claim boundary:</strong>
-      do not write “dopamine activity reflects value rather than licking.”
-      The present data support a stronger and more accurate statement:
-      <em>sustained VTA dopamine is a mixed readout: licking/consumption contributes, but it does not absorb the reference-dependent value component.</em>
+      <strong>Manuscript-safe conclusion:</strong>
+      do not say “dopamine reflects value rather than licking.”
+      Say: <em>consumption-period VTA dopamine multiplexes ongoing reward sampling with a history-dependent reference signal.
+      Current action explains substantial neural variance, but it does not absorb the learned-reference contribution.</em>
+    </div>
+
+    <div class="resource-grid" style="margin-top:20px">
+      <a class="resource" href="docs/NEURON_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md">
+        <b>Value-vs-action authority</b>
+        <span>Causal-order logic, full statistics, model boundaries and manuscript-safe claim.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_action_timecourse_v2.csv">
+        <b>0.5-s temporal decomposition</b>
+        <span>Reference, current-bin action and prior within-bout sampling with cluster tests and BH-FDR.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_action_DML_summary_v1.csv">
+        <b>Nonlinear cross-fit sensitivity</b>
+        <span>Random Forest, ExtraTrees and HistGradientBoosting residual-reference tests.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_action_UR_control_v2.csv">
+        <b>U / R action-control table</b>
+        <span>Current reward, learned reference, contrast and sum components across action-control levels.</span>
+      </a>
     </div>
   </div>
 </section>
