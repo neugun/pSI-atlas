@@ -14,24 +14,37 @@ function card(title,value,note,cls){
 }
 fetch("data/learning_story.json").then(r=>r.json()).then(D=>{
   headline.textContent=D.headline;
-  const np=D.net_productive,op=D.observe_progression,ac=D.active_conversion,gr=D.graph_rewrite_sri;
+  const R=D.robustness||{};
+  const all=(R.continuous_all||{});
+  const common=(R.common_cohorts||{});
+  const glm=(R.observe_active_glm||{});
+  const gr=D.graph_rewrite_sri||{};
+  const wo=(D.world_stage_aware||{}).learner||{};
+
   kpis.innerHTML=
-    card("Net productive flow",fmt(np.learner.early)+" → "+fmt(np.learner.late),"25/27 learners increase · group ΔΔ P="+ptxt(np.group_change_p),"strong")+
-    card("Observe progression",fmt(op.learner.early)+" → "+fmt(op.learner.late),"24/27 learners increase · group ΔΔ P="+ptxt(op.group_change_p),"strong")+
-    card("Active conversion",fmt(ac.learner.early)+" → "+fmt(ac.learner.late),"non-learners "+fmt(ac.non_learner.early)+" → "+fmt(ac.non_learner.late)+" · group ΔΔ P="+ptxt(ac.group_change_p))+
-    card("Graph rewrite tracks learning","ρ="+fmt(gr.rho,2),"transition JS vs ΔSRI · n="+gr.n+" learners · P="+ptxt(gr.p));
+    card("Continuous net productive trend",
+      "24/27 ↑",
+      "all learners · P="+ptxt((all.net_productive_learner||{}).p)+" · common cohorts 11/13 ↑, P="+ptxt((common.net_learner||{}).p),"strong")+
+    card("Observe→Active learning interaction",
+      fmt(glm.learner_D1)+" → "+fmt(glm.learner_D14),
+      "learners; non-learners "+fmt(glm.nonlearner_D1)+" → "+fmt(glm.nonlearner_D14)+" · cohort-matched P="+ptxt(glm.interaction_p),"strong")+
+    card("Graph rewrite tracks learning",
+      "ρ="+fmt(gr.rho,2),
+      "transition JS vs ΔSRI · n="+gr.n+" learners · P="+ptxt(gr.p))+
+    card("World model > stage-aware Markov",
+      "+"+fmt((wo.early||{}).mean_gain)+" / +"+fmt((wo.late||{}).mean_gain),
+      "early / late NLL gain · 22/27 and 23/27 learners positive");
 
   boundary.innerHTML='<div class="eyebrow">IMPORTANT BOUNDARY</div>'+
-    D.boundaries.map(x=>'<p>'+x+'</p>').join("");
+    (D.boundaries||[]).map(x=>'<p>'+x+'</p>').join("");
 
-  const wo=D.world_stage_aware.learner;
-  const tr=D.target_reallocation;
+  const tr=D.target_reallocation||{};
   details.innerHTML=
     '<div class="learning-detail-grid">'+
-      '<div><h4>Behavior first</h4><p>The main evidence is model-free: the learner transition graph moves away from abortive returns to Other and toward sustained Observe / Active states.</p></div>'+
-      '<div><h4>World-model bridge</h4><p>Against a strong stage-aware event+action+motif Markov baseline, world-model gain stays positive in learners both early ('+fmt(wo.early.mean_gain)+') and late ('+fmt(wo.late.mean_gain)+'); it does not become globally larger late.</p></div>'+
-      '<div><h4>Target reallocation</h4><p>Against the stage-agnostic Event Markov, future-Observe gain shifts '+fmt(tr.Observe.early)+' → '+fmt(tr.Observe.late)+' and future-Active gain '+fmt(tr["Active bout"].early)+' → '+fmt(tr["Active bout"].late)+'.</p></div>'+
-      '<div><h4>What this supports</h4><p>Learning changes the organization of social-event dynamics; the world model captures that reorganized dynamics, rather than merely exploiting an easier late-stage classification problem.</p></div>'+
+      '<div><h4>Continuous rather than arbitrary bins</h4><p>Across all 14 training days, learner net-productive flow, Observe progression, and Observe→Active probability rise continuously. The same within-learner trends remain significant in the three cohorts represented in both groups.</p></div>'+
+      '<div><h4>Cohort-matched interaction</h4><p>In Chemo / OXT / SF-Gcamp animals, clustered logistic regression gives a training×learner interaction for next Active after Observe of coefficient '+fmt(glm.interaction_coef,3)+' (P='+ptxt(glm.interaction_p)+'). Composite cross-group interactions are weaker after cohort restriction.</p></div>'+
+      '<div><h4>World-model bridge</h4><p>Against a stage-aware event+action+motif Markov baseline, the world model adds information both early ('+fmt((wo.early||{}).mean_gain)+') and late ('+fmt((wo.late||{}).mean_gain)+'). The gain is not larger late.</p></div>'+
+      '<div><h4>Target reallocation</h4><p>Against a stage-agnostic Event Markov, future-Observe gain shifts '+fmt((tr.Observe||{}).early)+' → '+fmt((tr.Observe||{}).late)+' and future-Active gain '+fmt((tr["Active bout"]||{}).early)+' → '+fmt((tr["Active bout"]||{}).late)+'. Treat this as computational support, not the primary learning interaction.</p></div>'+
     '</div>';
 }).catch(e=>{
   console.error(e);
