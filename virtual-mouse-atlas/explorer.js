@@ -264,6 +264,34 @@ $("#fullBtn").onclick=()=>{const ex=$("#explorer");if(!document.fullscreenElemen
 $("#colourBtns").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;S.colour=b.dataset.v;document.querySelectorAll("#colourBtns button").forEach(x=>x.classList.toggle("active",x===b));draw();});
 window.addEventListener("resize",resize);document.addEventListener("fullscreenchange",()=>setTimeout(resize,50));
 
+function setupHeroMetrics(){
+  const video=$("#heroVideo"),orient=$("#heroOrient"),prob=$("#heroObsProb"),dist=$("#heroDistance"),dirs=$("#heroHeadDirs");
+  if(!video||!orient||!prob||!dist||!dirs)return;
+  fetch("data/hero_metrics.json").then(r=>r.json()).then(h=>{
+    const rows=h.rows||[],fps=Number(h.fps)||10;
+    let last=-1,raf=0;
+    const update=()=>{
+      if(!rows.length)return;
+      const i=clamp(Math.floor(video.currentTime*fps+.001),0,rows.length-1);
+      if(i===last)return; last=i;
+      const q=rows[i];
+      orient.textContent=q.social_orient?"ON":"off";
+      prob.textContent=Number.isFinite(Number(q.observation_prob))?Number(q.observation_prob).toFixed(2):"n/a";
+      dist.textContent=Number.isFinite(Number(q.social_distance_cm))?Number(q.social_distance_cm).toFixed(1)+" cm":"n/a";
+      const ho=Number.isFinite(Number(q.head_direction_obs_deg))?Math.round(Number(q.head_direction_obs_deg))+"°":"n/a";
+      const hd=Number.isFinite(Number(q.head_direction_dem_deg))?Math.round(Number(q.head_direction_dem_deg))+"°":"n/a";
+      dirs.textContent=ho+" / "+hd;
+    };
+    const tick=()=>{update();if(!video.paused&&!video.ended)raf=requestAnimationFrame(tick);};
+    video.addEventListener("loadedmetadata",update);
+    video.addEventListener("seeked",update);
+    video.addEventListener("timeupdate",update);
+    video.addEventListener("play",()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);});
+    update();
+  }).catch(err=>console.error("hero metrics",err));
+}
+setupHeroMetrics();
+
 fetch("data/atlas.json").then(r=>r.json()).then(data=>{
   D=data;renderMotifs();renderCards();resize();
   const first=D.points.find(p=>p.id===D.default_point_id)||D.points[0];if(first)selectPoint(first);
