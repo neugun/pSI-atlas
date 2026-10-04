@@ -22,7 +22,34 @@
 
   <section class="intro wrap">
     <h2>Explore the motifs</h2>
-    <p>The behavioral space is organized into 12 motifs. Use <b>Social-facing 1/2/4/7</b> to see the established motif structure independent of model threshold, then switch to <b>Observation model probability</b> to see the conservative frame-wise v5 confidence layer. Each clickable run also reports whether its center frame belongs to the stricter validated observation bout. Click any run to play the exact Virtual Mouse segment, click empty space to place the comparison circle, drag to pan, and scroll or pinch to zoom.</p>
+    <p>The behavioral space is organized into 12 motifs. Use <b>Social orient 1/2/4/7</b> to see the established motif structure independent of model threshold, then switch to <b>Observation model probability</b> to see the conservative frame-wise v5 confidence layer. Each clickable run reports <b>Social orient</b>, <b>Social observation probability</b>, nose-to-nose <b>Social distance</b>, and the <b>OBS / DEM head directions</b>, while retaining the stricter validated observation-bout label separately. Click any run to play the exact Virtual Mouse segment, click empty space to place the comparison circle, drag to pan, and scroll or pinch to zoom.</p>
+  </section>
+
+
+  <section class="world-model wrap" id="world-model">
+    <div class="section-head">
+      <h2>Predict two social futures</h2>
+      <p>Start from a real held-out ANM4 D139 event. The frozen Social World Model rolls the same current state forward under the normal social world or after removing access to demonstrator/social information. These are predicted behavioral-space futures, not fabricated future body poses.</p>
+    </div>
+    <div class="world-controls">
+      <label for="worldEventSelect">High-divergence event</label>
+      <select id="worldEventSelect"></select>
+      <button id="worldReplayBtn">Replay current event</button>
+    </div>
+    <div class="world-grid">
+      <article class="world-card">
+        <div class="eyebrow">REAL PRESENT · FINAL-V6 VIRTUAL MOUSE</div>
+        <video id="worldRealVideo" src="assets/full_virtual_mouse_web.mp4" muted playsinline controls preload="metadata"></video>
+        <div class="world-caption" id="worldPresentCaption"></div>
+      </article>
+      <article class="world-card">
+        <div class="eyebrow">IMAGINED FUTURES · 512 ROLLOUTS × 8 STEPS</div>
+        <canvas id="worldFutureMap"></canvas>
+        <div class="world-legend"><span class="world-normal"></span>Normal social world <span class="world-gated"></span>Social-gated counterfactual</div>
+        <div class="world-caption" id="worldFutureCaption"></div>
+      </article>
+    </div>
+    <div class="world-metrics" id="worldMetrics"></div>
   </section>
 
   <section class="explorer" id="explorer">
@@ -31,7 +58,7 @@
         <span class="lab">Colour by</span>
         <div class="seg" id="colourBtns">
           <button data-v="motif" class="active">Motif</button>
-          <button data-v="social1247">Social-facing 1/2/4/7</button>
+          <button data-v="social1247">Social orient 1/2/4/7</button>
           <button data-v="social">Observation model probability</button>
           <button data-v="dem">DEM feeding</button>
           <button data-v="quality">Quality</button>
@@ -82,5 +109,6 @@
   </footer>
 </main>
 <script src="explorer.js"></script>
+<script src="world_model.js"></script>
 </body>
 </html>

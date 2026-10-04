@@ -11,6 +11,7 @@ let D=null,W=0,H=0,dpr=1,extent=null,baseScale=1,baseX=0,baseY=0,hover=null;
 
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const pct=x=>Math.round(100*(Number.isFinite(x)?x:0))+"%";
+const num=(x,d=1)=>Number.isFinite(Number(x))?Number(x).toFixed(d):"n/a";
 const lerp=(a,b,t)=>Math.round(a+(b-a)*t);
 function mix(c1,c2,t){
   const A=c1.match(/\w\w/g).map(x=>parseInt(x,16)),B=c2.match(/\w\w/g).map(x=>parseInt(x,16));
@@ -154,9 +155,11 @@ function refreshClips(){
     const card=document.createElement("article");card.className="clip-card";
     const v=segmentVideo(p),cap=document.createElement("div");cap.className="clip-caption";
     cap.innerHTML="<strong>"+D.motifs[p.motif-1].name+" · frame "+p.rep+"</strong>"+
-      p.duration.toFixed(1)+" s run · Social model "+(p.social_infer_rep?"YES":"no")+" (P="+p.social_prob_rep.toFixed(2)+")"+
+      p.duration.toFixed(1)+" s run · Social orient "+(p.social_orient_rep?"YES":"no")+" · Social observation P="+num(p.social_prob_rep,2)+
+      " · Social distance "+num(p.social_distance_cm,1)+" cm"+
+      " · Head directions OBS "+num(p.head_direction_obs_deg,0)+"° / DEM "+num(p.head_direction_dem_deg,0)+"°"+
       " · validated bout "+(p.social_merged_rep?"YES":"no")+
-      " · DEMfeed@center "+(p.dem_rep?"YES":"no")+" · validated-observation overlap="+pct(p.social)+" · DEM-feed overlap="+pct(p.dem)+" · QC "+p.quality.toFixed(2);
+      " · DEMfeed@center "+(p.dem_rep?"YES":"no")+" · QC "+p.quality.toFixed(2);
     card.append(v,cap);clipGrid.append(card);
   }
   observeVideos();
@@ -181,7 +184,7 @@ function renderCards(){
     card.innerHTML='<div class="motif-card-top"><span class="sw" style="background:'+m.color+'"></span><h3>'+String(m.id).padStart(2,"0")+" · "+m.name+'</h3></div>'+
       '<div class="desc">'+m.description+'<br>'+m.runs.toLocaleString()+" exact runs · "+m.frames.toLocaleString()+" frames</div>"+
       '<div class="stats"><div class="stat"><div class="v">'+m.median_duration.toFixed(1)+'s</div><div class="k">median run</div></div>'+
-      '<div class="stat"><div class="v">'+pct(m.social_infer_frame_frac)+'</div><div class="k">Social Obs model</div></div>'+
+      '<div class="stat"><div class="v">'+pct(m.social_infer_frame_frac)+'</div><div class="k">Social observation model</div></div>'+
       '<div class="stat"><div class="v">'+pct(m.dem_frame_frac)+'</div><div class="k">DEM feed</div></div></div>'+
       '<div class="desc mini">mean Social Obs P='+m.social_prob_frame_mean.toFixed(2)+' · strict validated='+pct(m.social_merged_frame_frac)+'</div>';
     card.onclick=()=>{S.motif=m.id;S.selected=null;S.center={x:m.x,y:m.y};S.page=0;renderMotifs();draw();refreshClips();$("#explorer").scrollIntoView({behavior:"smooth",block:"start"});};
@@ -205,10 +208,10 @@ map.addEventListener("mousemove",e=>{
   if(hover){
     const m=D.motifs[hover.motif-1];tip.style.display="block";tip.style.left=Math.min(W-225,x+14)+"px";tip.style.top=Math.max(6,y-58)+"px";
     tip.innerHTML="<strong>"+m.name+"</strong><br>frame "+hover.rep+" · "+hover.duration.toFixed(1)+" s"+
-      "<br>Social model "+(hover.social_infer_rep?"YES":"no")+" · P="+hover.social_prob_rep.toFixed(2)+
+      "<br>Social orient "+(hover.social_orient_rep?"YES":"no")+" · Social observation P="+num(hover.social_prob_rep,2)+
       " · validated "+(hover.social_merged_rep?"YES":"no")+
-      " · DEMfeed@center "+(hover.dem_rep?"YES":"no")+
-      "<br>validated-observation overlap="+pct(hover.social)+" · DEM-feed overlap="+pct(hover.dem)+" · QC "+hover.quality.toFixed(2);
+      "<br>Social distance "+num(hover.social_distance_cm,1)+" cm · Head directions OBS "+num(hover.head_direction_obs_deg,0)+"° / DEM "+num(hover.head_direction_dem_deg,0)+"°"+
+      "<br>DEMfeed@center "+(hover.dem_rep?"YES":"no")+" · QC "+hover.quality.toFixed(2);
   }else tip.style.display="none";
 });
 map.addEventListener("mouseleave",()=>{hover=null;tip.style.display="none";draw();});
