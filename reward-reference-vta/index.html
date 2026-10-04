@@ -14,6 +14,7 @@
     <div class="brand"><span class="brand-mark">R</span> Reward Reference × VTA DA</div>
     <nav aria-label="Page navigation">
       <a href="#series">Full series</a>
+      <a href="#robustness">Controls</a>
       <a href="#contexts">Contexts</a>
       <a href="#model">Model</a>
       <a href="#evidence">Evidence</a>
@@ -281,6 +282,137 @@
       strong alternative state models do not absorb that path; relative value emerges over seconds of consumption; the rule transfers across reward contexts;
       and consumption-period dopamine contributes functionally to persistence.
       The newer sections below refine <em>why</em> some contexts express the reference neurally, behaviorally, or both.
+    </div>
+  </div>
+</section>
+
+<section id="robustness">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Robustness & sensitivity</div>
+        <h2>Earlier analyses that constrain what the main result is — and is not</h2>
+      </div>
+      <p>
+        These controls are not separate stories. They define the boundaries of the reward-reference claim:
+        how deep the memory is, whether temporal emergence is an analysis artifact, whether a more nonlinear comparator is required,
+        whether recurrent models discover a missing latent dimension, and which generalizations remain provisional.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <article class="card info">
+        <div class="metric-label">Memory depth</div>
+        <div class="metric">P = .00620</div>
+        <p>
+          No single prev1–prev4 block lag provides a clean independent cutoff. Yet after multiple lag summaries,
+          total prior consumption and global-history summaries are all entered, the continuous recency-weighted state remains significant.
+          The memory therefore looks like a smooth compressed trajectory rather than “exactly the previous N blocks.”
+        </p>
+      </article>
+
+      <article class="card good">
+        <div class="metric-label">Raw-signal control</div>
+        <div class="metric">β = +1.267</div>
+        <p>
+          On non-pre-subtracted raw z-signal, early 0–2 s U−R is absent (β=−.191, P=.718) while sustained 2–5 s U−R is already positive
+          (β=+1.267, P=.0399). Temporal emergence is therefore not manufactured by subtracting a negative pre-bout baseline.
+        </p>
+      </article>
+
+      <article class="card violet">
+        <div class="metric-label">Normalization family</div>
+        <div class="metric">11 / 11 folds</div>
+        <p>
+          Nested held-animal divisive-normalization fits drive normalization strength to the weakest tested boundary in all 11 folds
+          and do not improve prediction over the near-linear U−R comparator. Reference-dependent nonlinear gain terms likewise add no reliable benefit.
+        </p>
+      </article>
+
+      <article class="card info">
+        <div class="metric-label">Recurrent-state sensitivity</div>
+        <div class="metric">H=2 exception resolves</div>
+        <p>
+          The nominal reward-only H=2 RNN increment (ΔR²≈.0153, nominal P≈.0226) does not survive 12-model max-stat correction
+          (family-wise P≈.0646) and disappears in a dedicated 12-seed H=2 confirmation
+          (RNN|FullHistory ΔR²≈.00443, P≈.186). FullHistory remains significant beyond the confirmed RNN.
+        </p>
+      </article>
+
+      <article class="card good">
+        <div class="metric-label">RNN capacity confirmation</div>
+        <div class="metric">ΔR² ≈ .0269</div>
+        <p>
+          At H=50 with 12-seed ensembles, reward-only and reward+time RNNs do not stably improve held-animal DA prediction
+          (relative MAE ≈1.011 and 1.013). FullHistory still adds ≈.0269 unique R² (P≈.0128 and .0078),
+          whereas the RNN contributes only ~4–5×10⁻⁵ beyond FullHistory (P≈.86).
+        </p>
+      </article>
+
+      <article class="card warn">
+        <div class="metric-label">Cohort boundary</div>
+        <div class="metric">P = .474</div>
+        <p>
+          Leave-one-cohort-out FullHistory effects stay positive, but reduced subsets lose power and the animal-level exact cohort-label permutation is P=.474.
+          The data therefore do not justify claiming perfect cohort invariance or a distinct VGLUT2-specific mechanism.
+        </p>
+      </article>
+    </div>
+
+    <div class="split" style="margin-top:24px">
+      <div class="card good">
+        <div class="metric-label">QE whole-bout robustness</div>
+        <h3>The transfer is not created only by long bouts</h3>
+        <p>
+          Allowing FullHistory to interact with log(duration) gives interaction P=.382.
+          At mean duration, the centered history effect remains positive (β≈65.91, clustered P=.0114).
+          This excludes the simplest explanation that QE whole-bout AUC works only because very long bouts show a special history effect.
+        </p>
+      </div>
+      <div class="card info">
+        <div class="metric-label">QE temporal expression</div>
+        <h3>Shared computation, different waveform</h3>
+        <p>
+          In strict duration≥20 s pure-100E bouts, a positive history cluster is already present pre-bout,
+          becomes weak around onset, and re-emerges strongly at approximately 8–12 s and 13–20 s.
+          The cross-task result is therefore a shared history computation, not a claim of fixed latency or waveform.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards-3" style="margin-top:16px">
+      <article class="card info">
+        <div class="metric-label">Equivalent-state calibration</div>
+        <div class="metric">quinine ≈ −3 units</div>
+        <p>
+          Descriptively mapping external manipulations onto the Natural FullHistory behavior scale gives quinine ≈−3.14 duration-state units
+          and −2.67 hazard-state units. This is a calibration, not evidence that quinine literally edits the FullHistory latent state.
+        </p>
+      </article>
+      <article class="card good">
+        <div class="metric-label">Equivalent-state calibration</div>
+        <div class="metric">stim ≈ +0.4–0.8</div>
+        <p>
+          The 13-animal stimulation cohort maps to approximately +.49 duration-state / +.42 hazard-state units,
+          while the independent 5-animal cohort maps to about +.81 / +.63. Two behavioral readouts agree in direction and scale.
+        </p>
+      </article>
+      <article class="card warn">
+        <div class="metric-label">Task boundary</div>
+        <div class="metric">Do not manufacture negatives</div>
+        <p>
+          Stauffer marginal utility, Masset future-discount timescales and feature-specific RPE require reward-level,
+          independent delay or feature manipulations that this design does not contain.
+          They remain explicit design boundaries rather than being forced into artificial negative results.
+        </p>
+      </article>
+    </div>
+
+    <div class="callout">
+      <strong>Why keep these results visible:</strong>
+      they show that the current model survived several places where an apparently strong story could have broken —
+      window choice, baseline subtraction, local-history summaries, recurrent capacity, nonlinear normalization and cross-task duration structure —
+      while also preserving honest boundaries where the present design is underidentified.
     </div>
   </div>
 </section>
