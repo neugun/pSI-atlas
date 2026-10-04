@@ -12,7 +12,7 @@ function card(title,value,note,cls){
   cls=cls||"";
   return '<article class="learning-kpi '+cls+'"><div class="k">'+title+'</div><div class="v">'+value+'</div><div class="d">'+note+'</div></article>';
 }
-fetch("data/learning_story.json").then(r=>r.json()).then(D=>{
+fetch("data/learning_story.json?v=20261004v3",{cache:"no-store"}).then(r=>r.json()).then(D=>{
   headline.textContent=D.headline;
   const R=D.robustness||{};
   const all=(R.continuous_all||{});
