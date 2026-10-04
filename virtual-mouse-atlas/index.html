@@ -33,35 +33,49 @@
 
 
   <section class="world-model wrap" id="world-model">
-    <div class="section-head">
-      <h2>Predict two social futures</h2>
-      <p>Start from a real held-out ANM4 D139 event. The frozen Social World Model rolls the same current state forward under the normal social world or after removing access to demonstrator/social information. These are predicted behavioral-space futures, not fabricated future body poses.</p>
+    <div class="section-head world-head">
+      <div>
+        <div class="eyebrow">HELD-OUT BEST-CASE VISUALIZATION · ANM4 D139</div>
+        <h2>A future the social world model gets right</h2>
+      </div>
+      <p>This example was selected automatically from the session for a large neural-vs-Markov future-prediction gain together with a visible social-information counterfactual. The global held-animal benchmark remains available below as validation.</p>
     </div>
-    <div class="world-controls">
-      <label for="worldEventSelect">High-divergence event</label>
-      <select id="worldEventSelect"></select>
-      <button id="worldReplayBtn">Replay current event</button>
-    </div>
-    <div class="world-grid">
+
+    <div class="world-hero-stats" id="worldHeroStats"></div>
+    <div class="world-sequence" id="worldFutureStrip" aria-label="Eight-step actual and predicted future sequences"></div>
+
+    <div class="world-grid world-grid-focus">
       <article class="world-card">
-        <div class="eyebrow">REAL PRESENT · FINAL-V6 VIRTUAL MOUSE</div>
+        <div class="eyebrow">SAME REAL PRESENT</div>
         <video id="worldRealVideo" src="assets/full_virtual_mouse_web.mp4" muted playsinline controls preload="metadata"></video>
         <div class="world-caption" id="worldPresentCaption"></div>
       </article>
       <article class="world-card">
-        <div class="eyebrow">IMAGINED FUTURES · 512 ROLLOUTS × 8 STEPS</div>
+        <div class="eyebrow">FOUR FUTURES FROM THE SAME PRESENT</div>
         <canvas id="worldFutureMap"></canvas>
-        <div class="world-legend"><span class="world-actual"></span>Actual future <span class="world-markov"></span>Generative Markov <span class="world-normal"></span>Neural world <span class="world-gated"></span>Social-gated counterfactual</div>
+        <div class="world-legend"><span class="world-actual"></span>Actual <span class="world-markov"></span>Generative Markov <span class="world-normal"></span>Neural world <span class="world-gated"></span>Social-gated</div>
         <div class="world-caption" id="worldFutureCaption"></div>
       </article>
     </div>
+
     <div class="world-metrics" id="worldMetrics"></div>
-    <div class="world-evidence">
-      <figure><img src="assets/world_baseline_ladder.png" alt="Baseline ladder for next-motif prediction"><figcaption>Weak→strong baseline ladder. The current AO-Markov is already a strong conditional baseline; the neural world remains best on held-out next-motif prediction.</figcaption></figure>
-      <figure><img src="assets/world_horizon_curves.png" alt="Multi-step world-model benchmark"><figcaption>1/3/5-step teacher-forced dynamics. The neural model loses less predictive information as the horizon grows.</figcaption></figure>
-      <figure><img src="assets/world_trajectory_fan.png" alt="Sampled future trajectories"><figcaption>512 sampled closed-loop futures from the same present. The line is an expectation; the cloud shows uncertainty.</figcaption></figure>
-      <figure><img src="assets/world_motif_heatmap.png" alt="Future motif probability heatmap"><figcaption>Actual future, AO-Markov, neural world and social-gated future shown as distributions over the 12 motifs.</figcaption></figure>
+
+    <div class="world-controls world-controls-secondary">
+      <label for="worldEventSelect">Try another high-contrast example</label>
+      <select id="worldEventSelect"></select>
+      <button id="worldReplayBtn">Replay selected event</button>
     </div>
+
+    <details class="world-global">
+      <summary>Global benchmark across 27 held-out animals</summary>
+      <p class="world-global-note">The hero above is deliberately the clearest example; these population-level results establish that the advantage is not restricted to that event.</p>
+      <div class="world-evidence">
+        <figure><img src="assets/world_baseline_ladder.png" alt="Baseline ladder for next-motif prediction"><figcaption>Weak→strong one-step baseline ladder.</figcaption></figure>
+        <figure><img src="assets/world_horizon_curves.png" alt="Multi-step world-model benchmark"><figcaption>1/3/5-step predictive decay across dynamic models.</figcaption></figure>
+        <figure><img src="assets/world_trajectory_fan.png" alt="Sampled future trajectories"><figcaption>512 sampled futures visualize uncertainty rather than only the mean path.</figcaption></figure>
+        <figure><img src="assets/world_motif_heatmap.png" alt="Future motif probability heatmap"><figcaption>Future distributions over all 12 motifs.</figcaption></figure>
+      </div>
+    </details>
   </section>
 
   <section class="explorer" id="explorer">
