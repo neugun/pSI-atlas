@@ -18,6 +18,7 @@
       <a href="#contexts">Contexts</a>
       <a href="#model">Model</a>
       <a href="#evidence">Evidence</a>
+      <a href="#action">Value vs action</a>
       <a href="#temporal">Time</a>
       <a href="#dissociation">Dissociation</a>
       <a href="#alternatives">Models</a>
@@ -684,6 +685,93 @@
   </div>
 </section>
 
+<section id="action" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Value versus action</div>
+        <h2>The sustained dopamine signal is not pure value — and not reducible to licking</h2>
+      </div>
+      <p>
+        Reward value, feeding persistence and licking are naturally coupled. The key question is therefore not
+        whether licking correlates with dopamine — it does — but whether recent reward history still contributes
+        after temporally appropriate action controls, and whether action itself retains independent information.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <article class="card warn">
+        <div class="metric-label">The confound is real</div>
+        <div class="metric">r ≈ .61</div>
+        <p>
+          RWstate correlates strongly with whole-bout lick count (r=.611) and bout duration (r=.599).
+          Whole-bout lick count also correlates with sustained DA (r=.392). These variables cannot be treated as unrelated nuisance terms.
+        </p>
+      </article>
+      <article class="card good">
+        <div class="metric-label">Joint model</div>
+        <div class="metric">3 independent terms</div>
+        <p>
+          RWstate remains significant (β=2.283, P=.00172), but early 0–2 s licks (β=.376, P=.0165)
+          and concurrent 2–5 s licks (β=.554, P=.000457) also contribute independently.
+        </p>
+      </article>
+      <article class="card info">
+        <div class="metric-label">Preferred interpretation</div>
+        <div class="metric">Value + action</div>
+        <p>
+          The population signal is best described as multiplexed:
+          a reference-dependent value component plus an ongoing consummatory/action component.
+        </p>
+      </article>
+    </div>
+
+    <div class="callout">
+      <strong>Why 0–2 s licking is the primary confound control:</strong>
+      the neural outcome is 2–5 s DA. Final bout duration and total lick count include behavior occurring after that neural window.
+      If value/reference changes sustained DA and DA helps sustain feeding, whole-bout controls are partly downstream and can over-control the biological effect.
+      Early action is therefore the cleaner causal nuisance; whole-bout action is retained as a conservative sensitivity test.
+    </div>
+
+    <figure class="figure">
+      <img src="assets/NEURON_value_vs_action_adjudication_v1.png" alt="Value versus action adjudication for sustained VTA dopamine">
+      <figcaption>
+        <strong>Value/action adjudication.</strong>
+        Left: reference, early licking and concurrent licking all contribute in the same joint model.
+        Middle: the reference term survives increasingly strong action controls.
+        Right: exact discrete action-count matching preserves a similar positive RW slope, but matching through the entire 2–5 s neural window reduces the usable dataset and loses statistical power.
+      </figcaption>
+    </figure>
+
+    <div class="cards-2">
+      <article class="card good">
+        <div class="metric-label">Exact early-action strata</div>
+        <div class="metric">P = .00609</div>
+        <p>
+          Holding animal, current reward identity and exact 0–2 s lick count fixed leaves 166 bouts across 39 exact-action strata.
+          Continuous RWstate still predicts sustained DA: β=2.216, clustered P=.00609.
+        </p>
+      </article>
+      <article class="card warn">
+        <div class="metric-label">Exact concurrent-action strata</div>
+        <div class="metric">β ≈ 2.13, P=.168</div>
+        <p>
+          Holding both 0–2 s and 2–5 s lick counts exactly fixed leaves 104 bouts across 40 strata.
+          The RW point estimate remains close to the unrestricted model but the interval widens and the test is no longer significant.
+          This is directional support, not a definitive action-independent proof.
+        </p>
+      </article>
+    </div>
+
+    <div class="callout warn">
+      <strong>Claim boundary:</strong>
+      do not write “dopamine activity reflects value rather than licking.”
+      The present data support a stronger and more accurate statement:
+      <em>licking/consumption contributes to sustained VTA dopamine, but it does not absorb the reference-dependent component.</em>
+    </div>
+  </div>
+</section>
+
 <section id="temporal">
   <div class="container">
     <div class="section-head">
@@ -1115,6 +1203,22 @@
       <a class="resource" href="docs/NEURON_MODEL_EVIDENCE_AUTHORITY_v10_20260928.md">
         <b>Model evidence authority v10</b>
         <span>Detailed competitor definitions, unique-information tests and model-room interpretation.</span>
+      </a>
+      <a class="resource" href="docs/REWARD_CONTRAST_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md">
+        <b>Value versus action authority</b>
+        <span>Joint action/reference models, exact action-count matching, causal ordering and claim boundaries.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_vs_action_joint_coefficients_v1.csv">
+        <b>Reference + action joint coefficients</b>
+        <span>RWstate, early 0–2 s licks and concurrent 2–5 s licks in the same clustered model.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_vs_action_exact_strata_v1.csv">
+        <b>Exact action-stratum tests</b>
+        <span>Continuous RW effect after exact current-reward and lick-count matching.</span>
+      </a>
+      <a class="resource" href="docs/NEURON_FIGURE_VISUAL_QC_20261004.md">
+        <b>Figure visual-QC audit</b>
+        <span>Source-level repairs and SVG overlap audit for the current Fig1–Fig7 set.</span>
       </a>
     </div>
 

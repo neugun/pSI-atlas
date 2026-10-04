@@ -475,3 +475,38 @@ The decisive experiment is to perturb sustained VTA dopamine during bouts matche
 
 Experiment prediction authority:
 - data/current/NEURON_biological_model_experiment_predictions_v1.csv
+
+
+## 12. Sustained dopamine is multiplexed: reference/value plus consummatory action
+
+A major alternative explanation for the sustained 2–5 s dopamine effect is that reward-history conditions change how much the animal licks, and dopamine merely follows action output.
+
+This alternative is real rather than hypothetical. Whole-bout lick count and duration covary strongly with RWstate and with sustained dopamine. However, temporal ordering matters: final bout duration and whole-bout lick count contain behavior occurring after the 2–5 s dopamine window and therefore can be downstream of value and dopamine. They are conservative sensitivity controls rather than clean upstream confounds.
+
+The preferred causal nuisance is early action before the sustained window.
+
+A joint clustered model containing RWstate, 0–2 s lick count and concurrent 2–5 s lick count finds independent contributions from all three:
+- RWstate beta=2.283, SE=.728, P=.00172;
+- early 0–2 s licks beta=.376, SE=.157, P=.0165;
+- concurrent 2–5 s licks beta=.554, SE=.158, P=.000457.
+
+Reference information also survives flexible action-control models:
+- after 0–2 s action control: RW delta R2=.0543, P=.00316;
+- after 0–2 plus 2–5 s action control: RW delta R2=.0489, P=.00254;
+- after whole-bout lick count, lick rate and duration over-control: RW delta R2=.0330, P=.00495.
+
+Exact discrete action strata provide a nonparametric sensitivity analysis. Holding animal, current reward identity and exact 0–2 s lick count fixed leaves 166 bouts in 39 strata; RWstate remains associated with sustained dopamine (beta=2.216, P=.00609). Matching both 0–2 s and 2–5 s counts leaves 104 bouts; the RW point estimate remains similar (beta=2.128) but uncertainty increases and the test is no longer significant (P=.168). Fine-bin matching leaves 80 bouts with beta=2.527, P=.190.
+
+Thus the current data do not support either a pure-value or pure-action interpretation.
+
+Preferred wording:
+
+**Sustained VTA dopamine contains a reference-dependent relative-value component together with an independent consummatory-action component.**
+
+The reference-dependent component cannot be reduced to differences in early licking. Concurrent action also carries independent dopamine information. Exact matching through the neural window becomes underpowered and therefore should not be described as definitive proof of action independence.
+
+Detailed authority:
+- docs/REWARD_CONTRAST_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md
+- data/current/NEURON_value_vs_action_joint_coefficients_v1.csv
+- data/current/NEURON_value_vs_action_exact_strata_v1.csv
+- figures/neuron_working/NEURON_value_vs_action_adjudication_v1.png
