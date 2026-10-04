@@ -1,0 +1,4 @@
+dataset,endpoint,alpha,interaction_beta,interaction_p,interpretation
+Natural,sustained_DA,0.2,2.0638655250329987,0.2157244504024955,reference effect present; direction asymmetry not established
+QE,AUC,0.2,100.95649321271583,0.0005273718378814878,stronger reference readout on current high/EE side
+Stim13,AUC_S,0.2,-0.5638975019038219,0.19691810228892304,reference effect present; full-control direction asymmetry not established
