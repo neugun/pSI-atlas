@@ -22,6 +22,9 @@ function motifNeural(){return (current.trajectory||[]).map(x=>({step:x.step,moti
 function motifGate(){return (current.trajectory||[]).map(x=>({step:x.step,motif:x.gate_top_motif,label:x.gate_top_label}));}
 
 function eventActual(){return (EW.hero.actual||[]).map((id,i)=>({step:i+1,event:id,label:eventName(id)}));}
+function eventGlobal(){return (EW.hero.global_frequency||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
+function eventPersistence(){return (EW.hero.persistence||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
+function eventAction(){return (EW.hero.action_only||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
 function eventMarkov(){return (EW.hero.markov||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
 function eventNeural(){return (EW.hero.neural||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
 function eventGate(){return (EW.hero.gate||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
@@ -65,8 +68,9 @@ function selectEvent(fr){
 function setView(v){
   view=v;
   if(view==="event"){
-    current=WM.events.find(x=>Number(x.event_frame)===Number(WM.default_event_frame))||WM.events[0];
-    sel.value=String(WM.default_event_frame);seekCurrent();
+    const fr=Number(EW&&EW.hero?EW.hero.frame:WM.default_event_frame);
+    current=WM.events.find(x=>Number(x.event_frame)===fr)||WM.events[0];
+    sel.value=String(fr);seekCurrent();
   }
   if(viewToggle)viewToggle.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
   sel.disabled=view==="event";btn.disabled=view==="event";
@@ -79,14 +83,14 @@ if(viewToggle)viewToggle.addEventListener("click",e=>{const b=e.target.closest("
 
 function renderHero(){
   if(view==="event"){
-    const act=eventActual(),nw=eventNeural(),mk=eventMarkov();
-    const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event");
-    const n=eventSummary("Neural world + event head"),m=eventSummary("Event Markov"),h5=horizonSummary(5);
+    const act=eventActual(),nw=eventNeural(),mk=eventMarkov(),ao=eventAction(),gl=eventGlobal();
+    const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event"),[an,aN]=matchCount(ao,act,"event"),[gn,gN]=matchCount(gl,act,"event");
+    const n=eventSummary("Neural world + event head"),m=eventSummary("Event Markov"),a=eventSummary("Action-only"),g=eventSummary("Global frequency"),h5=horizonSummary(5);
     const cards=[
-      ["Neural exact event steps",nn+"/"+nN,"top-1 Observe/bout matches"],
-      ["Event Markov exact steps",mn+"/"+mN,"same held-out future"],
-      ["One-step NLL",fmt(n.nll,3)+" vs "+fmt(m.nll,3),"Neural event-world vs Event Markov"],
-      ["5-step accuracy",pct(h5.neural_acc)+" vs "+pct(h5.markov_acc),"27 held-out animals"]
+      ["Hero exact steps","Neural "+nn+"/"+nN,"Action "+an+"/"+aN+" · Markov "+mn+"/"+mN+" · Global "+gn+"/"+gN],
+      ["One-step accuracy",pct(n.accuracy),"Action "+pct(a.accuracy)+" · Markov "+pct(m.accuracy)+" · Global "+pct(g.accuracy)],
+      ["One-step NLL",fmt(n.nll,3),"Linear "+fmt(eventSummary("Full-history linear").nll,3)+" · Markov "+fmt(m.nll,3)],
+      ["5-step accuracy",pct(h5.neural_acc),"Action "+pct(h5.action_acc)+" · Markov "+pct(h5.markov_acc)+" · Global "+pct(h5.global_acc)]
     ];
     heroStats.innerHTML=cards.map(c=>'<div class="world-hero-stat"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
     return;
@@ -126,10 +130,13 @@ function sequenceRow(label,kind,seq,actual,mode){
 }
 function renderSequence(){
   if(view==="event"){
-    const act=eventActual(),mk=eventMarkov(),nw=eventNeural(),gd=eventGate();
+    const act=eventActual(),gl=eventGlobal(),ps=eventPersistence(),ao=eventAction(),mk=eventMarkov(),nw=eventNeural(),gd=eventGate();
     strip.innerHTML=
-      '<div class="future-strip-head"><span>Same present</span><strong>→ next 8 Observe / bout events</strong><span>✓ exact top-1 event match</span></div>'+
+      '<div class="future-strip-head"><span>Same present</span><strong>→ next 8 Observe / feeding-bout events</strong><span>✓ exact top-1 event match</span></div>'+
       sequenceRow("Actual","actual",act,act,"event")+
+      sequenceRow("Global frequency","markov",gl,act,"event")+
+      sequenceRow("Persistence","markov",ps,act,"event")+
+      sequenceRow("Action-only","markov",ao,act,"event")+
       sequenceRow("Event Markov","markov",mk,act,"event")+
       sequenceRow("Neural event-world","neural",nw,act,"event")+
       sequenceRow("Social-gated","gated",gd,act,"event");
