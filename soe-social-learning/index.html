@@ -37,6 +37,7 @@
       <a href="#overview">Overview</a>
       <a href="#phenotype">Behavior</a>
       <a href="#information">Information</a>
+      <a href="#dynamics">Dynamics</a>
       <a href="#slm">SLM</a>
       <a href="#feed">Feed</a>
       <a href="#agent">Agent</a>
@@ -91,6 +92,20 @@
       This page is intentionally comprehensive. It keeps strong controls, negative boundaries, artificial-agent results,
       cross-task/species tests, and source authority visible rather than compressing the project into a fixed number of figures.
     </p>
+
+    <div class="section-kicker" style="margin-top:34px">Current result atlas</div>
+    <div class="cards-4" style="margin-top:12px">
+      <div class="card good"><div class="series-index">01</div><h3>SOE is learned</h3><p>Learner SRI rises strongly across training; live social input, visual access and familiarity all matter.</p></div>
+      <div class="card info"><div class="series-index">02</div><h3>Observation becomes efficient</h3><p>Learning changes conversion of observation into feeding more than it changes gross observation rate.</p></div>
+      <div class="card violet"><div class="series-index">03</div><h3>Social value is adaptive</h3><p>Social information is most useful when current self-state leaves room for external evidence to alter policy.</p></div>
+      <div class="card good"><div class="series-index">04</div><h3>SLM predicts best biologically</h3><p>Strong behavior plus the broadest coherent neural, causal, recovery and generative evidence.</p></div>
+      <div class="card info"><div class="series-index">05</div><h3>Learning has multiple timescales</h3><p>Immediate outcome-conditioned switching, minute-scale memory and a transient cross-day prior coexist.</p></div>
+      <div class="card violet"><div class="series-index">06</div><h3>Observed content drives Feed</h3><p>Demonstrator feeding during the preceding Observe predicts a short-latency increase in native Feed hazard.</p></div>
+      <div class="card good"><div class="series-index">07</div><h3>SLM is generatively sufficient</h3><p>Mouse-derived SLM regenerates trajectory, local strategy and behavioral-state organization in closed loop.</p></div>
+      <div class="card info"><div class="series-index">08</div><h3>VTA separates computations in time</h3><p>Early policy → Middle APE → Post reward/update provides the strongest model adjudication.</p></div>
+      <div class="card violet"><div class="series-index">09</div><h3>VB and JAWS dissociate stages</h3><p>Visual access controls useful information; VTA inhibition selectively disrupts Active social-reward credit.</p></div>
+      <div class="card good"><div class="series-index">10</div><h3>The principle generalizes</h3><p>Food-neophobia, fear, rat, macaque, human, Aeon and marmoset results constrain what is conserved.</p></div>
+    </div>
   </div>
 </section>
 
@@ -99,25 +114,47 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Discovery layer</div>
-        <h2>A learned social phenotype, not a generic increase in observation</h2>
+        <h2>SOE is acquired, visually guided, socially specific and familiarity weighted</h2>
       </div>
       <p>
-        The foundational result is a learned coupling between observing another animal and the observer’s own feeding.
-        The project therefore separates gross social sampling from the efficacy with which sampled information is converted into reward-directed behavior.
+        The behavioral story starts before any model. Socially coordinated eating emerges with training,
+        requires a live and visible partner, is stronger for familiar partners, and becomes increasingly efficient
+        at converting observation into feeding rather than simply increasing the amount of looking.
       </p>
     </div>
 
-    <div class="cards-3">
-      <div class="card good"><div class="metric-label">Visual dependence</div><div class="metric">23/25 ↓</div><p>Visual Block strongly reduces SRI; the phenotype depends on natural visual social information.</p></div>
-      <div class="card info"><div class="metric-label">JAWS causality</div><div class="metric">9/10 ↓</div><p>VTA inhibition reduces the learned phenotype while gross observation is largely preserved.</p></div>
-      <div class="card violet"><div class="metric-label">Behavioral principle</div><div class="metric">conversion ≠ sampling</div><p>What matters is how effectively observation is used, not only how often the observer looks.</p></div>
+    <div class="table-wrap">
+      <table class="metric-table">
+        <thead><tr><th>Discovery</th><th>Result</th><th>Interpretation</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Acquisition</td><td>strict learner SRI ≈1.07→4.58; older n=13 lineage .67±.34→2.82±.44, P&lt;.001</td><td>social coordination is learned, not baseline synchrony</td><td>recovered / cohort reconciliation pending</td></tr>
+          <tr><td>Live social input</td><td>simulated-demonstrator SRI ≈.499±.258, n=13, P&lt;.001 vs live</td><td>apparatus and reward-delivery cues are insufficient</td><td>legacy manuscript control</td></tr>
+          <tr><td>Visual access</td><td>opaque barrier ≈69% reduction; current VB 3.67→1.08, 23/25 lower</td><td>successful social coordination requires visual information</td><td>historical + current verified</td></tr>
+          <tr><td>Familiarity</td><td>unfamiliar partner reduces SRI ≈44%, n=11, P&lt;.05</td><td>social evidence is weighted by partner identity/familiarity</td><td>historical recovered</td></tr>
+          <tr><td>Observation phenotype</td><td>observation rate rises with training; contra-observation does not show the same learning relation</td><td>learning refines selective social observation rather than generic sociality</td><td>historical recovered</td></tr>
+          <tr><td>Conversion</td><td>learner Observe→Feed ≈.431→.641; progress β≈+.126 vs nonlearner −.097; group P≈.00147</td><td>successful learners become better at using sampled information</td><td>historical source pin pending</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <details open><summary>Earlier behavioral results retained in the full story</summary><div>
-      Task acquisition, live-social specificity, simulated-demonstrator control, opaque/visual-dependence control,
-      familiarity dependence, pose/social-gaze structure, observation specificity, outcome-dependent stopping/re-entry,
-      and motif-occupancy reweighting all remain part of the project-wide evidence graph.
-      Several of these older blocks require final source re-pinning before they are promoted as exact numeric authority on this page.
+    <div class="cards-3" style="margin-top:18px">
+      <div class="card good">
+        <h3>Active orienting, not passive proximity</h3>
+        <p>Demonstrator feeding/spout state is highly predictive, but observer-side head direction, facing, angular velocity, social turn and social gaze nearly match the all-feature classifier. Social gaze is the strongest single observer-side feature in the manuscript lineage.</p>
+      </div>
+      <div class="card info">
+        <h3>Learning reweights an existing behavioral manifold</h3>
+        <p>Successful active-reward bouts are preceded by distinct states. The global manifold remains broadly stable, while occupancy shifts toward socially informative motifs with training.</p>
+      </div>
+      <div class="card violet">
+        <h3>Conversion tracks learning better than observation amount</h3>
+        <p>Earlier strict analysis: conversion progress correlates with ΔSRI (ρ≈.426, P=.0086), whereas observation-rate correlation with ΔSRI is near zero (ρ≈.037).</p>
+      </div>
+    </div>
+
+    <details><summary>Familiarity × ambiguity is suggestive but not yet established</summary><div>
+      In five primary JAWS animals, 343 behaviorally matched familiar/unfamiliar pairs show a directional larger familiarity effect in high-ambiguity states
+      (mean high−low difference +.1268; 3/5 positive; P=.3125). This remains exploratory and does not replace the original familiarity result.
     </div></details>
   </div>
 </section>
@@ -156,6 +193,39 @@
   </div>
 </section>
 
+<section id="dynamics">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Learning dynamics</div>
+        <h2>The behavior contains fast rules, minute-scale memory and a transient cross-day state</h2>
+      </div>
+      <p>
+        SLM is not built around one arbitrary exponential memory. Independent pre-SLM analyses showed separable temporal structures:
+        immediate outcome-sensitive stopping/re-entry, multi-event history over minutes, and a slower prior that is strongest early in the next session.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <div class="card good"><div class="metric-label">Fast outcome rule</div><div class="metric">+10–18 pp</div><p>Active/Passive outcomes increase subsequent stopping relative to Unrewarded. Active−Unrewarded stopping reaches +11.6 pp at events 21–50; Passive reaches +17.6 pp.</p></div>
+      <div class="card info"><div class="metric-label">Within-session memory</div><div class="metric">20–33 events</div><p>Selected γ=.95–.97 corresponds to roughly 4.5–7.5 min and outperforms simple run length or elapsed time.</p></div>
+      <div class="card violet"><div class="metric-label">Cross-day prior</div><div class="metric">29/40</div><p>Chronological day order ranks 1/501 against day shuffles (P=.001996); a retained prior improves 29/40 animals (P=.0125) and fades by ~event 50.</p></div>
+    </div>
+
+    <div class="callout">
+      <strong>Biological consequence:</strong>
+      the data require at least two learning timescales. Fast outcome-conditioned policy adjustment and slower accumulated state/value should not be collapsed into one “memory” variable.
+    </div>
+
+    <details><summary>Simple scalar value, uncertainty and single eligibility kernels do not explain the full behavior</summary><div>
+      Earlier held-animal tests found small conversion gains for scalar RW-like and reliability states, but adding RW beyond reliability contributed almost nothing.
+      A simple expected-information-gain proxy was not positive for observation choice after state/history controls.
+      Single-exponential observation-delay kernels over τ=.1–4 s produced held-out gains around 10⁻⁴ or smaller and were inconsistent.
+      These analyses constrain the architecture without becoming separate “negative result” stories.
+    </div></details>
+  </div>
+</section>
+
 <section id="slm" class="alt">
   <div class="container">
     <div class="section-head">
@@ -176,6 +246,26 @@
       Adding generic choice persistence to SLM recovers nearly all of the gain achieved by black-box full-history models,
       while preserving interpretable policy, APE, RPE and social-belief coordinates.
     </div>
+
+    <h3 style="margin-top:30px">Why “best predictor” means more than the lowest behavioral Brier</h3>
+    <div class="table-wrap">
+      <table class="metric-table">
+        <thead><tr><th>Model family</th><th>Held-out behavior</th><th>Early DA</th><th>Middle conditional</th><th>Post DA</th><th>JAWS</th><th>Recovery / generation</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SLM</strong></td><td><strong>Brier .1708 / AUC .8233</strong></td><td><strong>policy r<sub>rb</sub>=.810, P=.0469</strong></td><td><strong>APE ρ=.667, P=.0416</strong></td><td><strong>RPE/update r<sub>rb</sub>=.867+</strong></td><td><strong>Active belief r<sub>rb</sub>=−1.0</strong></td><td><strong>strong component recovery + closed-loop generation</strong></td></tr>
+          <tr><td>Current + CK</td><td>Brier .1664 / AUC .8322</td><td>r<sub>rb</sub>=−.238, ns</td><td>reverse conditional r<sub>rb</sub>=−.333, ns</td><td>r<sub>rb</sub>=.467, ns</td><td>CK update r<sub>rb</sub>=+.164, ns</td><td>not established</td></tr>
+          <tr><td>Current + Q + CK</td><td>Brier .1667 / AUC .8315</td><td>r<sub>rb</sub>=−.333, ns</td><td>reverse conditional r<sub>rb</sub>=−.333, ns</td><td>r<sub>rb</sub>=.467, ns</td><td>not tested</td><td>not established</td></tr>
+          <tr><td>TinyRNN</td><td>Brier .1680 / AUC .8286</td><td>not tested</td><td>raw middle effect opposite / ns</td><td>r<sub>rb</sub>=.733, P=.0547</td><td>not tested</td><td>capacity ceiling, not mechanistic recovery</td></tr>
+          <tr><td>History MLP</td><td><strong>Brier .1637 / AUC .8374</strong></td><td>not tested</td><td>raw middle ≈0</td><td>effect opposite sign</td><td>r<sub>rb</sub>≈0</td><td>capacity ceiling</td></tr>
+          <tr><td>Q-all</td><td>Brier .2114 / AUC .7287</td><td>≈0</td><td>does not survive APE conditioning</td><td>strong Post RPE</td><td>not primary</td><td>exact recovery 6/6; legacy generation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:10px">
+      This is the key distinction: a black-box history model can shave a few thousandths from behavioral Brier,
+      but SLM is the model family with the strongest coherent evidence across prediction, temporal neural expression,
+      causal perturbation, recovery and generation.
+    </p>
 
     <div class="table-wrap">
       <table class="metric-table">
@@ -198,6 +288,28 @@
       <div class="card good"><div class="metric-label">Classical RL</div><div class="metric">27/27 wins</div><p>SLM beats RW, WSLS, Q-active, Q-all, asymmetric-Q, forgetting-Q, choice-kernel and Q+choice-kernel under the restricted baseline contract; r<sub>rb</sub>=1, P=1.49×10⁻⁸.</p></div>
       <div class="card info"><div class="metric-label">Parsimonious extension</div><div class="metric">96.9%</div><p>SLM+choice persistence recovers 96.9% of Current→full-history-MLP improvement and 92.4% of Current→best-history-model improvement.</p></div>
       <div class="card violet"><div class="metric-label">Why SLM wins biologically</div><div class="metric">3 neural epochs</div><p>Black-box models can match behavior, but they do not reproduce the full Early-policy / Middle-APE / Post-update VTA structure.</p></div>
+    </div>
+
+    <div class="figure-grid" style="margin-top:26px">
+      <figure class="figure">
+        <img src="assets/SOE_SLM_identifiability_v1.png" alt="SLM model recovery and identifiability">
+        <figcaption><strong>Mechanistic identifiability.</strong> Mouse-matched synthetic recovery distinguishes the principal model families despite similar real-data scores.</figcaption>
+      </figure>
+      <div class="card good">
+        <div class="metric-label">Six-family recovery</div>
+        <div class="metric">35/36 = 97.2%</div>
+        <p>Actor-Critic, outcome-belief, Q-active, Q-all and adaptive-Q each recover 6/6; only one RW replicate is confused with adaptive-Q.</p>
+        <div class="metric-label" style="margin-top:18px">Focused SLM-component recovery</div>
+        <div class="metric">59/60</div>
+        <p>Feature-Q 20/20, policy 20/20 and state-value actor 19/20 under the 27-learner recursively generated conditional contract.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Interpretation:</strong>
+      behavioral equifinality does not mean the models are intrinsically non-identifiable.
+      The task statistics can distinguish the candidate algorithms in synthetic recovery;
+      real VTA timing and causal perturbation then identify which recovered computation is biologically expressed.
     </div>
 
     <details><summary>Strong alternative models are intentionally visible</summary><div>
@@ -524,6 +636,9 @@
       <div class="download-card"><a href="docs/SOE_RESULTS_ARTIFICIAL_AGENT_v2_20261004.md">Artificial-agent Results draft</a><p class="small">Generative sufficiency, recurrent convergence and biological grounding.</p></div>
       <div class="download-card"><a href="docs/SLM_AUTONOMOUS_INTERVENTION_CLOSURE_v1_20261004.md">Autonomous intervention closure</a><p class="small">Visual Block and JAWS computational lesions.</p></div>
       <div class="download-card"><a href="data/SLM_behavior_model_comparison_canonical_v5.csv">SLM behavior model comparison</a><p class="small">Canonical held-animal behavioral model table.</p></div>
+      <div class="download-card"><a href="data/SLM_MODEL_X_EVIDENCE_AUDITED_v4.csv">Model × Evidence matrix</a><p class="small">Audited behavior, Early/Middle/Post DA, JAWS, recovery and generation registry.</p></div>
+      <div class="download-card"><a href="docs/SLM_IDENTIFIABILITY_GENERATIVITY_v2_20261003.md">Identifiability & generativity</a><p class="small">35/36 six-family recovery and 59/60 focused recovery authority.</p></div>
+      <div class="download-card"><a href="docs/SOE_MASTER_RESULTS_INVENTORY_v1_20261002.md">Full result inventory</a><p class="small">Recovered early phenotype, social gaze, motifs, learning and historical controls.</p></div>
       <div class="download-card"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">DA temporal adjudication</a><p class="small">Frozen Early/Middle/Post model evidence.</p></div>
       <div class="download-card"><a href="data/SOE_GLOBAL_EFFECT_SIZE_REGISTRY_v12.csv">Global effect-size registry</a><p class="small">Project-wide bounded effects and inferential units.</p></div>
     </div>
