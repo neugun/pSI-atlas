@@ -1,1344 +1,1354 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A mechanistic analysis of how recent reward experience establishes a reference that shapes VTA dopamine and behavior.">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>Reward Reference in VTA Dopamine</title>
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="A mechanistic analysis of how recent reward experience establishes a reference that shapes VTA dopamine and behavior." name="description"/>
+<meta content="noindex,nofollow,noarchive" name="robots"/>
+<title>Reward Reference in VTA Dopamine</title>
+<link href="assets/style.css" rel="stylesheet"/>
 </head>
 <body>
 <header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand"><span class="brand-mark">R</span> Reward Reference × VTA DA</div>
-    <nav aria-label="Page navigation">
-      <a href="#series">Full series</a>
-      <a href="#robustness">Controls</a>
-      <a href="#contexts">Contexts</a>
-      <a href="#model">Model</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#action">Value vs action</a>
-      <a href="#temporal">Time</a>
-      <a href="#dissociation">Dissociation</a>
-      <a href="#alternatives">Models</a>
-      <a href="#csnc">cSNC</a>
-      <a href="#predictions">Predictions</a>
-      <a href="#resources">Data</a>
-    </nav>
-  </div>
+<div class="topbar-inner">
+<div class="brand"><span class="brand-mark">R</span> Reward Reference × VTA DA</div>
+<nav aria-label="Page navigation">
+<a href="#biology">Biology</a>
+<a href="#model">Architecture</a>
+<a href="#evidence">Latest</a>
+<a href="#action">Value + action</a>
+<a href="#temporal">Time</a>
+<a href="#dissociation">Persistence</a>
+<a href="#contexts">Contexts</a>
+<a href="#series">Full series</a>
+<a href="#alternatives">Models</a>
+<a href="#robustness">Controls</a>
+<a href="#predictions">Predictions</a>
+<a href="#resources">Data</a>
+</nav>
+</div>
 </header>
-
 <main>
 <section class="hero">
-  <div class="container">
-    <span class="eyebrow">Prepublication analysis snapshot · authority 2026-10-04</span>
-    <h1>How does experienced reward become a reference for dopamine and behavior?</h1>
-    <p class="lede">
-      The central result is not that one reinforcement-learning algorithm wins a model zoo.
-      It is that recent <strong>experienced reward samples</strong> form a persistent reference,
-      current utility is evaluated relative to that reference, and the resulting comparison can
-      be expressed differently in dopamine and behavior.
+<div class="container">
+<span class="eyebrow">Biological synthesis · authority 2026-10-04</span>
+<h1>Reward sampling builds a reference; VTA dopamine combines ongoing consumption with history-relative value</h1>
+<p class="lede">
+      The current data support a sequential biological process rather than a single abstract “contrast signal”:
+      <strong>experienced reward samples write a persistent reference</strong>;
+      current reward and ongoing consumption both contribute to dopamine;
+      and a <strong>history-relative U−R component becomes stronger later in the bout</strong>.
+      Dopamine then contributes to feeding persistence, while downstream behavioral expression remains context dependent.
     </p>
-
-    <div class="hero-grid">
-      <div class="hero-stat">
-        <strong>3 contexts</strong>
-        <span>Natural reward quality, quinine/devaluation, and direct VTA stimulation carry direct reward-history information.</span>
-      </div>
-      <div class="hero-stat">
-        <strong>α ≈ 0.20</strong>
-        <span>A single frozen recency setting retains 91–98% of each task’s maximal reference effect.</span>
-      </div>
-      <div class="hero-stat">
-        <strong>U ↑ · R ↓</strong>
-        <span>Current utility and history reference exert opposing effects on sustained dopamine.</span>
-      </div>
-      <div class="hero-stat">
-        <strong>DA ≠ behavior</strong>
-        <span>Stimulation history robustly changes subsequent DA without a reliable feeding-duration effect.</span>
-      </div>
-    </div>
-
-    <p class="prepub">
-      Scope: this page summarizes the current mechanistic authority and its claim boundaries.
-      It intentionally distinguishes results supported by the present data from biologically plausible mechanisms that still require new experiments.
+<div class="hero-grid">
+<div class="hero-stat">
+<strong>Sampled, not clock-only</strong>
+<span>Actual reward consumption updates the reference; passive elapsed time alone contributes little.</span>
+</div>
+<div class="hero-stat">
+<strong>ΔR² ≈ .049</strong>
+<span>Reference remains unique after flexible 0–2 s + 2–5 s action controls (conditional P=.0449).</span>
+</div>
+<div class="hero-stat">
+<strong>U ↑ · R ↓</strong>
+<span>After action control, current reward stays positive and learned reference stays negative in sustained DA.</span>
+</div>
+<div class="hero-stat">
+<strong>DA → persistence</strong>
+<span>Activation lowers termination hazard; contingent JAWS inhibition raises it, without proving complete mediation.</span>
+</div>
+</div>
+<p class="prepub">
+      The strongest conclusion is therefore not “dopamine is value rather than licking.”
+      It is that consumption-period VTA dopamine <strong>multiplexes sampling/action and a learned reward-reference computation</strong>.
+      The page below is organized in biological order: reference formation → current sampling → relative-value construction → persistence → context-dependent expression.
     </p>
-  </div>
+</div>
 </section>
-
-<section id="series" class="alt">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Complete result series</div>
-        <h2>From the model-free phenomenon to a mechanistic reward-reference architecture</h2>
-      </div>
-      <p>
-        The project did not begin with a chosen latent-state model. It progressed through seven increasingly restrictive questions:
-        whether identical rewards differ after different histories; what updates the history state; whether that state is continuous and deeper than local adaptation;
-        whether strong alternative models absorb it; when the comparison appears in dopamine; whether the computation generalizes; and whether dopamine contributes to persistence.
+<section class="alt" id="biology">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Biological sequence</div>
+<h2>Five steps organize the current result</h2>
+</div>
+<p>
+        This order follows the putative biological process, not the chronology of analysis.
+        Each step has a distinct experimental question and a distinct claim boundary.
       </p>
+</div>
+<div class="logic-line">
+<div class="logic-node">
+<span class="symbol">1</span>
+<b>Sample reward</b>
+<p>Actual consumption, not passive time alone, provides the experience that can update the internal reward history.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">2</span>
+<b>Store reference R</b>
+<p>Past sampled utilities are compressed into a persistent, recency-weighted reference already present before the next bout.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">3</span>
+<b>Consume current reward</b>
+<p>Current utility and ongoing licking/sampling both contribute to consumption-period VTA dopamine.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">4</span>
+<b>Construct U − R</b>
+<p>A later history-relative component emerges during continued consumption; current reward is positive and learned reference is negative.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">5</span>
+<b>Express persistence</b>
+<p>Dopamine contributes causally to bout persistence, but neural reference expression and gross behavior can dissociate across contexts.</p>
+</div>
+</div>
+<div class="cards-3" style="margin-top:22px">
+<article class="card good">
+<div class="metric-label">Reference formation</div>
+<div class="metric">experience-gated</div>
+<p>
+          Before the animal samples the new reward, passive-time models add at most ~.004 R².
+          Once the reward is consumed, exposure carries graded update information.
+        </p>
+</article>
+<article class="card info">
+<div class="metric-label">Neural representation</div>
+<div class="metric">multiplexed</div>
+<p>
+          Action contributes substantial sustained-DA variance, but reference remains unique after early, concurrent and even whole-bout sensitivity controls.
+        </p>
+</article>
+<article class="card violet">
+<div class="metric-label">Output architecture</div>
+<div class="metric">shared state · gated readout</div>
+<p>
+          Natural reward, quinine and stimulation support transferable history information, while the strength and behavioral expression of that reference depend on context.
+        </p>
+</article>
+</div>
+<div class="callout">
+<strong>Working biological statement:</strong>
+      past sampled rewards establish a reference before the current bout;
+      current consumption first recruits a strong sampling/action component;
+      with continued consumption, VTA dopamine additionally expresses history-relative utility;
+      that neural signal contributes to persistence but is not by itself sufficient to guarantee gross behavioral contrast.
     </div>
-
-    <div class="callout">
-      <strong>How to read this section:</strong>
-      Figures 1–7 are the current science-rebuild progression. The later sections of this page add the newer 2026-10-03/04
-      persistence–expression and biological-model analyses on top of this established series; they do not replace it.
-    </div>
-
-    <article class="series-chapter">
-      <div class="series-copy">
-        <div class="series-index">01</div>
-        <h3>Identical current rewards acquire different value after different histories</h3>
-        <p>
-          The starting result is deliberately model free. The same current 100E or 20E reward is compared after different recent histories.
-          Feeding persistence and 2–5 s sustained VTA dopamine both show the aligned reference effect in <strong>9/9 animals</strong>
-          (exact Wilcoxon P=.003906 for each).
-        </p>
-        <p>
-          The effect is also positive in all nine animals across 2–4, 2–5, 2.5–5 and 3–5 s windows,
-          so the phenomenon is not created by one hand-picked late interval.
-        </p>
-        <div class="result-strip">
-          <span><b>9/9</b> behavior</span>
-          <span><b>9/9</b> sustained DA</span>
-          <span><b>P=.003906</b> exact paired test</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig1_NEURON_REBUILD_FIG1_same_reward_history_v2.png" alt="Figure 1 identical current rewards after different reward histories">
-        <figcaption><strong>Figure 1.</strong> Same physical reward, different recent reference, different persistence and sustained dopamine value.</figcaption>
-      </figure>
-    </article>
-
-    <article class="series-chapter reverse">
-      <div class="series-copy">
-        <div class="series-index">02</div>
-        <h3>Sampled consumption, not passive waiting, updates the reference</h3>
-        <p>
-          A passive-time explanation predicts the internal state should move after a programmed switch even before the animal samples the new reward.
-          It does not: across candidate passive time constants from 5 to 640 s, the maximal added sustained-DA R² before first sample is only about <strong>.004</strong>.
-        </p>
-        <p>
-          Once consumption begins, sampled exposure carries graded information. Crucially, controlling direct 0–2 s licking does not erase the history state:
-          added R²=.0613, permutation P=.0356; adding current lick rate gives a similar added R²=.0602, P=.0305.
-        </p>
-        <div class="result-strip">
-          <span><b>~0</b> passive-clock gain</span>
-          <span><b>ΔR²=.0613</b> after early-lick control</span>
-          <span><b>P=.0356</b> permutation</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig2_NEURON_REBUILD_FIG2_consumption_updates_reference_v3.png" alt="Figure 2 consumption updates reward reference">
-        <figcaption><strong>Figure 2.</strong> Elapsed time alone is insufficient; actual reward sampling carries update information.</figcaption>
-      </figure>
-    </article>
-
-    <article class="series-chapter">
-      <div class="series-copy">
-        <div class="series-index">03</div>
-        <h3>A continuous state generalizes across animals and retains deeper reward path</h3>
-        <p>
-          The continuous reference is useful because it is more informative than either current reward or categorical context.
-          Held-out-animal sustained-DA R² increases from <strong>.038</strong> for current reward alone to <strong>.123</strong> with context and
-          <strong>.175</strong> with the continuous history state; context + state reaches .178.
-        </p>
-        <p>
-          Within fixed context, residual dopamine rises monotonically across history-state quartiles.
-          After current reward, bout stage, block time, session progression, previous-block history and current-block consumption are controlled,
-          deeper cumulative history still adds ΔR²=.02686 (conditional P=.00670).
-        </p>
-        <p>
-          The recency profile is broad, with a Natural-task optimum around α≈.15–.16. The point is an effective memory scale,
-          not a claim that the brain contains an exact synaptic α.
-        </p>
-        <div class="result-strip">
-          <span><b>R² .038→.175</b> held animal</span>
-          <span><b>ΔR²=.02686</b> deep history</span>
-          <span><b>P=.00670</b> conditional permutation</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig3_NEURON_REBUILD_FIG3_continuous_history_deeppath_v3.png" alt="Figure 3 continuous history state and deeper path">
-        <figcaption><strong>Figure 3.</strong> A continuous history coordinate captures within-context value and information beyond local switch adaptation.</figcaption>
-      </figure>
-    </article>
-
-    <article class="series-chapter reverse">
-      <div class="series-copy">
-        <div class="series-index">04</div>
-        <h3>Strong alternative models capture adaptation, but do not absorb cumulative path</h3>
-        <p>
-          The model room deliberately includes strong competitors rather than weak straw baselines:
-          belief/HMM state inference, average reward rate, Pearce–Hall/uncertainty, adaptive gain, distributional analogues and recurrent Value-RNNs.
-          Several predict held-out dopamine reasonably well; prediction ranking alone therefore does not identify the biological computation.
-        </p>
-        <p>
-          The decisive analysis is bidirectional unique information. FullHistory remains unique beyond belief
-          (ΔR²=.0254, P=.0124), continuous HMM (.0266, P=.0090), average reward rate (.0256, P=.0122),
-          Value-RNN (.0269, P=.0128), and Value-RNN + elapsed time (.0269, P=.0078).
-          Reverse increments are small and generally not detected.
-        </p>
-        <p>
-          A nominal low-capacity H=2 RNN exception did not survive family-wise max-stat correction or a dedicated 12-seed confirmation.
-          Distributional spread likewise adds essentially no population-photometry information beyond the central history state (P=.941).
-        </p>
-        <div class="result-strip">
-          <span><b>Belief/HMM</b> insufficient</span>
-          <span><b>Reward rate</b> insufficient</span>
-          <span><b>RNN latent</b> insufficient</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig4_NEURON_REBUILD_FIG4_model_room_v3.png" alt="Figure 4 model room">
-        <figcaption><strong>Figure 4.</strong> Model comparison is used to identify information that competitors fail to absorb, not to crown a universal prediction winner.</figcaption>
-      </figure>
-    </article>
-
-    <article class="series-chapter">
-      <div class="series-copy">
-        <div class="series-index">05</div>
-        <h3>Current reward becomes relative to stored history over the first seconds of consumption</h3>
-        <p>
-          In the same 192 post-switch bouts from 11 animals, the U−R coefficient is negative before feeding (β=−.485),
-          weak during 0–2 s (β=+.294), and strongly positive during 2–5 s (β=+1.752).
-          The sustained-minus-early increase is +1.458 with P=9.02×10⁻⁸, and <strong>11/11</strong> animals have a larger sustained than early slope
-          (exact P=.000977).
-        </p>
-        <p>
-          This is not a pre-baseline subtraction artifact: on raw non-pre-subtracted z-signal,
-          early U−R remains absent (β=−.191, P=.718) while 2–5 s U−R is already positive (β=+1.267, P=.0399).
-          U+R does not show the corresponding temporal growth.
-        </p>
-        <div class="result-strip">
-          <span><b>β −.485→+.294→+1.752</b></span>
-          <span><b>P=9×10⁻⁸</b> sustained−early</span>
-          <span><b>11/11</b> animals</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig5_NEURON_REBUILD_FIG5_temporal_construction_v2.png" alt="Figure 5 temporal construction of relative value">
-        <figcaption><strong>Figure 5.</strong> The history-dependent comparison is constructed during ongoing consumption rather than appearing as a fixed onset response.</figcaption>
-      </figure>
-    </article>
-
-    <article class="series-chapter reverse">
-      <div class="series-copy">
-        <div class="series-index">06</div>
-        <h3>The history computation sits inside a broader value space</h3>
-        <p>
-          The Natural-task α=.20 state was frozen and transferred to an independent quinine/reward-quality task.
-          In 66 strict pure-100E bouts from seven animals, the frozen state adds ΔR²=.02540 to whole-bout DA AUC
-          (clustered P=.00141; within-animal circular-shift P=.00205); 6/7 animal slopes are positive.
-        </p>
-        <p>
-          Orthogonal manipulations also align with a value direction defined only by Natural 100E-versus-20E dopamine:
-          quinine moves downward; VTA stimulation moves upward; hunger and LiCl occupy the same broader geometry but with weaker/less uniform sustained-DA effects.
-          This establishes general value geometry without claiming every context reproduces the same temporal history computation.
-        </p>
-        <div class="result-strip">
-          <span><b>QE ΔR²=.02540</b></span>
-          <span><b>P=.00141</b> clustered</span>
-          <span><b>P=.00205</b> circular shift</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="Figure 6 generalization across value contexts">
-        <figcaption><strong>Figure 6.</strong> Frozen history transfer and orthogonal value manipulations separate transferable reference computation from broader value-space alignment.</figcaption>
-      </figure>
-    </article>
-
-    <article class="series-chapter">
-      <div class="series-copy">
-        <div class="series-index">07</div>
-        <h3>Consumption-period dopamine contributes to feeding persistence</h3>
-        <p>
-          A history-state scale chosen from held-animal dopamine alone transfers to behavior:
-          termination OR=.459, P=.000180. Causal manipulation converges on the same persistence axis.
-          Dopamine activation during consumption reduces termination hazard (OR=.690, 95% CI .615–.775, P=3.29×10⁻¹⁰);
-          contingent JAWS inhibition increases hazard (OR=1.341, 95% CI 1.031–1.746, P=.0289).
-        </p>
-        <p>
-          Noncontingent inhibition is weaker and not conventionally significant (OR=1.116, P=.0976);
-          the contingent-versus-noncontingent interaction is borderline (P=.0515).
-          The appropriate conclusion is that dopamine contributes to persistence, not that the entire history→DA→behavior chain has been proven as complete mediation.
-        </p>
-        <div class="result-strip">
-          <span><b>OR=.459</b> natural state</span>
-          <span><b>OR=.690</b> activation</span>
-          <span><b>OR=1.341</b> contingent JAWS</span>
-        </div>
-      </div>
-      <figure class="figure">
-        <img src="assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="Figure 7 behavior and causal dopamine">
-        <figcaption><strong>Figure 7.</strong> Natural reference state and bidirectional dopamine perturbations converge on feeding persistence while leaving mediation as an open causal question.</figcaption>
-      </figure>
-    </article>
-
-    <div class="callout">
-      <strong>What the original seven-figure series established:</strong>
-      history changes the value of an identical reward; actual sampling updates the reference; the state is continuous and retains deeper path;
-      strong alternative state models do not absorb that path; relative value emerges over seconds of consumption; the rule transfers across reward contexts;
-      and consumption-period dopamine contributes functionally to persistence.
-      The newer sections below refine <em>why</em> some contexts express the reference neurally, behaviorally, or both.
-    </div>
-  </div>
+</div>
 </section>
-
-<section id="robustness">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Robustness & sensitivity</div>
-        <h2>Earlier analyses that constrain what the main result is — and is not</h2>
-      </div>
-      <p>
-        These controls are not separate stories. They define the boundaries of the reward-reference claim:
-        how deep the memory is, whether temporal emergence is an analysis artifact, whether a more nonlinear comparator is required,
-        whether recurrent models discover a missing latent dimension, and which generalizations remain provisional.
-      </p>
-    </div>
-
-    <div class="cards-3">
-      <article class="card info">
-        <div class="metric-label">Memory depth</div>
-        <div class="metric">P = .00620</div>
-        <p>
-          No single prev1–prev4 block lag provides a clean independent cutoff. Yet after multiple lag summaries,
-          total prior consumption and global-history summaries are all entered, the continuous recency-weighted state remains significant.
-          The memory therefore looks like a smooth compressed trajectory rather than “exactly the previous N blocks.”
-        </p>
-      </article>
-
-      <article class="card good">
-        <div class="metric-label">Raw-signal control</div>
-        <div class="metric">β = +1.267</div>
-        <p>
-          On non-pre-subtracted raw z-signal, early 0–2 s U−R is absent (β=−.191, P=.718) while sustained 2–5 s U−R is already positive
-          (β=+1.267, P=.0399). Temporal emergence is therefore not manufactured by subtracting a negative pre-bout baseline.
-        </p>
-      </article>
-
-      <article class="card violet">
-        <div class="metric-label">Normalization family</div>
-        <div class="metric">11 / 11 folds</div>
-        <p>
-          Nested held-animal divisive-normalization fits drive normalization strength to the weakest tested boundary in all 11 folds
-          and do not improve prediction over the near-linear U−R comparator. Reference-dependent nonlinear gain terms likewise add no reliable benefit.
-        </p>
-      </article>
-
-      <article class="card info">
-        <div class="metric-label">Recurrent-state sensitivity</div>
-        <div class="metric">H=2 exception resolves</div>
-        <p>
-          The nominal reward-only H=2 RNN increment (ΔR²≈.0153, nominal P≈.0226) does not survive 12-model max-stat correction
-          (family-wise P≈.0646) and disappears in a dedicated 12-seed H=2 confirmation
-          (RNN|FullHistory ΔR²≈.00443, P≈.186). FullHistory remains significant beyond the confirmed RNN.
-        </p>
-      </article>
-
-      <article class="card good">
-        <div class="metric-label">RNN capacity confirmation</div>
-        <div class="metric">ΔR² ≈ .0269</div>
-        <p>
-          At H=50 with 12-seed ensembles, reward-only and reward+time RNNs do not stably improve held-animal DA prediction
-          (relative MAE ≈1.011 and 1.013). FullHistory still adds ≈.0269 unique R² (P≈.0128 and .0078),
-          whereas the RNN contributes only ~4–5×10⁻⁵ beyond FullHistory (P≈.86).
-        </p>
-      </article>
-
-      <article class="card warn">
-        <div class="metric-label">Cohort boundary</div>
-        <div class="metric">P = .474</div>
-        <p>
-          Leave-one-cohort-out FullHistory effects stay positive, but reduced subsets lose power and the animal-level exact cohort-label permutation is P=.474.
-          The data therefore do not justify claiming perfect cohort invariance or a distinct VGLUT2-specific mechanism.
-        </p>
-      </article>
-    </div>
-
-    <div class="split" style="margin-top:24px">
-      <div class="card good">
-        <div class="metric-label">QE whole-bout robustness</div>
-        <h3>The transfer is not created only by long bouts</h3>
-        <p>
-          Allowing FullHistory to interact with log(duration) gives interaction P=.382.
-          At mean duration, the centered history effect remains positive (β≈65.91, clustered P=.0114).
-          This excludes the simplest explanation that QE whole-bout AUC works only because very long bouts show a special history effect.
-        </p>
-      </div>
-      <div class="card info">
-        <div class="metric-label">QE temporal expression</div>
-        <h3>Shared computation, different waveform</h3>
-        <p>
-          In strict duration≥20 s pure-100E bouts, a positive history cluster is already present pre-bout,
-          becomes weak around onset, and re-emerges strongly at approximately 8–12 s and 13–20 s.
-          The cross-task result is therefore a shared history computation, not a claim of fixed latency or waveform.
-        </p>
-      </div>
-    </div>
-
-    <div class="cards-3" style="margin-top:16px">
-      <article class="card info">
-        <div class="metric-label">Equivalent-state calibration</div>
-        <div class="metric">quinine ≈ −3 units</div>
-        <p>
-          Descriptively mapping external manipulations onto the Natural FullHistory behavior scale gives quinine ≈−3.14 duration-state units
-          and −2.67 hazard-state units. This is a calibration, not evidence that quinine literally edits the FullHistory latent state.
-        </p>
-      </article>
-      <article class="card good">
-        <div class="metric-label">Equivalent-state calibration</div>
-        <div class="metric">stim ≈ +0.4–0.8</div>
-        <p>
-          The 13-animal stimulation cohort maps to approximately +.49 duration-state / +.42 hazard-state units,
-          while the independent 5-animal cohort maps to about +.81 / +.63. Two behavioral readouts agree in direction and scale.
-        </p>
-      </article>
-      <article class="card warn">
-        <div class="metric-label">Task boundary</div>
-        <div class="metric">Do not manufacture negatives</div>
-        <p>
-          Stauffer marginal utility, Masset future-discount timescales and feature-specific RPE require reward-level,
-          independent delay or feature manipulations that this design does not contain.
-          They remain explicit design boundaries rather than being forced into artificial negative results.
-        </p>
-      </article>
-    </div>
-
-    <div class="callout">
-      <strong>Why keep these results visible:</strong>
-      they show that the current model survived several places where an apparently strong story could have broken —
-      window choice, baseline subtraction, local-history summaries, recurrent capacity, nonlinear normalization and cross-task duration structure —
-      while also preserving honest boundaries where the present design is underidentified.
-    </div>
-  </div>
-</section>
-
-<section id="contexts">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Value-context atlas</div>
-        <h2>Reward history is one component of a broader value-construction space</h2>
-      </div>
-      <p>
-        The older project already included sensory quality, motivational state, sickness/devaluation,
-        causal dopamine drive and slow pharmacological state. These manipulations should not all be called “history-reference tests.”
-        Their value is to show which parts of the broader value geometry move when reward, body state or dopamine is altered.
-      </p>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Manipulation</th>
-            <th>Design / cohort</th>
-            <th>Behavior</th>
-            <th>Dopamine</th>
-            <th>How it enters the story</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>100E + quinine</strong></td>
-            <td>7 animals, 172 bouts; fixed 100E concentration, sensory quality lowered by 3 mM quinine</td>
-            <td>Duration 41.0 → 5.08 s; 7/7 lower, exact P=.015625</td>
-            <td>AUC 79.0 → 3.06; AUC/s 1.68 → .878; 7/7 lower, exact P=.015625</td>
-            <td>Clean reward-quality axis. Also supplies the independent QE history-transfer dataset.</td>
-          </tr>
-          <tr>
-            <td><strong>VTA DA stimulation · 13-animal cohort</strong></td>
-            <td>Fixed 20E, 1 mW / 25 ms, 1,833 bouts</td>
-            <td>Duration 6.61 → 9.36 s; 12/13 higher, paired P=.00806</td>
-            <td>AUC −1.51 → 19.40; AUC/s −.361 → 1.926; 13/13 higher</td>
-            <td>Causal high-value movement; later lick-level reconstruction shows direct stimulation-history reference.</td>
-          </tr>
-          <tr>
-            <td><strong>VTA DA stimulation · independent 5-animal cohort</strong></td>
-            <td>10 mW GRAB-matched cohort, 774 bouts</td>
-            <td>5/5 animals increase duration</td>
-            <td>5/5 increase AUC, AUC/s and PeakF</td>
-            <td>Independent replication that the causal dopamine manipulation moves the broader value axis upward.</td>
-          </tr>
-          <tr>
-            <td><strong>Hunger / food restriction</strong></td>
-            <td>Fixed 20E, 7 animals, 851 bouts</td>
-            <td>Duration 7.22 → 17.84 s; 6/7 higher, paired P=.03125</td>
-            <td>Total AUC higher in 6/7, paired P=.046875; AUC/s is less uniform</td>
-            <td>Motivational-state transformation of current utility; not yet a direct reference-memory test.</td>
-          </tr>
-          <tr>
-            <td><strong>LiCl sickness / devaluation</strong></td>
-            <td>Fixed 100E, 7 animals, pre vs post LiCl</td>
-            <td>7/7 duration lower post-LiCl; mean paired difference 7.68 s, P=.015625</td>
-            <td>AUC lower post-LiCl in 6/7; mean paired difference 12.54, P=.03125</td>
-            <td>Internal-state/devaluation axis. Shows value movement but does not identify within-session reward-history α.</td>
-          </tr>
-          <tr>
-            <td><strong>Semaglutide</strong></td>
-            <td>Slow GLP-1R pharmacological state</td>
-            <td>Suppresses feeding with recovery across repeated treatment</td>
-            <td>Suppresses consumption-linked DA, with slow recovery</td>
-            <td>Bridge to homeostatic utility and prior Science work; kept separate from direct history-reference claims.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="cards-3" style="margin-top:22px">
-      <article class="card info">
-        <div class="metric-label">Frozen natural value axis</div>
-        <div class="metric">quinine ↓</div>
-        <p>
-          Natural 100E-versus-20E dopamine defines the axis without quinine data.
-          Quinine then moves 7/7 animals toward the low-value direction; mean cosine is approximately .894 in the primary frozen analysis.
-        </p>
-      </article>
-      <article class="card good">
-        <div class="metric-label">Frozen natural value axis</div>
-        <div class="metric">stimulation ↑</div>
-        <p>
-          The 13-animal stimulation cohort moves strongly toward the high-value direction
-          (raw AUC/AUC/s 13/13 positive; current figure-level projection is positive in 12/13).
-          The independent 5-animal cohort is 5/5 positive.
-        </p>
-      </article>
-      <article class="card warn">
-        <div class="metric-label">Interpretation boundary</div>
-        <div class="metric">Geometry ≠ same dynamics</div>
-        <p>
-          Quinine and stimulation align with a comparison-like value direction, but their temporal trajectories are not uniquely better fit by U−R than by generic ramp/step alternatives.
-          Cross-context generality therefore belongs to <strong>value geometry</strong>; the specific temporal U−R computation is identified in the matched-history experiment.
-        </p>
-      </article>
-    </div>
-
-    <div class="callout">
-      <strong>Why this distinction matters:</strong>
-      history/reference, sensory quality, hunger, illness and dopamine stimulation can all move value, but they enter the architecture at different layers.
-      The current biological model uses these manipulations to separate <em>current utility</em>, <em>reference formation</em> and <em>readout/expression</em> rather than forcing every manipulation into one latent variable.
-    </div>
-  </div>
-</section>
-
 <section id="model">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Working biological model</div>
-        <h2>A layered model, not a single “contrast algorithm”</h2>
-      </div>
-      <p>
-        The useful decomposition is to separate <strong>current utility</strong>,
-        <strong>reference formation</strong>, <strong>comparison/readout</strong>, and
-        <strong>behavioral expression</strong>. These layers can be modified by different biological systems.
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Mechanistic architecture</div>
+<h2>Separate reference formation, current sampling, comparison and behavioral readout</h2>
+</div>
+<p>
+        A useful biological model must keep four operations distinct:
+        what the current reward is worth, how previous sampled rewards are stored,
+        how ongoing consumption enters dopamine, and how neural value is converted into persistence or other actions.
       </p>
-    </div>
-
-    <div class="logic-line">
-      <div class="logic-node">
-        <span class="symbol">H</span>
-        <b>Internal state</b>
-        <p>Hunger, satiety, illness, GLP-1 state, hydration and other physiological variables.</p>
-      </div>
-      <div class="logic-node">
-        <span class="symbol">U</span>
-        <b>Current utility</b>
-        <p>The subjective value of the current physical outcome after internal-state transformation.</p>
-      </div>
-      <div class="logic-node">
-        <span class="symbol">R</span>
-        <b>Sampled reference</b>
-        <p>A recency-weighted state updated by actually experienced reward samples.</p>
-      </div>
-      <div class="logic-node">
-        <span class="symbol">U − R</span>
-        <b>Relative comparator</b>
-        <p>The current reward is evaluated against the reference established by recent experience.</p>
-      </div>
-      <div class="logic-node">
-        <span class="symbol">g(C)</span>
-        <b>Contextual expression</b>
-        <p>Dopamine, persistence and reward-loss behavior can read the same reference with different gains.</p>
-      </div>
-    </div>
-
-    <div class="equation">
+</div>
+<div class="logic-line">
+<div class="logic-node">
+<span class="symbol">H</span>
+<b>Internal state</b>
+<p>Hunger, satiety, illness, GLP-1 state and other physiological variables transform physical reward into current utility.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">R</span>
+<b>Past sampled reference</b>
+<p>R is built from previously experienced reward samples and exists before the current bout begins.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">A(t)</span>
+<b>Current sampling/action</b>
+<p>Licking and consumption deliver the reward and contribute sensory/motor information to early consumption-period dopamine.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">U − R</span>
+<b>Relative-value readout</b>
+<p>Current utility is evaluated relative to stored history; this component becomes stronger later during consumption.</p>
+</div>
+<div class="logic-node">
+<span class="symbol">g(C)</span>
+<b>Output gate</b>
+<p>Context and downstream circuits determine how strongly the shared state appears in dopamine, persistence and overt behavior.</p>
+</div>
+</div>
+<div class="equation">
       U<sub>t</sub> = f(q<sub>t</sub>, H<sub>t</sub>)
-      &nbsp;&nbsp;→&nbsp;&nbsp;
-      R<sub>t+1</sub> = R<sub>t</sub> + α(U<sub>t</sub> − R<sub>t</sub>)
-      &nbsp;&nbsp;→&nbsp;&nbsp;
-      g<sub>+</sub>(C)[U−R]<sub>+</sub> − g<sub>−</sub>(C)[R−U]<sub>+</sub>
-      <span class="sub">H = physiological state · U = current utility · R = sampled reward reference · C = current context / output gate</span>
+        ;  
+      R<sub>t</sub> = Φ({sampled U<sub>&lt;t</sub>})
+      <br/>
+      DA<sub>t</sub> ≈ a(t)·Sampling<sub>t</sub> + g<sub>DA</sub>(C,t)·[U<sub>t</sub>−R<sub>t</sub>] + other terms
+      <br/>
+      Behavior<sub>t</sub> ≈ g<sub>B</sub>(C)·[U<sub>t</sub>−R<sub>t</sub>] + causal DA contribution
+      <span class="sub">q = physical reward · H = physiological state · U = current utility · R = stored sampled-reward reference · A/Sampling = consummatory action · C = context/output gate</span>
+</div>
+<div class="callout">
+<strong>What is established:</strong>
+      R contains information not absorbed by belief/HMM, reward-rate and recurrent alternatives;
+      R remains associated with sustained DA after current-action control;
+      current reward and R enter with opposing signs;
+      and dopamine perturbation shifts feeding persistence.
+      <br/><strong>What is not yet established:</strong>
+      a unique cellular implementation of R, complete DA mediation of history-dependent feeding,
+      or one universal comparator gain across reward contexts.
     </div>
-
-    <div class="callout">
-      <strong>Current authority:</strong>
-      reference formation appears to generalize across reward contexts, whereas the gain with which that reference is expressed is context dependent.
-      The data do <em>not</em> support a universal positive-only comparator or a universal α=.20 biological constant.
-    </div>
-
-    <figure class="figure">
-      <img src="assets/NEURON_biological_reward_reference_model_v1.png" alt="Biological reward-reference model and positive/negative comparator evidence">
-      <figcaption>
-        <strong>Conceptual model.</strong> Internal state can alter current utility; experienced reward updates a reference;
-        current utility is then evaluated relative to that reference. Positive relative-value components are detectable across
-        the three direct-history datasets, but formal directional asymmetry is context dependent.
+<figure class="figure">
+<img alt="Biological reward-reference model and positive/negative comparator evidence" src="assets/NEURON_biological_reward_reference_model_v1.png"/>
+<figcaption>
+<strong>Conceptual architecture.</strong>
+        Internal state transforms physical reward into utility; prior sampled rewards establish R;
+        ongoing consumption contributes an action/sampling component; relative utility is read out against R;
+        and context-dependent downstream gain controls neural and behavioral expression.
       </figcaption>
-    </figure>
-  </div>
+</figure>
+</div>
 </section>
-
-<section id="evidence" class="alt">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Evidence ladder</div>
-        <h2>Five results define the current story</h2>
-      </div>
-      <p>
-        Each result answers a different biological question. Together they separate
-        <em>memory formation</em>, <em>neural comparison</em>, and <em>behavioral expression</em>.
+<section class="alt" id="evidence">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Latest result snapshot</div>
+<h2>The current story in six evidence statements</h2>
+</div>
+<p>
+        These are the results that should carry the biological argument.
+        Model-zoo rankings, exploratory time bins and cross-context analogies are supporting evidence rather than headline claims.
       </p>
+</div>
+<div class="cards-3">
+<article class="card good">
+<div class="metric-label">1 · Reference is experience-gated</div>
+<div class="metric">passive max ΔR² ≈ .004</div>
+<p>Passive waiting after a reward switch contributes little before first sample; consumed exposure carries the update.</p>
+</article>
+<article class="card info">
+<div class="metric-label">2 · Reference survives current action</div>
+<div class="metric">ΔR² = .04895</div>
+<p>After flexible 0–2 s + 2–5 s action control, reference remains unique in fixed-window sustained DA (conditional P=.0449).</p>
+</article>
+<article class="card violet">
+<div class="metric-label">3 · Relative-value geometry</div>
+<div class="metric">U + · R −</div>
+<p>With early+concurrent action main effects controlled: U=+.815 (P=8.6×10⁻⁵), R=−2.211 (P=.00153), U−R P=5.9×10⁻⁵.</p>
+</article>
+<article class="card info">
+<div class="metric-label">4 · Temporal construction</div>
+<div class="metric">sampling first · reference later</div>
+<p>Prior within-bout sampling becomes strong around ~1–3 s; a positive reference coefficient appears around ~3–4.5 s. The fine-bin timing is suggestive after BH correction (q≈.076).</p>
+</article>
+<article class="card good">
+<div class="metric-label">5 · Dopamine contributes to persistence</div>
+<div class="metric">OR .690 ↔ 1.341</div>
+<p>Activation reduces termination hazard; contingent JAWS inhibition increases it. This supports causal contribution without proving full mediation.</p>
+</article>
+<article class="card warn">
+<div class="metric-label">6 · Expression is context dependent</div>
+<div class="metric">neural ≠ behavioral readout</div>
+<p>Stimulation history can alter later DA without reliable duration contrast, showing that reference memory, neural readout and overt behavior are separable layers.</p>
+</article>
+</div>
+<div class="callout">
+<strong>Cross-context support:</strong>
+      a frozen Natural-history state transfers to quinine/reward-quality data (ΔR²=.02540; clustered P=.00141; circular-shift P=.00205),
+      while direct stimulation history independently shows past-reference information in DA.
+      These results support a transferable reference computation, not identical temporal waveforms or identical output gain.
     </div>
-
-    <div class="cards-3">
-      <article class="card good">
-        <div class="metric-label">1 · Reference formation</div>
-        <div class="metric">Sampled, not clock-only</div>
-        <p>
-          Reward-history effects survive flexible temporal and local-sampling controls.
-          Passive clock terms alone do not explain the Natural effect.
-        </p>
-      </article>
-      <article class="card info">
-        <div class="metric-label">2 · Cross-context recency</div>
-        <div class="metric">91–98%</div>
-        <p>
-          Frozen α=.20 retains 91.1% of the Natural maximum, 97.9% of QE, and 97.5% of VTA stimulation.
-          This supports a shared broad recency regime.
-        </p>
-      </article>
-      <article class="card violet">
-        <div class="metric-label">3 · Comparator geometry</div>
-        <div class="metric">U:+0.762 · R:−0.721</div>
-        <p>
-          In Natural sustained DA, current utility and stored reference enter with opposing standardized coefficients
-          (P=.0022 and P=.028).
-        </p>
-      </article>
-      <article class="card info">
-        <div class="metric-label">4 · Contrast, not sum</div>
-        <div class="metric">P = 6.9×10⁻⁴</div>
-        <p>
-          The sustained contrast axis remains strong after sum control (β=1.638), while the sum axis is not significant (P=.244).
-        </p>
-      </article>
-      <article class="card good">
-        <div class="metric-label">5 · Neural/behavioral dissociation</div>
-        <div class="metric">DA+ · behavior−</div>
-        <p>
-          Prior VTA stimulation robustly changes later DA (past beyond controls + future P=5×10⁻⁵),
-          but not feeding duration (P=.742).
-        </p>
-      </article>
-      <article class="card warn">
-        <div class="metric-label">Claim boundary</div>
-        <div class="metric">Gain is contextual</div>
-        <p>
-          Positive-vs-negative direction asymmetry is formal in QE (P=.000527), but not established in Natural (P=.216)
-          or fully controlled stimulation (P=.197).
-        </p>
-      </article>
-    </div>
-
-    <figure class="figure">
-      <img src="assets/NEURON_QE_cross_task_recency_validation_v1.png" alt="Cross-task reward reference recency validation">
-      <figcaption>
-        <strong>Cross-task recency validation.</strong>
-        The important point is not that every task has the identical best α.
-        Their task-specific optima differ; α=.20 is valuable because it transfers without retuning and remains near each task’s maximum.
-      </figcaption>
-    </figure>
-
-    <div class="figure-grid">
-      <figure class="figure">
-        <img src="assets/NEURON_history_reference_specificity_v2.png" alt="History reference specificity controls">
-        <figcaption>
-          <strong>Specificity.</strong> The history-reference effect is not adequately reduced to generic serial persistence,
-          passive session drift, or simple amount of prior sampling.
-        </figcaption>
-      </figure>
-      <figure class="figure">
-        <img src="assets/NEURON_context_vs_comparison_geometry_v1.png" alt="Context versus comparison geometry">
-        <figcaption>
-          <strong>Geometry.</strong> Context labels and learned reference state are related but not interchangeable.
-          The analysis is designed to ask which coordinates of the reward history remain predictive after nuisance structure is removed.
-        </figcaption>
-      </figure>
-    </div>
-  </div>
+<div class="figure-grid">
+<figure class="figure">
+<img alt="History reference specificity controls" src="assets/NEURON_history_reference_specificity_v2.png"/>
+<figcaption><strong>Specificity.</strong> The reference is not adequately reduced to passive drift, generic serial persistence or simple prior-sampling amount.</figcaption>
+</figure>
+<figure class="figure">
+<img alt="Cross-task reward reference recency validation" src="assets/NEURON_QE_cross_task_recency_validation_v1.png"/>
+<figcaption><strong>Transfer.</strong> A broad recency regime generalizes without requiring an identical optimal α or identical waveform in every task.</figcaption>
+</figure>
+</div>
+</div>
 </section>
-
-<section id="action" class="alt">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Value versus action</div>
-        <h2>What does sustained VTA dopamine represent: value, action, or both?</h2>
-      </div>
-      <p>
+<section id="action">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Value versus action</div>
+<h2>What does sustained VTA dopamine represent: value, action, or both?</h2>
+</div>
+<p>
         Licking is not a trivial nuisance variable here. It is simultaneously the route through which reward is sampled,
         a source of sensory/motor feedback, and a behavioral output that can itself lie downstream of value and dopamine.
         The correct test is therefore whether current action <em>absorbs</em> the history/reference effect—not whether action correlates with dopamine.
       </p>
-    </div>
-
-    <div class="cards-3">
-      <article class="card warn">
-        <div class="metric-label">The coupling is real</div>
-        <div class="metric">r = .61</div>
-        <p>
+</div>
+<div class="cards-3">
+<article class="card warn">
+<div class="metric-label">The coupling is real</div>
+<div class="metric">r = .61</div>
+<p>
           Whole-bout lick count correlates with reference state (r=.611) and sustained DA (r=.392);
           bout duration correlates with reference state at r=.599. A pure “value versus movement” dichotomy is therefore biologically unrealistic.
         </p>
-      </article>
-      <article class="card good">
-        <div class="metric-label">Primary neural endpoint</div>
-        <div class="metric">fixed 2–5 s mean</div>
-        <p>
+</article>
+<article class="card good">
+<div class="metric-label">Primary neural endpoint</div>
+<div class="metric">fixed 2–5 s mean</div>
+<p>
           The main action-confound test uses mean DA in a fixed three-second window, not whole-bout AUC.
           It therefore does not mechanically grow because a bout is longer or contains more total licks.
         </p>
-      </article>
-      <article class="card info">
-        <div class="metric-label">Integrated interpretation</div>
-        <div class="metric">reference + action</div>
-        <p>
+</article>
+<article class="card info">
+<div class="metric-label">Integrated interpretation</div>
+<div class="metric">reference + action</div>
+<p>
           Sustained population DA is best described as a multiplexed signal:
           substantial ongoing sampling/action information plus a learned reward-reference component that current action does not absorb.
         </p>
-      </article>
-    </div>
-
-    <div class="callout">
-      <strong>Causal-order rule:</strong>
+</article>
+</div>
+<div class="callout">
+<strong>Causal-order rule:</strong>
       0–2 s licking is the preferred nuisance control for a 2–5 s neural endpoint.
       Concurrent 2–5 s licking is a stricter sensitivity analysis.
       Final bout duration and total lick count are deliberately treated as <em>over-control</em> because they include behavior occurring after the neural window begins
       and may partly sit downstream of dopamine-dependent persistence.
     </div>
-
-    <figure class="figure">
-      <img src="assets/NEURON_ED_value_vs_action_adjudication_v2.png" alt="Extended Data value versus action adjudication for sustained VTA dopamine">
-      <figcaption>
-        <strong>Value/action adjudication.</strong>
+<figure class="figure">
+<img alt="Extended Data value versus action adjudication for sustained VTA dopamine" src="assets/NEURON_ED_value_vs_action_adjudication_v2.png"/>
+<figcaption>
+<strong>Value/action adjudication.</strong>
         A, action and reference explain largely distinct portions of sustained-DA variance.
         B, within-bout sampling/action becomes strong before a later history-reference component emerges.
         C, current reward U and learned reference R retain opposite signs under temporally appropriate action controls.
         D, the reference effect survives nonlinear cross-fitted removal of action-related structure.
       </figcaption>
-    </figure>
-
-    <div class="cards-3">
-      <article class="card good">
-        <div class="metric-label">Partial variance</div>
-        <div class="metric">.049 vs .108</div>
-        <p>
+</figure>
+<div class="cards-3">
+<article class="card good">
+<div class="metric-label">Partial variance</div>
+<div class="metric">.049 vs .108</div>
+<p>
           With flexible early+concurrent action terms, reference contributes unique ΔR²=.04895 and action contributes unique ΔR²=.10791;
           their shared component is only ≈.00214. Action is substantial, but it is not the same information as reference.
         </p>
-      </article>
-      <article class="card good">
-        <div class="metric-label">Conditional permutation</div>
-        <div class="metric">P = .0449</div>
-        <p>
+</article>
+<article class="card good">
+<div class="metric-label">Conditional permutation</div>
+<div class="metric">P = .0449</div>
+<p>
           Reference remains after 0–2 s + 2–5 s action control: unique ΔR²=.04895, conditional P=.0449.
           Even whole-bout lick-count/rate/duration over-control leaves ΔR²=.03299, P=.0357.
         </p>
-      </article>
-      <article class="card info">
-        <div class="metric-label">Joint model</div>
-        <div class="metric">all three contribute</div>
-        <p>
+</article>
+<article class="card info">
+<div class="metric-label">Joint model</div>
+<div class="metric">all three contribute</div>
+<p>
           RWstate β=2.283 (P=.00171), 0–2 s licks β=.376 (P=.0165), and 2–5 s licks β=.554 (P=.000457).
           The data directly reject both “only value” and “only licking.”
         </p>
-      </article>
-    </div>
-
-    <div class="split" style="margin-top:18px">
-      <article class="card good">
-        <div class="metric-label">Relative-value signature after action control</div>
-        <h3>Current reward stays positive; learned reference stays negative</h3>
-        <p>
+</article>
+</div>
+<div class="split" style="margin-top:18px">
+<article class="card good">
+<div class="metric-label">Relative-value signature after action control</div>
+<h3>Current reward stays positive; learned reference stays negative</h3>
+<p>
           With early + concurrent action main effects controlled, current reward remains positive
           (U=+.815, P=8.6×10⁻⁵) and learned reference remains negative (R=−2.211, P=.00153).
           The corresponding U−R contrast is strongly positive (β=1.513, P=5.9×10⁻⁵).
         </p>
-        <p>
+<p>
           If reward×action interactions are made extremely flexible, U becomes unstable because reward strongly drives action;
           critically, R remains negative (−2.054, P=.00253). That is the more diagnostic history term.
         </p>
-      </article>
-      <article class="card info">
-        <div class="metric-label">Temporal decomposition</div>
-        <h3>Sampling/action comes first; reference appears later</h3>
-        <p>
+</article>
+<article class="card info">
+<div class="metric-label">Temporal decomposition</div>
+<h3>Sampling/action comes first; reference appears later</h3>
+<p>
           In 0.5-s bins, prior within-bout sampling becomes FDR-significant from approximately 1–1.5 s onward.
           The reference coefficient turns positive around 3 s and is nominally significant through 4.5 s.
           Across ten exploratory bins those late reference tests reach BH q≈.076, so this is mechanistic timing evidence—not a separate corrected discovery.
         </p>
-      </article>
-    </div>
-
-    <div class="cards-3" style="margin-top:16px">
-      <article class="card good">
-        <div class="metric-label">Exact early-action matching</div>
-        <div class="metric">9 / 11</div>
-        <p>
+</article>
+</div>
+<div class="cards-3" style="margin-top:16px">
+<article class="card good">
+<div class="metric-label">Exact early-action matching</div>
+<div class="metric">9 / 11</div>
+<p>
           Matching high- versus low-reference bouts within animal and reward on identical 0–2 s lick count leaves 55 pairs;
           9/11 animal effects are positive and the one-sided exact Wilcoxon P=.0415.
         </p>
-      </article>
-      <article class="card violet">
-        <div class="metric-label">Nonlinear sensitivity</div>
-        <div class="metric">3 / 3 learners</div>
-        <p>
+</article>
+<article class="card violet">
+<div class="metric-label">Nonlinear sensitivity</div>
+<div class="metric">3 / 3 learners</div>
+<p>
           Random Forest, ExtraTrees and HistGradientBoosting all leave a positive residual reference slope after nonlinear action removal;
           conditional permutation P=.0100, .0172 and .00170, respectively.
           Their held-animal DA nuisance prediction is weak, so this is a functional-form robustness test—not a prediction benchmark.
         </p>
-      </article>
-      <article class="card warn">
-        <div class="metric-label">Prediction boundary</div>
-        <div class="metric">OOF R² ≈ .05</div>
-        <p>
+</article>
+<article class="card warn">
+<div class="metric-label">Prediction boundary</div>
+<div class="metric">OOF R² ≈ .05</div>
+<p>
           On this strict 192-bout subset, held-animal prediction gains are not stable.
           These analyses answer a mechanistic confound question; they should not be presented as a cross-animal prediction headline.
         </p>
-      </article>
-    </div>
-
-    <div class="callout warn">
-      <strong>Manuscript-safe conclusion:</strong>
+</article>
+</div>
+<div class="callout warn">
+<strong>Manuscript-safe conclusion:</strong>
       do not say “dopamine reflects value rather than licking.”
       Say: <em>consumption-period VTA dopamine multiplexes ongoing reward sampling with a history-dependent reference signal.
       Current action explains substantial neural variance, but it does not absorb the learned-reference contribution.</em>
-    </div>
-
-    <div class="resource-grid" style="margin-top:20px">
-      <a class="resource" href="docs/NEURON_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md">
-        <b>Value-vs-action authority</b>
-        <span>Causal-order logic, full statistics, model boundaries and manuscript-safe claim.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_action_timecourse_v2.csv">
-        <b>0.5-s temporal decomposition</b>
-        <span>Reference, current-bin action and prior within-bout sampling with cluster tests and BH-FDR.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_action_DML_summary_v1.csv">
-        <b>Nonlinear cross-fit sensitivity</b>
-        <span>Random Forest, ExtraTrees and HistGradientBoosting residual-reference tests.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_action_UR_control_v2.csv">
-        <b>U / R action-control table</b>
-        <span>Current reward, learned reference, contrast and sum components across action-control levels.</span>
-      </a>
-    </div>
-  </div>
+</div>
+<div class="resource-grid" style="margin-top:20px">
+<a class="resource" href="docs/NEURON_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md">
+<b>Value-vs-action authority</b>
+<span>Causal-order logic, full statistics, model boundaries and manuscript-safe claim.</span>
+</a>
+<a class="resource" href="data/NEURON_value_action_timecourse_v2.csv">
+<b>0.5-s temporal decomposition</b>
+<span>Reference, current-bin action and prior within-bout sampling with cluster tests and BH-FDR.</span>
+</a>
+<a class="resource" href="data/NEURON_value_action_DML_summary_v1.csv">
+<b>Nonlinear cross-fit sensitivity</b>
+<span>Random Forest, ExtraTrees and HistGradientBoosting residual-reference tests.</span>
+</a>
+<a class="resource" href="data/NEURON_value_action_UR_control_v2.csv">
+<b>U / R action-control table</b>
+<span>Current reward, learned reference, contrast and sum components across action-control levels.</span>
+</a>
+</div>
+</div>
 </section>
-
-<section id="temporal">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Temporal biology</div>
-        <h2>The reference signal reorganizes during consumption</h2>
-      </div>
-      <p>
-        The strongest history-dependent relative-value signal is not a static offset at reward onset.
-        It changes sign and strength across pre-bout, early, and sustained epochs.
+<section class="alt" id="temporal">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Temporal biology</div>
+<h2>Sampling dominates early; history-relative value strengthens with continued consumption</h2>
+</div>
+<p>
+        Two temporal resolutions answer different questions.
+        Pre-specified broad windows provide the inferential result; 0.5-s bins provide a more exploratory view of biological ordering.
       </p>
+</div>
+<div class="timeline">
+<div class="phase pre">
+<div class="time">Before reward</div>
+<div class="beta">U−R β = −0.485</div>
+<p>P=.000235. Reward history is already represented before the current bout, but not in the same signed form as sustained relative value.</p>
+</div>
+<div class="phase early">
+<div class="time">Initial consumption · 0–2 s</div>
+<div class="beta">U−R β = +0.294</div>
+<p>P=.603. Signed relative value is weak while within-bout sampling/action begins to accumulate.</p>
+</div>
+<div class="phase sustain">
+<div class="time">Continued consumption · 2–5 s</div>
+<div class="beta">U−R β = +1.752</div>
+<p>P=.00893. History-relative utility becomes strongly expressed during the sustained consumption window.</p>
+</div>
+</div>
+<div class="callout">
+<strong>Primary temporal inference:</strong>
+      sustained − early U−R increases by +1.458 (P≈9×10⁻⁸), and 11/11 animals have a larger sustained than early slope.
+      The corresponding U+R sum axis does not show the same transition.
     </div>
-
-    <div class="timeline">
-      <div class="phase pre">
-        <div class="time">Pre-bout</div>
-        <div class="beta">β = −0.485</div>
-        <p>P=.000235. The history/reference axis is already present before the current bout, but with the opposite sign from sustained consumption.</p>
-      </div>
-      <div class="phase early">
-        <div class="time">Early · 0–2 s</div>
-        <div class="beta">β = +0.294</div>
-        <p>P=.603. There is little robust signed reference signal at initial reward onset.</p>
-      </div>
-      <div class="phase sustain">
-        <div class="time">Sustained · 2–5 s</div>
-        <div class="beta">β = +1.752</div>
-        <p>P=.00893. Relative valuation becomes strongly expressed during ongoing consumption.</p>
-      </div>
-    </div>
-
-    <div class="callout">
-      The <strong>sustained − early</strong> contrast change is highly reliable (P≈9×10⁻⁸).
-      In the same temporal analysis, the corresponding <strong>sum axis</strong> does not show the same transition.
-    </div>
-
-    <div class="split">
-      <div>
-        <h3>Why this matters for interpretation</h3>
-        <p>
-          The result is compatible with a progression from anticipatory/reference organization toward
-          consummatory valuation. It should not be described as if bulk GRAB-DA in a 2–5 s window were
-          identical to the canonical subsecond cue-locked TD prediction error.
+<div class="split">
+<article class="card info">
+<div class="metric-label">0.5-s mechanistic timing</div>
+<h3>Sampling/action appears first</h3>
+<p>
+          Prior within-bout sampling becomes FDR-significant from approximately 1–1.5 s onward.
+          This supports the idea that consumption itself is an early driver of the dopamine signal rather than a nuisance that should simply be removed.
         </p>
-        <p>
-          The safest biological wording is <strong>consummatory reference-dependent utility</strong> or
-          <strong>sampled-reference relative value</strong>.
+</article>
+<article class="card violet">
+<div class="metric-label">0.5-s mechanistic timing</div>
+<h3>Reference appears later</h3>
+<p>
+          The reference coefficient becomes positive around 3 s and is nominally significant through 4.5 s.
+          Across ten exploratory bins, these late reference tests reach BH q≈.076; use them as timing evidence, not as an independent corrected discovery.
         </p>
-      </div>
-      <div class="card info">
-        <div class="metric-label">Signed vs unsigned</div>
-        <div class="metric">ΔR² = .0187</div>
-        <p>
-          Signed reference error adds information beyond unsigned salience in sustained DA (P=.0328).
-          The reverse test is weak (unsigned beyond signed P=.375).
+</article>
+</div>
+<div class="split" style="margin-top:16px">
+<div>
+<h3>Biological interpretation</h3>
+<p>
+          The combined result favors a sequential computation:
+          sampled consumption first recruits a strong action/sensory component,
+          then sustained dopamine increasingly carries the value of the current reward relative to a stored reference.
         </p>
-      </div>
-    </div>
-  </div>
+<p>
+          This should not be described as if bulk GRAB-DA in a 2–5 s window were identical to the canonical subsecond cue-locked TD prediction error.
+          The safer terms are <strong>consummatory reference-dependent utility</strong> and <strong>sampled-reference relative value</strong>.
+        </p>
+</div>
+<div class="card info">
+<div class="metric-label">Signed vs unsigned</div>
+<div class="metric">ΔR² = .0187</div>
+<p>
+          Signed reference error adds information beyond unsigned salience in sustained DA (P=.0328);
+          unsigned beyond signed is weak (P=.375).
+        </p>
+</div>
+</div>
+</div>
 </section>
-
-<section id="dissociation" class="alt">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Critical dissociation</div>
-        <h2>A reward reference can be neural without becoming gross behavioral contrast</h2>
-      </div>
-      <p>
+<section id="dissociation">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Critical dissociation</div>
+<h2>A reward reference can be neural without becoming gross behavioral contrast</h2>
+</div>
+<p>
         The interleaved VTA stimulation dataset is not a failed behavioral dataset.
         It is a mechanistically useful separation between reference memory, neural readout, and behavioral expression.
       </p>
-    </div>
-
-    <div class="cards-4">
-      <div class="card good">
-        <div class="metric-label">Past history → DA</div>
-        <div class="metric">P = 0.00010</div>
-        <p>Circular-shift test for the lick-level stimulation history reference.</p>
-      </div>
-      <div class="card good">
-        <div class="metric-label">Past | controls + future</div>
-        <div class="metric">ΔR² = .002524</div>
-        <p>Conditional permutation P=5×10⁻⁵ after current condition, local adaptation, slow sampling, and future-reference controls.</p>
-      </div>
-      <div class="card info">
-        <div class="metric-label">Animal consistency</div>
-        <div class="metric">10 / 13</div>
-        <p>Animals show the expected past-reference direction; Wilcoxon P=.0215.</p>
-      </div>
-      <div class="card warn">
-        <div class="metric-label">Past history → duration</div>
-        <div class="metric">P = .742</div>
-        <p>No reliable gross feeding-duration expression of the same reference state.</p>
-      </div>
-    </div>
-
-    <figure class="figure">
-      <img src="assets/NEURON_STIM13_licklevel_reference_v1.png" alt="Lick-level VTA stimulation reward reference analysis">
-      <figcaption>
-        <strong>Direct-circuit reward history.</strong>
+</div>
+<div class="cards-4">
+<div class="card good">
+<div class="metric-label">Past history → DA</div>
+<div class="metric">P = 0.00010</div>
+<p>Circular-shift test for the lick-level stimulation history reference.</p>
+</div>
+<div class="card good">
+<div class="metric-label">Past | controls + future</div>
+<div class="metric">ΔR² = .002524</div>
+<p>Conditional permutation P=5×10⁻⁵ after current condition, local adaptation, slow sampling, and future-reference controls.</p>
+</div>
+<div class="card info">
+<div class="metric-label">Animal consistency</div>
+<div class="metric">10 / 13</div>
+<p>Animals show the expected past-reference direction; Wilcoxon P=.0215.</p>
+</div>
+<div class="card warn">
+<div class="metric-label">Past history → duration</div>
+<div class="metric">P = .742</div>
+<p>No reliable gross feeding-duration expression of the same reference state.</p>
+</div>
+</div>
+<figure class="figure">
+<img alt="Lick-level VTA stimulation reward reference analysis" src="assets/NEURON_STIM13_licklevel_reference_v1.png"/>
+<figcaption>
+<strong>Direct-circuit reward history.</strong>
         The critical advance is reconstructing the reference from actual ON/OFF lick identity, rather than using bout duration as a coarse proxy.
         The lick-level history survives local and slow adaptation controls.
       </figcaption>
-    </figure>
-
-    <div class="callout warn">
-      <strong>Biological implication:</strong>
+</figure>
+<div class="callout warn">
+<strong>Biological implication:</strong>
       absence of behavioral contrast does not imply absence of reward memory.
       A reward reference may persist and be read out neurally while downstream comparison or action circuits fail to convert it into measurable behavior.
     </div>
-
-    <div class="split">
-      <div>
-        <h3>Shared neural–behavioral timescale</h3>
-        <p>
+<div class="split">
+<div>
+<h3>Shared neural–behavioral timescale</h3>
+<p>
           α=.20 was selected using held-animal dopamine prediction alone, then frozen before independent behavioral tests.
           The DA-defined state predicts log-duration behavior (β=.476, P=.00566) and termination hazard
           (β=−.780, OR=.459, P=.000180).
         </p>
-      </div>
-      <div>
-        <h3>But this is not mediation proof</h3>
-        <p>
+</div>
+<div>
+<h3>But this is not mediation proof</h3>
+<p>
           The safest conclusion is a <strong>shared reference axis</strong> used by both neural and behavioral outputs.
           The stimulation dissociation shows that neural reference expression alone is not sufficient for gross feeding behavior.
           Causal mediation remains an experimental question.
         </p>
-      </div>
-    </div>
-
-    <figure class="figure">
-      <img src="assets/NEURON_joint_neural_behavior_value_axis_v1.png" alt="Joint neural and behavioral reward-reference axis">
-      <figcaption>
-        <strong>Cross-modal state transfer.</strong> The same reference timescale links dopamine and persistence-related behavioral endpoints,
+</div>
+</div>
+<figure class="figure">
+<img alt="Joint neural and behavioral reward-reference axis" src="assets/NEURON_joint_neural_behavior_value_axis_v1.png"/>
+<figcaption>
+<strong>Cross-modal state transfer.</strong> The same reference timescale links dopamine and persistence-related behavioral endpoints,
         while the joint observational models do not justify claiming complete dopamine mediation.
       </figcaption>
-    </figure>
-  </div>
+</figure>
+</div>
 </section>
-
-<section id="alternatives">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Mechanistic adjudication</div>
-        <h2>What the competing models explain — and where they stop</h2>
-      </div>
-      <p>
+<section class="alt" id="contexts">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Value-context atlas</div>
+<h2>Reward history is one component of a broader value-construction space</h2>
+</div>
+<p>
+        The older project already included sensory quality, motivational state, sickness/devaluation,
+        causal dopamine drive and slow pharmacological state. These manipulations should not all be called “history-reference tests.”
+        Their value is to show which parts of the broader value geometry move when reward, body state or dopamine is altered.
+      </p>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Manipulation</th>
+<th>Design / cohort</th>
+<th>Behavior</th>
+<th>Dopamine</th>
+<th>How it enters the story</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>100E + quinine</strong></td>
+<td>7 animals, 172 bouts; fixed 100E concentration, sensory quality lowered by 3 mM quinine</td>
+<td>Duration 41.0 → 5.08 s; 7/7 lower, exact P=.015625</td>
+<td>AUC 79.0 → 3.06; AUC/s 1.68 → .878; 7/7 lower, exact P=.015625</td>
+<td>Clean reward-quality axis. Also supplies the independent QE history-transfer dataset.</td>
+</tr>
+<tr>
+<td><strong>VTA DA stimulation · 13-animal cohort</strong></td>
+<td>Fixed 20E, 1 mW / 25 ms, 1,833 bouts</td>
+<td>Duration 6.61 → 9.36 s; 12/13 higher, paired P=.00806</td>
+<td>AUC −1.51 → 19.40; AUC/s −.361 → 1.926; 13/13 higher</td>
+<td>Causal high-value movement; later lick-level reconstruction shows direct stimulation-history reference.</td>
+</tr>
+<tr>
+<td><strong>VTA DA stimulation · independent 5-animal cohort</strong></td>
+<td>10 mW GRAB-matched cohort, 774 bouts</td>
+<td>5/5 animals increase duration</td>
+<td>5/5 increase AUC, AUC/s and PeakF</td>
+<td>Independent replication that the causal dopamine manipulation moves the broader value axis upward.</td>
+</tr>
+<tr>
+<td><strong>Hunger / food restriction</strong></td>
+<td>Fixed 20E, 7 animals, 851 bouts</td>
+<td>Duration 7.22 → 17.84 s; 6/7 higher, paired P=.03125</td>
+<td>Total AUC higher in 6/7, paired P=.046875; AUC/s is less uniform</td>
+<td>Motivational-state transformation of current utility; not yet a direct reference-memory test.</td>
+</tr>
+<tr>
+<td><strong>LiCl sickness / devaluation</strong></td>
+<td>Fixed 100E, 7 animals, pre vs post LiCl</td>
+<td>7/7 duration lower post-LiCl; mean paired difference 7.68 s, P=.015625</td>
+<td>AUC lower post-LiCl in 6/7; mean paired difference 12.54, P=.03125</td>
+<td>Internal-state/devaluation axis. Shows value movement but does not identify within-session reward-history α.</td>
+</tr>
+<tr>
+<td><strong>Semaglutide</strong></td>
+<td>Slow GLP-1R pharmacological state</td>
+<td>Suppresses feeding with recovery across repeated treatment</td>
+<td>Suppresses consumption-linked DA, with slow recovery</td>
+<td>Bridge to homeostatic utility and prior Science work; kept separate from direct history-reference claims.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cards-3" style="margin-top:22px">
+<article class="card info">
+<div class="metric-label">Frozen natural value axis</div>
+<div class="metric">quinine ↓</div>
+<p>
+          Natural 100E-versus-20E dopamine defines the axis without quinine data.
+          Quinine then moves 7/7 animals toward the low-value direction; mean cosine is approximately .894 in the primary frozen analysis.
+        </p>
+</article>
+<article class="card good">
+<div class="metric-label">Frozen natural value axis</div>
+<div class="metric">stimulation ↑</div>
+<p>
+          The 13-animal stimulation cohort moves strongly toward the high-value direction
+          (raw AUC/AUC/s 13/13 positive; current figure-level projection is positive in 12/13).
+          The independent 5-animal cohort is 5/5 positive.
+        </p>
+</article>
+<article class="card warn">
+<div class="metric-label">Interpretation boundary</div>
+<div class="metric">Geometry ≠ same dynamics</div>
+<p>
+          Quinine and stimulation align with a comparison-like value direction, but their temporal trajectories are not uniquely better fit by U−R than by generic ramp/step alternatives.
+          Cross-context generality therefore belongs to <strong>value geometry</strong>; the specific temporal U−R computation is identified in the matched-history experiment.
+        </p>
+</article>
+</div>
+<div class="callout">
+<strong>Why this distinction matters:</strong>
+      history/reference, sensory quality, hunger, illness and dopamine stimulation can all move value, but they enter the architecture at different layers.
+      The current biological model uses these manipulations to separate <em>current utility</em>, <em>reference formation</em> and <em>readout/expression</em> rather than forcing every manipulation into one latent variable.
+    </div>
+</div>
+</section>
+<section id="series">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Complete result series</div>
+<h2>From the model-free phenomenon to a mechanistic reward-reference architecture</h2>
+</div>
+<p>
+        The project did not begin with a chosen latent-state model. It progressed through seven increasingly restrictive questions:
+        whether identical rewards differ after different histories; what updates the history state; whether that state is continuous and deeper than local adaptation;
+        whether strong alternative models absorb it; when the comparison appears in dopamine; whether the computation generalizes; and whether dopamine contributes to persistence.
+      </p>
+</div>
+<div class="callout">
+<strong>How to read this section:</strong>
+      Figures 1–7 are the current science-rebuild progression. The later sections of this page add the newer 2026-10-03/04
+      persistence–expression and biological-model analyses on top of this established series; they do not replace it.
+    </div>
+<article class="series-chapter">
+<div class="series-copy">
+<div class="series-index">01</div>
+<h3>Identical current rewards acquire different value after different histories</h3>
+<p>
+          The starting result is deliberately model free. The same current 100E or 20E reward is compared after different recent histories.
+          Feeding persistence and 2–5 s sustained VTA dopamine both show the aligned reference effect in <strong>9/9 animals</strong>
+          (exact Wilcoxon P=.003906 for each).
+        </p>
+<p>
+          The effect is also positive in all nine animals across 2–4, 2–5, 2.5–5 and 3–5 s windows,
+          so the phenomenon is not created by one hand-picked late interval.
+        </p>
+<div class="result-strip">
+<span><b>9/9</b> behavior</span>
+<span><b>9/9</b> sustained DA</span>
+<span><b>P=.003906</b> exact paired test</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 1 identical current rewards after different reward histories" src="assets/Fig1_NEURON_REBUILD_FIG1_same_reward_history_v2.png"/>
+<figcaption><strong>Figure 1.</strong> Same physical reward, different recent reference, different persistence and sustained dopamine value.</figcaption>
+</figure>
+</article>
+<article class="series-chapter reverse">
+<div class="series-copy">
+<div class="series-index">02</div>
+<h3>Sampled consumption, not passive waiting, updates the reference</h3>
+<p>
+          A passive-time explanation predicts the internal state should move after a programmed switch even before the animal samples the new reward.
+          It does not: across candidate passive time constants from 5 to 640 s, the maximal added sustained-DA R² before first sample is only about <strong>.004</strong>.
+        </p>
+<p>
+          Once consumption begins, sampled exposure carries graded information.
+          In the updated action adjudication, the reference remains unique after flexible 0–2 s action control
+          (ΔR²=.0543, conditional P=.0464), after 0–2 + 2–5 s action control
+          (ΔR²=.04895, P=.0449), and even after conservative whole-bout action over-control
+          (ΔR²=.03299, P=.0357).
+        </p>
+<div class="result-strip">
+<span><b>~0</b> passive-clock gain</span>
+<span><b>ΔR²=.04895</b> after 0–5 s action control</span>
+<span><b>P=.0449</b> conditional permutation</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 2 consumption updates reward reference" src="assets/Fig2_NEURON_REBUILD_FIG2_consumption_updates_reference_v3.png"/>
+<figcaption><strong>Figure 2.</strong> Elapsed time alone is insufficient; actual reward sampling carries update information.</figcaption>
+</figure>
+</article>
+<article class="series-chapter">
+<div class="series-copy">
+<div class="series-index">03</div>
+<h3>A continuous state generalizes across animals and retains deeper reward path</h3>
+<p>
+          The continuous reference is useful because it is more informative than either current reward or categorical context.
+          Held-out-animal sustained-DA R² increases from <strong>.038</strong> for current reward alone to <strong>.123</strong> with context and
+          <strong>.175</strong> with the continuous history state; context + state reaches .178.
+        </p>
+<p>
+          Within fixed context, residual dopamine rises monotonically across history-state quartiles.
+          After current reward, bout stage, block time, session progression, previous-block history and current-block consumption are controlled,
+          deeper cumulative history still adds ΔR²=.02686 (conditional P=.00670).
+        </p>
+<p>
+          The recency profile is broad, with a Natural-task optimum around α≈.15–.16. The point is an effective memory scale,
+          not a claim that the brain contains an exact synaptic α.
+        </p>
+<div class="result-strip">
+<span><b>R² .038→.175</b> held animal</span>
+<span><b>ΔR²=.02686</b> deep history</span>
+<span><b>P=.00670</b> conditional permutation</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 3 continuous history state and deeper path" src="assets/Fig3_NEURON_REBUILD_FIG3_continuous_history_deeppath_v3.png"/>
+<figcaption><strong>Figure 3.</strong> A continuous history coordinate captures within-context value and information beyond local switch adaptation.</figcaption>
+</figure>
+</article>
+<article class="series-chapter reverse">
+<div class="series-copy">
+<div class="series-index">04</div>
+<h3>Strong alternative models capture adaptation, but do not absorb cumulative path</h3>
+<p>
+          The model room deliberately includes strong competitors rather than weak straw baselines:
+          belief/HMM state inference, average reward rate, Pearce–Hall/uncertainty, adaptive gain, distributional analogues and recurrent Value-RNNs.
+          Several predict held-out dopamine reasonably well; prediction ranking alone therefore does not identify the biological computation.
+        </p>
+<p>
+          The decisive analysis is bidirectional unique information. FullHistory remains unique beyond belief
+          (ΔR²=.0254, P=.0124), continuous HMM (.0266, P=.0090), average reward rate (.0256, P=.0122),
+          Value-RNN (.0269, P=.0128), and Value-RNN + elapsed time (.0269, P=.0078).
+          Reverse increments are small and generally not detected.
+        </p>
+<p>
+          A nominal low-capacity H=2 RNN exception did not survive family-wise max-stat correction or a dedicated 12-seed confirmation.
+          Distributional spread likewise adds essentially no population-photometry information beyond the central history state (P=.941).
+        </p>
+<div class="result-strip">
+<span><b>Belief/HMM</b> insufficient</span>
+<span><b>Reward rate</b> insufficient</span>
+<span><b>RNN latent</b> insufficient</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 4 model room" src="assets/Fig4_NEURON_REBUILD_FIG4_model_room_v3.png"/>
+<figcaption><strong>Figure 4.</strong> Model comparison is used to identify information that competitors fail to absorb, not to crown a universal prediction winner.</figcaption>
+</figure>
+</article>
+<article class="series-chapter">
+<div class="series-copy">
+<div class="series-index">05</div>
+<h3>Current reward becomes relative to stored history over the first seconds of consumption</h3>
+<p>
+          In the same 192 post-switch bouts from 11 animals, the U−R coefficient is negative before feeding (β=−.485),
+          weak during 0–2 s (β=+.294), and strongly positive during 2–5 s (β=+1.752).
+          The sustained-minus-early increase is +1.458 with P=9.02×10⁻⁸, and <strong>11/11</strong> animals have a larger sustained than early slope
+          (exact P=.000977).
+        </p>
+<p>
+          This is not a pre-baseline subtraction artifact: on raw non-pre-subtracted z-signal,
+          early U−R remains absent (β=−.191, P=.718) while 2–5 s U−R is already positive (β=+1.267, P=.0399).
+          U+R does not show the corresponding temporal growth.
+        </p>
+<div class="result-strip">
+<span><b>β −.485→+.294→+1.752</b></span>
+<span><b>P=9×10⁻⁸</b> sustained−early</span>
+<span><b>11/11</b> animals</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 5 temporal construction of relative value" src="assets/Fig5_NEURON_REBUILD_FIG5_temporal_construction_v2.png"/>
+<figcaption><strong>Figure 5.</strong> The history-dependent comparison is constructed during ongoing consumption rather than appearing as a fixed onset response.</figcaption>
+</figure>
+</article>
+<article class="series-chapter reverse">
+<div class="series-copy">
+<div class="series-index">06</div>
+<h3>The history computation sits inside a broader value space</h3>
+<p>
+          The Natural-task α=.20 state was frozen and transferred to an independent quinine/reward-quality task.
+          In 66 strict pure-100E bouts from seven animals, the frozen state adds ΔR²=.02540 to whole-bout DA AUC
+          (clustered P=.00141; within-animal circular-shift P=.00205); 6/7 animal slopes are positive.
+        </p>
+<p>
+          Orthogonal manipulations also align with a value direction defined only by Natural 100E-versus-20E dopamine:
+          quinine moves downward; VTA stimulation moves upward; hunger and LiCl occupy the same broader geometry but with weaker/less uniform sustained-DA effects.
+          This establishes general value geometry without claiming every context reproduces the same temporal history computation.
+        </p>
+<div class="result-strip">
+<span><b>QE ΔR²=.02540</b></span>
+<span><b>P=.00141</b> clustered</span>
+<span><b>P=.00205</b> circular shift</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 6 generalization across value contexts" src="assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png"/>
+<figcaption><strong>Figure 6.</strong> Frozen history transfer and orthogonal value manipulations separate transferable reference computation from broader value-space alignment.</figcaption>
+</figure>
+</article>
+<article class="series-chapter">
+<div class="series-copy">
+<div class="series-index">07</div>
+<h3>Consumption-period dopamine contributes to feeding persistence</h3>
+<p>
+          A history-state scale chosen from held-animal dopamine alone transfers to behavior:
+          termination OR=.459, P=.000180. Causal manipulation converges on the same persistence axis.
+          Dopamine activation during consumption reduces termination hazard (OR=.690, 95% CI .615–.775, P=3.29×10⁻¹⁰);
+          contingent JAWS inhibition increases hazard (OR=1.341, 95% CI 1.031–1.746, P=.0289).
+        </p>
+<p>
+          Noncontingent inhibition is weaker and not conventionally significant (OR=1.116, P=.0976);
+          the contingent-versus-noncontingent interaction is borderline (P=.0515).
+          The appropriate conclusion is that dopamine contributes to persistence, not that the entire history→DA→behavior chain has been proven as complete mediation.
+        </p>
+<div class="result-strip">
+<span><b>OR=.459</b> natural state</span>
+<span><b>OR=.690</b> activation</span>
+<span><b>OR=1.341</b> contingent JAWS</span>
+</div>
+</div>
+<figure class="figure">
+<img alt="Figure 7 behavior and causal dopamine" src="assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png"/>
+<figcaption><strong>Figure 7.</strong> Natural reference state and bidirectional dopamine perturbations converge on feeding persistence while leaving mediation as an open causal question.</figcaption>
+</figure>
+</article>
+<div class="callout">
+<strong>What the original seven-figure series established:</strong>
+      history changes the value of an identical reward; actual sampling updates the reference; the state is continuous and retains deeper path;
+      strong alternative state models do not absorb that path; relative value emerges over seconds of consumption; the rule transfers across reward contexts;
+      and consumption-period dopamine contributes functionally to persistence.
+      The newer sections below refine <em>why</em> some contexts express the reference neurally, behaviorally, or both.
+    </div>
+</div>
+</section>
+<section class="alt" id="alternatives">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Mechanistic adjudication</div>
+<h2>What the competing models explain — and where they stop</h2>
+</div>
+<p>
         These models are biologically useful only when they make distinguishable predictions.
         The table therefore separates “not sufficient here” from “biologically impossible” — those are not the same claim.
       </p>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Mechanism</th>
-            <th>Biological meaning</th>
-            <th>Current evidence</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Sampled reward reference</strong></td>
-            <td>Experienced rewards update a compact recency-weighted reference.</td>
-            <td>Natural + QE + VTA stimulation; frozen cross-task recency; past&gt;future controls.</td>
-            <td><span class="badge support">Core support</span></td>
-          </tr>
-          <tr>
-            <td><strong>Relative-value comparator</strong></td>
-            <td>Current utility and prior reference exert opposing influences.</td>
-            <td>U:+.762, R:−.721; contrast survives sum control.</td>
-            <td><span class="badge support">Core support</span></td>
-          </tr>
-          <tr>
-            <td><strong>Context-dependent comparator gain</strong></td>
-            <td>Positive/negative mismatch can be expressed with different gains in different reward contexts.</td>
-            <td>QE asymmetry P=.000527; Natural and fully controlled stimulation do not establish universal asymmetry.</td>
-            <td><span class="badge support">Supported</span></td>
-          </tr>
-          <tr>
-            <td><strong>Tobler adaptive gain</strong></td>
-            <td>Dopamine rescales error by recent reward variance/range.</td>
-            <td>Fixed reference retains unique information beyond adaptive gain; adaptive gain adds little beyond it.</td>
-            <td><span class="badge secondary">Secondary</span></td>
-          </tr>
-          <tr>
-            <td><strong>Pearce–Hall adaptive α</strong></td>
-            <td>Surprise changes how quickly reward updates the reference.</td>
-            <td>No robust unique advantage over fixed recency in current Natural data.</td>
-            <td><span class="badge notprimary">Not required</span></td>
-          </tr>
-          <tr>
-            <td><strong>Multi-timescale reference</strong></td>
-            <td>Fast and slow reward memories jointly define expectation.</td>
-            <td>Not uniquely required in current sessions, but slow timescales are poorly identified.</td>
-            <td><span class="badge open">Open</span></td>
-          </tr>
-          <tr>
-            <td><strong>Bayesian / HMM belief</strong></td>
-            <td>Animal infers a hidden environmental state.</td>
-            <td>FullHistory remains unique beyond HMM/belief; reverse unique effects are weak.</td>
-            <td><span class="badge secondary">Not sufficient</span></td>
-          </tr>
-          <tr>
-            <td><strong>Niv average reward rate</strong></td>
-            <td>Long-run reward rate sets vigor/opportunity cost.</td>
-            <td>Reference remains unique beyond average reward rate; reward-rate state adds little beyond reference.</td>
-            <td><span class="badge secondary">Separate process</span></td>
-          </tr>
-          <tr>
-            <td><strong>Homeostatic RL</strong></td>
-            <td>Internal physiological state changes current utility.</td>
-            <td>Strongly plausible for hunger/LiCl/semaglutide; present designs do not identify whether H changes R or α.</td>
-            <td><span class="badge open">High priority</span></td>
-          </tr>
-          <tr>
-            <td><strong>Distributional dopamine</strong></td>
-            <td>Different DA neurons encode different expectiles / asymmetric errors.</td>
-            <td>Bulk GRAB-DA cannot resolve this; negative-RPE subpopulations cannot be excluded.</td>
-            <td><span class="badge open">Untested modality</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="callout">
-      <strong>Important distinction:</strong>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Biological meaning</th>
+<th>Current evidence</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sampled reward reference</strong></td>
+<td>Experienced rewards update a compact recency-weighted reference.</td>
+<td>Natural + QE + VTA stimulation; frozen cross-task recency; past&gt;future controls.</td>
+<td><span class="badge support">Core support</span></td>
+</tr>
+<tr>
+<td><strong>Relative-value comparator</strong></td>
+<td>Current utility and prior reference exert opposing influences.</td>
+<td>U:+.762, R:−.721; contrast survives sum control.</td>
+<td><span class="badge support">Core support</span></td>
+</tr>
+<tr>
+<td><strong>Context-dependent comparator gain</strong></td>
+<td>Positive/negative mismatch can be expressed with different gains in different reward contexts.</td>
+<td>QE asymmetry P=.000527; Natural and fully controlled stimulation do not establish universal asymmetry.</td>
+<td><span class="badge support">Supported</span></td>
+</tr>
+<tr>
+<td><strong>Tobler adaptive gain</strong></td>
+<td>Dopamine rescales error by recent reward variance/range.</td>
+<td>Fixed reference retains unique information beyond adaptive gain; adaptive gain adds little beyond it.</td>
+<td><span class="badge secondary">Secondary</span></td>
+</tr>
+<tr>
+<td><strong>Pearce–Hall adaptive α</strong></td>
+<td>Surprise changes how quickly reward updates the reference.</td>
+<td>No robust unique advantage over fixed recency in current Natural data.</td>
+<td><span class="badge notprimary">Not required</span></td>
+</tr>
+<tr>
+<td><strong>Multi-timescale reference</strong></td>
+<td>Fast and slow reward memories jointly define expectation.</td>
+<td>Not uniquely required in current sessions, but slow timescales are poorly identified.</td>
+<td><span class="badge open">Open</span></td>
+</tr>
+<tr>
+<td><strong>Bayesian / HMM belief</strong></td>
+<td>Animal infers a hidden environmental state.</td>
+<td>FullHistory remains unique beyond HMM/belief; reverse unique effects are weak.</td>
+<td><span class="badge secondary">Not sufficient</span></td>
+</tr>
+<tr>
+<td><strong>Niv average reward rate</strong></td>
+<td>Long-run reward rate sets vigor/opportunity cost.</td>
+<td>Reference remains unique beyond average reward rate; reward-rate state adds little beyond reference.</td>
+<td><span class="badge secondary">Separate process</span></td>
+</tr>
+<tr>
+<td><strong>Homeostatic RL</strong></td>
+<td>Internal physiological state changes current utility.</td>
+<td>Strongly plausible for hunger/LiCl/semaglutide; present designs do not identify whether H changes R or α.</td>
+<td><span class="badge open">High priority</span></td>
+</tr>
+<tr>
+<td><strong>Distributional dopamine</strong></td>
+<td>Different DA neurons encode different expectiles / asymmetric errors.</td>
+<td>Bulk GRAB-DA cannot resolve this; negative-RPE subpopulations cannot be excluded.</td>
+<td><span class="badge open">Untested modality</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout">
+<strong>Important distinction:</strong>
       “the model does not absorb the present history-reference effect” is a narrower and more defensible statement than
       “the mechanism does not exist in the brain.”
     </div>
-  </div>
+</div>
 </section>
-
-<section id="csnc" class="alt">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Classical reward contrast</div>
-        <h2>Our VTA signal and classical cSNC should be connected, not collapsed into one mechanism</h2>
-      </div>
-      <p>
+<section id="robustness">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Robustness &amp; sensitivity</div>
+<h2>Earlier analyses that constrain what the main result is — and is not</h2>
+</div>
+<p>
+        These controls are not separate stories. They define the boundaries of the reward-reference claim:
+        how deep the memory is, whether temporal emergence is an analysis artifact, whether a more nonlinear comparator is required,
+        whether recurrent models discover a missing latent dimension, and which generalizations remain provisional.
+      </p>
+</div>
+<div class="cards-3">
+<article class="card info">
+<div class="metric-label">Memory depth</div>
+<div class="metric">P = .00620</div>
+<p>
+          No single prev1–prev4 block lag provides a clean independent cutoff. Yet after multiple lag summaries,
+          total prior consumption and global-history summaries are all entered, the continuous recency-weighted state remains significant.
+          The memory therefore looks like a smooth compressed trajectory rather than “exactly the previous N blocks.”
+        </p>
+</article>
+<article class="card good">
+<div class="metric-label">Raw-signal control</div>
+<div class="metric">β = +1.267</div>
+<p>
+          On non-pre-subtracted raw z-signal, early 0–2 s U−R is absent (β=−.191, P=.718) while sustained 2–5 s U−R is already positive
+          (β=+1.267, P=.0399). Temporal emergence is therefore not manufactured by subtracting a negative pre-bout baseline.
+        </p>
+</article>
+<article class="card violet">
+<div class="metric-label">Normalization family</div>
+<div class="metric">11 / 11 folds</div>
+<p>
+          Nested held-animal divisive-normalization fits drive normalization strength to the weakest tested boundary in all 11 folds
+          and do not improve prediction over the near-linear U−R comparator. Reference-dependent nonlinear gain terms likewise add no reliable benefit.
+        </p>
+</article>
+<article class="card info">
+<div class="metric-label">Recurrent-state sensitivity</div>
+<div class="metric">H=2 exception resolves</div>
+<p>
+          The nominal reward-only H=2 RNN increment (ΔR²≈.0153, nominal P≈.0226) does not survive 12-model max-stat correction
+          (family-wise P≈.0646) and disappears in a dedicated 12-seed H=2 confirmation
+          (RNN|FullHistory ΔR²≈.00443, P≈.186). FullHistory remains significant beyond the confirmed RNN.
+        </p>
+</article>
+<article class="card good">
+<div class="metric-label">RNN capacity confirmation</div>
+<div class="metric">ΔR² ≈ .0269</div>
+<p>
+          At H=50 with 12-seed ensembles, reward-only and reward+time RNNs do not stably improve held-animal DA prediction
+          (relative MAE ≈1.011 and 1.013). FullHistory still adds ≈.0269 unique R² (P≈.0128 and .0078),
+          whereas the RNN contributes only ~4–5×10⁻⁵ beyond FullHistory (P≈.86).
+        </p>
+</article>
+<article class="card warn">
+<div class="metric-label">Cohort boundary</div>
+<div class="metric">P = .474</div>
+<p>
+          Leave-one-cohort-out FullHistory effects stay positive, but reduced subsets lose power and the animal-level exact cohort-label permutation is P=.474.
+          The data therefore do not justify claiming perfect cohort invariance or a distinct VGLUT2-specific mechanism.
+        </p>
+</article>
+</div>
+<div class="split" style="margin-top:24px">
+<div class="card good">
+<div class="metric-label">QE whole-bout robustness</div>
+<h3>The transfer is not created only by long bouts</h3>
+<p>
+          Allowing FullHistory to interact with log(duration) gives interaction P=.382.
+          At mean duration, the centered history effect remains positive (β≈65.91, clustered P=.0114).
+          This excludes the simplest explanation that QE whole-bout AUC works only because very long bouts show a special history effect.
+        </p>
+</div>
+<div class="card info">
+<div class="metric-label">QE temporal expression</div>
+<h3>Shared computation, different waveform</h3>
+<p>
+          In strict duration≥20 s pure-100E bouts, a positive history cluster is already present pre-bout,
+          becomes weak around onset, and re-emerges strongly at approximately 8–12 s and 13–20 s.
+          The cross-task result is therefore a shared history computation, not a claim of fixed latency or waveform.
+        </p>
+</div>
+</div>
+<div class="cards-3" style="margin-top:16px">
+<article class="card info">
+<div class="metric-label">Equivalent-state calibration</div>
+<div class="metric">quinine ≈ −3 units</div>
+<p>
+          Descriptively mapping external manipulations onto the Natural FullHistory behavior scale gives quinine ≈−3.14 duration-state units
+          and −2.67 hazard-state units. This is a calibration, not evidence that quinine literally edits the FullHistory latent state.
+        </p>
+</article>
+<article class="card good">
+<div class="metric-label">Equivalent-state calibration</div>
+<div class="metric">stim ≈ +0.4–0.8</div>
+<p>
+          The 13-animal stimulation cohort maps to approximately +.49 duration-state / +.42 hazard-state units,
+          while the independent 5-animal cohort maps to about +.81 / +.63. Two behavioral readouts agree in direction and scale.
+        </p>
+</article>
+<article class="card warn">
+<div class="metric-label">Task boundary</div>
+<div class="metric">Do not manufacture negatives</div>
+<p>
+          Stauffer marginal utility, Masset future-discount timescales and feature-specific RPE require reward-level,
+          independent delay or feature manipulations that this design does not contain.
+          They remain explicit design boundaries rather than being forced into artificial negative results.
+        </p>
+</article>
+</div>
+<div class="callout">
+<strong>Why keep these results visible:</strong>
+      they show that the current model survived several places where an apparently strong story could have broken —
+      window choice, baseline subtraction, local-history summaries, recurrent capacity, nonlinear normalization and cross-task duration structure —
+      while also preserving honest boundaries where the present design is underidentified.
+    </div>
+</div>
+</section>
+<section class="alt" id="csnc">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Classical reward contrast</div>
+<h2>Our VTA signal and classical cSNC should be connected, not collapsed into one mechanism</h2>
+</div>
+<p>
         Successive negative contrast is classically defined by behavioral suppression after reward downshift.
         Lesion and circuit work suggests that storing a prior reward and expressing a behavioral comparison can be separable.
       </p>
-    </div>
-
-    <div class="cards-3">
-      <article class="card info">
-        <h3>Gustatory thalamus</h3>
-        <p>
+</div>
+<div class="cards-3">
+<article class="card info">
+<h3>Gustatory thalamus</h3>
+<p>
           GT lesions abolish consummatory SNC even when the retention interval is extended from minutes to 24 h,
           arguing against a simple “prior reward was forgotten” account. GT lesions can also dissociate consummatory from instrumental SNC.
         </p>
-      </article>
-      <article class="card violet">
-        <h3>Insula and amygdala</h3>
-        <p>
+</article>
+<article class="card violet">
+<h3>Insula and amygdala</h3>
+<p>
           Insular and BLA/CeA studies implicate reward-comparison and negative-affect circuitry.
           Recent c-Fos work further suggests that sufficiently large reward disparity recruits amygdala circuits associated with true cSNC.
         </p>
-      </article>
-      <article class="card good">
-        <h3>VTA / NAc dopamine</h3>
-        <p>
+</article>
+<article class="card good">
+<h3>VTA / NAc dopamine</h3>
+<p>
           Dopamine can carry relative incentive value, but our seconds-long consummatory signal is not identical to every classical reward-loss effect.
           Different output circuits may determine whether the neural comparison becomes behavior.
         </p>
-      </article>
-    </div>
-
-    <div class="quote">
+</article>
+</div>
+<div class="quote">
       Reward contrast is not necessarily a unitary response to reward loss.
       It can be treated as the behavioral expression of a multi-stage computation:
       reward experience establishes a reference, current utility is evaluated relative to it,
       and context-specific circuits determine whether the comparison appears in dopamine, behavior, or both.
     </div>
-  </div>
+</div>
 </section>
-
 <section id="predictions">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Falsifiable next steps</div>
-        <h2>Experiments that separate the layers</h2>
-      </div>
-      <p>
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Falsifiable next steps</div>
+<h2>Experiments that separate the layers</h2>
+</div>
+<p>
         The strongest next experiments are not more model variants on the same data.
         They orthogonalize variables that the present designs partially confound.
       </p>
-    </div>
-
-    <div class="cards-2">
-      <article class="card good">
-        <div class="metric-label">Priority 0</div>
-        <h3>Homeostatic state × interleaved reward identity</h3>
-        <p>
+</div>
+<div class="cards-2">
+<article class="card good">
+<div class="metric-label">Priority 0</div>
+<h3>Homeostatic state × interleaved reward identity</h3>
+<p>
           Interleave two reward qualities in hungry vs sated animals and PBS vs semaglutide.
           Estimate separately: current utility shift, α, stored R, comparator gain, and DA-to-behavior coupling.
         </p>
-        <p class="small"><strong>Decisive question:</strong> does physiological state alter U only, or also change reference formation/readout?</p>
-      </article>
-
-      <article class="card good">
-        <div class="metric-label">Priority 0</div>
-        <h3>Delay × number of reward samples</h3>
-        <p>
+<p class="small"><strong>Decisive question:</strong> does physiological state alter U only, or also change reference formation/readout?</p>
+</article>
+<article class="card good">
+<div class="metric-label">Priority 0</div>
+<h3>Delay × number of reward samples</h3>
+<p>
           Factorially vary elapsed time and the number/value of intervening reward samples.
           A sample-updated reference predicts sample count/value should dominate passive delay after matching.
         </p>
-      </article>
-
-      <article class="card good">
-        <div class="metric-label">Priority 0</div>
-        <h3>Balanced upshift vs downshift</h3>
-        <p>
+</article>
+<article class="card good">
+<div class="metric-label">Priority 0</div>
+<h3>Balanced upshift vs downshift</h3>
+<p>
           Match positive and negative mismatch magnitude, current reward statistics, and reward variance.
           This is required to identify g<sub>+</sub> and g<sub>−</sub> without current-condition confounding.
         </p>
-      </article>
-
-      <article class="card good">
-        <div class="metric-label">Priority 0</div>
-        <h3>DA mediation vs parallel readout</h3>
-        <p>
+</article>
+<article class="card good">
+<div class="metric-label">Priority 0</div>
+<h3>DA mediation vs parallel readout</h3>
+<p>
           Match bouts for pre-existing R and perturb sustained VTA DA during consumption.
           If behavior changes while R is fixed, DA has a mediating/gating role; if not, reference can drive parallel output circuits.
         </p>
-      </article>
-
-      <article class="card info">
-        <div class="metric-label">Priority 1</div>
-        <h3>VTA + BLA / insula / gustatory thalamus</h3>
-        <p>
+</article>
+<article class="card info">
+<div class="metric-label">Priority 1</div>
+<h3>VTA + BLA / insula / gustatory thalamus</h3>
+<p>
           Record VTA relative-value while perturbing classical reward-loss circuits in a matched downshift/upshift task.
           Test whether negative behavioral contrast depends on comparison circuits beyond VTA reference coding.
         </p>
-      </article>
-
-      <article class="card info">
-        <div class="metric-label">Priority 1–2</div>
-        <h3>Variance, ambiguity, long memory and single cells</h3>
-        <p>
+</article>
+<article class="card info">
+<div class="metric-label">Priority 1–2</div>
+<h3>Variance, ambiguity, long memory and single cells</h3>
+<p>
           Manipulate reward variance to test adaptive gain; cue ambiguity to test belief-state inference;
           long delays/cross-day carryover to test slow references; and cellular-resolution VTA recordings to test distributional coding.
         </p>
-      </article>
-    </div>
-
-    <p class="small">
+</article>
+</div>
+<p class="small">
       A machine-readable prediction matrix is available below so each mechanism can be tied to a specific manipulation and discriminating outcome.
     </p>
-  </div>
+</div>
 </section>
-
-<section id="resources" class="alt">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">Evidence & provenance</div>
-        <h2>Download the exact authority tables</h2>
-      </div>
-      <p>
+<section class="alt" id="resources">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="section-kicker">Evidence &amp; provenance</div>
+<h2>Download the exact authority tables</h2>
+</div>
+<p>
         The page is a narrative layer over frozen analysis outputs. These links expose the exact current evidence tables and authority notes used for the claims above.
       </p>
-    </div>
-
-    <div class="resource-grid">
-      <a class="resource" href="data/NEURON_biological_model_adjudication_v1.csv">
-        <b>Biological model adjudication</b>
-        <span>Mechanism → biological meaning → evidence → current status → decisive next test.</span>
-      </a>
-      <a class="resource" href="data/NEURON_biological_model_experiment_predictions_v1.csv">
-        <b>Experiment prediction matrix</b>
-        <span>Falsifiable predictions for delay, state, asymmetry, mediation and circuit experiments.</span>
-      </a>
-      <a class="resource" href="data/NEURON_three_context_reference_evidence_v1.csv">
-        <b>Three-context evidence</b>
-        <span>Natural, QE and VTA stimulation direct-history evidence.</span>
-      </a>
-      <a class="resource" href="data/NEURON_three_task_shared_recency_summary_v1.csv">
-        <b>Shared recency summary</b>
-        <span>Frozen α transfer and fraction of each task’s maximal effect retained.</span>
-      </a>
-      <a class="resource" href="data/standardized_U_R_alloutcomes.csv">
-        <b>U vs R decomposition</b>
-        <span>Separate current-utility and reference coefficients for DA and behavioral endpoints.</span>
-      </a>
-      <a class="resource" href="data/contrast_vs_sum_decomposition_alpha02_v2.csv">
-        <b>Contrast vs sum</b>
-        <span>Direct test of relative comparison versus additive reward state.</span>
-      </a>
-      <a class="resource" href="data/NEURON_temporal_contrast_vs_sum_interactions_v3.csv">
-        <b>Temporal transformation</b>
-        <span>Pre, early, sustained and difference contrasts for comparison vs sum axes.</span>
-      </a>
-      <a class="resource" href="data/NEURON_reference_direction_asymmetry_adjudication_v1.csv">
-        <b>Direction asymmetry authority</b>
-        <span>Formal current-reward × reference interactions across Natural, QE and stimulation.</span>
-      </a>
-      <a class="resource" href="data/NEURON_STIM13_fullhistory_conditional_perm_v1.csv">
-        <b>Stim13 conditional permutation</b>
-        <span>Past vs future reference under full local and slow-history controls.</span>
-      </a>
-      <a class="resource" href="data/NEURON_rw_DAonly_independent_behavior_hazard_v1.csv">
-        <b>DA-only α → behavior transfer</b>
-        <span>Behavior and hazard effects after α was selected only from held-animal DA prediction.</span>
-      </a>
-      <a class="resource" href="docs/REWARD_CONTRAST_BIOLOGICAL_MODEL_AUTHORITY_v1_20261004.md">
-        <b>Full biological model authority</b>
-        <span>Detailed interpretation, claim boundaries, model alternatives and experiments.</span>
-      </a>
-      <a class="resource" href="docs/REWARD_CONTRAST_STIM_LICKLEVEL_AUTHORITY_v1_20261004.md">
-        <b>VTA stimulation authority</b>
-        <span>Detailed lick-level reconstruction, local controls and neural/behavioral dissociation.</span>
-      </a>
-      <a class="resource" href="docs/NEURON_GLOBAL_SUMMARY_CN_v8_20260928.md">
-        <b>Full pre-October global summary</b>
-        <span>Chinese authority capturing the complete earlier series, context expansions, model room and claim boundaries.</span>
-      </a>
-      <a class="resource" href="docs/NEURON_MAIN_FIGURE_LEGENDS_v4.md">
-        <b>Seven-figure legends</b>
-        <span>Exact Fig1–Fig7 narrative and primary statistics for the science-rebuild progression.</span>
-      </a>
-      <a class="resource" href="docs/NEURON_MODEL_EVIDENCE_AUTHORITY_v10_20260928.md">
-        <b>Model evidence authority v10</b>
-        <span>Detailed competitor definitions, unique-information tests and model-room interpretation.</span>
-      </a>
-      <a class="resource" href="docs/REWARD_CONTRAST_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md">
-        <b>Value versus action authority</b>
-        <span>Joint action/reference models, exact action-count matching, causal ordering and claim boundaries.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_vs_action_joint_coefficients_v1.csv">
-        <b>Reference + action joint coefficients</b>
-        <span>RWstate, early 0–2 s licks and concurrent 2–5 s licks in the same clustered model.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_vs_action_exact_strata_v1.csv">
-        <b>Exact action-stratum tests</b>
-        <span>Continuous RW effect after exact current-reward and lick-count matching.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_action_conditional_perm_v1.csv">
-        <b>Action-control conditional permutation</b>
-        <span>Reference-state ΔR² after early, concurrent and whole-bout action controls.</span>
-      </a>
-      <a class="resource" href="data/NEURON_value_action_information_criteria_v1.csv">
-        <b>Action vs reference model complexity</b>
-        <span>R², adjusted R², AIC and BIC for base, reference, action-only and joint models.</span>
-      </a>
-      <a class="resource" href="docs/NEURON_FIGURE_VISUAL_QC_20261004.md">
-        <b>Figure visual-QC audit</b>
-        <span>Source-level repairs and SVG overlap audit for the current Fig1–Fig7 set.</span>
-      </a>
-    </div>
-
-    <h3 style="margin-top:40px">Selected literature anchors</h3>
-    <ol class="citation-list">
-      <li>Tobler PN, Fiorillo CD, Schultz W. Adaptive coding of reward value by dopamine neurons. <em>Science</em> (2005). <a href="https://doi.org/10.1126/science.1105370">DOI</a></li>
-      <li>Schultz W. Dopamine reward prediction error coding. <em>Nat Rev Neurosci</em> (2016). <a href="https://doi.org/10.1038/nrn.2015.26">DOI</a></li>
-      <li>Niv Y et al. Tonic dopamine: opportunity costs and response vigor. <em>Psychopharmacology</em> (2007). <a href="https://doi.org/10.1007/s00213-006-0502-4">DOI</a></li>
-      <li>Keramati M, Gutkin B. Homeostatic reinforcement learning. <em>eLife</em> (2014). <a href="https://doi.org/10.7554/eLife.04811">DOI</a></li>
-      <li>Starkweather CK et al. Dopamine and belief-state inference. <em>Neuron</em> (2018). <a href="https://doi.org/10.1016/j.neuron.2018.03.036">DOI</a></li>
-      <li>Dabney W et al. A distributional code for value in dopamine-based reinforcement learning. <em>Nature</em> (2020). <a href="https://doi.org/10.1038/s41586-019-1924-6">DOI</a></li>
-      <li>Reilly S, Trifunovic R. Gustatory thalamus and consummatory contrast. <em>Behav Neurosci</em> (1999). PMID 10636302.</li>
-      <li>Reilly S, Trifunovic R. Instrumental and consummatory SNC after gustatory thalamus lesions. <em>Behav Neurosci</em> (2003). <a href="https://doi.org/10.1037/0735-7044.117.3.606">DOI</a></li>
-      <li>Lin JY, Roman C, Reilly S. Insular cortex and consummatory successive negative contrast. <em>Behav Neurosci</em> (2009). PMID 19634939.</li>
-      <li>Genn RF, Ahn S, Phillips AG. Attenuated NAc dopamine after incentive downshift. <em>Behav Neurosci</em> (2004). <a href="https://doi.org/10.1037/0735-7044.118.4.869">DOI</a></li>
-    </ol>
-
-    <div class="callout warn">
-      <strong>Prepublication note.</strong>
+</div>
+<div class="resource-grid">
+<a class="resource" href="docs/NEURON_LATEST_BIOLOGICAL_SYNTHESIS_v1_20261004.md">
+<b>Latest biological synthesis</b>
+<span>Current biological sequence, strongest results, claim hierarchy, manuscript-safe paragraph and primary authorities.</span>
+</a>
+<a class="resource" href="data/NEURON_biological_model_adjudication_v1.csv">
+<b>Biological model adjudication</b>
+<span>Mechanism → biological meaning → evidence → current status → decisive next test.</span>
+</a>
+<a class="resource" href="data/NEURON_biological_model_experiment_predictions_v1.csv">
+<b>Experiment prediction matrix</b>
+<span>Falsifiable predictions for delay, state, asymmetry, mediation and circuit experiments.</span>
+</a>
+<a class="resource" href="data/NEURON_three_context_reference_evidence_v1.csv">
+<b>Three-context evidence</b>
+<span>Natural, QE and VTA stimulation direct-history evidence.</span>
+</a>
+<a class="resource" href="data/NEURON_three_task_shared_recency_summary_v1.csv">
+<b>Shared recency summary</b>
+<span>Frozen α transfer and fraction of each task’s maximal effect retained.</span>
+</a>
+<a class="resource" href="data/standardized_U_R_alloutcomes.csv">
+<b>U vs R decomposition</b>
+<span>Separate current-utility and reference coefficients for DA and behavioral endpoints.</span>
+</a>
+<a class="resource" href="data/contrast_vs_sum_decomposition_alpha02_v2.csv">
+<b>Contrast vs sum</b>
+<span>Direct test of relative comparison versus additive reward state.</span>
+</a>
+<a class="resource" href="data/NEURON_temporal_contrast_vs_sum_interactions_v3.csv">
+<b>Temporal transformation</b>
+<span>Pre, early, sustained and difference contrasts for comparison vs sum axes.</span>
+</a>
+<a class="resource" href="data/NEURON_reference_direction_asymmetry_adjudication_v1.csv">
+<b>Direction asymmetry authority</b>
+<span>Formal current-reward × reference interactions across Natural, QE and stimulation.</span>
+</a>
+<a class="resource" href="data/NEURON_STIM13_fullhistory_conditional_perm_v1.csv">
+<b>Stim13 conditional permutation</b>
+<span>Past vs future reference under full local and slow-history controls.</span>
+</a>
+<a class="resource" href="data/NEURON_rw_DAonly_independent_behavior_hazard_v1.csv">
+<b>DA-only α → behavior transfer</b>
+<span>Behavior and hazard effects after α was selected only from held-animal DA prediction.</span>
+</a>
+<a class="resource" href="docs/REWARD_CONTRAST_BIOLOGICAL_MODEL_AUTHORITY_v1_20261004.md">
+<b>Full biological model authority</b>
+<span>Detailed interpretation, claim boundaries, model alternatives and experiments.</span>
+</a>
+<a class="resource" href="docs/REWARD_CONTRAST_STIM_LICKLEVEL_AUTHORITY_v1_20261004.md">
+<b>VTA stimulation authority</b>
+<span>Detailed lick-level reconstruction, local controls and neural/behavioral dissociation.</span>
+</a>
+<a class="resource" href="docs/NEURON_GLOBAL_SUMMARY_CN_v8_20260928.md">
+<b>Full pre-October global summary</b>
+<span>Chinese authority capturing the complete earlier series, context expansions, model room and claim boundaries.</span>
+</a>
+<a class="resource" href="docs/NEURON_MAIN_FIGURE_LEGENDS_v4.md">
+<b>Seven-figure legends</b>
+<span>Exact Fig1–Fig7 narrative and primary statistics for the science-rebuild progression.</span>
+</a>
+<a class="resource" href="docs/NEURON_MODEL_EVIDENCE_AUTHORITY_v10_20260928.md">
+<b>Model evidence authority v10</b>
+<span>Detailed competitor definitions, unique-information tests and model-room interpretation.</span>
+</a>
+<a class="resource" href="docs/REWARD_CONTRAST_VALUE_VS_ACTION_AUTHORITY_v1_20261004.md">
+<b>Value versus action authority</b>
+<span>Joint action/reference models, exact action-count matching, causal ordering and claim boundaries.</span>
+</a>
+<a class="resource" href="data/NEURON_value_vs_action_joint_coefficients_v1.csv">
+<b>Reference + action joint coefficients</b>
+<span>RWstate, early 0–2 s licks and concurrent 2–5 s licks in the same clustered model.</span>
+</a>
+<a class="resource" href="data/NEURON_value_vs_action_exact_strata_v1.csv">
+<b>Exact action-stratum tests</b>
+<span>Continuous RW effect after exact current-reward and lick-count matching.</span>
+</a>
+<a class="resource" href="data/NEURON_value_action_conditional_perm_v1.csv">
+<b>Action-control conditional permutation</b>
+<span>Reference-state ΔR² after early, concurrent and whole-bout action controls.</span>
+</a>
+<a class="resource" href="data/NEURON_value_action_information_criteria_v1.csv">
+<b>Action vs reference model complexity</b>
+<span>R², adjusted R², AIC and BIC for base, reference, action-only and joint models.</span>
+</a>
+<a class="resource" href="docs/NEURON_FIGURE_VISUAL_QC_20261004.md">
+<b>Figure visual-QC audit</b>
+<span>Source-level repairs and SVG overlap audit for the current Fig1–Fig7 set.</span>
+</a>
+</div>
+<h3 style="margin-top:40px">Selected literature anchors</h3>
+<ol class="citation-list">
+<li>Tobler PN, Fiorillo CD, Schultz W. Adaptive coding of reward value by dopamine neurons. <em>Science</em> (2005). <a href="https://doi.org/10.1126/science.1105370">DOI</a></li>
+<li>Schultz W. Dopamine reward prediction error coding. <em>Nat Rev Neurosci</em> (2016). <a href="https://doi.org/10.1038/nrn.2015.26">DOI</a></li>
+<li>Niv Y et al. Tonic dopamine: opportunity costs and response vigor. <em>Psychopharmacology</em> (2007). <a href="https://doi.org/10.1007/s00213-006-0502-4">DOI</a></li>
+<li>Keramati M, Gutkin B. Homeostatic reinforcement learning. <em>eLife</em> (2014). <a href="https://doi.org/10.7554/eLife.04811">DOI</a></li>
+<li>Starkweather CK et al. Dopamine and belief-state inference. <em>Neuron</em> (2018). <a href="https://doi.org/10.1016/j.neuron.2018.03.036">DOI</a></li>
+<li>Dabney W et al. A distributional code for value in dopamine-based reinforcement learning. <em>Nature</em> (2020). <a href="https://doi.org/10.1038/s41586-019-1924-6">DOI</a></li>
+<li>Reilly S, Trifunovic R. Gustatory thalamus and consummatory contrast. <em>Behav Neurosci</em> (1999). PMID 10636302.</li>
+<li>Reilly S, Trifunovic R. Instrumental and consummatory SNC after gustatory thalamus lesions. <em>Behav Neurosci</em> (2003). <a href="https://doi.org/10.1037/0735-7044.117.3.606">DOI</a></li>
+<li>Lin JY, Roman C, Reilly S. Insular cortex and consummatory successive negative contrast. <em>Behav Neurosci</em> (2009). PMID 19634939.</li>
+<li>Genn RF, Ahn S, Phillips AG. Attenuated NAc dopamine after incentive downshift. <em>Behav Neurosci</em> (2004). <a href="https://doi.org/10.1037/0735-7044.118.4.869">DOI</a></li>
+</ol>
+<div class="callout warn">
+<strong>Prepublication note.</strong>
       Publishing this folder with GitHub Pages can make the scientific summary and copied evidence tables externally accessible.
       Confirm repository visibility and the intended audience before enabling public Pages.
     </div>
-  </div>
+</div>
 </section>
 </main>
-
 <footer class="footer">
-  <div class="container footer-inner">
-    <span>Reward-reference / VTA dopamine mechanistic analysis</span>
-    <span>Page authority: 2026-10-04 · analysis commits 690fda9 · 1082d7d · 95b4cd3</span>
-  </div>
+<div class="container footer-inner">
+<span>Reward-reference / VTA dopamine mechanistic analysis</span>
+<span>Page authority: 2026-10-04 · biological synthesis v1 · value/action adjudication v2</span>
+</div>
 </footer>
 </body>
 </html>
