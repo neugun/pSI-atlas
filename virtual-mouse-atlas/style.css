@@ -177,3 +177,22 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
   .world-hero-stats{grid-template-columns:1fr 1fr}
   .world-hero-stat .v{font-size:17px}
 }
+
+.world-view-toggle{display:flex;gap:6px;align-items:center;margin:0 0 12px}
+.world-view-toggle button{border:1px solid var(--line);background:#fff;padding:7px 11px;font-size:11px;font-weight:700;cursor:pointer}
+.world-view-toggle button.active{background:#111;color:#fff;border-color:#111}
+.world-event-note{font-size:11px;line-height:1.5;color:var(--muted);margin:-4px 0 12px}
+.event-dict{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.event-dict span{display:inline-block;border:1px solid var(--line);background:#fff;padding:3px 6px;font-size:10px}
+
+.world-event-heatmap{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+.world-event-heatmap[hidden]{display:none}
+.world-controls select:disabled,.world-controls button:disabled{opacity:.45;cursor:not-allowed}
+
+#worldFutureMap[hidden],#worldLegend[hidden]{display:none!important}
+
+.colour-legend{display:flex;align-items:center;gap:6px;min-height:15px;margin-top:5px;font-size:9px;color:var(--muted)}
+.colour-legend .grad{display:inline-block;width:90px;height:7px;border-radius:5px;border:1px solid rgba(0,0,0,.08)}
+.grad-distance{background:linear-gradient(90deg,#d95f0e,#2b8cbe)}
+.grad-head{background:linear-gradient(90deg,#2ca25f,#756bb1)}
+.grad-obsp{background:linear-gradient(90deg,#e7eef0,#c84b35)}

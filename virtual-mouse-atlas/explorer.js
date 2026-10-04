@@ -22,13 +22,29 @@ function socialColor(prob){
   const t=clamp((Number(prob)-0.08)/0.78,0,1);
   return mix("#e7eef0","#c84b35",t);
 }
+function distanceColor(cm){
+  const t=clamp((Number(cm)-3)/27,0,1);
+  return mix("#d95f0e","#2b8cbe",t);
+}
+function socialHeadColor(deg){
+  const t=clamp(Number(deg)/180,0,1);
+  return mix("#2ca25f","#756bb1",t);
+}
 const socialFacing1247=m=>[1,2,4,7].includes(Number(m));
+function renderColourLegend(){
+  const box=$("#colourLegend");if(!box)return;
+  if(S.colour==="distance")box.innerHTML='<span>3 cm · near</span><i class="grad grad-distance"></i><span>30+ cm · far</span>';
+  else if(S.colour==="head")box.innerHTML='<span>0° · toward DEM</span><i class="grad grad-head"></i><span>180° · away</span>';
+  else if(S.colour==="social")box.innerHTML='<span>low P</span><i class="grad grad-obsp"></i><span>high P</span>';
+  else box.innerHTML="";
+}
 function colorOf(p){
   if(S.colour==="motif")return D.motifs[p.motif-1].color;
   if(S.colour==="social1247")return socialFacing1247(p.motif) ? "#3a9d5d" : "#e2e5e5";
   if(S.colour==="social")return socialColor(p.social_prob_rep);
-  if(S.colour==="dem")return p.dem_rep ? "#d97706" : "#e3e3e3";
-  return mix("#ececec","#542788",clamp((p.quality-.45)/.55,0,1));
+  if(S.colour==="distance")return distanceColor(p.social_distance_cm);
+  if(S.colour==="head")return socialHeadColor(p.head_direction_obs_deg);
+  return D.motifs[p.motif-1].color;
 }
 function mapToScreen(x,y){
   const sx=baseX+(x-extent.x0)*baseScale,sy=baseY+(extent.y1-y)*baseScale;
@@ -57,12 +73,18 @@ function draw(){
 
   // Keep the established social-facing motif structure separate from
   // the conservative v5 Observation probability/inference layer.
-  if((S.colour==="social" || S.colour==="social1247") && Array.isArray(D.framewise)){
+  if((S.colour==="social" || S.colour==="social1247" || S.colour==="distance" || S.colour==="head") && Array.isArray(D.framewise)){
     for(const q of D.framewise){
       if(S.motif && q[2]!==S.motif)continue;
       const [x,y]=mapToScreen(q[0],q[1]);if(x<-3||y<-3||x>W+3||y>H+3)continue;
       if(S.colour==="social"){
         ctx.globalAlpha=.55;ctx.fillStyle=socialColor(q[3]);
+      }else if(S.colour==="distance"){
+        if(!Number.isFinite(Number(q[7])))continue;
+        ctx.globalAlpha=.60;ctx.fillStyle=distanceColor(q[7]);
+      }else if(S.colour==="head"){
+        if(!Number.isFinite(Number(q[8])))continue;
+        ctx.globalAlpha=.60;ctx.fillStyle=socialHeadColor(q[8]);
       }else{
         const hit=socialFacing1247(q[2]);ctx.globalAlpha=hit?.72:.08;ctx.fillStyle=hit?"#3a9d5d":"#d9dddd";
       }
@@ -78,7 +100,7 @@ function draw(){
   ctx.globalAlpha=1;
   for(const p of pts){
     const [x,y]=mapToScreen(p.x,p.y);if(x<-8||y<-8||x>W+8||y>H+8)continue;
-    const layered=(S.colour==="social"||S.colour==="social1247");
+    const layered=(S.colour==="social"||S.colour==="social1247"||S.colour==="distance"||S.colour==="head");
     let rr=layered?1.45:2.15;
     if(hover&&hover.id===p.id)rr=4.8;
     if(S.selected&&S.selected.id===p.id)rr=6.2;
@@ -261,7 +283,7 @@ radiusInput.addEventListener("input",()=>{S.radius=+radiusInput.value;radiusVal.
 $("#moreBtn").onclick=()=>{if(!S.center)return;S.page++;refreshClips();};
 $("#resetBtn").onclick=()=>{Object.assign(S,{motif:null,selected:null,center:null,zoom:1,panX:0,panY:0,page:0});renderMotifs();draw();refreshClips();};
 $("#fullBtn").onclick=()=>{const ex=$("#explorer");if(!document.fullscreenElement)ex.requestFullscreen&&ex.requestFullscreen();else document.exitFullscreen&&document.exitFullscreen();};
-$("#colourBtns").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;S.colour=b.dataset.v;document.querySelectorAll("#colourBtns button").forEach(x=>x.classList.toggle("active",x===b));draw();});
+$("#colourBtns").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;S.colour=b.dataset.v;document.querySelectorAll("#colourBtns button").forEach(x=>x.classList.toggle("active",x===b));renderColourLegend();draw();});
 window.addEventListener("resize",resize);document.addEventListener("fullscreenchange",()=>setTimeout(resize,50));
 
 function setupHeroMetrics(){
@@ -293,7 +315,7 @@ function setupHeroMetrics(){
 setupHeroMetrics();
 
 fetch("data/atlas.json").then(r=>r.json()).then(data=>{
-  D=data;renderMotifs();renderCards();resize();
+  D=data;renderMotifs();renderCards();renderColourLegend();resize();
   const first=D.points.find(p=>p.id===D.default_point_id)||D.points[0];if(first)selectPoint(first);
 }).catch(err=>{console.error(err);title.textContent="Could not load atlas data";});
 })();
