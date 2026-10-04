@@ -23,9 +23,28 @@
     .download-card { border:1px solid var(--line); background:#fff; border-radius:14px; padding:16px; }
     .download-card a { font-weight:800; }
     .chain { font-size:clamp(19px,2.6vw,29px); line-height:1.45; }
+    .container, .hero-stat, .card, .section-head > *, .download-card, details, figure { min-width:0; }
+    .eyebrow { max-width:100%; white-space:normal; flex-wrap:wrap; overflow-wrap:anywhere; }
+    .hero h1, .hero .lede, .hero-stat, .card, .download-card, details, figcaption { overflow-wrap:anywhere; word-break:normal; }
+    section { scroll-margin-top:86px; }
+    html { scroll-padding-top:86px; }
+    .evidence-legend { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 0; }
+    .evidence-legend span { display:inline-flex; gap:6px; align-items:center; padding:6px 9px; border:1px solid var(--line); border-radius:999px; background:#fff; font-size:11px; color:#52677a; }
     @media (max-width:760px) {
       .download-grid { grid-template-columns:1fr; }
       .metric-table { font-size:12px; }
+    }
+    @media (max-width:620px) {
+      .hero h1 { font-size:clamp(30px,9vw,36px); line-height:1.04; letter-spacing:-.035em; }
+      .hero .lede { font-size:16.5px; line-height:1.48; }
+      .hero-stat strong { font-size:22px; }
+      .hero-stat { padding:14px 15px; }
+      .eyebrow { font-size:10.5px; line-height:1.35; border-radius:12px; }
+      .topbar-inner { overflow:hidden; }
+      nav a { font-size:12px; }
+      .table-wrap { max-width:100%; }
+      table { min-width:680px; }
+      .equation { padding:18px 16px; font-size:18px; }
     }
   </style>
 </head>
@@ -42,6 +61,7 @@
       <a href="#feed">Feed</a>
       <a href="#agent">Agent</a>
       <a href="#vta">VTA</a>
+      <a href="#architecture">Architecture</a>
       <a href="#causality">Causality</a>
       <a href="#generalization">Generalization</a>
       <a href="#external">External</a>
@@ -70,8 +90,8 @@
         <span>68,624 held-animal events define the formal SLM prediction contract.</span>
       </div>
       <div class="hero-stat">
-        <strong>Brier .1708</strong>
-        <span>Full SLM; it beats all eight classical RL baselines in 27/27 animals.</span>
+        <strong>Brier .1654</strong>
+        <span>SLM + choice persistence: best parsimonious SLM head; near the full-history prediction ceiling.</span>
       </div>
       <div class="hero-stat">
         <strong>+7.54 pp</strong>
@@ -107,6 +127,13 @@
       <div class="card good"><div class="series-index">10</div><h3>The principle generalizes</h3><p>Food-neophobia, fear, rat, macaque, human, Aeon and marmoset results constrain what is conserved.</p></div>
     </div>
   </div>
+
+
+    <div class="evidence-legend">
+      <span><span class="status pass">CURRENT</span> numerically re-audited / frozen authority</span>
+      <span><span class="status boundary">RECOVERED</span> biologically important historical result; exact source may still need re-pin</span>
+      <span><span class="status provisional">PROVISIONAL</span> directional or incomplete mechanistic closure</span>
+    </div>
 </section>
 
 <section id="phenotype" class="alt">
@@ -123,6 +150,7 @@
       </p>
     </div>
 
+    <p class="mobile-note small">Swipe the table horizontally for all columns →</p>
     <div class="table-wrap">
       <table class="metric-table">
         <thead><tr><th>Discovery</th><th>Result</th><th>Interpretation</th><th>Status</th></tr></thead>
@@ -212,6 +240,19 @@
       <div class="card violet"><div class="metric-label">Cross-day prior</div><div class="metric">29/40</div><p>Chronological day order ranks 1/501 against day shuffles (P=.001996); a retained prior improves 29/40 animals (P=.0125) and fades by ~event 50.</p></div>
     </div>
 
+    <h3 style="margin-top:28px">Learning is expressed as better conversion and better credit assignment, not simply more observation</h3>
+    <div class="cards-3">
+      <div class="card good"><div class="metric-label">Strict cohort</div><div class="metric">27 vs 13</div><p>27 learners and 13 non-learners define the supplementary learning contrast. Primary predictive modeling remains learner-only.</p></div>
+      <div class="card info"><div class="metric-label">Conversion learning</div><div class="metric">+.126 vs −.097</div><p>Observe→Feed conversion progress is positive in learners and negative in non-learners; historical group P≈.00147.</p></div>
+      <div class="card violet"><div class="metric-label">Learner-linked neural coordinate</div><div class="metric">APE × SRI ρ=.667</div><p>The strongest learner-linked SLM result is neural APE coupling, not a binary learner/non-learner difference in model gain.</p></div>
+    </div>
+
+    <div class="callout warn">
+      <strong>Guardrail:</strong> non-learners are not “dopamine-null.”
+      Earlier data indicate that outcome/reward responses can remain present while social credit assignment or updating fails.
+      This makes the biological problem one of assigning social information to useful action, rather than merely generating reward responses.
+    </div>
+
     <div class="callout">
       <strong>Biological consequence:</strong>
       the data require at least two learning timescales. Fast outcome-conditioned policy adjustment and slower accumulated state/value should not be collapsed into one “memory” variable.
@@ -234,8 +275,9 @@
         <h2>SLM is the best biological predictor of SOE</h2>
       </div>
       <p>
-        SLM is treated as the project’s best predictor because it is the strongest mechanistically constrained model across
-        behavior, neural timing, causal perturbation and generative validation — not merely because of one leaderboard metric.
+        SLM is the project’s <strong>best predictive framework</strong>: it combines near-ceiling held-out behavior with the only coherent prediction of
+        neural timing, causal perturbation, model recovery and generative organization. A black-box model can win a narrow behavioral leaderboard
+        by a few thousandths of Brier, but it does not replace the SLM as the best predictor of the biological system.
         Flexible history networks remain explicit capacity ceilings.
       </p>
     </div>
@@ -248,11 +290,12 @@
     </div>
 
     <h3 style="margin-top:30px">Why “best predictor” means more than the lowest behavioral Brier</h3>
+    <p class="mobile-note small">Swipe the evidence matrix horizontally →</p>
     <div class="table-wrap">
       <table class="metric-table">
         <thead><tr><th>Model family</th><th>Held-out behavior</th><th>Early DA</th><th>Middle conditional</th><th>Post DA</th><th>JAWS</th><th>Recovery / generation</th></tr></thead>
         <tbody>
-          <tr><td><strong>SLM</strong></td><td><strong>Brier .1708 / AUC .8233</strong></td><td><strong>policy r<sub>rb</sub>=.810, P=.0469</strong></td><td><strong>APE ρ=.667, P=.0416</strong></td><td><strong>RPE/update r<sub>rb</sub>=.867+</strong></td><td><strong>Active belief r<sub>rb</sub>=−1.0</strong></td><td><strong>strong component recovery + closed-loop generation</strong></td></tr>
+          <tr><td><strong>SLM family</strong></td><td><strong>SLM+CK .1654 / .8341<br>Full SLM .1708 / .8233</strong></td><td><strong>policy r<sub>rb</sub>=.810, P=.0469</strong></td><td><strong>APE ρ=.667, P=.0416</strong></td><td><strong>RPE/update r<sub>rb</sub>=.867+</strong></td><td><strong>Active belief r<sub>rb</sub>=−1.0</strong></td><td><strong>strong component recovery + closed-loop generation</strong></td></tr>
           <tr><td>Current + CK</td><td>Brier .1664 / AUC .8322</td><td>r<sub>rb</sub>=−.238, ns</td><td>reverse conditional r<sub>rb</sub>=−.333, ns</td><td>r<sub>rb</sub>=.467, ns</td><td>CK update r<sub>rb</sub>=+.164, ns</td><td>not established</td></tr>
           <tr><td>Current + Q + CK</td><td>Brier .1667 / AUC .8315</td><td>r<sub>rb</sub>=−.333, ns</td><td>reverse conditional r<sub>rb</sub>=−.333, ns</td><td>r<sub>rb</sub>=.467, ns</td><td>not tested</td><td>not established</td></tr>
           <tr><td>TinyRNN</td><td>Brier .1680 / AUC .8286</td><td>not tested</td><td>raw middle effect opposite / ns</td><td>r<sub>rb</sub>=.733, P=.0547</td><td>not tested</td><td>capacity ceiling, not mechanistic recovery</td></tr>
@@ -288,6 +331,32 @@
       <div class="card good"><div class="metric-label">Classical RL</div><div class="metric">27/27 wins</div><p>SLM beats RW, WSLS, Q-active, Q-all, asymmetric-Q, forgetting-Q, choice-kernel and Q+choice-kernel under the restricted baseline contract; r<sub>rb</sub>=1, P=1.49×10⁻⁸.</p></div>
       <div class="card info"><div class="metric-label">Parsimonious extension</div><div class="metric">96.9%</div><p>SLM+choice persistence recovers 96.9% of Current→full-history-MLP improvement and 92.4% of Current→best-history-model improvement.</p></div>
       <div class="card violet"><div class="metric-label">Why SLM wins biologically</div><div class="metric">3 neural epochs</div><p>Black-box models can match behavior, but they do not reproduce the full Early-policy / Middle-APE / Post-update VTA structure.</p></div>
+    </div>
+
+    <h3 style="margin-top:28px">The best SLM behavioral head reaches the black-box ceiling without losing mechanism</h3>
+    <div class="cards-3">
+      <div class="card good">
+        <div class="metric-label">SLM+CK vs Current+CK</div>
+        <div class="metric">20/27</div>
+        <p>SLM+choice persistence is better in 20/27 animals; r<sub>rb</sub>=.667, P=.00169.</p>
+      </div>
+      <div class="card info">
+        <div class="metric-label">SLM+CK vs TinyRNN</div>
+        <div class="metric">23/27</div>
+        <p>SLM+choice persistence beats the recurrent capacity control; r<sub>rb</sub>=.862, P=1.59×10⁻⁵.</p>
+      </div>
+      <div class="card violet">
+        <div class="metric-label">SLM+CK vs full-history MLP</div>
+        <div class="metric">P=.732</div>
+        <p>Statistically indistinguishable (r<sub>rb</sub>=−.079) despite the MLP’s higher capacity and weaker biological interpretability.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Best-predictor formulation:</strong>
+      among compact mechanistic models, the SLM family provides the strongest held-animal prediction;
+      adding one generic choice-persistence term brings it to the full-history black-box ceiling.
+      The decisive advantage is then biological: the same framework supplies the variables expressed in VTA and selectively disrupted by JAWS.
     </div>
 
     <div class="figure-grid" style="margin-top:26px">
@@ -424,6 +493,30 @@
       </p>
     </div>
 
+    <div class="cards-3">
+      <div class="card info">
+        <span class="status boundary">RECOVERED</span>
+        <h3 style="margin-top:12px">Demonstrator state is represented in observer VTA</h3>
+        <p>Observer DA is elevated when the demonstrator occupies the food zone and is lower outside it. Demonstrator feeding/spatial state, posture, proximity, velocity and turning all contribute; coupling is stronger in learners.</p>
+      </div>
+      <div class="card info">
+        <span class="status boundary">RECOVERED</span>
+        <h3 style="margin-top:12px">Active social gaze evokes dopamine</h3>
+        <p>Observer-initiated social gaze evokes VTA DA, exceeds demonstrator-gaze responses, and precedes larger DA during active-reward eating.</p>
+      </div>
+      <div class="card good">
+        <span class="status pass">CURRENT</span>
+        <h3 style="margin-top:12px">Temporal SLM variables adjudicate mechanism</h3>
+        <p>The newer held-block tests refine those descriptive effects into separable policy, APE and post-outcome update computations.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Progression of the VTA story:</strong>
+      socially relevant demonstrator state and active gaze first established that DA tracks acquired social information;
+      temporal adjudication then asks which computation that DA is expressing at each stage of the observation episode.
+    </div>
+
     <div class="logic-line">
       <div class="logic-node"><div class="symbol">π</div><b>Early observation</b><p>sampling policy</p></div>
       <div class="logic-node"><div class="symbol">APE</div><b>Middle observation</b><p>learner-linked action-policy error</p></div>
@@ -450,6 +543,71 @@
       rather than aggregate Post06 alone, as the decisive neural evidence.
       Raw saved photometry is retained as timing support; no corrected continuous time cluster is promoted as an independent centerpiece.
     </div></details>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Mechanistic synthesis</div>
+        <h2>SOE is best explained by two coupled policies, not one scalar “social value”</h2>
+      </div>
+      <p>
+        The convergent result is a hierarchical controller. One policy decides when social information is worth sampling.
+        A separate native feeding policy converts useful sampled content into food-directed action.
+        Reward outcome updates reorganize future sampling through SLM belief/value states.
+      </p>
+    </div>
+
+    <div class="equation chain">
+      visual / dyadic state → SLM Observe policy → sampled demonstrator content → short eligibility → native Feed policy
+      <span class="sub">feedback loop: social outcome → Active/Passive/Unrewarded credit → belief / Q update → future Observe policy</span>
+    </div>
+
+    <div class="cards-4">
+      <div class="card info">
+        <div class="metric-label">Stage 1 · information access</div>
+        <div class="metric">Visual Block</div>
+        <p>Removing visual social information strongly reduces SRI and Observe→Active efficacy without simply eliminating gross observation.</p>
+      </div>
+      <div class="card good">
+        <div class="metric-label">Stage 2 · sampling control</div>
+        <div class="metric">SLM policy</div>
+        <p>Current state, fast outcome history, belief/value and slow prior determine when observing is worth the opportunity cost.</p>
+      </div>
+      <div class="card violet">
+        <div class="metric-label">Stage 3 · content conversion</div>
+        <div class="metric">dem-feed → Feed</div>
+        <p>What was sampled matters: observing demonstrator feeding predicts an acute excess Feed hazard beyond observer-state prediction.</p>
+      </div>
+      <div class="card warn">
+        <div class="metric-label">Stage 4 · social reward teaching</div>
+        <div class="metric">VTA / JAWS</div>
+        <p>Contingent VTA inhibition selectively weakens Active social-reward belief updating and successful conversion while sparing gross sampling.</p>
+      </div>
+    </div>
+
+    <div class="figure-grid" style="margin-top:22px">
+      <figure class="figure">
+        <img src="assets/SOE_ArtificialSLM_causal_double_dissociation_v1.png" alt="Artificial SLM causal double dissociation">
+        <figcaption><strong>Causal double dissociation.</strong> Information-access and reward-teaching lesions perturb different internal operations of the same social-foraging controller.</figcaption>
+      </figure>
+      <div class="card good">
+        <h3>Why the two-policy architecture matters</h3>
+        <p><strong>Recent Observe alone fails.</strong> Time since the last observation does not reliably predict Feed beyond current state.</p>
+        <p><strong>Old SLM scalar state fails.</strong> Carrying one belief/Q scalar directly onto the Feed grid does not reliably improve Feed prediction.</p>
+        <p><strong>Observed content succeeds.</strong> Demonstrator feeding at the preceding Observe improves conditional Feed calibration and produces the real ≤3 s hazard effect.</p>
+        <p><strong>Autonomous sampling is partly sufficient.</strong> Artificial-SLM Observe choices sample useful content, but the generated content→Feed latency remains too slow.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Primary mechanistic claim:</strong>
+      SLM is the best predictor of <em>information acquisition and social credit assignment</em>;
+      native feeding is a separate controller that receives a short-lived, content-specific social eligibility signal.
+      This architecture explains why Visual Block and JAWS can both reduce SOE while producing different internal signatures.
+    </div>
   </div>
 </section>
 
