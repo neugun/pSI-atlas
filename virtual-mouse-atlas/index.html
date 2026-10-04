@@ -77,9 +77,45 @@
         <figure><img src="assets/world_horizon_curves.png" alt="Multi-step world-model benchmark"><figcaption>1/3/5-step predictive decay across dynamic models.</figcaption></figure>
         <figure><img src="assets/world_trajectory_fan.png" alt="Sampled future trajectories"><figcaption>512 sampled futures visualize uncertainty rather than only the mean path.</figcaption></figure>
         <figure><img src="assets/world_motif_heatmap.png" alt="Future motif probability heatmap"><figcaption>Future distributions over all 12 motifs.</figcaption></figure>
-        <figure><img src="assets/event_baseline_ladder.png" alt="Observe and bout event baseline ladder"><figcaption>Parallel event-state version: multiple Observe distances plus Active/Passive feeding bouts.</figcaption></figure>
+        <figure><img src="assets/event_baseline_ladder.png" alt="Observe and bout event baseline ladder"><figcaption>Parallel 4-event version: Other / Observe / Active bout / Passive bout, with weak→strong baselines.</figcaption></figure>
         <figure><img src="assets/event_horizon_curves.png" alt="Event-world multi-step benchmark"><figcaption>The event-world advantage persists at 1/3/5 future events.</figcaption></figure>
       </div>
+    </details>
+  </section>
+
+  <section class="learning-story wrap" id="learning-story">
+    <div class="section-head learning-head">
+      <div>
+        <div class="eyebrow">LEARNING DEPENDENCE · 27 LEARNERS VS 13 NON-LEARNERS</div>
+        <h2>Learning rewrites the social-event transition graph</h2>
+      </div>
+      <p>Training does not simply make every event easier to predict. Learners reorganize how behavior flows through <b>Observe</b> and <b>Active feeding</b>, while the world model continues to add predictive information beyond a strong stage-aware transition baseline.</p>
+    </div>
+
+    <div class="learning-kpis" id="learningKpis"></div>
+
+    <div class="learning-grid">
+      <figure class="learning-figure learning-figure-main">
+        <img src="assets/learning_transition_story_v2.png" alt="Learner versus non-learner transition-graph reorganization across training">
+        <figcaption>Animal-level early→late changes, transition-matrix rewiring, direct Observe→Active conversion, and the relationship between graph reorganization and learning magnitude.</figcaption>
+      </figure>
+      <figure class="learning-figure">
+        <img src="assets/learning_world_bridge_v2.png" alt="World-model learning-stage bridge">
+        <figcaption>The world model reallocates prediction toward future Observe/Active events, while its incremental gain over a stage-aware Markov baseline remains positive at both stages rather than growing globally.</figcaption>
+      </figure>
+    </div>
+
+    <div class="learning-interpretation">
+      <div class="learning-main-claim">
+        <div class="eyebrow">SUPPORTED INTERPRETATION</div>
+        <p id="learningHeadline">Learning shifts the social-event graph toward sustained observation and effective feeding.</p>
+      </div>
+      <div class="learning-boundary" id="learningBoundary"></div>
+    </div>
+
+    <details class="learning-details">
+      <summary>How to read this result</summary>
+      <div id="learningDetails"></div>
     </details>
   </section>
 
@@ -142,5 +178,6 @@
 </main>
 <script src="explorer.js"></script>
 <script src="world_model.js"></script>
+<script src="learning_story.js"></script>
 </body>
 </html>
