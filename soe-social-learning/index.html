@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Social observational eating: behavioral discovery, Social Learning Model, VTA dopamine, causal perturbations, and artificial agents.">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Social Observational Eating · SLM · VTA Dopamine</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    details { margin:18px 0; border:1px solid var(--line); border-radius:14px; background:#fff; padding:0 16px; }
+    summary { cursor:pointer; font-weight:800; color:var(--navy); padding:14px 0; }
+    details > div { padding:0 0 16px; color:var(--muted); }
+    .claim { font-size:19px; line-height:1.5; color:#29465f; }
+    .status { display:inline-flex; padding:4px 8px; border-radius:999px; font-size:11px; font-weight:850; letter-spacing:.05em; text-transform:uppercase; border:1px solid var(--line); }
+    .pass { background:var(--green-soft); color:var(--green); }
+    .provisional { background:var(--orange-soft); color:var(--orange); }
+    .boundary { background:var(--violet-soft); color:var(--violet); }
+    .metric-table td:first-child { font-weight:750; color:#314d67; }
+    .metric-table td, .metric-table th { padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; }
+    .metric-table th { background:#f4f7fa; color:#506479; font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+    .download-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .download-card { border:1px solid var(--line); background:#fff; border-radius:14px; padding:16px; }
+    .download-card a { font-weight:800; }
+    .chain { font-size:clamp(19px,2.6vw,29px); line-height:1.45; }
+    @media (max-width:760px) {
+      .download-grid { grid-template-columns:1fr; }
+      .metric-table { font-size:12px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="brand-mark">S</span> SOE × SLM × VTA</div>
+    <nav aria-label="Page navigation">
+      <a href="#overview">Overview</a>
+      <a href="#phenotype">Behavior</a>
+      <a href="#information">Information</a>
+      <a href="#slm">SLM</a>
+      <a href="#feed">Feed</a>
+      <a href="#agent">Agent</a>
+      <a href="#vta">VTA</a>
+      <a href="#causality">Causality</a>
+      <a href="#generalization">Generalization</a>
+      <a href="#external">External</a>
+      <a href="#boundaries">Boundaries</a>
+      <a href="#resources">Data</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="overview" class="hero">
+  <div class="container">
+    <span class="eyebrow">Prepublication analysis portal · authority 2026-10-04</span>
+    <h1>How does social observation become useful behavior?</h1>
+    <p class="lede">
+      Social observational eating is not simply “watch another mouse and then eat.”
+      The observer selects when social information is worth sampling, assigns outcome-specific credit,
+      and converts particular observed content into its own food-directed action.
+      <strong>The Social Learning Model (SLM) is the primary and best biological predictor of this process:</strong>
+      it predicts behavior, organizes the strongest neural readouts, survives causal tests, and generates the learned strategy in closed loop.
+    </p>
+
+    <div class="hero-grid">
+      <div class="hero-stat">
+        <strong>27 learners</strong>
+        <span>68,624 held-animal events define the formal SLM prediction contract.</span>
+      </div>
+      <div class="hero-stat">
+        <strong>Brier .1708</strong>
+        <span>Full SLM; it beats all eight classical RL baselines in 27/27 animals.</span>
+      </div>
+      <div class="hero-stat">
+        <strong>+7.54 pp</strong>
+        <span>Acute Feed hazard after observing demonstrator feeding; +6.09 pp after state residualization.</span>
+      </div>
+      <div class="hero-stat">
+        <strong>Policy → APE → update</strong>
+        <span>VTA dopamine resolves the SLM into Early, Middle and Post temporal computations.</span>
+      </div>
+    </div>
+
+    <div class="equation chain">
+      social state → adaptive Observe sampling → observed content → native Feed conversion
+      <span class="sub">in parallel: observation outcome → SLM belief / Q credit → future sampling policy</span>
+    </div>
+
+    <p class="prepub">
+      This page is intentionally comprehensive. It keeps strong controls, negative boundaries, artificial-agent results,
+      cross-task/species tests, and source authority visible rather than compressing the project into a fixed number of figures.
+    </p>
+  </div>
+</section>
+
+<section id="phenotype" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Discovery layer</div>
+        <h2>A learned social phenotype, not a generic increase in observation</h2>
+      </div>
+      <p>
+        The foundational result is a learned coupling between observing another animal and the observer’s own feeding.
+        The project therefore separates gross social sampling from the efficacy with which sampled information is converted into reward-directed behavior.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <div class="card good"><div class="metric-label">Visual dependence</div><div class="metric">23/25 ↓</div><p>Visual Block strongly reduces SRI; the phenotype depends on natural visual social information.</p></div>
+      <div class="card info"><div class="metric-label">JAWS causality</div><div class="metric">9/10 ↓</div><p>VTA inhibition reduces the learned phenotype while gross observation is largely preserved.</p></div>
+      <div class="card violet"><div class="metric-label">Behavioral principle</div><div class="metric">conversion ≠ sampling</div><p>What matters is how effectively observation is used, not only how often the observer looks.</p></div>
+    </div>
+
+    <details open><summary>Earlier behavioral results retained in the full story</summary><div>
+      Task acquisition, live-social specificity, simulated-demonstrator control, opaque/visual-dependence control,
+      familiarity dependence, pose/social-gaze structure, observation specificity, outcome-dependent stopping/re-entry,
+      and motif-occupancy reweighting all remain part of the project-wide evidence graph.
+      Several of these older blocks require final source re-pinning before they are promoted as exact numeric authority on this page.
+    </div></details>
+  </div>
+</section>
+
+<section id="information">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Adaptive information foraging</div>
+        <h2>Social information has state-dependent decision value</h2>
+      </div>
+      <p>
+        The observer does not value all social evidence equally. Held-out predictive value depends on learning stage
+        and on whether the observer’s own current state leaves room for external information to alter policy.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <div class="card good"><div class="metric-label">Full social state</div><div class="metric">22/27 positive</div><p>Median +0.00365 nats/decision; r<sub>rb</sub>=.725; P=.000268.</p></div>
+      <div class="card info"><div class="metric-label">Learning dependence</div><div class="metric">20/27 late &lt; early</div><p>Median late−early = −0.00378 nats/decision; r<sub>rb</sub>=−.619; P=.00194.</p></div>
+      <div class="card violet"><div class="metric-label">State gating</div><div class="metric">far &gt; near</div><p>Social information is most useful when the observer is farther from its own spout.</p></div>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_adaptive_social_information_value_v2.png" alt="Adaptive social information value in SOE">
+      <figcaption><strong>Adaptive information value.</strong> Social evidence contributes selectively rather than functioning as an always-on stimulus.</figcaption>
+    </figure>
+
+    <details><summary>Multi-timescale memory recovered before the final SLM</summary><div>
+      Earlier held-animal analyses independently showed that current social/food geometry is strongly informative,
+      roughly 20-event observation/action history adds substantial prediction, selected memory γ=.95–.97 corresponds to
+      about 20–33 events (roughly 4.5–7.5 min), chronological day order ranked 1/501 against within-animal day shuffles,
+      and a retained cross-day prior improved 29/40 animals (P=.0125), with its effect concentrated early in the next session.
+      These results motivate — rather than retrospectively justify — the SLM’s fast, medium and slow state architecture.
+    </div></details>
+  </div>
+</section>
+
+<section id="slm" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Primary predictive model</div>
+        <h2>SLM is the best biological predictor of SOE</h2>
+      </div>
+      <p>
+        SLM is treated as the project’s best predictor because it is the strongest mechanistically constrained model across
+        behavior, neural timing, causal perturbation and generative validation — not merely because of one leaderboard metric.
+        Flexible history networks remain explicit capacity ceilings.
+      </p>
+    </div>
+
+    <div class="callout">
+      <strong>Prediction hierarchy:</strong>
+      simple state/time heuristics &lt; classical RL &lt; structured SLM.
+      Adding generic choice persistence to SLM recovers nearly all of the gain achieved by black-box full-history models,
+      while preserving interpretable policy, APE, RPE and social-belief coordinates.
+    </div>
+
+    <div class="table-wrap">
+      <table class="metric-table">
+        <thead><tr><th>Model</th><th>Brier ↓</th><th>AUC ↑</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>Clock only</td><td>.244924</td><td>.581658</td><td>time heuristic</td></tr>
+          <tr><td>Previous choice</td><td>.228180</td><td>.613424</td><td>persistence baseline</td></tr>
+          <tr><td>Current linear</td><td>.194191</td><td>.771429</td><td>visible-state baseline</td></tr>
+          <tr><td>Current nonlinear</td><td>.185812</td><td>.790933</td><td>nonlinear state baseline</td></tr>
+          <tr><td><strong>Full SLM</strong></td><td><strong>.170824</strong></td><td><strong>.823320</strong></td><td><strong>primary mechanistic predictor</strong></td></tr>
+          <tr><td>SLM + choice persistence</td><td>.165411</td><td>.834084</td><td>best parsimonious SLM head</td></tr>
+          <tr><td>TinyRNN h3</td><td>.168031</td><td>.828605</td><td>recurrent capacity control</td></tr>
+          <tr><td>Full-history MLP</td><td>.164749</td><td>.835124</td><td>black-box capacity ceiling</td></tr>
+          <tr><td>History MLP + formal-all</td><td>.163722</td><td>.837365</td><td>highest-capacity ceiling</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards-3" style="margin-top:18px">
+      <div class="card good"><div class="metric-label">Classical RL</div><div class="metric">27/27 wins</div><p>SLM beats RW, WSLS, Q-active, Q-all, asymmetric-Q, forgetting-Q, choice-kernel and Q+choice-kernel under the restricted baseline contract; r<sub>rb</sub>=1, P=1.49×10⁻⁸.</p></div>
+      <div class="card info"><div class="metric-label">Parsimonious extension</div><div class="metric">96.9%</div><p>SLM+choice persistence recovers 96.9% of Current→full-history-MLP improvement and 92.4% of Current→best-history-model improvement.</p></div>
+      <div class="card violet"><div class="metric-label">Why SLM wins biologically</div><div class="metric">3 neural epochs</div><p>Black-box models can match behavior, but they do not reproduce the full Early-policy / Middle-APE / Post-update VTA structure.</p></div>
+    </div>
+
+    <details><summary>Strong alternative models are intentionally visible</summary><div>
+      Behavioral computational equifinality is a result, not a nuisance. LCNE asymmetric-Q, UCL dual-controller,
+      5HT uncertainty, deep-RL, TinyRNN and full-history MLP families all provide meaningful controls.
+      The SLM claim is strongest when these alternatives are retained and then adjudicated by neural timing,
+      causal latent perturbation, synthetic model recovery and closed-loop generation.
+    </div></details>
+  </div>
+</section>
+
+<section id="feed">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">From information to action</div>
+        <h2>What was observed — not merely that observation occurred — predicts feeding</h2>
+      </div>
+      <p>
+        The newest closure makes feeding a strict future action on a 1-s decision grid.
+        This separates the social-information controller from the observer’s native feeding controller and identifies the content-specific bridge between them.
+      </p>
+    </div>
+
+    <div class="cards-4">
+      <div class="card good"><div class="metric-label">Native Feed AUC</div><div class="metric">.82531</div><p>Observer-only pre-action state; both sessions held out together by animal, n=40.</p></div>
+      <div class="card info"><div class="metric-label">Social increment</div><div class="metric">30/40</div><p>Feed AUC improves with current social/dyadic state; r<sub>rb</sub>=.407, P=.0120.</p></div>
+      <div class="card good"><div class="metric-label">Acute content effect</div><div class="metric">+7.54 pp</div><p>Feed hazard within 3 s after observing demonstrator feeding versus observing no feeding; P=.0377.</p></div>
+      <div class="card violet"><div class="metric-label">State-controlled residual</div><div class="metric">+6.09 pp</div><p>Residual acute Feed hazard after frozen self + current-social prediction; P=.0445.</p></div>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_native_social_to_feed_conversion_v2.png" alt="Native social-to-feed conversion">
+      <figcaption><strong>Native Observe→Feed bridge.</strong> Recent Observe alone is insufficient; the preceding observation’s demonstrator-feeding content carries the specific short-latency conversion signal.</figcaption>
+    </figure>
+
+    <div class="callout warn">
+      <strong>Mechanistic implication:</strong> do not force one old SLM scalar to control both Observe and Feed.
+      The preferred architecture is hierarchical: SLM controls adaptive sampling and reward credit;
+      the Feed policy is dominated by observer self-state plus a transient eligibility signal for useful observed content.
+    </div>
+
+    <details><summary>Why a generic “recent observation” explanation fails</summary><div>
+      Adding time since the last actual Observe does not reliably improve Feed AUC or log loss.
+      Carrying recent SLM Active/Passive/Unrewarded belief and Q difference onto the Feed grid also fails to produce a reliable Feed-specific gain.
+      By contrast, demonstrator feeding at the most recent Observe improves held-out conditional Feed calibration,
+      including 26/26 informative animals for the content-specific log-probability contrast.
+    </div></details>
+  </div>
+</section>
+
+<section id="agent" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Generative sufficiency</div>
+        <h2>The SLM does more than fit held-out behavior</h2>
+      </div>
+      <p>
+        A mouse-derived Artificial SLM is placed back into an empirical social-foraging world.
+        Its Observe choices and social outcomes are generated in closed loop, allowing memory, belief, value and slow state to evolve recursively.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <div class="card good"><div class="metric-label">Closed-loop trajectory</div><div class="metric">r=.779</div><p>The fitted SLM regenerates broad learner trajectories without replaying held-out outcomes.</p></div>
+      <div class="card info"><div class="metric-label">Autonomous world</div><div class="metric">r=.638</div><p>Ten-rollout posterior-predictive mean after removing held-out observer-state replay.</p></div>
+      <div class="card violet"><div class="metric-label">Motif occupancy</div><div class="metric">r=.864</div><p>Autonomous Artificial SLM preserves substantial behavioral-state organization; mean JS=.0390.</p></div>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_SocialInformationForaging_ArtificialAgent_main_v1.png" alt="Artificial SLM social information foraging agent">
+      <figcaption><strong>Artificial SLM.</strong> The mechanistic question is whether computations estimated from real mice are sufficient to regenerate the organization of social-information sampling.</figcaption>
+    </figure>
+
+    <div class="figure-grid">
+      <figure class="figure">
+        <img src="assets/SOE_Real_vs_ArtificialSLM_motif_space_v1.png" alt="Real versus artificial SLM behavioral state space">
+        <figcaption><strong>Shared behavioral space.</strong> Real and Artificial SLM trajectories are compared in the same frozen v85 motif representation.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/SOE_GenericRNN_SLM_convergence_v2.png" alt="Generic recurrent agent convergence to SLM coordinates">
+        <figcaption><strong>Independent convergence.</strong> A generic GRU actor-critic trained without privileged SLM variables develops policies that become substantially more predictable when explicit SLM coordinates are supplied.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cards-3" style="margin-top:18px">
+      <div class="card good"><div class="metric-label">Generic GRU policy probe</div><div class="metric">30/30</div><p>Adding SLM coordinates improves Brier, NLL and AUC in every 5-fold × 3-seed × 2-reward run.</p></div>
+      <div class="card info"><div class="metric-label">Real↔Artificial policy</div><div class="metric">ρ=.789</div><p>P=1.50×10⁻⁹ across animals; RPE ρ=.771 and |ΔActive belief| ρ=.734.</p></div>
+      <div class="card violet"><div class="metric-label">Generated content → Feed</div><div class="metric">18/27</div><p>Auto-content beats auto-recency for Feed log loss (P=.0477) and Brier (P=.0346).</p></div>
+    </div>
+
+    <details><summary>Current autonomous Feed boundary</summary><div>
+      The Artificial SLM now samples behaviorally useful content, but its generated Observe(demonstrator-feeding) signal predicts excess real Feed mainly over ~10–30 s.
+      The real mouse effect peaks at ≤3 s. Thus content relevance is <span class="status pass">PASS</span>,
+      while exact acute timing remains <span class="status provisional">PROVISIONAL</span>.
+      Full two-policy closed-loop integration should target the timing mismatch rather than adding arbitrary extra SLM scalars.
+    </div></details>
+  </div>
+</section>
+
+<section id="vta">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Neural adjudication</div>
+        <h2>VTA dopamine resolves the SLM computation in biological time</h2>
+      </div>
+      <p>
+        Behavior alone allows several high-capacity explanations. The strongest discriminator is temporal:
+        distinct SLM components align with VTA dopamine at distinct phases of social observation and outcome.
+      </p>
+    </div>
+
+    <div class="logic-line">
+      <div class="logic-node"><div class="symbol">π</div><b>Early observation</b><p>sampling policy</p></div>
+      <div class="logic-node"><div class="symbol">APE</div><b>Middle observation</b><p>learner-linked action-policy error</p></div>
+      <div class="logic-node"><div class="symbol">RPE</div><b>Outcome</b><p>reward prediction error</p></div>
+      <div class="logic-node"><div class="symbol">ΔB</div><b>Outcome</b><p>social belief update</p></div>
+      <div class="logic-node"><div class="symbol">state</div><b>Future policy</b><p>credit carried forward</p></div>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_DA_global_temporal_adjudication_v1.png" alt="VTA dopamine temporal model adjudication">
+      <figcaption><strong>Temporal model adjudication.</strong> SLM is the only current model family with positive significant support across the prespecified Early policy, Middle APE and Post update axes.</figcaption>
+    </figure>
+
+    <div class="cards-3">
+      <div class="card good"><div class="metric-label">Early policy</div><div class="metric">r<sub>rb</sub>=.810</div><p>5/6 positive; one-sided P=.046875. Q-all and choice-kernel controls do not reproduce the effect.</p></div>
+      <div class="card info"><div class="metric-label">Middle APE × learning</div><div class="metric">ρ=.667</div><p>Exact P=.04157; survives conditioning on CK, Q+CK or Q errors.</p></div>
+      <div class="card violet"><div class="metric-label">Post update</div><div class="metric">r<sub>rb</sub>=.867–.956</div><p>Actor-Critic RPE and belief-update variables explain post-outcome DA.</p></div>
+    </div>
+
+    <details><summary>Aggregate Post06 dopamine is important but not uniquely SLM-specific</summary><div>
+      Aggregate reward-outcome DA establishes a reward-update family of explanations:
+      SLM belief, formal Q/RPE and UCL-style RPE all carry signal.
+      Direct SLM-belief versus UCL-RPE is not significant. This is why the page treats the three-stage temporal organization,
+      rather than aggregate Post06 alone, as the decisive neural evidence.
+      Raw saved photometry is retained as timing support; no corrected continuous time cluster is promoted as an independent centerpiece.
+    </div></details>
+  </div>
+</section>
+
+<section id="causality" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Causal decomposition</div>
+        <h2>Visual information access and dopamine-dependent reward credit are separable operations</h2>
+      </div>
+      <p>
+        Visual Block and JAWS both weaken SOE, but they intervene at different computational stages.
+        Their shared behavioral endpoint is reduced successful Observe→Active conversion rather than simple loss of gross observation.
+      </p>
+    </div>
+
+    <div class="figure-grid">
+      <figure class="figure">
+        <img src="assets/SOE_VisualBlock_information_closure_v1.png" alt="Visual Block information closure">
+        <figcaption><strong>Visual Block.</strong> Natural visual social information is removed; SRI and Observe→Active efficacy fall while gross sampling is comparatively preserved.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/SOE_JAWS_causal_closure_v1.png" alt="JAWS causal closure">
+        <figcaption><strong>JAWS.</strong> VTA inhibition disrupts Active social-reward credit and successful conversion without behaving like a generic observation-motor lesion.</figcaption>
+      </figure>
+    </div>
+
+    <div class="table-wrap" style="margin-top:18px">
+      <table class="metric-table">
+        <thead><tr><th>Test</th><th>Primary effect</th><th>Gross observation</th><th>Computational interpretation</th></tr></thead>
+        <tbody>
+          <tr><td>Visual Block</td><td>SRI ≈3.67→1.08; 23/25 lower</td><td>not systematically abolished</td><td>information-access / efficacy lesion</td></tr>
+          <tr><td>VB Observe→Active</td><td>.2830→.2137; P=.00427</td><td>rate change P=.0863</td><td>sampled information converts less effectively</td></tr>
+          <tr><td>JAWS contingent</td><td>SRI 1.880→.786; r<sub>rb</sub>=−.927</td><td>preserved on average</td><td>reward-credit / teaching lesion</td></tr>
+          <tr><td>JAWS Observe→Active</td><td>.3202→.1933; P=.003906</td><td>fraction Δ=+.044; P=.625</td><td>successful conversion specifically decreases</td></tr>
+          <tr><td>JAWS Active belief</td><td>acute −1.000; continuous −.927; session −.964</td><td>CK update P=.695</td><td>Active social-reward belief is the most reproducible causal coordinate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_AutonomousSLM_CausalLesions_v1.png" alt="Autonomous Artificial SLM causal lesions">
+      <figcaption><strong>Artificial causal tests.</strong> Sensory masking and selective Active-belief teaching attenuation reproduce distinct computational signatures in the same frozen autonomous agent.</figcaption>
+    </figure>
+
+    <details><summary>Artificial lesion correspondence</summary><div>
+      Sensory masking leaves autonomous observation approximately intact (.4463→.4692; P=.0655) but lowers Active contingency in 27/27 learners
+      and lowers Active-belief state. JAWS50 reduces direct |ΔActive belief| by about 22.1%, while |ΔQ| changes by only ~0.55%;
+      global trajectory correlation is largely preserved but the local social-strategy kernel weakens.
+      These are mechanistic analogues, not claims that the simulations reproduce every experimental detail.
+    </div></details>
+
+    <details><summary>Clean Visual Block dopamine rebuild</summary><div>
+      The old shared-signal VB dopamine lineage was rejected. The clean rebuild uses each session’s own continuous signal.
+      Demonstrator-feed-locked Original &gt; VB is strongest early: 8/9 animals, r<sub>rb</sub>=.867, P=.01953;
+      middle and late effects are weaker. A formal condition×phase flattening interaction is not significant and is not claimed.
+    </div></details>
+  </div>
+</section>
+
+<section id="generalization">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Beyond the trained feeding contingency</div>
+        <h2>SOE experience reorganizes later use of social information</h2>
+      </div>
+      <p>
+        Two source-rebuilt assays test whether prior social-learning experience transfers beyond the original feeding contingency.
+        They are kept separate because the behavioral domains differ.
+      </p>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_generalization_multidomain_v1.png" alt="SOE multidomain generalization">
+      <figcaption><strong>Generalization.</strong> Prior SOE training alters first-day observational-fear organization and reduces latency to engage with unfamiliar food.</figcaption>
+    </figure>
+
+    <div class="cards-2">
+      <div class="card good">
+        <h3>Food neophobia / SAFN</h3>
+        <p><strong>Latency:</strong> Social-trained mean 45.96 s versus 199.47 s in nonsocial-trained controls; Cliff δ=−.722; exact permutation P=.01948; permutation log-rank P=.03030.</p>
+        <p><strong>First bout:</strong> 61.07 versus 8.81 s; δ=+.889; P=.00866. Total feeding duration is directional but not significant.</p>
+      </div>
+      <div class="card info">
+        <h3>Observational fear</h3>
+        <p>D1 shows stronger shock-locked reactivity, late-cue immobility and sustained shock-focused social monitoring after prior SOE training.</p>
+        <p>D0 locomotor baseline does not explain the phenotype, and the D1 amplification attenuates on D2. Exact-boundary cluster tests are corroborative rather than the inferential centerpiece.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="external" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">External convergence</div>
+        <h2>The conserved principle is adaptive social-information use — not one universal architecture</h2>
+      </div>
+      <p>
+        Rat, macaque, human, naturalistic mouse and marmoset datasets test which pieces generalize.
+        Units of inference remain dataset appropriate; external results support the principle without pretending every species uses identical latent variables.
+      </p>
+    </div>
+
+    <div class="figure-grid">
+      <figure class="figure">
+        <img src="assets/SOE_cross_task_social_information_value_v2.png" alt="Cross-task social information value">
+        <figcaption><strong>Cross-task social information value.</strong> Different tasks use different social sources and timescales, but held-out decision value repeatedly depends on social information.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="assets/SOE_SLM_external_multidataset_v5.png" alt="SLM external multidataset comparison">
+        <figcaption><strong>Model generalization.</strong> Explicit multiscale state transfers broadly, while recurrent architecture is not universally superior.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cards-4" style="margin-top:18px">
+      <div class="card good"><div class="metric-label">Rat observational maze</div><div class="metric">4/5 positive</div><p>Demonstrator social value r<sub>rb</sub>=.867; moving-object control does not show the same effect.</p></div>
+      <div class="card info"><div class="metric-label">Aeon</div><div class="metric">5/5</div><p>Recent partner-history increment positive in all independent experiments; P=.03125.</p></div>
+      <div class="card violet"><div class="metric-label">Macaque history state</div><div class="metric">75/88</div><p>Multiscale state improves held-session prediction across the source-aware comparison.</p></div>
+      <div class="card warn"><div class="metric-label">Rat recurrent boundary</div><div class="metric">9/10 worse</div><p>TinyRNN is worse than explicit multiscale state in 9/10 rats; recurrent architecture is not the universal claim.</p></div>
+    </div>
+
+    <figure class="figure">
+      <img src="assets/SOE_marmoset_Neuron2026_SLM_bridge_v1.png" alt="Marmoset social evidence accumulation bridge">
+      <figcaption><strong>Marmoset neural bridge.</strong> Active social sampling gates partner-evidence accumulation; dmPFC ramping maps onto accumulated social evidence and model drift.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="boundaries">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Claim boundaries and unfinished blocks</div>
+        <h2>What the current results support — and what they do not yet prove</h2>
+      </div>
+      <p>
+        Keeping these boundaries visible prevents the large result space from turning into an overfit narrative.
+        They are also the highest-value targets for the next round of analysis.
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <div class="card good"><span class="status pass">PASS</span><h3 style="margin-top:12px">SLM as primary biological predictor</h3><p>Strong held-animal behavior, best mechanistic hierarchy, VTA temporal support, causal latent support, model recovery and generative sufficiency.</p></div>
+      <div class="card good"><span class="status pass">PASS</span><h3 style="margin-top:12px">Observed-content conversion</h3><p>Demonstrator feeding at the preceding Observe predicts a short-latency excess Feed hazard beyond current-state prediction.</p></div>
+      <div class="card provisional"><span class="status provisional">PROVISIONAL</span><h3 style="margin-top:12px">Full autonomous social foraging</h3><p>The generated agent samples useful content, but the real ≤3 s Observe→Feed timing is not yet reproduced.</p></div>
+    </div>
+
+    <div class="cards-3" style="margin-top:16px">
+      <div class="card warn"><span class="status boundary">BOUNDARY</span><h3 style="margin-top:12px">Black-box capacity</h3><p>History MLP can achieve slightly lower Brier than Full SLM. It is retained as a capacity ceiling; prediction alone does not determine mechanism.</p></div>
+      <div class="card warn"><span class="status boundary">BOUNDARY</span><h3 style="margin-top:12px">Aggregate DA</h3><p>Post06 DA is compatible with several reward-update models. Temporal decomposition, not aggregate DA, supplies model specificity.</p></div>
+      <div class="card warn"><span class="status boundary">BOUNDARY</span><h3 style="margin-top:12px">Association ≠ causal trigger</h3><p>The dem-feed→Feed hazard bridge survives held-out state control but does not yet prove that observed demonstrator feeding causally triggers observer feeding.</p></div>
+    </div>
+
+    <div class="callout warn">
+      <strong>Important restoration queue:</strong>
+      OXT upstream causality exists in the source workspace but is not yet fully re-audited into the current GitHub authority.
+      Familiarity, simulated-demonstrator, opaque-barrier and several early social-gaze analyses likewise need final source pinning.
+      They are flagged here so the newer SLM/agent work does not erase biologically important earlier results.
+    </div>
+  </div>
+</section>
+
+<section id="resources" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Authority and source data</div>
+        <h2>Open the exact analysis authority behind the page</h2>
+      </div>
+      <p>
+        The visual page is a navigation layer. Numeric authority remains in the versioned checkpoint, analysis master,
+        focused mechanistic notes and downloadable CSV tables below.
+      </p>
+    </div>
+
+    <div class="download-grid">
+      <div class="download-card"><a href="docs/SOE_CURRENT_CHECKPOINT_v32_20261004.md">Current checkpoint v32</a><p class="small">Latest project-wide state and PASS / PROVISIONAL / FAIL boundaries.</p></div>
+      <div class="download-card"><a href="docs/SOE_LATEST_ANALYSIS_MASTER_v23_20261004.md">Analysis master v23</a><p class="small">Comprehensive analysis/results authority.</p></div>
+      <div class="download-card"><a href="docs/SLM_NATIVE_SOCIAL_TO_FEED_CONVERSION_v1_20261004.md">Native social→Feed authority</a><p class="small">Strict future Feed contract and observed-content bridge.</p></div>
+      <div class="download-card"><a href="docs/SLM_AUTONOMOUS_OBSERVE_NATIVE_FEED_BRIDGE_v1_20261004.md">Autonomous Observe→Feed bridge</a><p class="small">Generated sampling schedule tested against native Feed conversion.</p></div>
+      <div class="download-card"><a href="docs/SOE_RESULTS_ARTIFICIAL_AGENT_v2_20261004.md">Artificial-agent Results draft</a><p class="small">Generative sufficiency, recurrent convergence and biological grounding.</p></div>
+      <div class="download-card"><a href="docs/SLM_AUTONOMOUS_INTERVENTION_CLOSURE_v1_20261004.md">Autonomous intervention closure</a><p class="small">Visual Block and JAWS computational lesions.</p></div>
+      <div class="download-card"><a href="data/SLM_behavior_model_comparison_canonical_v5.csv">SLM behavior model comparison</a><p class="small">Canonical held-animal behavioral model table.</p></div>
+      <div class="download-card"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">DA temporal adjudication</a><p class="small">Frozen Early/Middle/Post model evidence.</p></div>
+      <div class="download-card"><a href="data/SOE_GLOBAL_EFFECT_SIZE_REGISTRY_v12.csv">Global effect-size registry</a><p class="small">Project-wide bounded effects and inferential units.</p></div>
+    </div>
+
+    <p class="prepub">Current page build: 2026-10-04. Intended for internal scientific review and iterative mobile inspection.</p>
+  </div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,571 @@
+domain,contrast,effect_size_type,n,effect_size_minus1_to1,p,bounded_metric,effect_abs,status,source_file
+behavior_model_zoo,Actor-Critic vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Clock only vs Current linear,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Common belief vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Constant prevalence vs Current linear,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + action-history MLP vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + action-history linear vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + full-history MLP vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + full-history linear vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + outcome-history MLP vs Current linear,rank_biserial,27,0.5873015873015873,0.0064507573843002,True,0.5873015873015873,CURRENT,
+behavior_model_zoo,Current + outcome-history linear vs Current linear,rank_biserial,27,0.4444444444444444,0.0435578823089599,True,0.4444444444444444,CURRENT,
+behavior_model_zoo,Current nonlinear vs Current linear,rank_biserial,27,0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT,
+behavior_model_zoo,Direct policy vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Feature-Q vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Formal + TinyRNN vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Formal + external ensemble vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,History MLP + Feature-Q vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,History MLP + formal-all vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,LDN v2 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,LDN v3 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,LDN v4 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Previous choice only vs Current linear,rank_biserial,27,-0.9894179894179894,4.4703483581542975e-08,True,0.9894179894179894,CURRENT,
+behavior_model_zoo,TinyRNN h1 vs Current linear,rank_biserial,27,0.6931216931216931,0.001020923256874,True,0.6931216931216931,CURRENT,
+behavior_model_zoo,TinyRNN h2 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,TinyRNN h3 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,TinyRNN h4 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,TinyRNN h8 vs Current linear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Actor-Critic vs Current nonlinear,rank_biserial,27,0.9365079365079364,1.043081283569336e-06,True,0.9365079365079364,CURRENT,
+behavior_model_zoo,Clock only vs Current nonlinear,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Common belief vs Current nonlinear,rank_biserial,27,0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT,
+behavior_model_zoo,Constant prevalence vs Current nonlinear,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + action-history MLP vs Current nonlinear,rank_biserial,27,0.9947089947089948,2.9802322387695312e-08,True,0.9947089947089948,CURRENT,
+behavior_model_zoo,Current + action-history linear vs Current nonlinear,rank_biserial,27,0.9153439153439152,2.518296241760254e-06,True,0.9153439153439152,CURRENT,
+behavior_model_zoo,Current + full-history MLP vs Current nonlinear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + full-history linear vs Current nonlinear,rank_biserial,27,0.9206349206349206,2.041459083557129e-06,True,0.9206349206349206,CURRENT,
+behavior_model_zoo,Current + outcome-history MLP vs Current nonlinear,rank_biserial,27,-0.1587301587301587,0.4846055656671524,True,0.1587301587301587,CURRENT,
+behavior_model_zoo,Current + outcome-history linear vs Current nonlinear,rank_biserial,27,-0.7301587301587301,0.0004787445068359,True,0.7301587301587301,CURRENT,
+behavior_model_zoo,Current linear vs Current nonlinear,rank_biserial,27,-0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT,
+behavior_model_zoo,Direct policy vs Current nonlinear,rank_biserial,27,0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT,
+behavior_model_zoo,Feature-Q vs Current nonlinear,rank_biserial,27,0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT,
+behavior_model_zoo,Formal + TinyRNN vs Current nonlinear,rank_biserial,27,0.984126984126984,7.450580596923828e-08,True,0.984126984126984,CURRENT,
+behavior_model_zoo,Formal + external ensemble vs Current nonlinear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,History MLP + Feature-Q vs Current nonlinear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,History MLP + formal-all vs Current nonlinear,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,LDN v2 vs Current nonlinear,rank_biserial,27,0.9735449735449736,1.4901161193847656e-07,True,0.9735449735449736,CURRENT,
+behavior_model_zoo,LDN v3 vs Current nonlinear,rank_biserial,27,0.9682539682539684,2.086162567138672e-07,True,0.9682539682539684,CURRENT,
+behavior_model_zoo,LDN v4 vs Current nonlinear,rank_biserial,27,0.984126984126984,7.450580596923828e-08,True,0.984126984126984,CURRENT,
+behavior_model_zoo,Previous choice only vs Current nonlinear,rank_biserial,27,-0.9947089947089948,2.9802322387695312e-08,True,0.9947089947089948,CURRENT,
+behavior_model_zoo,TinyRNN h1 vs Current nonlinear,rank_biserial,27,0.1005291005291005,0.6616804599761963,True,0.1005291005291005,CURRENT,
+behavior_model_zoo,TinyRNN h2 vs Current nonlinear,rank_biserial,27,0.9735449735449736,1.4901161193847656e-07,True,0.9735449735449736,CURRENT,
+behavior_model_zoo,TinyRNN h3 vs Current nonlinear,rank_biserial,27,0.9682539682539684,2.086162567138672e-07,True,0.9682539682539684,CURRENT,
+behavior_model_zoo,TinyRNN h4 vs Current nonlinear,rank_biserial,27,0.9735449735449736,1.4901161193847656e-07,True,0.9735449735449736,CURRENT,
+behavior_model_zoo,TinyRNN h8 vs Current nonlinear,rank_biserial,27,0.9576719576719576,3.725290298461914e-07,True,0.9576719576719576,CURRENT,
+behavior_model_zoo,Actor-Critic vs Feature-Q,rank_biserial,27,-0.6243386243386243,0.0035503953695297,True,0.6243386243386243,CURRENT,
+behavior_model_zoo,Clock only vs Feature-Q,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Common belief vs Feature-Q,rank_biserial,27,-0.4867724867724867,0.0262309461832046,True,0.4867724867724867,CURRENT,
+behavior_model_zoo,Constant prevalence vs Feature-Q,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + action-history MLP vs Feature-Q,rank_biserial,27,0.8465608465608465,2.586841583251953e-05,True,0.8465608465608465,CURRENT,
+behavior_model_zoo,Current + action-history linear vs Feature-Q,rank_biserial,27,-0.656084656084656,0.0020453035831451,True,0.656084656084656,CURRENT,
+behavior_model_zoo,Current + full-history MLP vs Feature-Q,rank_biserial,27,0.8677248677248677,1.347064971923828e-05,True,0.8677248677248677,CURRENT,
+behavior_model_zoo,Current + full-history linear vs Feature-Q,rank_biserial,27,-0.6931216931216931,0.001020923256874,True,0.6931216931216931,CURRENT,
+behavior_model_zoo,Current + outcome-history MLP vs Feature-Q,rank_biserial,27,-0.9365079365079364,1.043081283569336e-06,True,0.9365079365079364,CURRENT,
+behavior_model_zoo,Current + outcome-history linear vs Feature-Q,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current linear vs Feature-Q,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current nonlinear vs Feature-Q,rank_biserial,27,-0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT,
+behavior_model_zoo,Direct policy vs Feature-Q,rank_biserial,27,-0.3174603174603174,0.1551336348056793,True,0.3174603174603174,CURRENT,
+behavior_model_zoo,Formal + TinyRNN vs Feature-Q,rank_biserial,27,0.9947089947089948,2.9802322387695312e-08,True,0.9947089947089948,CURRENT,
+behavior_model_zoo,Formal + external ensemble vs Feature-Q,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,History MLP + Feature-Q vs Feature-Q,rank_biserial,27,0.9894179894179894,4.4703483581542975e-08,True,0.9894179894179894,CURRENT,
+behavior_model_zoo,History MLP + formal-all vs Feature-Q,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,LDN v2 vs Feature-Q,rank_biserial,27,0.8253968253968254,4.746019840240479e-05,True,0.8253968253968254,CURRENT,
+behavior_model_zoo,LDN v3 vs Feature-Q,rank_biserial,27,0.6666666666666666,0.0016869753599166,True,0.6666666666666666,CURRENT,
+behavior_model_zoo,LDN v4 vs Feature-Q,rank_biserial,27,0.6878306878306878,0.0011315494775772,True,0.6878306878306878,CURRENT,
+behavior_model_zoo,Previous choice only vs Feature-Q,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,TinyRNN h1 vs Feature-Q,rank_biserial,27,-0.9735449735449736,1.4901161193847656e-07,True,0.9735449735449736,CURRENT,
+behavior_model_zoo,TinyRNN h2 vs Feature-Q,rank_biserial,27,-0.164021164021164,0.4698396325111389,True,0.164021164021164,CURRENT,
+behavior_model_zoo,TinyRNN h3 vs Feature-Q,rank_biserial,27,0.7354497354497355,0.0004272311925888,True,0.7354497354497355,CURRENT,
+behavior_model_zoo,TinyRNN h4 vs Feature-Q,rank_biserial,27,0.4021164021164021,0.0692269504070282,True,0.4021164021164021,CURRENT,
+behavior_model_zoo,TinyRNN h8 vs Feature-Q,rank_biserial,27,0.5132275132275133,0.018655240535736,True,0.5132275132275133,CURRENT,
+behavior_model_zoo,Actor-Critic vs TinyRNN h3,rank_biserial,27,-0.798941798941799,9.59634780883789e-05,True,0.798941798941799,CURRENT,
+behavior_model_zoo,Clock only vs TinyRNN h3,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Common belief vs TinyRNN h3,rank_biserial,27,-0.8148148148148148,6.331503391265869e-05,True,0.8148148148148148,CURRENT,
+behavior_model_zoo,Constant prevalence vs TinyRNN h3,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + action-history MLP vs TinyRNN h3,rank_biserial,27,0.656084656084656,0.0020453035831451,True,0.656084656084656,CURRENT,
+behavior_model_zoo,Current + action-history linear vs TinyRNN h3,rank_biserial,27,-0.8412698412698413,3.023445606231689e-05,True,0.8412698412698413,CURRENT,
+behavior_model_zoo,Current + full-history MLP vs TinyRNN h3,rank_biserial,27,0.7671957671957672,0.0002088844776153,True,0.7671957671957672,CURRENT,
+behavior_model_zoo,Current + full-history linear vs TinyRNN h3,rank_biserial,27,-0.8571428571428571,1.879036426544189e-05,True,0.8571428571428571,CURRENT,
+behavior_model_zoo,Current + outcome-history MLP vs TinyRNN h3,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current + outcome-history linear vs TinyRNN h3,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current linear vs TinyRNN h3,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,Current nonlinear vs TinyRNN h3,rank_biserial,27,-0.9682539682539684,2.086162567138672e-07,True,0.9682539682539684,CURRENT,
+behavior_model_zoo,Direct policy vs TinyRNN h3,rank_biserial,27,-0.8465608465608465,2.586841583251953e-05,True,0.8465608465608465,CURRENT,
+behavior_model_zoo,Feature-Q vs TinyRNN h3,rank_biserial,27,-0.7354497354497355,0.0004272311925888,True,0.7354497354497355,CURRENT,
+behavior_model_zoo,Formal + TinyRNN vs TinyRNN h3,rank_biserial,27,0.8624338624338624,1.5929341316223145e-05,True,0.8624338624338624,CURRENT,
+behavior_model_zoo,Formal + external ensemble vs TinyRNN h3,rank_biserial,27,0.7671957671957672,0.0002088844776153,True,0.7671957671957672,CURRENT,
+behavior_model_zoo,History MLP + Feature-Q vs TinyRNN h3,rank_biserial,27,0.9735449735449736,1.4901161193847656e-07,True,0.9735449735449736,CURRENT,
+behavior_model_zoo,History MLP + formal-all vs TinyRNN h3,rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,LDN v2 vs TinyRNN h3,rank_biserial,27,-0.0105820105820105,0.9717257022857666,True,0.0105820105820105,CURRENT,
+behavior_model_zoo,LDN v3 vs TinyRNN h3,rank_biserial,27,-0.2698412698412698,0.2290707677602768,True,0.2698412698412698,CURRENT,
+behavior_model_zoo,LDN v4 vs TinyRNN h3,rank_biserial,27,-0.2222222222222222,0.324220210313797,True,0.2222222222222222,CURRENT,
+behavior_model_zoo,Previous choice only vs TinyRNN h3,rank_biserial,27,-1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+behavior_model_zoo,TinyRNN h1 vs TinyRNN h3,rank_biserial,27,-0.9947089947089948,2.9802322387695312e-08,True,0.9947089947089948,CURRENT,
+behavior_model_zoo,TinyRNN h2 vs TinyRNN h3,rank_biserial,27,-0.7301587301587301,0.0004787445068359,True,0.7301587301587301,CURRENT,
+behavior_model_zoo,TinyRNN h4 vs TinyRNN h3,rank_biserial,27,-0.5079365079365079,0.0200017541646957,True,0.5079365079365079,CURRENT,
+behavior_model_zoo,TinyRNN h8 vs TinyRNN h3,rank_biserial,27,-0.2169312169312169,0.3361395001411438,True,0.2169312169312169,CURRENT,
+learning_phase,Actor-Critic gain vs Current nonlinear: late-early,rank_biserial,27,0.1587301587301587,0.4846055656671524,True,0.1587301587301587,CURRENT,
+learning_phase,Clock only gain vs Current nonlinear: late-early,rank_biserial,27,0.7354497354497355,0.0004272311925888,True,0.7354497354497355,CURRENT,
+learning_phase,Common belief gain vs Current nonlinear: late-early,rank_biserial,27,0.1005291005291005,0.6616804599761963,True,0.1005291005291005,CURRENT,
+learning_phase,Constant prevalence gain vs Current nonlinear: late-early,rank_biserial,27,0.1798941798941798,0.4270208328962326,True,0.1798941798941798,CURRENT,
+learning_phase,Current + action-history MLP gain vs Current nonlinear: late-early,rank_biserial,27,0.2222222222222222,0.324220210313797,True,0.2222222222222222,CURRENT,
+learning_phase,Current + action-history linear gain vs Current nonlinear: late-early,rank_biserial,27,0.0687830687830687,0.7676084339618683,True,0.0687830687830687,CURRENT,
+learning_phase,Current + full-history MLP gain vs Current nonlinear: late-early,rank_biserial,27,0.2592592592592592,0.2483380287885666,True,0.2592592592592592,CURRENT,
+learning_phase,Current + full-history linear gain vs Current nonlinear: late-early,rank_biserial,27,0.0634920634920634,0.7857417166233063,True,0.0634920634920634,CURRENT,
+learning_phase,Current + outcome-history MLP gain vs Current nonlinear: late-early,rank_biserial,27,0.1481481481481481,0.5148514956235886,True,0.1481481481481481,CURRENT,
+learning_phase,Current + outcome-history linear gain vs Current nonlinear: late-early,rank_biserial,27,-0.0793650793650793,0.7317177355289459,True,0.0793650793650793,CURRENT,
+learning_phase,Current linear gain vs Current nonlinear: late-early,rank_biserial,27,0.0105820105820105,0.9717257022857666,True,0.0105820105820105,CURRENT,
+learning_phase,Direct policy gain vs Current nonlinear: late-early,rank_biserial,27,0.1269841269841269,0.5780609846115112,True,0.1269841269841269,CURRENT,
+learning_phase,Feature-Q gain vs Current nonlinear: late-early,rank_biserial,27,0.1428571428571428,0.5303222090005875,True,0.1428571428571428,CURRENT,
+learning_phase,Formal + TinyRNN gain vs Current nonlinear: late-early,rank_biserial,27,0.2275132275132275,0.3125704079866409,True,0.2275132275132275,CURRENT,
+learning_phase,Formal + external ensemble gain vs Current nonlinear: late-early,rank_biserial,27,0.3174603174603174,0.1551336348056793,True,0.3174603174603174,CURRENT,
+learning_phase,History MLP + Feature-Q gain vs Current nonlinear: late-early,rank_biserial,27,0.2539682539682539,0.2583710700273514,True,0.2539682539682539,CURRENT,
+learning_phase,History MLP + formal-all gain vs Current nonlinear: late-early,rank_biserial,27,0.3068783068783068,0.1698138564825058,True,0.3068783068783068,CURRENT,
+learning_phase,LDN v2 gain vs Current nonlinear: late-early,rank_biserial,27,0.2116402116402116,0.3483276069164276,True,0.2116402116402116,CURRENT,
+learning_phase,LDN v3 gain vs Current nonlinear: late-early,rank_biserial,27,0.2275132275132275,0.3125704079866409,True,0.2275132275132275,CURRENT,
+learning_phase,LDN v4 gain vs Current nonlinear: late-early,rank_biserial,27,0.291005291005291,0.1936801671981811,True,0.291005291005291,CURRENT,
+learning_phase,Previous choice only gain vs Current nonlinear: late-early,rank_biserial,27,0.3174603174603174,0.1551336348056793,True,0.3174603174603174,CURRENT,
+learning_phase,TinyRNN h1 gain vs Current nonlinear: late-early,rank_biserial,27,0.0,1.0,True,0.0,CURRENT,
+learning_phase,TinyRNN h2 gain vs Current nonlinear: late-early,rank_biserial,27,0.1481481481481481,0.5148514956235886,True,0.1481481481481481,CURRENT,
+learning_phase,TinyRNN h3 gain vs Current nonlinear: late-early,rank_biserial,27,0.2751322751322751,0.219833105802536,True,0.2751322751322751,CURRENT,
+learning_phase,TinyRNN h4 gain vs Current nonlinear: late-early,rank_biserial,27,0.2804232804232804,0.2108570337295532,True,0.2804232804232804,CURRENT,
+learning_phase,TinyRNN h8 gain vs Current nonlinear: late-early,rank_biserial,27,0.3492063492063492,0.1166852712631225,True,0.3492063492063492,CURRENT,
+learning_phase,Actor-Critic gain vs Feature-Q: late-early,rank_biserial,27,-0.0529100529100529,0.82233826816082,True,0.0529100529100529,CURRENT,
+learning_phase,Clock only gain vs Feature-Q: late-early,rank_biserial,27,0.6455026455026455,0.0024686902761459,True,0.6455026455026455,CURRENT,
+learning_phase,Common belief gain vs Feature-Q: late-early,rank_biserial,27,-0.3809523809523809,0.0859334021806716,True,0.3809523809523809,CURRENT,
+learning_phase,Constant prevalence gain vs Feature-Q: late-early,rank_biserial,27,0.0952380952380952,0.6789510101079941,True,0.0952380952380952,CURRENT,
+learning_phase,Current + action-history MLP gain vs Feature-Q: late-early,rank_biserial,27,0.1904761904761904,0.3997428268194198,True,0.1904761904761904,CURRENT,
+learning_phase,Current + action-history linear gain vs Feature-Q: late-early,rank_biserial,27,-0.4338624338624338,0.0491019040346145,True,0.4338624338624338,CURRENT,
+learning_phase,Current + full-history MLP gain vs Feature-Q: late-early,rank_biserial,27,0.2275132275132275,0.3125704079866409,True,0.2275132275132275,CURRENT,
+learning_phase,Current + full-history linear gain vs Feature-Q: late-early,rank_biserial,27,-0.4603174603174603,0.0362061262130737,True,0.4603174603174603,CURRENT,
+learning_phase,Current + outcome-history MLP gain vs Feature-Q: late-early,rank_biserial,27,-0.0264550264550264,0.9153143465518953,True,0.0264550264550264,CURRENT,
+learning_phase,Current + outcome-history linear gain vs Feature-Q: late-early,rank_biserial,27,-0.0793650793650793,0.7317177355289459,True,0.0793650793650793,CURRENT,
+learning_phase,Current linear gain vs Feature-Q: late-early,rank_biserial,27,-0.0105820105820105,0.9717257022857666,True,0.0105820105820105,CURRENT,
+learning_phase,Current nonlinear gain vs Feature-Q: late-early,rank_biserial,27,-0.1428571428571428,0.5303222090005875,True,0.1428571428571428,CURRENT,
+learning_phase,Direct policy gain vs Feature-Q: late-early,rank_biserial,27,-0.201058201058201,0.3735059350728988,True,0.201058201058201,CURRENT,
+learning_phase,Formal + TinyRNN gain vs Feature-Q: late-early,rank_biserial,27,0.4708994708994709,0.0318958312273025,True,0.4708994708994709,CURRENT,
+learning_phase,Formal + external ensemble gain vs Feature-Q: late-early,rank_biserial,27,0.5343915343915344,0.0140057355165481,True,0.5343915343915344,CURRENT,
+learning_phase,History MLP + Feature-Q gain vs Feature-Q: late-early,rank_biserial,27,0.3492063492063492,0.1166852712631225,True,0.3492063492063492,CURRENT,
+learning_phase,History MLP + formal-all gain vs Feature-Q: late-early,rank_biserial,27,0.5079365079365079,0.0200017541646957,True,0.5079365079365079,CURRENT,
+learning_phase,LDN v2 gain vs Feature-Q: late-early,rank_biserial,27,0.1904761904761904,0.3997428268194198,True,0.1904761904761904,CURRENT,
+learning_phase,LDN v3 gain vs Feature-Q: late-early,rank_biserial,27,0.328042328042328,0.1414058655500412,True,0.328042328042328,CURRENT,
+learning_phase,LDN v4 gain vs Feature-Q: late-early,rank_biserial,27,0.3121693121693121,0.1623528897762298,True,0.3121693121693121,CURRENT,
+learning_phase,Previous choice only gain vs Feature-Q: late-early,rank_biserial,27,0.1851851851851851,0.4132529646158218,True,0.1851851851851851,CURRENT,
+learning_phase,TinyRNN h1 gain vs Feature-Q: late-early,rank_biserial,27,-0.1957671957671957,0.3864929676055908,True,0.1957671957671957,CURRENT,
+learning_phase,TinyRNN h2 gain vs Feature-Q: late-early,rank_biserial,27,0.0264550264550264,0.9153143465518953,True,0.0264550264550264,CURRENT,
+learning_phase,TinyRNN h3 gain vs Feature-Q: late-early,rank_biserial,27,0.4338624338624338,0.0491019040346145,True,0.4338624338624338,CURRENT,
+learning_phase,TinyRNN h4 gain vs Feature-Q: late-early,rank_biserial,27,0.4391534391534391,0.046262577176094,True,0.4391534391534391,CURRENT,
+learning_phase,TinyRNN h8 gain vs Feature-Q: late-early,rank_biserial,27,0.5925925925925926,0.0059403479099273,True,0.5925925925925926,CURRENT,
+visual_block,feature_q_allreward test-reference Brier,rank_biserial,14,0.6952380952380952,0.020263671875,True,0.6952380952380952,CURRENT,
+visual_block,policy_active test-reference Brier,rank_biserial,14,0.6761904761904762,0.0245361328125,True,0.6761904761904762,CURRENT,
+visual_block,statevalue_actor_allreward test-reference Brier,rank_biserial,14,0.6761904761904762,0.0245361328125,True,0.6761904761904762,CURRENT,
+visual_block,Current + full-history MLP test-reference Brier,rank_biserial,14,0.7333333333333333,0.013427734375,True,0.7333333333333333,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D1/learner,rank_biserial_vs_zero,26,0.2421652421652421,0.1456881463527679,True,0.2421652421652421,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D1/non_learner,rank_biserial_vs_zero,13,0.6043956043956044,0.0286865234375,True,0.6043956043956044,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D1/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,39,-0.2189349112426035,0.2768536416101008,True,0.2189349112426035,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D2-4/learner,rank_biserial_vs_zero,27,0.455026455026455,0.0192670598626136,True,0.455026455026455,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D2-4/non_learner,rank_biserial_vs_zero,13,0.6043956043956044,0.0286865234375,True,0.6043956043956044,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D2-4/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,0.0427350427350427,0.8398105833940996,True,0.0427350427350427,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D5-9/learner,rank_biserial_vs_zero,27,0.3862433862433862,0.0407442823052406,True,0.3862433862433862,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D5-9/non_learner,rank_biserial_vs_zero,13,0.5164835164835165,0.054931640625,True,0.5164835164835165,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D5-9/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.0883190883190883,0.6649071938796189,True,0.0883190883190883,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D10-14/learner,rank_biserial_vs_zero,27,0.3015873015873015,0.0887600108981132,True,0.3015873015873015,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D10-14/non_learner,rank_biserial_vs_zero,13,0.978021978021978,0.000244140625,True,0.978021978021978,CURRENT,
+learner_nonlearner,SLM_full_vs_core/D10-14/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.1452991452991453,0.4703476793342612,True,0.1452991452991453,CURRENT,
+learner_nonlearner,policy_vs_core/D1/learner,rank_biserial_vs_zero,26,0.3219373219373219,0.0786825865507125,True,0.3219373219373219,CURRENT,
+learner_nonlearner,policy_vs_core/D1/non_learner,rank_biserial_vs_zero,13,0.4945054945054945,0.0635986328125,True,0.4945054945054945,CURRENT,
+learner_nonlearner,policy_vs_core/D1/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,39,-0.0887573964497041,0.665751149413466,True,0.0887573964497041,CURRENT,
+learner_nonlearner,policy_vs_core/D2-4/learner,rank_biserial_vs_zero,27,0.3544973544973545,0.0555254146456718,True,0.3544973544973545,CURRENT,
+learner_nonlearner,policy_vs_core/D2-4/non_learner,rank_biserial_vs_zero,13,0.5604395604395604,0.0401611328125,True,0.5604395604395604,CURRENT,
+learner_nonlearner,policy_vs_core/D2-4/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.1111111111111111,0.5832427573040508,True,0.1111111111111111,CURRENT,
+learner_nonlearner,policy_vs_core/D5-9/learner,rank_biserial_vs_zero,27,0.2275132275132275,0.1562852039933204,True,0.2275132275132275,CURRENT,
+learner_nonlearner,policy_vs_core/D5-9/non_learner,rank_biserial_vs_zero,13,0.4725274725274725,0.0732421875,True,0.4725274725274725,CURRENT,
+learner_nonlearner,policy_vs_core/D5-9/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.1282051282051282,0.5252433025042238,True,0.1282051282051282,CURRENT,
+learner_nonlearner,policy_vs_core/D10-14/learner,rank_biserial_vs_zero,27,0.0105820105820105,0.4858628511428833,True,0.0105820105820105,CURRENT,
+learner_nonlearner,policy_vs_core/D10-14/non_learner,rank_biserial_vs_zero,13,0.5164835164835165,0.054931640625,True,0.5164835164835165,CURRENT,
+learner_nonlearner,policy_vs_core/D10-14/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.2364672364672364,0.2364375706775453,True,0.2364672364672364,CURRENT,
+learner_nonlearner,belief_on_policy/D1/learner,rank_biserial_vs_zero,26,0.1339031339031339,0.2825659513473511,True,0.1339031339031339,CURRENT,
+learner_nonlearner,belief_on_policy/D1/non_learner,rank_biserial_vs_zero,13,0.5384615384615384,0.047119140625,True,0.5384615384615384,CURRENT,
+learner_nonlearner,belief_on_policy/D1/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,39,-0.2071005917159763,0.3040297096770491,True,0.2071005917159763,CURRENT,
+learner_nonlearner,belief_on_policy/D2-4/learner,rank_biserial_vs_zero,27,0.2328042328042328,0.150595374405384,True,0.2328042328042328,CURRENT,
+learner_nonlearner,belief_on_policy/D2-4/non_learner,rank_biserial_vs_zero,13,0.0989010989010989,0.3934326171875,True,0.0989010989010989,CURRENT,
+learner_nonlearner,belief_on_policy/D2-4/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,0.0256410256410256,0.9080439420261288,True,0.0256410256410256,CURRENT,
+learner_nonlearner,belief_on_policy/D5-9/learner,rank_biserial_vs_zero,27,0.291005291005291,0.0968400835990905,True,0.291005291005291,CURRENT,
+learner_nonlearner,belief_on_policy/D5-9/non_learner,rank_biserial_vs_zero,13,0.2527472527472527,0.2274169921875,True,0.2527472527472527,CURRENT,
+learner_nonlearner,belief_on_policy/D5-9/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,0.1396011396011396,0.4882863754318425,True,0.1396011396011396,CURRENT,
+learner_nonlearner,belief_on_policy/D10-14/learner,rank_biserial_vs_zero,27,0.4391534391534391,0.023131288588047,True,0.4391534391534391,CURRENT,
+learner_nonlearner,belief_on_policy/D10-14/non_learner,rank_biserial_vs_zero,13,0.6923076923076923,0.0133056640625,True,0.6923076923076923,CURRENT,
+learner_nonlearner,belief_on_policy/D10-14/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,0.0655270655270655,0.7507565670475442,True,0.0655270655270655,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D1/learner,rank_biserial_vs_zero,26,-0.168091168091168,0.7737637460231781,True,0.168091168091168,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D1/non_learner,rank_biserial_vs_zero,13,-0.0329670329670329,0.5537109375,True,0.0329670329670329,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D1/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,39,-0.1005917159763313,0.6230226746333831,True,0.1005917159763313,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D2-4/learner,rank_biserial_vs_zero,27,0.4338624338624338,0.0245509520173072,True,0.4338624338624338,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D2-4/non_learner,rank_biserial_vs_zero,13,0.0329670329670329,0.4730224609375,True,0.0329670329670329,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D2-4/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,0.1794871794871795,0.3706947746096714,True,0.1794871794871795,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D5-9/learner,rank_biserial_vs_zero,27,0.074074074074074,0.3747987598180771,True,0.074074074074074,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D5-9/non_learner,rank_biserial_vs_zero,13,0.4945054945054945,0.0635986328125,True,0.4945054945054945,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D5-9/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.1908831908831909,0.3406276770552464,True,0.1908831908831909,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D10-14/learner,rank_biserial_vs_zero,27,0.0634920634920634,0.3928708583116531,True,0.0634920634920634,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D10-14/non_learner,rank_biserial_vs_zero,13,0.2527472527472527,0.2274169921875,True,0.2527472527472527,CURRENT,
+learner_nonlearner,Q_on_policy_belief/D10-14/learner_vs_nonlearner,cliffs_delta_learner_minus_nonlearner,40,-0.0712250712250712,0.7289531093817812,True,0.0712250712250712,CURRENT,
+DA_or_JAWS,Early observation DA: Actor / sampling policy,rank-biserial (fit improvement),6,0.7142857142857143,0.046875,True,0.7142857142857143,CURRENT,
+DA_or_JAWS,Middle observation DA: State-conditioned APE,Spearman rho,8,0.6666666666666669,0.0415664294040326,True,0.6666666666666669,CURRENT,
+DA_or_JAWS,Post-outcome DA: Actor-Critic RPE,rank-biserial (fit improvement),9,0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,
+DA_or_JAWS,Post-outcome DA: Outcome-belief surprise,rank-biserial (fit improvement),9,0.9555555555555556,0.005859375,True,0.9555555555555556,CURRENT,
+DA_or_JAWS,Post-outcome DA: Feature-Q RPE benchmark,rank-biserial (fit improvement),9,0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,
+DA_or_JAWS,Acute contingent ON-OFF: Active reward belief,paired rank-biserial,10,-1.0,0.001953125,True,1.0,CURRENT,
+DA_or_JAWS,Continuous contingent ON-OFF: Active reward belief,paired rank-biserial,10,-1.0,0.001953125,True,1.0,SUPERSEDED_BY_EXACT_V3,
+DA_or_JAWS,Session-scale contingent Full-Normal: Active reward belief,paired rank-biserial,10,-0.9636363636363636,0.00390625,True,0.9636363636363636,CURRENT,
+DA_or_JAWS,Acute contingent ON-OFF: Active Q,paired rank-biserial,10,-0.9555555555555556,0.0078125,True,0.9555555555555556,CURRENT,
+DA_or_JAWS,Continuous contingent ON-OFF: Active Q,paired rank-biserial,10,-0.9555555555555556,0.0078125,True,0.9555555555555556,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Acute contingent: Active belief,rank_biserial,10,-1.0,0.001953125,True,1.0,CURRENT,
+JAWS_matrix,Acute contingent: Active Q,rank_biserial,10,-0.9555555555555556,0.0078125,True,0.9555555555555556,CURRENT,
+JAWS_matrix,Acute contingent: Passive belief,rank_biserial,10,0.4181818181818181,0.275390625,True,0.4181818181818181,CURRENT,
+JAWS_matrix,Acute contingent: Actor theta,rank_biserial,10,-0.5272727272727272,0.16015625,True,0.5272727272727272,CURRENT,
+JAWS_matrix,Acute contingent: Observation fraction,rank_biserial,10,0.0545454545454545,0.921875,True,0.0545454545454545,CURRENT,
+JAWS_matrix,Acute contingent: Active-specific belief,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,CURRENT,
+JAWS_matrix,Acute noncontingent: Active belief,rank_biserial,10,-0.7818181818181819,0.02734375,True,0.7818181818181819,CURRENT,
+JAWS_matrix,Acute noncontingent: Active Q,rank_biserial,10,-0.6,0.12890625,True,0.6,CURRENT,
+JAWS_matrix,Acute noncontingent: Passive belief,rank_biserial,10,-0.0545454545454545,0.921875,True,0.0545454545454545,CURRENT,
+JAWS_matrix,Acute noncontingent: Actor theta,rank_biserial,10,0.0666666666666666,0.91015625,True,0.0666666666666666,CURRENT,
+JAWS_matrix,Acute noncontingent: Observation fraction,rank_biserial,10,0.7818181818181819,0.02734375,True,0.7818181818181819,CURRENT,
+JAWS_matrix,Acute noncontingent: Active-specific belief,rank_biserial,10,-0.8222222222222222,0.02734375,True,0.8222222222222222,CURRENT,
+JAWS_matrix,Continuous contingent (per-event): Active belief,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous contingent (per-event): Active Q,rank_biserial,10,-0.7333333333333333,0.0546875,True,0.7333333333333333,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous contingent (per-event): Passive belief,rank_biserial,10,-0.1636363636363636,0.6953125,True,0.1636363636363636,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous contingent (per-event): Actor theta,rank_biserial,10,-0.3818181818181818,0.322265625,True,0.3818181818181818,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous contingent (per-event): Active-specific belief,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous noncontingent (per-event): Active belief,rank_biserial,10,-0.4181818181818181,0.275390625,True,0.4181818181818181,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous noncontingent (per-event): Active Q,rank_biserial,10,0.0666666666666666,0.91015625,True,0.0666666666666666,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous noncontingent (per-event): Passive belief,rank_biserial,10,-0.0181818181818181,1.0,True,0.0181818181818181,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous noncontingent (per-event): Actor theta,rank_biserial,10,0.4222222222222222,0.30078125,True,0.4222222222222222,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous noncontingent (per-event): Active-specific belief,rank_biserial,10,-0.2888888888888888,0.49609375,True,0.2888888888888888,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous contingent (per-event): Observation fraction,rank_biserial,10,0.2,0.625,True,0.2,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Continuous noncontingent (per-event): Observation fraction,rank_biserial,10,0.4909090909090909,0.193359375,True,0.4909090909090909,SUPERSEDED_BY_EXACT_V3,
+JAWS_matrix,Session-scale contingent: Active belief,rank_biserial,10,-0.9636363636363636,0.00390625,True,0.9636363636363636,CURRENT,
+JAWS_matrix,Session-scale contingent: Active Q,rank_biserial,10,0.2727272727272727,0.4921875,True,0.2727272727272727,CURRENT,
+JAWS_matrix,Session-scale contingent: Passive belief,rank_biserial,10,-0.6363636363636364,0.083984375,True,0.6363636363636364,CURRENT,
+JAWS_matrix,Session-scale contingent: Actor theta,rank_biserial,10,0.4909090909090909,0.193359375,True,0.4909090909090909,CURRENT,
+JAWS_matrix,Session-scale contingent: Observation fraction,rank_biserial,10,0.8909090909090909,0.009765625,True,0.8909090909090909,CURRENT,
+JAWS_matrix,Session-scale contingent: Active-specific belief,rank_biserial,10,-0.4909090909090909,0.193359375,True,0.4909090909090909,CURRENT,
+JAWS_matrix,Session-scale noncontingent: Active belief,rank_biserial,5,-0.6,0.3125,True,0.6,CURRENT,
+JAWS_matrix,Session-scale noncontingent: Active Q,rank_biserial,5,-0.7333333333333333,0.1875,True,0.7333333333333333,CURRENT,
+JAWS_matrix,Session-scale noncontingent: Passive belief,rank_biserial,5,-0.2,0.8125,True,0.2,CURRENT,
+JAWS_matrix,Session-scale noncontingent: Actor theta,rank_biserial,5,-0.7333333333333333,0.1875,True,0.7333333333333333,CURRENT,
+JAWS_matrix,Session-scale noncontingent: Observation fraction,rank_biserial,5,0.0666666666666666,1.0,True,0.0666666666666666,CURRENT,
+JAWS_matrix,Session-scale noncontingent: Active-specific belief,rank_biserial,5,-0.4666666666666667,0.4375,True,0.4666666666666667,CURRENT,
+cross_species,Mouse SOE: TinyRNN h3 vs Feature-Q,rank_biserial,27,0.7354497354497355,0.0004272311925888,True,0.7354497354497355,CURRENT,
+cross_species,Macaque: Multiscale vs paper-current,rank_biserial,88,0.8069458631256384,4.8931255851764685e-11,True,0.8069458631256384,CURRENT,
+cross_species,Macaque: TinyRNN3-skip vs paper-current,rank_biserial,88,0.8881511746680286,4.630386658203189e-13,True,0.8881511746680286,CURRENT,
+cross_species,Macaque: TinyRNN3-plain vs paper-current,rank_biserial,88,0.8646578140960164,1.863578881555612e-12,True,0.8646578140960164,CURRENT,
+cross_species,Human: Multiscale vs paper-current,rank_biserial,10,0.9636363636363636,0.00390625,True,0.9636363636363636,CURRENT,
+cross_species,Human: TinyRNN vs paper-current,rank_biserial,10,0.6363636363636364,0.083984375,True,0.6363636363636364,CURRENT,
+classic_RL_baseline,SLM full vs RW-active (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs RW-active (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs WSLS (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs WSLS (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Q-active (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Q-active (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs AsymQ-active (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs AsymQ-active (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Q-allreward (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Q-allreward (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs ForgetQ-active (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs ForgetQ-active (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Q+choice-kernel (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Q+choice-kernel (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Choice-kernel (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+classic_RL_baseline,SLM full vs Choice-kernel (AUC),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT,
+DA_blackbox,TinyRNN DA_ObsBout_AUCperSec RNNp,rank_biserial,9,-0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,
+DA_blackbox,TinyRNN DA_ObsBout_AUCperSec RNNstate,rank_biserial,9,-0.2888888888888888,0.49609375,True,0.2888888888888888,CURRENT,
+DA_blackbox,TinyRNN DA_Post06_AUCperSec RNNp,rank_biserial,9,0.7333333333333333,0.0546875,True,0.7333333333333333,CURRENT,
+DA_blackbox,TinyRNN DA_Post06_AUCperSec RNNstate,rank_biserial,9,0.5111111111111111,0.203125,True,0.5111111111111111,CURRENT,
+DA_blackbox,HistoryMLP DA_ObsBout_AUCperSec HistoryMLP_p,rank_biserial,9,-0.3777777777777777,0.359375,True,0.3777777777777777,CURRENT,
+DA_blackbox,HistoryMLP DA_Post06_AUCperSec HistoryMLP_absErr,rank_biserial,9,-1.0,0.00390625,True,1.0,CURRENT,
+DA_blackbox,HistoryMLP DA_Post06_AUCperSec HistoryMLP_err,rank_biserial,9,-0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,
+DA_blackbox,HistoryMLP DA_Post06_AUCperSec HistoryMLP_p,rank_biserial,9,0.0666666666666666,0.91015625,True,0.0666666666666666,CURRENT,
+DA_blackbox,HistoryMLP DA_Post06_AUCperSec HistoryMLP_surprise,rank_biserial,9,-0.9111111111111112,0.01171875,True,0.9111111111111112,CURRENT,
+JAWS_exact_continuous,contingent active_belief per_episode ON-OFF,rank_biserial,10,-1.0,0.001953125,True,1.0,CURRENT,
+JAWS_exact_continuous,contingent active_belief per_event ON-OFF,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,CURRENT,
+JAWS_exact_continuous,contingent actor_theta per_episode ON-OFF,rank_biserial,10,-0.6,0.10546875,True,0.6,CURRENT,
+JAWS_exact_continuous,contingent actor_theta per_event ON-OFF,rank_biserial,10,-0.3818181818181818,0.322265625,True,0.3818181818181818,CURRENT,
+JAWS_exact_continuous,contingent passive_belief per_episode ON-OFF,rank_biserial,10,0.3454545454545454,0.375,True,0.3454545454545454,CURRENT,
+JAWS_exact_continuous,contingent passive_belief per_event ON-OFF,rank_biserial,10,-0.1636363636363636,0.6953125,True,0.1636363636363636,CURRENT,
+JAWS_exact_continuous,contingent qactive per_episode ON-OFF,rank_biserial,10,-0.9555555555555556,0.0078125,True,0.9555555555555556,CURRENT,
+JAWS_exact_continuous,contingent qactive per_event ON-OFF,rank_biserial,10,-0.7333333333333333,0.0546875,True,0.7333333333333333,CURRENT,
+JAWS_exact_continuous,contingent reward_belief per_episode ON-OFF,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,CURRENT,
+JAWS_exact_continuous,contingent reward_belief per_event ON-OFF,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,CURRENT,
+JAWS_exact_continuous,noncontingent active_belief per_episode ON-OFF,rank_biserial,10,-0.7090909090909091,0.048828125,True,0.7090909090909091,CURRENT,
+JAWS_exact_continuous,noncontingent active_belief per_event ON-OFF,rank_biserial,10,-0.4181818181818181,0.275390625,True,0.4181818181818181,CURRENT,
+JAWS_exact_continuous,noncontingent actor_theta per_episode ON-OFF,rank_biserial,10,0.0222222222222222,1.0,True,0.0222222222222222,CURRENT,
+JAWS_exact_continuous,noncontingent actor_theta per_event ON-OFF,rank_biserial,10,0.4222222222222222,0.30078125,True,0.4222222222222222,CURRENT,
+JAWS_exact_continuous,noncontingent passive_belief per_episode ON-OFF,rank_biserial,10,0.0181818181818181,1.0,True,0.0181818181818181,CURRENT,
+JAWS_exact_continuous,noncontingent passive_belief per_event ON-OFF,rank_biserial,10,-0.0181818181818181,1.0,True,0.0181818181818181,CURRENT,
+JAWS_exact_continuous,noncontingent qactive per_episode ON-OFF,rank_biserial,10,-0.6,0.12890625,True,0.6,CURRENT,
+JAWS_exact_continuous,noncontingent qactive per_event ON-OFF,rank_biserial,10,0.0666666666666666,0.91015625,True,0.0666666666666666,CURRENT,
+JAWS_exact_continuous,noncontingent reward_belief per_episode ON-OFF,rank_biserial,10,-0.6,0.10546875,True,0.6,CURRENT,
+JAWS_exact_continuous,noncontingent reward_belief per_event ON-OFF,rank_biserial,10,-0.2,0.625,True,0.2,CURRENT,
+JAWS_exact_selectivity,contingent Active-minus-Passive per_episode,rank_biserial,10,-0.9636363636363636,0.00390625,True,0.9636363636363636,CURRENT,
+JAWS_exact_selectivity,contingent Active-minus-Passive per_event,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,CURRENT,
+JAWS_exact_selectivity,noncontingent Active-minus-Passive per_episode,rank_biserial,10,-0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,
+JAWS_exact_selectivity,noncontingent Active-minus-Passive per_event,rank_biserial,10,-0.2888888888888888,0.49609375,True,0.2888888888888888,CURRENT,
+JAWS_blackbox,contingent HistoryMLP pred ON-OFF,rank_biserial,10,-0.2,0.625,True,0.2,CURRENT,
+JAWS_blackbox,contingent HistoryMLP signed_error ON-OFF,rank_biserial,10,0.2363636363636363,0.556640625,True,0.2363636363636363,CURRENT,
+JAWS_blackbox,contingent HistoryMLP abs_error ON-OFF,rank_biserial,10,0.0545454545454545,0.921875,True,0.0545454545454545,CURRENT,
+JAWS_blackbox,contingent HistoryMLP surprise ON-OFF,rank_biserial,10,-0.0181818181818181,1.0,True,0.0181818181818181,CURRENT,
+JAWS_blackbox,contingent HistoryMLP brier_event ON-OFF,rank_biserial,10,-0.0545454545454545,0.921875,True,0.0545454545454545,CURRENT,
+JAWS_blackbox,contingent HistoryMLP actual ON-OFF,rank_biserial,10,0.0545454545454545,0.921875,True,0.0545454545454545,CURRENT,
+JAWS_blackbox,contingent HistoryMLP auc ON-OFF,rank_biserial,10,-0.0909090909090909,0.845703125,True,0.0909090909090909,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP pred ON-OFF,rank_biserial,10,0.4545454545454545,0.232421875,True,0.4545454545454545,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP signed_error ON-OFF,rank_biserial,10,0.7090909090909091,0.048828125,True,0.7090909090909091,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP abs_error ON-OFF,rank_biserial,10,-0.6363636363636364,0.083984375,True,0.6363636363636364,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP surprise ON-OFF,rank_biserial,10,-0.6,0.10546875,True,0.6,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP brier_event ON-OFF,rank_biserial,10,-0.6,0.10546875,True,0.6,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP actual ON-OFF,rank_biserial,10,0.7818181818181819,0.02734375,True,0.7818181818181819,CURRENT,
+JAWS_blackbox,noncontingent HistoryMLP auc ON-OFF,rank_biserial,9,0.0222222222222222,1.0,True,0.0222222222222222,CURRENT,
+JAWS_blackbox_selectivity,contingent HistoryMLP pred Active-minus-Passive,rank_biserial,8,0.1111111111111111,0.84375,True,0.1111111111111111,CURRENT,
+JAWS_blackbox_selectivity,contingent HistoryMLP signed_error Active-minus-Passive,rank_biserial,8,-0.1111111111111111,0.84375,True,0.1111111111111111,CURRENT,
+JAWS_blackbox_selectivity,contingent HistoryMLP abs_error Active-minus-Passive,rank_biserial,8,-0.2222222222222222,0.640625,True,0.2222222222222222,CURRENT,
+JAWS_blackbox_selectivity,contingent HistoryMLP surprise Active-minus-Passive,rank_biserial,8,-0.1111111111111111,0.84375,True,0.1111111111111111,CURRENT,
+JAWS_blackbox_selectivity,contingent HistoryMLP brier_event Active-minus-Passive,rank_biserial,8,-0.1111111111111111,0.84375,True,0.1111111111111111,CURRENT,
+JAWS_blackbox_selectivity,noncontingent HistoryMLP pred Active-minus-Passive,rank_biserial,9,-0.3777777777777777,0.359375,True,0.3777777777777777,CURRENT,
+JAWS_blackbox_selectivity,noncontingent HistoryMLP signed_error Active-minus-Passive,rank_biserial,9,-0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,
+JAWS_blackbox_selectivity,noncontingent HistoryMLP abs_error Active-minus-Passive,rank_biserial,9,0.7777777777777778,0.0390625,True,0.7777777777777778,CURRENT,
+JAWS_blackbox_selectivity,noncontingent HistoryMLP surprise Active-minus-Passive,rank_biserial,9,0.6888888888888889,0.07421875,True,0.6888888888888889,CURRENT,
+JAWS_blackbox_selectivity,noncontingent HistoryMLP brier_event Active-minus-Passive,rank_biserial,9,0.6444444444444445,0.09765625,True,0.6444444444444445,CURRENT,
+inputmatched_RL,Current + Choice-kernel vs Current nonlinear (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + Q+choice-kernel vs Current nonlinear (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + ForgetQ-active vs Current nonlinear (Brier),rank_biserial,27,0.9206349206349206,2.041459083557129e-06,True,0.9206349206349206,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + AsymQ-active vs Current nonlinear (Brier),rank_biserial,27,0.8306878306878307,4.093348979949951e-05,True,0.8306878306878307,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + Q-allreward vs Current nonlinear (Brier),rank_biserial,27,0.7777777777777778,0.0001623928546905,True,0.7777777777777778,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + Q-active vs Current nonlinear (Brier),rank_biserial,27,0.7777777777777778,0.0001623928546905,True,0.7777777777777778,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + RW-active vs Current nonlinear (Brier),rank_biserial,27,-0.0687830687830687,0.7676084339618683,True,0.0687830687830687,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+inputmatched_RL,Current + WSLS vs Current nonlinear (Brier),rank_biserial,27,-0.0687830687830687,0.7676084339618683,True,0.0687830687830687,CURRENT_CONTROL,currentmatched_classical_rl_v1/paired_vs_current.csv
+choicekernel_adjudication,Choice-kernel vs Current nonlinear (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT_CONTROL,ChoiceKernel_vs_modelzoo_paired_v1.csv
+choicekernel_adjudication,Choice-kernel vs Feature-Q (Brier),rank_biserial,27,0.7619047619047619,0.0002363175153732,True,0.7619047619047619,CURRENT_CONTROL,ChoiceKernel_vs_modelzoo_paired_v1.csv
+choicekernel_adjudication,Choice-kernel vs TinyRNN h3 (Brier),rank_biserial,27,0.5343915343915344,0.0140057355165481,True,0.5343915343915344,CURRENT_CONTROL,ChoiceKernel_vs_modelzoo_paired_v1.csv
+choicekernel_adjudication,Choice-kernel vs Current + full-history MLP (Brier),rank_biserial,27,-0.4232804232804232,0.0552030950784683,True,0.4232804232804232,CURRENT_CONTROL,ChoiceKernel_vs_modelzoo_paired_v1.csv
+choicekernel_adjudication,Choice-kernel vs History MLP + formal-all (Brier),rank_biserial,27,-0.7513227513227513,0.0003008991479873,True,0.7513227513227513,CURRENT_CONTROL,ChoiceKernel_vs_modelzoo_paired_v1.csv
+choicekernel_adjudication,Choice-kernel vs SLM full (policy+belief+Q) (Brier),rank_biserial,27,0.8253968253968254,4.746019840240479e-05,True,0.8253968253968254,CURRENT_CONTROL,ChoiceKernel_vs_modelzoo_paired_v1.csv
+DA_classical_adjudication,Early Observation DA: ActorPolicy,rank_biserial,6,0.8095238095238095,0.09375,True,0.8095238095238095,CURRENT,ObsDA_earlythird_classical_adjudication_tests_v1.csv
+DA_classical_adjudication,Early Observation DA: Qall,rank_biserial,6,0.0476190476190476,1.0,True,0.0476190476190476,CURRENT_CONTROL,ObsDA_earlythird_classical_adjudication_tests_v1.csv
+DA_classical_adjudication,Early Observation DA: ActorPolicy+CK95,rank_biserial,6,-0.1428571428571428,0.84375,True,0.1428571428571428,CURRENT_CONTROL,ObsDA_earlythird_classical_adjudication_tests_v1.csv
+DA_classical_adjudication,Early Observation DA: CK95,rank_biserial,6,-0.238095238095238,0.6875,True,0.238095238095238,CURRENT_CONTROL,ObsDA_earlythird_classical_adjudication_tests_v1.csv
+DA_classical_adjudication,Early Observation DA: Qall+CK95,rank_biserial,6,-0.3333333333333333,0.5625,True,0.3333333333333333,CURRENT_CONTROL,ObsDA_earlythird_classical_adjudication_tests_v1.csv
+visual_block_choicekernel,Choice-kernel VisualBlock test-reference brier,rank_biserial,14,0.8285714285714286,0.0040283203125,True,0.8285714285714286,SUPPORTING,VisualBlock_choiceKernel_zeroShot_paired_v1.csv
+visual_block_choicekernel,Choice-kernel VisualBlock test-reference nll,rank_biserial,14,0.8666666666666667,0.0023193359375,True,0.8666666666666667,SUPPORTING,VisualBlock_choiceKernel_zeroShot_paired_v1.csv
+visual_block_choicekernel,Choice-kernel VisualBlock test-reference auc,rank_biserial,14,0.0476190476190476,0.9031982421875,True,0.0476190476190476,SUPPORTING,VisualBlock_choiceKernel_zeroShot_paired_v1.csv
+visual_block_clean_DA,clean_onset_z: Original-VB within phase: Early,rank_biserial,9,0.2444444444444444,0.5703125,True,0.2444444444444444,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: Original-VB within phase: Middle,rank_biserial,9,0.2888888888888888,0.49609375,True,0.2888888888888888,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: Original-VB within phase: Late,rank_biserial,9,0.3333333333333333,0.42578125,True,0.3333333333333333,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: within condition phase: Original: Early-Middle,rank_biserial,9,-0.7333333333333333,0.0546875,True,0.7333333333333333,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: within condition phase: Original: Middle-Late,rank_biserial,9,0.6,0.12890625,True,0.6,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: within condition phase: Original: Early-Late,rank_biserial,9,-0.2888888888888888,0.49609375,True,0.2888888888888888,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: within condition phase: VisualBlock: Early-Middle,rank_biserial,9,-0.5111111111111111,0.203125,True,0.5111111111111111,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: within condition phase: VisualBlock: Middle-Late,rank_biserial,9,0.0666666666666666,0.91015625,True,0.0666666666666666,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: within condition phase: VisualBlock: Early-Late,rank_biserial,9,-0.7333333333333333,0.0546875,True,0.7333333333333333,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: condition x phase: (Early-Middle) Original-VB,rank_biserial,9,-0.5111111111111111,0.203125,True,0.5111111111111111,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: condition x phase: (Middle-Late) Original-VB,rank_biserial,9,0.5111111111111111,0.203125,True,0.5111111111111111,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_onset_z: condition x phase: (Early-Late) Original-VB,rank_biserial,9,-0.0222222222222222,1.0,True,0.0222222222222222,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: Original-VB within phase: Early,rank_biserial,9,0.7333333333333333,0.0546875,True,0.7333333333333333,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: Original-VB within phase: Middle,rank_biserial,9,0.4666666666666667,0.25,True,0.4666666666666667,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: Original-VB within phase: Late,rank_biserial,9,0.2888888888888888,0.49609375,True,0.2888888888888888,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: within condition phase: Original: Early-Middle,rank_biserial,9,-0.7777777777777778,0.0390625,True,0.7777777777777778,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: within condition phase: Original: Middle-Late,rank_biserial,9,0.4666666666666667,0.25,True,0.4666666666666667,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: within condition phase: Original: Early-Late,rank_biserial,9,-0.2444444444444444,0.5703125,True,0.2444444444444444,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: within condition phase: VisualBlock: Early-Middle,rank_biserial,9,-0.5555555555555556,0.1640625,True,0.5555555555555556,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: within condition phase: VisualBlock: Middle-Late,rank_biserial,9,0.1555555555555555,0.734375,True,0.1555555555555555,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: within condition phase: VisualBlock: Early-Late,rank_biserial,9,-0.3777777777777777,0.359375,True,0.3777777777777777,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: condition x phase: (Early-Middle) Original-VB,rank_biserial,9,-0.3777777777777777,0.359375,True,0.3777777777777777,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: condition x phase: (Middle-Late) Original-VB,rank_biserial,9,0.6,0.12890625,True,0.6,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_sustained_z: condition x phase: (Early-Late) Original-VB,rank_biserial,9,0.1111111111111111,0.8203125,True,0.1111111111111111,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: Original-VB within phase: Early,rank_biserial,9,0.8666666666666667,0.01953125,True,0.8666666666666667,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: Original-VB within phase: Middle,rank_biserial,9,0.6888888888888889,0.07421875,True,0.6888888888888889,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: Original-VB within phase: Late,rank_biserial,9,0.5111111111111111,0.203125,True,0.5111111111111111,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: within condition phase: Original: Early-Middle,rank_biserial,9,0.0666666666666666,0.91015625,True,0.0666666666666666,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: within condition phase: Original: Middle-Late,rank_biserial,9,0.2,0.65234375,True,0.2,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: within condition phase: Original: Early-Late,rank_biserial,9,-0.0222222222222222,1.0,True,0.0222222222222222,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: within condition phase: VisualBlock: Early-Middle,rank_biserial,9,-0.1555555555555555,0.734375,True,0.1555555555555555,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: within condition phase: VisualBlock: Middle-Late,rank_biserial,9,-0.3777777777777777,0.359375,True,0.3777777777777777,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: within condition phase: VisualBlock: Early-Late,rank_biserial,9,-0.6,0.12890625,True,0.6,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: condition x phase: (Early-Middle) Original-VB,rank_biserial,9,0.0222222222222222,1.0,True,0.0222222222222222,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: condition x phase: (Middle-Late) Original-VB,rank_biserial,9,0.2888888888888888,0.49609375,True,0.2888888888888888,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_demfeed_post06_z: condition x phase: (Early-Late) Original-VB,rank_biserial,9,0.2,0.65234375,True,0.2,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: Original-VB within phase: Early,rank_biserial,9,0.4666666666666667,0.25,True,0.4666666666666667,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: Original-VB within phase: Middle,rank_biserial,6,0.4285714285714285,0.4375,True,0.4285714285714285,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: Original-VB within phase: Late,rank_biserial,7,0.2142857142857142,0.6875,True,0.2142857142857142,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: within condition phase: Original: Early-Middle,rank_biserial,8,-0.6111111111111112,0.1484375,True,0.6111111111111112,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: within condition phase: Original: Middle-Late,rank_biserial,8,0.2777777777777778,0.546875,True,0.2777777777777778,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: within condition phase: Original: Early-Late,rank_biserial,9,0.0222222222222222,1.0,True,0.0222222222222222,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: within condition phase: VisualBlock: Early-Middle,rank_biserial,7,0.3571428571428571,0.46875,True,0.3571428571428571,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: within condition phase: VisualBlock: Middle-Late,rank_biserial,6,-0.0476190476190476,1.0,True,0.0476190476190476,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: within condition phase: VisualBlock: Early-Late,rank_biserial,7,0.3571428571428571,0.46875,True,0.3571428571428571,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: condition x phase: (Early-Middle) Original-VB,rank_biserial,6,-0.4285714285714285,0.4375,True,0.4285714285714285,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: condition x phase: (Middle-Late) Original-VB,rank_biserial,5,0.3333333333333333,0.625,True,0.3333333333333333,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_DA,clean_obsfeed_post06_z: condition x phase: (Early-Late) Original-VB,rank_biserial,7,0.0,1.0,True,0.0,SUPPORTING,visualblock_reanalysis_20261002/clean_phase_paired_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: within condition outcome: Original: Active-Unrewarded,rank_biserial,5,-0.0666666666666666,1.0,True,0.0666666666666666,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: within condition outcome: Original: Passive-Unrewarded,rank_biserial,7,0.6428571428571429,0.15625,True,0.6428571428571429,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: within condition outcome: Original: Active-Passive,rank_biserial,5,-0.4666666666666667,0.4375,True,0.4666666666666667,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: within condition outcome: VisualBlock: Active-Unrewarded,rank_biserial,7,0.0714285714285714,0.9375,True,0.0714285714285714,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: within condition outcome: VisualBlock: Passive-Unrewarded,rank_biserial,9,0.2444444444444444,0.5703125,True,0.2444444444444444,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: within condition outcome: VisualBlock: Active-Passive,rank_biserial,7,-0.2142857142857142,0.6875,True,0.2142857142857142,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: condition x outcome: Original-VisualBlock: Active-Unrewarded,rank_biserial,5,0.2,0.8125,True,0.2,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: condition x outcome: Original-VisualBlock: Passive-Unrewarded,rank_biserial,7,-0.1428571428571428,0.8125,True,0.1428571428571428,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Early: condition x outcome: Original-VisualBlock: Active-Passive,rank_biserial,5,-0.2,0.8125,True,0.2,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: within condition outcome: Original: Active-Unrewarded,rank_biserial,5,-0.0666666666666666,1.0,True,0.0666666666666666,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: within condition outcome: Original: Passive-Unrewarded,rank_biserial,5,-0.7333333333333333,0.1875,True,0.7333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: within condition outcome: Original: Active-Passive,rank_biserial,6,-0.0476190476190476,1.0,True,0.0476190476190476,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: within condition outcome: VisualBlock: Active-Unrewarded,rank_biserial,7,-0.1428571428571428,0.8125,True,0.1428571428571428,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: within condition outcome: VisualBlock: Passive-Unrewarded,rank_biserial,7,-0.7857142857142857,0.078125,True,0.7857142857142857,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: within condition outcome: VisualBlock: Active-Passive,rank_biserial,7,0.5714285714285714,0.21875,True,0.5714285714285714,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: condition x outcome: Original-VisualBlock: Active-Unrewarded,rank_biserial,4,-0.2,0.875,True,0.2,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: condition x outcome: Original-VisualBlock: Passive-Unrewarded,rank_biserial,3,0.6666666666666666,0.5,True,0.6666666666666666,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Middle: condition x outcome: Original-VisualBlock: Active-Passive,rank_biserial,5,-0.4666666666666667,0.4375,True,0.4666666666666667,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: within condition outcome: Original: Active-Unrewarded,rank_biserial,5,1.0,0.0625,True,1.0,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: within condition outcome: Original: Passive-Unrewarded,rank_biserial,6,0.9047619047619048,0.0625,True,0.9047619047619048,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: within condition outcome: Original: Active-Passive,rank_biserial,6,-0.0476190476190476,1.0,True,0.0476190476190476,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: within condition outcome: VisualBlock: Active-Unrewarded,rank_biserial,6,-0.7142857142857143,0.15625,True,0.7142857142857143,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: within condition outcome: VisualBlock: Passive-Unrewarded,rank_biserial,6,0.6190476190476191,0.21875,True,0.6190476190476191,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: within condition outcome: VisualBlock: Active-Passive,rank_biserial,7,-1.0,0.015625,True,1.0,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: condition x outcome: Original-VisualBlock: Active-Unrewarded,rank_biserial,3,1.0,0.25,True,1.0,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: condition x outcome: Original-VisualBlock: Passive-Unrewarded,rank_biserial,4,0.6,0.375,True,0.6,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_onset_z: Late: condition x outcome: Original-VisualBlock: Active-Passive,rank_biserial,5,0.3333333333333333,0.625,True,0.3333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: within condition outcome: Original: Active-Unrewarded,rank_biserial,5,-0.3333333333333333,0.625,True,0.3333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: within condition outcome: Original: Passive-Unrewarded,rank_biserial,7,0.5714285714285714,0.21875,True,0.5714285714285714,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: within condition outcome: Original: Active-Passive,rank_biserial,5,-0.4666666666666667,0.4375,True,0.4666666666666667,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: within condition outcome: VisualBlock: Active-Unrewarded,rank_biserial,7,0.4285714285714285,0.375,True,0.4285714285714285,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: within condition outcome: VisualBlock: Passive-Unrewarded,rank_biserial,9,0.2888888888888888,0.49609375,True,0.2888888888888888,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: within condition outcome: VisualBlock: Active-Passive,rank_biserial,7,0.9285714285714286,0.03125,True,0.9285714285714286,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: condition x outcome: Original-VisualBlock: Active-Unrewarded,rank_biserial,5,-0.2,0.8125,True,0.2,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: condition x outcome: Original-VisualBlock: Passive-Unrewarded,rank_biserial,7,-0.2857142857142857,0.578125,True,0.2857142857142857,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Early: condition x outcome: Original-VisualBlock: Active-Passive,rank_biserial,5,-0.7333333333333333,0.1875,True,0.7333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: within condition outcome: Original: Active-Unrewarded,rank_biserial,5,-0.0666666666666666,1.0,True,0.0666666666666666,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: within condition outcome: Original: Passive-Unrewarded,rank_biserial,5,-0.6,0.3125,True,0.6,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: within condition outcome: Original: Active-Passive,rank_biserial,6,0.0476190476190476,1.0,True,0.0476190476190476,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: within condition outcome: VisualBlock: Active-Unrewarded,rank_biserial,7,0.1428571428571428,0.8125,True,0.1428571428571428,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: within condition outcome: VisualBlock: Passive-Unrewarded,rank_biserial,7,-0.7857142857142857,0.078125,True,0.7857142857142857,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: within condition outcome: VisualBlock: Active-Passive,rank_biserial,7,0.3571428571428571,0.46875,True,0.3571428571428571,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: condition x outcome: Original-VisualBlock: Active-Unrewarded,rank_biserial,4,0.2,0.875,True,0.2,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: condition x outcome: Original-VisualBlock: Passive-Unrewarded,rank_biserial,3,0.3333333333333333,0.75,True,0.3333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Middle: condition x outcome: Original-VisualBlock: Active-Passive,rank_biserial,5,0.3333333333333333,0.625,True,0.3333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: within condition outcome: Original: Active-Unrewarded,rank_biserial,5,0.8666666666666667,0.125,True,0.8666666666666667,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: within condition outcome: Original: Passive-Unrewarded,rank_biserial,6,0.7142857142857143,0.15625,True,0.7142857142857143,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: within condition outcome: Original: Active-Passive,rank_biserial,6,-0.1428571428571428,0.84375,True,0.1428571428571428,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: within condition outcome: VisualBlock: Active-Unrewarded,rank_biserial,6,-1.0,0.03125,True,1.0,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: within condition outcome: VisualBlock: Passive-Unrewarded,rank_biserial,6,0.9047619047619048,0.0625,True,0.9047619047619048,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: within condition outcome: VisualBlock: Active-Passive,rank_biserial,7,-0.9285714285714286,0.03125,True,0.9285714285714286,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: condition x outcome: Original-VisualBlock: Active-Unrewarded,rank_biserial,3,1.0,0.25,True,1.0,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: condition x outcome: Original-VisualBlock: Passive-Unrewarded,rank_biserial,4,0.2,0.875,True,0.2,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_clean_outcome,clean_sustained_z: Late: condition x outcome: Original-VisualBlock: Active-Passive,rank_biserial,5,0.3333333333333333,0.625,True,0.3333333333333333,EXPLORATORY_SMALL_N,visualblock_reanalysis_20261002/clean_outcome_tests_v2_effectsize.csv
+visual_block_SRI_bridge,feature_q_allreward: SRI loss vs Brier_degradation,Spearman rho,21,0.4532467532467532,0.0406595934040659,True,0.4532467532467532,SUPPORTING_EXPLORATORY,VisualBlock_SRI_loss_permutation_tests_v1.csv
+visual_block_SRI_bridge,statevalue_actor_allreward: SRI loss vs Brier_degradation,Spearman rho,21,0.4298701298701298,0.0524694753052469,True,0.4298701298701298,SUPPORTING_EXPLORATORY,VisualBlock_SRI_loss_permutation_tests_v1.csv
+visual_block_SRI_bridge,policy_active: SRI loss vs Brier_degradation,Spearman rho,21,0.4155844155844155,0.0633293667063329,True,0.4155844155844155,SUPPORTING_EXPLORATORY,VisualBlock_SRI_loss_permutation_tests_v1.csv
+visual_block_SRI_bridge,Full-history MLP: SRI loss vs Brier_degradation,Spearman rho,14,0.3186813186813187,0.2627373726262737,True,0.3186813186813187,SUPPORTING_EXPLORATORY,VisualBlock_SRI_loss_permutation_tests_v1.csv
+visual_block_SRI_bridge,Full-history MLP: SRI loss vs AUC_degradation,Spearman rho,14,0.5340659340659341,0.0528394716052839,True,0.5340659340659341,SUPPORTING_EXPLORATORY,VisualBlock_SRI_loss_permutation_tests_v1.csv
+visual_block_SRI_bridge,Current + Choice-kernel: SRI loss vs Brier_degradation,Spearman rho,14,0.3582417582417582,0.2069879301206988,True,0.3582417582417582,SUPPORTING_EXPLORATORY,VisualBlock_choiceKernel_SRI_loss_correlations_v1.csv
+visual_block_SRI_bridge,Current + Choice-kernel: SRI loss vs NLL_degradation,Spearman rho,14,0.367032967032967,0.1990580094199058,True,0.367032967032967,SUPPORTING_EXPLORATORY,VisualBlock_choiceKernel_SRI_loss_correlations_v1.csv
+visual_block_SRI_bridge,Current + Choice-kernel: SRI loss vs AUC_degradation,Spearman rho,14,0.6,0.0271697283027169,True,0.6,SUPPORTING_EXPLORATORY,VisualBlock_choiceKernel_SRI_loss_correlations_v1.csv
+DA_phase_SRI_dependency,early_policy_DA_gain_vs_SRI,Spearman rho,6,-0.0857142857142857,0.919580804191958,True,0.0857142857142857,GUARDRAIL,DA_phase_effect_vs_SRI_v1.csv
+DA_phase_SRI_dependency,post_actorRPE_DA_gain_vs_SRI,Spearman rho,9,0.0999999999999999,0.8128318716812832,True,0.0999999999999999,GUARDRAIL,DA_phase_effect_vs_SRI_v1.csv
+DA_phase_SRI_dependency,post_beliefSurprise_DA_gain_vs_SRI,Spearman rho,9,-0.1166666666666666,0.7759722402775973,True,0.1166666666666666,GUARDRAIL,DA_phase_effect_vs_SRI_v1.csv
+JAWS_SRI_bridge,final_active_belief: latent delta vs SRI delta,Spearman rho,10,0.5636363636363636,0.0973390266097339,True,0.5636363636363636,SUPPORTING_DIRECTIONAL,JAWS_SLM_latent_vs_SRI_delta_correlations_v2.csv
+JAWS_SRI_bridge,late_active_belief: latent delta vs SRI delta,Spearman rho,10,0.1636363636363636,0.6562434375656243,True,0.1636363636363636,SUPPORTING_DIRECTIONAL,JAWS_SLM_latent_vs_SRI_delta_correlations_v2.csv
+JAWS_SRI_bridge,final_active_Q: latent delta vs SRI delta,Spearman rho,10,0.6121212121212121,0.0660393396066039,True,0.6121212121212121,SUPPORTING_DIRECTIONAL,JAWS_SLM_latent_vs_SRI_delta_correlations_v2.csv
+JAWS_SRI_bridge,exact per_event active_belief: ON-OFF vs SRI delta,Spearman rho,10,-0.0424242424242424,0.91760082399176,True,0.0424242424242424,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_event reward_belief: ON-OFF vs SRI delta,Spearman rho,10,0.103030303030303,0.7838221617783823,True,0.103030303030303,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_event qactive: ON-OFF vs SRI delta,Spearman rho,10,0.6242424242424242,0.0602293977060229,True,0.6242424242424242,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_event passive_belief: ON-OFF vs SRI delta,Spearman rho,10,-0.3818181818181818,0.2788772112278877,True,0.3818181818181818,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_event actor_theta: ON-OFF vs SRI delta,Spearman rho,10,0.5515151515151515,0.1056289437105628,True,0.5515151515151515,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_episode active_belief: ON-OFF vs SRI delta,Spearman rho,10,0.5515151515151515,0.1065789342106579,True,0.5515151515151515,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_episode reward_belief: ON-OFF vs SRI delta,Spearman rho,10,0.1757575757575757,0.6344036559634404,True,0.1757575757575757,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_episode qactive: ON-OFF vs SRI delta,Spearman rho,10,0.6121212121212121,0.0660093399066009,True,0.6121212121212121,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_episode passive_belief: ON-OFF vs SRI delta,Spearman rho,10,-0.4303030303030302,0.2205277947220527,True,0.4303030303030302,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+JAWS_SRI_bridge,exact per_episode actor_theta: ON-OFF vs SRI delta,Spearman rho,10,0.6606060606060605,0.0430895691043089,True,0.6606060606060605,SUPPORTING_DIRECTIONAL,JAWS_exact_continuous_latent_vs_SRI_delta_v1.csv
+DA_middle_conditional,ck_err: partial_APE_given_candidate x SRI,Spearman rho,8,0.6666666666666667,0.0415664294040326,True,0.6666666666666667,CURRENT,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,ck_err: partial_candidate_given_APE x SRI,Spearman rho,8,-0.3333333333333333,0.8053123682448352,True,0.3333333333333333,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,ck_err: rho_APE x SRI,Spearman rho,8,0.6666666666666667,0.0415664294040326,True,0.6666666666666667,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,ck_err: rho_candidate x SRI,Spearman rho,8,-0.2857142857142857,0.7691029488355944,True,0.2857142857142857,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_ck_err: partial_APE_given_candidate x SRI,Spearman rho,8,0.6666666666666667,0.0415664294040326,True,0.6666666666666667,CURRENT,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_ck_err: partial_candidate_given_APE x SRI,Spearman rho,8,-0.3333333333333333,0.8053123682448352,True,0.3333333333333333,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_ck_err: rho_APE x SRI,Spearman rho,8,0.6666666666666667,0.0415664294040326,True,0.6666666666666667,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_ck_err: rho_candidate x SRI,Spearman rho,8,-0.2857142857142857,0.7691029488355944,True,0.2857142857142857,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_err: partial_APE_given_candidate x SRI,Spearman rho,8,0.6666666666666667,0.0415664294040326,True,0.6666666666666667,CURRENT,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_err: partial_candidate_given_APE x SRI,Spearman rho,8,-0.3571428571428572,0.8200689467027108,True,0.3571428571428572,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_err: rho_APE x SRI,Spearman rho,8,0.6666666666666667,0.0415664294040326,True,0.6666666666666667,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_middle_conditional,q_err: rho_candidate x SRI,Spearman rho,8,0.1904761904761904,0.3323082264824781,True,0.1904761904761904,CURRENT_CONTROL,DA_middle_APE_vs_classicRL_partial_summary_v1.csv
+DA_classical_adjudication,Post06 time-residualized CK_errTR,rank_biserial,9,0.4666666666666667,0.25,True,0.4666666666666667,CURRENT_CONTROL,DA_classicRL_postoutcome_timeresid_tests_v1.csv
+DA_classical_adjudication,Post06 time-residualized QCK_errTR,rank_biserial,9,0.4666666666666667,0.25,True,0.4666666666666667,CURRENT_CONTROL,DA_classicRL_postoutcome_timeresid_tests_v1.csv
+DA_classical_adjudication,Post06 time-residualized CK_pTR,rank_biserial,9,-0.0666666666666666,0.91015625,True,0.0666666666666666,CURRENT_CONTROL,DA_classicRL_postoutcome_timeresid_tests_v1.csv
+DA_classical_adjudication,Post06 time-residualized QCK_surpriseTR,rank_biserial,9,-0.0666666666666666,0.91015625,True,0.0666666666666666,CURRENT_CONTROL,DA_classicRL_postoutcome_timeresid_tests_v1.csv
+DA_classical_adjudication,Post06 time-residualized CK_surpriseTR,rank_biserial,9,-0.0222222222222222,1.0,True,0.0222222222222222,CURRENT_CONTROL,DA_classicRL_postoutcome_timeresid_tests_v1.csv
+JAWS_classical_control,continuous_exact_per_event contingent: Choice-kernel state,rank_biserial,10,-0.6727272727272727,0.064453125,True,0.6727272727272727,CURRENT_CONTROL,JAWS_effectsize_exact_with_classic_controls_v1.csv
+JAWS_classical_control,continuous_exact_per_event noncontingent: Choice-kernel state,rank_biserial,10,0.3090909090909091,0.431640625,True,0.3090909090909091,CURRENT_CONTROL,JAWS_effectsize_exact_with_classic_controls_v1.csv
+JAWS_classical_control,continuous_exact_per_event contingent: Choice-kernel update,rank_biserial,10,0.1636363636363636,0.6953125,True,0.1636363636363636,CURRENT_CONTROL,JAWS_effectsize_exact_with_classic_controls_v1.csv
+JAWS_classical_control,continuous_exact_per_event noncontingent: Choice-kernel update,rank_biserial,10,0.7454545454545455,0.037109375,True,0.7454545454545455,CURRENT_CONTROL,JAWS_effectsize_exact_with_classic_controls_v1.csv
+JAWS_classical_control,behavior_endpoint contingent: SRI,rank_biserial,10,-0.9272727272727272,0.005859375,True,0.9272727272727272,CURRENT_CONTROL,JAWS_effectsize_exact_with_classic_controls_v1.csv
+choicekernel_residual_history,Feature-Q: D1-4 gain over ChoiceKernel,rank_biserial,27,-0.6296296296296297,0.0032471865415573,True,0.6296296296296297,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Feature-Q: D5-9 gain over ChoiceKernel,rank_biserial,27,-0.7195767195767195,0.0005984902381896,True,0.7195767195767195,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Feature-Q: D10+ gain over ChoiceKernel,rank_biserial,27,-0.5978835978835979,0.0054652392864227,True,0.5978835978835979,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Feature-Q: late-minus-early gain over ChoiceKernel,rank_biserial,27,-0.1746031746031746,0.4410435855388641,True,0.1746031746031746,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,TinyRNN h3: D1-4 gain over ChoiceKernel,rank_biserial,27,-0.6190476190476191,0.0038779973983764,True,0.6190476190476191,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,TinyRNN h3: D5-9 gain over ChoiceKernel,rank_biserial,27,-0.3809523809523809,0.0859334021806716,True,0.3809523809523809,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,TinyRNN h3: D10+ gain over ChoiceKernel,rank_biserial,27,-0.1746031746031746,0.4410435855388641,True,0.1746031746031746,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,TinyRNN h3: late-minus-early gain over ChoiceKernel,rank_biserial,27,0.291005291005291,0.1936801671981811,True,0.291005291005291,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,LDN v2: D1-4 gain over ChoiceKernel,rank_biserial,27,-0.328042328042328,0.1414058655500412,True,0.328042328042328,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,LDN v2: D5-9 gain over ChoiceKernel,rank_biserial,27,-0.4656084656084656,0.0339947640895843,True,0.4656084656084656,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,LDN v2: D10+ gain over ChoiceKernel,rank_biserial,27,-0.2698412698412698,0.2290707677602768,True,0.2698412698412698,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,LDN v2: late-minus-early gain over ChoiceKernel,rank_biserial,27,-0.1322751322751322,0.5619325190782547,True,0.1322751322751322,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Current + full-history MLP: D1-4 gain over ChoiceKernel,rank_biserial,27,0.1216931216931216,0.594396710395813,True,0.1216931216931216,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Current + full-history MLP: D5-9 gain over ChoiceKernel,rank_biserial,27,0.5291005291005291,0.0150643736124038,True,0.5291005291005291,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Current + full-history MLP: D10+ gain over ChoiceKernel,rank_biserial,27,0.3333333333333333,0.1348898708820343,True,0.3333333333333333,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,Current + full-history MLP: late-minus-early gain over ChoiceKernel,rank_biserial,27,0.0793650793650793,0.7317177355289459,True,0.0793650793650793,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,History MLP + formal-all: D1-4 gain over ChoiceKernel,rank_biserial,27,0.455026455026455,0.0385341197252273,True,0.455026455026455,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,History MLP + formal-all: D5-9 gain over ChoiceKernel,rank_biserial,27,0.6772486772486772,0.0013849586248397,True,0.6772486772486772,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,History MLP + formal-all: D10+ gain over ChoiceKernel,rank_biserial,27,0.6507936507936508,0.0022483021020889,True,0.6507936507936508,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+choicekernel_residual_history,History MLP + formal-all: late-minus-early gain over ChoiceKernel,rank_biserial,27,0.4285714285714285,0.0520805716514587,True,0.4285714285714285,SUPPORTING,ChoiceKernel_residual_rich_history_phase_tests_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs SLM full (Brier),rank_biserial,27,0.9417989417989416,8.195638656616211e-07,True,0.9417989417989416,CURRENT_NEW,SLM_choicekernel_stack_paired_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs Current + Choice-kernel (Brier),rank_biserial,27,0.6666666666666666,0.0016869753599166,True,0.6666666666666666,CURRENT_NEW,SLM_choicekernel_stack_paired_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs Current + full-history MLP (Brier),rank_biserial,27,-0.0793650793650793,0.7317177355289459,True,0.0793650793650793,CURRENT_NEW,SLM_choicekernel_stack_vs_modelzoo_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs Current nonlinear (Brier),rank_biserial,27,1.0,1.4901161193847656e-08,True,1.0,CURRENT_NEW,SLM_choicekernel_stack_vs_modelzoo_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs Feature-Q (Brier),rank_biserial,27,0.9947089947089948,2.9802322387695312e-08,True,0.9947089947089948,CURRENT_NEW,SLM_choicekernel_stack_vs_modelzoo_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs History MLP + formal-all (Brier),rank_biserial,27,-0.5714285714285714,0.0082150548696517,True,0.5714285714285714,CURRENT_NEW,SLM_choicekernel_stack_vs_modelzoo_v1.csv
+SLM_choicekernel_hybrid,SLM+CK stack vs TinyRNN h3 (Brier),rank_biserial,27,0.8624338624338624,1.5929341316223145e-05,True,0.8624338624338624,CURRENT_NEW,SLM_choicekernel_stack_vs_modelzoo_v1.csv
+cross_species,Rat 001169 multiscale vs baseline,rank_biserial,10,0.7454545454545455,0.037109375,True,0.7454545454545455,CURRENT,cross_species_effectsize_rankbiserial_v2.csv
+cross_species,Rat 001169 TinyRNN h3 vs baseline,rank_biserial,10,0.5636363636363636,0.130859375,True,0.5636363636363636,BOUNDARY,rat001169_remote_54957767/paired_tests.csv
+cross_species,Rat 001169 TinyRNN h3 vs multiscale history,rank_biserial,10,-0.8545454545454545,0.013671875,True,0.8545454545454545,CURRENT_CONTROL,rat001169_remote_54957767/paired_tests.csv
+DA_global_post06,formal_qTR,rank_biserial,9,0.7777777777777778,0.0390625,True,0.7777777777777778,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,formal_beliefTR,rank_biserial,9,0.8666666666666667,0.01953125,True,0.8666666666666667,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,ucl_rpeTR,rank_biserial,9,0.9555555555555556,0.0078125,True,0.9555555555555556,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,lc_rpeTR,rank_biserial,9,0.6444444444444445,0.09765625,True,0.6444444444444445,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,5ht_rpeTR,rank_biserial,9,0.7333333333333333,0.0546875,True,0.7333333333333333,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,5ht_uncTR,rank_biserial,9,0.6,0.12890625,True,0.6,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,SLMbelief_vs_formal_qTR,rank_biserial,9,0.6444444444444445,0.09765625,True,0.6444444444444445,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,SLMbelief_vs_ucl_rpeTR,rank_biserial,9,-0.2,0.65234375,True,0.2,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,SLMbelief_vs_lc_rpeTR,rank_biserial,9,0.6888888888888889,0.07421875,True,0.6888888888888889,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,SLMbelief_vs_5ht_rpeTR,rank_biserial,9,0.4666666666666667,0.25,True,0.4666666666666667,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+DA_global_post06,SLMbelief_vs_5ht_uncTR,rank_biserial,9,0.6444444444444445,0.09765625,True,0.6444444444444445,CURRENT,DA_global_post06_bounded_modelcomparison_v2.csv
+generalization_observational_fear,D1 shock velocity Social-trained vs Nonsocial-trained / all30,cliffs_delta_social_minus_nonsocial,12,0.9444444444,0.004329004329,True,0.9444444444,CURRENT_EXACT,observational_fear_D1_exact_group_effects_v1.csv
+generalization_observational_fear,D1 shock velocity minus pre Social-trained vs Nonsocial-trained / all30,cliffs_delta_social_minus_nonsocial,12,0.9444444444,0.004329004329,True,0.9444444444,CURRENT_EXACT,observational_fear_D1_exact_group_effects_v1.csv
+generalization_observational_fear,D1 late cue velocity Social-trained vs Nonsocial-trained / last10,cliffs_delta_social_minus_nonsocial,12,-0.7777777778,0.01515151515,True,0.7777777778,CURRENT_EXACT,observational_fear_D1_exact_group_effects_v1.csv
+generalization_observational_fear,D1 shock observation Social-trained vs Nonsocial-trained / last10,cliffs_delta_social_minus_nonsocial,12,0.7777777778,0.01515151515,True,0.7777777778,CURRENT_EXACT,observational_fear_D1_exact_group_effects_v1.csv
+generalization_observational_fear,D1 shock observation trial slope Social-trained vs Nonsocial-trained,cliffs_delta_social_minus_nonsocial,12,0.7222222222,0.02380952381,True,0.7222222222,CURRENT_EXACT,observational_fear_D1_exact_learning_dynamics_effects_v1.csv
+generalization_observational_fear,D1 shock observation last10-minus-first10 Social-trained vs Nonsocial-trained,cliffs_delta_social_minus_nonsocial,12,0.7777777778,0.02164502165,True,0.7777777778,CURRENT_EXACT,observational_fear_D1_exact_learning_dynamics_effects_v1.csv
+generalization_observational_fear,D1 shock absolute angular velocity minus pre Social-trained vs Nonsocial-trained / all30,cliffs_delta_social_minus_nonsocial,12,0.8333333333,0.008658008658,True,0.8333333333,CURRENT_EXACT,observational_fear_D1_exact_group_effects_v1.csv
+generalization_observational_fear,D2 shock velocity Social-trained vs Nonsocial-trained / all30,cliffs_delta_social_minus_nonsocial,12,-0.0277777778,1.0,True,0.0277777778,CURRENT_EXACT,observational_fear_D2_exact_group_effects_v1.csv
+generalization_observational_fear,D2 shock observation Social-trained vs Nonsocial-trained / all30,cliffs_delta_social_minus_nonsocial,12,-0.0277777778,1.0,True,0.0277777778,CURRENT_EXACT,observational_fear_D2_exact_group_effects_v1.csv
+generalization_observational_fear,Shock velocity D2-minus-D1 group x day change,cliffs_delta_social_minus_nonsocial,12,-0.9444444444,0.004329004329,True,0.9444444444,CURRENT_EXACT,observational_fear_D1D2_attenuation_effects_v1.csv
+generalization_observational_fear,Shock angular velocity change D2-minus-D1 group x day,cliffs_delta_social_minus_nonsocial,12,-0.8333333333,0.01298701299,True,0.8333333333,CURRENT_EXACT,observational_fear_D1D2_attenuation_effects_v1.csv
+generalization_observational_fear,D0 raw centroid speed Social-trained vs Nonsocial-trained,cliffs_delta_social_minus_nonsocial,11,0.0666666667,0.9458874459,True,0.0666666667,CURRENT_CONTROL,observational_fear_D0_rawmotion_effects_v1.csv
+DA_raw_savedtrace_timing,Raw saved trace early-policy beta > 0 / pre,rank_biserial,7,0.4285714285714285,0.1875,True,0.4285714285714285,TIMING_SUPPORT_DIRECTIONAL,results/DA_savedtrace_frozen_windows_effects_v1.csv
+DA_raw_savedtrace_timing,Raw saved trace mid-APE beta vs SRI / pre,spearman_rho,6,0.5428571428571429,0.1486111111111111,True,0.5428571428571429,TIMING_SUPPORT_DIRECTIONAL,results/DA_savedtrace_frozen_windows_effects_v1.csv
+DA_raw_savedtrace_timing,Raw saved trace early-policy beta > 0 / onset,rank_biserial,7,0.5,0.1484375,True,0.5,TIMING_SUPPORT_DIRECTIONAL,results/DA_savedtrace_frozen_windows_effects_v1.csv
+DA_raw_savedtrace_timing,Raw saved trace mid-APE beta vs SRI / onset,spearman_rho,6,0.5428571428571429,0.1486111111111111,True,0.5428571428571429,TIMING_SUPPORT_DIRECTIONAL,results/DA_savedtrace_frozen_windows_effects_v1.csv
+DA_raw_savedtrace_timing,Raw saved trace early-policy beta > 0 / sustained,rank_biserial,5,0.4666666666666667,0.21875,True,0.4666666666666667,TIMING_SUPPORT_DIRECTIONAL,results/DA_savedtrace_frozen_windows_effects_v1.csv
+DA_raw_savedtrace_timing,Raw saved trace mid-APE beta vs SRI / sustained,spearman_rho,5,0.0,0.525,True,0.0,TIMING_SUPPORT_DIRECTIONAL,results/DA_savedtrace_frozen_windows_effects_v1.csv
+generalization_observational_fear_timecourse,Exact-boundary D1 all30 velocity_obs_cm_s cluster 37.3-41.4s,cliffs_delta_social_minus_nonsocial,12,0.9444444444444444,0.1103896103896103,True,0.9444444444444444,CORROBORATING_FAMILYWISE_NS,results/observational_fear_D1_exact_timecourse_cluster_effects_v2.csv
+generalization_observational_fear_timecourse,Exact-boundary D1 late15 abs_angular_velocity_obs cluster 37.3-39.3s,cliffs_delta_social_minus_nonsocial,12,1.0,0.3333333333333333,True,1.0,CORROBORATING_FAMILYWISE_NS,results/observational_fear_D1_exact_timecourse_cluster_effects_v2.csv
+generalization_observational_fear_timecourse,Exact-boundary D1 late15 velocity_obs_cm_s cluster 22.8-26.2s,cliffs_delta_social_minus_nonsocial,12,-0.9444444444444444,0.1991341991341991,True,0.9444444444444444,CORROBORATING_FAMILYWISE_NS,results/observational_fear_D1_exact_timecourse_cluster_effects_v2.csv
+generalization_observational_fear_timecourse,Exact-boundary D1 late15 velocity_obs_cm_s cluster 37.3-40.0s,cliffs_delta_social_minus_nonsocial,12,0.9444444444444444,0.1796536796536796,True,0.9444444444444444,CORROBORATING_FAMILYWISE_NS,results/observational_fear_D1_exact_timecourse_cluster_effects_v2.csv
+generalization_observational_fear_timecourse,Exact-boundary D1 late15 velocity_obs_cm_s cluster 48.7-52.6s,cliffs_delta_social_minus_nonsocial,12,-1.0,0.1991341991341991,True,1.0,CORROBORATING_FAMILYWISE_NS,results/observational_fear_D1_exact_timecourse_cluster_effects_v2.csv
+generalization_food_neophobia,SAFN latency to first feeding Social-trained vs Nonsocial-trained / 600s censored,cliffs_delta_social_minus_nonsocial,12,-0.7222222222222222,0.01948051948051948,True,0.7222222222222222,CURRENT_EXACT_PRIMARY,food_neophobia_SAFN_final_effects_v2.csv
+generalization_food_neophobia,SAFN first feeding bout duration Social-trained vs Nonsocial-trained / 600s,cliffs_delta_social_minus_nonsocial,12,0.8888888888888888,0.008658008658008658,True,0.8888888888888888,SUPPORTING_EXPLORATORY,food_neophobia_SAFN_final_effects_v2.csv
+generalization_food_neophobia,SAFN total feeding duration Social-trained vs Nonsocial-trained / 600s,cliffs_delta_social_minus_nonsocial,12,0.5,0.1341991341991342,True,0.5,SUPPORTING_DIRECTIONAL,food_neophobia_SAFN_final_effects_v2.csv
