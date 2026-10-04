@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Virtual Mouse Behavioral Atlas</title>
+<meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="hero wrap">
+    <p class="kicker">SOCIAL BEHAVIOR / VIRTUAL MOUSE / BEHAVIORAL ATLAS</p>
+    <h1>A 12-motif behavioral atlas</h1>
+    <p class="lede">Move from a Virtual Mouse behavior directly into its position in behavioral space. Every displayed point below is an exact contiguous motif run from the same session and can be played back from the Virtual Mouse reconstruction.</p>
+    <div class="hero-player">
+      <video src="assets/hero_C18.mp4" autoplay muted loop playsinline controls></video>
+    </div>
+    <p class="hero-note">Hero example: latest Module 1.4 Virtual Mouse paired with exact frozen-v85 behavioral-space coordinates.</p>
+  </header>
+
+  <section class="intro wrap">
+    <h2>Explore the motifs</h2>
+    <p>The behavioral space is organized into 12 motifs. Use <b>Social-facing 1/2/4/7</b> to see the established motif structure independent of model threshold, then switch to <b>Observation model probability</b> to see the conservative frame-wise v5 confidence layer. Each clickable run also reports whether its center frame belongs to the stricter validated observation bout. Click any run to play the exact Virtual Mouse segment, click empty space to place the comparison circle, drag to pan, and scroll or pinch to zoom.</p>
+  </section>
+
+  <section class="explorer" id="explorer">
+    <div class="toolbar">
+      <div class="control">
+        <span class="lab">Colour by</span>
+        <div class="seg" id="colourBtns">
+          <button data-v="motif" class="active">Motif</button>
+          <button data-v="social1247">Social-facing 1/2/4/7</button>
+          <button data-v="social">Observation model probability</button>
+          <button data-v="dem">DEM feeding</button>
+          <button data-v="quality">Quality</button>
+        </div>
+      </div>
+      <div class="control radius-control">
+        <span class="lab">Selection radius</span>
+        <input id="radius" type="range" min="3" max="45" step="1" value="18">
+        <span id="radiusVal">18</span>
+      </div>
+      <div class="actions">
+        <button id="moreBtn">More examples</button>
+        <button id="resetBtn">Reset</button>
+        <button id="fullBtn">Full screen</button>
+      </div>
+    </div>
+
+    <div class="explorer-grid">
+      <aside class="motif-list" id="motifList"></aside>
+      <div class="map-panel">
+        <canvas id="map"></canvas>
+        <div class="hint">Click any dot to play · click/drag the circle to compare · drag elsewhere to pan · scroll/pinch to zoom</div>
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+      <div class="clips-panel">
+        <div class="clips-head">
+          <div>
+            <div class="eyebrow" id="selectionEyebrow">Selected examples</div>
+            <h3 id="selectionTitle">Click a point</h3>
+          </div>
+          <div class="selection-meta" id="selectionMeta"></div>
+        </div>
+        <div class="clip-grid" id="clipGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dictionary wrap">
+    <div class="section-head">
+      <h2>Motif dictionary</h2>
+      <p>Each motif is defined in the frozen v85 behavioral atlas. Social Observation statistics use the frame-wise model inference/probability; the stricter merged label is retained separately for validating representative video bouts.</p>
+    </div>
+    <div class="motif-cards" id="motifCards"></div>
+  </section>
+
+  <footer class="wrap">
+    <p>Prototype explorer · Chemo:ANM4:D139 · exact frame-wise v85 projection · latest Module 1.4 Virtual Mouse replay.</p>
+  </footer>
+</main>
+<script src="explorer.js"></script>
+</body>
+</html>
