@@ -129,25 +129,29 @@ Current status:
 - forest plot is readable;
 - borderline timing interaction remains visible but is not visually promoted.
 
-## Extended Data — value vs action — PASS after repair
+## Extended Data — value vs action — PASS after v2 rebuild
 
-Issues found in first render:
+Issues found in earlier renders:
 - panel letters overlapped titles;
-- panel A/B tick labels collided;
-- panel D low-power note overlapped the x-axis.
+- long action-control tick labels collided;
+- exact-matching / low-power notes competed with the x-axis;
+- the first version emphasized pair matching but did not yet expose the strongest biological decomposition.
 
 Repair:
-- larger figure width and panel spacing;
-- panel letters moved upward/outward;
-- action labels shortened;
-- low-power note moved below the plotting field.
+- rebuilt as `NEURON_ED_value_vs_action_adjudication_v2`;
+- larger vertical spacing and panel-letter offsets;
+- compact action labels;
+- bottom annotations moved outside the plotting field;
+- scientific panels reorganized around the final adjudication:
+  A. partial variance partition (reference unique, action unique, shared, joint);
+  B. 0.5-s temporal decomposition of reference, current-bin action and prior within-bout sampling;
+  C. current reward U and learned reference R across escalating action controls;
+  D. nonlinear cross-fitted action removal using Random Forest, ExtraTrees and HistGradientBoosting.
 
 Current status:
-- four-panel figure cleanly separates:
-  A. temporal coupling of action/reference/DA,
-  B. conditional action controls,
-  C. joint reference+action coefficients,
-  D. exact action-matched pair sensitivity.
+- no critical text/line collision in the 300-dpi review raster;
+- the figure explicitly communicates the mixed-readout conclusion rather than implying “value instead of action”;
+- the timing panel labels the late reference effect as nominal / BH q≈.076 rather than visually overstating corrected significance.
 
 ## Scientific visual consistency check
 
@@ -174,7 +178,7 @@ No panel should use color alone to encode statistical significance.
 - scripts/make_science_rebuild_fig3_v3.py
 - scripts/make_science_rebuild_round2_v1.py
 - scripts/make_science_rebuild_fig5_7_v2.py
-- scripts/make_value_vs_action_figure_v1.py
+- scripts/make_value_vs_action_figure_v2.py
 - scripts/build_science_rebuild_current_v1.py
 
 ## Overall status
