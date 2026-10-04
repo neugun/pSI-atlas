@@ -734,12 +734,13 @@
     </div>
 
     <figure class="figure">
-      <img src="assets/NEURON_value_vs_action_adjudication_v1.png" alt="Value versus action adjudication for sustained VTA dopamine">
+      <img src="assets/NEURON_ED_value_vs_action_adjudication_v1.png" alt="Value versus action adjudication for sustained VTA dopamine">
       <figcaption>
         <strong>Value/action adjudication.</strong>
-        Left: reference, early licking and concurrent licking all contribute in the same joint model.
-        Middle: the reference term survives increasingly strong action controls.
-        Right: exact discrete action-count matching preserves a similar positive RW slope, but matching through the entire 2–5 s neural window reduces the usable dataset and loses statistical power.
+        A, action becomes progressively coupled to both reference and dopamine later in the bout.
+        B, reference information survives 0–2 s action control, 0–5 s early+concurrent action control, and conservative whole-bout over-control.
+        C, reference, early licking and concurrent licking all contribute independently in one joint model.
+        D, exact action-matched pairs retain a positive reference effect; exact matching through the entire neural window becomes low-power.
       </figcaption>
     </figure>
 
@@ -763,11 +764,39 @@
       </article>
     </div>
 
+    <div class="cards-3" style="margin-top:16px">
+      <article class="card good">
+        <div class="metric-label">Conditional permutation</div>
+        <div class="metric">P = .0449</div>
+        <p>
+          After flexible 0–2 s plus 2–5 s action controls, reference state still adds ΔR²=.04895.
+          Even the whole-bout lick-count/rate/duration over-control leaves ΔR²=.03299, P=.0357.
+        </p>
+      </article>
+      <article class="card info">
+        <div class="metric-label">Parsimony</div>
+        <div class="metric">BIC 867.9</div>
+        <p>
+          Base+one-dimensional reference has the best BIC (867.9), compared with base 877.2,
+          action-only 907.4 and joint 895.9. AIC/adjusted R² prefer the richer joint model.
+          The data therefore support both components while favoring reference as the compact state variable.
+        </p>
+      </article>
+      <article class="card warn">
+        <div class="metric-label">Prediction boundary</div>
+        <div class="metric">OOF R² ≈ .05</div>
+        <p>
+          On this strict 192-bout subset, none of the action/reference variants gives a strong held-animal prediction gain.
+          Use these analyses for mechanistic adjudication, not as a cross-animal prediction headline.
+        </p>
+      </article>
+    </div>
+
     <div class="callout warn">
       <strong>Claim boundary:</strong>
       do not write “dopamine activity reflects value rather than licking.”
       The present data support a stronger and more accurate statement:
-      <em>licking/consumption contributes to sustained VTA dopamine, but it does not absorb the reference-dependent component.</em>
+      <em>sustained VTA dopamine is a mixed readout: licking/consumption contributes, but it does not absorb the reference-dependent value component.</em>
     </div>
   </div>
 </section>
@@ -1215,6 +1244,14 @@
       <a class="resource" href="data/NEURON_value_vs_action_exact_strata_v1.csv">
         <b>Exact action-stratum tests</b>
         <span>Continuous RW effect after exact current-reward and lick-count matching.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_action_conditional_perm_v1.csv">
+        <b>Action-control conditional permutation</b>
+        <span>Reference-state ΔR² after early, concurrent and whole-bout action controls.</span>
+      </a>
+      <a class="resource" href="data/NEURON_value_action_information_criteria_v1.csv">
+        <b>Action vs reference model complexity</b>
+        <span>R², adjusted R², AIC and BIC for base, reference, action-only and joint models.</span>
       </a>
       <a class="resource" href="docs/NEURON_FIGURE_VISUAL_QC_20261004.md">
         <b>Figure visual-QC audit</b>

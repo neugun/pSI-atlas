@@ -166,7 +166,7 @@ nav a:hover { color: var(--navy); }
   font-size: 13px;
 }
 
-section { padding: 64px 0; }
+section { padding: 64px 0; scroll-margin-top: 78px; }
 section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-head {
   display: grid;
