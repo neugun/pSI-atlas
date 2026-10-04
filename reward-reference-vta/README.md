@@ -1,6 +1,8 @@
 # Reward-reference results site
 
-This folder is a self-contained static site for the current reward-reference / VTA dopamine biological model.
+Live page: **https://neugun.github.io/pSI-atlas/reward-reference-vta/**
+
+This folder is a self-contained static site for the current reward-reference / VTA dopamine biological model. Production publishing uses the already-enabled `neugun/pSI-atlas` GitHub Pages host under the isolated `reward-reference-vta/` subdirectory.
 
 ## Local preview
 
@@ -26,14 +28,15 @@ The page intentionally does **not** claim:
 
 ## GitHub Pages
 
-A deployment workflow is provided at `.github/workflows/pages.yml`.
+Production is hosted inside the already-enabled public Pages repository `neugun/pSI-atlas` at the isolated subdirectory `reward-reference-vta/`.
 
-After this repository is connected to the intended GitHub repository:
+For future updates, run from the analysis repository:
 
-1. push the committed site files;
-2. in GitHub Settings → Pages, select **GitHub Actions** as the Pages source if it is not already selected;
-3. run the workflow manually or push a change under `site/`;
-4. verify the repository/Page visibility before sharing the URL.
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/publish_reward_reference_pages.ps1
+```
+
+The publisher validates the source site, fast-forwards the Pages host, refuses to continue when unrelated files are dirty, mirrors only `site/` into `reward-reference-vta/`, validates again, commits only that subdirectory, and pushes `main`.
 
 Because this project contains prepublication work, the site includes:
 - `<meta name="robots" content="noindex,nofollow,noarchive">`;
