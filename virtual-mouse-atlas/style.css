@@ -123,3 +123,14 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
 .world-metric .d{font-size:12px;color:var(--muted);margin-top:3px}
 @media(max-width:900px){.world-grid{grid-template-columns:1fr}.world-metrics{grid-template-columns:repeat(2,1fr)}#worldFutureMap{height:380px}}
 @media(max-width:600px){.world-metrics{grid-template-columns:1fr}#worldFutureMap{height:320px}.world-controls select{max-width:100%}}
+
+.world-actual,.world-markov,.world-normal,.world-gated{display:inline-block;width:22px;height:3px}
+.world-actual{background:#111}
+.world-markov{background:#777}
+.world-normal{background:#276fbf}
+.world-gated{background:#c84b35}
+.world-evidence{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.world-evidence figure{margin:0;border:1px solid var(--line);background:#fff;padding:10px}
+.world-evidence img{display:block;width:100%;height:auto}
+.world-evidence figcaption{font-size:11px;color:var(--muted);line-height:1.45;margin-top:7px}
+@media(max-width:900px){.world-evidence{grid-template-columns:1fr}}

@@ -45,17 +45,23 @@
     <div class="world-grid">
       <article class="world-card">
         <div class="eyebrow">REAL PRESENT · FINAL-V6 VIRTUAL MOUSE</div>
-        <video id="worldRealVideo" src="assets/full_virtual_mouse_web_v8i.mp4" muted playsinline controls preload="metadata"></video>
+        <video id="worldRealVideo" src="assets/full_virtual_mouse_web.mp4" muted playsinline controls preload="metadata"></video>
         <div class="world-caption" id="worldPresentCaption"></div>
       </article>
       <article class="world-card">
         <div class="eyebrow">IMAGINED FUTURES · 512 ROLLOUTS × 8 STEPS</div>
         <canvas id="worldFutureMap"></canvas>
-        <div class="world-legend"><span class="world-normal"></span>Normal social world <span class="world-gated"></span>Social-gated counterfactual</div>
+        <div class="world-legend"><span class="world-actual"></span>Actual future <span class="world-markov"></span>Generative Markov <span class="world-normal"></span>Neural world <span class="world-gated"></span>Social-gated counterfactual</div>
         <div class="world-caption" id="worldFutureCaption"></div>
       </article>
     </div>
     <div class="world-metrics" id="worldMetrics"></div>
+    <div class="world-evidence">
+      <figure><img src="assets/world_baseline_ladder.png" alt="Baseline ladder for next-motif prediction"><figcaption>Weak→strong baseline ladder. The current AO-Markov is already a strong conditional baseline; the neural world remains best on held-out next-motif prediction.</figcaption></figure>
+      <figure><img src="assets/world_horizon_curves.png" alt="Multi-step world-model benchmark"><figcaption>1/3/5-step teacher-forced dynamics. The neural model loses less predictive information as the horizon grows.</figcaption></figure>
+      <figure><img src="assets/world_trajectory_fan.png" alt="Sampled future trajectories"><figcaption>512 sampled closed-loop futures from the same present. The line is an expectation; the cloud shows uncertainty.</figcaption></figure>
+      <figure><img src="assets/world_motif_heatmap.png" alt="Future motif probability heatmap"><figcaption>Actual future, AO-Markov, neural world and social-gated future shown as distributions over the 12 motifs.</figcaption></figure>
+    </div>
   </section>
 
   <section class="explorer" id="explorer">
