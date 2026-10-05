@@ -1,0 +1,8 @@
+dataset,comparison,metric,test,n,wins,rrb,p,mean_gain,median_gain,ci_lo,ci_hi
+Macaque DANDI001435,baseline vs dual_multiscale,Brier,"exact Wilcoxon signed-rank, one-sided H1=second model lowers loss / positive information value",7,7,1.0,0.0078125,0.053472587406487,0.0461518671028896,1.0,1.0
+Human exp/obs,paper_current vs multiscale_history,Brier,"exact Wilcoxon signed-rank, one-sided H1=second model lowers loss / positive information value",10,9,0.9636363636363636,0.001953125,0.0013253037576767,0.0012985583286226,0.7818181818181819,1.0
+Rat DANDI001169,baseline vs multiscale_history,Brier,"exact Wilcoxon signed-rank, one-sided H1=second model lowers loss / positive information value",10,7,0.7454545454545455,0.0185546875,0.0036844975483556,0.0045750538982639,0.2,1.0
+Rat maze Demo,self_history vs current_source,Brier,"exact Wilcoxon signed-rank, one-sided H1=second model lowers loss / positive information value",5,5,1.0,0.03125,0.0918444017610327,0.1104721690919696,1.0,1.0
+Aeon social foraging,zero vs recent_partner_history,log-value gain,"exact Wilcoxon signed-rank, one-sided H1=second model lowers loss / positive information value",5,5,1.0,0.03125,0.0059930334598255,0.0014379500755377,1.0,1.0
+Macaque ACC,current vs +shared_multiscale,MSE,"exact Wilcoxon signed-rank, one-sided H1=second model lowers loss / positive information value",7,6,0.8571428571428571,0.0234375,0.1555560547427895,0.0011796854768481,0.35714285714285715,1.0
+DANDI000351 reward DA,behavior-only vs +reward DA,relative MSE gain,exact one-sided signed-rank test on per-animal relative MSE gain,7,6,0.8571428571428571,0.0234375,0.0206340385922607,0.0065833468164537,0.35714285714285715,1.0
