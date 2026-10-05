@@ -123,9 +123,9 @@
           <div class="d">Held-out social-efficacy AUC from 2 → 16 SOE training animals. All 15 matched fold × repeat comparisons improved (P=3.05×10<sup>−5</sup>).</div>
         </article>
         <article class="world-scaling-kpi">
-          <div class="k">CROSS-SPECIES SAMPLE EFFICIENCY</div>
-          <div class="v">5 / 5 folds</div>
-          <div class="d">Macaque actor–observer pretraining improves SOE Brier with only 2 training animals (0.1904 → 0.1856, P=.031); efficacy AUC also improves 5/5.</div>
+          <div class="k">5-SEED EXTERNAL TRANSFER</div>
+          <div class="v">25 / 27 animals</div>
+          <div class="d">With only 2 SOE training animals, all-external pretraining improves held-animal Brier by +0.00662 after averaging 5 independent initializations (P=1.0×10<sup>−6</sup>). The gain vanishes by 8 animals.</div>
         </article>
         <article class="world-scaling-kpi">
           <div class="k">PROSPECTIVE OBSERVE VALUE</div>
@@ -134,12 +134,12 @@
         </article>
       </div>
       <div class="world-scaling-claim">
-        <b>What scales is not only next-event prediction.</b>
-        More animals sharpen a transferable social-efficacy state; aligned macaque social experience can warm-start that state when SOE data are scarce, whereas blindly adding heterogeneous datasets is not monotonically beneficial.
+        <b>Scaling separates two kinds of learned state.</b>
+        External sequence experience can warm-start low-data Observe/action dynamics, but the SOE social-efficacy representation does not transfer generically. In-domain animals progressively sharpen that efficacy state, whereas broad external pretraining can even weaken it.
       </div>
       <div class="world-evidence world-evidence-scaling">
         <figure><img src="assets/world_scaling_in_domain_v8.svg" alt="SLM World Model in-domain scaling across SOE training animals"><figcaption><b>Data scaling.</b> Thin lines preserve matched held-animal fold × repeat trajectories. Observe-policy error, outcome prediction and future-motif prediction improve monotonically, while the held-out efficacy representation becomes substantially clearer.</figcaption></figure>
-        <figure><img src="assets/world_transfer_sample_efficiency_v8.svg" alt="Cross-species macaque pretraining improves low-data SOE sample efficiency"><figcaption><b>Cross-species transfer.</b> Macaque actor–observer pretraining improves low-data SOE learning, but the advantage disappears once 8 SOE animals are available. This is a sample-efficiency result, not a claim that more heterogeneous pretraining data always win.</figcaption></figure>
+        <figure><img src="assets/world_transfer_multiseed_v9.svg" alt="Five-seed external pretraining transfer separates action sample efficiency from social efficacy"><figcaption><b>External pretraining, 5 initializations.</b> Low-data action prediction improves robustly across several external task families and then converges to scratch by 8 SOE animals. In contrast, no external condition robustly transfers the social-efficacy latent; all-external pretraining reduces efficacy AUC in every held-out fold. This dissociation argues for a generic sequential prior plus an SOE-specific social-efficacy state.</figcaption></figure>
         <figure class="world-evidence-wide"><img src="assets/world_observe_value_v8.svg" alt="Prospective Observe value and social-gate dependence across held-out animals"><figcaption><b>Model-based active sensing.</b> Holding the learned state fixed and changing only the action, ΔActive predicts both real Observe choices and Observe efficacy. Removing social channels reduces this discrimination by 0.063 AUC in 26/27 animals (P=1.49×10<sup>−8</sup>). This is a counterfactual inside the learned predictive model, not a randomized causal effect of choosing Observe.</figcaption></figure>
       </div>
 
