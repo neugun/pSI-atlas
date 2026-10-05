@@ -339,6 +339,7 @@ h3 {
   gap: 18px;
 }
 .figure-grid .figure { margin: 0; }
+.figure-grid.one-col { grid-template-columns: 1fr; gap: 26px; }
 
 .series-chapter {
   display: grid;

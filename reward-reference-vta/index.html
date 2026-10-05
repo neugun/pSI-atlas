@@ -315,7 +315,10 @@
       <p>Stable H/L sessions and alternating S/N sessions answer different questions. Figures 2–5 use the alternating sessions; Figure 1 compares stable and alternating contexts while holding current food identity fixed.</p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig0_task_recording_cohorts_v1.png" alt="Task, local VTA dopamine recording and analysis cohorts">
+      <picture>
+        <source media="(max-width: 640px)" srcset="assets/Fig0_task_recording_cohorts_manuscript_v2_mobile.png">
+        <img src="assets/Fig0_task_recording_cohorts_manuscript_v2.png" alt="Task, local VTA dopamine recording and analysis cohorts">
+      </picture>
       <figcaption>
         <strong>A,</strong> H/L are stable 100E/20E sessions; S/N are the corresponding 100E/20E blocks inside 120-s alternating sessions (schematic; no inferential test).
         <strong>B,</strong> a feeding bout is a run of licks terminated by an inter-lick interval &gt;5 s; boundary-crossing bouts are excluded (definition panel; no inferential test).
@@ -411,18 +414,24 @@
         Because current U is already included in the baseline, adding C is equivalent to asking whether stored history R contributes beyond the current reward.
       </p>
     </div>
-    <div class="figure-grid">
+    <div class="figure-grid one-col">
       <figure class="figure">
-        <img src="assets/Fig3_NEURON_REBUILD_FIG3_continuous_history_deeppath_v3.png" alt="Continuous reward-history coordinate">
+        <picture>
+        <source media="(max-width: 640px)" srcset="assets/Fig3_continuous_history_manuscript_v2_mobile.png">
+        <img src="assets/Fig3_continuous_history_manuscript_v2.png" alt="Continuous reward-history coordinate">
+      </picture>
         <figcaption><strong>A,</strong> recursive notation: prior sampled rewards update stored reference R, and relative value is C=U−R.
           <strong>B,</strong> leave-one-animal-out sustained-DA R² across 11 mice: current reward .038, categorical context .123, C .175, and context+C .178.
           <strong>C,</strong> within fixed context, residual sustained dopamine increases across residual-C quartiles (11-mouse cohort; quartile summary).
-          <strong>D,</strong> animal slopes versus animal-specific permutation-null intervals; the displayed 7-mouse subset is nested within the full 11-mouse cohort and is not a separate experiment.
+          <strong>D,</strong> descriptive within-animal history slopes are shown for all 11 animals under current-reward and session-progression controls; 10/11 are positive. This panel visualizes animal-level consistency and is not used as a separate inferential test.
           <strong>E,</strong> deeper cumulative history adds ΔR²=.027 beyond matched recent/local history (conditional permutation P=.0067).
           <strong>F,</strong> the natural-task recency profile peaks near α=.15 (selection-aware permutation P=.0062), supporting a broad recency regime rather than a unique biological constant.</figcaption>
       </figure>
       <figure class="figure">
-        <img src="assets/Fig4_NEURON_REBUILD_FIG4_model_room_v3.png" alt="Alternative reward-history models">
+        <picture>
+        <source media="(max-width: 640px)" srcset="assets/Fig4_model_comparison_manuscript_v2_mobile.png">
+        <img src="assets/Fig4_model_comparison_manuscript_v2.png" alt="Alternative reward-history models">
+      </picture>
         <figcaption><strong>A,B,</strong> alternative latent-state families and their distinct adaptation trajectories (schematic/model illustrations).
           <strong>C,</strong> common-protocol leave-one-animal-out prediction across 11 mice now includes cumulative history itself. Cumulative history, belief state, block sampling, reference RW and two-stage models achieve similar normalized-MAE improvements. Prediction alone does not identify the mechanism.
           <strong>D,</strong> conditional unique-information tests in the 192 matched post-switch bouts (11 mice): cumulative history remains unique beyond belief (P=.0124), continuous-time HMM (P=.0090), average reward rate (P=.0122), Value-RNN reward-only (P=.0128) and Value-RNN+time (P=.0078), whereas the reverse unique terms are nonsignificant. The legend states the direction of each bar explicitly.</figcaption>
@@ -453,7 +462,10 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig5_temporal_construction_v3.png" alt="fig5 figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="assets/Fig5_temporal_construction_manuscript_v2_mobile.png">
+        <img src="assets/Fig5_temporal_construction_manuscript_v2.png" alt="Temporal construction of relative value">
+      </picture>
       <figcaption>
         <strong>A,</strong> time-resolved coefficient for C=U−R (teal) and the U+R control across the same 192 post-switch bouts from 11 mice; coefficients switch from negative/preparatory before licking to positive during sustained consumption.
         <strong>B,</strong> C increases from early to sustained consumption by +1.458; all 11/11 animal slopes increase (two-sided exact Wilcoxon P=.000977) and the clustered epoch interaction is P=9.02×10<sup>−8</sup>.
@@ -665,7 +677,10 @@
           <figcaption><strong>ED3.</strong> Separate mismatch channels [U−R]+ and [R−U]+. Natural: gain ΔR²=.0292, P=.00370; loss ΔR²=.00352, P=.324; gain-versus-loss interaction P=.216. QE: gain ΔR²=.0196, P=.0233; loss ΔR²=.00439, P=.258; interaction P=.000527. Stim13: gain ΔR²=.00127, P=.00470; loss ΔR²=.0000265, P=.666; interaction P=.197. Conditional permutation tests unless noted.</figcaption>
         </figure>
         <figure class="figure">
-          <img src="assets/ED4_five_robustness_checks_v1.png" alt="ED4 robustness">
+          <picture>
+        <source media="(max-width: 640px)" srcset="assets/ED4_robustness_manuscript_v2_mobile.png">
+        <img src="assets/ED4_robustness_manuscript_v2.png" alt="ED4 robustness checks">
+      </picture>
           <figcaption><strong>ED4A,</strong> raw, non-pre-subtracted signal retains the sustained C effect (P=.0399) while the early effect is absent (P=.718), n=192 bouts/11 mice. <strong>ED4B,</strong> exact 0–2 s lick matching gives 9/11 animals in the expected DA direction (one-sided exact Wilcoxon P=.0415); stricter 0–5 s matching is weaker (7/11, P=.183). <strong>ED4C,</strong> nonlinear nuisance models leave positive residual C slopes (conditional permutation P=.010–.0172). <strong>ED4D,</strong> cumulative history remains unique beyond H50 Value-RNN reward-only (P=.0128) and reward+time (P=.0078), whereas RNN-unique terms are null. <strong>ED4E,</strong> leave-one-cohort-out effects remain positive but smaller subsets lose power; full-data conditional P=.0092.</figcaption>
         </figure>
         <figure class="figure">
@@ -677,7 +692,10 @@
           <figcaption><strong>ED6A,</strong> Natural and QE have broad but shifted α profiles (Natural maximum ≈.15; QE maximum ≈.30). <strong>ED6B,</strong> α=.20 is the cross-task maximin compromise, retaining 91.1% of the Natural maximum and 97.9% of the QE maximum. <strong>ED6C,</strong> Stim13 also shows a broad profile. Thus α=.20 is a transfer choice, not a uniquely identified biological constant.</figcaption>
         </figure>
         <figure class="figure">
-          <img src="assets/ED7_history_specificity_real_vs_controls_v1.png" alt="ED7 history specificity">
+          <picture>
+        <source media="(max-width: 640px)" srcset="assets/ED7_history_specificity_manuscript_v2_mobile.png">
+        <img src="assets/ED7_history_specificity_manuscript_v2.png" alt="ED7 history specificity">
+      </picture>
           <figcaption><strong>ED7.</strong> Direct sampled-history tests are positive in Natural (ΔR²=.0269, P=.00670), QE (ΔR²=.0254, P=.00141) and Stim13 (ΔR²=.00252, P=5×10<sup>−5</sup>). Duration-history proxy tests are not significant for hunger (P=.283), quinine (P=.466), LiCl (P=.478) or Stim5 (P=.562). The proxy bars can have nonzero ΔR² while remaining statistically unsupported; this is why specificity is judged by the paired real/control inference rather than bar height alone.</figcaption>
         </figure>
                 <figure class="figure">
