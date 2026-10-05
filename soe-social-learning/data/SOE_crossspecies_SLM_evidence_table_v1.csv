@@ -1,0 +1,18 @@
+tier,dataset,slm_component,independent_unit,n,effect_size,p,comparison,meaning
+DIRECT MODEL TEST,Macaque DANDI001435,multiscale state + source identity,independent behavior sequence,7,1.0,0.0078125,baseline vs dual_multiscale,Held-out predictive gain for an SLM-style structured state.
+DIRECT MODEL TEST,Human exp/obs,multiscale social history,held-out subject,10,0.9636363636363636,0.001953125,paper_current vs multiscale_history,Held-out predictive gain for an SLM-style structured state.
+DIRECT MODEL TEST,Rat maze Demo,source-tagged social evidence,rat,5,1.0,0.03125,self_history vs current_source,Held-out predictive gain for an SLM-style structured state.
+DIRECT MODEL TEST,Rat DANDI001169,multiscale state,rat,10,0.7454545454545455,0.0185546875,baseline vs multiscale_history,Held-out predictive gain for an SLM-style structured state.
+DIRECT MODEL TEST,Aeon social foraging,recent partner history,experiment,5,1.0,0.03125,zero vs recent_partner_history,Held-out predictive gain for an SLM-style structured state.
+DIRECT MODEL TEST,Cooperative foraging,social information value / policy,held-out trajectory,200,0.9377114427860695,1.3363234189903281e-30,self-only vs +social state,Trajectory consistency on the authors' fixed held-out split; not independent animals.
+COMPONENT TRANSFER,Mouse DANDI001632,task-adaptive time basis,animal,17,0.5555555555555556,0.0223846435546875,trial clock vs trial+physical-time,"Tests the state-representation principle, not social information."
+NEURAL CONVERGENCE,Macaque ACC,multiscale state representation,date cluster,7,0.8571428571428571,0.0234375,current vs +shared_multiscale,Neural encoding test of the multiscale-state component.
+NEURAL CONVERGENCE,Mouse reward DA,outcome-to-future-policy bridge,animal,7,0.8571428571428571,0.0234375,behavior-only vs +reward DA,Prospective neural bridge; not a full SLM fit.
+NEURAL CONVERGENCE,Marmoset K,sampling/evidence accumulation,source-data unit,490,0.8674757886861466,1.8415519156073189e-62,Neural social-evidence accumulation,External mechanistic convergence; no claim that the marmoset was fit with mouse SLM equations.
+NEURAL CONVERGENCE,Marmoset D,sampling/evidence accumulation,source-data unit,466,0.4280541489371479,5.890171631984665e-16,Neural social-evidence accumulation,External mechanistic convergence; no claim that the marmoset was fit with mouse SLM equations.
+NEURAL CONVERGENCE,Marmoset K,outcome history -> policy bias,source-data unit,18,0.9298245614035088,0.0002678364026992,Outcome history -> policy bias,External mechanistic convergence; no claim that the marmoset was fit with mouse SLM equations.
+NEURAL CONVERGENCE,Marmoset D,outcome history -> policy bias,source-data unit,21,1.0,2.97848895372818e-05,Outcome history -> policy bias,External mechanistic convergence; no claim that the marmoset was fit with mouse SLM equations.
+NEURAL CONVERGENCE,Primate mPFC,source-tagged credit: oRPEp,cell,22,1.0,2.384185791015625e-07,O-RPE expected-sign slope,Source-tagged reward update population.
+NEURAL CONVERGENCE,Primate mPFC,source-tagged credit: oRPEn,cell,38,1.0,3.637978807091713e-12,O-RPE expected-sign slope,Source-tagged reward update population.
+NEURAL CONVERGENCE,Primate mPFC,source-tagged credit: sRPEp,cell,6,1.0,0.015625,S-RPE expected-sign slope,Source-tagged reward update population.
+NEURAL CONVERGENCE,Primate mPFC,source-tagged credit: sRPEn,cell,12,1.0,0.000244140625,S-RPE expected-sign slope,Source-tagged reward update population.
