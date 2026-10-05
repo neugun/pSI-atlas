@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "dataset": "user virtual-mouse/social-learning authority bundle",
+  "n_animals": 27,
+  "event_dictionary": [
+    "Other",
+    "Observe",
+    "Unrewarded bout",
+    "Active bout",
+    "Passive bout"
+  ],
+  "neural_social_world": {
+    "action_nll": 0.5090513759189181,
+    "action_accuracy": 0.7519029652992434,
+    "outcome_nll": 0.7004975367475439,
+    "outcome_accuracy": 0.7449270551332191,
+    "event5_nll": 0.6047744618521796,
+    "event5_accuracy": 0.7484150102162311
+  },
+  "full_history_linear": {
+    "action_nll": 0.5335529181692336,
+    "action_accuracy": 0.7383226277825599,
+    "outcome_nll": 0.694681077740582,
+    "outcome_accuracy": 0.7466206481793258,
+    "event5_nll": 0.6141169963659839,
+    "event5_accuracy": 0.742471637980943
+  },
+  "gain_over_full_history_linear": {
+    "action_nll_nats": 0.024501542250315422,
+    "action_bits_per_event": 0.035348253498661476,
+    "outcome_nll_nats": -0.005816459006961927,
+    "outcome_bits_per_event": -0.008391376564877918,
+    "event5_nll_nats": 0.00934253451380429,
+    "event5_bits_per_event": 0.013478428212399434,
+    "action_accuracy_points": 0.013580337516683527,
+    "event5_accuracy_points": 0.00594337223528818,
+    "paired_test": {
+      "comparator": "Full-history linear",
+      "n": 27,
+      "mean_nll_gain": 0.0093425345138042,
+      "median_nll_gain": 0.0116139603227765,
+      "neural_better": 22,
+      "p_one_sided": 0.0001504495739936
+    }
+  },
+  "gain_over_history_markov": {
+    "event5_nll_nats": 0.07538795077284965,
+    "event5_bits_per_event": 0.10876182272277149,
+    "event5_accuracy_points": 0.04703920700881137,
+    "paired_test": {
+      "comparator": "History Markov",
+      "n": 27,
+      "mean_nll_gain": 0.0753879507728496,
+      "median_nll_gain": 0.0760420608370698,
+      "neural_better": 27,
+      "p_one_sided": 7.450580596923828e-09
+    }
+  },
+  "learning_graph": {
+    "observe_to_active": {
+      "learner_early": 0.1796594520573831,
+      "learner_late": 0.2262655393062632,
+      "delta": 0.0466060872488801,
+      "p": 0.0032471865415573,
+      "positive": 20,
+      "n": 27
+    },
+    "unrewarded_to_observe": {
+      "learner_early": 0.4430529911300858,
+      "learner_late": 0.6334904018643435,
+      "delta": 0.19043741073425768,
+      "p": 4.093348979949951e-05,
+      "positive": 24,
+      "n": 27
+    }
+  },
+  "crosscheck": {
+    "reported_slm_nll": 0.6047744618521796,
+    "computed_matches_reported": true,
+    "reported_linear_nll": 0.6141169963659839,
+    "linear_matches_reported": true,
+    "reported_neural_better_animals": 22,
+    "reported_p": 0.0001504495739936
+  },
+  "interpretation": "The neural social world model adds predictive information primarily for future social-sampling action and modestly for the five-event world state, while outcome classification is not improved. Learning rewrites specific social transition probabilities.",
+  "guardrail": "This is an embodied/social event-world benchmark built from the user's existing authority results; it does not imply whole-brain emulation and does not turn observational transitions into causal mechanisms."
+}

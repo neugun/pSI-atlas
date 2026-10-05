@@ -196,8 +196,17 @@ button:hover{transform:translateY(-1px)}
       <div class="card-head"><div><h3>Real 2P cross-animal future prediction</h3><span class="submetric">VTA D6 &middot; animal 54 &harr; 181 &middot; two independent extractions</span></div><span class="tag pass">BOTH DIRECTIONS</span></div>
       <div class="big">+0.32&ndash;0.34 bits/sample</div>
       <div class="submetric">over persistence at ~0.16&ndash;2.5 s horizons</div>
-      <p>A session-free shared predictor beats persistence in both transfer directions under both current and Suite2p-style extraction. Absolute R&sup2; remains negative in one direction, and a simple condition token adds almost no lift&mdash;an explicit target for the nonlinear shared backbone.</p>
-      <p><a href="data/stage10_real2p_crossanimal_world.json">verified JSON</a></p>
+      <p>A session-free shared predictor beats persistence in both transfer directions under both current and Suite2p-style extraction. Absolute R&sup2; remains negative in one direction, and a simple condition token adds almost no lift. A generic nonlinear tree model also fails to beat the feature-matched ridge, so complexity alone is not the missing ingredient.</p>
+      <p><a href="data/stage10_real2p_crossanimal_world.json">linear transfer JSON</a> &middot; <a href="data/stage10b_real2p_nonlinear.json">nonlinear control JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Embodied 5-event social world</h3><span class="submetric">27 animals &middot; Observe / Unrewarded / Active / Passive / Other</span></div><span class="tag pass">WORLD MODEL</span></div>
+      <div class="big">+0.0135 bits/event</div>
+      <div class="submetric">Neural social world over full-history linear on 5-event NLL</div>
+      <p>The neural social world model improves the full-history linear comparator in <b>22/27 animals</b> (one-sided p = 0.00015). The larger gain is in future social-sampling action: <b>+0.0353 bits/event</b>. Outcome classification itself is not improved.</p>
+      <p>Learning also rewrites the event graph: Observe&rarr;Active rises by <b>+0.047</b>, while Unrewarded&rarr;Observe rises by <b>+0.190</b> in learners.</p>
+      <p><a href="data/stage11_embodied_social_world.json">verified JSON</a></p>
     </article>
 
     <article class="card">
