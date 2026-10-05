@@ -330,9 +330,14 @@ h3 {
   font-size: 12.5px;
   line-height: 1.42;
 }
+.manuscript-square {
+  width: min(100%, 760px);
+  margin-left: auto;
+  margin-right: auto;
+}
 .manuscript-square .figure-zoom {
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 .figure figcaption strong { color: #324b65; }
 
