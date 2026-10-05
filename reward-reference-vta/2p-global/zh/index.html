@@ -1,217 +1,24 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="十只真实小鼠的全局2P CaRMA综合分析：current VTA、2021 named cohort与2017 legacy cohort。">
-<meta name="robots" content="noindex,nofollow,noarchive">
-<title>2P全局 CaRMA 综合分析 — 十鼠 authority V47</title>
-<link rel="stylesheet" href="../assets/style.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>2P全局 V51</title>
+<link rel="stylesheet" href="../assets/style.css"></head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand"><span class="brand-mark">2P</span> 2P全局 CaRMA 综合分析</div>
-    <nav>
-      <a href="#summary">总览</a>
-      <a href="#vta">5鼠 VTA</a>
-      <a href="#history2021">2021 cohort</a>
-      <a href="#legacy2017">2017 cohort</a>
-      <a href="#kinetics">动力学边界</a>
-      <a href="#qc">QC</a>
-      <a href="#downloads">数据</a>
-      <a href="../../zh/">Reward-reference</a>
-      <a class="lang" href="../">English</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-<section class="hero" id="summary">
-  <div class="container">
-    <span class="eyebrow">当前生物学 authority · V47 biology · V49 figure expansion · 2026-10-05 更新</span>
-    <h1>十只真实小鼠的全局分析：最稳定的跨鼠结构是 outcome→late response structure，而 predictive loading 更灵活。</h1>
-    <p class="lede">
-      本页把目前已经解析清楚的十只真实动物统一到同一个 biological authority：
-      5只 current VTA、3只 2021 named animals、2只 2017 legacy animals。
-      这里把<strong>数据质量、统计功效和实验设计</strong>分开处理。
-      当前 VTA 最稳的跨动物结果是 <strong>outcome-to-late response structure</strong>；
-      但我们明确<strong>不把它直接解释成已独立证明的 kinetics-independent sustained latent state</strong>。
-    </p>
-    <div class="status">
-      <span class="pill">10只真实小鼠</span><span class="pill">5只 current VTA</span>
-      <span class="pill">3只 2021 named</span><span class="pill">2只 2017 legacy</span>
-      <span class="pill">当前 authority：V47</span>
-    </div>
-    <div class="grid-3">
-      <article class="card good">
-        <h3>5鼠 VTA 共同结构</h3>
-        <div class="metric">r = 0.655</div>
-        <p>Outcome→late coupling 在 <strong>5/5只鼠</strong>中均为正；animal bootstrap 95% CI 0.534–0.740；hierarchical cell-identity permutation <strong>p=2×10⁻⁵</strong>。</p>
-      </article>
-      <article class="card violet">
-        <h3>2021 跨鼠几何</h3>
-        <div class="metric">ρ = 0.721</div>
-        <p>Hunger context 的 state geometry 在3只 named animals 中共享；historical normalization 下 exact global state-label null <strong>p=0.0020</strong>。</p>
-      </article>
-      <article class="card info">
-        <h3>2017 residualized geometry</h3>
-        <div class="metric">ρ = 0.824–0.851</div>
-        <p>每个细胞先减去跨11个 state 的均值后，ROC cross-animal geometry 依然很强，说明不是 generic responsive-cell ranking 造成。</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="detailed-results"><div class="container">
-<div class="section-head"><div><span class="eyebrow">详细结果</span><h2>进入完整图组。</h2></div><p>首页保留全局结论；文章级复现、新8只鼠和QC全部进入专门结果页。</p></div>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">2P</span> 2P全局</div><nav><a href="../current-vta/zh/">Current VTA</a><a href="../named-2021/zh/">2021</a><a href="../legacy-2017/zh/">2017</a><a href="../qc/zh/">QC</a><a href="../" class="lang">English</a></nav></div></header>
+<main><section class="hero"><div class="container">
+<span class="eyebrow">十鼠 2P 全局 · V51 严格作图版</span>
+<h1>十只小鼠、四层证据，全部按同一套文章作图规范展示。</h1>
+<p class="lede">页面现在只展示固定方形 V51 图：Arial、白底、无 grid、去上/右边框、柱子无外框、2n+1 等距布局、红 / cyan / 灰三色体系，并同时输出 600 dpi PNG、vector PDF 和 SVG。解释性长句全部移到图外 caption。</p>
+</div></section><section class="block"><div class="container">
+<div class="section-head"><div><span class="eyebrow">全局锚点</span><h2>四层结果</h2></div></div>
+<div class="gallery">
+<div class="figure-card"><img src="../assets/strict_current_vta_outcome_late_5mouse_v51.png" alt="Current VTA 五鼠"><h3>Current VTA 五鼠</h3><p>五只鼠的 outcome→late coupling 全部为正。 <a href="../assets/strict_current_vta_outcome_late_5mouse_v51.pdf">PDF</a> · <a href="../assets/strict_current_vta_outcome_late_5mouse_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../assets/strict_named2021_context_norm_v51.png" alt="2021 三鼠"><h3>2021 三鼠</h3><p>跨鼠共享 geometry 在 hunger 中最强。 <a href="../assets/strict_named2021_context_norm_v51.pdf">PDF</a> · <a href="../assets/strict_named2021_context_norm_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../assets/strict_legacy2017_roc_residualization_v51.png" alt="2017 两鼠"><h3>2017 两鼠</h3><p>去除 generic responsiveness 后 geometry 仍然存在。 <a href="../assets/strict_legacy2017_roc_residualization_v51.pdf">PDF</a> · <a href="../assets/strict_legacy2017_roc_residualization_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../assets/strict_newmice_motion_p95_v51.png" alt="新鼠 QC"><h3>新鼠 QC</h3><p>ANM112/113/185 的 P95 local residual motion 保持 subpixel。 <a href="../assets/strict_newmice_motion_p95_v51.pdf">PDF</a> · <a href="../assets/strict_newmice_motion_p95_v51.svg">SVG</a></p></div>
+</div>
 <div class="result-nav">
-<a href="../current-vta/zh/">Current VTA<small>54/181文章级 Fig1–6、细胞/时间/specificity，以及112/113/185和五鼠复现</small></a>
-<a href="../named-2021/zh/">2021 named cohort<small>三鼠×三context、hunger-specific跨鼠RDM、leave-one-trial</small></a>
-<a href="../legacy-2017/zh/">2017 legacy<small>两只真实动物、residualized state geometry、bootstrap、leave-one-state</small></a>
-<a href="../qc/zh/">QC<small>十鼠QC、112/113/185影像/ROI/extraction、D6独立extraction stress</small></a>
-</div></div></section>
-<section class="block alt">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">全局综合</span><h2>哪些结果在最严格的现有检验下仍然成立？</h2></div>
-      <p>这里保留的是能跨方法、跨动物或跨表示成立的结构，不把分析特异或 acquisition 特异现象包装成全局结论。</p>
-    </div>
-    <div class="figure">
-      <img src="../assets/ten_mouse_biological_synthesis_v46.png" alt="十鼠全局生物学综合图。">
-      <p class="caption"><strong>十鼠综合图。</strong> A：5只 current-VTA 小鼠的 outcome→late coupling；B：predictive component 更不稳定；C：2021 跨鼠 geometry 主要在 hunger context 共享；D：2017 geometry 在去除 generic cell responsiveness 后仍存在。<a href="../assets/ten_mouse_biological_synthesis_v46.pdf">PDF</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="vta">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">Current VTA cohort</span><h2>五鼠共同的是 outcome→late，不是整个 predictive/outcome/late PC1 完全一致。</h2></div>
-      <p>ANM54/181 是完整 D3–D9 longitudinal reward-contrast cohort；ANM112、ANM113-conditioning、ANM185 是完整分析的 conditioning datasets。5–6个 imaging-linked trials 只影响某些检验的统计分辨率，不是影像质量降级理由。</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Mouse</th><th>Outcome→late r</th><th>Predictive→outcome</th><th>Predictive→late</th><th>解释</th></tr></thead>
-        <tbody>
-          <tr><td>ANM54</td><td>0.633</td><td>正</td><td>正</td><td>Longitudinal primary cohort。</td></tr>
-          <tr><td>ANM181</td><td>0.769</td><td>正</td><td>正</td><td>Longitudinal primary cohort。</td></tr>
-          <tr><td>ANM112</td><td>0.404</td><td>正</td><td>正</td><td>高质量 single-day conditioning dataset。</td></tr>
-          <tr><td>ANM113</td><td>0.649</td><td>正</td><td>正</td><td>Conditioning session 高质量；perfusion 是单独的 motion-caveat session。</td></tr>
-          <tr><td>ANM185</td><td>0.740</td><td>−0.039</td><td>−0.104</td><td>Outcome→late 很强，但 predictive loading 与另外4只不同。</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="callout" style="margin-top:20px">
-      <strong>五鼠统计：</strong> outcome→late 的 Fisher-mean 为 <strong>r=0.655</strong>，animal bootstrap 95% CI <strong>0.534–0.740</strong>；在每个 session 内打乱 outcome 与 late 的 cell identity 后，hierarchical null 给出 <strong>p=2×10⁻⁵</strong>。Predictive→outcome / predictive→late 只有4/5同向，因此不把完整PC1当作五鼠 invariant axis。
-    </div>
-  </div>
-</section>
-
-<section class="block alt" id="history2021">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">2021 named cohort</span><h2>跨鼠共享是 context-specific 的，最强的是 hunger。</h2></div>
-      <p>原始 MATLAB authority 已确认每只动物在 hunger/social/control 三个 context 中使用完全一致的 <code>vtSel</code>；geometry 还通过了 raw-z vs historical normalization、bootstrap 和 leave-one-trial 检验。</p>
-    </div>
-    <div class="grid">
-      <article class="card good">
-        <h3>Hunger geometry 真正跨鼠复现。</h3>
-        <p>Historical normalization 下 state-RDM mean ρ=<strong>0.721</strong>，exact global state-label null <strong>p=0.0020</strong>；raw-baseline-z 下仍有 mean ρ=<strong>0.560</strong>，p=<strong>0.0063</strong>。</p>
-      </article>
-      <article class="card warn">
-        <h3>不能说三个 context 都共享。</h3>
-        <p>Social geometry 不稳定；control 较弱且 representation-dependent。Cell bootstrap 中 hunger 比 social 更高的比例在两种 representation 下都是 <strong>99.96%</strong>。</p>
-      </article>
-    </div>
-    <p class="small">ANM492241：38 cells；ANM496190：44 cells；ANM496191：23 cells。9/9 animal×context matrices frame count 精确、100% finite、0 flat cells。</p>
-  </div>
-</section>
-
-<section class="block" id="legacy2017">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">2017 legacy cohort</span><h2>State geometry 不是由“某些细胞整体更容易响应”造成的。</h2></div>
-      <p>Legacy 319-cell matrix 实际解析为2只真实动物。ANM372321 的两条 source lineage 只作为 within-animal robustness units，从未当作两只动物。</p>
-    </div>
-    <div class="grid">
-      <article class="card info">
-        <h3>Cell-centered</h3>
-        <p>每个 cell 先减去其跨11个 states 的均值后，ROC cross-animal RDM ρ 仍为 <strong>0.824 / 0.851</strong>；N01 为 <strong>0.747 / 0.738</strong>。</p>
-      </article>
-      <article class="card violet">
-        <h3>Cell-z</h3>
-        <p>Cell-wise z-scoring 后，ROC 仍为 <strong>0.789 / 0.808</strong>，N01 为 <strong>0.739 / 0.715</strong>。State-label permutation 显著，cell-bootstrap CI 保持为正。</p>
-      </article>
-    </div>
-    <div class="callout" style="margin-top:20px"><strong>单状态删除：</strong>11个 state 每次删掉一个，包括 Fear，都不会让 cross-animal 或 within-ANM372321 geometry 消失。</div>
-  </div>
-</section>
-
-<section class="block alt" id="kinetics">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">解释边界</span><h2>五鼠结果是 response structure，不是“持续神经状态已经被证明”。</h2></div>
-      <p>这个边界直接写在主结果里，不藏到补充材料。</p>
-    </div>
-    <div class="grid">
-      <div class="figure">
-        <img src="../assets/outcome_late_kinetics_v47.png" alt="Outcome-to-late kinetics sensitivity。">
-        <p class="caption">Raw delayed coupling 在8–10 s仍是5/5为正，但去除慢荧光 carryover 后关系明显减弱。<a href="../assets/outcome_late_kinetics_v47.pdf">PDF</a></p>
-      </div>
-      <div>
-        <article class="card good">
-          <h3>Raw delayed structure</h3>
-          <p>8–10 s：mean r=<strong>0.664</strong>，5/5 positive，95% CI 0.503–0.761。<br>10–12 s：r=<strong>0.421</strong>，4/5。<br>12–14.5 s：r=<strong>0.384</strong>，4/5。</p>
-        </article>
-        <article class="card warn" style="margin-top:18px">
-          <h3>Calcium kinetics caveat</h3>
-          <p>在 high-trial MAIN sessions 中，AR(1) positive-innovation analysis 在假定 calcium decay τ≥1 s 后 aggregate residual coupling 不再显著。因此可以说存在可重复的 <strong>outcome-to-late response organization</strong>，但不能据此独立证明 kinetics-free sustained latent state。</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="qc">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">QC 层级</span><h2>哪些数据可以做到现代 raw-imaging 级复核？</h2></div>
-      <p>“结果可靠”和“历史 raw movie 今天能否重新审计”是两件不同的事。</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Cohort</th><th>当前质量结论</th><th>仍保留的边界</th></tr></thead>
-        <tbody>
-          <tr><td>ANM54 / 181</td><td>V27 raw-imaging、residual motion、独立 ROI、extraction sensitivity、cross-day identity 全链条重审。</td><td>保留 small residual local deformation，不写成 zero motion。</td></tr>
-          <tr><td>ANM112 / 113-conditioning / 185</td><td>Motion、strict soma ROI、独立 image support、extraction sensitivity 均强；短 trial 数不降级 image quality。</td><td>113 perfusion 单独保留 motion caveat。</td></tr>
-          <tr><td>2021 named</td><td>Same vtSel、clean matrices、representation robustness、bootstrap、split-half、leave-one-trial。</td><td>旧 raw mount 当前不可访问，因此不能重做现代 per-frame residual-motion audit。</td></tr>
-          <tr><td>2017 legacy</td><td>Exact lineage provenance、clean matrices、双 representation、residualization、state permutation、leave-one-state。</td><td>原始 daily raw imaging 当前未挂载。</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="block alt" id="downloads">
-  <div class="container">
-    <div class="section-head">
-      <div><span class="eyebrow">Authority 文件</span><h2>下载当前汇总数据。</h2></div>
-      <p>这里只发布 derived summary outputs，不发布 raw movie、内部盘符路径或其他不必要的源数据。</p>
-    </div>
-    <div class="downloads">
-      <a class="button" href="../data/ten_mouse_biological_result_authority_v46.csv">10鼠 authority CSV</a>
-      <a class="button" href="../data/current_vta_5mouse_temporal_pair_meta_v45.csv">5鼠 VTA meta</a>
-      <a class="button" href="../data/current_vta_5mouse_delayed_late_meta_v47.csv">Delayed-window meta</a>
-      <a class="button" href="../data/named2021_context_specific_crossanimal_rdm_v44.csv">2021 cross-animal RDM</a>
-      <a class="button" href="../data/legacy2017_cellresp_residual_rdm_v43.csv">2017 residualized RDM</a>
-      <a class="button secondary" href="../data/TEN_MOUSE_GLOBAL_BIOLOGY_V47.md">V47 authority notes</a>
-      <a class="button secondary" href="../data/claim_hierarchy_v47.csv">Claim hierarchy V47</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer><div class="container">2P全局 CaRMA 综合分析 · 当前 biological authority V47 · Reward history × VTA dopamine 项目子页。</div></footer>
-</body>
-</html>
+<a href="../current-vta/zh/">Current VTA<small>54/181文章级锚点 + 112/113/185 + 五鼠复现 + kinetics</small></a>
+<a href="../named-2021/zh/">2021<small>三鼠 × 三 context + leave-one-trial + pairwise animal</small></a>
+<a href="../legacy-2017/zh/">2017<small>residualized geometry + state deletion + bootstrap</small></a>
+<a href="../qc/zh/">QC<small>motion + ROI support + extraction robustness</small></a>
+</div></div></section></main>
+<footer><div class="container">2P global · V51 strict plotting standard · 2026-10-05</div></footer>
+</body></html>
