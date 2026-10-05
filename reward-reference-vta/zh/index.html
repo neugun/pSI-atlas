@@ -15,6 +15,7 @@
     <nav aria-label="页面导航">
       <a href="#overview">概览</a>
       <a href="#methods">方法</a>
+      <a href="#fig0">Fig. 0</a>
       <a href="#fig1">Fig. 1</a>
       <a href="#fig2">Fig. 2</a>
       <a href="#fig34">Fig. 3–4</a>
@@ -41,6 +42,14 @@
       这个历史相对值不是在舔第一下之前就固定出现，而是在持续进食过程中逐渐变得更明显；与此同时，舔舐和当前采样本身也强烈贡献于VTA多巴胺。
       因果实验进一步说明，当前进食时的VTA多巴胺确实控制进食是否继续；但过去的刺激历史可以影响之后的多巴胺，而不一定足以改变之后的进食时长。
     </p>
+    <div class="callout science-anchor">
+      <strong>与 Science 2025 的关系。</strong>
+      Zhu Z, Gong R, Rodriguez V, Quach KT, Chen X, Sternson SM. <em>Hedonic eating is controlled by dopamine neurons that oppose GLP-1R satiety.</em>
+      <em>Science</em>. 2025;387:eadt0773. doi:10.1126/science.adt0773。
+      那篇工作已经建立了进食持续期VTA多巴胺、双向因果调控、periLC→VTA通路以及semaglutide背景。
+      本页回答的是下一层问题：<strong>这个持续性多巴胺信号的“内容”由什么决定？</strong>
+      这里的答案是：真正采样过的近期奖赏逐步形成R，当前奖赏再以C=U−R的形式相对于R被编码。
+    </div>
 
     <div class="cards-3 top-results">
       <article class="card good">
@@ -48,6 +57,7 @@
         <p>
           在匹配当前奖赏的比较中，进食持续和持续性VTA多巴胺的历史效应在
           <strong>9/9只小鼠</strong>中方向一致（双侧 exact Wilcoxon signed-rank，两个终点均 <strong>P=.003906</strong>）。
+          <br><strong>对应面板：</strong>Fig. 1E,F。
         </p>
       </article>
       <article class="card violet">
@@ -56,6 +66,7 @@
           从进食早期到持续期，relative-value coordinate 的系数增加 <strong>+1.458</strong>，
           涉及<strong>11只小鼠</strong>（animal-clustered regression interaction，<strong>P=9.02×10<sup>−8</sup></strong>）；
           11/11只动物的单动物斜率均增加。
+          <br><strong>对应面板：</strong>Fig. 5A,B。
         </p>
       </article>
       <article class="card info">
@@ -64,6 +75,7 @@
           进食期激活VTA多巴胺使终止进食的odds ratio降至 .690
           （13只小鼠；animal-clustered discrete-time logistic hazard，P=3.29×10<sup>−10</sup>）；
           相反，进食时段特异的Jaws抑制使终止odds升高（OR=1.341；6只小鼠；P=.0289）。
+          <br><strong>对应面板：</strong>Fig. 7A–C。
         </p>
       </article>
     </div>
@@ -133,6 +145,16 @@
             <td><strong>GRAB-DA</strong></td>
             <td>使用GPCR-activation-based dopamine sensor进行fiber photometry，记录位置是<strong>VTA局部</strong>。</td>
             <td>这里测的是VTA局部dopamine-sensor fluorescence，不是NAc等投射区多巴胺，也不是dopamine neuron calcium。</td>
+          </tr>
+          <tr>
+            <td><strong>VTA局部多巴胺信号</strong></td>
+            <td>GRAB-DA是在VTA本地测量的细胞外多巴胺，主要对应局部体树突(somatodendritic)释放，而不是某个投射终末区的多巴胺释放。</td>
+            <td>因此这里应解释为VTA局部dopamine dynamics；不能直接等同于NAc dopamine，也不能假定它代表所有VTA dopamine projection的输出。</td>
+          </tr>
+          <tr>
+            <td><strong>主11鼠 alternating dataset</strong></td>
+            <td>每只动物一场重建后的100E/20E alternating session，共11场。strict table共有402个bouts，其中387个来自第一个block之后；共同时间分析进一步要求bout duration ≥5 s且pre、0–2 s、2–5 s DA窗口均有效，因此保留192个post-switch bouts。</td>
+            <td>192个eligible bouts按动物(193,195,199,200,202,217,219,236,239,240,243)分别为11,14,17,32,4,22,17,26,21,20,8；Fig. 5的共同时间比较使用的就是这批bouts。</td>
           </tr>
           <tr>
             <td><strong>H / L / S / N</strong></td>
@@ -289,6 +311,29 @@
   </div>
 </section>
 
+<section id="fig0" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 0</div>
+        <h2>先把任务结构、bout定义、VTA局部记录和各队列关系交代清楚。</h2>
+      </div>
+      <p>H/L是稳定session；S/N是120 s高低奖赏交替session中的当前100E/20E。Fig. 2–5全部使用alternating session；Fig. 1则比较stable与alternating context，同时固定当前食物。</p>
+    </div>
+    <figure class="figure">
+      <img src="../assets/Fig0_task_recording_cohorts_v1.png" alt="任务、VTA局部多巴胺记录和队列">
+      <figcaption>
+        <strong>A，</strong>H/L为稳定100E/20E；S/N为120-s alternating session中的100E/20E block（示意图，无推断统计）。
+        <strong>B，</strong>相邻lick间隔&gt;5 s定义新的feeding bout；跨120-s边界的bout剔除（定义面板，无推断统计）。
+        <strong>C，</strong>代表性VTA GRAB-DA组织学/implant track（代表图，无推断统计）。
+        <strong>D，</strong>一场真实alternating session的VTA GRAB-DA trace与lick raster（示例，无推断统计）。
+        <strong>E，</strong>队列关系：Fig. 1 n=9，Fig. 2–5 n=11，QE/physiology n=7，Stim13 n=13，Jaws n=6；这里只描述队列重叠。
+        <strong>F，</strong>统一神经窗口：pre −2–0 s、early 0–2 s、sustained 2–5 s（分析定义，无推断统计）。
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <section id="fig1">
   <div class="container">
     <div class="section-head">
@@ -302,10 +347,13 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig1_NEURON_REBUILD_FIG1_same_reward_history_v2.png" alt="相同当前奖赏在不同历史后的VTA多巴胺和进食差异">
+      <img src="../assets/Fig1_same_current_reward_raw_and_summary_v3.png" alt="fig1 figure">
       <figcaption>
-        只比较当前食物完全相同的条件，就已经可以看到recent history对bout persistence和持续性VTA dopamine的共同影响。
-        因此最核心的现象并不依赖后面的R或C模型。
+        <strong>A、B，</strong>固定当前食物后的平均VTA GRAB-DA时间曲线：100E的H vs S、20E的L vs N；n=9，阴影为动物间SEM。
+        <strong>C、D，</strong>四个条件的raw bout-duration分布并叠加每只动物均值；n=9。
+        <strong>E，</strong>进食持续：S−H为8/9同方向（双侧exact Wilcoxon P=.00781）；L−N为8/9同方向但单独不显著（P=.0742）；合并aligned effect为9/9（P=.00391）。
+        <strong>F，</strong>持续性VTA多巴胺：S−H为8/9（P=.00781）；L−N为6/9且单独不显著（P=.164）；aligned effect为9/9（P=.00391）。
+        H/L是stable session；S/N是alternating session；Fig. 2–5均只使用alternating-session dataset。
       </figcaption>
     </figure>
     <div class="split">
@@ -341,9 +389,12 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig2_NEURON_REBUILD_FIG2_consumption_updates_reference_v3.png" alt="reward sampling而非单纯时间更新参照">
+      <img src="../assets/Fig2_consumption_updates_reference_v4.png" alt="fig2 figure">
       <figcaption>
-        第一bout主要用于限制纯clock解释；后续bout则检验随着实际舔舐/进食累积，history state如何变化。
+        <strong>A，</strong>因果顺序示意：未采样的passive time与真正reward exposure分开（无推断统计）。
+        <strong>B，</strong>9只小鼠的first-sample passive-clock scan：所有候选时间常数中最大的sustained-DA增量仅ΔR²=.00385，所有clock项均不显著（animal-clustered regression，均P&gt;.55）。
+        <strong>C，</strong>switch后signed consumed exposure四分位与residual sustained DA呈梯度关系（11鼠；描述性quartile summary）。
+        <strong>D，</strong>真实消费量的阳性对照：prior signed lick count在bout stage之外增加ΔR²=.0321（conditional permutation P=.00180），prior signed feeding time增加ΔR²=.0451（P=.000400），11只小鼠。
       </figcaption>
     </figure>
     <div class="callout">
@@ -370,15 +421,18 @@
     <div class="figure-grid">
       <figure class="figure">
         <img src="../assets/Fig3_NEURON_REBUILD_FIG3_continuous_history_deeppath_v3.png" alt="连续reward history坐标">
-        <figcaption>
-          连续history coordinate不仅反映当前block类别，也保留了同一context内部的连续历史差异。
-        </figcaption>
+        <figcaption><strong>A，</strong>递归定义：过去被采样的reward更新R，当前relative value为C=U−R。
+          <strong>B，</strong>11鼠leave-one-animal-out sustained-DA R²：只用当前reward .038；加categorical context .123；用C .175；context+C .178。
+          <strong>C，</strong>固定context后，residual sustained DA随residual C四分位上升（11鼠；quartile summary）。
+          <strong>D，</strong>单动物C slope与各自动物的permutation null区间；图中的7鼠subset嵌套在11鼠主队列内，不是另一批实验。
+          <strong>E，</strong>在匹配近期/local history后，更深的cumulative history仍增加ΔR²=.027（conditional permutation P=.0067）。
+          <strong>F，</strong>自然任务recency profile峰值约α=.15（selection-aware permutation P=.0062），说明可辨识的是一个宽的recency regime。</figcaption>
       </figure>
       <figure class="figure">
         <img src="../assets/Fig4_NEURON_REBUILD_FIG4_model_room_v3.png" alt="alternative reward history models">
-        <figcaption>
-          alternative models可以解释部分现象，但没有一个简单替代模型完全吸收cumulative sampled-history信息。
-        </figcaption>
+        <figcaption><strong>A、B，</strong>不同latent-state family及其对同一reward switch的不同适应轨迹（模型示意）。
+          <strong>C，</strong>统一leave-one-animal-out protocol下把cumulative history自身也加入比较；cumulative history、belief、block sampling、reference RW与two-stage的normalized-MAE都很接近，说明单看prediction score无法确定机制。
+          <strong>D，</strong>192个matched post-switch bouts、11只小鼠的conditional unique-information test：cumulative history在belief之后P=.0124、continuous-time HMM之后P=.0090、average reward rate之后P=.0122、Value-RNN reward-only之后P=.0128、Value-RNN+time之后P=.0078仍有独立信息；反向unique term均不显著。图例已明确两组bar的方向。</figcaption>
       </figure>
     </div>
     <div class="callout">
@@ -406,17 +460,18 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig5_NEURON_REBUILD_FIG5_temporal_construction_v2.png" alt="history relative value在进食过程中逐渐形成">
+      <img src="../assets/Fig5_temporal_construction_v3.png" alt="fig5 figure">
       <figcaption>
-        relative-value axis在进食开始时较弱，到持续消费阶段明显增强。
-        raw-signal control说明这种变化并不是由负的pre-bout baseline subtraction人为制造出来的。
-        图中panel C使用matched-bout U/R specification；standardized和action-adjusted两个模型的scale已在方法部分分别解释。
+        <strong>A，</strong>同一批192个post-switch bouts、11只小鼠中，C=U−R与U+R control的time-resolved coefficient；lick之前为负/preparatory，持续进食后转为正。
+        <strong>B，</strong>C从early到sustained增加+1.458；11/11动物均增加（双侧exact Wilcoxon P=.000977），clustered epoch interaction P=9.02×10<sup>−8</sup>。
+        <strong>C，</strong>pre-bout DA只拟合stored reference R（不含U）时R系数为正：β=.666，cluster P=.000798；387个post-switch bouts、11只小鼠。因此更准确的表述是“baseline DA追踪近期reward reference”。
+        <strong>D，</strong>采样开始后，192个matched bouts中的sustained DA对current reward U为正（β=.721，P=.00216），对stored reference R为负（β=−.691，P=.0282），均为animal-clustered OLS。
       </figcaption>
     </figure>
 
     <div class="figure-grid">
       <figure class="figure">
-        <img src="../assets/NEURON_ED_value_vs_action_adjudication_v2.png" alt="VTA dopamine同时包含relative value和licking action成分">
+        <img src="../assets/ED1_value_vs_action_adjudication_v2.png" alt="VTA dopamine同时包含relative value和licking action成分">
         <figcaption>
           sustained dopamine同时包含当前consummatory action / sampling信息和history-relative component。
           更合适的解释是multiplexing，而不是二选一。
@@ -454,10 +509,12 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="reward history computation在QE任务中的泛化">
+      <img src="../assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="fig6 figure">
       <figcaption>
-        结果支持“recent sampled reward history”是一种可迁移的计算原则，
-        但不要求每个任务都具有完全一样的最佳α、时间波形或behavioral gain。
+        <strong>A，</strong>冻结α=.20后，在独立QE任务7只小鼠、66个pure-100E bouts中仍增加AUC ΔR²=.02540（animal-clustered P=.00141；within-animal circular-shift P=.00205）。
+        <strong>B，</strong>QE transfer覆盖较宽recency范围；其task-specific maximum约α=.30，而α=.20仍保留97.9%的最大效应。
+        <strong>C，</strong>符号统一规定为lower→higher value。与Natural value axis的mean cosine：quinine 7/7、hunger 7/7、LiCl 7/7（exact sign P=.0156），Stim13 12/13（P=.000488），Stim5 5/5（P=.0625）。
+        <strong>D，</strong>逐只动物在冻结Natural axis上的projection，无重新拟合。C/D支持的是<strong>价值几何一致</strong>，不是所有操作都使用相同history-update机制。
       </figcaption>
     </figure>
     <div class="callout">
@@ -474,17 +531,20 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 7</div>
-        <h2>当前VTA多巴胺直接控制进食，但过去的多巴胺历史可以被记住而不一定改变之后的行为。</h2>
+        <h2>进食期VTA多巴胺促进feeding persistence，而过去的多巴胺历史可以被记住而不一定改变之后的行为。</h2>
       </div>
       <p>
         这里要把两个问题分开：一是“当前bout里提高/降低dopamine会发生什么”；二是“过去经历过dopamine stimulation之后，会不会留下history trace”。
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="VTA dopamine的因果作用和历史记忆">
+      <img src="../assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="fig7 figure">
       <figcaption>
-        自然history和bidirectional dopamine manipulation都指向feeding persistence，
-        但observational data仍不足以证明一个完整的 R → dopamine → behavior mediation chain。
+        <strong>A，</strong>较高natural history state对应更低bout-termination odds（OR=.459，animal-clustered discrete-time logistic hazard P=.00018；11鼠）。
+        <strong>B，</strong>进食期急性VTA dopamine activation促进persistence（OR=.690，P=3.29×10<sup>−10</sup>；13鼠）；该急性activation结果为Zhu等 <em>Science</em> 2025, eadt0773中的已发表结果，在这里作为机制基线重现。
+        <strong>C，</strong>consumption-contingent Jaws inhibition促进termination（OR=1.341，P=.0289；6鼠）。
+        <strong>D，</strong>forest plot统一使用OR&lt;1表示更长persistence、OR&gt;1表示更早termination；contingent-vs-noncontingent timing interaction OR=1.23，P=.052，为borderline。
+        本页新增的因果价值在于把natural reference axis、人工stimulation的共轴关系和contingent inhibition连接起来，而不是重复宣称Science 2025已经建立的acute activation effect。
       </figcaption>
     </figure>
     <div class="split">
@@ -602,6 +662,40 @@
       </div>
     </details>
 
+    <details open>
+      <summary>与正文统计结论逐一对应的编号 Extended Data 图。</summary>
+      <div class="details-body">
+        <figure class="figure">
+          <img src="../assets/ED1_value_vs_action_adjudication_v2.png" alt="ED1 value versus action">
+          <figcaption><strong>ED1。</strong>持续性DA的action-control adjudication。按因果顺序加入licking control后，history-relative component仍存在；最灵活的0–2 s + 2–5 s sensitivity model中，C仍有unique ΔR²=.04895（11鼠；conditional permutation P=.0449）。这是supportive sensitivity evidence，不是主发现检验。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ED2_Stim13_history_reanalysis_v2.png" alt="ED2 stimulation history">
+          <figcaption><strong>ED2A，</strong>对Zhu等 <em>Science</em> 2025 Stim13 dataset的重分析：past stimulation history在full controls之后仍有ΔR²=.00338；再加入future-history control后仍为ΔR²=.00252（两者conditional permutation均P=5×10<sup>−5</sup>），共1,833 bouts、13鼠。<strong>ED2B，</strong>simple past model中9/13动物斜率为正；此panel仅描述方向，不单独作为显著性结论。<strong>ED2C，</strong>past-history signal在较宽α范围稳定，而future control解释的variance明显更少。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ED3_gain_loss_asymmetry_v1.png" alt="ED3 gain loss">
+          <figcaption><strong>ED3。</strong>分别估计[U−R]+与[R−U]+。Natural：gain ΔR²=.0292，P=.00370；loss ΔR²=.00352，P=.324；interaction P=.216。QE：gain ΔR²=.0196，P=.0233；loss ΔR²=.00439，P=.258；interaction P=.000527。Stim13：gain ΔR²=.00127，P=.00470；loss ΔR²=.0000265，P=.666；interaction P=.197。除interaction外均为conditional permutation。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ED4_five_robustness_checks_v1.png" alt="ED4 robustness">
+          <figcaption><strong>ED4A，</strong>raw、未做pre-subtraction的signal仍保留sustained C（P=.0399），early无效（P=.718），n=192/11鼠。<strong>ED4B，</strong>精确匹配0–2 s lick后9/11动物DA方向一致（one-sided exact Wilcoxon P=.0415）；更严格0–5 s匹配较弱（7/11，P=.183）。<strong>ED4C，</strong>RF、ExtraTrees、HistGB等nonlinear nuisance model后residual C仍为正（conditional permutation P=.010–.0172）。<strong>ED4D，</strong>history在H50 Value-RNN reward-only之后P=.0128、reward+time之后P=.0078仍有unique信息，RNN反向unique为null。<strong>ED4E，</strong>leave-one-cohort-out方向仍为正，但小样本subset功效下降；full-data conditional P=.0092。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ED5_hunger_LiCl_semaglutide_paired_v1.png" alt="ED5 physiological states">
+          <figcaption><strong>ED5A，</strong>hunger提高mean bout duration（7鼠，paired exact Wilcoxon P=.03125）。<strong>ED5B，</strong>LiCl devaluation降低duration（同一7鼠family，P=.015625）。<strong>ED5C，</strong>semaglutide相对PBS降低Day-1 VTA dopamine AUC（7鼠，P=.03125）。这里semaglutide明确对应Zhu等 <em>Science</em> 2025；它是physiological-state manipulation，不是直接history manipulation。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ED6_alpha_identifiability_v1.png" alt="ED6 alpha identifiability">
+          <figcaption><strong>ED6A，</strong>Natural和QE都有宽但错开的α峰（Natural约.15；QE约.30）。<strong>ED6B，</strong>α=.20是跨任务maximin折中，保留Natural最大效应91.1%、QE最大效应97.9%。<strong>ED6C，</strong>Stim13同样是宽profile。因此α=.20是transfer choice，不是唯一可辨识的生物学常数。</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="../assets/ED7_history_specificity_real_vs_controls_v1.png" alt="ED7 specificity">
+          <figcaption><strong>ED7。</strong>direct sampled-history test在Natural（ΔR²=.0269，P=.00670）、QE（ΔR²=.0254，P=.00141）、Stim13（ΔR²=.00252，P=5×10<sup>−5</sup>）均为阳性；duration-history proxy在hunger（P=.283）、quinine（P=.466）、LiCl（P=.478）、Stim5（P=.562）均不显著。proxy bar本身可以有非零ΔR²，因此specificity判断依赖真实条件与proxy control的推断统计，而不是只看bar高度。</figcaption>
+        </figure>
+      </div>
+    </details>
+
     <details>
       <summary>Alternative models各自解释一部分现象，但没有把结果压缩成唯一算法。</summary>
       <div class="details-body">
@@ -644,7 +738,7 @@
                 <td>Semaglutide</td>
                 <td>7只小鼠；其中6只与Stim13重叠</td>
                 <td>Day-1 dopamine AUC相对PBS下降2.22 units；6/7只更低（paired exact Wilcoxon，P=.03125）。</td>
-                <td>把这套框架与GLP-1R-dependent satiety以及之前hedonic eating工作连接起来。</td>
+                <td>把这套框架与GLP-1R-dependent satiety连接起来；具体文献为 Zhu Z, Gong R, Rodriguez V, Quach KT, Chen X, Sternson SM. <em>Science</em>. 2025;387:eadt0773. doi:10.1126/science.adt0773。</td>
               </tr>
             </tbody>
           </table>

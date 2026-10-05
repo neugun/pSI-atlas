@@ -15,6 +15,7 @@
     <nav aria-label="Page navigation">
       <a href="#overview">Overview</a>
       <a href="#methods">Methods</a>
+      <a href="#fig0">Fig. 0</a>
       <a href="#fig1">Fig. 1</a>
       <a href="#fig2">Fig. 2</a>
       <a href="#fig34">Figs. 3–4</a>
@@ -40,6 +41,14 @@
       This history-relative signal becomes clearer during ongoing consumption, where it coexists with strong licking and sampling-related signals.
       Causal dopamine manipulations change feeding persistence, but stimulation history can alter later dopamine without measurably changing later bout duration, separating neural memory from its behavioral expression.
     </p>
+    <div class="callout science-anchor">
+      <strong>Relation to Science 2025.</strong>
+      Zhu Z, Gong R, Rodriguez V, Quach KT, Chen X, Sternson SM. <em>Hedonic eating is controlled by dopamine neurons that oppose GLP-1R satiety.</em>
+      <em>Science</em>. 2025;387:eadt0773. doi:10.1126/science.adt0773.
+      That study established sustained consumption-phase VTA dopamine, bidirectional causal control of feeding, the periLC→VTA circuit, and the semaglutide connection.
+      The present analysis asks the next question: <strong>what determines the content of that ongoing dopamine signal?</strong>
+      Here, sampled reward history builds a stored reference R and current reward is evaluated as C=U−R.
+    </div>
 
     <div class="cards-3 top-results">
       <article class="card good">
@@ -47,6 +56,7 @@
         <p>
           The aligned history effect was positive for both feeding persistence and sustained VTA dopamine in
           <strong>9/9 mice</strong> (two-sided exact Wilcoxon signed-rank, <strong>P=.003906</strong> for each endpoint).
+          <br><strong>Panels:</strong> Fig. 1E,F.
         </p>
       </article>
       <article class="card violet">
@@ -55,6 +65,7 @@
           The sustained-minus-early coefficient for the relative-value coordinate increased by <strong>+1.458</strong> across
           <strong>11 mice</strong> (animal-clustered regression interaction, <strong>P=9.02×10<sup>−8</sup></strong>);
           all 11 animal-level slopes increased (two-sided exact Wilcoxon, P=.000977).
+          <br><strong>Panels:</strong> Fig. 5A,B.
         </p>
       </article>
       <article class="card info">
@@ -62,6 +73,7 @@
         <p>
           Consumption-period activation lowered the termination odds ratio (OR) to .690 (13 mice; animal-clustered discrete-time logistic hazard, P=3.29×10<sup>−10</sup>),
           whereas consumption-contingent Jaws optogenetic inhibition raised them (OR=1.341; 6 mice; animal-clustered discrete-time logistic hazard, P=.0289).
+          <br><strong>Panels:</strong> Fig. 7A–C.
         </p>
       </article>
     </div>
@@ -131,6 +143,16 @@
             <td><strong>GRAB-DA</strong></td>
             <td>G protein-coupled receptor (GPCR)-activation-based dopamine (GRAB-DA) sensor fiber photometry recorded <strong>locally in the VTA</strong>.</td>
             <td>This is VTA dopamine-sensor fluorescence, not dopamine measured in a projection target such as nucleus accumbens and not a calcium signal from dopamine neurons.</td>
+          </tr>
+          <tr>
+            <td><strong>Local VTA dopamine signal</strong></td>
+            <td>GRAB-DA was measured in the VTA itself, where extracellular dopamine reflects local somatodendritic dopamine release rather than terminal release in a projection target.</td>
+            <td>Interpret the signal as local VTA dopamine dynamics. It should not be equated with nucleus-accumbens dopamine or assumed to report the output of every VTA dopamine projection.</td>
+          </tr>
+          <tr>
+            <td><strong>Main 11-mouse alternating dataset</strong></td>
+            <td>One reconstructed alternating 100E/20E session per mouse (11 sessions total). The strict table contains 402 bouts; 387 occur after the first block. The matched temporal analysis uses 192 post-switch bouts after requiring duration ≥5 s and finite pre-bout, 0–2 s and 2–5 s dopamine windows.</td>
+            <td>Eligible 192-bout counts by mouse (193,195,199,200,202,217,219,236,239,240,243): 11,14,17,32,4,22,17,26,21,20,8. These are the bouts used for the common Fig. 5 temporal comparisons.</td>
           </tr>
           <tr>
             <td><strong>H / L / S / N</strong></td>
@@ -234,7 +256,7 @@
           </tr>
           <tr>
             <td>Variable 120-s 100E/20E sessions (Figs. 2–5)</td>
-            <td>11</td>
+            <td>11 mice / 11 sessions</td>
             <td>193, 195, 199, 200, 202, 217, 219, 236, 239, 240, 243</td>
             <td>The first five form the DT subgroup later reused in the 5-mouse 20E stimulation experiment.</td>
           </tr>
@@ -282,6 +304,29 @@
   </div>
 </section>
 
+<section id="fig0" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 0</div>
+        <h2>Task structure, bout definition, local VTA recording and cohort overlap are explicit before the result figures.</h2>
+      </div>
+      <p>Stable H/L sessions and alternating S/N sessions answer different questions. Figures 2–5 use the alternating sessions; Figure 1 compares stable and alternating contexts while holding current food identity fixed.</p>
+    </div>
+    <figure class="figure">
+      <img src="assets/Fig0_task_recording_cohorts_v1.png" alt="Task, local VTA dopamine recording and analysis cohorts">
+      <figcaption>
+        <strong>A,</strong> H/L are stable 100E/20E sessions; S/N are the corresponding 100E/20E blocks inside 120-s alternating sessions (schematic; no inferential test).
+        <strong>B,</strong> a feeding bout is a run of licks terminated by an inter-lick interval &gt;5 s; boundary-crossing bouts are excluded (definition panel; no inferential test).
+        <strong>C,</strong> representative VTA GRAB-DA histology/implant track (representative image; no inferential test).
+        <strong>D,</strong> representative local VTA GRAB-DA trace with lick raster from one alternating session (example only; no inferential test).
+        <strong>E,</strong> cohort relationships: Fig. 1 n=9, Figs. 2–5 n=11, QE/physiology n=7, Stim13 n=13 and Jaws n=6; cohort-overlap panel is descriptive.
+        <strong>F,</strong> neural windows used throughout: pre-bout −2–0 s, early 0–2 s and sustained 2–5 s (analysis definition; no inferential test).
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <section id="fig1">
   <div class="container">
     <div class="section-head">
@@ -295,10 +340,13 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig1_NEURON_REBUILD_FIG1_same_reward_history_v2.png" alt="Matched current rewards after different reward histories">
+      <img src="assets/Fig1_same_current_reward_raw_and_summary_v3.png" alt="fig1 figure">
       <figcaption>
-        Holding the food in the current bout constant reveals an aligned history effect in both bout persistence and sustained VTA dopamine.
-        The comparison establishes the phenomenon before any latent-state model is introduced.
+        <strong>A,B,</strong> mean local VTA GRAB-DA time courses for matched current 100E (H versus S) and matched current 20E (L versus N); n=9 mice, shading denotes animal-level SEM; descriptive time courses.
+        <strong>C,D,</strong> raw bout-duration distributions for the same four conditions with animal means overlaid; n=9 mice.
+        <strong>E,</strong> feeding persistence: S−H is positive in 8/9 mice (two-sided exact Wilcoxon P=.00781), L−N is directionally positive in 8/9 but not significant alone (P=.0742), and the aligned comparison is positive in 9/9 (P=.00391).
+        <strong>F,</strong> sustained VTA dopamine: S−H is positive in 8/9 (P=.00781), L−N is directionally positive in 6/9 and not significant alone (P=.164), and the aligned comparison is positive in 9/9 (P=.00391).
+        H/L are stable sessions; S/N are alternating-session conditions; Figs. 2–5 use only the alternating-session dataset.
       </figcaption>
     </figure>
     <div class="split">
@@ -334,10 +382,12 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig2_NEURON_REBUILD_FIG2_consumption_updates_reference_v3.png" alt="Consumption updates the reward reference">
+      <img src="assets/Fig2_consumption_updates_reference_v4.png" alt="fig2 figure">
       <figcaption>
-        The first sample after a switch constrains passive-time explanations, while later bouts test how sampled reward exposure accumulates.
-        The right panel places current licking controls in the same causal sequence.
+        <strong>A,</strong> causal-order schematic distinguishing unsampled passive time from sampled reward exposure (schematic; no inferential test).
+        <strong>B,</strong> first-sample passive-clock scan in 9 mice: the largest added sustained-DA variance across candidate time constants is ΔR²=.00385 and all clock terms are nonsignificant (animal-clustered regressions, all P&gt;.55).
+        <strong>C,</strong> residual sustained DA changes monotonically across quartiles of signed consumed exposure after the switch (11-mouse alternating cohort; descriptive quartile summary).
+        <strong>D,</strong> positive controls for actual consumption dose beyond bout stage: prior signed lick count ΔR²=.0321 (conditional permutation P=.00180) and prior signed feeding time ΔR²=.0451 (P=.000400), 11 mice.
       </figcaption>
     </figure>
     <div class="callout">
@@ -363,15 +413,18 @@
     <div class="figure-grid">
       <figure class="figure">
         <img src="assets/Fig3_NEURON_REBUILD_FIG3_continuous_history_deeppath_v3.png" alt="Continuous reward-history coordinate">
-        <figcaption>
-          A continuous coordinate captures within-context variation and retains information from reward history deeper than a local switch label.
-        </figcaption>
+        <figcaption><strong>A,</strong> recursive notation: prior sampled rewards update stored reference R, and relative value is C=U−R.
+          <strong>B,</strong> leave-one-animal-out sustained-DA R² across 11 mice: current reward .038, categorical context .123, C .175, and context+C .178.
+          <strong>C,</strong> within fixed context, residual sustained dopamine increases across residual-C quartiles (11-mouse cohort; quartile summary).
+          <strong>D,</strong> animal slopes versus animal-specific permutation-null intervals; the displayed 7-mouse subset is nested within the full 11-mouse cohort and is not a separate experiment.
+          <strong>E,</strong> deeper cumulative history adds ΔR²=.027 beyond matched recent/local history (conditional permutation P=.0067).
+          <strong>F,</strong> the natural-task recency profile peaks near α=.15 (selection-aware permutation P=.0062), supporting a broad recency regime rather than a unique biological constant.</figcaption>
       </figure>
       <figure class="figure">
         <img src="assets/Fig4_NEURON_REBUILD_FIG4_model_room_v3.png" alt="Alternative reward-history models">
-        <figcaption>
-          Model comparison asks what information alternative latent-state descriptions fail to absorb, rather than selecting a winner from prediction score alone.
-        </figcaption>
+        <figcaption><strong>A,B,</strong> alternative latent-state families and their distinct adaptation trajectories (schematic/model illustrations).
+          <strong>C,</strong> common-protocol leave-one-animal-out prediction across 11 mice now includes cumulative history itself. Cumulative history, belief state, block sampling, reference RW and two-stage models achieve similar normalized-MAE improvements. Prediction alone does not identify the mechanism.
+          <strong>D,</strong> conditional unique-information tests in the 192 matched post-switch bouts (11 mice): cumulative history remains unique beyond belief (P=.0124), continuous-time HMM (P=.0090), average reward rate (P=.0122), Value-RNN reward-only (P=.0128) and Value-RNN+time (P=.0078), whereas the reverse unique terms are nonsignificant. The legend states the direction of each bar explicitly.</figcaption>
       </figure>
     </div>
     <div class="callout">
@@ -399,16 +452,18 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig5_NEURON_REBUILD_FIG5_temporal_construction_v2.png" alt="Temporal construction of relative value during feeding">
+      <img src="assets/Fig5_temporal_construction_v3.png" alt="fig5 figure">
       <figcaption>
-        The relative-value axis is weak at initial reward onset and stronger during continued consumption.
-        Raw-signal controls show that this transition is not created by subtracting a negative pre-bout baseline. Panel C uses the matched-bout U/R specification without the later action terms; coefficient scales for the standardized and action-adjusted models are defined above.
+        <strong>A,</strong> time-resolved coefficient for C=U−R (teal) and the U+R control across the same 192 post-switch bouts from 11 mice; coefficients switch from negative/preparatory before licking to positive during sustained consumption.
+        <strong>B,</strong> C increases from early to sustained consumption by +1.458; all 11/11 animal slopes increase (two-sided exact Wilcoxon P=.000977) and the clustered epoch interaction is P=9.02×10<sup>−8</sup>.
+        <strong>C,</strong> pre-bout DA fitted to stored reference R without U is positive (β=.666, cluster P=.000798; 387 post-switch bouts, 11 mice), supporting the wording that baseline DA tracks recent reward reference.
+        <strong>D,</strong> after sampling begins, sustained DA has opposite-sign current and reference coefficients in the 192 matched bouts: U β=.721 (P=.00216) and R β=−.691 (P=.0282), animal-clustered OLS.
       </figcaption>
     </figure>
 
     <div class="figure-grid">
       <figure class="figure">
-        <img src="assets/NEURON_ED_value_vs_action_adjudication_v2.png" alt="Value and licking contributions to sustained VTA dopamine">
+        <img src="assets/ED1_value_vs_action_adjudication_v2.png" alt="Value and licking contributions to sustained VTA dopamine">
         <figcaption>
           Sustained dopamine contains both ongoing consummatory-action information and a history-relative component.
           The two should be interpreted as multiplexed rather than mutually exclusive.
@@ -444,10 +499,12 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="Generalization of reward-history computations">
+      <img src="assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="fig6 figure">
       <figcaption>
-        The transfer result supports a shared history computation, while orthogonal manipulations such as quinine, hunger, illness and dopamine stimulation define a broader value space.
-        They should not all be interpreted as identical implementations of the same reference mechanism.
+        <strong>A,</strong> frozen α=.20 history state transfers to 66 pure-100E bouts from 7 mice in the independent QE task (added AUC ΔR²=.02540, animal-clustered P=.00141; within-animal circular-shift P=.00205).
+        <strong>B,</strong> QE transfer spans a broad recency range; its task-specific maximum is near α=.30, while α=.20 retains 97.9% of that maximum.
+        <strong>C,</strong> sign convention is lower→higher value. Mean cosine with the Natural value axis is positive for quinine 7/7, hunger 7/7, LiCl 7/7 (exact sign P=.0156 each), Stim13 12/13 (P=.000488) and Stim5 5/5 (P=.0625).
+        <strong>D,</strong> animal-level projections on the frozen Natural axis are shown without refitting. Panels C,D support <strong>consistent value geometry</strong> across manipulations; they do not establish that all manipulations use the same history-update mechanism.
       </figcaption>
     </figure>
     <div class="callout">
@@ -465,7 +522,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 7</div>
-        <h2>Current dopamine controls feeding, while dopamine history can be remembered without changing later feeding.</h2>
+        <h2>Consumption-period dopamine promotes feeding persistence, while dopamine history can be remembered without changing later feeding.</h2>
       </div>
       <p>
         The causal manipulation and the history analysis answer different questions.
@@ -473,9 +530,13 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="Causal dopamine effects and feeding persistence">
+      <img src="assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="fig7 figure">
       <figcaption>
-        Natural history and bidirectional dopamine manipulation converge on the persistence axis, while the observational data remain insufficient to prove complete mediation from stored history through dopamine to behavior.
+        <strong>A,</strong> higher natural history state predicts lower bout-termination odds (OR=.459, animal-clustered discrete-time logistic hazard P=.00018; 11-mouse natural cohort).
+        <strong>B,</strong> acute consumption-period VTA dopamine activation promotes persistence (OR=.690, P=3.29×10<sup>−10</sup>; 13 mice); this acute activation result is reproduced from Zhu et al., <em>Science</em> 2025, eadt0773.
+        <strong>C,</strong> consumption-contingent Jaws inhibition promotes termination (OR=1.341, P=.0289; 6 mice).
+        <strong>D,</strong> forest summary uses OR&lt;1 for longer persistence and OR&gt;1 for earlier termination; contingent-versus-noncontingent timing interaction OR=1.23, P=.052 is borderline.
+        The new contribution here is the relationship between the natural reference axis, artificial stimulation on that value axis, and contingent inhibition—not a re-claiming of the previously published acute activation effect.
       </figcaption>
     </figure>
     <div class="split">
@@ -584,6 +645,40 @@
       </div>
     </details>
 
+    <details open>
+      <summary>Numbered Extended Data panels corresponding to the statistical claims above.</summary>
+      <div class="details-body">
+        <figure class="figure">
+          <img src="assets/ED1_value_vs_action_adjudication_v2.png" alt="ED1 value versus action">
+          <figcaption><strong>ED1.</strong> Action-control adjudication for sustained dopamine. The history-relative component remains after causal-order licking controls; the most flexible 0–2 s + 2–5 s sensitivity model gives unique C ΔR²=.04895 in 11 mice (conditional permutation P=.0449). This is supportive sensitivity evidence, not the primary discovery test.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ED2_Stim13_history_reanalysis_v2.png" alt="ED2 stimulation history">
+          <figcaption><strong>ED2A,</strong> reanalysis of the Zhu et al. <em>Science</em> 2025 Stim13 dataset: past stimulation history remains after full controls (ΔR²=.00338) and after adding the future-history control (ΔR²=.00252; both conditional permutation P=5×10<sup>−5</sup>), 1,833 bouts from 13 mice. <strong>ED2B,</strong> simple animal-level past-history slopes are positive in 9/13 mice; this panel is descriptive and is not used as a separate significance claim. <strong>ED2C,</strong> the past-history profile is stable across a broad α range, whereas the future control carries much less variance.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ED3_gain_loss_asymmetry_v1.png" alt="ED3 gain loss asymmetry">
+          <figcaption><strong>ED3.</strong> Separate mismatch channels [U−R]+ and [R−U]+. Natural: gain ΔR²=.0292, P=.00370; loss ΔR²=.00352, P=.324; gain-versus-loss interaction P=.216. QE: gain ΔR²=.0196, P=.0233; loss ΔR²=.00439, P=.258; interaction P=.000527. Stim13: gain ΔR²=.00127, P=.00470; loss ΔR²=.0000265, P=.666; interaction P=.197. Conditional permutation tests unless noted.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ED4_five_robustness_checks_v1.png" alt="ED4 robustness">
+          <figcaption><strong>ED4A,</strong> raw, non-pre-subtracted signal retains the sustained C effect (P=.0399) while the early effect is absent (P=.718), n=192 bouts/11 mice. <strong>ED4B,</strong> exact 0–2 s lick matching gives 9/11 animals in the expected DA direction (one-sided exact Wilcoxon P=.0415); stricter 0–5 s matching is weaker (7/11, P=.183). <strong>ED4C,</strong> nonlinear nuisance models leave positive residual C slopes (conditional permutation P=.010–.0172). <strong>ED4D,</strong> cumulative history remains unique beyond H50 Value-RNN reward-only (P=.0128) and reward+time (P=.0078), whereas RNN-unique terms are null. <strong>ED4E,</strong> leave-one-cohort-out effects remain positive but smaller subsets lose power; full-data conditional P=.0092.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ED5_hunger_LiCl_semaglutide_paired_v1.png" alt="ED5 physiology paired">
+          <figcaption><strong>ED5A,</strong> hunger increases mean bout duration in 7 mice (paired exact Wilcoxon P=.03125). <strong>ED5B,</strong> LiCl devaluation reduces duration in the same 7-mouse family (P=.015625). <strong>ED5C,</strong> semaglutide lowers day-1 VTA dopamine AUC versus PBS in 7 mice (P=.03125). Semaglutide is linked specifically to Zhu et al., <em>Science</em> 2025; it is a physiological-state manipulation, not a direct reward-history test.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ED6_alpha_identifiability_v1.png" alt="ED6 alpha identifiability">
+          <figcaption><strong>ED6A,</strong> Natural and QE have broad but shifted α profiles (Natural maximum ≈.15; QE maximum ≈.30). <strong>ED6B,</strong> α=.20 is the cross-task maximin compromise, retaining 91.1% of the Natural maximum and 97.9% of the QE maximum. <strong>ED6C,</strong> Stim13 also shows a broad profile. Thus α=.20 is a transfer choice, not a uniquely identified biological constant.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/ED7_history_specificity_real_vs_controls_v1.png" alt="ED7 history specificity">
+          <figcaption><strong>ED7.</strong> Direct sampled-history tests are positive in Natural (ΔR²=.0269, P=.00670), QE (ΔR²=.0254, P=.00141) and Stim13 (ΔR²=.00252, P=5×10<sup>−5</sup>). Duration-history proxy tests are not significant for hunger (P=.283), quinine (P=.466), LiCl (P=.478) or Stim5 (P=.562). The proxy bars can have nonzero ΔR² while remaining statistically unsupported; this is why specificity is judged by the paired real/control inference rather than bar height alone.</figcaption>
+        </figure>
+      </div>
+    </details>
+
     <details>
       <summary>Alternative models capture distinct biological ideas but do not collapse the result into one algorithm.</summary>
       <div class="details-body">
@@ -629,7 +724,7 @@
                 <td>Semaglutide</td>
                 <td>7 mice; 6 overlap Stim13</td>
                 <td>Day-1 dopamine AUC was lower by 2.22 units versus PBS; 6/7 mice were lower (paired exact Wilcoxon, P=.03125).</td>
-                <td>Links the framework to a slow glucagon-like peptide-1 receptor (GLP-1R)-dependent satiety state and earlier work on hedonic eating.</td>
+                <td>Links the framework to a slow glucagon-like peptide-1 receptor (GLP-1R)-dependent satiety state reported in Zhu Z, Gong R, Rodriguez V, Quach KT, Chen X, Sternson SM. <em>Science</em>. 2025;387:eadt0773. doi:10.1126/science.adt0773.</td>
               </tr>
             </tbody>
           </table>
