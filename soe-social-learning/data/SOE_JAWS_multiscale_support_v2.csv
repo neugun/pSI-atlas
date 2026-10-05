@@ -1,0 +1,10 @@
+scale,endpoint,comparison,effect,stat
+acute_contingent,Observe->Active conversion,OFF .320 -> ON .193,delta -0.1268; 8/10 lower,r_rb=-.909; P=.00391
+acute_noncontingent,Observe->Active conversion,OFF .360 -> ON .325,delta -0.0345; 5/9 lower,timing-control comparison
+within_session_continuous,Active-belief episode update,OFF +.002490 -> ON -.000815,10/10 ON-OFF lower,P=.001953
+within_session_continuous,Active-Q episode update,OFF +.002208 -> ON +.000963,slower accumulation ON,ON-OFF P=.007812
+session_scale,Final Active-belief contrast,Normal .096734 -> Full JAWS .011996,9/10 lower; delta -.084738,two-sided P=.003906
+cohort_replication,Active-belief endpoint,Standard JAWS,5/5 lower,mean delta -.047169
+cohort_replication,Active-belief endpoint,VTA-copy JAWS,5/5 lower,mean delta -.032956
+event_composition,Active reward events per episode,contingent ON vs OFF,delta -.4533; 9/10 lower,P=.003906
+sampling_control,Observation fraction,contingent ON vs OFF,preserved,P=.625

@@ -1,0 +1,14 @@
+timescale,result,window_or_metric,effect,stat
+within_session,Active-Unrewarded stopping,events 6-20,+5.9 pp,P=.0096
+within_session,Active-Unrewarded stopping,events 21-50,+11.6 pp,P=1.9e-5
+within_session,Active-Unrewarded stopping,events 51+, +10.7 pp,P=1.3e-6
+within_session,Passive-Unrewarded stopping,events 21-50,+17.6 pp,P=2.1e-7
+next_choice,Observe->No-observe,Active vs Unrewarded,+10.0 pp,
+next_choice,Observe->No-observe,Passive vs Unrewarded,+12.9 pp,
+next_choice,No-observe->Observe,Active vs Unrewarded,-9.0 pp,
+next_choice,No-observe->Observe,Passive vs Unrewarded,-8.3 pp,
+within_session_memory,~20-event observation/action history,held-animal ΔNLL,+0.0348,
+within_session_memory,selected gamma,effective scale,20-33 events / 4.5-7.5 min,gamma=.95-.97
+slow_latent,choice impact by event 51+,absolute impact,~7-8 pp,
+cross_day,chronological day order,shuffle rank,1/501,empirical P=.001996
+cross_day,retained prior,animals improved,29/40,paired P=.0125

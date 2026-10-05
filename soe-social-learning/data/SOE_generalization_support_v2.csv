@@ -1,0 +1,12 @@
+assay,endpoint,means_or_counts,effect,stat
+observational_fear_D1,late cue velocity,Social .249 vs Nonsocial .362,Cliff delta -.778,P=.0152
+observational_fear_D1,shock velocity,Social 15.53 vs Nonsocial 8.29,Cliff delta +.944,P=.00433
+observational_fear_D1,shock angular-velocity change,,Cliff delta +.833,P=.00866
+observational_fear_D1,late shock observation,Social .450 vs Nonsocial .369,Cliff delta +.778,P=.0152
+observational_fear_D1,shock observation trial slope,,Cliff delta +.722,P=.0238
+observational_fear_D1,last10-first10 shock observation,,Cliff delta +.778,P=.0216
+observational_fear_D2,shock velocity D2-D1,Social -15.22 vs Nonsocial -7.92,Cliff delta -.944,P=.00433
+observational_fear_D2,shock angular-velocity D2-D1,,Cliff delta -.833,P=.0130
+SAFN,latency to first feeding,45.96 vs 199.47 s,Cliff delta -.722,P=.01948; log-rank P=.03030
+SAFN,feeding event,6/6 vs 5/6,,
+SAFN,first feeding bout,61.07 vs 8.81 s,Cliff delta +.889,P=.00866

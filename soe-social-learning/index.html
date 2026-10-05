@@ -207,19 +207,31 @@
 <div class="card info"><div class="metric-label">Within-session memory</div><div class="metric">20–33 events</div><p>Selected γ=.95–.97 corresponds to roughly 4.5–7.5 min and outperforms simple run length or elapsed time.</p></div>
 <div class="card violet"><div class="metric-label">Cross-day prior</div><div class="metric">29/40</div><p>Chronological day order ranks 1/501 against day shuffles (P=.001996); a retained prior improves 29/40 animals (P=.0125) and fades by ~event 50.</p></div>
 </div><figure class="figure evidence-figure">
-<a class="figure-zoom" href="assets/SOE_learning_dynamics_v1.png" rel="noopener" target="_blank">
+<a class="figure-zoom" href="assets/SOE_learning_dynamics_v2.png" rel="noopener" target="_blank">
 <picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_learning_dynamics_v1_mobile.png"/>
-<img alt="Fast, minute-scale, and cross-day learning dynamics" loading="lazy" src="assets/SOE_learning_dynamics_v1.png"/>
+<source media="(max-width: 620px)" srcset="assets/SOE_learning_dynamics_v2_mobile.png"/>
+<img alt="Within-session and cross-day SOE memory dynamics" loading="lazy" src="assets/SOE_learning_dynamics_v2.png"/>
 </picture>
 </a>
-<figcaption><strong>Multi-timescale evidence.</strong> Fast outcome-sensitive switching, minute-scale history, and a retained cross-day prior are plotted from the recovered SOE analysis statistics.</figcaption>
-</figure><figure class="figure evidence-figure">
+<figcaption><strong>Within-session and cross-day memory.</strong> Fast outcome-conditioned stopping, immediate stop/re-entry, 20–33-event history, slower latent accumulation and a transient cross-day prior are all retained as separate supporting results.</figcaption>
+</figure><div class="cards-3"><div class="card info">
+<div class="metric-label">Immediate next choice</div>
+<div class="metric">stop / re-entry</div>
+<p>When currently observing, Active and Passive outcomes increase stopping by about +10.0 and +12.9 pp versus Unrewarded. When currently not observing, they reduce re-entry by about 9.0 and 8.3 pp.</p>
+</div><div class="card info">
+<div class="metric-label">Within-session memory</div>
+<div class="metric">20–33 events</div>
+<p>Selected γ=.95–.97 corresponds to roughly 4.5–7.5 min. A ~20-event observation/action history adds ΔNLL=+.0348 beyond visible state/context.</p>
+</div><div class="card info">
+<div class="metric-label">Cross-day memory</div>
+<div class="metric">29/40</div>
+<p>A retained prior improves 29/40 animals (P=.0125). Chronological day order ranks 1/501 against within-animal whole-day shuffles (P=.001996), with the prior strongest early in the next session.</p>
+</div></div><figure class="figure evidence-figure">
 <a class="figure-zoom" href="assets/SOE_simple_alternatives_multiscale_v1.png" rel="noopener" target="_blank">
 <picture><source media="(max-width: 620px)" srcset="assets/SOE_simple_alternatives_multiscale_v1_mobile.png"/>
 <img alt="Comparison of scalar value, uncertainty baselines, and single-exponential eligibility with structured multi-timescale state" loading="lazy" src="assets/SOE_simple_alternatives_multiscale_v1.png"/></picture>
 </a><figcaption><strong>Why structured state is needed.</strong> Full SLM improves both Brier and AUC relative to scalar RW and uncertainty baselines; ~20-event history contributes ΔNLL=+.0348, roughly 350× the best recovered single-exponential eligibility gain (~1e-4).</figcaption></figure>
-<h3 style="margin-top:28px">Learning strengthens conversion and reward-credit assignment across timescales</h3>
+<h3 style="margin-top:28px">Learning is supported by fast, within-session and cross-day memory components</h3>
 <div class="cards-3">
 <div class="card info"><div class="metric-label">Conversion learning</div><div class="metric">+.0426</div><p>Observe→Active conversion increases in 22/27 learners; r_rb=.635, P=.00297.</p></div>
 <div class="card violet"><div class="metric-label">Learner-linked neural coordinate</div><div class="metric">APE × SRI ρ=.667</div><p>Learner-linked APE coupling is significant in VTA; exact P=.0416.</p></div>
@@ -467,7 +479,11 @@
 <figure class="figure">
 <a class="figure-zoom" href="assets/SOE_JAWS_causal_closure_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_JAWS_causal_closure_v1_mobile.png"/><img alt="JAWS causal closure" loading="lazy" src="assets/SOE_JAWS_causal_closure_v1.png"/></picture></a>
 <figcaption><strong>JAWS. </strong>VTA inhibition selectively reduces Active social-reward credit and successful conversion while gross observation is preserved.</figcaption>
-</figure>
+</figure><figure class="figure evidence-figure">
+<a class="figure-zoom" href="assets/SOE_JAWS_multiscale_causal_v2.png" rel="noopener" target="_blank">
+<picture><source media="(max-width: 620px)" srcset="assets/SOE_JAWS_multiscale_causal_v2_mobile.png"/>
+<img alt="JAWS contingent, noncontingent, within-session and session-scale causal comparisons" loading="lazy" src="assets/SOE_JAWS_multiscale_causal_v2.png"/></picture>
+</a><figcaption><strong>JAWS across temporal scales.</strong> Contingent and noncontingent conversion are shown side by side; the same frozen SLM then resolves continuous within-session alternating blocks and the session-scale Normal→Full-JAWS comparison. The Active-belief direction replicates in Standard and VTA-copy cohorts.</figcaption></figure>
 </div>
 <div class="table-wrap" style="margin-top:18px">
 <table class="metric-table">
@@ -485,7 +501,23 @@
 <a class="figure-zoom" href="assets/SOE_AutonomousSLM_CausalLesions_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_AutonomousSLM_CausalLesions_v1_mobile.png"/><img alt="Autonomous Artificial SLM causal lesions" loading="lazy" src="assets/SOE_AutonomousSLM_CausalLesions_v1.png"/></picture></a>
 <figcaption><strong>Artificial causal tests. </strong>Sensory masking and selective Active-belief teaching attenuation reproduce distinct computational signatures in the same frozen autonomous agent.</figcaption>
 </figure>
-<details><summary>Artificial lesion correspondence</summary><div>Sensory masking preserves autonomous observation while reducing Active contingency and Active-belief state. JAWS50 reduces direct |ΔActive belief| by about 22.1% while |ΔQ| changes by ~0.55%, producing a complementary lesion signature.</div></details>
+<div class="cards-4"><div class="card good">
+<div class="metric-label">Contingent stimulation</div>
+<div class="metric">−12.68 pp</div>
+<p>Observe→Active conversion falls from .320 to .193; 8/10 lower, r_rb=−.909, P=.00391.</p>
+</div><div class="card info">
+<div class="metric-label">Noncontingent timing control</div>
+<div class="metric">−3.45 pp</div>
+<p>The matched noncontingent comparison is .360→.325, providing the timing-control reference in the same behavioral metric.</p>
+</div><div class="card violet">
+<div class="metric-label">Within-session alternating blocks</div>
+<div class="metric">10/10</div>
+<p>Continuous-state replay gives Active-belief ON−OFF=−.003305 per episode; all 10 animals are lower, P=.001953.</p>
+</div><div class="card warn">
+<div class="metric-label">Session-scale Normal→Full JAWS</div>
+<div class="metric">9/10</div>
+<p>Final Active-belief contrast falls from .0967 to .0120; Δ=−.0847, two-sided P=.003906. Standard and VTA-copy cohorts each show 5/5 lower direction.</p>
+</div></div><details><summary>Artificial lesion correspondence</summary><div>Sensory masking preserves autonomous observation while reducing Active contingency and Active-belief state. JAWS50 reduces direct |ΔActive belief| by about 22.1% while |ΔQ| changes by ~0.55%, producing a complementary lesion signature.</div></details>
 <details><summary>Visual Block dopamine</summary><div>Demonstrator-feed-locked VTA dopamine is higher in Original than Visual Block during the early phase: 8/9 animals, r_rb=.867, P=.01953.</div></details>
 </div>
 </section>
@@ -496,26 +528,33 @@
 <div class="section-kicker">Beyond the trained feeding contingency</div>
 <h2>SOE experience reorganizes later use of social information</h2>
 </div>
-<p>
-        Two source-rebuilt assays test whether prior social-learning experience transfers beyond the original feeding contingency.
-        They are kept separate because the behavioral domains differ.
-      </p>
+<p>Two source-rebuilt assays show transfer beyond the trained feeding contingency. Observational fear is resolved into late-cue immobility, shock-locked reactivity, sustained shock-focused monitoring and D1→D2 attenuation; social-related novelty-suppressed feeding (SAFN) shows faster and more sustained engagement with unfamiliar food.</p>
 </div>
 <figure class="figure">
 <a class="figure-zoom" href="assets/SOE_generalization_multidomain_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_generalization_multidomain_v1_mobile.png"/><img alt="SOE multidomain generalization" loading="lazy" src="assets/SOE_generalization_multidomain_v1.png"/></picture></a>
 <figcaption><strong>Generalization.</strong> Prior SOE training alters first-day observational-fear organization and reduces latency to engage with unfamiliar food.</figcaption>
-</figure>
-<div class="cards-2">
-<div class="card good">
-<h3>Food neophobia / SAFN</h3>
-<p><strong>Latency:</strong> Social-trained mean 45.96 s versus 199.47 s in nonsocial-trained controls; Cliff δ=−.722; exact permutation P=.01948; permutation log-rank P=.03030.</p>
-<p>First bout: 61.07 versus 8.81 s; Cliff δ=+.889; P=.00866.</p>
-</div>
-<div class="card info">
-<h3>Observational fear</h3>
-<p>D1 shows stronger shock-locked reactivity, late-cue immobility and sustained shock-focused social monitoring after prior SOE training.</p>
-</div>
-</div>
+</figure><figure class="figure evidence-figure">
+<a class="figure-zoom" href="assets/SOE_generalization_supporting_v2.png" rel="noopener" target="_blank">
+<picture><source media="(max-width: 620px)" srcset="assets/SOE_generalization_supporting_v2_mobile.png"/>
+<img alt="Detailed observational fear and social-related novelty-suppressed feeding results" loading="lazy" src="assets/SOE_generalization_supporting_v2.png"/></picture>
+</a><figcaption><strong>Generalization details.</strong> D1 late-cue immobility, shock reactivity and shock-focused social monitoring are shown separately, followed by D1→D2 attenuation and the SAFN latency and first-bout endpoints.</figcaption></figure>
+<div class="cards-2"><div class="card violet">
+<div class="metric-label">Observational fear · D1</div>
+<div class="metric">three convergent effects</div>
+<p>Late cue velocity: Cliff δ=−.778, P=.0152. Shock velocity: δ=+.944, P=.00433. Late shock observation: δ=+.778, P=.0152. Shock angular-velocity change also increases (δ=+.833, P=.00866).</p>
+</div><div class="card info">
+<div class="metric-label">Observational fear · D1→D2</div>
+<div class="metric">attenuation</div>
+<p>Shock-velocity change is larger after prior SOE training (Cliff δ=−.944, P=.00433); shock angular-velocity change gives δ=−.833, P=.0130.</p>
+</div><div class="card good">
+<div class="metric-label">SAFN · novel-food latency</div>
+<div class="metric">45.96 vs 199.47 s</div>
+<p>Social-trained animals engage unfamiliar food earlier: Cliff δ=−.722, exact P=.01948; permutation log-rank P=.03030; feeding occurs in 6/6 vs 5/6 animals.</p>
+</div><div class="card good">
+<div class="metric-label">SAFN · first feeding bout</div>
+<div class="metric">61.07 vs 8.81 s</div>
+<p>Initial feeding engagement is more sustained after prior SOE training: Cliff δ=+.889, P=.00866.</p>
+</div></div>
 </div>
 </section>
 <section class="alt" id="resources">
@@ -543,7 +582,7 @@
 <div class="download-card"><a href="docs/SOE_MASTER_RESULTS_INVENTORY_v1_20261002.md">Full result inventory</a><p class="small">Recovered early phenotype, social gaze, motifs, learning and historical controls.</p></div>
 <div class="download-card"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">DA temporal adjudication</a><p class="small">Frozen Early/Middle/Post model evidence.</p></div>
 <div class="download-card"><a href="data/SOE_GLOBAL_EFFECT_SIZE_REGISTRY_v12.csv">Global effect-size registry</a><p class="small">Project-wide bounded effects and inferential units.</p></div>
-<div class="download-card"><a href="data/SOE_uniform_model_family_table_v2.csv">Uniform four-metric model table</a><p class="small">Brier, AUC, paired rank-biserial effect and paired P on the same held-animal cohort.</p></div><div class="download-card"><a href="data/SOE_simple_alternatives_summary_v1.csv">Scalar / uncertainty / eligibility analysis</a><p class="small">Source values for the structured-state comparison figure.</p></div></div>
+<div class="download-card"><a href="data/SOE_uniform_model_family_table_v2.csv">Uniform four-metric model table</a><p class="small">Brier, AUC, paired rank-biserial effect and paired P on the same held-animal cohort.</p></div><div class="download-card"><a href="data/SOE_simple_alternatives_summary_v1.csv">Scalar / uncertainty / eligibility analysis</a><p class="small">Source values for the structured-state comparison figure.</p></div><div class="download-card"><a href="data/SOE_memory_multiscale_support_v2.csv">Within-session + cross-day memory</a><p class="small">Fast stopping, stop/re-entry, 20–33-event history, slow latent and cross-day prior statistics.</p></div><div class="download-card"><a href="data/SOE_JAWS_multiscale_support_v2.csv">JAWS temporal-scale support</a><p class="small">Contingent, noncontingent, continuous within-session, session-scale and cohort-replication statistics.</p></div><div class="download-card"><a href="data/SOE_generalization_support_v2.csv">Fear + SAFN support</a><p class="small">Detailed positive generalization endpoints used by the expanded figure.</p></div></div>
 <p class="prepub">Current page build: 2026-10-04 · mobile-audited scientific working page.</p>
 </div>
 </section>
