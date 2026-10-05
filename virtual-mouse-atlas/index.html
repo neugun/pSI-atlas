@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Virtual Mouse Behavioral Atlas</title>
-<meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
+<title>SWM — Social World Model of Goal-Directed Social Sampling</title>
+<meta name="description" content="Social World Model (SWM) of goal-directed social sampling, with held-animal predictive dynamics, prospective social-efficacy analyses, and Virtual Mouse behavioral replay.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css?v=20261005v10">
 </head>
 <body>
 <main>
   <header class="hero wrap">
-    <p class="kicker">SOCIAL BEHAVIOR / VIRTUAL MOUSE / BEHAVIORAL ATLAS</p>
-    <h1>A 12-motif behavioral atlas</h1>
-    <p class="lede">Move from a Virtual Mouse behavior directly into its position in behavioral space. Every displayed point below is an exact contiguous motif run from the same session and can be played back from the Virtual Mouse reconstruction.</p>
+    <p class="kicker">SOCIAL WORLD MODEL / GOAL-DIRECTED SOCIAL SAMPLING / VIRTUAL MOUSE</p>
+    <h1>Social World Model (SWM) of goal-directed social sampling</h1>
+    <p class="lede">A data-driven predictive model links real social state, sampling choices, future outcomes, and behavioral dynamics. The Virtual Mouse atlas below provides exact replay of the real events used to interrogate the model.</p>
     <div class="hero-player">
       <div class="hero-live-metrics" id="heroMetrics" aria-live="off">
         <div class="hero-metric"><span class="k">Social orient</span><strong class="v" id="heroOrient">—</strong></div>
@@ -36,14 +36,14 @@
     <div class="section-head world-head">
       <div>
         <div class="eyebrow">HELD-OUT BEST-CASE VISUALIZATION · ANM4 D139</div>
-        <h2>Social Learning World Model (SLM World Model)</h2>
+        <h2>Social World Model (SWM)</h2>
       </div>
       <p>This held-out example compares the recorded future directly with saved model rollouts from the same real present. Each step and probability below comes from the real session/model outputs; no illustrative trajectory is drawn. The population benchmark remains available below.</p>
     </div>
 
-    <div class="wm-method" aria-label="Social Learning World Model architecture">
+    <div class="wm-method" aria-label="Social World Model architecture">
       <section class="wm-method-panel">
-        <div class="wm-method-title"><span>A</span> SLM World Model learns a predictive social state</div>
+        <div class="wm-method-title"><span>A</span> SWM learns a predictive relational state</div>
         <div class="wm-head-row">
           <div class="wm-head">P(Observe)</div>
           <div class="wm-head">P(outcome)</div>
@@ -75,15 +75,15 @@
             <span>frozen posterior → imagined future</span>
           </div>
           <div class="wm-branch gated">
-            <div class="wm-branch-tag">SOCIAL GATE</div>
-            <b>Demonstrator channels removed</b>
-            <span>same model · same present</span>
+            <div class="wm-branch-tag">SOCIAL CONTROL</div>
+            <b>Matched wrong social trajectory / no-social retrain</b>
+            <span>train-distribution control · same held-animal evaluation</span>
           </div>
         </div>
         <div class="wm-result-row">
-          <div><strong>6 / 8</strong><span>SLM top-1 motif steps</span></div>
+          <div><strong>6 / 8</strong><span>SWM top-1 motif steps</span></div>
           <div><strong>0 / 8</strong><span>Markov top-1 motif steps</span></div>
-          <div><strong>76.0 → 71.1%</strong><span>P(≥1 Active), normal → gated</span></div>
+          <div><strong>0.620 → 0.561 / 0.572</strong><span>efficacy AUC · replacement / no-social retrain</span></div>
         </div>
       </section>
     </div>
@@ -138,21 +138,29 @@
         External sequence experience can warm-start low-data Observe/action dynamics, but the SOE social-efficacy representation does not transfer generically. In-domain animals progressively sharpen that efficacy state, whereas broad external pretraining can even weaken it.
       </div>
       <div class="world-evidence world-evidence-scaling">
-        <figure><img src="assets/world_scaling_in_domain_v8.svg" alt="SLM World Model in-domain scaling across SOE training animals"><figcaption><b>Data scaling.</b> Thin lines preserve matched held-animal fold × repeat trajectories. Observe-policy error, outcome prediction and future-motif prediction improve monotonically, while the held-out efficacy representation becomes substantially clearer.</figcaption></figure>
+        <figure><img src="assets/world_scaling_in_domain_v8.svg" alt="SWM in-domain scaling across SOE training animals"><figcaption><b>Data scaling.</b> Thin lines preserve matched held-animal fold × repeat trajectories. Observe-policy error, outcome prediction and future-motif prediction improve monotonically, while the held-out efficacy representation becomes substantially clearer.</figcaption></figure>
         <figure><img src="assets/world_transfer_seedrep_v10.svg" alt="Five independent pretraining seeds separate low-data action transfer from social-efficacy transfer"><figcaption><b>External pretraining, 5 independent initializations.</b> Each point is one pretraining seed after averaging its five held-animal folds. At 2 SOE animals, action Brier improves reproducibly across macaque, mouse-reward, rat+mouse, and all-external pretraining. The efficacy latent does not show the same transfer: macaque is small and non-significant, while broader external mixtures are negative. This separates a reusable sequential/action prior from an SOE-specific relational efficacy state.</figcaption></figure>
-        <figure class="world-evidence-wide"><img src="assets/world_observe_value_v8.svg" alt="Prospective Observe value and social-gate dependence across held-out animals"><figcaption><b>Prospective Observe value.</b> Holding the learned state fixed and changing only the action, ΔActive predicts both real Observe choices and Observe efficacy. Removing social channels reduces this discrimination by 0.063 AUC in 26/27 animals (P=1.49×10<sup>−8</sup>). This is a counterfactual inside the learned predictive model, not evidence that an agent has already learned generic information seeking.</figcaption></figure>
+        <figure class="world-evidence-wide"><img src="assets/swm_social_controls_v12.svg" alt="In-distribution social trajectory replacement and no-social SWM retraining controls"><figcaption><b>Correct social content is required.</b> Replacing each held-out social trajectory with a day- and duration-matched training trajectory reduces ΔActive efficacy AUC from 0.620 to 0.561 in 26/27 animals (P=1.49×10<sup>−8</sup>). Retraining SWM from scratch without all social channels yields 0.572 (26/27 drop; P=2.29×10<sup>−6</sup>). The no-social model also loses Observe-choice and outcome prediction, while global motif dynamics are largely preserved.</figcaption></figure>
+      </div>
+
+      <div class="world-benchmark-subhead">SWM ↔ SLM computational bridge</div>
+      <div class="world-evidence world-evidence-scaling">
+        <figure class="world-evidence-wide"><img src="assets/swm_slm_bridge_v12.svg" alt="SWM and SLM comparison, latent-coordinate decoding, coordinate-subspace scrub, and future motif prediction"><figcaption><b>Complementary models of the same computation.</b> SLM and SWM are close on Observe choice: SWM improves AUC by only +0.0107 on average, despite 25/27 animals favoring SWM. A decoder trained only on training animals recovers SLM-like policy, Q, belief/value and actor-value coordinates from held-out SWM latents (ρ=0.833–0.886). Removing the corresponding four-dimensional latent subspace selectively reduces SWM Observe AUC by 0.0140 versus 0.0033 for matched random subspaces (P=5.22×10<sup>−7</sup>), while efficacy itself is not specifically lost. Conversely, SWM predicts future motif dynamics far better than an SLM-coordinate readout (NLL 1.835 vs 1.971; 27/27, P=7.45×10<sup>−9</sup>).</figcaption></figure>
+      </div>
+      <div class="world-scaling-claim">
+        <b>Interpretation:</b> SWM independently recovers decision-relevant SLM-like coordinates, and that subspace contributes selectively to Observe policy, while the full SWM retains additional predictive dynamics not captured by the SLM coordinates alone.
       </div>
 
       <div class="world-benchmark-subhead">Model-family comparison · 27 held-out animals</div>
       <div class="world-evidence world-model-zoo-grid">
-        <figure><img src="assets/event5_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> The SLM World Model is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
-        <figure><img src="assets/event5_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Five-event model zoo negative log likelihood"><figcaption><b>Factorized 5-event NLL.</b> SLM World Model is lower than full-history linear in 22/27 animals (P=1.5×10<sup>−4</sup>).</figcaption></figure>
-        <figure><img src="assets/motif_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo accuracy"><figcaption><b>12-motif accuracy.</b> Eight model families span frequency, Markov, linear, MLP, PCA-latent, and the SLM World Model.</figcaption></figure>
-        <figure><img src="assets/motif_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo negative log likelihood"><figcaption><b>12-motif NLL.</b> SLM World Model beats the strongest direct nonlinear MLP in 25/27 animals (P=3.2×10<sup>−7</sup>).</figcaption></figure>
+        <figure><img src="assets/event5_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> SWM is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
+        <figure><img src="assets/event5_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Five-event model zoo negative log likelihood"><figcaption><b>Factorized 5-event NLL.</b> SWM is lower than full-history linear in 22/27 animals (P=1.5×10<sup>−4</sup>).</figcaption></figure>
+        <figure><img src="assets/motif_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo accuracy"><figcaption><b>12-motif accuracy.</b> Eight model families span frequency, Markov, linear, MLP, PCA-latent, and SWM.</figcaption></figure>
+        <figure><img src="assets/motif_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo negative log likelihood"><figcaption><b>12-motif NLL.</b> SWM beats the strongest direct nonlinear MLP in 25/27 animals (P=3.2×10<sup>−7</sup>).</figcaption></figure>
       </div>
       <div class="world-benchmark-subhead">Multi-step predictive horizon</div>
       <div class="world-evidence world-evidence-horizon">
-        <figure><img src="assets/world_motif_horizon_slm_v2.png?v=20261004v7" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> SLM World Model remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
+        <figure><img src="assets/world_motif_horizon_slm_v2.png?v=20261004v7" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> SWM remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
       </div>
     </details>
   </section>
@@ -180,12 +188,12 @@
       <article class="learning-kpi">
         <div class="k">OBSERVE EFFICACY</div>
         <div class="v">AUC 0.620</div>
-        <div class="d">ΔActive predicts whether an actual Observe becomes Active rather than Unrewarded; 27/27 animals are above chance (P=7.45×10<sup>−9</sup>).</div>
+        <div class="d">ΔActive predicts whether an actual Observe becomes Active rather than Unrewarded (AUC 0.620). It adds +0.088 AUC over distance + demonstrator feeding and +0.021 even over all 13 current social cues (P=2.68×10<sup>−4</sup>).</div>
       </article>
       <article class="learning-kpi">
         <div class="k">SOCIAL DEPENDENCE</div>
-        <div class="v">−0.063 AUC</div>
-        <div class="d">Removing social channels weakens ΔActive efficacy discrimination in 26/27 animals (P=1.49×10<sup>−8</sup>).</div>
+        <div class="v">0.620 → 0.561 / 0.572</div>
+        <div class="d">Day- and duration-matched wrong social trajectories reduce efficacy AUC to 0.561 (26/27, P=1.49×10<sup>−8</sup>); a separately retrained no-social SWM gives 0.572 (26/27, P=2.29×10<sup>−6</sup>).</div>
       </article>
     </div>
 
@@ -195,8 +203,8 @@
         <figcaption><b>Learning couples action selection to predicted future efficacy.</b> Each thin line is one held-out learner. The left panel asks whether the states actually selected for Observe carry more prospective Active advantage; the right asks whether the learned Observe policy increasingly tracks that advantage.</figcaption>
       </figure>
       <figure class="learning-figure learning-figure-main learning-info-figure">
-        <picture><source media="(max-width:600px)" srcset="assets/learning_information_vs_efficacy_v10_mobile.svg"><img src="assets/learning_information_vs_efficacy_v10.svg" alt="Social information improves world-state prediction but generic information gain does not recruit Observe"></picture>
-        <figcaption><b>Informative does not mean selected.</b> Social cues strongly correct the model's next-state belief and this correction depends on the identity of the social event. Yet event-wise generic information gain neither predicts actual Observe nor covaries with ΔActive. Observe policy instead tracks prospective feeding efficacy. This separates goal-directed social sampling from generic uncertainty reduction.</figcaption>
+        <img src="assets/swm_prospective_eig_v12.svg" alt="Prospective expected information gain versus prospective social efficacy for predicting actual Observe">
+        <figcaption><b>Informative does not mean selected.</b> Expected information gain is estimated prospectively from the current SWM state using training-animal cross-fitting; held-out animals never use the actually observed future social content. EIG remains at chance for actual Observe (AUC 0.480 linear; 0.492 nonlinear), whereas ΔActive reaches 0.607. Within animals, ΔActive exceeds EIG by 0.127 / 0.115 AUC (P=4.8×10<sup>−5</sup> / 1.33×10<sup>−4</sup>).</figcaption>
       </figure>
     </div>
 
@@ -208,6 +216,7 @@
       <div class="learning-boundary">
         <div class="eyebrow">IMPORTANT BOUNDARY</div>
         <p>This supports <b>goal-directed social information sampling</b>, not a generic uncertainty-seeking rule. ΔActive is a same-state counterfactual inside the learned predictive model, not a randomized causal effect of forcing Observe.</p>
+        <p>Event-count and Observe/Other matching preserve the learner early→late increase in policy–value alignment, so the effect is not caused by more late-stage samples. However, 13 non-learners show a similar increase; the Group×Stage contrast is not significant. Therefore alignment is treated as a training/experience-dependent computation rather than a learner-specific phenotype.</p>
         <p>The strict v2 agent provides only limited sufficiency for active sensing: under an Active-specific objective, revealing social evidence increases reward by only +7.8×10<sup>−5</sup> per event (19/27 animals, P=.0056) while increasing policy–value alignment in 24/27 animals. The effect is absent for a food-all objective. This supports objective-specific social information use, not a strong generic active-sensing claim.</p>
       </div>
     </div>
@@ -225,15 +234,11 @@
 
     <details class="learning-details learning-supporting">
       <summary>Supporting descriptive transition results</summary>
-      <p class="learning-support-note">The earlier transition figures are retained here because they establish that learning changes the observable event statistics, but they do not by themselves explain why Observe is selected.</p>
-      <div class="learning-grid">
+      <p class="learning-support-note">Only the two transition effects needed to anchor the behavioral phenotype are retained here. The full 5×5 transition heatmaps remain in source analysis, because they add description but not a stronger mechanistic explanation.</p>
+      <div class="learning-grid learning-grid-primary">
         <figure class="learning-figure">
-          <img src="assets/learning_transition_story_5event_v1.png?v=20261004v7" alt="Learner versus non-learner factorized five-event transition graph across training">
-          <figcaption><b>Behavioral substrate.</b> Learner P(Active bout | Observe) rises from 0.180 to 0.226 (P=.003), and P(next Observe | Unrewarded bout) rises from 0.443 to 0.633 (P=4.09×10<sup>−5</sup>). The 5×5 matrices are descriptive transition summaries.</figcaption>
-        </figure>
-        <figure class="learning-figure">
-          <img src="assets/learning_robustness_5event_v1.png?v=20261004v7" alt="Five-event learning robustness with continuous slopes and cohort-matched model">
-          <figcaption><b>Robustness.</b> Continuous training trends and the learner/non-learner interaction support the behavioral rewrite, but the prospective-value analysis above supplies the stronger model-level interpretation.</figcaption>
+          <picture><source media="(max-width:600px)" srcset="assets/learning_behavioral_anchor_v10_mobile.svg"><img src="assets/learning_behavioral_anchor_v10.svg" alt="Paired-animal early to late changes in Observe to Active and Unrewarded to Observe transitions"></picture>
+          <figcaption><b>Behavioral anchor.</b> Two transitions summarize the learning phenotype without requiring the full 5×5 matrix: Observe is increasingly converted into Active feeding, and unrewarded bouts increasingly recruit renewed observation. These effects establish the behavioral change that the prospective-value analysis explains; they are not themselves the mechanism.</figcaption>
         </figure>
       </div>
     </details>
@@ -297,9 +302,7 @@
   </footer>
 </main>
 <script src="explorer.js"></script>
-<script src="world_model.js?v=20261004v7"></script>
+<script src="world_model.js?v=20261005v12"></script>
 
 </body>
 </html>
-
-[executed on device: zzhu-workstation (1d81d299-2c6c-4056-a4e4-5cc71d46c39c)]
