@@ -231,3 +231,45 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
   .learning-kpi .v{font-size:17px}
   .learning-detail-grid{grid-template-columns:1fr}
 }
+
+
+/* v4: real-data future comparison, mobile-first and uncluttered */
+.world-grid-single{grid-template-columns:minmax(0,760px);justify-content:center}
+.world-present-card{width:100%}
+.world-sequence-caption{margin:-4px 0 14px;padding:0 2px;font-size:12px;line-height:1.55}
+.world-sequence{overflow:visible;padding:14px;margin-bottom:14px}
+.future-strip-head{min-width:0;display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px;font-size:12px;color:var(--muted)}
+.future-strip-head strong{font-size:15px;color:var(--ink)}
+.future-step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.future-step-card{border:1px solid var(--line);background:#fff;padding:9px;min-width:0}
+.future-step-number{font-size:10px;font-weight:750;text-transform:uppercase;letter-spacing:.045em;color:var(--faint);margin-bottom:6px}
+.future-model-line{display:grid;grid-template-columns:72px minmax(0,1fr) 18px;align-items:start;gap:5px;padding:5px 0;border-top:1px solid #eee;min-width:0}
+.future-model-line:first-of-type{border-top:0}
+.future-model-name{font-size:10px;font-weight:700;color:var(--muted)}
+.future-model-value{font-size:11px;font-weight:650;line-height:1.25;overflow-wrap:anywhere}
+.future-model-hit{font-size:12px;font-weight:800;text-align:right}
+.future-model-line.actual .future-model-name,.future-model-line.actual .future-model-value{color:#111}
+.future-model-line.neural .future-model-name{color:#276fbf}
+.future-model-line.markov .future-model-name{color:#777}
+.future-model-line.gated .future-model-name{color:#c84b35}
+.future-model-line.action .future-model-name{color:#6f5e98}
+.future-model-line.match .future-model-hit{color:#3d6d3d}
+.future-model-line.miss .future-model-hit{color:#9b554b}
+.world-global .world-evidence{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){
+  .future-step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .future-strip-head{display:block}
+  .future-strip-head span{display:block;margin-top:3px}
+}
+@media(max-width:600px){
+  .world-sequence{padding:10px}
+  .future-step-grid{grid-template-columns:1fr}
+  .future-step-card{padding:10px}
+  .future-model-line{grid-template-columns:74px minmax(0,1fr) 20px;padding:6px 0}
+  .future-model-name{font-size:11px}
+  .future-model-value{font-size:12px}
+  .world-global .world-evidence{grid-template-columns:1fr}
+}
+
+.future-model-prob{display:block;margin-top:2px;font-size:9px;font-weight:500;color:var(--faint);font-variant-numeric:tabular-nums}
+@media(max-width:600px){.future-model-prob{font-size:10px}}

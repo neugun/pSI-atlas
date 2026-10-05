@@ -1,11 +1,10 @@
 (() => {
 const sel=document.querySelector("#worldEventSelect"),btn=document.querySelector("#worldReplayBtn");
-const video=document.querySelector("#worldRealVideo"),canvas=document.querySelector("#worldFutureMap");
-const eventImg=document.querySelector("#worldEventHeatmap"),legend=document.querySelector("#worldLegend"),futureEyebrow=document.querySelector("#worldFutureEyebrow");
+const video=document.querySelector("#worldRealVideo");
 const present=document.querySelector("#worldPresentCaption"),future=document.querySelector("#worldFutureCaption"),metrics=document.querySelector("#worldMetrics");
 const heroStats=document.querySelector("#worldHeroStats"),strip=document.querySelector("#worldFutureStrip"),eventNote=document.querySelector("#worldEventNote");
 const viewToggle=document.querySelector("#worldViewToggle");
-if(!sel||!video||!canvas||!strip)return;
+if(!sel||!video||!strip)return;
 let WM=null,EW=null,A=null,current=null,endTime=null,view="motif";
 
 const fmt=(x,d=3)=>Number.isFinite(Number(x))?Number(x).toFixed(d):"n/a";
@@ -16,39 +15,50 @@ const motifName=id=>{
 };
 const eventName=id=>EW&&EW.event_names&&EW.event_names[Number(id)]?EW.event_names[Number(id)]:("Event "+id);
 
-function motifActual(){return current.actual_future||[];}
-function motifMarkov(){return current.markov_closed_loop||[];}
-function motifNeural(){return (current.trajectory||[]).map(x=>({step:x.step,motif:x.base_top_motif,label:x.base_top_label}));}
-function motifGate(){return (current.trajectory||[]).map(x=>({step:x.step,motif:x.gate_top_motif,label:x.gate_top_label}));}
+function isBestMotif(){return WM&&WM.best_example&&current&&Number(current.event_frame)===Number(WM.best_example.summary.event_frame);}
+function motifActual(){
+  if(isBestMotif())return WM.best_example.steps.map(x=>({step:x.step,motif:x.actual_motif,label:x.actual_label}));
+  return current.actual_future||[];
+}
+function motifMarkov(){
+  if(isBestMotif())return WM.best_example.steps.map(x=>({step:x.step,motif:x.markov_top,label:x.markov_label,prob_actual:x.p_actual_markov}));
+  return current.markov_closed_loop||[];
+}
+function motifNeural(){
+  if(isBestMotif())return WM.best_example.steps.map(x=>({step:x.step,motif:x.neural_top,label:x.neural_label,prob_actual:x.p_actual_neural}));
+  return (current.trajectory||[]).map(x=>({step:x.step,motif:x.base_top_motif,label:x.base_top_label}));
+}
+function motifGate(){
+  if(isBestMotif())return WM.best_example.steps.map(x=>({step:x.step,motif:x.gate_top,label:x.gate_label,prob_actual:x.p_actual_gate}));
+  return (current.trajectory||[]).map(x=>({step:x.step,motif:x.gate_top_motif,label:x.gate_top_label}));
+}
 
 function eventActual(){return (EW.hero.actual||[]).map((id,i)=>({step:i+1,event:id,label:eventName(id)}));}
 function eventGlobal(){return (EW.hero.global_frequency||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
-function eventPersistence(){return (EW.hero.persistence||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
-function eventAction(){return (EW.hero.action_only||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
-function eventMarkov(){return (EW.hero.markov||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
-function eventNeural(){return (EW.hero.neural||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
-function eventGate(){return (EW.hero.gate||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
+function eventAction(){return (EW.hero.action_only||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
+function eventMarkov(){return (EW.hero.markov||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
+function eventNeural(){return (EW.hero.neural||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
+function eventGate(){return (EW.hero.gate||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
 
+function getId(q,mode){return mode==="event"?(q.event??q.top):(q.motif??q.top_motif);}
+function getName(q,mode){return q.label||(mode==="event"?eventName(getId(q,mode)):motifName(getId(q,mode)));}
+function isMatch(q,a,mode){return q&&a&&Number(getId(q,mode))===Number(getId(a,mode));}
 function matchCount(seq,act,mode){
   let n=0,N=Math.min(act.length,seq.length);
-  for(let i=0;i<N;i++){
-    const p=mode==="event"?(seq[i].event??seq[i].top):(seq[i].motif??seq[i].top_motif);
-    const y=mode==="event"?(act[i].event??act[i].top):(act[i].motif??act[i].top_motif);
-    if(Number(p)===Number(y))n++;
-  }
+  for(let i=0;i<N;i++)if(isMatch(seq[i],act[i],mode))n++;
   return [n,N];
 }
-function eventSummary(model){
-  return EW.one_step.find(x=>x.model===model)||{};
-}
+function eventSummary(model){return EW.one_step.find(x=>x.model===model)||{};}
 function horizonSummary(h){return EW.horizons.find(x=>Number(x.horizon)===Number(h))||{};}
+
 function setupSelect(){
   sel.innerHTML="";
   WM.top_event_frames.forEach((fr,i)=>{
     const e=WM.events.find(x=>x.event_frame===fr);if(!e)return;
     const o=document.createElement("option");o.value=String(fr);
-    if(Number(fr)===Number(WM.default_event_frame))o.textContent="Best combined example · frame "+fr;
-    else o.textContent="Alternative "+i+" · frame "+fr+" · ΔActive "+fmt(e.delta_active_any,3);
+    o.textContent=Number(fr)===Number(WM.default_event_frame)
+      ?"Best motif example · frame "+fr
+      :"Alternative "+i+" · frame "+fr+" · ΔActive "+fmt(e.delta_active_any,3);
     sel.appendChild(o);
   });
   sel.value=String(WM.default_event_frame);
@@ -58,20 +68,21 @@ function seekCurrent(){
   const seek=()=>{video.currentTime=start;video.play().catch(()=>{});};
   if(video.readyState>=1)seek(); else video.addEventListener("loadedmetadata",seek,{once:true});
 }
-function selectEvent(fr){
-  current=WM.events.find(x=>x.event_frame===Number(fr))||WM.events[0];
-  seekCurrent();
+function renderPresent(){
   present.innerHTML="<b>Observed present:</b> frame "+current.event_frame+" · t="+fmt(current.event_time_sec,1)+" s · "+
     (current.actual_action?"Observe":"No-observe")+" · outcome "+current.actual_outcome+" · "+motifName(current.current_motif)+".";
-  renderAll();
+}
+function selectEvent(fr){
+  current=WM.events.find(x=>x.event_frame===Number(fr))||WM.events[0];
+  seekCurrent();renderPresent();renderAll();
 }
 function setView(v){
   view=v;
-  if(view==="event"){
-    const fr=Number(EW&&EW.hero?EW.hero.frame:WM.default_event_frame);
-    current=WM.events.find(x=>Number(x.event_frame)===fr)||WM.events[0];
-    sel.value=String(fr);seekCurrent();
-  }
+  const fr=view==="event"
+    ? Number(EW&&EW.hero?EW.hero.frame:WM.default_event_frame)
+    : Number(WM.default_event_frame);
+  current=WM.events.find(x=>Number(x.event_frame)===fr)||WM.events[0];
+  sel.value=String(fr);seekCurrent();renderPresent();
   if(viewToggle)viewToggle.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
   sel.disabled=view==="event";btn.disabled=view==="event";
   renderAll();
@@ -113,42 +124,41 @@ function renderHero(){
   heroStats.innerHTML=cards.map(c=>'<div class="world-hero-stat"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
 }
 
-function sequenceRow(label,kind,seq,actual,mode){
-  let chips="",N=Math.min(8,seq.length||8);
+function modelLine(label,kind,q,a,mode){
+  const match=kind==="actual"?"":(isMatch(q,a,mode)?" ✓":" ×");
+  const cls=kind==="actual"?"":" "+(isMatch(q,a,mode)?"match":"miss");
+  const pr=kind!=="actual"&&Number.isFinite(Number(q.prob_actual))
+    ? '<span class="future-model-prob">P(actual) '+pct(q.prob_actual)+'</span>' : '';
+  return '<div class="future-model-line '+kind+cls+'><span class="future-model-name">'+label+'</span><span class="future-model-value">'+getName(q,mode)+pr+'</span><span class="future-model-hit">'+match+'</span></div>';
+}
+function renderStepGrid(rows,mode,title){
+  const actual=rows.find(r=>r.kind==="actual").seq;
+  const N=Math.min(8,...rows.map(r=>r.seq.length));
+  let cards="";
   for(let i=0;i<N;i++){
-    const q=seq[i]||{};
-    const id=mode==="event"?(q.event??q.top):(q.motif??q.top_motif);
-    const name=q.label||(mode==="event"?eventName(id):motifName(id));
-    let cls="future-chip",mark="";
-    if(kind!=="actual"&&actual[i]){
-      const y=mode==="event"?(actual[i].event??actual[i].top):(actual[i].motif??actual[i].top_motif);
-      if(Number(id)===Number(y)){cls+=" match";mark="✓";}else{cls+=" miss";mark="×";}
-    }
-    chips+='<div class="'+cls+'"><span class="step">'+(i+1)+'</span><span class="motif">'+name+'</span><span class="hit">'+mark+'</span></div>';
+    cards+='<article class="future-step-card"><div class="future-step-number">Step '+(i+1)+'</div>';
+    for(const r of rows)cards+=modelLine(r.label,r.kind,r.seq[i],actual[i],mode);
+    cards+='</article>';
   }
-  return '<div class="future-row '+kind+'"><div class="future-row-label">'+label+'</div><div class="future-row-chips">'+chips+'</div></div>';
+  strip.innerHTML='<div class="future-strip-head"><strong>'+title+'</strong><span>✓ exact top-1 match to the recorded future</span></div><div class="future-step-grid">'+cards+'</div>';
 }
 function renderSequence(){
   if(view==="event"){
-    const act=eventActual(),gl=eventGlobal(),ps=eventPersistence(),ao=eventAction(),mk=eventMarkov(),nw=eventNeural(),gd=eventGate();
-    strip.innerHTML=
-      '<div class="future-strip-head"><span>Same present</span><strong>→ next 8 Observe / feeding-bout events</strong><span>✓ exact top-1 event match</span></div>'+
-      sequenceRow("Actual","actual",act,act,"event")+
-      sequenceRow("Global frequency","markov",gl,act,"event")+
-      sequenceRow("Persistence","markov",ps,act,"event")+
-      sequenceRow("Action-only","markov",ao,act,"event")+
-      sequenceRow("Event Markov","markov",mk,act,"event")+
-      sequenceRow("Neural event-world","neural",nw,act,"event")+
-      sequenceRow("Social-gated","gated",gd,act,"event");
+    renderStepGrid([
+      {label:"Actual",kind:"actual",seq:eventActual()},
+      {label:"Neural",kind:"neural",seq:eventNeural()},
+      {label:"Action-only",kind:"action",seq:eventAction()},
+      {label:"Markov",kind:"markov",seq:eventMarkov()},
+      {label:"Social-gated",kind:"gated",seq:eventGate()}
+    ],"event","Next 8 real event types from the same present");
     return;
   }
-  const act=motifActual(),mk=motifMarkov(),nw=motifNeural(),gd=motifGate();
-  strip.innerHTML=
-    '<div class="future-strip-head"><span>Same present</span><strong>→ next 8 behavioral motifs</strong><span>✓ exact top-1 match to actual</span></div>'+
-    sequenceRow("Actual","actual",act,act,"motif")+
-    sequenceRow("Generative Markov","markov",mk,act,"motif")+
-    sequenceRow("Neural world","neural",nw,act,"motif")+
-    sequenceRow("Social-gated","gated",gd,act,"motif");
+  renderStepGrid([
+    {label:"Actual",kind:"actual",seq:motifActual()},
+    {label:"Neural",kind:"neural",seq:motifNeural()},
+    {label:"Markov",kind:"markov",seq:motifMarkov()},
+    {label:"Social-gated",kind:"gated",seq:motifGate()}
+  ],"motif","Next 8 real behavioral motifs from the same present");
 }
 
 function renderMetrics(){
@@ -156,9 +166,9 @@ function renderMetrics(){
     const act=eventActual(),nw=eventNeural(),mk=eventMarkov(),gd=eventGate();
     const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event");
     const n=eventSummary("Neural world + event head"),m=eventSummary("Event Markov"),h3=horizonSummary(3),h5=horizonSummary(5);
-    const activeIdx=4;
-    const pN=nw.reduce((s,q)=>s+(q.probs?q.probs[activeIdx]:0),0)/Math.max(1,nw.length);
-    const pG=gd.reduce((s,q)=>s+(q.probs?q.probs[activeIdx]:0),0)/Math.max(1,gd.length);
+    const activeIdx=2;
+    const pN=nw.reduce((s,q)=>s+(q.probs?Number(q.probs[activeIdx]||0):0),0)/Math.max(1,nw.length);
+    const pG=gd.reduce((s,q)=>s+(q.probs?Number(q.probs[activeIdx]||0):0),0)/Math.max(1,gd.length);
     const cards=[
       ["Prediction gain","Neural "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact event-type steps"],
       ["One-step accuracy",pct(n.accuracy)+" vs "+pct(m.accuracy),"Neural event-world vs Event Markov"],
@@ -166,7 +176,7 @@ function renderMetrics(){
       ["Mean P(Active bout)",pct(pN)+" → "+pct(pG),"normal latent → social-gated latent"]
     ];
     metrics.innerHTML=cards.map(c=>'<div class="world-metric"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
-    future.innerHTML="<b>Event-state version:</b> the same frozen predictive state is read out as biologically named Observe / feeding-bout events rather than 12 geometric motifs.";
+    future.innerHTML="<b>How to read this:</b> each card above is one recorded future step. The labels are generated directly from the held-out event-world output; no illustrative trajectories are used.";
     eventNote.innerHTML='<b>Event dictionary.</b> '+EW.notes.taxonomy+'<div class="event-dict">'+EW.dictionary.map(x=>'<span>'+x.event_name+' · n='+Number(x.count).toLocaleString()+'</span>').join("")+'</div>';
     return;
   }
@@ -181,54 +191,16 @@ function renderMetrics(){
   metrics.innerHTML=cards.map(c=>'<div class="world-metric"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
   const best=WM.best_example&&Number(current.event_frame)===Number(WM.best_example.summary.event_frame);
   future.innerHTML=best
-    ? "<b>Why this example:</b> the neural world assigns substantially more probability to the recorded 8-step future than the generative Markov baseline, while social-information removal also lowers future Active probability."
-    : "<b>Alternative example:</b> compare the recorded future with the two generative predictions and the social-gated counterfactual.";
+    ? "<b>Why this example:</b> the held-out neural world matches 6 of 8 recorded future motifs while the generative Markov baseline matches 0 of 8. The social-gated counterfactual uses the same real present with social inputs removed."
+    : "<b>Alternative held-out example:</b> each step above compares the recorded future with model top-1 predictions from the same real present.";
   eventNote.textContent="";
 }
 
-function drawFuture(){
-  if(view==="event"){
-    canvas.hidden=true;eventImg.hidden=false;legend.hidden=true;
-    futureEyebrow.textContent="EVENT-STATE FUTURE · SAME HELD-OUT PRESENT";
-    return;
-  }
-  canvas.hidden=false;eventImg.hidden=true;legend.hidden=false;futureEyebrow.textContent="FOUR FUTURES FROM THE SAME PRESENT";
-  if(!A||!current)return;
-  const r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1,W=Math.max(320,r.width),H=Math.max(260,r.height);
-  canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
-  const c=canvas.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);c.fillStyle="#fff";c.fillRect(0,0,W,H);
-  const all=A.framewise||[],xs=A.motifs.map(m=>m.x),ys=A.motifs.map(m=>m.y);
-  for(const q of current.trajectory){xs.push(q.base_x,q.gate_x);ys.push(q.base_y,q.gate_y);}
-  for(const q of motifActual()){xs.push(q.x);ys.push(q.y);}
-  for(const q of motifMarkov()){xs.push(q.x);ys.push(q.y);}
-  let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
-  const mx=(x1-x0)*.10+4,my=(y1-y0)*.10+4;x0-=mx;x1+=mx;y0-=my;y1+=my;
-  const sc=Math.min((W-50)/(x1-x0),(H-50)/(y1-y0)),ox=(W-(x1-x0)*sc)/2,oy=(H-(y1-y0)*sc)/2;
-  const xy=(x,y)=>[ox+(x-x0)*sc,oy+(y1-y)*sc];
-  c.globalAlpha=.08;c.fillStyle="#6d7377";
-  for(let i=0;i<all.length;i+=22){const q=all[i],[x,y]=xy(q[0],q[1]);c.fillRect(x,y,1.1,1.1);}
-  c.globalAlpha=1;c.font="600 10px system-ui";c.textAlign="center";
-  for(const m of A.motifs){const [x,y]=xy(m.x,m.y);c.fillStyle="#888";c.fillText(String(m.id),x,y);}
-  const cur=A.framewise[current.event_frame]||null;let start=null;
-  if(cur){start=xy(cur[0],cur[1]);c.fillStyle="#111";c.beginPath();c.arc(start[0],start[1],5,0,Math.PI*2);c.fill();c.fillText("present",start[0],start[1]-11);}
-  function draw(raw,stroke,width,dash){
-    const pts=raw.map(q=>xy(q.x,q.y));if(!pts.length)return;
-    c.strokeStyle=stroke;c.fillStyle=stroke;c.lineWidth=width;c.setLineDash(dash||[]);c.beginPath();
-    if(start)c.moveTo(start[0],start[1]);else c.moveTo(pts[0][0],pts[0][1]);
-    pts.forEach(p=>c.lineTo(p[0],p[1]));c.stroke();c.setLineDash([]);
-    pts.forEach((p,i)=>{c.beginPath();c.arc(p[0],p[1],3.7,0,Math.PI*2);c.fill();c.fillStyle="#111";c.font="600 8px system-ui";c.fillText(String(i+1),p[0],p[1]-7);c.fillStyle=stroke;});
-  }
-  draw(motifActual(),"#111",2.3,[3,3]);
-  draw(motifMarkov().map(q=>({x:q.x,y:q.y})),"#777",2.3,[7,4]);
-  draw(current.trajectory.map(q=>({x:q.base_x,y:q.base_y})),"#276fbf",3,[]);
-  draw(current.trajectory.map(q=>({x:q.gate_x,y:q.gate_y})),"#c84b35",3,[]);
-}
-function renderAll(){renderHero();renderSequence();renderMetrics();drawFuture();}
-window.addEventListener("resize",()=>{if(current)drawFuture();});
+function renderAll(){renderHero();renderSequence();renderMetrics();}
 Promise.all([
-  fetch("data/world_model.json").then(r=>r.json()),
-  fetch("data/event_world.json").then(r=>r.json()),
-  fetch("data/atlas.json").then(r=>r.json())
+  fetch("data/world_model.json?v=20261004v4",{cache:"no-store"}).then(r=>r.json()),
+  fetch("data/event_world.json?v=20261004v4",{cache:"no-store"}).then(r=>r.json()),
+  fetch("data/atlas.json?v=20261004v4",{cache:"no-store"}).then(r=>r.json())
 ]).then(([wm,ew,a])=>{
   WM=wm;EW=ew;A=a;setupSelect();selectEvent(WM.default_event_frame);
 }).catch(e=>{console.error(e);present.textContent="Could not load world-model rollout.";});

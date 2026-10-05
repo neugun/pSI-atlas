@@ -6,7 +6,7 @@
 <title>Virtual Mouse Behavioral Atlas</title>
 <meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261004v4">
 </head>
 <body>
 <main>
@@ -38,7 +38,7 @@
         <div class="eyebrow">HELD-OUT BEST-CASE VISUALIZATION · ANM4 D139</div>
         <h2>A future the social world model gets right</h2>
       </div>
-      <p>This example was selected automatically from the session for a large neural-vs-Markov future-prediction gain together with a visible social-information counterfactual. The global held-animal benchmark remains available below as validation.</p>
+      <p>This held-out example compares the recorded future directly with saved model rollouts from the same real present. Each step and probability below comes from the real session/model outputs; no illustrative trajectory is drawn. The population benchmark remains available below.</p>
     </div>
 
     <div class="world-view-toggle" id="worldViewToggle"><button data-view="motif" class="active">Motif future</button><button data-view="event">Observe / bout event future</button></div>
@@ -46,18 +46,13 @@
     <div class="world-sequence" id="worldFutureStrip" aria-label="Eight-step actual and predicted future sequences"></div>
     <div class="world-event-note" id="worldEventNote"></div>
 
-    <div class="world-grid world-grid-focus">
-      <article class="world-card">
+    <div class="world-caption world-sequence-caption" id="worldFutureCaption"></div>
+
+    <div class="world-grid world-grid-focus world-grid-single">
+      <article class="world-card world-present-card">
         <div class="eyebrow">SAME REAL PRESENT</div>
         <video id="worldRealVideo" src="assets/full_virtual_mouse_web_v8k_tailstable.mp4" muted playsinline controls preload="metadata"></video>
         <div class="world-caption" id="worldPresentCaption"></div>
-      </article>
-      <article class="world-card">
-        <div class="eyebrow" id="worldFutureEyebrow">FOUR FUTURES FROM THE SAME PRESENT</div>
-        <canvas id="worldFutureMap"></canvas>
-        <img id="worldEventHeatmap" class="world-event-heatmap" src="assets/event_hero_heatmap_frame14894.png" alt="Observe and feeding-bout future event probability heatmap" hidden>
-        <div class="world-legend" id="worldLegend"><span class="world-actual"></span>Actual <span class="world-markov"></span>Generative Markov <span class="world-normal"></span>Neural world <span class="world-gated"></span>Social-gated</div>
-        <div class="world-caption" id="worldFutureCaption"></div>
       </article>
     </div>
 
@@ -75,8 +70,6 @@
       <div class="world-evidence">
         <figure><img src="assets/world_baseline_ladder.png" alt="Baseline ladder for next-motif prediction"><figcaption>Weak→strong one-step baseline ladder.</figcaption></figure>
         <figure><img src="assets/world_horizon_curves.png" alt="Multi-step world-model benchmark"><figcaption>1/3/5-step predictive decay across dynamic models.</figcaption></figure>
-        <figure><img src="assets/world_trajectory_fan.png" alt="Sampled future trajectories"><figcaption>512 sampled futures visualize uncertainty rather than only the mean path.</figcaption></figure>
-        <figure><img src="assets/world_motif_heatmap.png" alt="Future motif probability heatmap"><figcaption>Future distributions over all 12 motifs.</figcaption></figure>
         <figure><img src="assets/event_baseline_ladder.png" alt="Observe and bout event baseline ladder"><figcaption>Parallel 4-event version: Other / Observe / Active bout / Passive bout, with weak→strong baselines.</figcaption></figure>
         <figure><img src="assets/event_horizon_curves.png" alt="Event-world multi-step benchmark"><figcaption>The event-world advantage persists at 1/3/5 future events.</figcaption></figure>
       </div>
@@ -177,7 +170,9 @@
   </footer>
 </main>
 <script src="explorer.js"></script>
-<script src="world_model.js"></script>
+<script src="world_model.js?v=20261004v4"></script>
 <script src="learning_story.js?v=20261004v3"></script>
 </body>
 </html>
+
+[executed on device: zzhu-workstation (1d81d299-2c6c-4056-a4e4-5cc71d46c39c)]
