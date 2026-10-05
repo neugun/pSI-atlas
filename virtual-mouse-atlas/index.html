@@ -6,7 +6,7 @@
 <title>Virtual Mouse Behavioral Atlas</title>
 <meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css?v=20261004v5">
+<link rel="stylesheet" href="style.css?v=20261004v6">
 </head>
 <body>
 <main>
@@ -47,7 +47,7 @@
         <div class="wm-head-row">
           <div class="wm-head">P(Observe)</div>
           <div class="wm-head">P(outcome)</div>
-          <div class="wm-head">P(next motif / event)</div>
+          <div class="wm-head">P(next motif)</div>
         </div>
         <div class="wm-latent-row">
           <div class="wm-latent"><b>z<sub>t</sub></b><small>latent social state</small></div>
@@ -61,7 +61,7 @@
           <div class="wm-arrow">→</div>
           <div class="wm-encoder"><b>Encoder + GRU</b><span>posterior state from real sequence</span></div>
           <div class="wm-arrow">→</div>
-          <div class="wm-input-note">12-motif state is a future target, not an encoder input.</div>
+          <div class="wm-input-note">The 5-event view is factorized from policy + outcome heads. The 12-motif state is a future target, not an encoder input.</div>
         </div>
       </section>
 
@@ -88,7 +88,7 @@
       </section>
     </div>
 
-    <div class="world-view-toggle" id="worldViewToggle"><button data-view="motif" class="active">Motif future</button><button data-view="event">Observe / bout event future</button></div>
+    <div class="world-view-toggle" id="worldViewToggle"><button data-view="motif" class="active">12-motif future</button><button data-view="event">5-event action → bout future</button></div>
     <div class="world-hero-stats" id="worldHeroStats"></div>
     <div class="world-sequence" id="worldFutureStrip" aria-label="Eight-step actual and predicted future sequences"></div>
     <div class="world-event-note" id="worldEventNote"></div>
@@ -114,10 +114,16 @@
     <details class="world-global">
       <summary>Global benchmark across 27 held-out animals</summary>
       <p class="world-global-note">The hero above is deliberately the clearest example; these population-level results establish that the advantage is not restricted to that event.</p>
-      <div class="world-evidence world-evidence-clean">
-        <figure><img src="assets/world_motif_horizon_clean_v5.png?v=20261004v5" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> Neural world remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
-        <figure><img src="assets/event_baseline_clean_v5.png?v=20261004v5" alt="Simple four-event baseline ladder"><figcaption><b>4-event future.</b> The full weak→strong ladder is retained, but shown as one readable next-event comparison.</figcaption></figure>
-        <figure><img src="assets/event_horizon_clean_v5.png?v=20261004v5" alt="Simple four-event prediction across horizons"><figcaption><b>Multi-step event future.</b> Neural prediction remains separated from Action-only, Event Markov, and Global-frequency baselines.</figcaption></figure>
+      <div class="world-benchmark-subhead">Model-family comparison · 27 held-out animals</div>
+      <div class="world-evidence world-model-zoo-grid">
+        <figure><img src="assets/event5_model_zoo_accuracy_v1.png?v=20261004v6" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> Neural social world is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
+        <figure><img src="assets/event5_model_zoo_nll_v1.png?v=20261004v6" alt="Five-event model zoo negative log likelihood"><figcaption><b>Factorized 5-event NLL.</b> Neural is lower than full-history linear in 22/27 animals (P=1.5×10<sup>−4</sup>).</figcaption></figure>
+        <figure><img src="assets/motif_model_zoo_accuracy_v1.png?v=20261004v6" alt="Twelve motif model zoo accuracy"><figcaption><b>12-motif accuracy.</b> Eight model families span frequency, Markov, linear, MLP, PCA-latent, and neural-world baselines.</figcaption></figure>
+        <figure><img src="assets/motif_model_zoo_nll_v1.png?v=20261004v6" alt="Twelve motif model zoo negative log likelihood"><figcaption><b>12-motif NLL.</b> Neural world beats the strongest direct nonlinear MLP in 25/27 animals (P=3.2×10<sup>−7</sup>).</figcaption></figure>
+      </div>
+      <div class="world-benchmark-subhead">Multi-step predictive horizon</div>
+      <div class="world-evidence world-evidence-horizon">
+        <figure><img src="assets/world_motif_horizon_clean_v5.png?v=20261004v6" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> Neural world remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
       </div>
     </details>
   </section>
@@ -216,7 +222,7 @@
   </footer>
 </main>
 <script src="explorer.js"></script>
-<script src="world_model.js?v=20261004v5"></script>
+<script src="world_model.js?v=20261004v6"></script>
 <script src="learning_story.js?v=20261004v3"></script>
 </body>
 </html>

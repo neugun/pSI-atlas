@@ -341,3 +341,10 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
   .wm-branch{min-height:78px}
   .wm-result-row{grid-template-columns:1fr 1fr 1fr}
 }
+
+.world-benchmark-subhead{margin:18px 0 8px;font-size:12px;font-weight:800;letter-spacing:.02em;color:var(--ink)}
+.world-model-zoo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.world-evidence-horizon{grid-template-columns:minmax(0,760px);justify-content:center}
+.world-model-zoo-grid figure,.world-evidence-horizon figure{padding:12px}
+.world-model-zoo-grid figcaption,.world-evidence-horizon figcaption{font-size:12px;line-height:1.45}
+@media(max-width:900px){.world-model-zoo-grid{grid-template-columns:1fr}}

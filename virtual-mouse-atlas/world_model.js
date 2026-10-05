@@ -33,12 +33,10 @@ function motifGate(){
   return (current.trajectory||[]).map(x=>({step:x.step,motif:x.gate_top_motif,label:x.gate_top_label}));
 }
 
-function eventActual(){return (EW.hero.actual||[]).map((id,i)=>({step:i+1,event:id,label:eventName(id)}));}
-function eventGlobal(){return (EW.hero.global_frequency||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs}));}
-function eventAction(){return (EW.hero.action_only||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
-function eventMarkov(){return (EW.hero.markov||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
-function eventNeural(){return (EW.hero.neural||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
-function eventGate(){return (EW.hero.gate||[]).map((x,i)=>({step:i+1,event:x.top,label:eventName(x.top),probs:x.probs,prob_actual:x.prob_actual}));}
+function eventActual(){return EW&&EW.hero&&EW.hero.actual?EW.hero.actual:[];}
+function eventMarkov(){return EW&&EW.hero&&EW.hero.markov?EW.hero.markov:[];}
+function eventNeural(){return EW&&EW.hero&&EW.hero.neural?EW.hero.neural:[];}
+function eventGate(){return EW&&EW.hero&&EW.hero.gate?EW.hero.gate:[];}
 
 function getId(q,mode){return mode==="event"?(q.event??q.top):(q.motif??q.top_motif);}
 function getName(q,mode){return q.label||(mode==="event"?eventName(getId(q,mode)):motifName(getId(q,mode)));}
@@ -48,8 +46,8 @@ function matchCount(seq,act,mode){
   for(let i=0;i<N;i++)if(isMatch(seq[i],act[i],mode))n++;
   return [n,N];
 }
-function eventSummary(model){return EW.one_step.find(x=>x.model===model)||{};}
-function horizonSummary(h){return EW.horizons.find(x=>Number(x.horizon)===Number(h))||{};}
+function eventSummary(model){return (EW.model_summary||[]).find(x=>x.model===model)||{};}
+function eventTest(comparator){return (EW.paired_tests||[]).find(x=>x.comparator===comparator)||{};}
 
 function setupSelect(){
   sel.innerHTML="";
@@ -94,14 +92,15 @@ if(viewToggle)viewToggle.addEventListener("click",e=>{const b=e.target.closest("
 
 function renderHero(){
   if(view==="event"){
-    const act=eventActual(),nw=eventNeural(),mk=eventMarkov(),ao=eventAction(),gl=eventGlobal();
-    const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event"),[an,aN]=matchCount(ao,act,"event"),[gn,gN]=matchCount(gl,act,"event");
-    const n=eventSummary("Neural world + event head"),m=eventSummary("Event Markov"),a=eventSummary("Action-only"),g=eventSummary("Global frequency"),h5=horizonSummary(5);
+    const act=eventActual(),nw=eventNeural(),mk=eventMarkov(),gd=eventGate();
+    const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event"),[gn,gN]=matchCount(gd,act,"event");
+    const n=eventSummary("Neural social world"),lin=eventSummary("Full-history linear"),m=eventSummary("History Markov"),g=eventSummary("Global phase");
+    const t=eventTest("Full-history linear");
     const cards=[
-      ["Hero exact steps","Neural "+nn+"/"+nN,"Action "+an+"/"+aN+" · Markov "+mn+"/"+mN+" · Global "+gn+"/"+gN],
-      ["One-step accuracy",pct(n.accuracy),"Action "+pct(a.accuracy)+" · Markov "+pct(m.accuracy)+" · Global "+pct(g.accuracy)],
-      ["One-step NLL",fmt(n.nll,3),"Linear "+fmt(eventSummary("Full-history linear").nll,3)+" · Markov "+fmt(m.nll,3)],
-      ["5-step accuracy",pct(h5.neural_acc),"Action "+pct(h5.action_acc)+" · Markov "+pct(h5.markov_acc)+" · Global "+pct(h5.global_acc)]
+      ["Closed-loop hero","Neural "+nn+"/"+nN,"History Markov "+mn+"/"+mN+" · Social-gated "+gn+"/"+gN],
+      ["5-event accuracy",pct(n.event5_acc),"Linear "+pct(lin.event5_acc)+" · Markov "+pct(m.event5_acc)+" · Global "+pct(g.event5_acc)],
+      ["5-event NLL",fmt(n.event5_nll,3),"Linear "+fmt(lin.event5_nll,3)+" · Markov "+fmt(m.event5_nll,3)+" · Global "+fmt(g.event5_nll,3)],
+      ["Neural vs linear",t.neural_better+"/27","lower NLL · P="+Number(t.p_one_sided).toExponential(1)]
     ];
     heroStats.innerHTML=cards.map(c=>'<div class="world-hero-stat"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
     return;
@@ -147,10 +146,9 @@ function renderSequence(){
     renderStepGrid([
       {label:"Actual",kind:"actual",seq:eventActual()},
       {label:"Neural",kind:"neural",seq:eventNeural()},
-      {label:"Action-only",kind:"action",seq:eventAction()},
-      {label:"Markov",kind:"markov",seq:eventMarkov()},
+      {label:"History Markov",kind:"markov",seq:eventMarkov()},
       {label:"Social-gated",kind:"gated",seq:eventGate()}
-    ],"event","Next 8 real event types from the same present");
+    ],"event","Next 8 semantic events = 4 action→bout trials from the same present");
     return;
   }
   renderStepGrid([
@@ -163,21 +161,18 @@ function renderSequence(){
 
 function renderMetrics(){
   if(view==="event"){
-    const act=eventActual(),nw=eventNeural(),mk=eventMarkov(),gd=eventGate();
+    const act=eventActual(),nw=eventNeural(),mk=eventMarkov();
     const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event");
-    const n=eventSummary("Neural world + event head"),m=eventSummary("Event Markov"),h3=horizonSummary(3),h5=horizonSummary(5);
-    const activeIdx=2;
-    const pN=nw.reduce((s,q)=>s+(q.probs?Number(q.probs[activeIdx]||0):0),0)/Math.max(1,nw.length);
-    const pG=gd.reduce((s,q)=>s+(q.probs?Number(q.probs[activeIdx]||0):0),0)/Math.max(1,gd.length);
+    const n=eventSummary("Neural social world"),lin=eventSummary("Full-history linear"),m=eventSummary("History Markov");
     const cards=[
-      ["Prediction gain","Neural "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact event-type steps"],
-      ["One-step accuracy",pct(n.accuracy)+" vs "+pct(m.accuracy),"Neural event-world vs Event Markov"],
-      ["3 / 5-step accuracy",pct(h3.neural_acc)+" / "+pct(h5.neural_acc),"Markov "+pct(h3.markov_acc)+" / "+pct(h5.markov_acc)],
-      ["Mean P(Active bout)",pct(pN)+" → "+pct(pG),"normal latent → social-gated latent"]
+      ["Closed-loop sequence","Neural "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact semantic-event steps"],
+      ["Sampling action NLL",fmt(n.action_nll,3)+" vs "+fmt(lin.action_nll,3),"Neural vs full-history linear"],
+      ["Bout outcome NLL",fmt(n.outcome_nll,3)+" vs "+fmt(lin.outcome_nll,3),"linear is slightly better here"],
+      ["Aggregate 5-event","Acc "+pct(n.event5_acc)+" · NLL "+fmt(n.event5_nll,3),"Markov "+pct(m.event5_acc)+" · "+fmt(m.event5_nll,3)]
     ];
     metrics.innerHTML=cards.map(c=>'<div class="world-metric"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
-    future.innerHTML="<b>How to read this:</b> each card above is one recorded future step. The labels are generated directly from the held-out event-world output; no illustrative trajectories are used.";
-    eventNote.innerHTML='<b>Event dictionary.</b> '+EW.notes.taxonomy+'<div class="event-dict">'+EW.dictionary.map(x=>'<span>'+x.event_name+' · n='+Number(x.count).toLocaleString()+'</span>').join("")+'</div>';
+    future.innerHTML="<b>How to read this:</b> odd steps are the pre-bout sampling state (Other or Observe); even steps are the subsequent bout outcome (Unrewarded, Active, or Passive).";
+    eventNote.innerHTML='<b>Five-event dictionary.</b> '+EW.definition+'<div class="event-dict">'+EW.dictionary.map(x=>'<span>'+x.event_name+' · n='+Number(x.count).toLocaleString()+'</span>').join("")+'</div>';
     return;
   }
   const tr=current.trajectory,first=tr[0],act=motifActual(),nw=motifNeural(),mk=motifMarkov();
@@ -198,10 +193,11 @@ function renderMetrics(){
 
 function renderAll(){renderHero();renderSequence();renderMetrics();}
 Promise.all([
-  fetch("data/world_model.json?v=20261004v4",{cache:"no-store"}).then(r=>r.json()),
-  fetch("data/event_world.json?v=20261004v4",{cache:"no-store"}).then(r=>r.json()),
-  fetch("data/atlas.json?v=20261004v4",{cache:"no-store"}).then(r=>r.json())
+  fetch("data/world_model.json?v=20261004v6",{cache:"no-store"}).then(r=>r.json()),
+  fetch("data/event5_world.json?v=20261004v6",{cache:"no-store"}).then(r=>r.json()),
+  fetch("data/atlas.json?v=20261004v6",{cache:"no-store"}).then(r=>r.json())
 ]).then(([wm,ew,a])=>{
   WM=wm;EW=ew;A=a;setupSelect();selectEvent(WM.default_event_frame);
 }).catch(e=>{console.error(e);present.textContent="Could not load world-model rollout.";});
 })();
+
