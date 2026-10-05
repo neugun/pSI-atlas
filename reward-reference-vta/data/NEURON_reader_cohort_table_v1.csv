@@ -1,0 +1,8 @@
+experiment,n_mice,animal_ids,overlap_note
+Matched-current H/L/S/N,9,"002;004;193;195;199;200;202;217;219","7 overlap alternating-reward cohort; 002 overlaps QE/physiology cohort"
+Alternating 120-s 100E/20E,11,"193;195;199;200;202;217;219;236;239;240;243","193;195;199;200;202 reused in separate 20E stimulation sessions"
+QE/quinine/hunger/LiCl family,7,"001;002;003;006;007;018;019","same seven-animal family"
+Stim13 acute and stimulation-history,13,"017;023;029;030;034;058;066;070;071;128;130;131;133","no overlap with 11-mouse alternating-reward cohort"
+20E stimulation replication,5,"193;195;199;200;202","same five mice as alternating-reward subgroup"
+Jaws inhibition,6,"098;103;109;110;111;112","separate inhibition cohort"
+Semaglutide/PBS,7,"005;029;034;058;066;070;071","6/7 overlap Stim13"
