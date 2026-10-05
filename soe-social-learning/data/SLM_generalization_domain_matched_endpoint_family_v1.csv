@@ -1,0 +1,9 @@
+feature,outcome,label,n,rho,p_exact_one_sided,p_exact_two_sided,q_BH_family_one_sided
+credit_sep_delta,food_fast,credit -> faster novel-food acceptance,6,0.8857142857142858,0.016666666666666666,0.03333333333333333,0.06666666666666667
+credit_sep_delta,feeding_duration_600s,credit -> more feeding duration,6,0.6,0.12083333333333333,0.24166666666666667,0.16111111111111112
+credit_sep_delta,feeding_fraction_600,credit -> larger feeding fraction,6,0.6,0.12083333333333333,0.24166666666666667,0.16111111111111112
+credit_sep_delta,first_bout_600s,credit -> longer initial bout,6,0.3142857142857143,0.28194444444444444,0.5638888888888889,0.28194444444444444
+ape_abs_late,shock_velocity_all30,late APE -> shock-locked response,6,0.942857142857143,0.008333333333333333,0.016666666666666666,0.03333333333333333
+ape_abs_late,shock_angvel_change_all30,late APE -> shock angular response,6,-0.028571428571428574,0.5402777777777777,1.0,0.7180555555555556
+ape_abs_late,shock_observation_last10,late APE -> sustained shock monitoring,6,0.40583972495671394,0.21666666666666667,0.43333333333333335,0.43333333333333335
+ape_abs_late,cue_quiet,late APE -> cue immobility,6,-0.2571428571428572,0.7180555555555556,0.6583333333333333,0.7180555555555556

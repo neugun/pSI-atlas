@@ -1,0 +1,13 @@
+contract,animal,outcome,observed,predicted,selected_feature
+food_credit_family,85,food_fast,-14.4,-32.9190422330221,credit_sep_delta
+food_credit_family,87,food_fast,-73.867,-89.7023858851187,credit_sep_delta
+food_credit_family,97,food_fast,-62.0,-29.749748379586492,credit_sep_delta
+food_credit_family,98,food_fast,-16.667,-25.681777806248004,credit_sep_delta
+food_credit_family,99,food_fast,-29.733,-32.58286841827303,credit_sep_delta
+food_credit_family,102,food_fast,-79.067,-73.39654680615139,credit_sep_delta
+fear_APE_family,85,shock_velocity_all30,16.00090250251287,14.459282126316745,ape_abs_late
+fear_APE_family,87,shock_velocity_all30,14.99075886081155,12.86980704321595,ape_abs_late
+fear_APE_family,97,shock_velocity_all30,12.025808548633387,15.38964409217322,ape_abs_late
+fear_APE_family,98,shock_velocity_all30,16.128963769491552,16.113071588289657,ape_abs_late
+fear_APE_family,99,shock_velocity_all30,16.388223388023725,16.59736676355167,ape_abs_late
+fear_APE_family,102,shock_velocity_all30,17.6504942279216,17.319966101046255,ape_abs_late

@@ -1,0 +1,3 @@
+contract,outcome,n,candidate_features,loocv_r2,loocv_rho,p_exact_r2,p_exact_rho,selections
+food_credit_family,food_fast,6,credit_sep_late;credit_sep_delta,0.7131524984155503,0.5428571428571429,0.0625,0.1,credit_sep_delta;credit_sep_delta;credit_sep_delta;credit_sep_delta;credit_sep_delta;credit_sep_delta
+fear_APE_family,shock_velocity_all30,6,ape_abs_late;ape_abs_delta,0.3070674001249648,0.8285714285714287,0.05138888888888889,0.011111111111111112,ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late
