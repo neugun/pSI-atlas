@@ -12,7 +12,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 </style></head><body>
 <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">S</span> SOE × SLM × VTA</div>
 <nav aria-label="中文页面导航"><a class="lang-btn" href="index.html">EN</a><a class="lang-btn active" href="index-zh.html">中文</a><a href="#overview">总览</a><a href="#phenotype">行为</a><a href="#information">信息价值</a><a href="#dynamics">动态</a><a href="#slm">SLM</a>
-<a href="#swm">SWM</a><a href="#feed">进食</a><a href="#agent">智能体</a><a href="#vta">VTA</a><a href="#causality">因果</a><a href="#generalization">泛化</a><a href="#crossspecies">跨物种</a><a href="#resources">数据</a></nav></div></header><main>
+<a href="#swm">SWM</a><a href="#feed">进食</a><a href="#agent">智能体</a><a href="#vta">VTA</a><a href="#architecture">机制架构</a><a href="#causality">因果</a><a href="#generalization">泛化</a><a href="#crossspecies">跨物种</a><a href="#resources">数据</a></nav></div></header><main>
 <section class="hero" id="overview"><div class="container"><span class="eyebrow">中文机制版 · authority 2026-10-05</span>
 <h1>从观察到行动：动物如何主动采样社会信息，并把它变成自己的行为</h1>
 <p class="lede">SOE 研究动物如何判断什么时候值得看别人、从观察内容中提取可用信息、把信息转成自己的行动，并把结果归因给不同的社会来源。SLM 把这条链拆成可以预测、可以在 VTA 中读取、可以被 JAWS 选择性破坏、也可以装进人工 agent 的计算变量。</p>
@@ -89,6 +89,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="cards-3"><div class="card good"><div class="metric-label">Early · outcome 前</div><div class="metric">SLM .810</div><p>sampling-policy r_rb=.810，P=.0469；Q/RPE 在这里接近 0（.048），CK/Q+CK 为负，TinyRNN 为显著反方向。</p></div><div class="card info"><div class="metric-label">Middle · outcome 前</div><div class="metric">APE ρ=.667</div><p>控制 CK、Q+CK 或 Q error 后，APE×learning 仍保持 ρ=.667；reverse competing-error tests 为负。</p></div><div class="card violet"><div class="metric-label">Post · outcome 后</div><div class="metric">RPE 也成立</div><p>SLM RPE / belief update 为 .867 / .956；Q-all RPE 同样为 .867。因此 outcome 后 DA 单独不足以区分机制。</p></div></div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_DA_temporal_logic_v53.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_DA_temporal_logic_v53_mobile.png"/><img alt="SLM 与 RPE persistence black-box model 的 VTA 时间判别" loading="lazy" src="assets/SOE_DA_temporal_logic_v53.png"/></picture></a><figcaption><strong>为什么单一 RPE 解释不够。</strong> Q/RPE 可以解释 post-outcome DA；Early sampling policy 与 learner-linked Middle APE 出现在 outcome 之前，Q/RPE 无法覆盖这两个时间窗。SLM 是当前候选中唯一在三个 prespecified temporal axes 上都为正且显著的 family。TinyRNN 与 History MLP 在行为预测上有竞争力，但没有复现相同的 neural sequence。</figcaption></figure>
 <div class="callout"><strong>对 reviewer 的核心回应｜</strong>我们不依赖“所有 reward DA 都必须唯一对应 SLM”这个前提。aggregate Post DA 属于更广泛的 reward-update family。真正区分模型的是按事件时间展开后的 pre-outcome policy → sampling APE → post-outcome update 序列。</div>
+</div></section>
+<section id="architecture"><div class="container">
+<div class="section-head"><div><div class="section-kicker">机制综合</div><h2>这些实验共同指向一个“社会信息采样策略 + 自身进食策略”的耦合架构</h2></div><p>整套机制按照一次社会观察的真实时间顺序展开：先获得社会信息，再决定是否采样，把采样到的内容转成自身 Feed，最后用 outcome 更新之后的社会信息采样。</p></div>
+<div class="equation chain">visual / dyadic state → Observe policy → sampled content → short content eligibility → native Feed policy
+<span class="sub">feedback：social outcome → post-outcome source-specific credit / value update → future Observe policy</span></div>
+<div class="cards-4">
+<div class="card info"><div class="metric-label">1 · access</div><div class="metric">Visual Block</div><p>有用的 visual-social information 被削弱，同时 gross observation 仍大体保留。</p></div>
+<div class="card good"><div class="metric-label">2 · sample</div><div class="metric">SLM policy</div><p>current state 与 multiscale memory 决定什么时候 Observe 具有最高 decision value。</p></div>
+<div class="card violet"><div class="metric-label">3 · convert</div><div class="metric">dem-feed → Feed</div><p>采样到 demonstrator feeding content 后，learner 自身 Feed hazard 在短时间内增加。</p></div>
+<div class="card warn"><div class="metric-label">4 · teach</div><div class="metric">VTA / JAWS</div><p>outcome 出现后，VTA-dependent teaching 更新 Active social credit，并改变之后的 Observe policy。</p></div>
+</div>
+<div class="callout"><strong>机制综合｜</strong>SLM 组织社会信息的获取、记忆和 source-specific credit；native Feed 同时具有很强的 self-state controller，并接收刚刚 sampled event 带来的短时 content signal。Visual Block 主要作用于 information access；JAWS 主要作用于 post-outcome teaching。</div>
+<details><summary>展开 artificial lesion correspondence</summary><div>
+<figure class="figure manuscript-square"><a class="figure-zoom" href="assets/SOE_ArtificialSLM_causal_double_dissociation_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_ArtificialSLM_causal_double_dissociation_v52_mobile.png"/><img alt="Artificial SLM 中 information access 与 social-credit teaching lesion" loading="lazy" src="assets/SOE_ArtificialSLM_causal_double_dissociation_v52.png"/></picture></a><figcaption>在 frozen autonomous agent 中，sensory masking 与 selective Active-credit teaching attenuation 产生不同 internal signature，对应实验中的 information-access 与 post-outcome teaching 两类 perturbation。</figcaption></figure>
+</div></details>
 </div></section>
 <section id="causality"><div class="container"><div class="section-head"><div><div class="section-kicker">因果拆解</div><h2>Visual Block 与 JAWS 分别破坏社会信息链条中的 information access 和 post-outcome teaching</h2></div><p>Visual Block 降低有用社会内容的进入；JAWS 弱化 successful social outcome 后的 VTA-dependent teaching。两种 manipulation 下 gross observation 都大体保留。</p></div>
 <div class="bio-logic"><strong>术语统一｜</strong>JAWS within-session endpoint 统一称为 <em>post-outcome Active social-credit update</em>；多次 update 累积成 session-scale <em>Active credit state</em>。APE 位于更早的 actor 阶段，指 action − policy error。</div>
