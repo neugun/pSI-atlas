@@ -721,6 +721,7 @@ html[lang="zh-CN"] .concept-node span {
 }
 .strict-panel-grid.cols3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .strict-panel-grid.cols2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.strict-panel-grid.cols1 { grid-template-columns: minmax(0, 1fr); max-width: 50%; margin: 0 auto; }
 .strict-panel-grid img {
   display: block;
   width: 100%;
@@ -743,9 +744,11 @@ html[lang="zh-CN"] .concept-node span {
 @media (max-width: 620px) {
   .strict-panel-grid,
   .strict-panel-grid.cols3,
-  .strict-panel-grid.cols2 {
+  .strict-panel-grid.cols2,
+  .strict-panel-grid.cols1 {
     grid-template-columns: 1fr;
     gap: 2px;
+    max-width: 100%;
   }
   .figure.strict-panels { padding: 2px; }
   .figure.strict-panels figcaption { padding: 7px 4px 4px; }
