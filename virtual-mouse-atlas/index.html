@@ -6,7 +6,7 @@
 <title>Virtual Mouse Behavioral Atlas</title>
 <meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css?v=20261004v9">
+<link rel="stylesheet" href="style.css?v=20261005v10">
 </head>
 <body>
 <main>
@@ -191,11 +191,11 @@
 
     <div class="learning-grid learning-grid-primary">
       <figure class="learning-figure learning-figure-main">
-        <img src="assets/learning_policy_value_alignment_v8.svg" alt="Early to late learning increases prospective Observe value selection and policy-value alignment">
+        <picture><source media="(max-width:600px)" srcset="assets/learning_policy_value_alignment_v10_mobile.svg"><img src="assets/learning_policy_value_alignment_v8.svg" alt="Early to late learning increases prospective Observe value selection and policy-value alignment"></picture>
         <figcaption><b>Learning couples action selection to predicted future efficacy.</b> Each thin line is one held-out learner. The left panel asks whether the states actually selected for Observe carry more prospective Active advantage; the right asks whether the learned Observe policy increasingly tracks that advantage.</figcaption>
       </figure>
       <figure class="learning-figure learning-figure-main learning-info-figure">
-        <img src="assets/learning_information_vs_efficacy_v10.svg" alt="Social information improves world-state prediction but generic information gain does not recruit Observe">
+        <picture><source media="(max-width:600px)" srcset="assets/learning_information_vs_efficacy_v10_mobile.svg"><img src="assets/learning_information_vs_efficacy_v10.svg" alt="Social information improves world-state prediction but generic information gain does not recruit Observe"></picture>
         <figcaption><b>Informative does not mean selected.</b> Social cues strongly correct the model's next-state belief and this correction depends on the identity of the social event. Yet event-wise generic information gain neither predicts actual Observe nor covaries with ΔActive. Observe policy instead tracks prospective feeding efficacy. This separates goal-directed social sampling from generic uncertainty reduction.</figcaption>
       </figure>
     </div>
