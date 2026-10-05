@@ -370,3 +370,13 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
   .world-scaling-kpi .v{font-size:18px}
   .world-scaling-claim{font-size:11px}
 }
+
+/* v9: learning story is prospective efficacy, transition matrices are supporting only */
+.learning-grid-primary{grid-template-columns:minmax(0,900px);justify-content:center;margin-top:4px}
+.learning-grid-primary .learning-figure{width:100%}
+.learning-supporting{margin-top:12px}
+.learning-supporting .learning-support-note{font-size:11px;line-height:1.5;color:var(--muted);margin:10px 2px}
+.learning-supporting .learning-grid{margin-top:8px}
+@media(max-width:900px){
+  .learning-grid-primary{grid-template-columns:1fr}
+}
