@@ -184,31 +184,16 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 </section>
 <section id="information">
 <div class="container">
-<div class="section-head">
-<div>
-<div class="section-kicker">Adaptive information foraging</div>
-<h2>Social information has state-dependent decision value</h2>
-</div>
-<p>Social evidence is valued selectively. Held-out predictive value changes with learning stage and with the observer’s current behavioral state, revealing when external information can most strongly alter policy.</p>
-</div>
+<div class="section-head"><div><div class="section-kicker">Adaptive information foraging</div><h2>Social information has state-dependent decision value</h2></div>
+<p>Held-out predictive value asks a direct question: how much does knowing the social state improve prediction of the animal's next choice?</p></div>
 <div class="cards-3">
 <div class="card good"><div class="metric-label">Full social state</div><div class="metric">22/27 positive</div><p>Median +0.00365 nats/decision; r<sub>rb</sub>=.725; P=.000268.</p></div>
 <div class="card info"><div class="metric-label">Learning dependence</div><div class="metric">20/27 late &lt; early</div><p>Median late−early = −0.00378 nats/decision; r<sub>rb</sub>=−.619; P=.00194.</p></div>
 <div class="card violet"><div class="metric-label">State gating</div><div class="metric">far &gt; near</div><p>Social information is most useful when the observer is farther from its own spout.</p></div>
 </div>
-<figure class="figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_adaptive_social_information_value_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_adaptive_social_information_value_v52_mobile.png"/><img alt="Adaptive social information value in SOE" loading="lazy" src="assets/SOE_adaptive_social_information_value_v52.png"/></picture></a>
-<figcaption><strong>Adaptive information value.</strong> SOE social state improves held-out prediction, its value declines with learning, and value is higher when the observer is farther from its own spout.</figcaption>
-</figure>
-<details><summary>Multi-timescale memory recovered before the final SLM</summary><div>
-      Earlier held-animal analyses independently showed that current social/food geometry is strongly informative,
-      roughly 20-event observation/action history adds substantial prediction, selected memory γ=.95–.97 corresponds to
-      about 20–33 events (roughly 4.5–7.5 min), chronological day order ranked 1/501 against within-animal day shuffles,
-      and a retained cross-day prior improved 29/40 animals (P=.0125), with its effect concentrated early in the next session.
-      These results establish the fast, medium and slow timescales later formalized in the SLM.
-    </div></details>
-</div>
-</section>
+<figure class="figure manuscript-square"><a class="figure-zoom" href="assets/SOE_adaptive_social_information_value_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_adaptive_social_information_value_v52_mobile.png"/><img alt="Adaptive social information value in SOE" loading="lazy" src="assets/SOE_adaptive_social_information_value_v52.png"/></picture></a><figcaption><strong>Adaptive information value.</strong> Social state improves held-out choice prediction, its incremental value changes with learning, and current self-state gates how useful external evidence can be.</figcaption></figure>
+<div class="bio-logic"><strong>Why memory comes next · </strong>State gating explains when social evidence is useful at the current moment. Learning also requires the consequence of one observation to influence later decisions. The next question is therefore how long the internal state retains social outcomes; the following section measures that memory directly from the next decision to minutes and across days.</div>
+</div></section>
 <section id="dynamics">
 <div class="container">
 <div class="section-head"><div><div class="section-kicker">Learning dynamics</div>
@@ -320,55 +305,21 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 </div></section>
 <section id="architecture">
 <div class="container">
-<div class="section-head">
-<div>
-<div class="section-kicker">Mechanistic synthesis</div>
-<h2>SOE is organized by coupled social-sampling and feeding policies</h2>
-</div>
-<p>The convergent architecture is hierarchical. One policy determines when social information is worth sampling; a native feeding policy converts informative sampled content into food-directed action; reward outcomes update belief/value states that reorganize future sampling.</p>
-</div>
-<div class="equation chain">
-      visual / dyadic state → SLM Observe policy → sampled demonstrator content → short eligibility → native Feed policy
-      <span class="sub">feedback loop: social outcome → Active/Passive/Unrewarded credit → belief / Q update → future Observe policy</span>
-</div>
+<div class="section-head"><div><div class="section-kicker">Mechanistic synthesis</div><h2>The experiments resolve a coupled sampling-policy and feeding-policy architecture</h2></div>
+<p>The architecture follows the task chronology established above: access social information, decide whether to sample it, convert sampled content into Feed, and use the outcome to update future sampling.</p></div>
+<div class="equation chain">visual / dyadic state → Observe policy → sampled content → short content eligibility → native Feed policy
+<span class="sub">feedback: social outcome → post-outcome source-specific credit / value update → future Observe policy</span></div>
 <div class="cards-4">
-<div class="card info">
-<div class="metric-label">Stage 1 · information access</div>
-<div class="metric">Visual Block</div>
-<p>Visual Block reduces SRI and Observe→Active efficacy while gross social observation remains available.</p>
+<div class="card info"><div class="metric-label">1 · access</div><div class="metric">Visual Block</div><p>Useful visual-social information is reduced while gross observation remains broadly available.</p></div>
+<div class="card good"><div class="metric-label">2 · sample</div><div class="metric">SLM policy</div><p>Current state and multiscale memory determine when Observe has decision value.</p></div>
+<div class="card violet"><div class="metric-label">3 · convert</div><div class="metric">dem-feed → Feed</div><p>Sampled demonstrator-feeding content produces a short-latency increase in the learner's Feed hazard.</p></div>
+<div class="card warn"><div class="metric-label">4 · teach</div><div class="metric">VTA / JAWS</div><p>Post-outcome VTA-dependent teaching updates Active social credit and changes future sampling.</p></div>
 </div>
-<div class="card good">
-<div class="metric-label">Stage 2 · sampling control</div>
-<div class="metric">SLM policy</div>
-<p>Current state, fast outcome history, belief/value and slow prior determine when observation has the highest decision value.</p>
-</div>
-<div class="card violet">
-<div class="metric-label">Stage 3 · content conversion</div>
-<div class="metric">dem-feed → Feed</div>
-<p>Observing demonstrator feeding predicts an acute excess Feed hazard beyond observer-state prediction.</p>
-</div>
-<div class="card warn">
-<div class="metric-label">Stage 4 · social reward teaching</div>
-<div class="metric">VTA / JAWS</div>
-<p>Contingent VTA inhibition selectively reduces Active social-reward belief updating and successful conversion while gross sampling is preserved.</p>
-</div>
-</div>
-<div class="figure-grid" style="margin-top:22px">
-<figure class="figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_ArtificialSLM_causal_double_dissociation_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_ArtificialSLM_causal_double_dissociation_v52_mobile.png"/><img alt="Artificial SLM causal double dissociation" loading="lazy" src="assets/SOE_ArtificialSLM_causal_double_dissociation_v52.png"/></picture></a>
-<figcaption><strong>Artificial lesions dissociate information access from dopamine-dependent credit.</strong> The virtual perturbations target distinct internal operations of the social-foraging controller; the page reserves “double dissociation” for a direct real-data cross comparison.</figcaption>
-</figure>
-<div class="card good">
-<h3>Evidence for the two-policy architecture</h3>
-<p><strong>Content specificity. </strong>Demonstrator feeding at the preceding Observe improves conditional Feed calibration beyond current observer state.</p>
-<p><strong>Controller separation. </strong>SLM coordinates organize Observe sampling and social credit, while the native Feed policy is dominated by self-state plus a short-lived content-specific eligibility signal.</p>
-<p><strong>Acute conversion. </strong>The real mouse shows a +7.54 percentage-point Feed-hazard increase within 3 s after observing demonstrator feeding.</p>
-<p><strong>Autonomous sampling. </strong>Artificial-SLM Observe choices preferentially sample behaviorally useful social content.</p>
-</div>
-</div>
-<div class="callout"><strong>Primary mechanistic claim: </strong>SLM organizes information acquisition and social credit assignment; native feeding is a coupled controller that receives a short-lived, content-specific social eligibility signal. Visual Block and JAWS perturb different operations within this shared architecture.</div>
-</div>
-</section>
+<div class="callout"><strong>Mechanistic synthesis.</strong> SLM governs social-information acquisition and source-specific credit. Native Feed has its own strong self-state controller and receives a short-lived content signal from the sampled event. Visual Block targets information access; JAWS targets post-outcome teaching.</div>
+<details><summary>Artificial lesion correspondence</summary><div>
+<figure class="figure manuscript-square"><a class="figure-zoom" href="assets/SOE_ArtificialSLM_causal_double_dissociation_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_ArtificialSLM_causal_double_dissociation_v52_mobile.png"/><img alt="Artificial SLM lesions of information access and social-credit teaching" loading="lazy" src="assets/SOE_ArtificialSLM_causal_double_dissociation_v52.png"/></picture></a><figcaption>In the frozen autonomous agent, sensory masking and selective Active-credit teaching attenuation produce distinct internal signatures that parallel the two experimental perturbation classes.</figcaption></figure>
+</div></details>
+</div></section>
 <section class="alt" id="causality">
 <div class="container">
 <div class="section-head"><div><div class="section-kicker">Causal decomposition</div>
@@ -388,192 +339,47 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="callout"><strong>Scope of selectivity.</strong> Generic Active-Q accumulation also slows under JAWS (OFF .002208 → ON .000963; P=.007812). The causal claim is therefore branch-level: VTA inhibition preferentially compromises successful Active social-credit teaching while gross sampling is preserved; it is not an assertion that one mathematical scalar changes in isolation.</div>
 <figure class="figure manuscript-square"><a class="figure-zoom" href="assets/SOE_AutonomousSLM_CausalLesions_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_AutonomousSLM_CausalLesions_v52_mobile.png"/><img alt="Autonomous Artificial SLM causal lesions" loading="lazy" src="assets/SOE_AutonomousSLM_CausalLesions_v52.png"/></picture></a><figcaption><strong>Computational lesion correspondence.</strong> Sensory masking alters information/contingency access; selective Active-credit teaching attenuation alters the update rule. The two interventions generate distinct signatures in the same frozen agent.</figcaption></figure>
 </div></section>
-<section id="generalization">
-<div class="container">
-<div class="section-head">
-<div>
-<div class="section-kicker">Beyond the trained feeding contingency</div>
-<h2>SOE experience reorganizes later use of social information</h2>
-</div>
-<p>Two source-rebuilt assays show transfer beyond the trained feeding contingency. Observational fear is resolved into late-cue immobility, shock-locked reactivity, sustained shock-focused monitoring and D1→D2 attenuation; social-related novelty-suppressed feeding (SAFN) shows faster and more sustained engagement with unfamiliar food.</p>
-</div><div class="bio-logic"><strong>Biological logic · </strong>The later assays are not treated as one generic social score. The mechanistic question is whether the computational phenotype learned during SOE forecasts how the same animal later uses social information in a different domain.</div>
-<figure class="figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_generalization_multidomain_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_generalization_multidomain_v52_mobile.png"/><img alt="SOE multidomain generalization" loading="lazy" src="assets/SOE_generalization_multidomain_v52.png"/></picture></a>
-<figcaption><strong>Generalization.</strong> Prior SOE training alters first-day observational-fear organization and reduces latency to engage with unfamiliar food.</figcaption>
-</figure><figure class="figure evidence-figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_generalization_supporting_v52.png" rel="noopener" target="_blank">
-<picture><source media="(max-width: 620px)" srcset="assets/SOE_generalization_supporting_v52_mobile.png"/>
-<img alt="Detailed observational fear and social-related novelty-suppressed feeding results" loading="lazy" src="assets/SOE_generalization_supporting_v52.png"/></picture>
-</a><figcaption><strong>Generalization details.</strong> D1 late-cue immobility, shock reactivity and shock-focused social monitoring are shown separately, followed by D1→D2 attenuation and the SAFN latency and first-bout endpoints.</figcaption></figure>
-<div class="cards-2"><div class="card violet">
-<div class="metric-label">Observational fear · D1</div>
-<div class="metric">three convergent effects</div>
-<p>Late cue velocity: Cliff δ=−.778, P=.0152. Shock velocity: δ=+.944, P=.00433. Late shock observation: δ=+.778, P=.0152. Shock angular-velocity change also increases (δ=+.833, P=.00866).</p>
-</div><div class="card info">
-<div class="metric-label">Observational fear · D1→D2</div>
-<div class="metric">attenuation</div>
-<p>Shock-velocity change is larger after prior SOE training (Cliff δ=−.944, P=.00433); shock angular-velocity change gives δ=−.833, P=.0130.</p>
-</div><div class="card good">
-<div class="metric-label">SAFN · novel-food latency</div>
-<div class="metric">45.96 vs 199.47 s</div>
-<p>Social-trained animals engage unfamiliar food earlier: Cliff δ=−.722, exact P=.01948; permutation log-rank P=.03030; feeding occurs in 6/6 vs 5/6 animals.</p>
-</div><div class="card good">
-<div class="metric-label">SAFN · first feeding bout</div>
-<div class="metric">61.07 vs 8.81 s</div>
-<p>Initial feeding engagement is more sustained after prior SOE training: Cliff δ=+.889, P=.00866.</p>
-</div></div>
-<div class="section-head compact-head" style="margin-top:30px">
-<div><div class="section-kicker">Computational phenotype → later behavior</div>
-<h3>SLM latents forecast domain-specific generalization, not one generic “social score”</h3></div>
-<p>The same six Social-trained mice were carried into the later assays. The strongest new result is that a social-credit latent forecasts novel-food initiation better than simple SOE behavioral learning measures, while late action-prediction error maps specifically onto later shock reactivity.</p>
-</div>
-<div class="bio-logic"><strong>Biological logic · </strong>The latent variables map onto different biological operations. Social-credit maintenance is most strongly related to the decision to engage unfamiliar food, whereas action-prediction-error sensitivity is most strongly related to the vigor of later shock-locked responding. This pattern supports a modular computational phenotype with separable axes of social-learning function.</div>
+<section class="alt" id="generalization"><div class="container">
+<div class="section-head"><div><div class="section-kicker">Beyond the trained feeding contingency</div><h2>Which SOE computations forecast later behavior in a function-matched domain?</h2></div>
+<p>The same six Social-trained mice later entered novel-food and observational-fear assays. The key test asks whether distinct computations learned during SOE map onto distinct later phenotypes.</p></div>
+<div class="bio-logic"><strong>Biological question · </strong>Social-credit maintenance should matter most when prior social experience changes the threshold for initiating a new food action. APE sensitivity should matter most when the animal later encounters an unexpected social event and must generate a rapid reaction.</div>
 <div class="cards-3">
-<div class="card good"><div class="metric-label">SOCIAL CREDIT → NOVEL FOOD</div><div class="metric">6/6 lower error</div><p>In strict leave-one-mouse-out prediction, the SLM credit family lowers held-out absolute error in all six mice relative to a behavior family containing late SRI, ΔSRI, late Observe→Active conversion and Δconversion. Median error falls from 43.83 to 12.43 s; r_rb=1.00, P=.0156; full permutation model comparison P=.0486.</p></div>
-<div class="card violet"><div class="metric-label">LATE APE → OBSERVATIONAL FEAR</div><div class="metric">ρ=.943</div><p>Late SOE |APE| tracks later shock-locked velocity (exact P=.0167; four-endpoint fear-family BH q=.0333). The relation is concentrated in the middle 10 shock trials, where within-timecourse BH q=.0417.</p></div>
-<div class="card info"><div class="metric-label">LATENT SPACE IS SOE-GROUNDED</div><div class="metric">n=40</div><p>Across the full cohort, Δ|RPE| tracks ΔObserve→Active conversion (ρ=.615, P=2.4×10⁻⁵), late credit tracks late conversion (ρ=.558, P=.000181), and ΔQ / Δpolicy track ΔSRI.</p></div>
+<div class="card good"><div class="metric-label">Credit → novel food</div><div class="metric">6/6 lower error</div><p>Nested leave-one-mouse-out credit-family prediction lowers held-out absolute error in all six mice relative to the matched simple-behavior family; full permutation model comparison P=.0486.</p></div>
+<div class="card violet"><div class="metric-label">APE → shock reactivity</div><div class="metric">ρ=.943</div><p>Late |APE| tracks later shock-locked velocity, exact P=.0167; the effect is concentrated in the middle shock epoch after timecourse correction.</p></div>
+<div class="card info"><div class="metric-label">Matched mapping</div><div class="metric">P=.00672</div><p>The credit→food and APE→fear diagonal exceeds the two mismatched links under the prespecified 2×2 exact permutation.</p></div>
 </div>
-<figure class="figure evidence-figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_SLM_generalization_food_v52.png" rel="noopener" target="_blank">
-<picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_generalization_food_v52_mobile.png"/>
-<img alt="SLM social-credit phenotype and later novel-food transfer" loading="lazy" src="assets/SOE_SLM_generalization_food_v52.png"/></picture></a>
-<figcaption><strong>Social credit → later food engagement.</strong> The nested comparison is deliberately hard: each held-out mouse is predicted after feature selection is repeated using only the other five mice. Simple SOE behavioral measures are unstable out of sample, whereas the SLM social-credit family selects the same Δcredit coordinate in all six folds and gives lower absolute error in 6/6 mice. The endpoint pattern is biologically specific: the strongest association is with <em>initiation latency</em>, while total consumption is much weaker. This distribution supports a learned action-selection threshold; a palatability account lacks the corresponding consumption effect.</figcaption>
-</figure>
-<figure class="figure evidence-figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_SLM_generalization_fear_v52.png" rel="noopener" target="_blank">
-<picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_generalization_fear_v52_mobile.png"/>
-<img alt="Late SLM action-prediction error and later observational-fear reactivity" loading="lazy" src="assets/SOE_SLM_generalization_fear_v52.png"/></picture></a>
-<figcaption><strong>Prediction-error sensitivity → later shock reactivity.</strong> The APE relation is strongest for shock velocity, with weaker effects across the broader fear endpoint family. It peaks in the middle shock epoch, survives within-timecourse correction, remains positive after dropping each mouse in turn (jackknife ρ=.90–1.00), and is unchanged when late SOE is defined using the last 2, 3 or 4 training days. The temporal and endpoint specificity support transfer of a prediction-error sensitivity phenotype.</figcaption>
-</figure>
-<figure class="figure evidence-figure manuscript-square">
-<a class="figure-zoom" href="assets/SOE_SLM_latent_grounding_all40_v52.png" rel="noopener" target="_blank">
-<img alt="SLM latent dimensions grounded in SOE learning across all 40 animals" loading="lazy" src="assets/SOE_SLM_latent_grounding_all40_v52.png"/></a>
-<figcaption><strong>The generalization analysis lives in a latent space already grounded in the original task.</strong> Across all 40 SOE animals, multiple SLM dimensions track independent within-task learning readouts. The later-assay effects therefore do not begin from arbitrary post hoc variables chosen only in the six-mouse follow-up cohort.</figcaption>
-</figure>
-<div class="download-grid"><div class="download-card"><a href="data/SLM_generalization_crossdomain_double_mapping_v1.csv">2×2 cross-domain mapping</a><p class="small">Primary matched/mismatched correlations and exact permutation statistic.</p></div><div class="download-card"><a href="data/SLM_generalization_crossdomain_mapping_sensitivity_v1.csv">Definition/window sensitivity</a><p class="small">Three credit definitions × 2/3/4-day windows.</p></div><div class="download-card"><a href="docs/SLM_GENERALIZATION_LATENT_BRIDGE_v6_20261005.md">Generalization authority v5</a><p class="small">Double mapping, nested prediction and biological interpretation.</p></div></div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_SLM_crossdomain_double_mapping_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_crossdomain_double_mapping_v52_mobile.png"/><img alt="Cross-domain double mapping of SLM latent computations" loading="lazy" src="assets/SOE_SLM_crossdomain_double_mapping_v52.png"/></picture></a><figcaption>The cross-domain pattern supports modular generalization. Social-credit maintenance maps preferentially onto novel-food initiation, whereas late |APE| maps preferentially onto observational-fear shock reactivity. The matched diagonal exceeds the mismatched off-diagonal (exact P=.00672). The latent axes themselves are weakly related (ρ=.257, P=.658), and the two later phenotypes are also weakly related (ρ=−.143, P=.803). The matched links remain strong after controlling the other latent: credit→food partial ρ=.943, P=.0278; APE→fear partial ρ=.947, P=.0111. Across alternate credit definitions and 2/3/4-day windows, 9/9 mapping contrasts remain positive and 8/9 are P&lt;.05.</figcaption></figure>
-<div class="cards-3">
-<div class="card good"><div class="metric-label">MATCHED LINKS</div><div class="metric">.886 / .943</div><p>Active-credit maintenance → novel-food initiation: ρ=.886; late |APE| → fear shock reactivity: ρ=.943.</p></div>
-<div class="card info"><div class="metric-label">MISMATCHED LINKS</div><div class="metric">.143 / −.086</div><p>Credit → fear is only ρ=.143; APE → food is ρ=−.086. One generic social-learning-strength explanation does not fit the mapping.</p></div>
-<div class="card violet"><div class="metric-label">DOUBLE-MAPPING TEST</div><div class="metric">P=.00672</div><p>Matched−mismatched contrast=1.771 under the full 720×720 independent-domain exact permutation.</p></div>
-</div>
-<div class="section-head compact-head" style="margin-top:30px"><div><div class="section-kicker">Cross-domain double mapping</div><h3>The latent-to-phenotype mapping is structured, not generic</h3></div><p>Two SOE latents and two later phenotypes are placed in one 2×2 map. The decisive question is whether the biologically matched links are stronger than the mismatched links.</p></div>
-<details class="panel"><summary><strong>Strict out-of-sample audit</strong></summary>
-<p>The domain-matched latent effects remain small-n results. For food, the nested credit-family model gives R²=.713 with permutation P=.0625; its held-out absolute error is lower than the nested simple-behavior family in 6/6 mice, and the direct full-model permutation comparison is P=.0486. For fear, the APE family gives R²=.307 (P=.0514) and predicted↔observed rank ρ=.829 (P=.0111); simple SOE behavior also predicts shock-velocity variance (R²=.548, P=.0333). The current evidence supports domain-matched forecasting by distinct computational variables, with the clearest incremental value in novel-food initiation.</p>
-<p>The earlier four-panel nested-validation figure is retained for audit: <a href="assets/SOE_SLM_latent_generalization_v2.png">open v2 figure</a>.</p>
-</details>
-<div class="download-grid">
-<div class="download-card"><a href="data/SLM_generalization_nested_latent_vs_behavior_family_v1.csv">Latent vs behavior family</a><p class="small">Nested leave-one-mouse-out comparison and exact permutation tests.</p></div>
-<div class="download-card"><a href="data/SLM_generalization_nested_error_pairing_v1.csv">Per-mouse error pairing</a><p class="small">Held-out absolute-error comparison used for the 6/6 food result.</p></div>
-<div class="download-card"><a href="data/SLM_APE_to_fear_timecourse_v1.csv">APE → fear timecourse</a><p class="small">First/middle/last shock-epoch specificity and within-target correction.</p></div>
-<div class="download-card"><a href="data/SLM_generalization_latent_window_definition_sensitivity_v1.csv">Window sensitivity</a><p class="small">2-, 3- and 4-day late-SOE definitions.</p></div>
-<div class="download-card"><a href="data/SLM_all40_training_dynamics_latent_bridge_stats_v1.csv">All-40 latent grounding</a><p class="small">Within-SOE latent-to-learning relationships across the full cohort.</p></div>
-<div class="download-card"><a href="docs/SLM_GENERALIZATION_LATENT_BRIDGE_v6_20261005.md">Generalization authority v6</a><p class="small">Full biological interpretation, model-comparison contract and prospective predictions.</p></div>
-</div>
-</div>
-</section>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_SLM_crossdomain_double_mapping_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_crossdomain_double_mapping_v52_mobile.png"/><img alt="Cross-domain matched mapping of social credit and APE" loading="lazy" src="assets/SOE_SLM_crossdomain_double_mapping_v52.png"/></picture></a><figcaption><strong>Domain-matched computational phenotype.</strong> Social-credit maintenance preferentially maps to novel-food initiation, while late |APE| maps to observational-fear shock reactivity. The matched diagonal exceeds the mismatched off-diagonal (exact P=.00672), and the two latent axes themselves are weakly related (ρ=.257, P=.658).</figcaption></figure>
+<div class="callout"><strong>Evidence boundary.</strong> This is a six-mouse follow-up cohort. Social-credit → novel-food initiation currently has the clearest incremental value over simple SOE behavior. APE → fear is a strong domain-matched mechanistic association; larger prospective cohorts are needed for a behavioral-superiority claim. The selection-aware latent-vs-best-behavior comparison across all 16 behavior pairings gives corrected P=.185.</div>
+<details><summary>Supporting behavioral and latent-grounding panels</summary><div class="detail-body">
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_generalization_multidomain_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_generalization_multidomain_v52_mobile.png"/><img alt="Behavioral generalization after SOE" loading="lazy" src="assets/SOE_generalization_multidomain_v52.png"/></picture></a><figcaption>Prior SOE training changes first-day observational-fear organization and novel-food engagement.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_SLM_generalization_food_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_generalization_food_v52_mobile.png"/><img alt="SLM social credit and novel-food initiation" loading="lazy" src="assets/SOE_SLM_generalization_food_v52.png"/></picture></a><figcaption>Nested social-credit prediction of novel-food initiation.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_SLM_generalization_fear_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_generalization_fear_v52_mobile.png"/><img alt="SLM APE and observational-fear shock reactivity" loading="lazy" src="assets/SOE_SLM_generalization_fear_v52.png"/></picture></a><figcaption>Late APE sensitivity and later shock-locked reaction strength.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_SLM_latent_grounding_all40_v52.png" rel="noopener" target="_blank"><img alt="SLM latent grounding in all 40 SOE animals" loading="lazy" src="assets/SOE_SLM_latent_grounding_all40_v52.png"/></a><figcaption>The latent axes have independent behavioral correlates in the full 40-animal SOE cohort.</figcaption></figure>
+</div></details>
+<div class="download-grid"><div class="download-card"><a href="docs/SLM_GENERALIZATION_LATENT_BRIDGE_v6_20261005.md">Generalization authority v6</a><p class="small">Nested prediction, exact permutation, time-window sensitivity and selection-aware behavior comparison.</p></div><div class="download-card"><a href="data/SLM_generalization_latent_vs_behavior_double_mapping_v1.csv">Selection-aware latent vs behavior audit</a><p class="small">Prespecified mapping and best-behavior challenge.</p></div></div>
+</div></section>
 
 <div class="callout"><strong>Specificity boundary.</strong> The 2×2 latent mapping is significant under the prespecified credit→food / APE→fear pairing (exact P=.00672), and a selection-aware challenge against all 16 ordered pairs formed from late/ΔSRI and late/Δconversion yields no unique latent advantage over the best selected simple-behavior pairing (latent−best-behavior selection-corrected P=.185). The strongest behavior-independent generalization result is therefore <strong>social-credit → novel-food initiation</strong>; APE→fear remains a strong domain-matched mechanistic association; behavioral-superiority evidence requires a larger confirmatory sample. <a href="data/SLM_generalization_latent_vs_behavior_double_mapping_v1.csv">Audit summary</a> · <a href="data/SLM_generalization_behavior_double_mapping_pairs_v1.csv">all behavior pairs</a>.</div>
 
 <section id="crossspecies"><div class="container">
-<div class="section-head"><div><div class="section-kicker">Beyond SOE</div>
-<h2>Four SLM computations organize the cross-task evidence</h2></div>
-<p>The cross-species claim is no longer based on counting positive datasets. Each external result is assigned to the computation it tests, and the comparator level is shown explicitly. Direct behavioral transfer, component transfer, neural convergence and literature-only support are kept separate.</p></div><div class="bio-logic"><strong>Biological logic · </strong>Cross-species convergence is evaluated at the level of reusable computations, not identical equations: source-tagged credit, state-gated information value, task-matched multiscale state, and separation of information sampling from action execution.</div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_four_transferable_computations_v52.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_four_transferable_computations_v52_mobile.png"/>
-<img alt="Four transferable SLM computations and their external evidence" loading="lazy" src="assets/SOE_four_transferable_computations_v52.png"/></picture></a>
-<figcaption><strong>Cross-species framework.</strong> The four candidate transferable computations are: source-tagged credit; state-gated information value; task-matched multiscale state; and separation of information sampling from action execution. Human and rat now provide independent-unit stronger-comparator support for the multiscale-state component; macaque remains a two-monkey nested sensitivity. VTA/DA serves as the neural implementation layer for these computations.</figcaption></figure>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Comparator audit</div>
-<h3>Where does the structured state clear a stronger model comparator?</h3></div>
-<p>A current-state/no-history baseline only establishes that history helps. The stronger question is whether the structured state improves over a matched alternative model and approaches a flexible ceiling.</p></div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_crossspecies_comparator_hierarchy_v52.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_comparator_hierarchy_v52_mobile.png"/>
-<img alt="Human, rat and macaque external comparator hierarchy for structured SLM-style state" loading="lazy" src="assets/SOE_crossspecies_comparator_hierarchy_v52.png"/></picture></a>
-<figcaption><strong>Comparator hierarchy.</strong> Human multiscale history clears the best matched Feature-Q model in 8/10 held-out subjects (r_rb=.891, P=.00488). Rat DANDI001169 now closes the previous classical-RL gap under the exact original 12,564-trial / 5-fold held-rat contract: inside each outer training set, 4-fold held-rat CV selects among WSLS, Q, asymmetric-Q, forgetting-Q, CK and Q+CK; CK is selected in 5/5 outer folds, and multiscale history improves 8/10 held-out rats (mean Brier .22878→.22747; r_rb=.891, P=.00488). Macaque structured state also clears Feature-Q at the date-cluster level. The 44 dates are nested in only two monkeys, so this result is treated as within-dataset sensitivity; population-level primate inference requires additional animals.</figcaption></figure>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_rat001169_nestedCV_multimetric_v52.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_rat001169_nestedCV_multimetric_v52_mobile.png"/>
-<img alt="Rat DANDI001169 nested-CV classical comparator across Brier NLL and AUC" loading="lazy" src="assets/SOE_rat001169_nestedCV_multimetric_v52.png"/></picture></a>
-<figcaption><strong>Rat comparator is supported across Brier, NLL and AUC.</strong> With comparator family selected by inner held-rat CV, structured multiscale state improves Brier in 8/10 rats (.22878→.22747; r_rb=.891, P=.00488), NLL in 8/10 (.64961→.64678; r_rb=.891, P=.00488), and AUC in 9/10 (.52995→.54498; r_rb=.927, P=.00293). Panel D shows that CK is the strongest classical family under inner held-rat CV and is selected in 5/5 outer folds. The absolute effect is modest but consistent across independent rats and across proper-scoring and discrimination metrics.</figcaption></figure>
-<div class="panel" style="margin-top:18px"><div class="section-kicker">Current comparator status</div>
-<h3 style="margin-top:6px">The external datasets do not all answer the same model-selection question</h3>
-<div class="table-wrap"><table><thead><tr><th>Dataset</th><th>What is tested now</th><th>Comparator</th><th>Independent unit</th><th>Current interpretation</th></tr></thead><tbody>
-<tr><td>Human exp/obs</td><td>multiscale social state</td><td>best matched Feature-Q; RNN ceiling</td><td>10 held-out subjects</td><td>8/10 vs Feature-Q; r_rb=.891; one-sided P=.00488</td></tr>
-<tr><td>Macaque behavior</td><td>multiscale + source structure</td><td>Feature-Q sensitivity; RNN ceiling</td><td>2 monkeys; 44 nested date clusters</td><td>41/44 date clusters improve; sensitivity, not animal-level population inference</td></tr>
-<tr><td>Rat observational maze</td><td>source-tagged social evidence</td><td>self-history; moving-object source</td><td>5 demonstrator rats</td><td>direct source-identity/component test; not a full classical-RL adjudication</td></tr>
-<tr><td>Rat DANDI001169</td><td>multiscale state</td><td>nested 4-fold held-rat CV over WSLS/Q/asym-Q/forget-Q/CK/Q+CK</td><td>10 held-out rats</td><td>nested CV selects CK in 5/5 outer folds; multiscale wins 8/10; r_rb=.891; one-sided P=.00488</td></tr>
-<tr><td>Aeon</td><td>recent partner history</td><td>self/current-social baselines</td><td>5 experiments</td><td>social-history component test</td></tr>
-<tr><td>Cooperative foraging</td><td>social information value / policy</td><td>self-only; flexible RF</td><td>fixed held-out trajectories from one dyad</td><td>within-dyad validation consistency; not animal-level generalization</td></tr>
-</tbody></table></div></div>
-<div class="cards-3">
-<div class="card good"><div class="metric-label">Macaque · frozen core</div><div class="metric">10/10</div><p>Full target data: all held-out sessions favor the SOE-trained recurrent core; both monkeys are positive in all five sessions.</p></div>
-<div class="card info"><div class="metric-label">Aeon · frozen core</div><div class="metric">4/5 · P=.0938</div><p>Direction is positive at full target data but does not reach the confirmatory threshold; transfer is not universal.</p></div>
-<div class="card violet"><div class="metric-label">Reverse transfer</div><div class="metric">low-data only</div><p>Macaque pretraining improves SOE in 5/5 folds with 2 or 4 SOE training animals, but the advantage disappears with 8 animals.</p></div>
-</div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_trained_model_cross_task_transfer_v52.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_trained_model_cross_task_transfer_v52_mobile.png"/>
-<img alt="Frozen SOE recurrent dynamics transfer selectively to external tasks" loading="lazy" src="assets/SOE_trained_model_cross_task_transfer_v52.png"/></picture></a>
-<figcaption><strong>Frozen-core representation transfer.</strong> In macaque DANDI001435, the SOE-pretrained frozen core beats a frozen random core in 8/10 held-out sessions with 50% target data (rank-biserial=.745, P=.0186) and 10/10 sessions with full target data (rank-biserial=1.00, session-level P=.000977). Both Lalo and Offenbach are positive in all 5/5 held-out sessions at full target data. The sessions remain nested in only two monkeys, so this is a strong within-dataset transfer result; population-level primate inference requires additional animals. Aeon does not show a comparable confirmatory effect, establishing an important boundary. Reverse transfer into SOE is concentrated in low-data settings, supporting a sample-efficiency interpretation.</figcaption></figure>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Trained-model transfer</div>
-<h3>SOE-learned recurrent dynamics transfer selectively to macaque choice</h3></div>
-<p>This is a stricter test than re-fitting the SLM equations in another dataset. The recurrent core is pretrained on SOE, frozen, and only a new target adapter/head is trained. The comparator uses the same target adapter/head with an equally frozen random recurrent core.</p></div>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">State-gated information value</div>
-<h3>Social information is useful conditionally, not uniformly</h3></div>
-<p>This is the strongest cross-task behavioral convergence: the value of partner information depends on decision-maker state, source identity, role and recent social history.</p></div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_crossspecies_SLM_policy_v52.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_policy_v52_mobile.png"/>
-<img alt="Cross-task tests of state-gated social information value" loading="lazy" src="assets/SOE_crossspecies_SLM_policy_v52.png"/></picture></a>
-<figcaption><strong>Conditional information use.</strong> Cooperative foraging shows greater social information value in the follower and a role-by-uncertainty interaction on the fixed validation trajectories. Rat observational choice shows a demonstrator-source effect that is not reproduced by a moving object. Aeon shows reliable value of recent partner history across five experiments. These analyses support state-gated social information use; they do not require every task to instantiate the exact SOE equations.</figcaption></figure>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Sampling to action</div>
-<h3>The two-controller architecture is strongest in SOE, with an external architectural analogue</h3></div>
-<p>In SOE, the information-sampling policy and native Feed policy are separable: sampled demonstrator-feeding content, not a shared scalar SLM state, predicts short-latency Feed conversion. The marmoset task provides the closest external analogue because gaze/sampling gates partner evidence before that evidence is accumulated into choice.</p></div>
-<div class="cards-3">
-<div class="card good"><div class="metric-label">SOE</div><div class="metric">Observe -&gt; content -&gt; Feed</div><p>Recent Observe alone and the old scalar SLM state are insufficient; observed demonstrator-feeding content produces the short-latency conversion signal.</p></div>
-<div class="card info"><div class="metric-label">Marmoset analogue</div><div class="metric">gaze -&gt; evidence -&gt; decision</div><p>Partner evidence is gated by active gaze and then accumulated into decision variables. With only two animals, this provides an architectural analogue; population-level replication of the SOE two-policy model requires additional animals.</p></div>
-<div class="card violet"><div class="metric-label">Rat maze bridge</div><div class="metric">observed source -&gt; later choice</div><p>Demonstrator evidence predicts the observer's later choice more strongly than a moving-object source, supporting content-to-action transfer without demonstrating an explicit sample controller.</p></div>
-</div>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Neural implementation</div>
-<h3>Neural datasets are mapped to specific computations without treating neurons as animals</h3></div>
-<p>ACC tests the multiscale-state component. Reward DA provides a prospective behavior bridge with DLS dLight as a negative control. Marmoset effects are displayed separately for the two recorded animals; neuron-level P values are not used as population inference.</p></div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_crossspecies_SLM_neural_v52.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_neural_v52_mobile.png"/>
-<img alt="Neural alignment to SLM computations without neuron-as-animal inference" loading="lazy" src="assets/SOE_crossspecies_SLM_neural_v52.png"/></picture></a>
-<figcaption><strong>Neural convergence.</strong> Macaque ACC multiscale-state encoding is evaluated by date clusters. The marmoset panel shows the direction and size of the effect separately in animals K and D and deliberately omits cell-level inferential P values. DANDI000351 reward DA adds prospective behavioral information in 6/7 animals, whereas DANDI000559 DLS dLight does not show the same increment at 30 or 60 s.</figcaption></figure>
-<div class="panel warn" style="margin-top:20px"><div class="section-kicker">Primate RPE audit</div>
-<h3 style="margin-top:6px">The current cell-slope reanalysis is not used as independent evidence</h3>
-<p>The published Noritake/Isoda study reports agent-specific self- and other-RPE populations and an O-RPE decoder. Our earlier replot selected the published RPE-defined subpopulations and then re-estimated RPE slopes from those same population files; that is circular for establishing the existence of the RPE effect. It has therefore been removed from the quantitative main figure. The public release provides preselected population objects and decoder outputs, but not a trial-resolved table that currently lets us redo cell classification on one half of trials and test on the other half. A split-half or held-out cross-source validation is required before this dataset is promoted again as an independent quantitative SLM-credit test.</p>
-<p class="small">The original source-data replot remains below for audit only; its cellwise P values are not part of the cross-species evidence count.</p></div>
-<div class="panel" style="margin-top:20px"><div class="section-kicker">Core interpretation</div>
-<h3 style="margin-top:6px">What the current external evidence can support</h3>
+<div class="section-head"><div><div class="section-kicker">Beyond SOE</div><h2>Which computations recur when the task, species and dataset change?</h2></div>
+<p>External evidence is organized by the computation each dataset can actually test: source-tagged credit, state-gated information value, task-matched multiscale state, and sampling-to-action separation.</p></div>
+<div class="bio-logic"><strong>Cross-dataset test · </strong>The goal is conserved computational structure. Direct held-unit comparator tests carry the strongest weight; component transfer, nested neural convergence and literature analogues are labeled separately.</div>
 <div class="cards-4">
-<div class="card good"><div class="metric-label">SOURCE TAGGING</div><div class="metric">behavioral support</div><p>Rat demonstrator versus moving-object specificity and macaque source-aware state support source identity. Primate RPE remains literature/audit support until independent validation.</p></div>
-<div class="card good"><div class="metric-label">GATED VALUE</div><div class="metric">cross-task support</div><p>SOE state gating, cooperative role-by-uncertainty and Aeon partner history converge on conditional information value.</p></div>
-<div class="card info"><div class="metric-label">MULTISCALE STATE</div><div class="metric">equations + frozen dynamics</div><p>Human, rat DANDI001169 and macaque structured states clear stronger matched classical/Feature-Q comparators; a frozen SOE recurrent core also transfers to macaque choice. Mouse 001632 remains component-level timing support.</p></div>
-<div class="card violet"><div class="metric-label">SAMPLE -&gt; ACTION</div><div class="metric">SOE direct; marmoset analogue</div><p>SOE establishes separate Observe and Feed control. Marmoset gaze-gated evidence accumulation is the closest current external architectural analogue.</p></div>
-</div></div>
-<details class="panel" style="margin-top:20px"><summary><strong>Dataset-depth audits and source plots</strong></summary>
-<div class="download-grid" style="margin-top:14px">
-<div class="download-card"><a href="assets/SOE_crossspecies_SLM_role_v4.png">Earlier rank-biserial summary</a><p class="small">Retained for audit; not used as the main cross-dataset figure because small-n effects saturate near +1 and mix different independent units.</p></div>
-<div class="download-card"><a href="assets/SOE_001435_multimetric_ablation_v1.png">Macaque multimetric + ablation</a><p class="small">Brier, NLL, AUC and source/multiscale ablations.</p></div>
-<div class="download-card"><a href="assets/SOE_ratmaze_multilevel_robustness_v1.png">Rat maze multilevel robustness</a><p class="small">Rat-level, session-level and moving-object specificity checks.</p></div>
-<div class="download-card"><a href="assets/SOE_cooperative_trajectory_benchmark_v1.png">Cooperative trajectory audit</a><p class="small">Held-out trajectory values; trajectories are not treated as independent animals.</p></div>
-<div class="download-card"><a href="assets/SOE_marmoset_raw_mechanistic_v3.png">Marmoset raw mechanistic panels</a><p class="small">Source-data units for the two animals; cell-level P values are descriptive within-animal evidence only.</p></div>
-<div class="download-card"><a href="assets/SOE_primate_source_tagged_RPE_v2.png">Primate RPE source-data replot - audit only</a><p class="small">Selection-circular for our slope reanalysis; excluded from quantitative cross-species inference pending split-half/held-out validation.</p></div>
-<div class="download-card"><a href="assets/SOE_001632_time_state_v2.png">DANDI001632 time-state component</a><p class="small">Task-adaptive temporal-state component test; not social SLM transfer.</p></div>
-</div></details>
-<div class="download-grid" style="margin-top:20px">
-<div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v3.csv">Comparator audit v2</a><p class="small">Human, rat and macaque stronger-comparator results with the independent-unit contract explicit; rat family selection is nested held-rat CV.</p></div>
-<div class="download-card"><a href="data/rat001169_multiscale_vs_nestedCV_classical_v6.csv">Rat matched classical comparator</a><p class="small">Per-rat Brier values under the original same-zoo outer folds; the classical family is selected by inner held-rat CV using only outer-training rats.</p></div>
-<div class="download-card"><a href="data/rat001169_multiscale_vs_each_classical_v5.csv">Rat classical model ladder</a><p class="small">WSLS, Q, asymmetric-Q, forgetting-Q, CK and Q+CK versus structured multiscale history.</p></div>
-<div class="download-card"><a href="data/rat001169_nestedCV_family_scores_v6.csv">Rat nested family selection</a><p class="small">Inner held-rat CV score for every classical family in each outer fold; CK wins 5/5.</p></div>
-<div class="download-card"><a href="data/rat001169_multiscale_vs_nestedCV_classical_summary_v6.csv">Rat nested-CV summary</a><p class="small">Primary 10-rat paired result: 8/10, r_rb=.891, P=.00488.</p></div>
-<div class="download-card"><a href="data/rat001169_nestedCV_multimetric_summary_v7.csv">Rat multimetric summary</a><p class="small">Brier, NLL and AUC paired held-rat tests under the nested-CV classical comparator.</p></div>
-<div class="download-card"><a href="data/rat001169_nestedCV_multimetric_paired_v7.csv">Rat multimetric per-animal</a><p class="small">Per-rat Brier/NLL/AUC for nested-CV CK versus structured multiscale.</p></div>
-<div class="download-card"><a href="data/SOE_crossspecies_SLM_evidence_table_v1.csv">SLM evidence table</a><p class="small">Evidence tier, SLM component, unit, effect and interpretation.</p></div>
-<div class="download-card"><a href="data/SOE_crossspecies_complete_registry_v1.csv">Complete external registry</a><p class="small">All external datasets, including component-only and control results.</p></div>
-<div class="download-card"><a href="data/SOE_to_external_frozen_v2_summary.csv">Frozen-core transfer summary</a><p class="small">Seed-averaged held-out-unit effects for macaque and Aeon.</p></div>
-<div class="download-card"><a href="data/SOE_to_macaque_frozen_transfer_by_monkey_v2.csv">Macaque frozen transfer by monkey</a><p class="small">Nested-session direction separately for Lalo and Offenbach.</p></div>
-<div class="download-card"><a href="data/external_to_SOE_transfer_targeted_v1.csv">External → SOE sample-efficiency</a><p class="small">Targeted reverse-transfer results across 2, 4 and 8 SOE training animals.</p></div>
+<div class="card good"><div class="metric-label">Source-tagged credit</div><div class="metric">source identity</div><p>Rat demonstrator-source evidence and macaque source-aware state support credit tied to who generated the information.</p></div>
+<div class="card info"><div class="metric-label">State-gated value</div><div class="metric">conditional value</div><p>SOE, cooperative-role × uncertainty and Aeon partner-history results converge on state-dependent social evidence value.</p></div>
+<div class="card violet"><div class="metric-label">Multiscale state</div><div class="metric">strong comparator</div><p>Human and rat structured-state tests clear stronger matched models at independent-subject / independent-rat level.</p></div>
+<div class="card good"><div class="metric-label">Sampling → action</div><div class="metric">architecture</div><p>SOE provides direct evidence; marmoset gaze→evidence→decision provides the closest current external architectural analogue.</p></div>
 </div>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_four_transferable_computations_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_four_transferable_computations_v52_mobile.png"/><img alt="Four transferable SLM computations" loading="lazy" src="assets/SOE_four_transferable_computations_v52.png"/></picture></a><figcaption><strong>Computation-level convergence.</strong> Human and rat provide independent-unit stronger-comparator support for multiscale state. Macaque results remain nested within two monkeys. Other datasets currently support specific components or architectural analogues.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_crossspecies_comparator_hierarchy_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_crossspecies_comparator_hierarchy_v52_mobile.png"/><img alt="Cross-species stronger comparator hierarchy" loading="lazy" src="assets/SOE_crossspecies_comparator_hierarchy_v52.png"/></picture></a><figcaption><strong>Strong-comparator anchor.</strong> Human multiscale history clears matched Feature-Q in 8/10 held-out subjects (P=.00488). Rat DANDI001169 uses nested held-rat model selection among WSLS/Q/asym-Q/forget-Q/CK/Q+CK; CK is selected in 5/5 outer folds and multiscale history wins 8/10 held-out rats (P=.00488). Macaque date-cluster results remain a two-monkey sensitivity.</figcaption></figure>
+<details><summary>Dataset-level comparator, transfer and neural audits</summary><div class="detail-body">
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_rat001169_nestedCV_multimetric_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_rat001169_nestedCV_multimetric_v52_mobile.png"/><img alt="Rat nested-CV multimetric comparator" loading="lazy" src="assets/SOE_rat001169_nestedCV_multimetric_v52.png"/></picture></a><figcaption>Rat structured multiscale state improves Brier in 8/10, NLL in 8/10 and AUC in 9/10 held-out rats.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_trained_model_cross_task_transfer_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_trained_model_cross_task_transfer_v52_mobile.png"/><img alt="Frozen SOE core transfer" loading="lazy" src="assets/SOE_trained_model_cross_task_transfer_v52.png"/></picture></a><figcaption>Frozen-core transfer is confirmatory in the macaque dataset and weaker in Aeon, defining a task-dependent transfer boundary.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_crossspecies_SLM_policy_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_crossspecies_SLM_policy_v52_mobile.png"/><img alt="Cross-dataset policy components" loading="lazy" src="assets/SOE_crossspecies_SLM_policy_v52.png"/></picture></a><figcaption>Policy/component tests retain their independent-unit contract; each dataset keeps its own inference unit and statistic.</figcaption></figure>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_crossspecies_SLM_neural_v52.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_crossspecies_SLM_neural_v52_mobile.png"/><img alt="Cross-species neural correspondences" loading="lazy" src="assets/SOE_crossspecies_SLM_neural_v52.png"/></picture></a><figcaption>Neural correspondences are treated as convergence or architectural support with animal-level nesting kept explicit.</figcaption></figure>
+</div></details>
+<div class="download-grid"><div class="download-card"><a href="docs/SLM_TRANSFERABLE_CORE_AND_TRANSFER_v4_20261005.md">Transferable-core authority</a><p class="small">Evidence tiers, comparator contracts and transfer boundaries.</p></div><div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v3.csv">Comparator audit v3</a><p class="small">Human, rat and macaque comparator results with independent units explicit.</p></div></div>
 </div></section><section class="alt" id="resources">
 <div class="container">
 <div class="section-head">
