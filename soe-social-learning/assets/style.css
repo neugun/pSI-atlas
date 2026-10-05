@@ -30,8 +30,7 @@ body {
   overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
-  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -76,7 +75,7 @@ a:hover { color: var(--navy); }
 }
 nav {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   align-items: center;
   overflow-x: auto;
   white-space: nowrap;
@@ -166,14 +165,14 @@ nav a:hover { color: var(--navy); }
   font-size: 13px;
 }
 
-section { padding: 64px 0; }
+section { padding: 54px 0; }
 section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-head {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 50px;
+  gap: 30px;
   align-items: end;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 .section-kicker {
   color: var(--teal);
@@ -312,24 +311,28 @@ h3 {
 
 .figure {
   background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px;
-  box-shadow: var(--shadow);
-  margin: 28px 0;
+  border: 1px solid #e5e8ec;
+  border-radius: 9px;
+  padding: 6px;
+  box-shadow: none;
+  margin: 20px 0;
 }
 .figure img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
+  border-radius: 3px;
   background: white;
 }
 .figure figcaption {
-  padding: 12px 10px 7px;
+  padding: 8px 5px 3px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12.5px;
+  line-height: 1.42;
+}
+.manuscript-square .figure-zoom {
+  max-width: 760px;
+  margin: 0 auto;
 }
 .figure figcaption strong { color: #324b65; }
 
@@ -562,6 +565,6 @@ td strong { color: #233f5a; }
   .phase + .phase { border-left: 0; border-top: 1px solid var(--line); }
   section { padding: 48px 0; }
   .container { width: min(calc(100vw - 26px), var(--max)); max-width: calc(100vw - 26px); }
-  .figure { padding: 7px; border-radius: 13px; }
+  .figure { padding: 4px; border-radius: 8px; margin:16px 0; }
   .mobile-note { display: block; }
 }
