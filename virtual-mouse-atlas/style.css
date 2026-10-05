@@ -380,3 +380,7 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
 @media(max-width:900px){
   .learning-grid-primary{grid-template-columns:1fr}
 }
+
+/* v10: mobile-specific manuscript figures for the learning story */
+.learning-figure picture{display:block;width:100%}
+.learning-figure picture img{display:block;width:100%;height:auto}
