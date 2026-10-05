@@ -208,9 +208,20 @@
       <div class="learning-boundary">
         <div class="eyebrow">IMPORTANT BOUNDARY</div>
         <p>This supports <b>goal-directed social information sampling</b>, not a generic uncertainty-seeking rule. ΔActive is a same-state counterfactual inside the learned predictive model, not a randomized causal effect of forcing Observe.</p>
-        <p>The current replay agent also does not yet justify a strong active-sensing claim: removing Observe-contingent information reveal had little effect on reward. The factorized 5-event transitions therefore remain descriptive support rather than the mechanistic headline.</p>
+        <p>The strict v2 agent provides only limited sufficiency for active sensing: under an Active-specific objective, revealing social evidence increases reward by only +7.8×10<sup>−5</sup> per event (19/27 animals, P=.0056) while increasing policy–value alignment in 24/27 animals. The effect is absent for a food-all objective. This supports objective-specific social information use, not a strong generic active-sensing claim.</p>
       </div>
     </div>
+
+    <details class="learning-details learning-supporting">
+      <summary>Supporting agent sufficiency test</summary>
+      <p class="learning-support-note">This test asks a narrower question than the animal analysis: if an agent can only access social evidence after choosing Observe, is the learned prospective value sufficient to train selective social sampling?</p>
+      <div class="learning-grid learning-grid-primary">
+        <figure class="learning-figure learning-figure-main">
+          <picture><source media="(max-width:600px)" srcset="assets/active_sensing_strict_v11_mobile.svg"><img src="assets/active_sensing_strict_v11.svg" alt="Strict active-sensing agent selects high prospective-value states and shows a small objective-specific benefit from social evidence"></picture>
+          <figcaption><b>Strict agent sufficiency, not a generic active-sensing claim.</b> Immediate Observe-vs-Other outcomes are compared at the same world-model state; current social channels are unavailable before the decision and are revealed only after Observe. Under the Active objective, the agent preferentially samples states with higher ΔActive (25/27, P=1.26×10<sup>−6</sup>) and social reveal modestly increases policy–value alignment and reward. The reward effect is tiny and disappears for the food-all objective.</figcaption>
+        </figure>
+      </div>
+    </details>
 
     <details class="learning-details learning-supporting">
       <summary>Supporting descriptive transition results</summary>
