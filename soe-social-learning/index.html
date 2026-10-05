@@ -87,8 +87,8 @@
 <p>Full SLM beats every classical RL baseline under the restricted contract; SLM+choice persistence recovers 96.9% of the Current→full-history-MLP gain.</p>
 </div><div class="card info">
 <div class="metric-label">CROSS-SPECIES</div>
-<div class="metric">5 species</div>
-<p>Nine current external evidence families recover source identity, multiscale state, active sampling, value/credit or neural links.</p>
+<div class="metric">4 computations</div>
+<p>External evidence is organized around source-tagged credit, state-gated information value, task-matched multiscale state, and sampling-to-action separation; each dataset is labeled by what it actually tests.</p>
 </div><div class="card violet">
 <div class="metric-label">NEURAL SEQUENCE</div>
 <div class="metric">Policy → APE → update</div>
@@ -124,8 +124,8 @@
 <div class="card violet"><div class="series-index">09</div><h3>Information access and dopamine credit are separable</h3><p>Visual Block reduces access to useful social content; VTA inhibition selectively disrupts Active social-reward credit across acute, within-session and session-scale tests.</p></div>
 <div class="card good"><div class="series-index">10</div><h3>SOE experience generalizes</h3><p>Prior SOE training alters later novel-food engagement and observational-fear organization.</p></div>
 <div class="card violet"><div class="series-index">11</div>
-<h3>SLM principles recur across species</h3>
-<p>Current external tests span five species and recover complementary components: source identity, multiscale history, active sampling, policy/value and neural-state links.</p></div></div>
+<h3>Four SLM computations organize cross-task evidence</h3>
+<p>Cross-task evidence now separates direct comparator tests, component transfer, neural convergence and literature-only support instead of counting every positive dataset equally.</p></div></div>
 </div>
 </section>
 <section class="alt" id="phenotype">
@@ -576,96 +576,77 @@
 </section>
 <section id="crossspecies"><div class="container">
 <div class="section-head"><div><div class="section-kicker">Beyond SOE</div>
-<h2>What actually transfers from the SLM across tasks and species?</h2></div>
-<p>The external datasets now have three clearly separated roles. Direct model tests ask whether an SLM-style structured state improves held-out behavior. Component-transfer tests ask whether one architectural principle survives outside the social task. Neural convergence asks whether independent neural data contain the same computations; these are not presented as full SLM fits.</p>
-</div>
-<div class="cards-3">
-<div class="card good"><div class="metric-label">TIER 1</div><div class="metric">Direct SLM-style model tests</div><p>Macaque behavior, human behavior, rat observational maze, rat DANDI001169, Aeon and the cooperative-foraging validation split. These are the datasets used to test predictive value of structured state.</p></div>
-<div class="card info"><div class="metric-label">TIER 2</div><div class="metric">Component transfer</div><p>Tests of one SLM design principle without claiming full social-learning transfer. Mouse DANDI001632 belongs here: it tests a task-adaptive temporal state basis.</p></div>
-<div class="card violet"><div class="metric-label">TIER 3</div><div class="metric">Neural/mechanistic convergence</div><p>ACC, marmoset dmPFC/evidence accumulation, primate self/other RPE and reward-DA-to-future-behavior links. These support SLM computations but are not full cross-species model fits.</p></div>
-</div>
-<figure class="figure evidence-figure">
-<a class="figure-zoom" href="assets/SOE_crossspecies_SLM_role_v4.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_role_v4_mobile.png"/>
-<img alt="Direct cross-species SLM-style held-out tests and flexible-model gap recovery" loading="lazy" src="assets/SOE_crossspecies_SLM_role_v4.png"/>
-</picture></a>
-<figcaption><strong>Cross-species Fig. 1 - direct SLM role.</strong> Panel A includes only held-out behavioral tests in which a structured SLM-style representation is compared with a simpler baseline. The effect axis is paired rank-biserial and therefore has the same -1 to +1 interpretation across datasets. Macaque DANDI001435, human, rat demonstrator, rat DANDI001169 and Aeon all show positive effects at their independent unit. Cooperative foraging is included as validation-trajectory consistency, not as independent-animal inference. Panel B asks a different question: how much of the baseline-to-flexible-model gain is recovered by the structured state. SOE, macaque, human and cooperative follower are near the flexible ceiling; rat DANDI001169 exceeds the tested TinyRNN reference.</figcaption>
-</figure>
-<div class="panel" style="margin-top:18px">
-<div class="section-kicker">Direct model-test table</div>
-<h3 style="margin-top:6px">Each positive result must name the SLM component, comparator and independent unit</h3>
-<div class="table-wrap"><table>
-<thead><tr><th>Dataset</th><th>SLM component tested</th><th>Primary comparison</th><th>Independent unit</th><th>Result</th></tr></thead>
-<tbody>
-<tr><td>Macaque DANDI001435</td><td>multiscale state + source identity</td><td>current baseline vs source-aware dual multiscale</td><td>7 behavior sequences</td><td>7/7 improve; r_rb=1.00; P=.00781</td></tr>
-<tr><td>Human exp/obs</td><td>multiscale social history</td><td>current state vs multiscale history</td><td>10 held-out subjects</td><td>9/10 improve; r_rb=.964; P=.00195</td></tr>
-<tr><td>Rat observational maze</td><td>source-tagged social evidence</td><td>self-history vs current demonstrator</td><td>5 rats</td><td>5/5 improve; r_rb=1.00; P=.03125</td></tr>
-<tr><td>Rat DANDI001169</td><td>multiscale state</td><td>current baseline vs multiscale history</td><td>10 rats</td><td>7/10 improve; r_rb=.745; P=.0186</td></tr>
-<tr><td>Aeon social foraging</td><td>recent partner history</td><td>zero/current partner vs recent partner history</td><td>5 experiments</td><td>history 5/5 positive; r_rb=1.00; P=.03125</td></tr>
-<tr><td>Cooperative foraging</td><td>social information value / policy</td><td>self-only vs self + social state</td><td>200 held-out trajectories</td><td>182/200 improve; r_rb=.94; trajectory-level P&lt;1e-20</td></tr>
-</tbody>
-</table></div>
-<p class="small">The cooperative trajectories quantify reproducibility on a fixed validation split and are not counted as 200 independent animals.</p>
-</div>
-<figure class="figure evidence-figure">
-<a class="figure-zoom" href="assets/SOE_crossspecies_SLM_module_map_v2.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_module_map_v2_mobile.png"/>
-<img alt="Matrix showing which SLM component each external dataset tests directly or supports mechanistically" loading="lazy" src="assets/SOE_crossspecies_SLM_module_map_v2.png"/>
-</picture></a>
-<figcaption><strong>Cross-species Fig. 2 - component map.</strong> Dark blue means a direct held-out SLM-style model test. Light blue means transfer of one architectural component. Teal means external neural/mechanistic convergence. Blank cells are intentionally blank. This prevents a marmoset neural result or a non-social timing result from being mislabeled as a full SLM transfer.</figcaption>
-</figure>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Policy / information value</div>
-<h3>The recurring behavioral principle is conditional use of social information</h3></div>
-<p>The SLM claim is not that social information is always useful. It is that the policy uses source-tagged information when it is behaviorally valuable, with that value depending on role, uncertainty and recent partner history.</p>
-</div>
-<figure class="figure evidence-figure">
-<a class="figure-zoom" href="assets/SOE_crossspecies_SLM_policy_v3.png" rel="noopener" target="_blank"><picture>
+<h2>Four SLM computations organize the cross-task evidence</h2></div>
+<p>The cross-species claim is no longer based on counting positive datasets. Each external result is assigned to the computation it tests, and the comparator level is shown explicitly. Direct behavioral transfer, component transfer, neural convergence and literature-only support are kept separate.</p></div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_four_transferable_computations_v1.png" rel="noopener" target="_blank"><picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_four_transferable_computations_v1_mobile.png"/>
+<img alt="Four transferable SLM computations and their external evidence" loading="lazy" src="assets/SOE_four_transferable_computations_v1.png"/></picture></a>
+<figcaption><strong>Cross-species framework.</strong> The four candidate transferable computations are: source-tagged credit; state-gated information value; a task-matched multiscale state; and separation of information sampling from action execution. VTA/DA is treated as an implementation layer rather than a fifth computation. The sampling-to-action architecture is established most directly in SOE; marmoset gaze-gated evidence accumulation is an architectural analogue, not a full two-policy replication.</figcaption></figure>
+<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Comparator audit</div>
+<h3>Where does the structured state clear a stronger model comparator?</h3></div>
+<p>A current-state/no-history baseline only establishes that history helps. The stronger question is whether the structured state improves over a matched alternative model and approaches a flexible ceiling.</p></div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_comparator_hierarchy_v1.png" rel="noopener" target="_blank"><picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_comparator_hierarchy_v1_mobile.png"/>
+<img alt="Human and macaque external comparator hierarchy for structured SLM-style state" loading="lazy" src="assets/SOE_crossspecies_comparator_hierarchy_v1.png"/></picture></a>
+<figcaption><strong>Comparator hierarchy.</strong> Human held-subject prediction provides the cleanest current external comparator test: multiscale social history beats the best matched Feature-Q baseline in 8/10 subjects (r_rb=.891, exact one-sided P=.00488) and recovers 90.2% of the Feature-Q-to-RNN gain. The macaque result also improves over the best matched Feature-Q model, but the 44 date clusters are nested in only two monkeys; it is therefore shown as a sensitivity analysis, not as 44 independent animals. Exact RW/Q/CK-family adjudication is not yet available for every external task and is not implied by this panel.</figcaption></figure>
+<div class="panel" style="margin-top:18px"><div class="section-kicker">Current comparator status</div>
+<h3 style="margin-top:6px">The external datasets do not all answer the same model-selection question</h3>
+<div class="table-wrap"><table><thead><tr><th>Dataset</th><th>What is tested now</th><th>Comparator</th><th>Independent unit</th><th>Current interpretation</th></tr></thead><tbody>
+<tr><td>Human exp/obs</td><td>multiscale social state</td><td>best matched Feature-Q; RNN ceiling</td><td>10 held-out subjects</td><td>8/10 vs Feature-Q; r_rb=.891; one-sided P=.00488</td></tr>
+<tr><td>Macaque behavior</td><td>multiscale + source structure</td><td>Feature-Q sensitivity; RNN ceiling</td><td>2 monkeys; 44 nested date clusters</td><td>41/44 date clusters improve; sensitivity, not animal-level population inference</td></tr>
+<tr><td>Rat observational maze</td><td>source-tagged social evidence</td><td>self-history; moving-object source</td><td>5 demonstrator rats</td><td>direct source-identity/component test; not a full classical-RL adjudication</td></tr>
+<tr><td>Rat DANDI001169</td><td>multiscale state</td><td>current baseline; TinyRNN</td><td>10 rats</td><td>structured-state/component test; matched classical RL family still missing</td></tr>
+<tr><td>Aeon</td><td>recent partner history</td><td>self/current-social baselines</td><td>5 experiments</td><td>social-history component test</td></tr>
+<tr><td>Cooperative foraging</td><td>social information value / policy</td><td>self-only; flexible RF</td><td>fixed held-out trajectories from one dyad</td><td>within-dyad validation consistency; not animal-level generalization</td></tr>
+</tbody></table></div></div>
+<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">State-gated information value</div>
+<h3>Social information is useful conditionally, not uniformly</h3></div>
+<p>This is the strongest cross-task behavioral convergence: the value of partner information depends on decision-maker state, source identity, role and recent social history.</p></div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_SLM_policy_v3.png" rel="noopener" target="_blank"><picture>
 <source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_policy_v3_mobile.png"/>
-<img alt="Cross-task SLM policy and social information value tests" loading="lazy" src="assets/SOE_crossspecies_SLM_policy_v3.png"/>
-</picture></a>
-<figcaption><strong>Cross-species Fig. 3 - SLM policy principle.</strong> Cooperative foraging shows much larger social information value for the follower than the leader, and self-uncertainty increases social value only in the follower. Rat observational choice shows a strong demonstrator effect but not a comparable moving-object effect. Aeon shows that recent partner history is more reliable than current partner state. These results support conditional information use rather than a universal uncertainty gate.</figcaption>
-</figure>
-<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Neural convergence</div>
-<h3>Independent neural datasets align to specific SLM computations</h3></div>
-<p>This tier is deliberately separated from model transfer. The question is whether the same computational variables appear in independent neural data: multiscale state, social evidence accumulation, history-dependent bias, source-tagged reward update and outcome-to-future-policy linkage.</p>
+<img alt="Cross-task tests of state-gated social information value" loading="lazy" src="assets/SOE_crossspecies_SLM_policy_v3.png"/></picture></a>
+<figcaption><strong>Conditional information use.</strong> Cooperative foraging shows greater social information value in the follower and a role-by-uncertainty interaction on the fixed validation trajectories. Rat observational choice shows a demonstrator-source effect that is not reproduced by a moving object. Aeon shows reliable value of recent partner history across five experiments. These analyses support state-gated social information use; they do not require every task to instantiate the exact SOE equations.</figcaption></figure>
+<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Sampling to action</div>
+<h3>The two-controller architecture is strongest in SOE, with an external architectural analogue</h3></div>
+<p>In SOE, the information-sampling policy and native Feed policy are separable: sampled demonstrator-feeding content, not a shared scalar SLM state, predicts short-latency Feed conversion. The marmoset task provides the closest external analogue because gaze/sampling gates partner evidence before that evidence is accumulated into choice.</p></div>
+<div class="cards-3">
+<div class="card good"><div class="metric-label">SOE</div><div class="metric">Observe -&gt; content -&gt; Feed</div><p>Recent Observe alone and the old scalar SLM state are insufficient; observed demonstrator-feeding content produces the short-latency conversion signal.</p></div>
+<div class="card info"><div class="metric-label">Marmoset analogue</div><div class="metric">gaze -&gt; evidence -&gt; decision</div><p>Partner evidence is gated by active gaze and then accumulated into decision variables. With only two animals, this is an architectural analogue rather than population-level replication of the SOE two-policy model.</p></div>
+<div class="card violet"><div class="metric-label">Rat maze bridge</div><div class="metric">observed source -&gt; later choice</div><p>Demonstrator evidence predicts the observer's later choice more strongly than a moving-object source, supporting content-to-action transfer without demonstrating an explicit sample controller.</p></div>
 </div>
-<figure class="figure evidence-figure">
-<a class="figure-zoom" href="assets/SOE_crossspecies_SLM_neural_v3.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_neural_v3_mobile.png"/>
-<img alt="Neural datasets mapped to specific SLM computations" loading="lazy" src="assets/SOE_crossspecies_SLM_neural_v3.png"/>
-</picture></a>
-<figcaption><strong>Cross-species Fig. 4 - neural alignment.</strong> Macaque ACC is a direct neural test of the multiscale-state component. Reward DA is a prospective behavior bridge. Marmoset and primate mPFC results are independent mechanistic convergence. The plot uses expected-direction effects only to visualize consistency within each source; the unit type and test remain source-specific and are not pooled into one meta-analysis.</figcaption>
-</figure>
-<div class="cards-4" style="margin-top:18px">
-<div class="card good"><div class="metric-label">SOURCE IDENTITY</div><div class="metric">directly tested</div><p>Macaque source-aware state improves over shared state; rat demonstrator evidence is stronger than moving-object evidence.</p></div>
-<div class="card good"><div class="metric-label">MULTISCALE STATE</div><div class="metric">directly tested</div><p>Macaque, human and rat DANDI001169 all show held-out gains from structured history; macaque module ablations isolate the multiscale contribution.</p></div>
-<div class="card info"><div class="metric-label">ADAPTIVE POLICY</div><div class="metric">conditional value</div><p>Cooperative role, uncertainty and Aeon recent-partner history show that information value changes with the state of the decision maker.</p></div>
-<div class="card violet"><div class="metric-label">CREDIT / NEURAL</div><div class="metric">convergent support</div><p>ACC, marmoset evidence accumulation, primate self/other RPE and reward DA map onto distinct SLM computations rather than a generic neural signal.</p></div>
-</div>
-<div class="panel" style="margin-top:22px">
-<div class="section-kicker">Boundaries that stay visible</div>
-<h3 style="margin-top:6px">What these external datasets do not establish</h3>
+<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Neural implementation</div>
+<h3>Neural datasets are mapped to specific computations without treating neurons as animals</h3></div>
+<p>ACC tests the multiscale-state component. Reward DA provides a prospective behavior bridge with DLS dLight as a negative control. Marmoset effects are displayed separately for the two recorded animals; neuron-level P values are not used as population inference.</p></div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_SLM_neural_v4.png" rel="noopener" target="_blank"><picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_SLM_neural_v4_mobile.png"/>
+<img alt="Neural alignment to SLM computations without neuron-as-animal inference" loading="lazy" src="assets/SOE_crossspecies_SLM_neural_v4.png"/></picture></a>
+<figcaption><strong>Neural convergence.</strong> Macaque ACC multiscale-state encoding is evaluated by date clusters. The marmoset panel shows the direction and size of the effect separately in animals K and D and deliberately omits cell-level inferential P values. DANDI000351 reward DA adds prospective behavioral information in 6/7 animals, whereas DANDI000559 DLS dLight does not show the same increment at 30 or 60 s.</figcaption></figure>
+<div class="panel warn" style="margin-top:20px"><div class="section-kicker">Primate RPE audit</div>
+<h3 style="margin-top:6px">The current cell-slope reanalysis is not used as independent evidence</h3>
+<p>The published Noritake/Isoda study reports agent-specific self- and other-RPE populations and an O-RPE decoder. Our earlier replot selected the published RPE-defined subpopulations and then re-estimated RPE slopes from those same population files; that is circular for establishing the existence of the RPE effect. It has therefore been removed from the quantitative main figure. The public release provides preselected population objects and decoder outputs, but not a trial-resolved table that currently lets us redo cell classification on one half of trials and test on the other half. A split-half or held-out cross-source validation is required before this dataset is promoted again as an independent quantitative SLM-credit test.</p>
+<p class="small">The original source-data replot remains below for audit only; its cellwise P values are not part of the cross-species evidence count.</p></div>
+<div class="panel" style="margin-top:20px"><div class="section-kicker">Core interpretation</div>
+<h3 style="margin-top:6px">What the current external evidence can support</h3>
 <div class="cards-4">
-<div class="card warn"><div class="metric-label">DANDI001632</div><div class="metric">component only</div><p>Physical time becomes useful when the task makes elapsed time informative. This supports task-adaptive state construction, not social-learning transfer.</p></div>
-<div class="card warn"><div class="metric-label">MARM / mPFC</div><div class="metric">not full SLM fits</div><p>They support evidence accumulation, history bias and source-tagged credit; they do not show that the exact mouse SLM equations govern primate behavior.</p></div>
-<div class="card warn"><div class="metric-label">DLS dLIGHT</div><div class="metric">negative control</div><p>DANDI000559 does not show a reliable prospective increment at 30 s or 60 s. The neural bridge is therefore not 'any dopamine-family signal predicts future behavior'.</p></div>
-<div class="card warn"><div class="metric-label">FLEXIBLE MODELS</div><div class="metric">ceiling, not enemy</div><p>RNN, HistGB and RF remain flexible references. The claim is structured interpretability with strong predictive recovery, not universal domination of every black-box model.</p></div>
-</div>
-</div>
-<details class="panel" style="margin-top:20px"><summary><strong>Dataset-depth audits and raw-source plots</strong></summary>
+<div class="card good"><div class="metric-label">SOURCE TAGGING</div><div class="metric">behavioral support</div><p>Rat demonstrator versus moving-object specificity and macaque source-aware state support source identity. Primate RPE remains literature/audit support until independent validation.</p></div>
+<div class="card good"><div class="metric-label">GATED VALUE</div><div class="metric">cross-task support</div><p>SOE state gating, cooperative role-by-uncertainty and Aeon partner history converge on conditional information value.</p></div>
+<div class="card info"><div class="metric-label">MULTISCALE STATE</div><div class="metric">strongest model transfer</div><p>Human and macaque structured states clear stronger Feature-Q comparators; rat 001169 and mouse 001632 add component-level support.</p></div>
+<div class="card violet"><div class="metric-label">SAMPLE -&gt; ACTION</div><div class="metric">SOE direct; marmoset analogue</div><p>SOE establishes separate Observe and Feed control. Marmoset gaze-gated evidence accumulation is the closest current external architectural analogue.</p></div>
+</div></div>
+<details class="panel" style="margin-top:20px"><summary><strong>Dataset-depth audits and source plots</strong></summary>
 <div class="download-grid" style="margin-top:14px">
-<div class="download-card"><a href="assets/SOE_001435_multimetric_ablation_v1.png">Macaque multimetric + module ablation</a><p class="small">Brier, NLL, AUC and source/multiscale ablations on the same seven sequences.</p></div>
+<div class="download-card"><a href="assets/SOE_crossspecies_SLM_role_v4.png">Earlier rank-biserial summary</a><p class="small">Retained for audit; not used as the main cross-dataset figure because small-n effects saturate near +1 and mix different independent units.</p></div>
+<div class="download-card"><a href="assets/SOE_001435_multimetric_ablation_v1.png">Macaque multimetric + ablation</a><p class="small">Brier, NLL, AUC and source/multiscale ablations.</p></div>
 <div class="download-card"><a href="assets/SOE_ratmaze_multilevel_robustness_v1.png">Rat maze multilevel robustness</a><p class="small">Rat-level, session-level and moving-object specificity checks.</p></div>
-<div class="download-card"><a href="assets/SOE_cooperative_trajectory_benchmark_v1.png">Cooperative trajectory source plot</a><p class="small">All held-out trajectory values, model gains and uncertainty gating.</p></div>
-<div class="download-card"><a href="assets/SOE_marmoset_raw_mechanistic_v3.png">Marmoset raw mechanistic panels</a><p class="small">Partner variability, neural evidence accumulation, drift coupling and history bias.</p></div>
-<div class="download-card"><a href="assets/SOE_primate_source_tagged_RPE_v2.png">Primate source-tagged RPE cells</a><p class="small">Self- and other-RPE populations from the source-data tables.</p></div>
-<div class="download-card"><a href="assets/SOE_001632_time_state_v2.png">Mouse DANDI001632 time-state control</a><p class="small">Task-general temporal-state component test.</p></div>
-</div>
-</details>
+<div class="download-card"><a href="assets/SOE_cooperative_trajectory_benchmark_v1.png">Cooperative trajectory audit</a><p class="small">Held-out trajectory values; trajectories are not treated as independent animals.</p></div>
+<div class="download-card"><a href="assets/SOE_marmoset_raw_mechanistic_v3.png">Marmoset raw mechanistic panels</a><p class="small">Source-data units for the two animals; cell-level P values are descriptive within-animal evidence only.</p></div>
+<div class="download-card"><a href="assets/SOE_primate_source_tagged_RPE_v2.png">Primate RPE source-data replot - audit only</a><p class="small">Selection-circular for our slope reanalysis; excluded from quantitative cross-species inference pending split-half/held-out validation.</p></div>
+<div class="download-card"><a href="assets/SOE_001632_time_state_v2.png">DANDI001632 time-state component</a><p class="small">Task-adaptive temporal-state component test; not social SLM transfer.</p></div>
+</div></details>
 <div class="download-grid" style="margin-top:20px">
-<div class="download-card"><a href="data/SOE_crossspecies_SLM_evidence_table_v1.csv">SLM evidence table</a><p class="small">Dataset, evidence tier, SLM component, unit, effect size, P value and interpretation.</p></div>
-<div class="download-card"><a href="data/SOE_crossspecies_gap_recovery_v1.csv">Gap-recovery table</a><p class="small">Baseline, structured state and flexible reference under matched contracts.</p></div>
-<div class="download-card"><a href="data/SOE_crossspecies_complete_registry_v1.csv">Complete external registry</a><p class="small">All current external datasets, including positive, partial and boundary results.</p></div>
+<div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v1.csv">Comparator audit</a><p class="small">Human and macaque stronger-comparator results plus explicit gaps.</p></div>
+<div class="download-card"><a href="data/SOE_crossspecies_SLM_evidence_table_v1.csv">SLM evidence table</a><p class="small">Evidence tier, SLM component, unit, effect and interpretation.</p></div>
+<div class="download-card"><a href="data/SOE_crossspecies_complete_registry_v1.csv">Complete external registry</a><p class="small">All external datasets, including component-only and control results.</p></div>
 </div>
 </div></section><section class="alt" id="resources">
 <div class="container">

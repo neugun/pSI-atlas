@@ -1,0 +1,4 @@
+dataset,tier,structured,comparator,selection_rule,unit,n,wins,rrb,p_one_sided,median_brier_gain,mean_brier_gain
+Human exp/obs,classical-comparator,multiscale_history,featureq_multiscale,best aggregate Feature-Q under same held-subject OOF,held-out subject,10,8.0,0.8909090909090909,0.0048828125,0.0006115333141466506,0.0007218028507890703
+Macaque global,classical-comparator sensitivity,multiscale_plus_switchmem,featureq_multiscale,best aggregate Feature-Q; average 2 monkeys within date,date cluster (2 monkeys nested),44,41.0,0.9818181818181818,1.8758328224066645e-12,0.0017572444103220834,0.002131144327665237
+Rat DANDI001169,comparator gap,multiscale_history,baseline / TinyRNN only,no matched classical RL family currently present,10 rats,10,,,,,
