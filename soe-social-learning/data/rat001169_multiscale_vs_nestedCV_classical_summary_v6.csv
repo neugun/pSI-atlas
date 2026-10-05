@@ -1,0 +1,2 @@
+n,wins,mean_brier_classical,mean_brier_multiscale,mean_brier_gain,median_brier_gain,rank_biserial,p_one_sided,selected_models
+10,8,0.2287782247020754,0.22747270935026126,0.0013055153518141322,0.0012685296135661467,0.8909090909090909,0.0048828125,fold0:ck;fold1:ck;fold2:ck;fold3:ck;fold4:ck

@@ -1,0 +1,4 @@
+dataset,tier,structured,comparator,selection_rule,unit,n,wins,rrb,p_one_sided,median_brier_gain,mean_brier_gain
+Human exp/obs,classical-comparator,multiscale_history,featureq_multiscale,best aggregate Feature-Q under same held-subject OOF,held-out subject,10,8.0,0.8909090909090909,0.0048828125,0.0006115333141466,0.000721802850789
+Macaque global,classical-comparator sensitivity,multiscale_plus_switchmem,featureq_multiscale,best aggregate Feature-Q; average 2 monkeys within date,date cluster (2 monkeys nested),44,41.0,0.9818181818181818,1.8758328224066645e-12,0.001757244410322,0.0021311443276652
+Rat DANDI001169,classical-comparator,multiscale_logit,nested-CV selected classical RL (CK in 5/5 outer folds),"within each outer training set, 4-fold held-rat CV among WSLS/Q/asymQ/forgetQ/CK/Q+CK; same 12,564 violation-filtered trials and original 5-fold held-rat outer split",held-out rat,10,8.0,0.8909090909090909,0.0048828125,0.0012685296135661,0.0013055153518141
