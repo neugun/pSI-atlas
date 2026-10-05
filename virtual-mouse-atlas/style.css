@@ -384,3 +384,9 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
 /* v10: mobile-specific manuscript figures for the learning story */
 .learning-figure picture{display:block;width:100%}
 .learning-figure picture img{display:block;width:100%;height:auto}
+
+
+.lang-switch{position:fixed;top:14px;right:18px;z-index:1200;display:flex;gap:4px;align-items:center;padding:4px;background:rgba(255,255,255,.94);border:1px solid #d8d8d8;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.06);font:600 12px/1.2 Arial,"Microsoft YaHei",sans-serif}
+.lang-switch a,.lang-switch span{display:block;padding:6px 10px;border-radius:999px;text-decoration:none;color:#555}
+.lang-switch .active{background:#222;color:#fff}
+@media(max-width:600px){.lang-switch{top:8px;right:8px;font-size:11px}.lang-switch a,.lang-switch span{padding:5px 8px}}
