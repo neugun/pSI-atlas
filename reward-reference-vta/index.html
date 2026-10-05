@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Recent reward experience sets a reference for current reward value in VTA dopamine during feeding.">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<title>Recent reward experience sets current reward value in VTA dopamine</title>
+<title>Recent reward history changes how the same food is represented by VTA dopamine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -23,6 +23,7 @@
       <a href="#fig7">Fig. 7</a>
       <a href="#limits">Limits</a>
       <a href="#supplement">Supplement</a>
+      <a class="lang-link" href="zh/">中文</a>
     </nav>
   </div>
 </header>
@@ -31,26 +32,25 @@
 <section class="hero" id="overview">
   <div class="container">
     <span class="eyebrow">Reward-history experiments during ongoing feeding</span>
-    <h1>Recent reward experience sets a reference for the value of the current reward in VTA dopamine</h1>
+    <h1>Recent reward history changes how the same food is represented by VTA dopamine</h1>
     <p class="lede">
-      Mice consumed alternating high- and low-value liquid food while dopamine was measured locally in the ventral tegmental area (VTA).
-      The same current reward produced different sustained dopamine and feeding persistence after different recent reward histories.
-      The history effect was updated by sampled consumption rather than passive time alone, was captured by a continuous learned reference,
-      and became most evident during ongoing consumption. Importantly, sustained VTA dopamine was not a pure abstract-value signal:
-      licking and reward sampling explained substantial concurrent variance, while a history-relative component remained after action controls.
-      Dopamine manipulations bidirectionally changed feeding persistence, yet memory of prior stimulation could alter later dopamine without measurably altering later bout duration.
+      We asked a simple question: does the same food evoke the same dopamine signal regardless of what the animal consumed before it?
+      It does not. Matched 20E or 100E rewards produced different sustained VTA dopamine and different feeding persistence after different recent reward histories.
+      A compact reference variable captures this effect: previously sampled rewards update a stored reference <strong>R</strong>, and the current reward is evaluated relative to that reference as <strong>C=U−R</strong>.
+      This history-relative signal becomes clearer during ongoing consumption, where it coexists with strong licking and sampling-related signals.
+      Causal dopamine manipulations change feeding persistence, but stimulation history can alter later dopamine without measurably changing later bout duration, separating neural memory from its behavioral expression.
     </p>
 
     <div class="cards-3 top-results">
       <article class="card good">
-        <h3>Matched current rewards retain a history effect.</h3>
+        <h3>The same food produces different dopamine and feeding after different histories.</h3>
         <p>
           The aligned history effect was positive for both feeding persistence and sustained VTA dopamine in
           <strong>9/9 mice</strong> (two-sided exact Wilcoxon signed-rank, <strong>P=.003906</strong> for each endpoint).
         </p>
       </article>
       <article class="card violet">
-        <h3>Relative value strengthens during continued consumption.</h3>
+        <h3>The history-relative dopamine signal becomes stronger after consumption begins.</h3>
         <p>
           The sustained-minus-early coefficient for the relative-value coordinate increased by <strong>+1.458</strong> across
           <strong>11 mice</strong> (animal-clustered regression interaction, <strong>P=9.02×10<sup>−8</sup></strong>);
@@ -58,7 +58,7 @@
         </p>
       </article>
       <article class="card info">
-        <h3>Dopamine bidirectionally changes feeding persistence.</h3>
+        <h3>Changing VTA dopamine changes whether the animal keeps eating.</h3>
         <p>
           Consumption-period activation lowered the termination odds ratio (OR) to .690 (13 mice; animal-clustered discrete-time logistic hazard, P=3.29×10<sup>−10</sup>),
           whereas consumption-contingent Jaws optogenetic inhibition raised them (OR=1.341; 6 mice; animal-clustered discrete-time logistic hazard, P=.0289).
@@ -67,7 +67,7 @@
     </div>
 
     <div class="concept-figure" role="img" aria-label="Conceptual model: past sampled rewards build a stored reference R; current reward U is compared with R to form C equals U minus R; VTA dopamine during consumption combines that relative-value coordinate with ongoing sampling and action; dopamine and downstream gates shape feeding persistence.">
-      <div class="concept-title">Past reward builds the reference before the bout; relative value and ongoing sampling are combined during consumption.</div>
+      <div class="concept-title">The model separates three things: what was consumed before, what is available now, and what the animal is doing during the current bout.</div>
       <div class="concept-row">
         <div class="concept-node reference">
           <b>Past samples build R</b>
@@ -98,7 +98,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Methods / glossary</div>
-        <h2>The task separates the reward being consumed now from the rewards consumed recently.</h2>
+        <h2>The experiment lets us ask whether the same food is valued differently after different recent histories.</h2>
       </div>
       <p>
         This box defines the experimental shorthand and the model variables used throughout the page.
@@ -287,7 +287,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 1</div>
-        <h2>The same current reward is valued differently after different recent histories.</h2>
+        <h2>The same food produces different dopamine and feeding after different recent reward histories.</h2>
       </div>
       <p>
         Fig. 1 is intentionally model-free. H and S contain the same 100E reward; L and N contain the same 20E reward.
@@ -326,7 +326,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 2</div>
-        <h2>Consuming the new reward, rather than simply waiting, updates the history-dependent state.</h2>
+        <h2>The reference changes when the animal samples the new reward, not simply because time passes.</h2>
       </div>
       <p>
         Alternating 120-s blocks make elapsed time and reward sampling diverge on the first bout after a switch.
@@ -353,7 +353,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figures 3 and 4</div>
-        <h2>A continuous history coordinate carries information that categorical context and strong alternative models miss.</h2>
+        <h2>A continuous reward-history variable explains dopamine beyond current reward and simple context labels.</h2>
       </div>
       <p>
         The recursive model uses prior sampled reward identities to build R and then evaluates the current reward as C=U−R.
@@ -391,7 +391,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 5</div>
-        <h2>Relative value is constructed during ongoing consumption rather than read out as a fixed onset response.</h2>
+        <h2>The history-relative signal emerges during the bout and is not explained away by licking.</h2>
       </div>
       <p>
         The broad-window analysis shows a strong early-to-sustained transition.
@@ -437,7 +437,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 6</div>
-        <h2>The history computation transfers across reward contexts without requiring an identical temporal waveform.</h2>
+        <h2>The same reward-history rule generalizes to a different reward-quality manipulation.</h2>
       </div>
       <p>
         A separate seven-mouse reward-quality experiment used quinine-adulterated Ensure (QE) to ask whether a reward-history coordinate frozen from the Natural task carries information into a different sensory-value manipulation.
@@ -465,7 +465,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 7</div>
-        <h2>Dopamine promotes feeding persistence, but neural reference memory can outlast behavioral expression.</h2>
+        <h2>Current dopamine controls feeding, while dopamine history can be remembered without changing later feeding.</h2>
       </div>
       <p>
         The causal manipulation and the history analysis answer different questions.
@@ -508,7 +508,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Limitations and next experiments</div>
-        <h2>The data identify a reward-history computation more clearly than its cellular implementation.</h2>
+        <h2>The computation is clearer than where and how it is implemented in the circuit.</h2>
       </div>
       <p>
         The strongest unresolved questions concern the microscopic update variable, the cellular locus of the stored reference, and how a neural history signal is converted into behavior.
@@ -559,7 +559,7 @@
     <div class="section-head">
       <div>
         <div class="section-kicker">Supplement</div>
-        <h2>Additional analyses test robustness without changing the main interpretation.</h2>
+        <h2>Additional analyses test alternative explanations without interrupting the main story.</h2>
       </div>
       <p>
         These sections are folded by default so that the main page reads as a biological argument rather than a model inventory.

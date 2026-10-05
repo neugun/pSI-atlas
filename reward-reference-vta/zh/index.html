@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="近期奖赏经验如何改变同一种食物在VTA多巴胺中的表征，以及这种历史依赖信号如何影响进食持续。">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>近期奖赏历史会改变同一种食物在VTA多巴胺中的表征</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="brand-mark">R</span> 奖赏历史 × VTA 多巴胺</div>
+    <nav aria-label="页面导航">
+      <a href="#overview">概览</a>
+      <a href="#methods">方法</a>
+      <a href="#fig1">Fig. 1</a>
+      <a href="#fig2">Fig. 2</a>
+      <a href="#fig34">Fig. 3–4</a>
+      <a href="#fig5">Fig. 5</a>
+      <a href="#fig6">Fig. 6</a>
+      <a href="#fig7">Fig. 7</a>
+      <a href="#limits">局限</a>
+      <a href="#supplement">补充</a>
+      <a class="lang-link" href="../">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="overview">
+  <div class="container">
+    <span class="eyebrow">进食过程中近期奖赏历史如何影响VTA多巴胺</span>
+    <h1>近期奖赏历史会改变同一种食物在VTA多巴胺中的表征</h1>
+    <p class="lede">
+      这个项目问的是一个很直接的问题：<strong>同一种食物，在动物刚刚经历过不同奖赏之后，VTA多巴胺反应还会不会一样？</strong>
+      答案是不一样。即使当前吃到的是完全相同的20E或100E，前面吃过什么仍然会改变持续性的VTA多巴胺信号，也会改变动物继续吃下去的倾向。
+      我们用一个简单的“参照值”来描述这种历史影响：过去真正被动物采样过的奖赏会逐步形成一个内部参照 <strong>R</strong>，
+      当前奖赏 <strong>U</strong> 则相对于这个参照被评价，得到 <strong>C=U−R</strong>。
+      这个历史相对值不是在舔第一下之前就固定出现，而是在持续进食过程中逐渐变得更明显；与此同时，舔舐和当前采样本身也强烈贡献于VTA多巴胺。
+      因果实验进一步说明，当前进食时的VTA多巴胺确实控制进食是否继续；但过去的刺激历史可以影响之后的多巴胺，而不一定足以改变之后的进食时长。
+    </p>
+
+    <div class="cards-3 top-results">
+      <article class="card good">
+        <h3>同一种当前食物，在不同近期历史之后会产生不同的多巴胺和进食持续。</h3>
+        <p>
+          在匹配当前奖赏的比较中，进食持续和持续性VTA多巴胺的历史效应在
+          <strong>9/9只小鼠</strong>中方向一致（双侧 exact Wilcoxon signed-rank，两个终点均 <strong>P=.003906</strong>）。
+        </p>
+      </article>
+      <article class="card violet">
+        <h3>真正的历史相对值信号在进食开始后才逐渐增强。</h3>
+        <p>
+          从进食早期到持续期，relative-value coordinate 的系数增加 <strong>+1.458</strong>，
+          涉及<strong>11只小鼠</strong>（animal-clustered regression interaction，<strong>P=9.02×10<sup>−8</sup></strong>）；
+          11/11只动物的单动物斜率均增加。
+        </p>
+      </article>
+      <article class="card info">
+        <h3>直接改变VTA多巴胺，会改变动物是否继续吃。</h3>
+        <p>
+          进食期激活VTA多巴胺使终止进食的odds ratio降至 .690
+          （13只小鼠；animal-clustered discrete-time logistic hazard，P=3.29×10<sup>−10</sup>）；
+          相反，进食时段特异的Jaws抑制使终止odds升高（OR=1.341；6只小鼠；P=.0289）。
+        </p>
+      </article>
+    </div>
+
+    <div class="concept-figure" role="img" aria-label="概念模型：过去真正采样过的奖赏建立内部参照R；当前奖赏U与R比较得到C等于U减R；进食中的VTA多巴胺同时包含历史相对值C和当前舔舐采样信息；这些信号共同影响进食持续。">
+      <div class="concept-title">最简单的理解：动物不是只看“现在这口东西有多好”，而是会把它和刚刚吃过的东西比较。</div>
+      <div class="concept-row">
+        <div class="concept-node reference">
+          <b>过去真正吃到的奖赏建立 R</b>
+          <span>R 是由此前实际采样到的高/低奖赏逐步更新出的内部参照</span>
+        </div>
+        <div class="concept-arrow">→</div>
+        <div class="concept-node contrast">
+          <b>当前奖赏 U 与 R 比较</b>
+          <span>C = U − R，表示“现在这口”相对近期经验是更好还是更差</span>
+        </div>
+        <div class="concept-arrow">→</div>
+        <div class="concept-node da">
+          <b>VTA多巴胺同时整合相对值与当前采样</b>
+          <span>历史相对值 + 当前舔舐/采样/感觉运动反馈</span>
+        </div>
+        <div class="concept-arrow">→</div>
+        <div class="concept-node current">
+          <b>最终影响是否继续进食</b>
+          <span>但神经历史信号并不保证每次都能转化成可测量的行为变化</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="methods" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">方法 / 名词表</div>
+        <h2>实验的关键，是把“当前正在吃什么”和“刚才吃过什么”分开。</h2>
+      </div>
+      <p>
+        下面先把页面中最容易混淆的实验缩写和模型变量定义清楚。
+        最重要的一点是：<strong>R 是储存的参照值，而 C=U−R 才是当前奖赏相对这个参照的相对值。</strong>
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="methods-table">
+        <thead>
+          <tr><th>术语</th><th>具体定义</th><th>这里如何使用</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>100E / 20E</strong></td>
+            <td><strong>E = Ensure。</strong>100E 是原浓度Ensure；20E 是稀释到原浓度20%的Ensure。</td>
+            <td>它们分别作为高奖赏和低奖赏液体食物。“100/20”指的是Ensure浓度，不是模型中的value数值。</td>
+          </tr>
+          <tr>
+            <td><strong>Reward block</strong></td>
+            <td>在variable session中，100E和20E每<strong>120 s</strong>切换一次。不同采集批次起始block的高低奖赏顺序并不完全相同，重建时已显式校正。</td>
+            <td>如果一个bout跨越120-s切换边界，则整个bout被剔除，而不是在边界处强行切成两个bout。</td>
+          </tr>
+          <tr>
+            <td><strong>Feeding bout</strong></td>
+            <td>在完整lick stream中，如果相邻两次lick间隔 &gt;5 s，则定义为新的bout。bout结束时间为最后一次lick + ~0.12 s；≤0.2 s的bout剔除。</td>
+            <td>主要持续性神经读出是bout开始后2–5 s，所以该分析只使用持续至少5 s的bout。</td>
+          </tr>
+          <tr>
+            <td><strong>GRAB-DA</strong></td>
+            <td>使用GPCR-activation-based dopamine sensor进行fiber photometry，记录位置是<strong>VTA局部</strong>。</td>
+            <td>这里测的是VTA局部dopamine-sensor fluorescence，不是NAc等投射区多巴胺，也不是dopamine neuron calcium。</td>
+          </tr>
+          <tr>
+            <td><strong>H / L / S / N</strong></td>
+            <td>H = 稳定高奖赏context中的100E；L = 稳定低奖赏context中的20E；S = alternating session中的100E；N = alternating session中的20E。</td>
+            <td>H vs S、L vs N 的当前食物完全相同，主要差别是近期奖赏历史不同。</td>
+          </tr>
+          <tr>
+            <td><strong>U</strong></td>
+            <td>当前奖赏项；主模型中20E=0，100E=1。</td>
+            <td>这里的U只是当前reward identity的模型编码，不是一个独立测得的subjective utility。</td>
+          </tr>
+          <tr>
+            <td><strong>R</strong></td>
+            <td>由此前真正被动物采样过的reward逐步形成的stored reward reference。</td>
+            <td>每一次此前reward sample都会按 R ← R + α(U − R) 更新参照。</td>
+          </tr>
+          <tr>
+            <td><strong>C = U − R</strong></td>
+            <td>当前奖赏相对于stored reference的relative value / contrast coordinate。</td>
+            <td>旧数据表中的列名 <code>RWstate</code> 实际对应的是<strong>C</strong>，不是R。</td>
+          </tr>
+          <tr>
+            <td><strong>α</strong></td>
+            <td>每个reward sample更新R时的学习率/更新比例。</td>
+            <td>自然alternating-reward task中的最优区间较宽，中心大约在0.15–0.16；跨任务分析固定使用α=.20，是因为它仍处于这个宽峰附近，不应理解为一个生物学常数。</td>
+          </tr>
+          <tr>
+            <td><strong>QE</strong></td>
+            <td>Quinine-adulterated Ensure；这里用100E + 3 mM quinine作为更低质量的sensory outcome。</td>
+            <td>用于测试这种history computation能否迁移到另一种reward-quality操作。</td>
+          </tr>
+          <tr>
+            <td><strong>Stim13</strong></td>
+            <td>13只小鼠的VTA dopamine stimulation cohort。</td>
+            <td>同一批动物既用于“当前刺激”的acute effect，也用于“过去刺激历史”的memory analysis。</td>
+          </tr>
+          <tr>
+            <td><strong>Jaws / JAWS</strong></td>
+            <td>Jaws是用于抑制VTA dopamine neuron的red-shifted inhibitory opsin。</td>
+            <td>用于检验进食期VTA多巴胺是否对正常feeding persistence具有因果作用。</td>
+          </tr>
+          <tr>
+            <td><strong>FullHistory</strong></td>
+            <td>保留更多过去reward序列信息的高维history comparator。</td>
+            <td>用于检验单一C坐标是否遗漏了更复杂的历史结构。</td>
+          </tr>
+          <tr>
+            <td><strong>OOF</strong></td>
+            <td>Out-of-fold prediction，这里多数情况下是leave-one-animal-out。</td>
+            <td>用于prediction check；和within-animal inferential test分开解释。</td>
+          </tr>
+          <tr>
+            <td><strong>cSNC / GT</strong></td>
+            <td>cSNC = consummatory successive negative contrast；GT = gustatory thalamus。</td>
+            <td>经典contrast文献只作为候选比较环路的参考，不把它和本项目的VTA机制直接视为同一个现象。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="glossary-grid">
+      <article class="card info">
+        <h3>“R系数为负”和“约3 s后系数变正”说的不是同一个变量。</h3>
+        <p>
+          <strong>R</strong> 是stored reference。控制当前reward U后，R越高，持续性VTA多巴胺越低，因此R可以有负系数。
+          约3 s后逐渐变正的，是<strong>C=U−R</strong>的系数。
+          旧文档中的 <code>RWstate</code> 也是C，而不是R：在192个eligible bouts、11只小鼠中，
+          β<sub>C</sub>=+2.283（animal-clustered ordinary least-squares regression，P=.00171）。
+          所以固定U时，“C正向”与“R负向”本质上是在描述同一种opponent geometry。
+        </p>
+      </article>
+      <article class="card good">
+        <h3>两组U/R系数来自不同模型，绝对值不能直接比较。</h3>
+        <p>
+          在把U和R分别z-score后的two-predictor model中，持续性多巴胺的系数为
+          <strong>U=+.762，R=−.721</strong>（192个eligible bouts，11只小鼠；animal-clustered OLS；P=.00216和.0282）。
+          后来的action-adjusted model加入早期及同步舔舐项后，使用raw-scale U/R，得到
+          <strong>U=+.815，R=−2.211</strong>（同一11只小鼠；P=8.6×10<sup>−5</sup>和.00153）。
+          这两个模型的scale不同，而且都没有强制 β<sub>U</sub>=−β<sub>R</sub>；只有直接使用C=U−R时才施加这种等幅反向关系。
+        </p>
+      </article>
+      <article class="card warn">
+        <h3>bout前C为负，不代表当前食物具有“负价值”。</h3>
+        <p>
+          在第一下lick之前，模型已经知道当前block是哪种reward，但动物尚未真正采样当前食物。
+          此时C与pre-bout VTA dopamine呈负关系（β=−.485；11只小鼠；animal-clustered regression，P=.000235）。
+          因此更合理的解释是：pre-bout信号反映历史/context形成的准备状态，
+          而不是negative prediction error，也不是说明当前食物本身具有负utility。
+        </p>
+      </article>
+    </div>
+
+    <h3 class="table-title">不同实验有些使用同一批动物，因此“不同实验”不等于“独立动物”。</h3>
+    <div class="table-wrap">
+      <table class="cohort-table">
+        <thead>
+          <tr><th>实验</th><th>动物数</th><th>Animal IDs</th><th>重要重叠关系</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fig.1 H/L/S/N matched-current comparison</td>
+            <td>9</td>
+            <td>002, 004, 193, 195, 199, 200, 202, 217, 219</td>
+            <td>其中7只也属于后面的11-mouse alternating-reward cohort；002还出现在QE/physiology cohort。</td>
+          </tr>
+          <tr>
+            <td>Figs.2–5 120-s alternating 100E/20E</td>
+            <td>11</td>
+            <td>193, 195, 199, 200, 202, 217, 219, 236, 239, 240, 243</td>
+            <td>前5只后来又进入单独的20E stimulation session。</td>
+          </tr>
+          <tr>
+            <td>QE / quinine / hunger / LiCl family</td>
+            <td>7</td>
+            <td>001, 002, 003, 006, 007, 018, 019</td>
+            <td>这些分析属于同一个7-mouse family；只有002和Fig.1 cohort重叠。</td>
+          </tr>
+          <tr>
+            <td>Stim13 acute + stimulation-history</td>
+            <td>13</td>
+            <td>017, 023, 029, 030, 034, 058, 066, 070, 071, 128, 130, 131, 133</td>
+            <td>与11-mouse natural alternating-reward cohort不重叠。</td>
+          </tr>
+          <tr>
+            <td>20E stimulation replication</td>
+            <td>5</td>
+            <td>193, 195, 199, 200, 202</td>
+            <td>这5只就是natural alternating-reward cohort中的同一批动物，只是不同session。</td>
+          </tr>
+          <tr>
+            <td>Jaws contingent / noncontingent inhibition</td>
+            <td>6</td>
+            <td>098, 103, 109, 110, 111, 112</td>
+            <td>独立的inhibition cohort。</td>
+          </tr>
+          <tr>
+            <td>Semaglutide / PBS</td>
+            <td>7</td>
+            <td>005, 029, 034, 058, 066, 070, 071</td>
+            <td>其中6/7与Stim13重叠，但semaglutide是不同的药理实验。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>“急性刺激延长当前进食”和“过去刺激历史不影响之后进食时长”不是矛盾。</strong>
+      急性刺激问的是：正在吃这一bout时提高VTA dopamine，会不会让动物更不容易停止？答案是会。
+      stimulation-history analysis问的是：前面经历过ON/OFF stimulation之后，即使当前刺激条件已经控制住，过去的刺激历史是否还会改变之后的bout？
+      结果是它会改变之后的dopamine readout，但没有可靠地改变之后的bout duration。
+      因此，一个历史痕迹可以在神经层面被保存和读出，却未必每次都有足够强的downstream gain去改变粗粒度行为。
+      Fig.1的自然食物history则同时改变了dopamine和行为，所以两者可以同时成立。
+    </div>
+  </div>
+</section>
+
+<section id="fig1">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 1</div>
+        <h2>同一种食物，在不同近期奖赏历史之后会产生不同的VTA多巴胺和进食持续。</h2>
+      </div>
+      <p>
+        这一图故意不依赖任何latent-state model。H与S当前都是100E；L与N当前都是20E。
+        每一对中，当前食物完全相同，主要区别只是之前的reward history不同。
+      </p>
+    </div>
+    <figure class="figure">
+      <img src="../assets/Fig1_NEURON_REBUILD_FIG1_same_reward_history_v2.png" alt="相同当前奖赏在不同历史后的VTA多巴胺和进食差异">
+      <figcaption>
+        只比较当前食物完全相同的条件，就已经可以看到recent history对bout persistence和持续性VTA dopamine的共同影响。
+        因此最核心的现象并不依赖后面的R或C模型。
+      </figcaption>
+    </figure>
+    <div class="split">
+      <div>
+        <h3>近期经历越低，当前同一种高奖赏往往显得更“好”。</h3>
+        <p>
+          对当前100E来说，比较稳定100E背景和alternating背景；
+          对当前20E来说，也比较不同近期背景下的同一20E。
+          这种matched-current设计直接排除了“只是因为现在食物更好/更差”的简单解释。
+        </p>
+      </div>
+      <div>
+        <h3>pre-bout dopamine和进食后的持续性dopamine并不是同一个信号。</h3>
+        <p>
+          history effect并不是简单地在bout开始前先改变一个baseline，然后整个bout原样延续。
+          pre-consumption和2–5 s sustained period呈现不同符号结构，因此后面需要做time-resolved decomposition。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fig2" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 2</div>
+        <h2>参照值主要随着动物真正采样新的reward而改变，而不是仅仅因为时间过去。</h2>
+      </div>
+      <p>
+        120-s交替block提供了一个关键机会：在switch之后的第一bout，动物已经经历了“时间过去”，但还没有真正吃到当前block的新reward。
+        这样可以把passive time和actual sampling分开。
+      </p>
+    </div>
+    <figure class="figure">
+      <img src="../assets/Fig2_NEURON_REBUILD_FIG2_consumption_updates_reference_v3.png" alt="reward sampling而非单纯时间更新参照">
+      <figcaption>
+        第一bout主要用于限制纯clock解释；后续bout则检验随着实际舔舐/进食累积，history state如何变化。
+      </figcaption>
+    </figure>
+    <div class="callout">
+      在第一次真正采样新reward之前，passive-time model对持续性dopamine最多只增加
+      <strong>ΔR²=.00385</strong>，涉及<strong>9只小鼠</strong>
+      （animal-clustered regression across candidate clock constants；all P&gt;.55）。
+      真正开始采样后，累计吃了多少reward仍然能提供超出简单bout rank的信息。
+    </div>
+  </div>
+</section>
+
+<section id="fig34">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figures 3 and 4</div>
+        <h2>一个连续的reward-history变量，可以解释当前reward和简单context label解释不了的dopamine变化。</h2>
+      </div>
+      <p>
+        递归模型用过去被采样过的reward更新R，然后把当前reward写成C=U−R。
+        因为模型本身已经单独控制了current U，所以C额外解释的部分，本质上就是recent stored history带来的信息。
+      </p>
+    </div>
+    <div class="figure-grid">
+      <figure class="figure">
+        <img src="../assets/Fig3_NEURON_REBUILD_FIG3_continuous_history_deeppath_v3.png" alt="连续reward history坐标">
+        <figcaption>
+          连续history coordinate不仅反映当前block类别，也保留了同一context内部的连续历史差异。
+        </figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="../assets/Fig4_NEURON_REBUILD_FIG4_model_room_v3.png" alt="alternative reward history models">
+        <figcaption>
+          alternative models可以解释部分现象，但没有一个简单替代模型完全吸收cumulative sampled-history信息。
+        </figcaption>
+      </figure>
+    </div>
+    <div class="callout">
+      在<strong>11只小鼠</strong>的leave-one-animal-out prediction中，held-out sustained-dopamine R²：
+      current reward only = .038；加入categorical context = .123；加入continuous history coordinate = .175；
+      context + continuous history = .178（leave-one-animal-out OOF comparison）。
+    </div>
+    <p>
+      HMM/belief-state、average-reward、uncertainty/adaptive-gain和recurrent history model都能解释一部分动态。
+      这里更重要的不是挑出一个“冠军模型”，而是确定哪些history信息在这些替代解释之后仍然存在。
+    </p>
+  </div>
+</section>
+
+<section id="fig5" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 5</div>
+        <h2>历史相对值信号是在bout进行过程中逐渐出现的，而且不能被舔舐完全解释。</h2>
+      </div>
+      <p>
+        这一节把licking/action control直接放进主生物学逻辑里。
+        VTA sustained dopamine并不是“纯value”信号，但也不是“只是舔得更多”。
+      </p>
+    </div>
+    <figure class="figure">
+      <img src="../assets/Fig5_NEURON_REBUILD_FIG5_temporal_construction_v2.png" alt="history relative value在进食过程中逐渐形成">
+      <figcaption>
+        relative-value axis在进食开始时较弱，到持续消费阶段明显增强。
+        raw-signal control说明这种变化并不是由负的pre-bout baseline subtraction人为制造出来的。
+        图中panel C使用matched-bout U/R specification；standardized和action-adjusted两个模型的scale已在方法部分分别解释。
+      </figcaption>
+    </figure>
+
+    <div class="figure-grid">
+      <figure class="figure">
+        <img src="../assets/NEURON_ED_value_vs_action_adjudication_v2.png" alt="VTA dopamine同时包含relative value和licking action成分">
+        <figcaption>
+          sustained dopamine同时包含当前consummatory action / sampling信息和history-relative component。
+          更合适的解释是multiplexing，而不是二选一。
+        </figcaption>
+      </figure>
+      <div class="figure-side">
+        <h3>即使严格控制舔舐，C仍然保留一部分独立解释量。</h3>
+        <p>
+          在sensitivity analysis中，同时灵活控制0–2 s和2–5 s licking之后，
+          C仍贡献<strong>ΔR²=.04895</strong>，
+          来自<strong>11只小鼠</strong>（conditional permutation，<strong>P=.0449</strong>）。
+          因为这个P值接近阈值，所以它是支持性证据，不作为主结论的唯一依据。
+        </p>
+        <h3>更细的时间分辨率提示：采样信号先出现，随后才出现更强的C信号。</h3>
+        <p>
+          在10个探索性0.5-s bin中，late C effect在11只小鼠的animal-clustered regressions中达到
+          <strong>Benjamini–Hochberg q≈.076</strong>。
+          这更适合作为exploratory timing evidence，而不是一个独立的corrected discovery。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fig6">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 6</div>
+        <h2>同一种history rule可以迁移到另一种reward-quality操作。</h2>
+      </div>
+      <p>
+        在另一批7只小鼠中，用quinine-adulterated Ensure建立不同的reward-quality context，
+        然后把natural alternating-reward task中拟合出的history coordinate冻结后直接带过去测试。
+      </p>
+    </div>
+    <figure class="figure">
+      <img src="../assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="reward history computation在QE任务中的泛化">
+      <figcaption>
+        结果支持“recent sampled reward history”是一种可迁移的计算原则，
+        但不要求每个任务都具有完全一样的最佳α、时间波形或behavioral gain。
+      </figcaption>
+    </figure>
+    <div class="callout">
+      从alternating natural-reward task冻结得到的history coordinate，
+      在<strong>7只小鼠</strong>的QE任务中仍为whole-bout dopamine AUC增加
+      <strong>ΔR²=.02540</strong>
+      （animal-clustered regression，<strong>P=.00141</strong>；within-animal circular-shift control，P=.00205）。
+    </div>
+  </div>
+</section>
+
+<section id="fig7" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Figure 7</div>
+        <h2>当前VTA多巴胺直接控制进食，但过去的多巴胺历史可以被记住而不一定改变之后的行为。</h2>
+      </div>
+      <p>
+        这里要把两个问题分开：一是“当前bout里提高/降低dopamine会发生什么”；二是“过去经历过dopamine stimulation之后，会不会留下history trace”。
+      </p>
+    </div>
+    <figure class="figure">
+      <img src="../assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="VTA dopamine的因果作用和历史记忆">
+      <figcaption>
+        自然history和bidirectional dopamine manipulation都指向feeding persistence，
+        但observational data仍不足以证明一个完整的 R → dopamine → behavior mediation chain。
+      </figcaption>
+    </figure>
+    <div class="split">
+      <div>
+        <h3>当前刺激改变的是“正在吃的这一bout”。</h3>
+        <p>
+          进食过程中激活VTA dopamine neuron，会降低停止进食的概率；
+          contingent inhibition则使停止概率增加。
+          这直接说明consumption-period dopamine参与控制feeding persistence。
+        </p>
+      </div>
+      <div>
+        <h3>过去刺激历史改变之后的dopamine，但没有可靠改变之后的bout duration。</h3>
+        <p>
+          在Stim13中，控制当前stim condition、local adaptation和future-history之后，
+          过去ON/OFF sampling history仍解释之后的dopamine：
+          <strong>ΔR²=.002524</strong>，<strong>13只小鼠</strong>
+          （conditional permutation，<strong>P=5×10<sup>−5</sup></strong>）。
+          但同一cohort中，past-history对之后bout duration没有被检测到
+          （animal-clustered regression，P=.742）。
+        </p>
+      </div>
+    </div>
+    <div class="callout">
+      因此，这里最值得保留的概念不是“所有history都会改变behavior”，
+      而是<strong>history memory、dopamine readout和behavioral expression可以部分分离</strong>。
+      自然食物history在Fig.1中同时影响dopamine与behavior；
+      optogenetic history则可以留下可读出的神经痕迹，却不一定达到改变gross bout duration所需的downstream gain。
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">局限与下一步</div>
+        <h2>现在最清楚的是“存在什么计算”，而不是“哪一类细胞在哪里完成了它”。</h2>
+      </div>
+      <p>
+        当前数据已经比较强地限定了reward-history computation，但还不能把R的储存、C的比较和behavioral readout精确落到具体细胞类型或单一脑区。
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <article class="card">
+        <h3>真正的更新单位还没有完全分开。</h3>
+        <p>
+          prior lick count和prior feeding time在现有任务里高度相关。
+          下一步需要独立操纵未采样延迟、采样次数和实际摄入量，才能区分lick-by-lick update和integrated exposure。
+        </p>
+      </article>
+      <article class="card">
+        <h3>bulk VTA photometry无法告诉我们哪些细胞分别编码U、R、C和action。</h3>
+        <p>
+          single-cell recording或imaging可以检验这些成分是否由不同dopamine subpopulation携带，
+          还是由同一细胞在不同时间阶段multiplex。
+        </p>
+      </article>
+      <article class="card">
+        <h3>神经history trace与behavioral expression需要用更直接的因果实验拆开。</h3>
+        <p>
+          可以分别扰动candidate upstream circuit、VTA本身和downstream feeding gate，
+          看哪一步负责存R、哪一步产生C、哪一步把C转换成persistence。
+        </p>
+      </article>
+    </div>
+
+    <div class="split" style="margin-top:18px">
+      <div>
+        <h3>delay × sampling实验可以最直接地检验R到底如何更新。</h3>
+        <p>
+          固定reward identity，同时独立改变“没吃时等了多久”“吃了几次”“总共吃了多少”。
+          如果reference主要由实际experience更新，那么单纯等待应该很少移动R，而sampling exposure应该产生graded update。
+        </p>
+      </div>
+      <div>
+        <h3>state × reward设计可以区分internal state作用于U、R还是readout gain。</h3>
+        <p>
+          hunger、satiety或GLP-1 manipulation可以和同一alternating schedule正交组合。
+          如果internal state主要改变当前reward value，应首先影响U；如果主要改变history learning，则应改变R的形成；如果主要改变behavioral expression，则可能改变dopamine-to-persistence coupling。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="supplement" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">补充材料</div>
+        <h2>更多control和alternative model放在这里，不打断主生物学故事。</h2>
+      </div>
+      <p>
+        默认折叠，只在需要检查robustness、model comparison、physiology context或原始表格时展开。
+      </p>
+    </div>
+
+    <details>
+      <summary>Robustness analyses主要排除baseline、licking和模型形式造成的假象。</summary>
+      <div class="details-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>问题</th><th>结果</th><th>含义</th></tr></thead>
+            <tbody>
+              <tr><td>late effect是不是baseline subtraction造成的？</td><td>不用pre-bout subtraction的raw signal仍保留positive sustained contrast。</td><td>时间上的sign reversal不是简单的减法artifact。</td></tr>
+              <tr><td>严格匹配早期舔舐后history effect还在吗？</td><td>exact 0–2 s lick-count matching后，高低C bout仍保持方向性分离。</td><td>早期motor output不足以单独解释history effect。</td></tr>
+              <tr><td>换成非线性nuisance model会不会消失？</td><td>Random Forest、ExtraTrees和histogram gradient boosting都保留positive residual C association。</td><td>结果不是某一种polynomial specification特有。</td></tr>
+              <tr><td>一个小RNN能否取代history coordinate？</td><td>个别nominal improvement无法通过family-wise correction和seed confirmation。</td><td>recurrent flexibility本身还不能稳定替代简单history coordinate。</td></tr>
+              <tr><td>不同acquisition cohort方向一致吗？</td><td>总体方向广泛为正，但leave-one-cohort-out后样本量下降、统计力不足。</td><td>暂时不应宣称某个genotype/cohort特异机制。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Alternative models各自解释一部分现象，但没有把结果压缩成唯一算法。</summary>
+      <div class="details-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>模型</th><th>生物学想法</th><th>能解释什么</th><th>还解释不了什么</th></tr></thead>
+            <tbody>
+              <tr><td>Belief state / HMM</td><td>推断当前处于哪个latent reward context</td><td>switch附近的context inference与uncertainty</td><td>仍不能完全吸收cumulative sampled-history信息</td></tr>
+              <tr><td>Average reward rate</td><td>近期环境的tonic reward level</td><td>较慢reward-rate adaptation</td><td>无法完全重建同样的path-dependent history</td></tr>
+              <tr><td>Pearce–Hall / adaptive gain</td><td>surprise / uncertainty改变learning gain</td><td>解释switch后敏感度变化</td><td>不能单独替代stored history coordinate</td></tr>
+              <tr><td>Value-RNN</td><td>非线性recurrent memory压缩reward序列</td><td>灵活表示history</td><td>没有稳定证明比简单history coordinate更好</td></tr>
+              <tr><td>Distributional value</td><td>编码reward distribution width / quantiles</td><td>解释population-level distribution coding</td><td>bulk photometry里spread information没有稳定超出central history state</td></tr>
+              <tr><td>FullHistory</td><td>保留更完整的过去reward序列</td><td>检验一维C是否遗漏path information</td><td>是强comparator，但不自动对应唯一生物机制</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Hunger、LiCl和semaglutide改变value-related behavior与dopamine，但它们不是同一种history manipulation。</summary>
+      <div class="details-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>操作</th><th>Cohort</th><th>代表性结果</th><th>这里的意义</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Hunger / food restriction</td>
+                <td>7-mouse QE/physiology family</td>
+                <td>bout duration增加10.62 s；6/7只增加（paired exact Wilcoxon，P=.03125）。</td>
+                <td>说明同一种20E可以被physiological state重新赋值。</td>
+              </tr>
+              <tr>
+                <td>LiCl devaluation / illness</td>
+                <td>同一7-mouse family</td>
+                <td>bout duration平均下降7.68 s；7/7只下降（paired exact Wilcoxon，P=.015625）。</td>
+                <td>代表另一种负向internal-state / value transformation。</td>
+              </tr>
+              <tr>
+                <td>Semaglutide</td>
+                <td>7只小鼠；其中6只与Stim13重叠</td>
+                <td>Day-1 dopamine AUC相对PBS下降2.22 units；6/7只更低（paired exact Wilcoxon，P=.03125）。</td>
+                <td>把这套框架与GLP-1R-dependent satiety以及之前hedonic eating工作连接起来。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>经典consummatory contrast提供候选比较环路，但目前不能直接等同于本项目的VTA机制。</summary>
+      <div class="details-body">
+        <p>
+          经典consummatory successive negative contrast（cSNC）研究的是：动物预期高价值solution，却突然得到较低价值solution之后，摄入行为如何改变。
+          既往lesion work提示gustatory thalamus、insular cortex和amygdala-related circuitry参与某些contrast behavior。
+          这些研究很适合作为“reference storage / comparison / affective response”候选环路的来源，
+          但现在的数据还不能把本项目的alternating-block VTA signal直接等同于传统cSNC。
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>下载区提供方法说明、cohort表和页面对应的精确source tables。</summary>
+      <div class="details-body">
+        <div class="resource-grid">
+          <a class="resource" href="../docs/REWARD_REFERENCE_READER_GUIDE_20261004.md"><b>Reader guide定义任务和符号。</b><span>100E/20E、bout、U/R/C、α、cohort，以及acute stimulation和history stimulation的区别。</span></a>
+          <a class="resource" href="../data/NEURON_reader_cohort_table_v1.csv"><b>Cohort table列出所有animal ID与重叠。</b><span>适合直接核对哪些实验是真正独立动物。</span></a>
+          <a class="resource" href="../data/standardized_U_R_alloutcomes.csv"><b>Standardized U/R decomposition。</b><span>比较current reward和stored reference在不同outcome中的系数。</span></a>
+          <a class="resource" href="../data/NEURON_value_action_UR_control_v2.csv"><b>Action-adjusted U/R decomposition。</b><span>控制早期和同步licking后的raw-scale U/R结果。</span></a>
+          <a class="resource" href="../data/NEURON_value_action_conditional_perm_v1.csv"><b>Action-controlled sensitivity table。</b><span>conditional permutation结果。</span></a>
+          <a class="resource" href="../data/NEURON_value_action_timecourse_v2.csv"><b>Within-bout time course。</b><span>0.5-s时间分辨率的sampling与contrast分析。</span></a>
+          <a class="resource" href="../data/NEURON_three_context_reference_evidence_v1.csv"><b>Cross-context evidence。</b><span>natural reward、QE与stimulation history的对照。</span></a>
+          <a class="resource" href="../data/NEURON_biological_model_experiment_predictions_v1.csv"><b>下一步experiment predictions。</b><span>delay、state、mediation和circuit实验的可证伪预测。</span></a>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>Reward history and VTA dopamine during feeding</span>
+    <span>中文版 · Updated October 2026</span>
+  </div>
+</footer>
+</body>
+</html>

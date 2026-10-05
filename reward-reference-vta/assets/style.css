@@ -680,3 +680,33 @@ details[open] summary { border-bottom: 1px solid var(--line); background: #f7f9f
   summary { padding: 15px 16px; }
   .details-body { padding: 15px; }
 }
+
+
+/* Bilingual page */
+.lang-link {
+  border: 1px solid #cfd9e3;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #f7fafc;
+  color: var(--navy);
+  font-weight: 800;
+}
+html[lang="zh-CN"] body {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Source Han Sans SC", system-ui, sans-serif;
+  line-height: 1.72;
+}
+html[lang="zh-CN"] .hero h1,
+html[lang="zh-CN"] .section-head h2,
+html[lang="zh-CN"] h3 {
+  letter-spacing: -0.018em;
+}
+html[lang="zh-CN"] .hero .lede {
+  line-height: 1.7;
+}
+html[lang="zh-CN"] table {
+  line-height: 1.58;
+}
+html[lang="zh-CN"] .concept-node span {
+  line-height: 1.55;
+}
