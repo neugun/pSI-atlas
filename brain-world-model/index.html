@@ -106,6 +106,7 @@ button:hover{transform:translateY(-1px)}
 <nav class="nav">
   <div class="wrap nav-inner">
     <div class="brand"><b>BRAIN</b> WORLD MODEL</div>
+    <a href="#bridge">Mouse bridge</a>
     <a href="#applications">Applications</a>
     <a href="#tests">Tests</a>
     <a href="#models">Models</a>
@@ -119,12 +120,12 @@ button:hover{transform:translateY(-1px)}
   <div class="eyebrow">Neural foundation model · predictive world model · multimodal tokens</div>
   <h1>From brain recordings to testable predictions of future brain and behavior.</h1>
   <p class="lede">A public status page for a BrainToken-style multimodal ingestion layer, neural foundation models, causal-future objectives, and application-level tests across spikes, calcium, EEG, behavior, vision, and controlled interventions.</p>
-  <div class="hero-note"><span class="dot"></span><span id="updated">Loading verified results…</span></div>
+  <div class="hero-note"><span class="dot"></span><span id="updated">Core results are static below; JavaScript only enriches the interactive QA.</span></div>
 
   <div class="metrics">
-    <div class="metric"><div class="n" id="m-contract">—</div><div class="t">Data contract tests</div><small>token-ready shards</small></div>
-    <div class="metric"><div class="n" id="m-forecast">—</div><div class="t">Forecast pipelines</div><small>cross-dataset execution</small></div>
-    <div class="metric"><div class="n" id="m-arch">—</div><div class="t">Architecture smokes</div><small>real Slurm training runs</small></div>
+    <div class="metric"><div class="n" id="m-contract">15/15</div><div class="t">Data contract tests</div><small>token-ready shards</small></div>
+    <div class="metric"><div class="n" id="m-forecast">12/12</div><div class="t">Forecast pipelines</div><small>cross-dataset execution</small></div>
+    <div class="metric"><div class="n" id="m-arch">5/5</div><div class="t">Architecture smokes</div><small>real Slurm training runs</small></div>
     <div class="metric"><div class="n">1.51B</div><div class="t">Largest linked model</div><small>not equal to shared backbone size</small></div>
   </div>
 </div>
@@ -141,6 +142,78 @@ button:hover{transform:translateY(-1px)}
     <div class="step"><div class="num">03 · FOUNDATION</div><h3>Shared neural backbone</h3><p>MtM/NEDS-style objectives test neuron, causal-time, intra-region, inter-region and multimodal reconstruction.</p></div>
     <div class="step"><div class="num">04 · WORLD</div><h3>Predict the future</h3><p>Causal-future masking hides future brain and behavior so the model must infer state transitions rather than classify static labels.</p></div>
     <div class="step"><div class="num">05 · APPLY</div><h3>Behavior & intervention</h3><p>Decode state, predict behavior, quantify future dynamics, and test whether explicit interventions improve forecasting.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="bridge">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">Mouse Emulation Bridge</div><h2>Static verified results &mdash; visible without JavaScript.</h2></div>
+    <p>The project is not presented as a whole-mouse emulation. It tests the missing bridge from partial activity, structure, molecular identity and perturbation to transferable future-state prediction.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="card-head"><div><h3>Hard neural baseline</h3><span class="submetric">29 completely held-out IBL sessions</span></div><span class="tag pass">29 / 29</span></div>
+      <div class="big">0.263 &rarr; 0.081 co-bps</div>
+      <div class="submetric">persistence baseline from 20 ms to 500 ms future</div>
+      <p>Persistence is much harder than a zero predictor and remains positive at long horizons. Repeat-trial split-half reliability is <b>0.958</b> median, giving a practical ceiling proxy.</p>
+      <p><a href="data/rigorous_baseline.json">verified JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>100% transferable capacity</h3><span class="submetric">session-free Perceiver family</span></div><span class="tag pass">0 ID PARAMS</span></div>
+      <div class="big">2.19M / 15.79M / 63.49M</div>
+      <div class="submetric">tiny / base / large shared parameters</div>
+      <p>No learned session embedding and no learned unit-ID table. The 10 / 50 / 150 / 423-session scaling matrix uses the same fixed held-out evaluation set.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>ABC molecular identity prior</h3><span class="submetric">Allen spatial transcriptomics &times; CCF</span></div><span class="tag pass">READY</span></div>
+      <div class="big">2.56M cells &middot; 672 regions</div>
+      <div class="submetric">140 biological composition features compressed to 32-D</div>
+      <p>Exact Allen acronym coverage is <b>85.6%</b> of IBL pretraining units and <b>82.6%</b> of held-out units. This is explicitly a region-level molecular prior, not an imputed single-cell transcriptome.</p>
+      <p><a href="data/abc_prior_manifest.json">verified JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Slow state predicts future social action</h3><span class="submetric">user SOE / social-foraging data &middot; held-out animals</span></div><span class="tag pass">TRANSFER</span></div>
+      <div class="big">0.080 &rarr; 0.174 bits/trial</div>
+      <div class="submetric">history baseline &rarr; history + slow computational state</div>
+      <p>The median gain is <b>+0.094 bits/trial</b> across 27 held-out-animal folds. The same slow state does <b>not</b> improve next-outcome prediction or the current DA readout, and those negative results are retained.</p>
+      <p><a href="data/stage8_social_embodiment.json">verified JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Reward history is a modest slow state</h3><span class="submetric">11 animals &middot; leave-one-animal-out</span></div><span class="tag pass">REAL DATA</span></div>
+      <div class="big">R&sup2; 0.130 &rarr; 0.165</div>
+      <div class="submetric">context only &rarr; multiscale reward history</div>
+      <p>Multiscale history adds <b>+0.035 median R&sup2;</b> over context alone and +0.012 over short history for dopamine-bout prediction.</p>
+      <p><a href="data/stage9_reward_slowstate.json">verified JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Real 2P cross-animal future prediction</h3><span class="submetric">VTA D6 &middot; animal 54 &harr; 181 &middot; two independent extractions</span></div><span class="tag pass">BOTH DIRECTIONS</span></div>
+      <div class="big">+0.32&ndash;0.34 bits/sample</div>
+      <div class="submetric">over persistence at ~0.16&ndash;2.5 s horizons</div>
+      <p>A session-free shared predictor beats persistence in both transfer directions under both current and Suite2p-style extraction. Absolute R&sup2; remains negative in one direction, and a simple condition token adds almost no lift&mdash;an explicit target for the nonlinear shared backbone.</p>
+      <p><a href="data/stage10_real2p_crossanimal_world.json">verified JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>MICrONS structure &rarr; function stress test</h3><span class="submetric">author-released manual coregistration</span></div><span class="tag mixed">NEGATIVE RESULT</span></div>
+      <div class="big">&rho; = 0.009</div>
+      <div class="submetric">synapse size vs functional similarity &middot; permutation p = 0.892</div>
+      <p>For one presynaptic cell and 231 functionally recorded targets, synaptic strength alone does not explain tuning similarity and slightly worsens cross-validated prediction. The next graph model therefore needs topology, cell type, molecular prior and state&mdash;not a simplistic strong-synapse heuristic.</p>
+      <p><a href="data/stage7_microns_structure_function.json">verified JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>What is running next</h3><span class="submetric">gated by held-out performance, not parameter count</span></div><span class="tag">IN QUEUE</span></div>
+      <div class="big">12-cell scaling matrix</div>
+      <div class="submetric">10 / 50 / 150 / 423 sessions &times; tiny / base / large</div>
+      <p>After scaling: JEPA + probabilistic rollout, intervention-conditioned prediction, ABC-prior ablation, and 0/30/60/180/300 s fast-adaptation curves.</p>
+    </article>
   </div>
 </div>
 </section>

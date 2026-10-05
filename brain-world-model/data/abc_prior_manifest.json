@@ -1,0 +1,614 @@
+{
+  "status": "PASS",
+  "source_dataset": "Zhuang-ABCA-1",
+  "source_release": "20241115 metadata + 20230830 CCF",
+  "cells_high_quality_and_ccf_mapped": 2563364,
+  "regions": 672,
+  "raw_prior_dimensions": 140,
+  "compressed_prior_dimensions": 32,
+  "top_subclasses": [
+    "327 Oligo NN",
+    "333 Endo NN",
+    "319 Astro-TE NN",
+    "318 Astro-NT NN",
+    "314 CB Granule Glut",
+    "334 Microglia NN",
+    "007 L2/3 IT CTX Glut",
+    "326 OPC NN",
+    "006 L4/5 IT CTX Glut",
+    "061 STR D1 Gaba",
+    "041 OB-in Frmd7 Gaba",
+    "062 STR D2 Gaba",
+    "331 Peri NN",
+    "030 L6 CT CTX Glut",
+    "311 CBX MLI Megf11 Gaba",
+    "330 VLMC NN",
+    "037 DG Glut",
+    "328 OEC NN",
+    "042 OB-out Frmd7 Gaba",
+    "332 SMC NN",
+    "009 L2/3 IT PIR-ENTl Glut",
+    "052 Pvalb Gaba",
+    "016 CA1-ProS Glut",
+    "020 L2/3 IT RSP Glut",
+    "316 Bergmann NN",
+    "323 Ependymal NN",
+    "181 IC Tfap2d Maf Glut",
+    "325 CHOR NN",
+    "004 L6 IT CTX Glut",
+    "022 L5 ET CTX Glut",
+    "053 Sst Gaba",
+    "010 IT AON-TT-DP Glut",
+    "005 L5 IT CTX Glut",
+    "035 OB Eomes Ms4a15 Glut",
+    "312 CBX MLI Cdh22 Gaba",
+    "045 OB-STR-CTX Inh IMN",
+    "039 OB Meis2 Thsd7b Gaba",
+    "040 OB Trdn Gaba",
+    "064 STR-PAL Chst9 Gaba",
+    "151 TH Prkcd Grin2c Glut",
+    "320 Astro-OLF NN",
+    "049 Lamp5 Gaba",
+    "017 CA3 Glut",
+    "019 L2/3 IT PPP Glut",
+    "001 CLA-EPd-CTX Car3 Glut",
+    "060 OT D3 Folh1 Gaba",
+    "032 L5 NP CTX Glut",
+    "044 OB Dopa-Gaba",
+    "329 ABC NN",
+    "335 BAM NN",
+    "046 Vip Gaba",
+    "014 LA-BLA-BMA-PA Glut",
+    "235 PG-TRN-LRN Fat2 Glut",
+    "028 L6b/CT ENT Glut",
+    "008 L2/3 IT ENT Glut",
+    "063 STR D1 Sema5a Gaba",
+    "057 NDB-SI-MA-STRv Lhx8 Gaba",
+    "145 MH Tac2 Glut",
+    "023 SUB-ProS Glut",
+    "029 L6b CTX Glut",
+    "002 IT EP-CLA Glut",
+    "111 TRS-BAC Sln Glut",
+    "207 SCs Dmbx1 Gaba",
+    "113 MEA-COA-BMA Ccdc42 Glut",
+    "047 Sncg Gaba",
+    "093 RT-ZI Gnb3 Gaba",
+    "013 COAp Grxcr2 Glut",
+    "129 VMH Nr5a1 Glut",
+    "056 Sst Chodl Gaba",
+    "168 SPA-SPFm-SPFp-POL-PIL-PoT Sp9 Glut",
+    "149 PVT-PT Ntrk1 Glut",
+    "322 Tanycyte NN",
+    "338 Lymphoid NN",
+    "050 Lamp5 Lhx6 Gaba",
+    "043 OB-mi Frmd7 Gaba",
+    "187 SCsg Pde5a Glut",
+    "216 MB-MY Tph2 Glut-Sero",
+    "071 LSX Prdm12 Zeb2 Gaba",
+    "106 PVpo-VMPO-MPN Hmx2 Gaba",
+    "101 ZI Pax6 Gaba",
+    "025 CA2-FC-IG Glut",
+    "021 L4 RSP-ACA Glut",
+    "033 NP SUB Glut",
+    "198 IC Six3 En2 Gaba",
+    "144 MM Foxb1 Glut",
+    "213 SCsg Gabrr2 Gaba",
+    "154 PF Fzd5 Glut",
+    "114 COAa-PAA-MEA Barhl2 Glut",
+    "058 PAL-STR Gaba-Chol",
+    "031 CT SUB Glut",
+    "070 LSX Prdm12 Slit2 Gaba",
+    "036 HPF CR Glut",
+    "253 IO Fgl2 Glut",
+    "133 PVH-SO-PVa Otp Glut",
+    "315 DCO UBC Glut",
+    "012 MEA Slc17a7 Glut"
+  ],
+  "neurotransmitter_columns": [
+    "Chol",
+    "Dopa",
+    "GABA",
+    "GABA-Glyc",
+    "Glut",
+    "Glut-GABA",
+    "Hist",
+    "Nora",
+    "Sero",
+    "unknown"
+  ],
+  "top_classes": [
+    "31 OPC-Oligo",
+    "33 Vascular",
+    "30 Astro-Epen",
+    "01 IT-ET Glut",
+    "09 CNU-LGE GABA",
+    "34 Immune",
+    "05 OB-IMN GABA",
+    "29 CB Glut",
+    "02 NP-CT-L6b Glut",
+    "28 CB GABA",
+    "07 CTX-MGE GABA",
+    "19 MB Glut",
+    "04 DG-IMN Glut",
+    "32 OEC",
+    "06 CTX-CGE GABA",
+    "20 MB GABA",
+    "18 TH Glut",
+    "12 HY GABA",
+    "14 HY Glut",
+    "03 OB-CR Glut",
+    "11 CNU-HYa GABA",
+    "13 CNU-HYa Glut",
+    "23 P Glut",
+    "08 CNU-MGE GABA",
+    "24 MY Glut",
+    "10 LSX GABA",
+    "27 MY GABA",
+    "26 P GABA",
+    "17 MH-LH Glut",
+    "16 HY MM Glut",
+    "22 MB-HB Sero",
+    "21 MB Dopa",
+    "25 Pineal Glut",
+    "15 HY Gnrh1 Glut"
+  ],
+  "ibl_exact_acronym_coverage": {
+    "pretrain": {
+      "n_units": 43601,
+      "matched_units": 37333,
+      "coverage": 0.8562418293158414,
+      "n_unique": 524,
+      "matched_unique": 489
+    },
+    "eval": {
+      "n_units": 2938,
+      "matched_units": 2428,
+      "coverage": 0.8264125255275698,
+      "n_unique": 182,
+      "matched_unique": 160
+    }
+  },
+  "top_region_examples": {
+    "CP": [
+      {
+        "subclass": "061 STR D1 Gaba",
+        "fraction": 0.2634613811717877
+      },
+      {
+        "subclass": "062 STR D2 Gaba",
+        "fraction": 0.23669538427983314
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.15676545162081845
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.09229395566945664
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.0914556012977453
+      }
+    ],
+    "MOBgr": [
+      {
+        "subclass": "041 OB-in Frmd7 Gaba",
+        "fraction": 0.6120694249524791
+      },
+      {
+        "subclass": "040 OB Trdn Gaba",
+        "fraction": 0.13291645200831395
+      },
+      {
+        "subclass": "045 OB-STR-CTX Inh IMN",
+        "fraction": 0.07676182693503401
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.04332841839725711
+      },
+      {
+        "subclass": "320 Astro-OLF NN",
+        "fraction": 0.033380114050203406
+      }
+    ],
+    "PIR": [
+      {
+        "subclass": "009 L2/3 IT PIR-ENTl Glut",
+        "fraction": 0.32606273950628284
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.1775688441315391
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.1697709651546208
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.07488191783263523
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.059843151234292846
+      }
+    ],
+    "MOB-unassigned": [
+      {
+        "subclass": "042 OB-out Frmd7 Gaba",
+        "fraction": 0.2743417564940802
+      },
+      {
+        "subclass": "328 OEC NN",
+        "fraction": 0.17081198091535607
+      },
+      {
+        "subclass": "039 OB Meis2 Thsd7b Gaba",
+        "fraction": 0.10092330800494786
+      },
+      {
+        "subclass": "044 OB Dopa-Gaba",
+        "fraction": 0.09959798550980739
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.08364993815161689
+      }
+    ],
+    "MOBopl": [
+      {
+        "subclass": "042 OB-out Frmd7 Gaba",
+        "fraction": 0.17590016691836896
+      },
+      {
+        "subclass": "035 OB Eomes Ms4a15 Glut",
+        "fraction": 0.1589963701878494
+      },
+      {
+        "subclass": "041 OB-in Frmd7 Gaba",
+        "fraction": 0.12158545955541425
+      },
+      {
+        "subclass": "039 OB Meis2 Thsd7b Gaba",
+        "fraction": 0.1081525051002835
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.1044432080120817
+      }
+    ],
+    "arb": [
+      {
+        "subclass": "314 CB Granule Glut",
+        "fraction": 0.4501640457065279
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.2864011766036882
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.0748670664102274
+      },
+      {
+        "subclass": "318 Astro-NT NN",
+        "fraction": 0.050147075461025
+      },
+      {
+        "subclass": "311 CBX MLI Megf11 Gaba",
+        "fraction": 0.03753252630388053
+      }
+    ],
+    "MB-unassigned": [
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.3365989967343366
+      },
+      {
+        "subclass": "318 Astro-NT NN",
+        "fraction": 0.20970945695720972
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.14974918358414974
+      },
+      {
+        "subclass": "181 IC Tfap2d Maf Glut",
+        "fraction": 0.04161195838804161
+      },
+      {
+        "subclass": "326 OPC NN",
+        "fraction": 0.03992862673803993
+      }
+    ],
+    "SIM": [
+      {
+        "subclass": "314 CB Granule Glut",
+        "fraction": 0.4443040435458787
+      },
+      {
+        "subclass": "311 CBX MLI Megf11 Gaba",
+        "fraction": 0.22106661482633488
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.09745982374287196
+      },
+      {
+        "subclass": "316 Bergmann NN",
+        "fraction": 0.06642042509072058
+      },
+      {
+        "subclass": "312 CBX MLI Cdh22 Gaba",
+        "fraction": 0.04681829963711768
+      }
+    ],
+    "CUL4, 5": [
+      {
+        "subclass": "314 CB Granule Glut",
+        "fraction": 0.42788331985987604
+      },
+      {
+        "subclass": "311 CBX MLI Megf11 Gaba",
+        "fraction": 0.2088385879816761
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.0924279170035031
+      },
+      {
+        "subclass": "316 Bergmann NN",
+        "fraction": 0.0786176232821342
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.06231473996227432
+      }
+    ],
+    "ACB": [
+      {
+        "subclass": "062 STR D2 Gaba",
+        "fraction": 0.26652622403021936
+      },
+      {
+        "subclass": "061 STR D1 Gaba",
+        "fraction": 0.2580633444718873
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.08579107947116082
+      },
+      {
+        "subclass": "063 STR D1 Sema5a Gaba",
+        "fraction": 0.08259479877960192
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.07605695191050414
+      }
+    ],
+    "ccb": [
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.6432171737317329
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.1428001595532509
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.04920767306088407
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.03035137977299924
+      },
+      {
+        "subclass": "326 OPC NN",
+        "fraction": 0.02766798418972332
+      }
+    ],
+    "AON": [
+      {
+        "subclass": "010 IT AON-TT-DP Glut",
+        "fraction": 0.4072014051522248
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.13382402141184344
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.11973067915690866
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.08819839411174306
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.060764469722315154
+      }
+    ],
+    "PAG-unassigned": [
+      {
+        "subclass": "318 Astro-NT NN",
+        "fraction": 0.35876579361206007
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.2673390813947183
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.17298411149070006
+      },
+      {
+        "subclass": "326 OPC NN",
+        "fraction": 0.05335936229054823
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.04278509842199447
+      }
+    ],
+    "DG-sg": [
+      {
+        "subclass": "037 DG Glut",
+        "fraction": 0.856621686958815
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.056876620807876574
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.0299767043206892
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.014680673376994418
+      },
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.014329040481737066
+      }
+    ],
+    "ANcr1": [
+      {
+        "subclass": "314 CB Granule Glut",
+        "fraction": 0.3599538638985006
+      },
+      {
+        "subclass": "311 CBX MLI Megf11 Gaba",
+        "fraction": 0.2635755478662053
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.10763552479815455
+      },
+      {
+        "subclass": "316 Bergmann NN",
+        "fraction": 0.06952710495963091
+      },
+      {
+        "subclass": "312 CBX MLI Cdh22 Gaba",
+        "fraction": 0.06311418685121108
+      }
+    ],
+    "MOs2/3": [
+      {
+        "subclass": "007 L2/3 IT CTX Glut",
+        "fraction": 0.4257504318192428
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.13486765323747724
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.11554082442463004
+      },
+      {
+        "subclass": "006 L4/5 IT CTX Glut",
+        "fraction": 0.10545726156575323
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.06040801083049344
+      }
+    ],
+    "onl": [
+      {
+        "subclass": "328 OEC NN",
+        "fraction": 0.6576872536136662
+      },
+      {
+        "subclass": "330 VLMC NN",
+        "fraction": 0.08043927163506664
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.06546836868781679
+      },
+      {
+        "subclass": "042 OB-out Frmd7 Gaba",
+        "fraction": 0.05622301483011076
+      },
+      {
+        "subclass": "329 ABC NN",
+        "fraction": 0.03266378824854515
+      }
+    ],
+    "MY-unassigned": [
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.46778974409643315
+      },
+      {
+        "subclass": "318 Astro-NT NN",
+        "fraction": 0.14692224088528802
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.13422586700918882
+      },
+      {
+        "subclass": "330 VLMC NN",
+        "fraction": 0.04174488686888647
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.038978361821954355
+      }
+    ],
+    "OT": [
+      {
+        "subclass": "061 STR D1 Gaba",
+        "fraction": 0.2861454440931302
+      },
+      {
+        "subclass": "060 OT D3 Folh1 Gaba",
+        "fraction": 0.27354603813356326
+      },
+      {
+        "subclass": "062 STR D2 Gaba",
+        "fraction": 0.12513174283798026
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.07459039954009773
+      },
+      {
+        "subclass": "319 Astro-TE NN",
+        "fraction": 0.07027881575165278
+      }
+    ],
+    "MRN": [
+      {
+        "subclass": "327 Oligo NN",
+        "fraction": 0.5056639395846444
+      },
+      {
+        "subclass": "333 Endo NN",
+        "fraction": 0.16483113069016153
+      },
+      {
+        "subclass": "318 Astro-NT NN",
+        "fraction": 0.14930774071743236
+      },
+      {
+        "subclass": "326 OPC NN",
+        "fraction": 0.04457730228655339
+      },
+      {
+        "subclass": "334 Microglia NN",
+        "fraction": 0.040591567023285084
+      }
+    ]
+  },
+  "guardrail": "Region-level composition prior from public ABC spatial transcriptomic cells; not a claim that each recorded electrophysiological unit has a measured transcriptomic type."
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "dataset": "MICrONS Functional Connectomics Fig6 panel k",
+  "published_coregistration": "manual coregistration + synapses_pni_2 from the authors' released notebook",
+  "presynaptic_nucleus_id": 294657,
+  "n_connected_postsynaptic_functional_cells": 231,
+  "structure_metric": "sum of synapse size from the single presynaptic cell to each postsynaptic nucleus",
+  "function_metric": "Pearson correlation of trial-averaged oracle response traces (6 conditions x 63 time bins)",
+  "spearman_log_synapse_size_vs_functional_similarity": 0.009014003881503765,
+  "spearman_log_synapse_size_vs_negative_shape_mse": 0.009014003881503765,
+  "permutation_p_two_sided": 0.891621675664867,
+  "oracle_only_cv_r2": {
+    "median": -0.013029676594305095,
+    "q25": -0.017114382200660472,
+    "q75": -0.009168585424562892
+  },
+  "oracle_plus_structure_cv_r2": {
+    "median": -0.023000669464473877,
+    "q25": -0.027027061074921865,
+    "q75": -0.017855148305617685
+  },
+  "delta_cv_r2_structure": {
+    "median": -0.008163964033690907,
+    "positive_fraction": 0.06666666666666667
+  },
+  "synapse_size_quartiles": [
+    {
+      "quartile": 1,
+      "n": 58,
+      "synapse_size_median": 1084.0,
+      "functional_corr_median": -0.020386661808759518,
+      "shape_similarity_median": -2.040772901171687
+    },
+    {
+      "quartile": 2,
+      "n": 58,
+      "synapse_size_median": 4070.0,
+      "functional_corr_median": 0.009499222447712119,
+      "shape_similarity_median": -1.9810011395674418
+    },
+    {
+      "quartile": 3,
+      "n": 57,
+      "synapse_size_median": 10700.0,
+      "functional_corr_median": -0.01848585960615636,
+      "shape_similarity_median": -2.0369713765947424
+    },
+    {
+      "quartile": 4,
+      "n": 58,
+      "synapse_size_median": 22384.0,
+      "functional_corr_median": -0.005216493796982876,
+      "shape_similarity_median": -2.0104326072162477
+    }
+  ],
+  "guardrail": "This is a one-presynaptic-cell, 231-postsynaptic-cell structure-function smoke test using author-released coregistered data. It is not yet the full MICRONS graph world-model benchmark."
+}

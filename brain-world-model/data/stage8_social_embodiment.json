@@ -1,0 +1,1176 @@
+{
+  "status": "PASS",
+  "dataset": "user SOE/social-foraging bridge",
+  "n_rows_trial_latent": 68262,
+  "n_animals": 27,
+  "n_sessions": 362,
+  "next_observation_action": {
+    "exo_only": {
+      "summary": {
+        "n_folds": 27,
+        "median": 0.05926312445874705,
+        "mean": 0.06427135908365107,
+        "q25": 0.02337173263423204,
+        "q75": 0.08224906366233664,
+        "positive_fraction": 0.8518518518518519
+      },
+      "folds": [
+        {
+          "animal": "Chemo:ANM109",
+          "n": 2672,
+          "bits_per_trial": 0.15564710062816342,
+          "balanced_accuracy": 0.5416393310709451
+        },
+        {
+          "animal": "Chemo:ANM4",
+          "n": 1110,
+          "bits_per_trial": 0.16833076926770482,
+          "balanced_accuracy": 0.5021556476090843
+        },
+        {
+          "animal": "Chemo:ANM48",
+          "n": 2118,
+          "bits_per_trial": 0.19917846746739096,
+          "balanced_accuracy": 0.524330526358924
+        },
+        {
+          "animal": "Chemo:ANM5",
+          "n": 1762,
+          "bits_per_trial": 0.03795368525478407,
+          "balanced_accuracy": 0.5069397993311037
+        },
+        {
+          "animal": "Chemo:ANM6",
+          "n": 2272,
+          "bits_per_trial": 0.20949695721298095,
+          "balanced_accuracy": 0.5737935282288492
+        },
+        {
+          "animal": "Chemo:ANM97",
+          "n": 1340,
+          "bits_per_trial": 0.18506653980248053,
+          "balanced_accuracy": 0.5449385885432397
+        },
+        {
+          "animal": "Jaws:ANM112",
+          "n": 1271,
+          "bits_per_trial": -0.00988136845002731,
+          "balanced_accuracy": 0.5538903535288462
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM1",
+          "n": 4485,
+          "bits_per_trial": -0.02780595446440153,
+          "balanced_accuracy": 0.543854724219247
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM3",
+          "n": 2529,
+          "bits_per_trial": 0.1065831107736931,
+          "balanced_accuracy": 0.6182385691496572
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM35",
+          "n": 2244,
+          "bits_per_trial": 0.03349253358635405,
+          "balanced_accuracy": 0.6051028231172266
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM118",
+          "n": 3579,
+          "bits_per_trial": -0.007373949982374611,
+          "balanced_accuracy": 0.5517940235795811
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM119",
+          "n": 2599,
+          "bits_per_trial": 0.01790973160234349,
+          "balanced_accuracy": 0.5896937954246134
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM121",
+          "n": 2925,
+          "bits_per_trial": 0.029218860071744124,
+          "balanced_accuracy": 0.5444699023049238
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM126",
+          "n": 2701,
+          "bits_per_trial": 0.02364647265540523,
+          "balanced_accuracy": 0.5431668237511781
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM138",
+          "n": 3577,
+          "bits_per_trial": 0.025626342381515198,
+          "balanced_accuracy": 0.6174209177629488
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM139",
+          "n": 3507,
+          "bits_per_trial": 0.0807296530658653,
+          "balanced_accuracy": 0.5980010918613985
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM141",
+          "n": 2608,
+          "bits_per_trial": 0.02309699261305885,
+          "balanced_accuracy": 0.5993979030416277
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM133",
+          "n": 1694,
+          "bits_per_trial": 0.06078835114547498,
+          "balanced_accuracy": 0.5737578745675018
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM134",
+          "n": 1444,
+          "bits_per_trial": 0.059836318120830095,
+          "balanced_accuracy": 0.5803774858095503
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM141",
+          "n": 3798,
+          "bits_per_trial": 0.06378907043282242,
+          "balanced_accuracy": 0.6629017608625589
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM146",
+          "n": 1761,
+          "bits_per_trial": 0.083768474258808,
+          "balanced_accuracy": 0.7083956083585439
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM147",
+          "n": 1711,
+          "bits_per_trial": 0.05926312445874705,
+          "balanced_accuracy": 0.5738693540201552
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM276",
+          "n": 2820,
+          "bits_per_trial": 0.06124282100076261,
+          "balanced_accuracy": 0.6228126635943119
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM281",
+          "n": 2545,
+          "bits_per_trial": -0.038031775678201464,
+          "balanced_accuracy": 0.5439328326949944
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM282",
+          "n": 3572,
+          "bits_per_trial": 0.05417404214976345,
+          "balanced_accuracy": 0.6026583052121752
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM293",
+          "n": 2425,
+          "bits_per_trial": 0.003264427281390155,
+          "balanced_accuracy": 0.5927973699940228
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM296",
+          "n": 3193,
+          "bits_per_trial": 0.07631589860150102,
+          "balanced_accuracy": 0.6576583226709535
+        }
+      ]
+    },
+    "exo_plus_history": {
+      "summary": {
+        "n_folds": 27,
+        "median": 0.0797119965867969,
+        "mean": 0.10228112310562816,
+        "q25": 0.03335672457038587,
+        "q75": 0.1635699653618936,
+        "positive_fraction": 0.9259259259259259
+      },
+      "folds": [
+        {
+          "animal": "Chemo:ANM109",
+          "n": 2672,
+          "bits_per_trial": 0.22416456871328136,
+          "balanced_accuracy": 0.5332658120170426
+        },
+        {
+          "animal": "Chemo:ANM4",
+          "n": 1110,
+          "bits_per_trial": 0.21365337666166578,
+          "balanced_accuracy": 0.5019257744146444
+        },
+        {
+          "animal": "Chemo:ANM48",
+          "n": 2118,
+          "bits_per_trial": 0.2473720249204288,
+          "balanced_accuracy": 0.5098981703444178
+        },
+        {
+          "animal": "Chemo:ANM5",
+          "n": 1762,
+          "bits_per_trial": 0.09130402126900866,
+          "balanced_accuracy": 0.5363867211693298
+        },
+        {
+          "animal": "Chemo:ANM6",
+          "n": 2272,
+          "bits_per_trial": 0.2905066195582612,
+          "balanced_accuracy": 0.5549287463407803
+        },
+        {
+          "animal": "Chemo:ANM97",
+          "n": 1340,
+          "bits_per_trial": 0.224184682607472,
+          "balanced_accuracy": 0.5463857847578778
+        },
+        {
+          "animal": "Jaws:ANM112",
+          "n": 1271,
+          "bits_per_trial": -0.0011196087775424222,
+          "balanced_accuracy": 0.5870181967749288
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM1",
+          "n": 4485,
+          "bits_per_trial": 0.01902330919047789,
+          "balanced_accuracy": 0.591267919411081
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM3",
+          "n": 2529,
+          "bits_per_trial": 0.19676095304618693,
+          "balanced_accuracy": 0.683398733836357
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM35",
+          "n": 2244,
+          "bits_per_trial": 0.07149591670387283,
+          "balanced_accuracy": 0.6353543097524061
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM118",
+          "n": 3579,
+          "bits_per_trial": 0.0037911860185966084,
+          "balanced_accuracy": 0.5760646870688574
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM119",
+          "n": 2599,
+          "bits_per_trial": 0.029389376251218347,
+          "balanced_accuracy": 0.6111646992829618
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM121",
+          "n": 2925,
+          "bits_per_trial": 0.04231336810246632,
+          "balanced_accuracy": 0.5662593140673569
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM126",
+          "n": 2701,
+          "bits_per_trial": 0.031136638591644075,
+          "balanced_accuracy": 0.555380336084228
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM138",
+          "n": 3577,
+          "bits_per_trial": 0.03557681054912767,
+          "balanced_accuracy": 0.605437471628503
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM139",
+          "n": 3507,
+          "bits_per_trial": 0.12800982440580888,
+          "balanced_accuracy": 0.5931870371187832
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM141",
+          "n": 2608,
+          "bits_per_trial": 0.028115610731763368,
+          "balanced_accuracy": 0.5945265530690631
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM133",
+          "n": 1694,
+          "bits_per_trial": 0.0797119965867969,
+          "balanced_accuracy": 0.5591230109681066
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM134",
+          "n": 1444,
+          "bits_per_trial": 0.045552731753510066,
+          "balanced_accuracy": 0.5596375977454054
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM141",
+          "n": 3798,
+          "bits_per_trial": 0.1130883673231925,
+          "balanced_accuracy": 0.6225875152429938
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM146",
+          "n": 1761,
+          "bits_per_trial": 0.18457935822436217,
+          "balanced_accuracy": 0.6812183198765853
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM147",
+          "n": 1711,
+          "bits_per_trial": 0.06148117375015208,
+          "balanced_accuracy": 0.5478481838613789
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM276",
+          "n": 2820,
+          "bits_per_trial": 0.1384434673447413,
+          "balanced_accuracy": 0.636921466148314
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM281",
+          "n": 2545,
+          "bits_per_trial": -0.028998330854591504,
+          "balanced_accuracy": 0.5581493562683882
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM282",
+          "n": 3572,
+          "bits_per_trial": 0.10433723049556522,
+          "balanced_accuracy": 0.5981373441096184
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM293",
+          "n": 2425,
+          "bits_per_trial": 0.04515507818506803,
+          "balanced_accuracy": 0.6137115132708474
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM296",
+          "n": 3193,
+          "bits_per_trial": 0.14256057249942503,
+          "balanced_accuracy": 0.634601336351607
+        }
+      ]
+    },
+    "exo_history_slow": {
+      "summary": {
+        "n_folds": 27,
+        "median": 0.17394617003671778,
+        "mean": 0.20001498231889084,
+        "q25": 0.09388765153708867,
+        "q75": 0.3025827550742013,
+        "positive_fraction": 1.0
+      },
+      "folds": [
+        {
+          "animal": "Chemo:ANM109",
+          "n": 2672,
+          "bits_per_trial": 0.3648793045060468,
+          "balanced_accuracy": 0.5112087574627203
+        },
+        {
+          "animal": "Chemo:ANM4",
+          "n": 1110,
+          "bits_per_trial": 0.293124639032083,
+          "balanced_accuracy": 0.5054794263490976
+        },
+        {
+          "animal": "Chemo:ANM48",
+          "n": 2118,
+          "bits_per_trial": 0.34266347380303447,
+          "balanced_accuracy": 0.49970291146761736
+        },
+        {
+          "animal": "Chemo:ANM5",
+          "n": 1762,
+          "bits_per_trial": 0.17611066145175253,
+          "balanced_accuracy": 0.5116917502787067
+        },
+        {
+          "animal": "Chemo:ANM6",
+          "n": 2272,
+          "bits_per_trial": 0.4556431849061461,
+          "balanced_accuracy": 0.5519265885398609
+        },
+        {
+          "animal": "Chemo:ANM97",
+          "n": 1340,
+          "bits_per_trial": 0.3086115232599728,
+          "balanced_accuracy": 0.5419938588543239
+        },
+        {
+          "animal": "Jaws:ANM112",
+          "n": 1271,
+          "bits_per_trial": 0.03241452600475039,
+          "balanced_accuracy": 0.5990936301376651
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM1",
+          "n": 4485,
+          "bits_per_trial": 0.06560029095098968,
+          "balanced_accuracy": 0.610449222954066
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM3",
+          "n": 2529,
+          "bits_per_trial": 0.35968358572960324,
+          "balanced_accuracy": 0.647847076105386
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM35",
+          "n": 2244,
+          "bits_per_trial": 0.15238994142790957,
+          "balanced_accuracy": 0.6889335552527777
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM118",
+          "n": 3579,
+          "bits_per_trial": 0.06658662127904719,
+          "balanced_accuracy": 0.6173890003762699
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM119",
+          "n": 2599,
+          "bits_per_trial": 0.10356535598043562,
+          "balanced_accuracy": 0.6642310131213112
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM121",
+          "n": 2925,
+          "bits_per_trial": 0.11752132029125695,
+          "balanced_accuracy": 0.6330298513806167
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM126",
+          "n": 2701,
+          "bits_per_trial": 0.11625887065745913,
+          "balanced_accuracy": 0.5970058159582539
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM138",
+          "n": 3577,
+          "bits_per_trial": 0.075985380865576,
+          "balanced_accuracy": 0.6183514386556068
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM139",
+          "n": 3507,
+          "bits_per_trial": 0.2465630302088317,
+          "balanced_accuracy": 0.5737959120060611
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM141",
+          "n": 2608,
+          "bits_per_trial": 0.08420994709374172,
+          "balanced_accuracy": 0.651591701146357
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM133",
+          "n": 1694,
+          "bits_per_trial": 0.17394617003671778,
+          "balanced_accuracy": 0.5674367775424151
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM134",
+          "n": 1444,
+          "bits_per_trial": 0.0777819003748157,
+          "balanced_accuracy": 0.580095661493272
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM141",
+          "n": 3798,
+          "bits_per_trial": 0.24133529183453695,
+          "balanced_accuracy": 0.685357330124601
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM146",
+          "n": 1761,
+          "bits_per_trial": 0.36623001678685857,
+          "balanced_accuracy": 0.7022699497124998
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM147",
+          "n": 1711,
+          "bits_per_trial": 0.12085046767106634,
+          "balanced_accuracy": 0.5903661277459581
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM276",
+          "n": 2820,
+          "bits_per_trial": 0.32337851139889867,
+          "balanced_accuracy": 0.6722449645134436
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM281",
+          "n": 2545,
+          "bits_per_trial": 0.03747422592628483,
+          "balanced_accuracy": 0.6100115753804325
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM282",
+          "n": 3572,
+          "bits_per_trial": 0.24202033314469,
+          "balanced_accuracy": 0.5997912125893166
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM293",
+          "n": 2425,
+          "bits_per_trial": 0.15902196109911723,
+          "balanced_accuracy": 0.6044324121529677
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM296",
+          "n": 3193,
+          "bits_per_trial": 0.2965539868884297,
+          "balanced_accuracy": 0.6675284056734796
+        }
+      ]
+    },
+    "delta_slow_vs_history_median_bits_per_trial": 0.09423417344992088
+  },
+  "next_outcome": {
+    "exo_only": {
+      "summary": {
+        "n_folds": 27,
+        "median": -0.5297343969125957,
+        "mean": -0.526604933774333,
+        "q25": -0.6391991897306317,
+        "q75": -0.45083857490488977,
+        "positive_fraction": 0.0
+      },
+      "folds": [
+        {
+          "animal": "Chemo:ANM109",
+          "n": 2672,
+          "bits_per_trial": -0.26753107417957184,
+          "balanced_accuracy": 0.35973601690796264
+        },
+        {
+          "animal": "Chemo:ANM4",
+          "n": 1110,
+          "bits_per_trial": -0.791669404927265,
+          "balanced_accuracy": 0.3822973058802326
+        },
+        {
+          "animal": "Chemo:ANM48",
+          "n": 2118,
+          "bits_per_trial": -0.7505462405150486,
+          "balanced_accuracy": 0.3572840833078576
+        },
+        {
+          "animal": "Chemo:ANM5",
+          "n": 1762,
+          "bits_per_trial": -0.6492699606548694,
+          "balanced_accuracy": 0.3723682685019973
+        },
+        {
+          "animal": "Chemo:ANM6",
+          "n": 2272,
+          "bits_per_trial": -0.2814963573374051,
+          "balanced_accuracy": 0.3665830509384715
+        },
+        {
+          "animal": "Chemo:ANM97",
+          "n": 1340,
+          "bits_per_trial": -0.5865572464884019,
+          "balanced_accuracy": 0.3494817789455999
+        },
+        {
+          "animal": "Jaws:ANM112",
+          "n": 1271,
+          "bits_per_trial": -0.26796757839127416,
+          "balanced_accuracy": 0.3722639672776116
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM1",
+          "n": 4485,
+          "bits_per_trial": -0.7420185917133031,
+          "balanced_accuracy": 0.363259535786759
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM3",
+          "n": 2529,
+          "bits_per_trial": -0.6306510395973799,
+          "balanced_accuracy": 0.3776746107720889
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM35",
+          "n": 2244,
+          "bits_per_trial": -0.6837534615499465,
+          "balanced_accuracy": 0.3442793752614008
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM118",
+          "n": 3579,
+          "bits_per_trial": -0.5067193155769699,
+          "balanced_accuracy": 0.35364861638811534
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM119",
+          "n": 2599,
+          "bits_per_trial": -0.345603571821676,
+          "balanced_accuracy": 0.36095988230358006
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM121",
+          "n": 2925,
+          "bits_per_trial": -0.607061138602983,
+          "balanced_accuracy": 0.3425023025917944
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM126",
+          "n": 2701,
+          "bits_per_trial": -0.5218160694650483,
+          "balanced_accuracy": 0.39129062500910106
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM138",
+          "n": 3577,
+          "bits_per_trial": -0.19549123501225618,
+          "balanced_accuracy": 0.3484539043394795
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM139",
+          "n": 3507,
+          "bits_per_trial": -0.6477473398638836,
+          "balanced_accuracy": 0.3266794145654131
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM141",
+          "n": 2608,
+          "bits_per_trial": -0.5858150359509716,
+          "balanced_accuracy": 0.35696752928989045
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM133",
+          "n": 1694,
+          "bits_per_trial": -0.47594983200558016,
+          "balanced_accuracy": 0.35186374424123973
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM134",
+          "n": 1444,
+          "bits_per_trial": -0.40346430435813513,
+          "balanced_accuracy": 0.35129085626103523
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM141",
+          "n": 3798,
+          "bits_per_trial": -0.4257273178041993,
+          "balanced_accuracy": 0.3761477034680715
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM146",
+          "n": 1761,
+          "bits_per_trial": -0.5297343969125957,
+          "balanced_accuracy": 0.3384885981521471
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM147",
+          "n": 1711,
+          "bits_per_trial": -0.5064999779295332,
+          "balanced_accuracy": 0.3666058942665244
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM276",
+          "n": 2820,
+          "bits_per_trial": -0.5168283208246606,
+          "balanced_accuracy": 0.31439423150925805
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM281",
+          "n": 2545,
+          "bits_per_trial": -0.5827495347244248,
+          "balanced_accuracy": 0.38090715559062366
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM282",
+          "n": 3572,
+          "bits_per_trial": -0.5228562809245061,
+          "balanced_accuracy": 0.3665320014698897
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM293",
+          "n": 2425,
+          "bits_per_trial": -0.6589030831366107,
+          "balanced_accuracy": 0.37566760821746575
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM296",
+          "n": 3193,
+          "bits_per_trial": -0.5339055016384918,
+          "balanced_accuracy": 0.3501767286821405
+        }
+      ]
+    },
+    "exo_plus_history": {
+      "summary": {
+        "n_folds": 27,
+        "median": -0.5247787345462712,
+        "mean": -0.5240232852561026,
+        "q25": -0.6292758928174741,
+        "q75": -0.4505772097460345,
+        "positive_fraction": 0.0
+      },
+      "folds": [
+        {
+          "animal": "Chemo:ANM109",
+          "n": 2672,
+          "bits_per_trial": -0.27067754625943086,
+          "balanced_accuracy": 0.36367669793009155
+        },
+        {
+          "animal": "Chemo:ANM4",
+          "n": 1110,
+          "bits_per_trial": -0.7912070816864768,
+          "balanced_accuracy": 0.3774878193230138
+        },
+        {
+          "animal": "Chemo:ANM48",
+          "n": 2118,
+          "bits_per_trial": -0.7493887556981405,
+          "balanced_accuracy": 0.3724114337712698
+        },
+        {
+          "animal": "Chemo:ANM5",
+          "n": 1762,
+          "bits_per_trial": -0.6464972194749677,
+          "balanced_accuracy": 0.3968017013769043
+        },
+        {
+          "animal": "Chemo:ANM6",
+          "n": 2272,
+          "bits_per_trial": -0.28461175427741037,
+          "balanced_accuracy": 0.3797084189147983
+        },
+        {
+          "animal": "Chemo:ANM97",
+          "n": 1340,
+          "bits_per_trial": -0.5885992220818393,
+          "balanced_accuracy": 0.3580435123902068
+        },
+        {
+          "animal": "Jaws:ANM112",
+          "n": 1271,
+          "bits_per_trial": -0.2707679896502522,
+          "balanced_accuracy": 0.37859286904188916
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM1",
+          "n": 4485,
+          "bits_per_trial": -0.7310013482984452,
+          "balanced_accuracy": 0.3646552027904115
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM3",
+          "n": 2529,
+          "bits_per_trial": -0.6204816780273646,
+          "balanced_accuracy": 0.37661474075801155
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM35",
+          "n": 2244,
+          "bits_per_trial": -0.6726815572815547,
+          "balanced_accuracy": 0.33932996493969386
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM118",
+          "n": 3579,
+          "bits_per_trial": -0.5062440550602115,
+          "balanced_accuracy": 0.34338156010042525
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM119",
+          "n": 2599,
+          "bits_per_trial": -0.3538462171220254,
+          "balanced_accuracy": 0.3588161545027742
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM121",
+          "n": 2925,
+          "bits_per_trial": -0.6011448746222978,
+          "balanced_accuracy": 0.37267329311211905
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM126",
+          "n": 2701,
+          "bits_per_trial": -0.5247787345462712,
+          "balanced_accuracy": 0.3877396456772965
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM138",
+          "n": 3577,
+          "bits_per_trial": -0.19479374845398942,
+          "balanced_accuracy": 0.3709889735757052
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM139",
+          "n": 3507,
+          "bits_per_trial": -0.6380701076075835,
+          "balanced_accuracy": 0.336860053817799
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM141",
+          "n": 2608,
+          "bits_per_trial": -0.5845961602291885,
+          "balanced_accuracy": 0.3554026112082296
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM133",
+          "n": 1694,
+          "bits_per_trial": -0.48242081041765106,
+          "balanced_accuracy": 0.36544898940543225
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM134",
+          "n": 1444,
+          "bits_per_trial": -0.4092748169238448,
+          "balanced_accuracy": 0.36748956808598954
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM141",
+          "n": 3798,
+          "bits_per_trial": -0.4187336090744179,
+          "balanced_accuracy": 0.37503200938038156
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM146",
+          "n": 1761,
+          "bits_per_trial": -0.517327124672719,
+          "balanced_accuracy": 0.385490971068156
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM147",
+          "n": 1711,
+          "bits_per_trial": -0.5079450971007967,
+          "balanced_accuracy": 0.3631288729279302
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM276",
+          "n": 2820,
+          "bits_per_trial": -0.5112748523258414,
+          "balanced_accuracy": 0.3343474268690432
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM281",
+          "n": 2545,
+          "bits_per_trial": -0.5787871518926629,
+          "balanced_accuracy": 0.3680339583817192
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM282",
+          "n": 3572,
+          "bits_per_trial": -0.516795353192845,
+          "balanced_accuracy": 0.36698697265467456
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM293",
+          "n": 2425,
+          "bits_per_trial": -0.6481064568574699,
+          "balanced_accuracy": 0.3962362687433913
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM296",
+          "n": 3193,
+          "bits_per_trial": -0.5285753790790707,
+          "balanced_accuracy": 0.3469200635308673
+        }
+      ]
+    },
+    "exo_history_slow": {
+      "summary": {
+        "n_folds": 27,
+        "median": -0.5351101172846331,
+        "mean": -0.5230616653612528,
+        "q25": -0.6135227437647903,
+        "q75": -0.44093138653444536,
+        "positive_fraction": 0.0
+      },
+      "folds": [
+        {
+          "animal": "Chemo:ANM109",
+          "n": 2672,
+          "bits_per_trial": -0.26821284429820835,
+          "balanced_accuracy": 0.36339750645180513
+        },
+        {
+          "animal": "Chemo:ANM4",
+          "n": 1110,
+          "bits_per_trial": -0.8131757949240538,
+          "balanced_accuracy": 0.359993387959024
+        },
+        {
+          "animal": "Chemo:ANM48",
+          "n": 2118,
+          "bits_per_trial": -0.7679366792356939,
+          "balanced_accuracy": 0.3657928663409223
+        },
+        {
+          "animal": "Chemo:ANM5",
+          "n": 1762,
+          "bits_per_trial": -0.6375394807483326,
+          "balanced_accuracy": 0.38118990124834484
+        },
+        {
+          "animal": "Chemo:ANM6",
+          "n": 2272,
+          "bits_per_trial": -0.27982444525381067,
+          "balanced_accuracy": 0.38723872025561795
+        },
+        {
+          "animal": "Chemo:ANM97",
+          "n": 1340,
+          "bits_per_trial": -0.5940875314272615,
+          "balanced_accuracy": 0.3605230686178109
+        },
+        {
+          "animal": "Jaws:ANM112",
+          "n": 1271,
+          "bits_per_trial": -0.29692462198745095,
+          "balanced_accuracy": 0.3570727856264944
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM1",
+          "n": 4485,
+          "bits_per_trial": -0.7303983977881201,
+          "balanced_accuracy": 0.3560522171003115
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM3",
+          "n": 2529,
+          "bits_per_trial": -0.6063551950903772,
+          "balanced_accuracy": 0.3744962877356321
+        },
+        {
+          "animal": "SF_Gcamp_DTFL:ANM35",
+          "n": 2244,
+          "bits_per_trial": -0.6731500870766515,
+          "balanced_accuracy": 0.3475576290575066
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM118",
+          "n": 3579,
+          "bits_per_trial": -0.496108745298618,
+          "balanced_accuracy": 0.33521845999738414
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM119",
+          "n": 2599,
+          "bits_per_trial": -0.36413849395378844,
+          "balanced_accuracy": 0.3835021014634287
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM121",
+          "n": 2925,
+          "bits_per_trial": -0.6060920492858995,
+          "balanced_accuracy": 0.3701577203786918
+        },
+        {
+          "animal": "SocialFeedig_OXT:ANM126",
+          "n": 2701,
+          "bits_per_trial": -0.5286239740421523,
+          "balanced_accuracy": 0.3821317975285821
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM138",
+          "n": 3577,
+          "bits_per_trial": -0.18163549432407985,
+          "balanced_accuracy": 0.3691299335791119
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM139",
+          "n": 3507,
+          "bits_per_trial": -0.6206902924392035,
+          "balanced_accuracy": 0.35112060665794614
+        },
+        {
+          "animal": "SocialFeeding_DMS:ANM141",
+          "n": 2608,
+          "bits_per_trial": -0.5882711330043335,
+          "balanced_accuracy": 0.3574741777675389
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM133",
+          "n": 1694,
+          "bits_per_trial": -0.4725028270153917,
+          "balanced_accuracy": 0.3662168241115609
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM134",
+          "n": 1444,
+          "bits_per_trial": -0.409359946053499,
+          "balanced_accuracy": 0.3694958454401795
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM141",
+          "n": 3798,
+          "bits_per_trial": -0.39133660231671613,
+          "balanced_accuracy": 0.3896713361499271
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM146",
+          "n": 1761,
+          "bits_per_trial": -0.4893826554559937,
+          "balanced_accuracy": 0.38321847201578446
+        },
+        {
+          "animal": "SocialFeeding_DMS_3:ANM147",
+          "n": 1711,
+          "bits_per_trial": -0.5131217246452293,
+          "balanced_accuracy": 0.36364051615850174
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM276",
+          "n": 2820,
+          "bits_per_trial": -0.49089274025067914,
+          "balanced_accuracy": 0.3474313842170454
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM281",
+          "n": 2545,
+          "bits_per_trial": -0.6015874487765415,
+          "balanced_accuracy": 0.3636423773601289
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM282",
+          "n": 3572,
+          "bits_per_trial": -0.5351101172846331,
+          "balanced_accuracy": 0.3482727536007815
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM293",
+          "n": 2425,
+          "bits_per_trial": -0.6292393395037011,
+          "balanced_accuracy": 0.41176586155218636
+        },
+        {
+          "animal": "SocialFeeding_JAWS_VTAcopy:ANM296",
+          "n": 3193,
+          "bits_per_trial": -0.5369663032734037,
+          "balanced_accuracy": 0.34085496201069887
+        }
+      ]
+    },
+    "delta_slow_vs_history_median_bits_per_trial": -0.010331382738361872
+  },
+  "da_readout": {
+    "basic": {
+      "summary": {
+        "n_folds": 9,
+        "median": 0.022337428915636726,
+        "mean": -0.031518378071037856,
+        "q25": -0.11192527986890322,
+        "q75": 0.03598336685803394,
+        "positive_fraction": 0.5555555555555556
+      },
+      "folds": [
+        {
+          "animal": "1",
+          "n": 145,
+          "r2": -0.29118147108771475
+        },
+        {
+          "animal": "18",
+          "n": 255,
+          "r2": 0.12478396104065392
+        },
+        {
+          "animal": "19",
+          "n": 137,
+          "r2": -0.07292137080852235
+        },
+        {
+          "animal": "27",
+          "n": 203,
+          "r2": -0.11192527986890322
+        },
+        {
+          "animal": "3",
+          "n": 114,
+          "r2": 0.022337428915636726
+        },
+        {
+          "animal": "35",
+          "n": 146,
+          "r2": 0.03342169815501328
+        },
+        {
+          "animal": "4",
+          "n": 187,
+          "r2": -0.12275949193545488
+        },
+        {
+          "animal": "5",
+          "n": 198,
+          "r2": 0.09859575609191662
+        },
+        {
+          "animal": "6",
+          "n": 329,
+          "r2": 0.03598336685803394
+        }
+      ]
+    },
+    "basic_plus_slow_state": {
+      "summary": {
+        "n_folds": 9,
+        "median": 0.019322752949618383,
+        "mean": 0.010756542498844897,
+        "q25": -0.010051851523700694,
+        "q75": 0.12159456749676034,
+        "positive_fraction": 0.5555555555555556
+      },
+      "folds": [
+        {
+          "animal": "1",
+          "n": 145,
+          "r2": -0.34631593654558834
+        },
+        {
+          "animal": "18",
+          "n": 255,
+          "r2": 0.20920833897839797
+        },
+        {
+          "animal": "19",
+          "n": 137,
+          "r2": -0.010051851523700694
+        },
+        {
+          "animal": "27",
+          "n": 203,
+          "r2": 0.019322752949618383
+        },
+        {
+          "animal": "3",
+          "n": 114,
+          "r2": 0.15035771531132813
+        },
+        {
+          "animal": "35",
+          "n": 146,
+          "r2": 0.10624582454862441
+        },
+        {
+          "animal": "4",
+          "n": 187,
+          "r2": -0.1503853657395171
+        },
+        {
+          "animal": "5",
+          "n": 198,
+          "r2": 0.12159456749676034
+        },
+        {
+          "animal": "6",
+          "n": 329,
+          "r2": -0.0031671629863190276
+        }
+      ]
+    },
+    "delta_slow_state_median_r2": -0.003014675966018343
+  },
+  "interpretation": "Held-out-animal tests of whether slow computational state improves future social action/outcome prediction and neural DA readout beyond current exogenous/history features.",
+  "guardrail": "These are event/trial-level world-model applications, not whole-brain emulation or causal identification."
+}

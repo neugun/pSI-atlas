@@ -1,0 +1,512 @@
+{
+  "status": "PASS",
+  "dataset": "user real VTA 2P D6 conditioning, two independently extracted animals",
+  "animals": [
+    "54_D6",
+    "181_D6"
+  ],
+  "task": "session-free cross-animal future calcium prediction with no cell-ID or session-ID parameters",
+  "features": "own recent calcium + population mean/std/derivative + time; optional known condition token",
+  "baselines": "persistence and same shared ridge without condition token",
+  "extractions_tested": [
+    "current_sub",
+    "suite_sub"
+  ],
+  "results": {
+    "current_sub": {
+      "dt_s": 0.15625953674316406,
+      "animal_cells": {
+        "54_D6": 16,
+        "181_D6": 21
+      },
+      "animal_trials": {
+        "54_D6": 60,
+        "181_D6": 52
+      },
+      "transfer": {
+        "54_D6_to_181_D6": {
+          "1": {
+            "horizon_s": 0.15625953674316406,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.14740364345479962,
+              "persistence_r2": -0.22440004348754883,
+              "delta_r2_vs_persistence": 0.37180368694234844,
+              "bits_per_sample_vs_persistence": 0.26107000438359346,
+              "model_mse": 1.5958307874654536,
+              "persistence_mse": 2.2917468547821045
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.14687148551452667,
+              "persistence_r2": -0.22440004348754883,
+              "delta_r2_vs_persistence": 0.3712715290020755,
+              "bits_per_sample_vs_persistence": 0.26061990738415963,
+              "model_mse": 1.5968268438271334,
+              "persistence_mse": 2.2917468547821045
+            },
+            "delta_condition_bits_per_sample": -0.0004500969994338244
+          },
+          "4": {
+            "horizon_s": 0.6250381469726562,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.12270185317362081,
+              "persistence_r2": -0.26828527450561523,
+              "delta_r2_vs_persistence": 0.39098712767923605,
+              "bits_per_sample_vs_persistence": 0.2658701159100421,
+              "model_mse": 1.6561691649374743,
+              "persistence_mse": 2.394277334213257
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.12209206127717931,
+              "persistence_r2": -0.26828527450561523,
+              "delta_r2_vs_persistence": 0.39037733578279454,
+              "bits_per_sample_vs_persistence": 0.26536889625976373,
+              "model_mse": 1.6573203340577654,
+              "persistence_mse": 2.394277334213257
+            },
+            "delta_condition_bits_per_sample": -0.0005012196502783839
+          },
+          "8": {
+            "horizon_s": 1.2500762939453125,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.09393846688483498,
+              "persistence_r2": -0.31918609142303467,
+              "delta_r2_vs_persistence": 0.41312455830786965,
+              "bits_per_sample_vs_persistence": 0.2709835337383563,
+              "model_mse": 1.724086114478795,
+              "persistence_mse": 2.5101940631866455
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.09327526007973552,
+              "persistence_r2": -0.31918609142303467,
+              "delta_r2_vs_persistence": 0.4124613515027702,
+              "bits_per_sample_vs_persistence": 0.27045572457203537,
+              "model_mse": 1.7253480879782863,
+              "persistence_mse": 2.5101940631866455
+            },
+            "delta_condition_bits_per_sample": -0.0005278091663209472
+          },
+          "16": {
+            "horizon_s": 2.500152587890625,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.06703696381646407,
+              "persistence_r2": -0.40089142322540283,
+              "delta_r2_vs_persistence": 0.4679283870418669,
+              "bits_per_sample_vs_persistence": 0.29322669539099017,
+              "model_mse": 1.7458129729022926,
+              "persistence_mse": 2.621427059173584
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.06630259999113897,
+              "persistence_r2": -0.40089142322540283,
+              "delta_r2_vs_persistence": 0.4671940232165418,
+              "bits_per_sample_vs_persistence": 0.29265912397675686,
+              "model_mse": 1.7471871558477685,
+              "persistence_mse": 2.621427059173584
+            },
+            "delta_condition_bits_per_sample": -0.0005675714142333033
+          }
+        },
+        "181_D6_to_54_D6": {
+          "1": {
+            "horizon_s": 0.15625953674316406,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.023916943855174733,
+              "persistence_r2": -0.7495298385620117,
+              "delta_r2_vs_persistence": 0.725612894706837,
+              "bits_per_sample_vs_persistence": 0.3864343024707184,
+              "model_mse": 1.2336391527208588,
+              "persistence_mse": 2.107874631881714
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.02468359482578686,
+              "persistence_r2": -0.7495298385620117,
+              "delta_r2_vs_persistence": 0.7248462437362249,
+              "bits_per_sample_vs_persistence": 0.3858944004331351,
+              "model_mse": 1.2345628317941413,
+              "persistence_mse": 2.107874631881714
+            },
+            "delta_condition_bits_per_sample": -0.0005399020375833063
+          },
+          "4": {
+            "horizon_s": 0.6250381469726562,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.030912246348130168,
+              "persistence_r2": -0.770565390586853,
+              "delta_r2_vs_persistence": 0.7396531442387229,
+              "bits_per_sample_vs_persistence": 0.39014432017148254,
+              "model_mse": 1.2474823087846856,
+              "persistence_mse": 2.142518997192383
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.03265356347364068,
+              "persistence_r2": -0.770565390586853,
+              "delta_r2_vs_persistence": 0.7379118271132123,
+              "bits_per_sample_vs_persistence": 0.3889269176704758,
+              "model_mse": 1.2495894350854477,
+              "persistence_mse": 2.142518997192383
+            },
+            "delta_condition_bits_per_sample": -0.0012174025010067147
+          },
+          "8": {
+            "horizon_s": 1.2500762939453125,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.039441145241162934,
+              "persistence_r2": -0.7901488542556763,
+              "delta_r2_vs_persistence": 0.7507077090145133,
+              "bits_per_sample_vs_persistence": 0.39213560723390173,
+              "model_mse": 1.2634535663204387,
+              "persistence_mse": 2.175947666168213
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.042527327358280465,
+              "persistence_r2": -0.7901488542556763,
+              "delta_r2_vs_persistence": 0.7476215268973958,
+              "bits_per_sample_vs_persistence": 0.38999704319924466,
+              "model_mse": 1.2672048588491578,
+              "persistence_mse": 2.175947666168213
+            },
+            "delta_condition_bits_per_sample": -0.0021385640346570645
+          },
+          "16": {
+            "horizon_s": 2.500152587890625,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.046977848290117974,
+              "persistence_r2": -0.8121330738067627,
+              "delta_r2_vs_persistence": 0.7651552255166447,
+              "bits_per_sample_vs_persistence": 0.3957290607705981,
+              "model_mse": 1.2681362929071462,
+              "persistence_mse": 2.1949193477630615
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.051859377881886326,
+              "persistence_r2": -0.8121330738067627,
+              "delta_r2_vs_persistence": 0.7602736959248764,
+              "bits_per_sample_vs_persistence": 0.3923735974954835,
+              "model_mse": 1.2740489727697926,
+              "persistence_mse": 2.1949193477630615
+            },
+            "delta_condition_bits_per_sample": -0.0033554632751146007
+          }
+        }
+      },
+      "aggregate": {
+        "1": {
+          "horizon_s_approx": 0.15625953674316406,
+          "median_bits_per_sample_vs_persistence": 0.3232571539086474,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26061990738415963,
+            0.3858944004331351
+          ]
+        },
+        "4": {
+          "horizon_s_approx": 0.6250381469726562,
+          "median_bits_per_sample_vs_persistence": 0.32714790696511975,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26536889625976373,
+            0.3889269176704758
+          ]
+        },
+        "8": {
+          "horizon_s_approx": 1.2500762939453125,
+          "median_bits_per_sample_vs_persistence": 0.33022638388564,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.27045572457203537,
+            0.38999704319924466
+          ]
+        },
+        "16": {
+          "horizon_s_approx": 2.500152587890625,
+          "median_bits_per_sample_vs_persistence": 0.3425163607361202,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.29265912397675686,
+            0.3923735974954835
+          ]
+        }
+      }
+    },
+    "suite_sub": {
+      "dt_s": 0.15625953674316406,
+      "animal_cells": {
+        "54_D6": 16,
+        "181_D6": 21
+      },
+      "animal_trials": {
+        "54_D6": 60,
+        "181_D6": 52
+      },
+      "transfer": {
+        "54_D6_to_181_D6": {
+          "1": {
+            "horizon_s": 0.15625953674316406,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.16314878497216068,
+              "persistence_r2": -0.2099071741104126,
+              "delta_r2_vs_persistence": 0.3730559590825733,
+              "bits_per_sample_vs_persistence": 0.2659266323358584,
+              "model_mse": 1.5734743038740577,
+              "persistence_mse": 2.2749059200286865
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.1631015089978658,
+              "persistence_r2": -0.2099071741104126,
+              "delta_r2_vs_persistence": 0.3730086831082784,
+              "bits_per_sample_vs_persistence": 0.26588588262672264,
+              "model_mse": 1.5735631936664223,
+              "persistence_mse": 2.2749059200286865
+            },
+            "delta_condition_bits_per_sample": -4.0749709135756707e-05
+          },
+          "4": {
+            "horizon_s": 0.6250381469726562,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.12971232878527417,
+              "persistence_r2": -0.25845110416412354,
+              "delta_r2_vs_persistence": 0.3881634329493977,
+              "bits_per_sample_vs_persistence": 0.26604249330915025,
+              "model_mse": 1.649707693981849,
+              "persistence_mse": 2.3855061531066895
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.1296333677217414,
+              "persistence_r2": -0.25845110416412354,
+              "delta_r2_vs_persistence": 0.3880844718858649,
+              "bits_per_sample_vs_persistence": 0.26597704853092424,
+              "model_mse": 1.6498573717014622,
+              "persistence_mse": 2.3855061531066895
+            },
+            "delta_condition_bits_per_sample": -6.544477822600925e-05
+          },
+          "8": {
+            "horizon_s": 1.2500762939453125,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.09519305057379557,
+              "persistence_r2": -0.31422436237335205,
+              "delta_r2_vs_persistence": 0.4094174129471476,
+              "bits_per_sample_vs_persistence": 0.2692648516638214,
+              "model_mse": 1.7275164693640201,
+              "persistence_mse": 2.5092029571533203
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.09510661689832944,
+              "persistence_r2": -0.31422436237335205,
+              "delta_r2_vs_persistence": 0.4093309792716815,
+              "bits_per_sample_vs_persistence": 0.2691959466452312,
+              "model_mse": 1.727681494177291,
+              "persistence_mse": 2.5092029571533203
+            },
+            "delta_condition_bits_per_sample": -6.890501859019293e-05
+          },
+          "16": {
+            "horizon_s": 2.500152587890625,
+            "no_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.0630610215807994,
+              "persistence_r2": -0.4009978771209717,
+              "delta_r2_vs_persistence": 0.4640588987017711,
+              "bits_per_sample_vs_persistence": 0.290213923499256,
+              "model_mse": 1.758176756251432,
+              "persistence_mse": 2.628988742828369
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 128640,
+              "n_test_samples": 146328,
+              "model_r2": 0.06307441372667644,
+              "persistence_r2": -0.4009978771209717,
+              "delta_r2_vs_persistence": 0.4640722908476481,
+              "bits_per_sample_vs_persistence": 0.29022423416034016,
+              "model_mse": 1.7581516257358492,
+              "persistence_mse": 2.628988742828369
+            },
+            "delta_condition_bits_per_sample": 1.0310661084145245e-05
+          }
+        },
+        "181_D6_to_54_D6": {
+          "1": {
+            "horizon_s": 0.15625953674316406,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.01471560144343731,
+              "persistence_r2": -0.7329167127609253,
+              "delta_r2_vs_persistence": 0.718201111317488,
+              "bits_per_sample_vs_persistence": 0.38606340684920654,
+              "model_mse": 1.2306107514621942,
+              "persistence_mse": 2.101619243621826
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.015206002720488554,
+              "persistence_r2": -0.7329167127609253,
+              "delta_r2_vs_persistence": 0.7177107100404367,
+              "bits_per_sample_vs_persistence": 0.38571487146598765,
+              "model_mse": 1.231205492573114,
+              "persistence_mse": 2.101619243621826
+            },
+            "delta_condition_bits_per_sample": -0.0003485353832188842
+          },
+          "4": {
+            "horizon_s": 0.6250381469726562,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.025000754231808475,
+              "persistence_r2": -0.7583698034286499,
+              "delta_r2_vs_persistence": 0.7333690491968414,
+              "bits_per_sample_vs_persistence": 0.389306763324721,
+              "model_mse": 1.24811481336159,
+              "persistence_mse": 2.141117811203003
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.02648491960515842,
+              "persistence_r2": -0.7583698034286499,
+              "delta_r2_vs_persistence": 0.7318848838234915,
+              "bits_per_sample_vs_persistence": 0.3882630327128718,
+              "model_mse": 1.2499220401175788,
+              "persistence_mse": 2.141117811203003
+            },
+            "delta_condition_bits_per_sample": -0.0010437306118491474
+          },
+          "8": {
+            "horizon_s": 1.2500762939453125,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.0369857226188306,
+              "persistence_r2": -0.7833398580551147,
+              "delta_r2_vs_persistence": 0.7463541354362841,
+              "bits_per_sample_vs_persistence": 0.3910928002205957,
+              "model_mse": 1.2680268090951006,
+              "persistence_mse": 2.180669069290161
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.04009305347790426,
+              "persistence_r2": -0.7833398580551147,
+              "delta_r2_vs_persistence": 0.7432468045772105,
+              "bits_per_sample_vs_persistence": 0.3889345122361838,
+              "model_mse": 1.2718264552696719,
+              "persistence_mse": 2.180669069290161
+            },
+            "delta_condition_bits_per_sample": -0.002158287984411922
+          },
+          "16": {
+            "horizon_s": 2.500152587890625,
+            "no_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.04777904239720554,
+              "persistence_r2": -0.8104617595672607,
+              "delta_r2_vs_persistence": 0.7626827171700552,
+              "bits_per_sample_vs_persistence": 0.39451156755520983,
+              "model_mse": 1.2752369643104193,
+              "persistence_mse": 2.2034871578216553
+            },
+            "with_condition_exogenous": {
+              "n_train_samples": 146328,
+              "n_test_samples": 128640,
+              "model_r2": -0.05288812440635371,
+              "persistence_r2": -0.8104617595672607,
+              "delta_r2_vs_persistence": 0.757573635160907,
+              "bits_per_sample_vs_persistence": 0.3910027481058315,
+              "model_mse": 1.2814551553298281,
+              "persistence_mse": 2.2034871578216553
+            },
+            "delta_condition_bits_per_sample": -0.0035088194493783087
+          }
+        }
+      },
+      "aggregate": {
+        "1": {
+          "horizon_s_approx": 0.15625953674316406,
+          "median_bits_per_sample_vs_persistence": 0.3258003770463551,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26588588262672264,
+            0.38571487146598765
+          ]
+        },
+        "4": {
+          "horizon_s_approx": 0.6250381469726562,
+          "median_bits_per_sample_vs_persistence": 0.32712004062189803,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26597704853092424,
+            0.3882630327128718
+          ]
+        },
+        "8": {
+          "horizon_s_approx": 1.2500762939453125,
+          "median_bits_per_sample_vs_persistence": 0.3290652294407075,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.2691959466452312,
+            0.3889345122361838
+          ]
+        },
+        "16": {
+          "horizon_s_approx": 2.500152587890625,
+          "median_bits_per_sample_vs_persistence": 0.3406134911330858,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.29022423416034016,
+            0.3910027481058315
+          ]
+        }
+      }
+    }
+  },
+  "guardrail": "Two-animal D6 transfer test; demonstrates cross-animal predictive portability if positive, not a whole-VTA or whole-brain emulation claim."
+}

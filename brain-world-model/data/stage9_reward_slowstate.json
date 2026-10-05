@@ -1,0 +1,261 @@
+{
+  "status": "PASS",
+  "dataset": "user reward-contrast / DA bouts",
+  "n_animals": 11,
+  "n_bouts": 402,
+  "n_events": 8746,
+  "target": "DA bout delta 2-5 s",
+  "heldout_axis": "leave-one-animal-out",
+  "models": {
+    "context_only": [
+      "bout_duration",
+      "session_fraction",
+      "block_index",
+      "within_block_sec",
+      "quality"
+    ],
+    "short_history": [
+      "bout_duration",
+      "session_fraction",
+      "block_index",
+      "within_block_sec",
+      "quality",
+      "reward_rate_prev1",
+      "reward_rate_prev3",
+      "reward_rate_prev5",
+      "time_since_reward",
+      "time_since_event"
+    ],
+    "multiscale_history": [
+      "bout_duration",
+      "session_fraction",
+      "block_index",
+      "within_block_sec",
+      "quality",
+      "reward_rate_prev1",
+      "reward_count_prev1",
+      "reward_rate_prev3",
+      "reward_count_prev3",
+      "reward_rate_prev5",
+      "reward_count_prev5",
+      "reward_rate_prev10",
+      "reward_count_prev10",
+      "reward_rate_prev20",
+      "reward_count_prev20",
+      "reward_rate_prev40",
+      "reward_count_prev40",
+      "reward_rate_prev80",
+      "reward_count_prev80",
+      "ew_reward_tau5",
+      "ew_reward_tau15",
+      "ew_reward_tau45",
+      "ew_reward_tau120",
+      "ew_reward_tau360",
+      "time_since_reward",
+      "time_since_event"
+    ]
+  },
+  "summary": {
+    "context_only": {
+      "n_folds": 11,
+      "median_r2": 0.1299867227938033,
+      "mean_r2": 0.12188422431388007,
+      "q25": 0.0951427786749594,
+      "q75": 0.31072316605114536,
+      "positive_fraction": 0.8181818181818182
+    },
+    "short_history": {
+      "n_folds": 11,
+      "median_r2": 0.15277120926431365,
+      "mean_r2": 0.11865381750201286,
+      "q25": 0.06572289791499258,
+      "q75": 0.317974951853255,
+      "positive_fraction": 0.8181818181818182
+    },
+    "multiscale_history": {
+      "n_folds": 11,
+      "median_r2": 0.16499119876492108,
+      "mean_r2": 0.10048544829474725,
+      "q25": -0.03980527159701602,
+      "q75": 0.32943544657870844,
+      "positive_fraction": 0.7272727272727273
+    }
+  },
+  "folds": {
+    "context_only": [
+      {
+        "animal": 193,
+        "n": 22,
+        "r2": 0.1364150617307951
+      },
+      {
+        "animal": 195,
+        "n": 39,
+        "r2": 0.1290509741585404
+      },
+      {
+        "animal": 199,
+        "n": 24,
+        "r2": 0.4227331425041778
+      },
+      {
+        "animal": 200,
+        "n": 58,
+        "r2": 0.1299867227938033
+      },
+      {
+        "animal": 202,
+        "n": 12,
+        "r2": 0.4676138396003513
+      },
+      {
+        "animal": 217,
+        "n": 65,
+        "r2": 0.34846353769799643
+      },
+      {
+        "animal": 219,
+        "n": 34,
+        "r2": 0.0891594462627534
+      },
+      {
+        "animal": 236,
+        "n": 53,
+        "r2": 0.1011261110871654
+      },
+      {
+        "animal": 239,
+        "n": 43,
+        "r2": 0.2729827944042943
+      },
+      {
+        "animal": 240,
+        "n": 36,
+        "r2": -0.7444277242946931
+      },
+      {
+        "animal": 243,
+        "n": 16,
+        "r2": -0.012377438492503279
+      }
+    ],
+    "short_history": [
+      {
+        "animal": 193,
+        "n": 22,
+        "r2": 0.03976600070965797
+      },
+      {
+        "animal": 195,
+        "n": 39,
+        "r2": 0.20536774745387465
+      },
+      {
+        "animal": 199,
+        "n": 24,
+        "r2": 0.39858553319603596
+      },
+      {
+        "animal": 200,
+        "n": 58,
+        "r2": 0.15277120926431365
+      },
+      {
+        "animal": 202,
+        "n": 12,
+        "r2": 0.39979746497956437
+      },
+      {
+        "animal": 217,
+        "n": 65,
+        "r2": 0.40096835852391133
+      },
+      {
+        "animal": 219,
+        "n": 34,
+        "r2": 0.09903098277987632
+      },
+      {
+        "animal": 236,
+        "n": 53,
+        "r2": 0.0916797951203272
+      },
+      {
+        "animal": 239,
+        "n": 43,
+        "r2": 0.237364370510474
+      },
+      {
+        "animal": 240,
+        "n": 36,
+        "r2": -0.6033267200196366
+      },
+      {
+        "animal": 243,
+        "n": 16,
+        "r2": -0.11681274999625746
+      }
+    ],
+    "multiscale_history": [
+      {
+        "animal": 193,
+        "n": 22,
+        "r2": -0.1402996800363836
+      },
+      {
+        "animal": 195,
+        "n": 39,
+        "r2": 0.2681228076576304
+      },
+      {
+        "animal": 199,
+        "n": 24,
+        "r2": 0.40156352820326235
+      },
+      {
+        "animal": 200,
+        "n": 58,
+        "r2": 0.16499119876492108
+      },
+      {
+        "animal": 202,
+        "n": 12,
+        "r2": 0.39074808549978646
+      },
+      {
+        "animal": 217,
+        "n": 65,
+        "r2": 0.3961812508351923
+      },
+      {
+        "animal": 219,
+        "n": 34,
+        "r2": 0.09753636090491935
+      },
+      {
+        "animal": 236,
+        "n": 53,
+        "r2": 0.060689136842351554
+      },
+      {
+        "animal": 239,
+        "n": 43,
+        "r2": 0.2197720842503743
+      },
+      {
+        "animal": 240,
+        "n": 36,
+        "r2": -0.5700854457388498
+      },
+      {
+        "animal": 243,
+        "n": 16,
+        "r2": -0.1838793959409848
+      }
+    ]
+  },
+  "delta_multiscale_vs_context_median_r2": 0.03500447597111778,
+  "delta_multiscale_vs_short_median_r2": 0.012219989500607431,
+  "interpretation": "Tests whether slow/multiscale reward history adds transferable predictive information about dopamine dynamics across animals.",
+  "guardrail": "This is a held-out-animal predictive test of slow state, not a causal memory mechanism claim."
+}
