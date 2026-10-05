@@ -1,4 +1,5 @@
 name: Deploy GitHub Pages
+# Explicit workflow deployment prevents legacy Pages build churn on rapid pushes.
 
 on:
   push:
