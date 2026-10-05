@@ -351,7 +351,10 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig1_same_current_reward_raw_and_summary_v3.png" alt="fig1 figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="../assets/Fig1_same_current_reward_manuscript_v2_mobile.png">
+        <img src="../assets/Fig1_same_current_reward_manuscript_v2.png" alt="fig1 figure">
+      </picture>
       <figcaption>
         <strong>A、B，</strong>固定当前食物后的平均VTA GRAB-DA时间曲线：100E的H vs S、20E的L vs N；n=9，阴影为动物间SEM。
         <strong>C、D，</strong>四个条件的raw bout-duration分布并叠加每只动物均值；n=9。
@@ -393,7 +396,10 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig2_consumption_updates_reference_v4.png" alt="fig2 figure">
+      <picture>
+        <source media="(max-width: 640px)" srcset="../assets/Fig2_sampling_update_manuscript_v2_mobile.png">
+        <img src="../assets/Fig2_sampling_update_manuscript_v2.png" alt="fig2 figure">
+      </picture>
       <figcaption>
         <strong>A，</strong>因果顺序示意：未采样的passive time与真正reward exposure分开（无推断统计）。
         <strong>B，</strong>9只小鼠的first-sample passive-clock scan：所有候选时间常数中最大的sustained-DA增量仅ΔR²=.00385，所有clock项均不显著（animal-clustered regression，均P&gt;.55）。
@@ -484,7 +490,10 @@
 
     <div class="figure-grid">
       <figure class="figure">
-        <img src="../assets/ED1_value_vs_action_adjudication_v2.png" alt="VTA dopamine同时包含relative value和licking action成分">
+        <picture>
+        <source media="(max-width: 640px)" srcset="../assets/ED1_value_action_manuscript_v2_mobile.png">
+        <img src="../assets/ED1_value_action_manuscript_v2.png" alt="VTA dopamine同时包含relative value和licking action成分">
+      </picture>
         <figcaption>
           sustained dopamine同时包含当前consummatory action / sampling信息和history-relative component。
           更合适的解释是multiplexing，而不是二选一。
@@ -522,13 +531,11 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig6_NEURON_REBUILD_FIG6_generalization_v2.png" alt="fig6 figure">
-      <figcaption>
-        <strong>A，</strong>冻结α=.20后，在独立QE任务7只小鼠、66个pure-100E bouts中仍增加AUC ΔR²=.02540（animal-clustered P=.00141；within-animal circular-shift P=.00205）。
-        <strong>B，</strong>QE transfer覆盖较宽recency范围；其task-specific maximum约α=.30，而α=.20仍保留97.9%的最大效应。
-        <strong>C，</strong>符号统一规定为lower→higher value。与Natural value axis的mean cosine：quinine 7/7、hunger 7/7、LiCl 7/7（exact sign P=.0156），Stim13 12/13（P=.000488），Stim5 5/5（P=.0625）。
-        <strong>D，</strong>逐只动物在冻结Natural axis上的projection，无重新拟合。C/D支持的是<strong>价值几何一致</strong>，不是所有操作都使用相同history-update机制。
-      </figcaption>
+      <picture>
+        <source media="(max-width: 640px)" srcset="../assets/Fig6_generalization_manuscript_v2_mobile.png">
+        <img src="../assets/Fig6_generalization_manuscript_v2.png" alt="fig6 figure">
+      </picture>
+      <figcaption><strong>A，</strong>冻结α=.20的history state在独立QE任务中测试；图中quartile为history-defined pure-100E bouts的描述性展示，primary 66-bout/7鼠检验为ΔR²=.02540（animal-clustered P=.00141；circular-shift P=.00205）。<strong>B，</strong>QE effect在α=.10–.30保持稳定，并明确标出冻结α=.20。<strong>C，</strong>统一按lower→higher value定向后，quinine 7/7、hunger 7/7、LiCl 7/7、Stim13 12/13、Stim5 5/5动物方向一致。<strong>D，</strong>对有完整source的quinine、hunger、LiCl和Stim13逐动物投影到冻结Natural two-readout value axis，不重新拟合；Stim5保留在C的方向汇总中。这些panel支持共享value geometry，而不是所有操作使用完全相同的history-update机制。</figcaption>
     </figure>
     <div class="callout">
       从alternating natural-reward task冻结得到的history coordinate，
@@ -551,14 +558,11 @@
       </p>
     </div>
     <figure class="figure">
-      <img src="../assets/Fig7_NEURON_REBUILD_FIG7_behavior_causal_v3.png" alt="fig7 figure">
-      <figcaption>
-        <strong>A，</strong>较高natural history state对应更低bout-termination odds（OR=.459，animal-clustered discrete-time logistic hazard P=.00018；11鼠）。
-        <strong>B，</strong>进食期急性VTA dopamine activation促进persistence（OR=.690，P=3.29×10<sup>−10</sup>；13鼠）；该急性activation结果为Zhu等 <em>Science</em> 2025, eadt0773中的已发表结果，在这里作为机制基线重现。
-        <strong>C，</strong>consumption-contingent Jaws inhibition促进termination（OR=1.341，P=.0289；6鼠）。
-        <strong>D，</strong>forest plot统一使用OR&lt;1表示更长persistence、OR&gt;1表示更早termination；contingent-vs-noncontingent timing interaction OR=1.23，P=.052，为borderline。
-        本页新增的因果价值在于把natural reference axis、人工stimulation的共轴关系和contingent inhibition连接起来，而不是重复宣称Science 2025已经建立的acute activation effect。
-      </figcaption>
+      <picture>
+        <source media="(max-width: 640px)" srcset="../assets/Fig7_behavior_causal_manuscript_v2_mobile.png">
+        <img src="../assets/Fig7_behavior_causal_manuscript_v2.png" alt="fig7 figure">
+      </picture>
+      <figcaption><strong>A，</strong>Natural history-relative state在current reward内部高低分组后的经验persistence curve仅作描述性展示；primary hazard model为termination OR=.459（P=.00018）。<strong>B，</strong>Stim13 laser-on相对off延长feeding persistence（primary termination OR=.690，P=3.29×10<sup>−10</sup>）。<strong>C，</strong>统一forest axis把natural history、DA activation、contingent Jaws和noncontingent Jaws放在同一个bout-termination尺度上。contingent inhibition促进更早终止（OR=1.34，P=.0289），noncontingent control较弱且不显著（OR=1.12，P=.0976）。推断统计以hazard model为准，而不是survival curve的视觉分离。</figcaption>
     </figure>
     <div class="split">
       <div>
@@ -684,15 +688,24 @@
       <summary>与正文统计结论逐一对应的编号 Extended Data 图。</summary>
       <div class="details-body">
         <figure class="figure">
-          <img src="../assets/ED1_value_vs_action_adjudication_v2.png" alt="ED1 value versus action">
+          <picture>
+        <source media="(max-width: 640px)" srcset="../assets/ED1_value_action_manuscript_v2_mobile.png">
+        <img src="../assets/ED1_value_action_manuscript_v2.png" alt="ED1 value versus action">
+      </picture>
           <figcaption><strong>ED1。</strong>持续性DA的action-control adjudication。按因果顺序加入licking control后，history-relative component仍存在；最灵活的0–2 s + 2–5 s sensitivity model中，C仍有unique ΔR²=.04895（11鼠；conditional permutation P=.0449）。这是supportive sensitivity evidence，不是主发现检验。</figcaption>
         </figure>
         <figure class="figure">
-          <img src="../assets/ED2_Stim13_history_reanalysis_v2.png" alt="ED2 stimulation history">
-          <figcaption><strong>ED2A，</strong>对Zhu等 <em>Science</em> 2025 Stim13 dataset的重分析：past stimulation history在full controls之后仍有ΔR²=.00338；再加入future-history control后仍为ΔR²=.00252（两者conditional permutation均P=5×10<sup>−5</sup>），共1,833 bouts、13鼠。<strong>ED2B，</strong>simple past model中9/13动物斜率为正；此panel仅描述方向，不单独作为显著性结论。<strong>ED2C，</strong>past-history signal在较宽α范围稳定，而future control解释的variance明显更少。</figcaption>
+          <picture>
+        <source media="(max-width: 640px)" srcset="../assets/ED2_stimulation_history_manuscript_v2_mobile.png">
+        <img src="../assets/ED2_stimulation_history_manuscript_v2.png" alt="ED2 stimulation history">
+      </picture>
+          <figcaption><strong>ED2A，</strong>Stim13 past stimulation history在full controls后仍有ΔR²=.00338，加入future-history control后仍有ΔR²=.00252；两者conditional permutation均P=5×10<sup>−5</sup>，共1,833 bouts、13只小鼠。<strong>ED2B，</strong>从当前reconstructed-history authority独立重算的animal-level effect有9/13只为正，仅作描述性展示。<strong>ED2C，</strong>past-history added R²在α=.03–.60范围内保持宽profile，α=.20标为冻结transfer值。</figcaption>
         </figure>
         <figure class="figure">
-          <img src="../assets/ED3_gain_loss_asymmetry_v1.png" alt="ED3 gain loss">
+          <picture>
+        <source media="(max-width: 640px)" srcset="../assets/ED3_gain_loss_manuscript_v2_mobile.png">
+        <img src="../assets/ED3_gain_loss_manuscript_v2.png" alt="ED3 gain loss">
+      </picture>
           <figcaption><strong>ED3。</strong>分别估计[U−R]+与[R−U]+。Natural：gain ΔR²=.0292，P=.00370；loss ΔR²=.00352，P=.324；interaction P=.216。QE：gain ΔR²=.0196，P=.0233；loss ΔR²=.00439，P=.258；interaction P=.000527。Stim13：gain ΔR²=.00127，P=.00470；loss ΔR²=.0000265，P=.666；interaction P=.197。除interaction外均为conditional permutation。</figcaption>
         </figure>
         <figure class="figure">
@@ -703,12 +716,18 @@
           <figcaption><strong>ED4A，</strong>raw、未做pre-subtraction的signal仍保留sustained C（P=.0399），early无效（P=.718），n=192/11鼠。<strong>ED4B，</strong>精确匹配0–2 s lick后9/11动物DA方向一致（one-sided exact Wilcoxon P=.0415）；更严格0–5 s匹配较弱（7/11，P=.183）。<strong>ED4C，</strong>RF、ExtraTrees、HistGB等nonlinear nuisance model后residual C仍为正（conditional permutation P=.010–.0172）。<strong>ED4D，</strong>history在H50 Value-RNN reward-only之后P=.0128、reward+time之后P=.0078仍有unique信息，RNN反向unique为null。<strong>ED4E，</strong>leave-one-cohort-out方向仍为正，但小样本subset功效下降；full-data conditional P=.0092。</figcaption>
         </figure>
         <figure class="figure">
-          <img src="../assets/ED5_hunger_LiCl_semaglutide_paired_v1.png" alt="ED5 physiological states">
-          <figcaption><strong>ED5A，</strong>hunger提高mean bout duration（7鼠，paired exact Wilcoxon P=.03125）。<strong>ED5B，</strong>LiCl devaluation降低duration（同一7鼠family，P=.015625）。<strong>ED5C，</strong>semaglutide相对PBS降低Day-1 VTA dopamine AUC（7鼠，P=.03125）。这里semaglutide明确对应Zhu等 <em>Science</em> 2025；它是physiological-state manipulation，不是直接history manipulation。</figcaption>
+          <picture>
+        <source media="(max-width: 640px)" srcset="../assets/ED5_physiology_manuscript_v2_mobile.png">
+        <img src="../assets/ED5_physiology_manuscript_v2.png" alt="ED5 physiological states">
+      </picture>
+          <figcaption><strong>ED5A，</strong>hunger提高mean bout duration（7鼠，paired exact Wilcoxon P=.03125）。<strong>ED5B，</strong>LiCl devaluation降低duration（同一7鼠family，P=.015625）。按最新版作图规范，paired panel只保留每只动物的细灰连线，不再叠加重复点；彩色横线为group mean，黑色whisker为SEM。<strong>ED5C，</strong>semaglutide个体source在当前model zoo中没有单独保留，因此不手工重建个体坐标，只显示authority summary：Day-1 VTA dopamine AUC相对PBS低2.22 units，6/7只更低，paired P=.03125。</figcaption>
         </figure>
         <figure class="figure">
-          <img src="../assets/ED6_alpha_identifiability_v1.png" alt="ED6 alpha identifiability">
-          <figcaption><strong>ED6A，</strong>Natural和QE都有宽但错开的α峰（Natural约.15；QE约.30）。<strong>ED6B，</strong>α=.20是跨任务maximin折中，保留Natural最大效应91.1%、QE最大效应97.9%。<strong>ED6C，</strong>Stim13同样是宽profile。因此α=.20是transfer choice，不是唯一可辨识的生物学常数。</figcaption>
+          <picture>
+        <source media="(max-width: 640px)" srcset="../assets/ED6_alpha_regime_manuscript_v2_mobile.png">
+        <img src="../assets/ED6_alpha_regime_manuscript_v2.png" alt="ED6 alpha identifiability">
+      </picture>
+          <figcaption><strong>ED6A，</strong>task-specific optimum并不相同（Natural约.15、QE约.30、Stim13约.10），所以α=.20不是唯一生物学常数。<strong>ED6B，</strong>冻结α=.20仍保留Natural task peak的91.1%、QE的97.9%、Stim13的97.5%。<strong>ED6C，</strong>Stim13 neural-history的exact profile在峰值附近很宽。因此α=.20是跨任务transfer折中，而不是重新拟合得到的常数。</figcaption>
         </figure>
         <figure class="figure">
           <picture>
