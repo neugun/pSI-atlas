@@ -6,7 +6,7 @@
 <title>Virtual Mouse Behavioral Atlas</title>
 <meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css?v=20261004v4">
+<link rel="stylesheet" href="style.css?v=20261004v5">
 </head>
 <body>
 <main>
@@ -41,6 +41,53 @@
       <p>This held-out example compares the recorded future directly with saved model rollouts from the same real present. Each step and probability below comes from the real session/model outputs; no illustrative trajectory is drawn. The population benchmark remains available below.</p>
     </div>
 
+    <div class="wm-method" aria-label="Social world model architecture">
+      <section class="wm-method-panel">
+        <div class="wm-method-title"><span>A</span> Learn a predictive social state</div>
+        <div class="wm-head-row">
+          <div class="wm-head">P(Observe)</div>
+          <div class="wm-head">P(outcome)</div>
+          <div class="wm-head">P(next motif / event)</div>
+        </div>
+        <div class="wm-latent-row">
+          <div class="wm-latent"><b>z<sub>t</sub></b><small>latent social state</small></div>
+          <div class="wm-transition"><span>a<sub>t</sub> + o<sub>t</sub></span><i>→</i></div>
+          <div class="wm-latent"><b>z<sub>t+1</sub></b><small>predicted state</small></div>
+          <div class="wm-transition"><span>a<sub>t+1</sub> + o<sub>t+1</sub></span><i>→</i></div>
+          <div class="wm-latent"><b>z<sub>t+2</sub></b><small>predicted state</small></div>
+        </div>
+        <div class="wm-input-flow">
+          <div class="wm-input"><b>Observed x<sub>t</sub></b><span>self state · demonstrator state · recent action/outcome history</span></div>
+          <div class="wm-arrow">→</div>
+          <div class="wm-encoder"><b>Encoder + GRU</b><span>posterior state from real sequence</span></div>
+          <div class="wm-arrow">→</div>
+          <div class="wm-input-note">12-motif state is a future target, not an encoder input.</div>
+        </div>
+      </section>
+
+      <section class="wm-method-panel wm-counterfactual">
+        <div class="wm-method-title"><span>B</span> Same present, different social information</div>
+        <div class="wm-present-node"><b>Same recorded present</b><span>ANM4 D139 · held-out animal</span></div>
+        <div class="wm-branch-grid">
+          <div class="wm-branch normal">
+            <div class="wm-branch-tag">NORMAL</div>
+            <b>All observed social channels</b>
+            <span>frozen posterior → imagined future</span>
+          </div>
+          <div class="wm-branch gated">
+            <div class="wm-branch-tag">SOCIAL GATE</div>
+            <b>Demonstrator channels removed</b>
+            <span>same model · same present</span>
+          </div>
+        </div>
+        <div class="wm-result-row">
+          <div><strong>6 / 8</strong><span>neural top-1 motif steps</span></div>
+          <div><strong>0 / 8</strong><span>Markov top-1 motif steps</span></div>
+          <div><strong>76.0 → 71.1%</strong><span>P(≥1 Active), normal → gated</span></div>
+        </div>
+      </section>
+    </div>
+
     <div class="world-view-toggle" id="worldViewToggle"><button data-view="motif" class="active">Motif future</button><button data-view="event">Observe / bout event future</button></div>
     <div class="world-hero-stats" id="worldHeroStats"></div>
     <div class="world-sequence" id="worldFutureStrip" aria-label="Eight-step actual and predicted future sequences"></div>
@@ -67,11 +114,10 @@
     <details class="world-global">
       <summary>Global benchmark across 27 held-out animals</summary>
       <p class="world-global-note">The hero above is deliberately the clearest example; these population-level results establish that the advantage is not restricted to that event.</p>
-      <div class="world-evidence">
-        <figure><img src="assets/world_baseline_ladder.png" alt="Baseline ladder for next-motif prediction"><figcaption>Weak→strong one-step baseline ladder.</figcaption></figure>
-        <figure><img src="assets/world_horizon_curves.png" alt="Multi-step world-model benchmark"><figcaption>1/3/5-step predictive decay across dynamic models.</figcaption></figure>
-        <figure><img src="assets/event_baseline_ladder.png" alt="Observe and bout event baseline ladder"><figcaption>Parallel 4-event version: Other / Observe / Active bout / Passive bout, with weak→strong baselines.</figcaption></figure>
-        <figure><img src="assets/event_horizon_curves.png" alt="Event-world multi-step benchmark"><figcaption>The event-world advantage persists at 1/3/5 future events.</figcaption></figure>
+      <div class="world-evidence world-evidence-clean">
+        <figure><img src="assets/world_motif_horizon_clean_v5.png?v=20261004v5" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> Neural world remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
+        <figure><img src="assets/event_baseline_clean_v5.png?v=20261004v5" alt="Simple four-event baseline ladder"><figcaption><b>4-event future.</b> The full weak→strong ladder is retained, but shown as one readable next-event comparison.</figcaption></figure>
+        <figure><img src="assets/event_horizon_clean_v5.png?v=20261004v5" alt="Simple four-event prediction across horizons"><figcaption><b>Multi-step event future.</b> Neural prediction remains separated from Action-only, Event Markov, and Global-frequency baselines.</figcaption></figure>
       </div>
     </details>
   </section>
@@ -170,7 +216,7 @@
   </footer>
 </main>
 <script src="explorer.js"></script>
-<script src="world_model.js?v=20261004v4"></script>
+<script src="world_model.js?v=20261004v5"></script>
 <script src="learning_story.js?v=20261004v3"></script>
 </body>
 </html>
