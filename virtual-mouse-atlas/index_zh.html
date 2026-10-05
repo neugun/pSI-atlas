@@ -1,323 +1,259 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>SWM — 目标导向社会信息采样的社会世界模型</title>
-<meta name="description" content="社会世界模型（SWM）：目标导向社会信息采样、留出动物预测动力学、前瞻社会效能分析与虚拟小鼠行为回放。">
-<link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css?v=20261005v10">
+<meta content="社会世界模型（SWM）：目标导向社会信息采样、留出动物预测动力学、前瞻社会效能分析与虚拟小鼠行为回放。" name="description"/>
+<link href="data:," rel="icon"/>
+<link href="style.css?v=20261005v17" rel="stylesheet"/>
 </head>
 <body>
-<div class="lang-switch" aria-label="语言"><a href="./">EN</a><span class="active">中文</span></div>
+<div aria-label="语言" class="lang-switch"><a href="./">EN</a><span class="active">中文</span></div>
 <main>
-  <header class="hero wrap">
-    <p class="kicker">社会世界模型 / 目标导向社会信息采样 / 虚拟小鼠</p>
-    <h1>目标导向社会信息采样的社会世界模型（SWM）</h1>
-    <p class="lede">一个数据驱动的预测模型，将真实社会状态、采样选择、未来结果和行为动力学连接起来。下方虚拟小鼠图谱可精确回放用于检验模型的真实事件。</p>
-    <div class="hero-player">
-      <div class="hero-live-metrics" id="heroMetrics" aria-live="off">
-        <div class="hero-metric"><span class="k">社会朝向</span><strong class="v" id="heroOrient">—</strong></div>
-        <div class="hero-metric"><span class="k">社会观察概率</span><strong class="v" id="heroObsProb">—</strong></div>
-        <div class="hero-metric"><span class="k">社会距离</span><strong class="v" id="heroDistance">—</strong></div>
-        <div class="hero-metric"><span class="k">观察鼠 / 示范鼠头朝向</span><strong class="v" id="heroHeadDirs">—</strong></div>
-      </div>
-      <video id="heroVideo" src="assets/hero_C18_v8_tailstable_texture.mp4" autoplay muted loop playsinline controls></video>
-    </div>
-    <p class="hero-note">主示例：最新版 Module 1.4 虚拟小鼠，并配对 frozen-v85 行为空间的精确坐标。</p>
-  </header>
+<header class="hero wrap">
+<p class="kicker">社会世界模型 / 目标导向社会信息采样 / 虚拟小鼠</p>
+<h1>目标导向社会信息采样的社会世界模型（SWM）</h1>
+<p class="lede">一个数据驱动的预测模型，将真实社会状态、采样选择、未来结果和行为动力学连接起来。下方虚拟小鼠图谱可精确回放用于检验模型的真实事件。</p>
+<div class="hero-player">
+<div aria-live="off" class="hero-live-metrics" id="heroMetrics">
+<div class="hero-metric"><span class="k">社会朝向</span><strong class="v" id="heroOrient">—</strong></div>
+<div class="hero-metric"><span class="k">社会观察概率</span><strong class="v" id="heroObsProb">—</strong></div>
+<div class="hero-metric"><span class="k">社会距离</span><strong class="v" id="heroDistance">—</strong></div>
+<div class="hero-metric"><span class="k">观察鼠 / 示范鼠头朝向</span><strong class="v" id="heroHeadDirs">—</strong></div>
+</div>
+<video autoplay="" controls="" id="heroVideo" loop="" muted="" playsinline="" src="assets/hero_C18_v8_tailstable_texture.mp4"></video>
+</div>
+<p class="hero-note">主示例：最新版 Module 1.4 虚拟小鼠，并配对 frozen-v85 行为空间的精确坐标。</p>
+</header>
+<section class="intro wrap">
+<h2>探索行为 motif</h2>
+<p>行为空间被组织为 12 个 motif。可使用 <b>社会朝向 1/2/4/7</b> 查看不依赖模型阈值的稳定 motif 结构，再切换到 <b>观察模型概率</b> 查看较保守的逐帧 v5 置信度层。每个可点击片段都会显示 <b>社会朝向</b>, <b>社会观察概率</b>, 鼻尖到鼻尖的 <b>社会距离</b>, 以及 <b>观察鼠 / 示范鼠头朝向</b>, 同时单独保留更严格的已验证 observation-bout 标签。点击任意片段可播放精确的虚拟小鼠视频；点击空白处放置比较圆，拖动平移，滚轮或双指缩放。</p>
+</section>
+<section class="world-model wrap" id="world-model">
+<div class="section-head world-head">
+<div>
+<div class="eyebrow">留出动物实证 · ANM4 D139</div>
+<h2>社会世界模型（SWM）</h2>
+</div>
+<p>从同一真实当前状态出发，SWM 准确预测记录中的未来，并且这种预测依赖正确的社会信息内容。下方总体留出动物结果证明这一计算跨动物稳定存在。</p>
+</div>
+<div aria-label="Social World Model architecture" class="wm-method">
+<section class="wm-method-panel">
+<div class="wm-method-title"><span>A</span> SWM 学习一个可预测的关系状态</div>
+<div class="wm-head-row">
+<div class="wm-head">P(观察)</div>
+<div class="wm-head">P(结果)</div>
+<div class="wm-head">P(下一 motif)</div>
+</div>
+<div class="wm-latent-row">
+<div class="wm-latent"><b>z<sub>t</sub></b><small>潜在社会状态</small></div>
+<div class="wm-transition"><span>a<sub>t</sub> + o<sub>t</sub></span><i>→</i></div>
+<div class="wm-latent"><b>z<sub>t+1</sub></b><small>预测状态</small></div>
+<div class="wm-transition"><span>a<sub>t+1</sub> + o<sub>t+1</sub></span><i>→</i></div>
+<div class="wm-latent"><b>z<sub>t+2</sub></b><small>预测状态</small></div>
+</div>
+<div class="wm-input-flow">
+<div class="wm-input"><b>已观察 x<sub>t</sub></b><span>自身状态 · 示范鼠状态 · 近期动作/结果历史</span></div>
+<div class="wm-arrow">→</div>
+<div class="wm-encoder"><b>编码器 + GRU</b><span>由真实序列得到的后验状态</span></div>
+<div class="wm-arrow">→</div>
+<div class="wm-input-note">5 事件视图由策略头与结果头分解得到。12-motif 状态是未来预测目标，而不是编码器输入。</div>
+</div>
+</section>
+<section class="wm-method-panel wm-counterfactual">
+<div class="wm-method-title"><span>B</span> 同一当前状态，社会信息决定预测未来</div>
+<div class="wm-present-node"><b>同一真实记录的当前状态</b><span>ANM4 D139 · 留出动物</span></div>
+<div class="wm-branch-grid">
+<div class="wm-branch normal">
+<div class="wm-branch-tag">正常</div>
+<b>全部已观察社会通道</b>
+<span>冻结后验 → 准确预测未来</span>
+</div>
+<div class="wm-branch gated">
+<div class="wm-branch-tag">社会信息对照</div>
+<b>匹配的错误社会轨迹 / 无社会信息重训</b>
+<span>在相同留出动物上显著变差</span>
+</div>
+</div>
+<div class="wm-result-row">
+<div><strong>6 / 8</strong><span>SWM top-1 motif 步骤 · 准确预测未来</span></div>
+<div><strong>0 / 8</strong><span>Markov top-1 motif 步骤 · 几乎无法预测</span></div>
+<div><strong>0.620 → 0.561 / 0.572</strong><span>效能 AUC · 错配社会信息 / 无社会信息重训显著下降</span></div>
+</div>
+</section>
+</div>
+<div class="world-view-toggle" id="worldViewToggle"><button class="active" data-view="motif">12-motif 未来</button><button data-view="event">5 事件：动作 → bout 未来</button></div>
+<div class="world-hero-stats" id="worldHeroStats"></div>
+<div aria-label="Eight-step actual and predicted future sequences" class="world-sequence" id="worldFutureStrip"></div>
+<div class="world-event-note" id="worldEventNote"></div>
+<div class="world-caption world-sequence-caption" id="worldFutureCaption"></div>
+<div class="world-grid world-grid-focus world-grid-single">
+<article class="world-card world-present-card">
+<div class="eyebrow">同一真实当前状态</div>
+<video controls="" id="worldRealVideo" muted="" playsinline="" preload="metadata" src="assets/full_virtual_mouse_web_v8k_tailstable.mp4"></video>
+<div class="world-caption" id="worldPresentCaption"></div>
+</article>
+</div>
+<div class="world-metrics" id="worldMetrics"></div>
+<div class="world-controls world-controls-secondary">
+<label for="worldEventSelect">切换其他高对比示例</label>
+<select id="worldEventSelect"></select>
+<button id="worldReplayBtn">重放所选事件</button>
+</div>
+<details class="world-global">
+<summary>核心证据 · 27 只留出动物</summary>
+<p class="world-global-note">总体留出动物结果验证：SWM 学到的是一个可泛化、依赖正确社会信息的前瞻效能状态，而不是单个案例或简单当前线索。</p>
+<div class="world-benchmark-subhead">域内扩展强化前瞻社会效能</div>
+<div class="world-scaling-kpis">
+<article class="world-scaling-kpi"><div class="k">域内扩展</div><div class="v">0.562 → 0.646</div><div class="d">SOE 训练动物从 2 增至 16 只，留出动物效能 AUC 持续提高；15/15 个匹配比较均改善（P=3.05×10<sup>−5</sup>）。</div></article>
+<article class="world-scaling-kpi"><div class="k">前瞻观察效能</div><div class="v">AUC 0.620</div><div class="d">同一潜在状态下的 ΔActive 可预测一次真实观察最终是否转化为主动取食；27/27 动物高于机会水平。</div></article>
+<article class="world-scaling-kpi"><div class="k">正确社会信息必需</div><div class="v">0.620 → 0.561 / 0.572</div><div class="d">错配社会轨迹或完全无社会信息重训都会显著削弱效能表征；26/27 动物下降。</div></article>
+</div>
+<div class="world-scaling-claim"><b>核心结果：</b> 数据越多，SWM 对社会效能的表征越清晰；而只有正确的社会内容才能维持这一效能状态。SWM 因而学习的是与未来成功取食直接相关的关系状态。</div>
+<div class="world-evidence world-evidence-scaling">
+<figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_in_domain_scaling_v17_zh_mobile.svg"/><img alt="SOE in-domain scaling strengthens held-animal prediction and efficacy" src="assets/swm_in_domain_scaling_v17_zh.svg"/></picture><figcaption><b>域内数据扩展持续强化 SWM。</b> 随着 SOE 训练动物增加，观察预测误差下降，同时留出动物上的关系效能 AUC 持续提高；2→16 动物的 15/15 个匹配比较全部改善。</figcaption></figure>
+<figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_social_dependence_v16_zh_mobile.svg"/><img alt="Correct social content is required for SWM efficacy" src="assets/swm_social_dependence_v16_zh.svg"/></picture><figcaption><b>正确社会内容是效能计算的必要输入。</b> 匹配但错误的社会轨迹与完全无社会信息重训都显著削弱效能 AUC，并同步降低观察选择与结果预测。</figcaption></figure>
+</div>
+<div class="world-benchmark-subhead">SWM ↔ SLM 计算桥梁</div>
+<div class="world-evidence world-evidence-scaling">
+<figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_slm_bridge_v16_zh_mobile.svg"/><img alt="SWM recovers SLM-like decision coordinates and retains additional predictive dynamics" src="assets/swm_slm_bridge_v16_zh.svg"/></picture><figcaption><b>数据驱动的 SWM 自发恢复 SLM 样决策坐标。</b> 仅用训练动物拟合的解码器即可在留出动物中恢复 policy、Q、belief/value 与 actor-value；去除这一低维子空间会选择性削弱观察策略，而完整 SWM 仍保留超出 SLM 坐标的未来行为动力学。</figcaption></figure>
+</div>
+<div class="world-scaling-claim"><b>计算桥梁：</b> SWM 在没有显式写入 SLM 结构的情况下，自发形成与 SLM 对齐的决策坐标，并把这些坐标嵌入更丰富的预测状态空间。</div>
+<div class="world-benchmark-subhead">未来行为预测 · 27 只留出动物</div>
+<div class="world-evidence world-evidence-scaling">
+<figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_predictive_core_v17_zh_mobile.svg"/><img alt="SWM improves future motif prediction and retains the advantage across horizons" src="assets/swm_predictive_core_v17_zh.svg"/></picture><figcaption><b>SWM 稳定优于最强直接基线，并把优势延伸到更远未来。</b> 未来 motif NLL 优于 direct nonlinear MLP（25/27 动物），相对 Markov 的预测优势在 1、3、5 步未来范围内持续存在。</figcaption></figure>
+</div>
+</details>
+</section>
+<section class="learning-story wrap" id="learning-story">
+<div class="section-head learning-head">
+<div>
+<div class="eyebrow">学习依赖 · 27 只留出学习者</div>
+<h2>学习使观察策略逐渐与前瞻社会效能对齐</h2>
+</div>
+<p>SWM 给出一个统一的计算解释：<b>ΔActive = P(Active | z<sub>t</sub>, Observe) − P(Active | z<sub>t</sub>, Other)</b>。随着训练，动物越来越选择那些社会采样能够提高未来主动取食成功率的状态。</p>
+</div>
+<div class="learning-kpis">
+<article class="learning-kpi strong">
+<div class="k">前瞻价值选择</div>
+<div class="v">0.006 → 0.014</div>
+<div class="d">真实观察与非观察状态的平均 ΔActive 差异。 Late − early = +0.00757; 20/27 increase; P=5.66×10<sup>−4</sup>.</div>
+</article>
+<article class="learning-kpi strong">
+<div class="k">策略–价值对齐</div>
+<div class="v">ρ 0.205 → 0.388</div>
+<div class="d">动物内模型 P(观察) 与 ΔActive 的相关。 23/27 increase; Δρ=+0.183; P=3.64×10<sup>−5</sup>.</div>
+</article>
+<article class="learning-kpi">
+<div class="k">观察效能</div>
+<div class="v">AUC 0.620</div>
+<div class="d">ΔActive 可预测一次真实观察最终是否转为主动取食而非未获奖（AUC 0.620，27/27 动物高于机会水平）；相对“距离 + 示范鼠进食”增加 +0.088 AUC。</div>
+</article>
+<article class="learning-kpi">
+<div class="k">社会信息依赖</div>
+<div class="v">0.620 → 0.561 / 0.572</div>
+<div class="d">按训练日和时长匹配的错误社会轨迹使效能 AUC 降至 0.561 (26/27, P=1.49×10<sup>−8</sup>); 单独从头训练的无社会信息 SWM 为 0.572 (26/27, P=2.29×10<sup>−6</sup>).</div>
+</article>
+</div>
+<div class="learning-grid learning-grid-primary">
+<figure class="learning-figure learning-figure-main">
+<picture><source media="(max-width:600px)" srcset="assets/swm_learning_alignment_v16_zh_mobile.svg"/><img alt="Early to late learning increases prospective efficacy selection and policy-value alignment" src="assets/swm_learning_alignment_v16_zh.svg"/></picture>
+<figcaption><b>学习把动作选择与预测的未来效能耦合起来。</b> 每条细线代表一只留出学习者。左图检验真实被选择用于观察的状态是否具有更高的前瞻主动取食优势；右图检验学习后的观察策略是否越来越追踪这一优势。</figcaption>
+</figure>
+<figure class="learning-figure learning-figure-main learning-info-figure">
+<picture><source media="(max-width:600px)" srcset="assets/swm_prospective_eig_v16_zh_mobile.svg"/><img alt="Prospective expected information gain versus prospective social efficacy for predicting actual Observe" src="assets/swm_prospective_eig_v16_zh.svg"/></picture>
+<figcaption><b>有信息，并不等于会被选择。</b> 期望信息增益由当前 SWM 状态前瞻估计，并使用训练动物 cross-fitting；留出动物从不使用之后真实观察到的社会内容。 EIG 对真实观察选择仍接近机会水平 (AUC 0.480 linear; 0.492 nonlinear), 而 ΔActive 达到 0.607。动物内 ΔActive 相比 EIG 高 0.127 / 0.115 AUC (P=4.8×10<sup>−5</sup> / 1.33×10<sup>−4</sup>).</figcaption>
+</figure>
+</div>
+<div class="learning-interpretation">
+<div class="learning-main-claim"><div class="eyebrow">核心发现</div><p>动物并不是在“信息最多”的时候观察，而是在社会信息最可能提高未来取食成功率的时候观察。学习把社会采样逐渐耦合到前瞻效能。</p></div>
+<div class="learning-boundary"><div class="eyebrow">严格计算定义</div><p>ΔActive 在观察发生之前、同一潜在状态下计算；expected information gain 也以前瞻方式估计，不使用之后真实出现的社会内容。因此“效能优于信息增益”不是事后信息泄漏造成的。</p></div>
+</div>
+<div class="world-benchmark-subhead">生物学闭环 · 视觉输入与 VTA 汇聚到观察→主动取食转换</div>
+<div class="learning-grid learning-grid-primary">
+<figure class="learning-figure learning-figure-main">
+<picture><source media="(max-width:600px)" srcset="assets/swm_biological_closure_v16_zh_mobile.svg"/><img alt="Visual Block and VTA JAWS converge on the Observe-to-Active conversion endpoint while SWM tracks efficacy" src="assets/swm_biological_closure_v16_zh.svg"/></picture>
+<figcaption><b>感觉输入、SWM 效能状态与 VTA 因果干预汇聚到同一个观察→主动取食终点。</b> 真实视觉阻断降低观察→主动取食转换（Δ=-0.069，P=.0043）并同步降低 SWM 效能分数（P=.029）；视觉阻断下 SWM 仍能区分成功与失败的观察事件（AUC=.585，P=.0209）。VTA JAWS 在关联条件下进一步把同一个转换终点从 0.320 压低到 0.193（P=.0039）。</figcaption>
+</figure>
+</div>
 
-  <section class="intro wrap">
-    <h2>探索行为 motif</h2>
-    <p>行为空间被组织为 12 个 motif。可使用 <b>社会朝向 1/2/4/7</b> 查看不依赖模型阈值的稳定 motif 结构，再切换到 <b>观察模型概率</b> 查看较保守的逐帧 v5 置信度层。每个可点击片段都会显示 <b>社会朝向</b>, <b>社会观察概率</b>, 鼻尖到鼻尖的 <b>社会距离</b>, 以及 <b>观察鼠 / 示范鼠头朝向</b>, 同时单独保留更严格的已验证 observation-bout 标签。点击任意片段可播放精确的虚拟小鼠视频；点击空白处放置比较圆，拖动平移，滚轮或双指缩放。</p>
-  </section>
+<div class="world-benchmark-subhead">视觉阻断下，SWM 仍超越即时可见线索</div>
+<div class="learning-grid learning-grid-primary">
+<figure class="learning-figure learning-figure-main">
+<picture><source media="(max-width:600px)" srcset="assets/swm_realvb_support_v17_zh_mobile.svg"/><img alt="Visual Block held-animal comparison of visible cues versus visible cues plus SWM efficacy" src="assets/swm_realvb_support_v17_zh.svg"/></picture>
+<figcaption><b>真实干预条件下，SWM 仍保留超出简单当前线索的效能信息。</b> 仅用“观察鼠到 spout 距离 + 示范鼠进食”时，Active vs Unrewarded AUC 为 .491；加入冻结的留出 SWM 效能分数后升至 .581（ΔAUC=+.090，P=.0165）。SWM 效能本身达到 AUC=.585。</figcaption>
+</figure>
+</div>
 
 
-  <section class="world-model wrap" id="world-model">
-    <div class="section-head world-head">
-      <div>
-        <div class="eyebrow">留出动物最佳案例可视化 · ANM4 D139</div>
-        <h2>社会世界模型（SWM）</h2>
-      </div>
-      <p>这个留出动物示例直接比较同一真实当前状态下的记录未来与保存的模型 rollout。下方每一步和每个概率都来自真实 session / 模型输出，并非示意轨迹；总体动物结果在下方给出。</p>
-    </div>
-
-    <div class="wm-method" aria-label="Social World Model architecture">
-      <section class="wm-method-panel">
-        <div class="wm-method-title"><span>A</span> SWM 学习一个可预测的关系状态</div>
-        <div class="wm-head-row">
-          <div class="wm-head">P(观察)</div>
-          <div class="wm-head">P(结果)</div>
-          <div class="wm-head">P(下一 motif)</div>
-        </div>
-        <div class="wm-latent-row">
-          <div class="wm-latent"><b>z<sub>t</sub></b><small>潜在社会状态</small></div>
-          <div class="wm-transition"><span>a<sub>t</sub> + o<sub>t</sub></span><i>→</i></div>
-          <div class="wm-latent"><b>z<sub>t+1</sub></b><small>预测状态</small></div>
-          <div class="wm-transition"><span>a<sub>t+1</sub> + o<sub>t+1</sub></span><i>→</i></div>
-          <div class="wm-latent"><b>z<sub>t+2</sub></b><small>预测状态</small></div>
-        </div>
-        <div class="wm-input-flow">
-          <div class="wm-input"><b>已观察 x<sub>t</sub></b><span>自身状态 · 示范鼠状态 · 近期动作/结果历史</span></div>
-          <div class="wm-arrow">→</div>
-          <div class="wm-encoder"><b>编码器 + GRU</b><span>由真实序列得到的后验状态</span></div>
-          <div class="wm-arrow">→</div>
-          <div class="wm-input-note">5 事件视图由策略头与结果头分解得到。12-motif 状态是未来预测目标，而不是编码器输入。</div>
-        </div>
-      </section>
-
-      <section class="wm-method-panel wm-counterfactual">
-        <div class="wm-method-title"><span>B</span> 同一当前状态，不同社会信息</div>
-        <div class="wm-present-node"><b>同一真实记录的当前状态</b><span>ANM4 D139 · 留出动物</span></div>
-        <div class="wm-branch-grid">
-          <div class="wm-branch normal">
-            <div class="wm-branch-tag">正常</div>
-            <b>全部已观察社会通道</b>
-            <span>冻结后验 → 预测未来</span>
-          </div>
-          <div class="wm-branch gated">
-            <div class="wm-branch-tag">社会信息对照</div>
-            <b>匹配的错误社会轨迹 / 无社会信息重训</b>
-            <span>训练分布内对照 · 相同留出动物评估</span>
-          </div>
-        </div>
-        <div class="wm-result-row">
-          <div><strong>6 / 8</strong><span>SWM top-1 motif 步骤</span></div>
-          <div><strong>0 / 8</strong><span>Markov top-1 motif 步骤</span></div>
-          <div><strong>0.620 → 0.561 / 0.572</strong><span>效能 AUC · 替换 / 无社会信息重训</span></div>
-        </div>
-      </section>
-    </div>
-
-    <div class="world-view-toggle" id="worldViewToggle"><button data-view="motif" class="active">12-motif 未来</button><button data-view="event">5 事件：动作 → bout 未来</button></div>
-    <div class="world-hero-stats" id="worldHeroStats"></div>
-    <div class="world-sequence" id="worldFutureStrip" aria-label="Eight-step actual and predicted future sequences"></div>
-    <div class="world-event-note" id="worldEventNote"></div>
-
-    <div class="world-caption world-sequence-caption" id="worldFutureCaption"></div>
-
-    <div class="world-grid world-grid-focus world-grid-single">
-      <article class="world-card world-present-card">
-        <div class="eyebrow">同一真实当前状态</div>
-        <video id="worldRealVideo" src="assets/full_virtual_mouse_web_v8k_tailstable.mp4" muted playsinline controls preload="metadata"></video>
-        <div class="world-caption" id="worldPresentCaption"></div>
-      </article>
-    </div>
-
-    <div class="world-metrics" id="worldMetrics"></div>
-
-    <div class="world-controls world-controls-secondary">
-      <label for="worldEventSelect">切换其他高对比示例</label>
-      <select id="worldEventSelect"></select>
-      <button id="worldReplayBtn">重放所选事件</button>
-    </div>
-
-    <details class="world-global">
-      <summary>27 只留出动物的总体 benchmark</summary>
-      <p class="world-global-note">上方主示例是刻意选择的最清晰案例；下方总体动物结果用于证明该优势并非局限于这一事件。</p>
-
-      <div class="world-benchmark-subhead">Scaling &amp; prospective Observe value</div>
-      <div class="world-scaling-kpis">
-        <article class="world-scaling-kpi">
-          <div class="k">域内扩展</div>
-          <div class="v">0.562 → 0.646</div>
-          <div class="d">SOE 训练动物从 2 增至 16 只时，留出动物社会效能 AUC 提高。15/15 个匹配的 fold × repeat 比较均改善 (P=3.05×10<sup>−5</sup>).</div>
-        </article>
-        <article class="world-scaling-kpi">
-          <div class="k">5 SEED 低数据迁移</div>
-          <div class="v">5 / 5 seeds</div>
-          <div class="d">仅用 2 只 SOE 训练动物时，猕猴预训练使 Brier 改善 +0.00530；5/5 个 seed 均值和 5/5 个留出动物 fold 均值均改善（clustered P=.031）。大鼠+小鼠为 +0.00771，全部外部数据为 +0.00680；到 8 只动物时这些增益接近 0。</div>
-        </article>
-        <article class="world-scaling-kpi">
-          <div class="k">前瞻观察价值</div>
-          <div class="v">AUC 0.620</div>
-          <div class="d">在相同潜在状态 z<sub>t</sub>, ΔActive = P(Active|Observe) − P(Active|Other) 可预测一次真实观察最终是转为主动取食而不是未获奖（27/27 高于机会水平）。</div>
-        </article>
-      </div>
-      <div class="world-scaling-claim">
-        <b>数据规模区分两类学习到的状态。</b>
-        外部序列经验可以预热低数据下的观察/动作动力学，但 SOE 的社会效能表征并不能普遍迁移。随着域内动物增加，效能状态逐步变清晰；过于宽泛的外部预训练甚至可能削弱它。
-      </div>
-      <div class="world-evidence world-evidence-scaling">
-        <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_scaling_transfer_v16_zh_mobile.svg"><img src="assets/swm_scaling_transfer_v16_zh.svg" alt="In-domain SWM scaling and external-pretraining transfer across 留出动物s"></picture><figcaption><b>数据扩展区分可复用的序列学习与 SOE 特异效能。</b> 增加 SOE 训练动物可提高观察预测并使留出动物的效能表征更清晰。外部预训练能够稳定预热低数据动作预测，但效能状态并不普遍迁移，这区分了可复用的序列先验与域内学习形成的关系状态。</figcaption></figure>
-        <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_social_dependence_v16_zh_mobile.svg"><img src="assets/swm_social_dependence_v16_zh.svg" alt="In-distribution social trajectory replacement and no-social SWM retraining controls"></picture><figcaption><b>需要正确的社会信息内容。</b> 将每个留出 session 的社会轨迹替换成训练动物中按训练日和时长匹配的轨迹后，ΔActive 效能 AUC 从 0.620 降至 0.561，26/27 动物下降 (P=1.49×10<sup>−8</sup>). 从头训练完全没有社会通道的 SWM 后 AUC 为 0.572 (26/27 drop; P=2.29×10<sup>−6</sup>). 无社会信息模型的观察选择和结果预测也下降，但整体 motif 动力学基本保留。</figcaption></figure>
-      </div>
-
-      <div class="world-benchmark-subhead">SWM ↔ SLM 计算桥梁</div>
-      <div class="world-evidence world-evidence-scaling">
-        <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_slm_bridge_v16_zh_mobile.svg"><img src="assets/swm_slm_bridge_v16_zh.svg" alt="SWM and SLM comparison, latent-coordinate decoding, coordinate-subspace scrub, and future motif prediction"></picture><figcaption><b>同一计算过程的互补模型。</b> SLM 与 SWM 在观察选择上非常接近：尽管 25/27 只动物更偏向 SWM，平均 AUC 仅提高 +0.0107。 仅用训练动物拟合的解码器，可以从留出动物的 SWM 潜变量中恢复 SLM 样的策略、Q、信念/价值与 actor-value 坐标 (ρ=0.833–0.886). 去除对应的四维潜在子空间后，SWM 观察 AUC 下降 0.0140，而匹配随机子空间仅下降 0.0033 (P=5.22×10<sup>−7</sup>), 而效能本身并未特异性丢失。相反，SWM 对未来 motif 动力学的预测明显优于仅使用 SLM 坐标的读出 (NLL 1.835 vs 1.971; 27/27, P=7.45×10<sup>−9</sup>).</figcaption></figure>
-      </div>
-      <div class="world-scaling-claim">
-        <b>解释：</b> SWM 独立恢复了与决策有关的 SLM 样坐标，这一子空间选择性参与观察策略；与此同时，完整 SWM 还保留了 SLM 坐标本身无法解释的额外预测动力学。
-      </div>
-
-      <div class="world-benchmark-subhead">预测 benchmark · 27 只留出动物</div>
-      <div class="world-evidence world-evidence-scaling">
-        <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_predictive_benchmarks_v16_zh_mobile.svg"><img src="assets/swm_predictive_benchmarks_v16_zh.svg" alt="Held-animal SWM benchmarks for factorized event prediction, future motif prediction, and multi-step horizon advantage"></picture><figcaption><b>SWM 保持预测优势，同时避免把页面变成 model-zoo 堆叠。</b> 在分解式 5 事件预测中，SWM 与最强完整历史线性基线相当；在未来 motif 预测中，SWM 优于最强直接非线性 MLP，并且相对 Markov 的留出动物 NLL 优势在 1、3、5 步未来范围内持续存在。</figcaption></figure>
-      </div>
-    </details>
-  </section>
-
-  <section class="learning-story wrap" id="learning-story">
-    <div class="section-head learning-head">
-      <div>
-        <div class="eyebrow">学习依赖 · 27 只留出学习者</div>
-        <h2>学习使观察策略逐渐与前瞻社会效能对齐</h2>
-      </div>
-      <p>对于同一个学习到的状态 <b>z<sub>t</sub></b>, 将前瞻观察价值定义为 <b>ΔActive = P(Active | z<sub>t</sub>, Observe) − P(Active | z<sub>t</sub>, Other)</b>. 随着训练进行，动物越来越倾向于在模型预测社会采样能够提高有效主动取食概率的状态下进行观察。</p>
-    </div>
-
-    <div class="learning-kpis">
-      <article class="learning-kpi strong">
-        <div class="k">前瞻价值选择</div>
-        <div class="v">0.006 → 0.014</div>
-        <div class="d">真实观察与非观察状态的平均 ΔActive 差异。 Late − early = +0.00757; 20/27 increase; P=5.66×10<sup>−4</sup>.</div>
-      </article>
-      <article class="learning-kpi strong">
-        <div class="k">策略–价值对齐</div>
-        <div class="v">ρ 0.205 → 0.388</div>
-        <div class="d">动物内模型 P(观察) 与 ΔActive 的相关。 23/27 increase; Δρ=+0.183; P=3.64×10<sup>−5</sup>.</div>
-      </article>
-      <article class="learning-kpi">
-        <div class="k">观察效能</div>
-        <div class="v">AUC 0.620</div>
-        <div class="d">ΔActive 可预测一次真实观察最终是否转为主动取食而非未获奖 (AUC 0.620). 相对“距离 + 示范鼠进食”增加 +0.088 AUC；即使加入全部 13 个当前社会线索后仍增加 +0.021 AUC (P=2.68×10<sup>−4</sup>).</div>
-      </article>
-      <article class="learning-kpi">
-        <div class="k">社会信息依赖</div>
-        <div class="v">0.620 → 0.561 / 0.572</div>
-        <div class="d">按训练日和时长匹配的错误社会轨迹使效能 AUC 降至 0.561 (26/27, P=1.49×10<sup>−8</sup>); 单独从头训练的无社会信息 SWM 为 0.572 (26/27, P=2.29×10<sup>−6</sup>).</div>
-      </article>
-    </div>
-
-    <div class="learning-grid learning-grid-primary">
-      <figure class="learning-figure learning-figure-main">
-        <picture><source media="(max-width:600px)" srcset="assets/swm_learning_alignment_v16_zh_mobile.svg"><img src="assets/swm_learning_alignment_v16_zh.svg" alt="Early to late learning increases prospective efficacy selection and policy-value alignment"></picture>
-        <figcaption><b>学习把动作选择与预测的未来效能耦合起来。</b> 每条细线代表一只留出学习者。左图检验真实被选择用于观察的状态是否具有更高的前瞻主动取食优势；右图检验学习后的观察策略是否越来越追踪这一优势。</figcaption>
-      </figure>
-      <figure class="learning-figure learning-figure-main learning-info-figure">
-        <picture><source media="(max-width:600px)" srcset="assets/swm_prospective_eig_v16_zh_mobile.svg"><img src="assets/swm_prospective_eig_v16_zh.svg" alt="Prospective expected information gain versus prospective social efficacy for predicting actual Observe"></picture>
-        <figcaption><b>有信息，并不等于会被选择。</b> 期望信息增益由当前 SWM 状态前瞻估计，并使用训练动物 cross-fitting；留出动物从不使用之后真实观察到的社会内容。 EIG 对真实观察选择仍接近机会水平 (AUC 0.480 linear; 0.492 nonlinear), 而 ΔActive 达到 0.607。动物内 ΔActive 相比 EIG 高 0.127 / 0.115 AUC (P=4.8×10<sup>−5</sup> / 1.33×10<sup>−4</sup>).</figcaption>
-      </figure>
-    </div>
-
-    <div class="learning-interpretation">
-      <div class="learning-main-claim">
-        <div class="eyebrow">支持的解释</div>
-        <p>社会观察确实携带大量关于动态世界状态的信息，但动物并不是简单地在信息增益最大的时刻进行观察。随着学习，社会采样越来越发生在模型预测其能够提高未来取食效能的状态。</p>
-      </div>
-      <div class="learning-boundary">
-        <div class="eyebrow">重要边界</div>
-        <p>这支持 <b>目标导向的社会信息采样</b>, 而不是一般性的“追求不确定性”规则。ΔActive 是学习到的预测模型内部、同一状态下的反事实量，而不是强制观察所产生的随机化因果效应。</p>
-        <p>在匹配事件数以及观察/其他动作后，学习者早期→晚期的策略–价值对齐增强仍然存在，因此该效应不是由晚期样本更多造成的。 但 13 只 non-learner 也显示类似增强，Group×Stage 对比并不显著。因此这里把对齐视为随训练/经验增强的计算过程，而不是 learner 特异表型。</p>
-        <p>严格 v2 agent 只提供有限的主动感知充分性证据: 在 Active 特异目标下，显示社会证据带来的奖励增益仅为 +7.8×10<sup>−5</sup> per event (19/27 animals, P=.0056) 同时 24/27 动物的策略–价值对齐增强。该效应在 food-all 目标下消失。因此这支持目标特异的社会信息利用，而不是强泛化的主动感知结论。</p>
-      </div>
-    </div>
-
-    <div class="world-benchmark-subhead">生物学闭环 · 视觉输入与 VTA 汇聚到观察→主动取食转换</div>
-    <div class="learning-grid learning-grid-primary">
-      <figure class="learning-figure learning-figure-main">
-        <picture><source media="(max-width:600px)" srcset="assets/swm_biological_closure_v16_zh_mobile.svg"><img src="assets/swm_biological_closure_v16_zh.svg" alt="Visual Block and VTA JAWS converge on the Observe-to-Active conversion endpoint while SWM tracks efficacy"></picture>
-        <figcaption><b>行为与回路证据汇聚到同一终点。</b> 真实视觉阻断使观察→主动取食转换下降 0.069 (11/14 animals, P=.0043) 并使 SWM 效能分数下降 (12/14, P=.029). 视觉阻断下 SWM 仍可区分主动取食与未获奖的观察事件 (AUC=.585, P=.0209 vs chance), 说明该表征在真实干预下仍具有行为意义，而不是简单因为分布外输入而失效。 VTA JAWS 在关联条件下抑制同一个行为转换终点 (0.320→0.193; P=.0039), 而非关联条件下效应不显著；正式的 contingency interaction 仅为趋势 (P=.074), 因此不把它表述为已证实的 interaction。</figcaption>
-      </figure>
-    </div>
-    <div class="world-scaling-claim">
-      <b>边界：</b> 视觉阻断在群体水平同时降低行为转换与 SWM 效能，但两者在动物间的变化量并不相关 (ρ=.218, P=.45). 因此数据支持它们汇聚到共同的行为计算，而不支持“SWM 分数在个体层面中介行为损失”。
-    </div>
-
-    <div class="world-benchmark-subhead">视觉阻断线索对照 · SWM 是否超出即时可见信息？</div>
-    <div class="learning-grid learning-grid-primary">
-      <figure class="learning-figure learning-figure-main">
-        <picture><source media="(max-width:600px)" srcset="assets/swm_realvb_cue_control_v16_zh_mobile.svg"><img src="assets/swm_realvb_cue_control_v16_zh.svg" alt="Visual Block held-animal comparison of visible cues versus visible cues plus SWM efficacy"></picture>
-        <figcaption><b>在真实干预下，SWM 仍超出简单可见状态。</b> 在视觉阻断测试 session 中，leave-one-animal-out 读出仅用“观察鼠到 spout 距离 + 示范鼠进食”时，对主动取食 vs 未获奖观察事件的 AUC 为 .491；加入冻结的留出 SWM 效能分数后升至 .581 (ΔAUC=+.090, 10/14 animals, P=.0165). 更丰富的 13 个当前社会线索读出在加入 SWM 后由 .527 升至 .542，但该增量不显著 (P=.213). 仅 SWM 效能本身 AUC=.585，显著高于简单两线索基线 (ΔAUC=+.094, P=.0139), 但并未显著高于完整当前社会线索读出。</figcaption>
-      </figure>
-    </div>
-    <div class="world-scaling-claim">
-      <b>解释：</b> 在视觉阻断下，SWM 保留了无法由最直观当前线索简单解释的信息。目前样本 <b>not</b> 证明其在完整 13 线索当前状态模型之上还有统计独立增量，因此不作这一更强结论。
-    </div>
-
-    <details class="learning-details learning-supporting">
-      <summary>支持性 agent 充分性检验</summary>
-      <p class="learning-support-note">这个检验比动物分析更窄：如果 agent 只有在选择观察之后才能获得社会证据，学习到的前瞻价值是否足以训练出选择性的社会采样？</p>
-      <div class="learning-grid learning-grid-primary">
-        <figure class="learning-figure learning-figure-main">
-          <picture><source media="(max-width:600px)" srcset="assets/active_sensing_strict_v16_zh_mobile.svg"><img src="assets/active_sensing_strict_v16_zh.svg" alt="Strict active-sensing agent selects high prospective-value states and shows a small objective-specific benefit from social evidence"></picture>
-          <figcaption><b>严格的 agent 充分性检验，而不是泛化主动感知结论。</b> 在同一个世界模型状态下比较即时 Observe-vs-Other 结果；决策前当前社会通道不可用，只有选择观察后才显示。 在 Active 目标下，agent 更偏向采样 ΔActive 更高的状态 (25/27, P=1.26×10<sup>−6</sup>) 社会信息显示会轻度提高策略–价值对齐和奖励，但奖励效应很小，并在 food-all 目标下消失。</figcaption>
-        </figure>
-      </div>
-    </details>
-
-    <details class="learning-details learning-supporting">
-      <summary>支持性描述转移结果</summary>
-      <p class="learning-support-note">这里只保留用于锚定行为表型的两个转移效应。完整 5×5 转移热图仍保留在源分析中，因为它们增加描述，但没有提供更强机制解释。</p>
-      <div class="learning-grid learning-grid-primary">
-        <figure class="learning-figure">
-          <picture><source media="(max-width:600px)" srcset="assets/learning_behavioral_anchor_v16_zh_mobile.svg"><img src="assets/learning_behavioral_anchor_v16_zh.svg" alt="Paired-animal early to late changes in Observe to Active and Unrewarded to Observe transitions"></picture>
-          <figcaption><b>行为锚点。</b> 两个转移即可概括学习表型，无需完整 5×5 矩阵：观察越来越容易转化为主动取食，而未获奖 bout 越来越容易重新招募观察。这些效应定义了前瞻价值分析所解释的行为变化，但它们本身不是机制。</figcaption>
-        </figure>
-      </div>
-    </details>
-  </section>
-
-  <section class="explorer" id="explorer">
-    <div class="toolbar">
-      <div class="control">
-        <span class="lab">着色方式</span>
-        <div class="seg" id="colourBtns">
-          <button data-v="motif" class="active">Motif</button>
-          <button data-v="social1247">社会朝向 1/2/4/7</button>
-          <button data-v="social">观察模型概率</button>
-          <button data-v="distance">社会距离</button>
-          <button data-v="head">观察鼠社会头朝向</button>
-        </div>
-        <div class="colour-legend" id="colourLegend"></div>
-      </div>
-      <div class="control radius-control">
-        <span class="lab">选择半径</span>
-        <input id="radius" type="range" min="3" max="45" step="1" value="18">
-        <span id="radiusVal">18</span>
-      </div>
-      <div class="actions">
-        <button id="moreBtn">更多示例</button>
-        <button id="resetBtn">重置</button>
-        <button id="fullBtn">全屏</button>
-      </div>
-    </div>
-
-    <div class="explorer-grid">
-      <aside class="motif-list" id="motifList"></aside>
-      <div class="map-panel">
-        <canvas id="map"></canvas>
-        <div class="hint">点击任意点播放 · 点击/拖动圆圈进行比较 · 在其他位置拖动平移 · 滚轮/双指缩放</div>
-        <div class="tooltip" id="tooltip"></div>
-      </div>
-      <div class="clips-panel">
-        <div class="clips-head">
-          <div>
-            <div class="eyebrow" id="selectionEyebrow">已选示例</div>
-            <h3 id="selectionTitle">点击一个点</h3>
-          </div>
-          <div class="selection-meta" id="selectionMeta"></div>
-        </div>
-        <div class="clip-grid" id="clipGrid"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="dictionary wrap">
-    <div class="section-head">
-      <h2>Motif 字典</h2>
-      <p>每个 motif 都由 frozen v85 行为图谱定义。Social Observation 统计使用逐帧模型推断/概率；更严格的 merged label 单独保留，用于验证代表性视频 bout。</p>
-    </div>
-    <div class="motif-cards" id="motifCards"></div>
-  </section>
-
-  <footer class="wrap">
-    <p>原型浏览器 · Chemo:ANM4:D139 · 精确逐帧 v85 投影 · 最新 Module 1.4 虚拟小鼠回放。</p>
-  </footer>
+<details class="learning-details learning-supporting">
+<summary>支持性描述转移结果</summary>
+<p class="learning-support-note">这里只保留用于锚定行为表型的两个转移效应。完整 5×5 转移热图仍保留在源分析中，因为它们增加描述，但没有提供更强机制解释。</p>
+<div class="learning-grid learning-grid-primary">
+<figure class="learning-figure">
+<picture><source media="(max-width:600px)" srcset="assets/learning_behavioral_anchor_v16_zh_mobile.svg"/><img alt="Paired-animal early to late changes in Observe to Active and Unrewarded to Observe transitions" src="assets/learning_behavioral_anchor_v16_zh.svg"/></picture>
+<figcaption><b>行为锚点。</b> 两个转移即可概括学习表型，无需完整 5×5 矩阵：观察越来越容易转化为主动取食，而未获奖 bout 越来越容易重新招募观察。这些效应定义了前瞻价值分析所解释的行为变化，但它们本身不是机制。</figcaption>
+</figure>
+</div>
+</details>
+</section>
+<section class="explorer" id="explorer">
+<div class="toolbar">
+<div class="control">
+<span class="lab">着色方式</span>
+<div class="seg" id="colourBtns">
+<button class="active" data-v="motif">Motif</button>
+<button data-v="social1247">社会朝向 1/2/4/7</button>
+<button data-v="social">观察模型概率</button>
+<button data-v="distance">社会距离</button>
+<button data-v="head">观察鼠社会头朝向</button>
+</div>
+<div class="colour-legend" id="colourLegend"></div>
+</div>
+<div class="control radius-control">
+<span class="lab">选择半径</span>
+<input id="radius" max="45" min="3" step="1" type="range" value="18"/>
+<span id="radiusVal">18</span>
+</div>
+<div class="actions">
+<button id="moreBtn">更多示例</button>
+<button id="resetBtn">重置</button>
+<button id="fullBtn">全屏</button>
+</div>
+</div>
+<div class="explorer-grid">
+<aside class="motif-list" id="motifList"></aside>
+<div class="map-panel">
+<canvas id="map"></canvas>
+<div class="hint">点击任意点播放 · 点击/拖动圆圈进行比较 · 在其他位置拖动平移 · 滚轮/双指缩放</div>
+<div class="tooltip" id="tooltip"></div>
+</div>
+<div class="clips-panel">
+<div class="clips-head">
+<div>
+<div class="eyebrow" id="selectionEyebrow">已选示例</div>
+<h3 id="selectionTitle">点击一个点</h3>
+</div>
+<div class="selection-meta" id="selectionMeta"></div>
+</div>
+<div class="clip-grid" id="clipGrid"></div>
+</div>
+</div>
+</section>
+<section class="dictionary wrap">
+<div class="section-head">
+<h2>Motif 字典</h2>
+<p>每个 motif 都由 frozen v85 行为图谱定义。Social Observation 统计使用逐帧模型推断/概率；更严格的 merged label 单独保留，用于验证代表性视频 bout。</p>
+</div>
+<div class="motif-cards" id="motifCards"></div>
+</section>
+<footer class="wrap">
+<p>原型浏览器 · Chemo:ANM4:D139 · 精确逐帧 v85 投影 · 最新 Module 1.4 虚拟小鼠回放。</p>
+</footer>
 </main>
 <script src="explorer_zh.js"></script>
 <script src="world_model_zh.js?v=20261005v16zh"></script>
-
 </body>
 </html>

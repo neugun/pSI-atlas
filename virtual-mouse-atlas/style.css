@@ -390,3 +390,19 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
 .lang-switch a,.lang-switch span{display:block;padding:6px 10px;border-radius:999px;text-decoration:none;color:#555}
 .lang-switch .active{background:#222;color:#fff}
 @media(max-width:600px){.lang-switch{top:8px;right:8px;font-size:11px}.lang-switch a,.lang-switch span{padding:5px 8px}}
+
+
+/* v17: mobile connector spacing and stronger narrative layout */
+@media(max-width:600px){
+  .wm-input-flow{gap:0;margin-top:14px;padding-top:14px}
+  .wm-input-flow .wm-arrow{
+    transform:rotate(90deg);
+    min-height:34px;height:34px;margin:3px 0;
+    display:flex;align-items:center;justify-content:center;
+    line-height:1;font-size:21px;
+  }
+  .wm-branch-grid{grid-template-columns:1fr;gap:36px;margin-top:38px}
+  .wm-branch{min-height:82px;padding-top:27px}
+  .wm-branch:before{top:-31px;line-height:1;font-size:23px}
+  .wm-result-row{margin-top:20px;padding-top:14px}
+}
