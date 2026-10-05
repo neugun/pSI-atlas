@@ -1,0 +1,2 @@
+session_id,animal,day,task,raw_tiff,registered_tiff,evt_file,behavior_file,roi_source,analysis_role,capability,frame_rate
+ANM999_D1,999,D1,A_vs_B,D:/data/raw.tif,,D:/data/events.csv,D:/data/behavior.csv,D:/data/roi.csv,MAIN,RAW_MOVIE,10.0

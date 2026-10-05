@@ -1,0 +1,37 @@
+dataset_id: MY_2P_DATASET
+sessions_file: sessions.csv
+frame_rate: 10.0
+condition_column: condition
+registration:
+  upsample_factor: 10
+  max_shift_px: 8.0
+roi_qc:
+  min_area_px: 20
+  max_area_px: 1000
+  default_radius_px: 5
+extraction:
+  neuropil_inner_px: 2
+  neuropil_outer_px: 7
+  alpha: 0.7
+signal_selection:
+  candidate_alphas:
+  - 0.0
+  - 0.5
+  - 0.7
+  - 1.0
+windows:
+  cue:
+  - -3
+  - -1
+  predictive:
+  - -1
+  - 0
+  outcome:
+  - 0
+  - 2
+  late:
+  - 2
+  - 6
+  post:
+  - 6
+  - 9

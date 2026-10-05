@@ -1,0 +1,12 @@
+stage,name,v1_support,new_data_output,gate
+00,Intake + staging,FULL,intake_manifest.json,IDs/files resolve; immutable source
+01,Within-trial registration,FULL_2D_RIGID_OR_PROVIDED,registered.tif / mean_image.npy / registration_qc.csv,bounded shift; rejected phase peaks recorded
+02,ROI morphology + QC,FULL_CSV_NPY_SUITE2P,per_roi_qc.csv / roi_masks.npy / overlay,morphology before function
+03,Activity extraction,FULL,traces.npz / extraction_qc.csv,local neuropil; SNR/background correlation
+04,Signal selection,GENERIC_V1,final_signal.npz / signal_selection.csv,biology-blind criterion; migrated data retain frozen METHOD_QC authority
+05,Behavior alignment,FULL_GENERIC,aligned_trials.csv,explicit trial_id join; never positional
+06,Functional metrics,FULL_GENERIC,per_roi.csv/parquet + trial_roi.parquet,stable per-ROI schema; prespecified windows
+07,Cross-day image transform,CANDIDATE_V1,crossday_transforms.csv,image-only candidate transform
+08,Cross-day cell identity,REVIEW_REQUIRED,identity_candidates.csv,never auto-freezes identity
+09,Population + remapping,BASIC_GENERIC,population_summary.json,uses frozen Stage06 only; project-specific analyses remain adapters
+10,Freeze + report,FULL,release_manifest.csv / session_report.json,hashes + no silent overwrite
