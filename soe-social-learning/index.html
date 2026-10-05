@@ -138,13 +138,9 @@
 <div class="section-head">
 <div>
 <div class="section-kicker">Discovery layer</div>
-<h2>SOE is acquired, visually guided, socially specific and familiarity weighted</h2>
+<h2>SOE is acquired, and learning improves information-to-action conversion</h2>
 </div>
-<p>
-        The behavioral story starts before any model. Socially coordinated eating emerges with training,
-        requires a live and visible partner, is stronger for familiar partners, and becomes increasingly efficient
-        at converting observation into feeding rather than simply increasing the amount of looking.
-      </p>
+<p>The behavioral story starts before any model. In the current source-pinned cohort, learners acquire socially guided eating and selectively improve the conversion of observation into rewarded action. Recovered live-social, visual-access, familiarity and pose results are retained below but are not promoted as primary evidence until their exact source figures are re-pinned.</p>
 </div><figure class="figure evidence-figure">
 <a class="figure-zoom" href="assets/SOE_behavioral_foundations_v1.png" rel="noopener" target="_blank">
 <picture>
@@ -168,7 +164,7 @@
 </tbody>
 </table>
 </div></details>
-<div class="cards-3" style="margin-top:18px">
+<details><summary>Recovered behavioral analyses — source figures awaiting re-pin</summary><div class="cards-3" style="margin-top:18px">
 <div class="card good">
 <h3>Active orienting, not passive proximity</h3>
 <p>Demonstrator feeding/spout state is highly predictive, but observer-side head direction, facing, angular velocity, social turn and social gaze nearly match the all-feature classifier. Social gaze is the strongest single observer-side feature in the manuscript lineage.</p>
@@ -181,7 +177,7 @@
 <h3>Conversion tracks learning better than observation amount</h3>
 <p>Earlier strict analysis: conversion progress correlates with ΔSRI (ρ≈.426, P=.0086), whereas observation-rate correlation with ΔSRI is near zero (ρ≈.037).</p>
 </div>
-</div>
+</div></details>
 <details><summary>Familiarity × ambiguity is suggestive but not yet established</summary><div>
       In five primary JAWS animals, 343 behaviorally matched familiar/unfamiliar pairs show a directional larger familiarity effect in high-ambiguity states
       (mean high−low difference +.1268; 3/5 positive; P=.3125). This remains exploratory and does not replace the original familiarity result.
@@ -207,7 +203,7 @@
 </div>
 <figure class="figure">
 <a class="figure-zoom" href="assets/SOE_adaptive_social_information_value_v2.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_adaptive_social_information_value_v2_mobile.png"/><img alt="Adaptive social information value in SOE" loading="lazy" src="assets/SOE_adaptive_social_information_value_v2.png"/></picture></a>
-<figcaption><strong>Adaptive information value.</strong> Social evidence contributes selectively rather than functioning as an always-on stimulus.</figcaption>
+<figcaption><strong>Adaptive information value.</strong> SOE social state improves held-out prediction, its value declines with learning, and value is higher when the observer is farther from its own spout.</figcaption>
 </figure>
 <details><summary>Multi-timescale memory recovered before the final SLM</summary><div>
       Earlier held-animal analyses independently showed that current social/food geometry is strongly informative,
@@ -246,7 +242,7 @@
 <h3 style="margin-top:28px">Learning is expressed as better conversion and better credit assignment, not simply more observation</h3>
 <div class="cards-3">
 <div class="card good"><div class="metric-label">Strict cohort</div><div class="metric">27 vs 13</div><p>27 learners and 13 non-learners define the supplementary learning contrast. Primary predictive modeling remains learner-only.</p></div>
-<div class="card info"><div class="metric-label">Conversion learning</div><div class="metric">+.126 vs −.097</div><p>Observe→Feed conversion progress is positive in learners and negative in non-learners; historical group P≈.00147.</p></div>
+<div class="card info"><div class="metric-label">Conversion learning</div><div class="metric">+.0426 vs −.0191</div><p>Late−early Observe→Active conversion is positive in learners and negative in non-learners; between-group P=.0110 in the current source-pinned cohort.</p></div>
 <div class="card violet"><div class="metric-label">Learner-linked neural coordinate</div><div class="metric">APE × SRI ρ=.667</div><p>The strongest learner-linked SLM result is neural APE coupling, not a binary learner/non-learner difference in model gain.</p></div>
 </div>
 <div class="callout warn">
@@ -321,7 +317,11 @@
 <tr><td>History MLP + formal-all</td><td>.163722</td><td>.837365</td><td>highest-capacity ceiling</td></tr>
 </tbody>
 </table>
-</div>
+</div><figure class="figure evidence-figure">
+<a class="figure-zoom" href="assets/SOE_SLM_behavior_benchmark_v1.png" rel="noopener" target="_blank">
+<picture><source media="(max-width: 620px)" srcset="assets/SOE_SLM_behavior_benchmark_v1_mobile.png"/>
+<img alt="SLM behavioral benchmark and animal-level pairwise tests" loading="lazy" src="assets/SOE_SLM_behavior_benchmark_v1.png"/></picture>
+</a><figcaption><strong>Behavioral benchmark.</strong> SLM+choice persistence reaches the flexible history-model ceiling while beating compact alternatives at the held-animal level; lower Brier is better.</figcaption></figure>
 <div class="cards-3" style="margin-top:18px">
 <div class="card good"><div class="metric-label">Classical RL</div><div class="metric">27/27 wins</div><p>SLM beats RW, WSLS, Q-active, Q-all, asymmetric-Q, forgetting-Q, choice-kernel and Q+choice-kernel under the restricted baseline contract; r<sub>rb</sub>=1, P=1.49×10⁻⁸.</p></div>
 <div class="card info"><div class="metric-label">Parsimonious extension</div><div class="metric">96.9%</div><p>SLM+choice persistence recovers 96.9% of Current→full-history-MLP improvement and 92.4% of Current→best-history-model improvement.</p></div>
@@ -428,7 +428,7 @@
 </div>
 <div class="cards-3">
 <div class="card good"><div class="metric-label">Closed-loop trajectory</div><div class="metric">r=.779</div><p>The fitted SLM regenerates broad learner trajectories without replaying held-out outcomes.</p></div>
-<div class="card info"><div class="metric-label">Autonomous world</div><div class="metric">r=.638</div><p>Ten-rollout posterior-predictive mean after removing held-out observer-state replay.</p></div>
+<div class="card info"><div class="metric-label">Local social strategy</div><div class="metric">r=.312</div><p>Full SLM gives the strongest current real-versus-generated local strategy kernel and the lowest kernel RMSE among the benchmarked agents.</p></div>
 <div class="card violet"><div class="metric-label">Motif occupancy</div><div class="metric">r=.864</div><p>Autonomous Artificial SLM preserves substantial behavioral-state organization; mean JS=.0390.</p></div>
 </div>
 <figure class="figure">
@@ -470,23 +470,19 @@
         distinct SLM components align with VTA dopamine at distinct phases of social observation and outcome.
       </p>
 </div>
-<div class="cards-3">
-<div class="card info">
+<details><summary>Recovered descriptive VTA results — exact source plots awaiting re-pin</summary><div class="cards-2"><div class="card info">
 <span class="status boundary">RECOVERED</span>
 <h3 style="margin-top:12px">Demonstrator state is represented in observer VTA</h3>
 <p>Observer DA is elevated when the demonstrator occupies the food zone and is lower outside it. Demonstrator feeding/spatial state, posture, proximity, velocity and turning all contribute; coupling is stronger in learners.</p>
-</div>
-<div class="card info">
+</div><div class="card info">
 <span class="status boundary">RECOVERED</span>
 <h3 style="margin-top:12px">Active social gaze evokes dopamine</h3>
 <p>Observer-initiated social gaze evokes VTA DA, exceeds demonstrator-gaze responses, and precedes larger DA during active-reward eating.</p>
-</div>
-<div class="card good">
+</div></div></details><div class="cards-3"><div class="card good">
 <span class="status pass">CURRENT</span>
 <h3 style="margin-top:12px">Temporal SLM variables adjudicate mechanism</h3>
 <p>The newer held-block tests refine those descriptive effects into separable policy, APE and post-outcome update computations.</p>
-</div>
-</div>
+</div></div>
 <div class="callout">
 <strong>Progression of the VTA story:</strong>
       socially relevant demonstrator state and active gaze first established that DA tracks acquired social information;
