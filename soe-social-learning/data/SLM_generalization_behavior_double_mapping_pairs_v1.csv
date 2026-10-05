@@ -1,0 +1,17 @@
+food_feature,fear_feature,observed_double_mapping,p_exact_one_sided
+sri_late,conversion_late,2.0,0.04987654320987654
+sri_delta,conversion_late,1.942857142857143,0.045864197530864195
+conversion_delta,conversion_late,1.3142857142857143,0.01246141975308642
+sri_late,conversion_delta,0.6857142857142857,0.26243055555555556
+sri_delta,conversion_delta,0.6285714285714287,0.2648765432098765
+sri_late,sri_delta,0.05714285714285708,0.4388888888888889
+sri_delta,sri_delta,2.7755575615628914e-17,1.0
+conversion_delta,conversion_delta,1.3877787807814457e-17,1.0
+conversion_late,conversion_late,0.0,1.0
+sri_late,sri_late,0.0,1.0
+sri_delta,sri_late,-0.05714285714285705,0.65
+conversion_delta,sri_delta,-0.6285714285714287,0.7527777777777778
+conversion_delta,sri_late,-0.6857142857142857,0.7759027777777778
+conversion_late,conversion_delta,-1.3142857142857143,0.9911805555555555
+conversion_late,sri_delta,-1.9428571428571428,0.9593383487654321
+conversion_late,sri_late,-2.0,0.9550462962962963
