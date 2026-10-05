@@ -1,0 +1,7 @@
+kind,label,brier,auc,delta_nll,note
+model,Full SLM,0.1708243563726864,0.8233201809723663,,held-animal OOF
+model,RW scalar value,0.2442634418250208,0.5784264086807765,,held-animal OOF
+model,Uncertainty state,0.1930672507689459,0.7731753252389246,,held-animal OOF
+model,Global uncertainty,0.1960360084195667,0.766472492137893,,held-animal OOF
+memory,~20-event history,,,0.0348,recovered pre-SLM held-animal history gain
+memory,single-exponential eligibility,,,0.0001,best recovered gain approximately 1e-4
