@@ -573,6 +573,9 @@
       而是<strong>history memory、dopamine readout和behavioral expression可以部分分离</strong>。
       自然食物history在Fig.1中同时影响dopamine与behavior；
       optogenetic history则可以留下可读出的神经痕迹，却不一定达到改变gross bout duration所需的downstream gain。
+      独立QE任务提供了一个中间状态：在<strong>63个当前reward完全相同的100E bouts / 7只小鼠</strong>中，冻结的C可以预测log bout duration
+      （β=.818，animal-clustered P=.034；within-animal serial-shift单侧P=.0287），
+      但animal-level slope只有5/6为正（P=.156），因此这一behavioral-history结果目前标记为<strong>PROVISIONAL</strong>。
     </div>
   </div>
 </section>
@@ -693,6 +696,10 @@
           <img src="../assets/ED7_history_specificity_real_vs_controls_v1.png" alt="ED7 specificity">
           <figcaption><strong>ED7。</strong>direct sampled-history test在Natural（ΔR²=.0269，P=.00670）、QE（ΔR²=.0254，P=.00141）、Stim13（ΔR²=.00252，P=5×10<sup>−5</sup>）均为阳性；duration-history proxy在hunger（P=.283）、quinine（P=.466）、LiCl（P=.478）、Stim5（P=.562）均不显著。proxy bar本身可以有非零ΔR²，因此specificity判断依赖真实条件与proxy control的推断统计，而不是只看bar高度。</figcaption>
         </figure>
+        <figure class="figure">
+          <img src="../assets/ED8_reward_type_memory_expression_gate_v1.png" alt="ED8 reward type memory expression gate">
+          <figcaption><strong>ED8。</strong>把reward contrast拆成三个阶段：current reward是否能改变behavior、history是否改变VTA dopamine、history是否进一步改变behavior。Natural 100E/20E三层均PASS。QE/quinine history在当前100E固定时仍改变dopamine；同一冻结C对63个100E bouts的log duration为β=.818（cluster P=.034；serial-shift单侧P=.0287），但animal-level仍功效不足，因此behavioral cell为PROVISIONAL。Stim13构成关键dissociation：当前ON stimulation本身能够改变duration（11/13只，paired P=.00342），过去stimulation history也稳定改变之后的dopamine（unique ΔR²=.002524，conditional P=5×10<sup>−5</sup>），但past-history并不可靠改变之后duration（P=.742）。因此<strong>acute reward potency和persistent neural memory本身都不足以保证gross behavioral contrast</strong>。</figcaption>
+        </figure>
       </div>
     </details>
 
@@ -768,6 +775,8 @@
           <a class="resource" href="../data/NEURON_value_action_UR_control_v2.csv"><b>Action-adjusted U/R decomposition。</b><span>控制早期和同步licking后的raw-scale U/R结果。</span></a>
           <a class="resource" href="../data/NEURON_value_action_conditional_perm_v1.csv"><b>Action-controlled sensitivity table。</b><span>conditional permutation结果。</span></a>
           <a class="resource" href="../data/NEURON_value_action_timecourse_v2.csv"><b>Within-bout time course。</b><span>0.5-s时间分辨率的sampling与contrast分析。</span></a>
+          <a class="resource" href="../docs/REWARD_CONTRAST_REWARD_TYPE_GATE_AUTHORITY_v1_20261005.md"><b>Reward-type gate authority。</b><span>把Natural、QE和stimulation按current potency、neural history和behavioral history分层比较。</span></a>
+          <a class="resource" href="../data/NEURON_reward_type_memory_expression_gate_v1.csv"><b>Reward-type gate machine-readable table。</b><span>包含PASS / PROVISIONAL / NULL状态以及对应统计量。</span></a>
           <a class="resource" href="../data/NEURON_three_context_reference_evidence_v1.csv"><b>Cross-context evidence。</b><span>natural reward、QE与stimulation history的对照。</span></a>
           <a class="resource" href="../data/NEURON_biological_model_experiment_predictions_v1.csv"><b>下一步experiment predictions。</b><span>delay、state、mediation和circuit实验的可证伪预测。</span></a>
         </div>
