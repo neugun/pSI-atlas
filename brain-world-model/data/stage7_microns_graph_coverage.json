@@ -1,0 +1,10 @@
+{
+  "status": "INSUFFICIENT_GRAPH_COVERAGE",
+  "dataset": "MICrONS function-connectome matched smoke",
+  "n_cells": 42,
+  "n_connected_cells": 5,
+  "n_graph_edges": 5,
+  "frame_rate_hz": 6.297609494814058,
+  "reason": "Public Fig7abc edgelist overlaps too sparsely with this streamed functional session for a reliable graph-conditioned forecast.",
+  "next_action": "Use a fuller MICrONS synapse materialization / authenticated CAVE table or additional public matched structure-function releases; retain this as a coverage audit, not a failed scientific result."
+}

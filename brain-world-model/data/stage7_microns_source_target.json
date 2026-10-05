@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "dataset": "MICrONS Functional Connectomics published matched source-target example",
+  "source_cell_nucleus_id": 294657,
+  "n_postsynaptic_functionally_registered_targets": 231,
+  "structure_metric": "summed EM synapse size from the published source neuron to each target",
+  "functional_metric": "Pearson similarity of trial-averaged oracle response traces across 6 stimulus conditions x 63 time bins",
+  "spearman_log_synapse_vs_trace_similarity": 0.009014003881503765,
+  "permutation_p_two_sided": 0.891621675664867,
+  "partial_spearman_controlling_oracle_score": 0.010928951108861154,
+  "partial_permutation_p_two_sided": 0.8710257948410318,
+  "cv_median": {
+    "oracle_only_r2": -0.024029572007262967,
+    "structure_only_r2": -0.010368824649363395,
+    "oracle_plus_structure_r2": -0.020332871180504197,
+    "oracle_only_bits_vs_null": 0.0011283482398785464,
+    "structure_only_bits_vs_null": 0.002277513729330644,
+    "oracle_plus_structure_bits_vs_null": 0.0022543361402094053
+  },
+  "cv_folds": [
+    {
+      "fold": 0,
+      "n_test": 47,
+      "null_r2": -0.02352657625137744,
+      "oracle_only_r2": -0.024029572007262967,
+      "oracle_only_bits_vs_null": -0.00035440761798821225,
+      "structure_only_r2": -0.018783283858336164,
+      "structure_only_bits_vs_null": 0.0033506848547923225,
+      "oracle_plus_structure_r2": -0.020332871180504197,
+      "oracle_plus_structure_bits_vs_null": 0.0022543361402094053
+    },
+    {
+      "fold": 1,
+      "n_test": 46,
+      "null_r2": -0.0034508106767281443,
+      "oracle_only_r2": -0.06055861244827576,
+      "oracle_only_bits_vs_null": -0.03992722862356332,
+      "structure_only_r2": -0.010368824649363395,
+      "structure_only_bits_vs_null": -0.004956066341233925,
+      "oracle_plus_structure_r2": -0.057512229813234894,
+      "oracle_plus_structure_bits_vs_null": -0.037852225246379594
+    },
+    {
+      "fold": 2,
+      "n_test": 46,
+      "null_r2": -0.01048584547667053,
+      "oracle_only_r2": -0.00890645605626017,
+      "oracle_only_bits_vs_null": 0.0011283482398785464,
+      "structure_only_r2": -0.0069570003078738285,
+      "structure_only_bits_vs_null": 0.002523517644081899,
+      "oracle_plus_structure_r2": -0.006716664582042675,
+      "oracle_plus_structure_bits_vs_null": 0.002695706001856423
+    },
+    {
+      "fold": 3,
+      "n_test": 46,
+      "null_r2": -0.02852881087457204,
+      "oracle_only_r2": -0.025465148233993373,
+      "oracle_only_bits_vs_null": 0.0021518730163193165,
+      "structure_only_r2": -0.02528655338335173,
+      "structure_only_bits_vs_null": 0.002277513729330644,
+      "oracle_plus_structure_r2": -0.02365649435107109,
+      "oracle_plus_structure_bits_vs_null": 0.003425265776888594
+    },
+    {
+      "fold": 4,
+      "n_test": 46,
+      "null_r2": -0.006418983662370481,
+      "oracle_only_r2": -0.0044480653585670105,
+      "oracle_only_bits_vs_null": 0.0014140342967006788,
+      "structure_only_r2": -0.00901682314214991,
+      "structure_only_bits_vs_null": -0.0018595939386870548,
+      "oracle_plus_structure_r2": -0.007568007523165443,
+      "oracle_plus_structure_bits_vs_null": -0.0008230893312339609
+    }
+  ],
+  "strength_bins": [
+    {
+      "bin": "(5.129, 7.678]",
+      "n": 47,
+      "median_summed_size": 948.0,
+      "mean_trace_corr": -0.002594634208522113,
+      "median_trace_corr": -0.019213310775789815,
+      "mean_oracle_score": 0.18241883489361704
+    },
+    {
+      "bin": "(7.678, 8.424]",
+      "n": 46,
+      "median_summed_size": 3176.0,
+      "mean_trace_corr": 0.011505065137771999,
+      "median_trace_corr": -0.003253845687728692,
+      "mean_oracle_score": 0.18171177891304346
+    },
+    {
+      "bin": "(8.424, 9.214]",
+      "n": 46,
+      "median_summed_size": 6946.0,
+      "mean_trace_corr": -0.00419282673074921,
+      "median_trace_corr": 0.004159035605703932,
+      "mean_oracle_score": 0.1994544369565217
+    },
+    {
+      "bin": "(9.214, 9.826]",
+      "n": 46,
+      "median_summed_size": 13182.0,
+      "mean_trace_corr": 0.011434804387227228,
+      "median_trace_corr": -0.01758211181349663,
+      "mean_oracle_score": 0.1994879229565217
+    },
+    {
+      "bin": "(9.826, 10.852]",
+      "n": 46,
+      "median_summed_size": 24864.0,
+      "mean_trace_corr": 0.028661764264206156,
+      "median_trace_corr": -0.005216493796982876,
+      "mean_oracle_score": 0.2248694739130435
+    }
+  ],
+  "interpretation": "A direct same-cell structure-function smoke test using published MICrONS EM connection strength and functional oracle traces. Any positive association is evidence that structural connectivity carries functional information in this matched circuit example.",
+  "guardrail": "Single presynaptic source-neuron example from a published figure panel; not a population-wide structure-to-function law and not a causal estimate."
+}

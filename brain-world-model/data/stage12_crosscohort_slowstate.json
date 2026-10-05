@@ -1,0 +1,179 @@
+{
+  "status": "PASS",
+  "dataset": "user SOE/social-foraging latent authority",
+  "heldout_axis": "leave-one-experimental-cohort-out",
+  "cohorts": [
+    "Chemo",
+    "Jaws",
+    "SF_Gcamp_DTFL",
+    "SocialFeedig_OXT",
+    "SocialFeeding_DMS",
+    "SocialFeeding_DMS_3",
+    "SocialFeeding_JAWS_VTAcopy"
+  ],
+  "n_rows": 68262,
+  "n_animals": 27,
+  "n_sessions": 362,
+  "models": {
+    "exo_only": [
+      "session_progress",
+      "demfeed",
+      "nearspout"
+    ],
+    "exo_plus_history": [
+      "session_progress",
+      "demfeed",
+      "nearspout",
+      "prev_action",
+      "prevout_active",
+      "prevout_none",
+      "prevout_passive",
+      "prevout_unrewarded"
+    ],
+    "exo_history_slow": [
+      "session_progress",
+      "demfeed",
+      "nearspout",
+      "prev_action",
+      "prevout_active",
+      "prevout_none",
+      "prevout_passive",
+      "prevout_unrewarded",
+      "memory_gamma95",
+      "belief_reward_diff",
+      "belief_active_diff",
+      "belief_passive_diff",
+      "featureq_qdiff",
+      "policy_theta"
+    ]
+  },
+  "summary": {
+    "exo_only_bits": {
+      "n": 7,
+      "median": 0.050000959005280794,
+      "mean": 0.06965469352206197,
+      "q25": 0.018117375085174147,
+      "q75": 0.06902452925262567,
+      "positive_fraction": 0.8571428571428571
+    },
+    "exo_plus_history_bits": {
+      "n": 7,
+      "median": 0.07867381197459276,
+      "mean": 0.10576197258810172,
+      "q25": 0.04791155121082053,
+      "q75": 0.11614443990479728,
+      "positive_fraction": 0.8571428571428571
+    },
+    "exo_history_slow_bits": {
+      "n": 7,
+      "median": 0.16358170686901435,
+      "mean": 0.19385808696107112,
+      "q25": 0.12329059641933005,
+      "q75": 0.2376597167711726,
+      "positive_fraction": 1.0
+    },
+    "delta_slow_vs_history_bits": {
+      "n": 7,
+      "median": 0.08490789489442159,
+      "mean": 0.08809611437296942,
+      "q25": 0.07537904520850952,
+      "q75": 0.10816916578927345,
+      "positive_fraction": 1.0
+    }
+  },
+  "folds": [
+    {
+      "heldout_cohort": "Chemo",
+      "n_test": 11274,
+      "n_animals": 6,
+      "train_prior": 0.40598020635923354,
+      "exo_only_bits_per_trial": 0.27317945542358085,
+      "exo_only_balanced_accuracy": 0.5390521178546108,
+      "exo_plus_history_bits_per_trial": 0.334667622688426,
+      "exo_plus_history_balanced_accuracy": 0.5333031057470885,
+      "exo_history_slow_bits_per_trial": 0.4391097494727276,
+      "exo_history_slow_balanced_accuracy": 0.5130884074458789,
+      "delta_slow_vs_history_bits": 0.10444212678430159
+    },
+    {
+      "heldout_cohort": "Jaws",
+      "n_test": 1271,
+      "n_animals": 1,
+      "train_prior": 0.46733143258049586,
+      "exo_only_bits_per_trial": -0.009881368450027569,
+      "exo_only_balanced_accuracy": 0.5538903535288462,
+      "exo_plus_history_bits_per_trial": -0.0011196087775424222,
+      "exo_plus_history_balanced_accuracy": 0.5870181967749288,
+      "exo_history_slow_bits_per_trial": 0.03241452600475064,
+      "exo_history_slow_balanced_accuracy": 0.5990936301376651,
+      "delta_slow_vs_history_bits": 0.033534134782293064
+    },
+    {
+      "heldout_cohort": "SF_Gcamp_DTFL",
+      "n_test": 9258,
+      "n_animals": 3,
+      "train_prior": 0.47284929835265405,
+      "exo_only_bits_per_trial": 0.024230890323641063,
+      "exo_only_balanced_accuracy": 0.5862502962395804,
+      "exo_plus_history_bits_per_trial": 0.07867381197459276,
+      "exo_plus_history_balanced_accuracy": 0.6482844310149168,
+      "exo_history_slow_bits_per_trial": 0.16358170686901435,
+      "exo_history_slow_balanced_accuracy": 0.6860719258307242,
+      "delta_slow_vs_history_bits": 0.08490789489442159
+    },
+    {
+      "heldout_cohort": "SocialFeedig_OXT",
+      "n_test": 11804,
+      "n_animals": 4,
+      "train_prior": 0.45306245350526053,
+      "exo_only_bits_per_trial": 0.01200385984670723,
+      "exo_only_balanced_accuracy": 0.5687399797762873,
+      "exo_plus_history_bits_per_trial": 0.023051791510768065,
+      "exo_plus_history_balanced_accuracy": 0.5848070130428598,
+      "exo_history_slow_bits_per_trial": 0.10051281011617261,
+      "exo_history_slow_balanced_accuracy": 0.6446944628816513,
+      "delta_slow_vs_history_bits": 0.07746101860540454
+    },
+    {
+      "heldout_cohort": "SocialFeeding_DMS",
+      "n_test": 9692,
+      "n_animals": 3,
+      "train_prior": 0.4851459791702237,
+      "exo_only_bits_per_trial": 0.050000959005280794,
+      "exo_only_balanced_accuracy": 0.6228346937083724,
+      "exo_plus_history_bits_per_trial": 0.072771310910873,
+      "exo_plus_history_balanced_accuracy": 0.6099484362618218,
+      "exo_history_slow_bits_per_trial": 0.14606838272248748,
+      "exo_history_slow_balanced_accuracy": 0.6410342957541488,
+      "delta_slow_vs_history_bits": 0.07329707181161449
+    },
+    {
+      "heldout_cohort": "SocialFeeding_DMS_3",
+      "n_test": 10408,
+      "n_animals": 5,
+      "train_prior": 0.47453935769350436,
+      "exo_only_bits_per_trial": 0.050621380332237814,
+      "exo_only_balanced_accuracy": 0.6578663767123618,
+      "exo_plus_history_bits_per_trial": 0.09078146923604125,
+      "exo_plus_history_balanced_accuracy": 0.6491454464798037,
+      "exo_history_slow_bits_per_trial": 0.20267767403028655,
+      "exo_history_slow_balanced_accuracy": 0.7245503920169343,
+      "delta_slow_vs_history_bits": 0.11189620479424531
+    },
+    {
+      "heldout_cohort": "SocialFeeding_JAWS_VTAcopy",
+      "n_test": 14555,
+      "n_animals": 5,
+      "train_prior": 0.5169717169084105,
+      "exo_only_bits_per_trial": 0.08742767817301353,
+      "exo_only_balanced_accuracy": 0.6142629404121219,
+      "exo_plus_history_bits_per_trial": 0.14150741057355332,
+      "exo_plus_history_balanced_accuracy": 0.6135297978697247,
+      "exo_history_slow_bits_per_trial": 0.27264175951205866,
+      "exo_history_slow_balanced_accuracy": 0.6323741022830496,
+      "delta_slow_vs_history_bits": 0.13113434893850534
+    }
+  ],
+  "interpretation": "Tests whether the same slow-state representation helps next social-observation decisions when an entire experimental cohort/intervention family is absent from training.",
+  "guardrail": "Cohort labels bundle experimental context and intervention family. Positive transfer supports representation portability, not causal equivalence across manipulations."
+}

@@ -1,0 +1,208 @@
+{
+  "status": "PASS",
+  "source": "existing SOE neuromodulator / reward-contrast authority outputs",
+  "slow_state_correlation_matrix": {
+    "variables": [
+      "q_active_update_rpe_timeresid",
+      "outcome_belief_full4_update_belief_surprise_timeresid",
+      "ucl_rpe_tr",
+      "lc_rpe_tr",
+      "ht5_rpe_tr"
+    ],
+    "eigenvalues": [
+      3.9503874060045874,
+      0.7805072197126343,
+      0.15656126178540625,
+      0.10844156313444217,
+      0.004102549362930927
+    ],
+    "participation_ratio_effective_rank": 1.5383630823000847,
+    "top_correlated_pairs": [
+      {
+        "a": "lc_rpe_tr",
+        "b": "ht5_rpe_tr",
+        "spearman": 0.9949935089614068
+      },
+      {
+        "a": "ucl_rpe_tr",
+        "b": "ht5_rpe_tr",
+        "spearman": 0.8975951750443938
+      },
+      {
+        "a": "ucl_rpe_tr",
+        "b": "lc_rpe_tr",
+        "spearman": 0.8824692853457634
+      },
+      {
+        "a": "outcome_belief_full4_update_belief_surprise_timeresid",
+        "b": "ucl_rpe_tr",
+        "spearman": 0.8574908749251792
+      },
+      {
+        "a": "outcome_belief_full4_update_belief_surprise_timeresid",
+        "b": "ht5_rpe_tr",
+        "spearman": 0.8444322013448267
+      },
+      {
+        "a": "outcome_belief_full4_update_belief_surprise_timeresid",
+        "b": "lc_rpe_tr",
+        "spearman": 0.8372674631351553
+      },
+      {
+        "a": "q_active_update_rpe_timeresid",
+        "b": "ht5_rpe_tr",
+        "spearman": 0.5551370788825551
+      },
+      {
+        "a": "q_active_update_rpe_timeresid",
+        "b": "lc_rpe_tr",
+        "spearman": 0.5358016738448629
+      }
+    ]
+  },
+  "neural_model_zoo": {
+    "base_comparisons": [
+      {
+        "from": "base",
+        "to": "qTR",
+        "median_pct_gain": 0.5959849168051584,
+        "mean_pct_gain": 0.4119026035699268,
+        "to_wins": 7,
+        "n": 9,
+        "p": 0.0390625
+      },
+      {
+        "from": "base",
+        "to": "beliefTR",
+        "median_pct_gain": 1.7492108116292735,
+        "mean_pct_gain": 1.440833463164385,
+        "to_wins": 8,
+        "n": 9,
+        "p": 0.01953125
+      },
+      {
+        "from": "base",
+        "to": "uclRPEtr",
+        "median_pct_gain": 2.0427534400011447,
+        "mean_pct_gain": 1.8535341812198267,
+        "to_wins": 8,
+        "n": 9,
+        "p": 0.0078125
+      },
+      {
+        "from": "base",
+        "to": "allRPE",
+        "median_pct_gain": 2.007781129985061,
+        "mean_pct_gain": 1.736544375901268,
+        "to_wins": 8,
+        "n": 9,
+        "p": 0.0078125
+      },
+      {
+        "from": "base",
+        "to": "belief_allRPE",
+        "median_pct_gain": 1.684824747967009,
+        "mean_pct_gain": 1.8577659237747308,
+        "to_wins": 9,
+        "n": 9,
+        "p": 0.00390625
+      }
+    ],
+    "positive_nominal_p_lt_0_05": [
+      {
+        "from": "base",
+        "to": "qTR",
+        "median_pct_gain": 0.5959849168051584,
+        "mean_pct_gain": 0.4119026035699268,
+        "to_wins": 7,
+        "n": 9,
+        "p": 0.0390625
+      },
+      {
+        "from": "base",
+        "to": "beliefTR",
+        "median_pct_gain": 1.7492108116292735,
+        "mean_pct_gain": 1.440833463164385,
+        "to_wins": 8,
+        "n": 9,
+        "p": 0.01953125
+      },
+      {
+        "from": "base",
+        "to": "uclRPEtr",
+        "median_pct_gain": 2.0427534400011447,
+        "mean_pct_gain": 1.8535341812198267,
+        "to_wins": 8,
+        "n": 9,
+        "p": 0.0078125
+      },
+      {
+        "from": "base",
+        "to": "allRPE",
+        "median_pct_gain": 2.007781129985061,
+        "mean_pct_gain": 1.736544375901268,
+        "to_wins": 8,
+        "n": 9,
+        "p": 0.0078125
+      },
+      {
+        "from": "base",
+        "to": "belief_allRPE",
+        "median_pct_gain": 1.684824747967009,
+        "mean_pct_gain": 1.8577659237747308,
+        "to_wins": 9,
+        "n": 9,
+        "p": 0.00390625
+      }
+    ]
+  },
+  "reward_contrast_model_zoo": {
+    "ranking": [
+      {
+        "model": "5ht_q",
+        "n": 387,
+        "mse": 3.2076816474490752
+      },
+      {
+        "model": "RW016",
+        "n": 387,
+        "mse": 3.228265858076422
+      },
+      {
+        "model": "harkin",
+        "n": 387,
+        "mse": 3.245851604914121
+      },
+      {
+        "model": "lc",
+        "n": 387,
+        "mse": 3.2655868125777943
+      },
+      {
+        "model": "ewma",
+        "n": 387,
+        "mse": 3.2706298995136955
+      },
+      {
+        "model": "5ht_unc",
+        "n": 387,
+        "mse": 3.298437614676092
+      },
+      {
+        "model": "base",
+        "n": 387,
+        "mse": 3.3311233398334146
+      }
+    ],
+    "base_mse": 3.3311233398334146,
+    "best_model": "5ht_q",
+    "best_mse": 3.2076816474490752,
+    "relative_mse_reduction_vs_base": 0.037057076484748985
+  },
+  "modeling_decision": {
+    "primary": "Represent slow internal state as a shared low-dimensional latent subspace, not as separate hard-coded transmitter-specific state copies.",
+    "reason": "Candidate RPE-family slow-state traces are strongly redundant (for example LC and 5-HT RPE residual traces are nearly collinear), while belief/RPE-style history features add predictive value in several authority comparisons.",
+    "future_test": "Learn a shared slow-state bottleneck, then add transmitter-specific residual adapters only if they improve held-out animal/cohort likelihood beyond the shared latent."
+  },
+  "guardrail": "Correlation/redundancy among computational regressors does not imply biological equivalence of LC, 5-HT, dopamine, or other neuromodulatory systems."
+}

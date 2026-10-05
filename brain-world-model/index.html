@@ -206,7 +206,8 @@ button:hover{transform:translateY(-1px)}
       <div class="submetric">Neural social world over full-history linear on 5-event NLL</div>
       <p>The neural social world model improves the full-history linear comparator in <b>22/27 animals</b> (one-sided p = 0.00015). The larger gain is in future social-sampling action: <b>+0.0353 bits/event</b>. Outcome classification itself is not improved.</p>
       <p>Learning also rewrites the event graph: Observe&rarr;Active rises by <b>+0.047</b>, while Unrewarded&rarr;Observe rises by <b>+0.190</b> in learners.</p>
-      <p><a href="data/stage11_embodied_social_world.json">verified JSON</a></p>
+      <p>A stricter leave-one-experimental-cohort-out test gives a median <b>+0.0849 bits/trial</b> slow-state lift over exogenous+history, positive in <b>7/7 cohorts</b>. This includes Chemo, Jaws, OXT, DMS and VTA-JAWS cohorts rather than only leave-one-animal-out.</p>
+      <p><a href="data/stage11_embodied_social_world.json">embodied world JSON</a> &middot; <a href="data/stage12_crosscohort_slowstate.json">cross-cohort transfer JSON</a> &middot; <a href="data/stage13_neuromodulator_state_audit.json">slow-state audit JSON</a></p>
     </article>
 
     <article class="card">
@@ -214,7 +215,8 @@ button:hover{transform:translateY(-1px)}
       <div class="big">&rho; = 0.009</div>
       <div class="submetric">synapse size vs functional similarity &middot; permutation p = 0.892</div>
       <p>For one presynaptic cell and 231 functionally recorded targets, synaptic strength alone does not explain tuning similarity and slightly worsens cross-validated prediction. The next graph model therefore needs topology, cell type, molecular prior and state&mdash;not a simplistic strong-synapse heuristic.</p>
-      <p><a href="data/stage7_microns_structure_function.json">verified JSON</a></p>
+      <p>The streamed function-connectome preflight now recovers <b>42 exact/uniquely recoverable matched cells</b> across four imaging planes, but the restricted public Fig7 graph contains only <b>5 internal edges</b>. This is explicitly marked as insufficient graph coverage rather than treated as a negative biological result.</p>
+      <p><a href="data/stage7_microns_structure_function.json">original stress-test JSON</a> &middot; <a href="data/stage7_microns_source_target.json">source-target audit JSON</a> &middot; <a href="data/stage7_microns_graph_coverage.json">graph coverage JSON</a></p>
     </article>
 
     <article class="card">

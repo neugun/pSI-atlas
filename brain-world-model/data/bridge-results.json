@@ -1,0 +1,707 @@
+{
+  "generated_at": "2026-10-05",
+  "mouse_emulation_bridge": {
+    "positioning": "Infer transferable mouse neural dynamics from partial activity, slow internal state, structure, molecular identity, exogenous inputs, and interventions; not a claim of whole-mouse-brain emulation.",
+    "components": {
+      "fast_dynamics": "IBL multi-horizon held-out prediction",
+      "slow_state": "SOE social action + reward-history dopamine tests",
+      "structure": "MICrONS matched function-connectome",
+      "molecular": "ABC/MERFISH CCF-mapped composition prior",
+      "embodiment": "user social-foraging / behavior + real 2P cross-animal transfer",
+      "intervention": "synthetic ground-truth + McBride real optogenetic perturbation"
+    }
+  },
+  "rigorous_ibl": {
+    "status": "PASS",
+    "n_sessions": 29,
+    "expected_sessions": 29,
+    "bin_ms": 20,
+    "context_ms": 200,
+    "horizon_summary": {
+      "1": {
+        "horizon_ms": 20,
+        "persistence_co_bps": {
+          "n": 29,
+          "mean": 0.3745131408881625,
+          "median": 0.2632110964647122,
+          "q25": 0.18109331731629963,
+          "q75": 0.4833586135608198,
+          "positive_fraction": 1.0
+        },
+        "gru_co_bps": {
+          "n": 29,
+          "mean": 0.16806078262583157,
+          "median": 0.13025566712835943,
+          "q25": 0.05685929163402157,
+          "q75": 0.21322996418529835,
+          "positive_fraction": 1.0
+        },
+        "persistence_r2": {
+          "n": 29,
+          "mean": 0.3337698035103171,
+          "median": 0.31100066839369744,
+          "q25": 0.19128431419144587,
+          "q75": 0.49578222551649576,
+          "positive_fraction": 1.0
+        },
+        "gru_r2": {
+          "n": 29,
+          "mean": 0.297322643437007,
+          "median": 0.27192486611329447,
+          "q25": 0.1560444512848419,
+          "q75": 0.46616632475370223,
+          "positive_fraction": 1.0
+        },
+        "null_rate_r2": {
+          "n": 29,
+          "mean": 0.24099770602466847,
+          "median": 0.21431704776591898,
+          "q25": 0.1456914157626399,
+          "q75": 0.2976983712282787,
+          "positive_fraction": 1.0
+        },
+        "zero_r2": {
+          "n": 29,
+          "mean": -0.14896231648046304,
+          "median": -0.14161490129387988,
+          "q25": -0.19327549027649704,
+          "q75": -0.08088490378059521,
+          "positive_fraction": 0.0
+        }
+      },
+      "2": {
+        "horizon_ms": 40,
+        "persistence_co_bps": {
+          "n": 29,
+          "mean": 0.35239465167323336,
+          "median": 0.2487806596270144,
+          "q25": 0.15018912106272472,
+          "q75": 0.47868665000338423,
+          "positive_fraction": 1.0
+        },
+        "gru_co_bps": {
+          "n": 29,
+          "mean": 0.15417801696153569,
+          "median": 0.10281599187900912,
+          "q25": 0.05188733174498061,
+          "q75": 0.2067327611171301,
+          "positive_fraction": 1.0
+        },
+        "persistence_r2": {
+          "n": 29,
+          "mean": 0.32624376097716373,
+          "median": 0.30266102501848113,
+          "q25": 0.17466567477453698,
+          "q75": 0.4804399818231194,
+          "positive_fraction": 1.0
+        },
+        "gru_r2": {
+          "n": 29,
+          "mean": 0.29164778705753924,
+          "median": 0.263292988326122,
+          "q25": 0.1575769975651451,
+          "q75": 0.456240274559077,
+          "positive_fraction": 1.0
+        },
+        "null_rate_r2": {
+          "n": 29,
+          "mean": 0.2408988548558973,
+          "median": 0.21534453177623725,
+          "q25": 0.14537494818368957,
+          "q75": 0.2975041226930337,
+          "positive_fraction": 1.0
+        },
+        "zero_r2": {
+          "n": 29,
+          "mean": -0.14898007572338634,
+          "median": -0.14177305766204662,
+          "q25": -0.1937797224892135,
+          "q75": -0.08083999823109012,
+          "positive_fraction": 0.0
+        }
+      },
+      "5": {
+        "horizon_ms": 100,
+        "persistence_co_bps": {
+          "n": 29,
+          "mean": 0.31655321827308036,
+          "median": 0.2193767298672084,
+          "q25": 0.12933586531079808,
+          "q75": 0.39803415419899624,
+          "positive_fraction": 1.0
+        },
+        "gru_co_bps": {
+          "n": 29,
+          "mean": 0.13907393655726405,
+          "median": 0.1039996581070491,
+          "q25": 0.0491389934579861,
+          "q75": 0.19100051011650387,
+          "positive_fraction": 1.0
+        },
+        "persistence_r2": {
+          "n": 29,
+          "mean": 0.31097288410721863,
+          "median": 0.28715774265434657,
+          "q25": 0.1704581777687484,
+          "q75": 0.44029553969833835,
+          "positive_fraction": 1.0
+        },
+        "gru_r2": {
+          "n": 29,
+          "mean": 0.28342022778650494,
+          "median": 0.24715197411512613,
+          "q25": 0.15383063010755726,
+          "q75": 0.4219130473278775,
+          "positive_fraction": 1.0
+        },
+        "null_rate_r2": {
+          "n": 29,
+          "mean": 0.24079499835174964,
+          "median": 0.2129070742192618,
+          "q25": 0.1454630355210651,
+          "q75": 0.2976367096872745,
+          "positive_fraction": 1.0
+        },
+        "zero_r2": {
+          "n": 29,
+          "mean": -0.1489602586380923,
+          "median": -0.14177743472373971,
+          "q25": -0.19332244701295132,
+          "q75": -0.08112291681332118,
+          "positive_fraction": 0.0
+        }
+      },
+      "10": {
+        "horizon_ms": 200,
+        "persistence_co_bps": {
+          "n": 29,
+          "mean": 0.2717933990750749,
+          "median": 0.14719832289039395,
+          "q25": 0.10902409874518974,
+          "q75": 0.27019423013546306,
+          "positive_fraction": 1.0
+        },
+        "gru_co_bps": {
+          "n": 29,
+          "mean": 0.11901763894566755,
+          "median": 0.08985037383244883,
+          "q25": 0.0368063640764537,
+          "q75": 0.20539719268675014,
+          "positive_fraction": 1.0
+        },
+        "persistence_r2": {
+          "n": 29,
+          "mean": 0.29383236190919804,
+          "median": 0.26195430932253394,
+          "q25": 0.1642451692785416,
+          "q75": 0.3670926910197594,
+          "positive_fraction": 1.0
+        },
+        "gru_r2": {
+          "n": 29,
+          "mean": 0.274864012017915,
+          "median": 0.24473709700023594,
+          "q25": 0.14825031800606325,
+          "q75": 0.3679658980189202,
+          "positive_fraction": 1.0
+        },
+        "null_rate_r2": {
+          "n": 29,
+          "mean": 0.2407862160279228,
+          "median": 0.21298646144684474,
+          "q25": 0.14553587598455708,
+          "q75": 0.29754660390614096,
+          "positive_fraction": 1.0
+        },
+        "zero_r2": {
+          "n": 29,
+          "mean": -0.14896954007114704,
+          "median": -0.1418424121451567,
+          "q25": -0.19330596073576056,
+          "q75": -0.08114600517342385,
+          "positive_fraction": 0.0
+        }
+      },
+      "25": {
+        "horizon_ms": 500,
+        "persistence_co_bps": {
+          "n": 29,
+          "mean": 0.19319128434513685,
+          "median": 0.08088180669033966,
+          "q25": 0.04652710088609715,
+          "q75": 0.23140318257043183,
+          "positive_fraction": 0.9655172413793104
+        },
+        "gru_co_bps": {
+          "n": 29,
+          "mean": 0.08496912314155158,
+          "median": 0.04862741929326311,
+          "q25": 0.02595115604119608,
+          "q75": 0.10303360717912016,
+          "positive_fraction": 0.9310344827586207
+        },
+        "persistence_r2": {
+          "n": 29,
+          "mean": 0.2643719134549564,
+          "median": 0.23104622525375507,
+          "q25": 0.15000997356222778,
+          "q75": 0.3342794977040572,
+          "positive_fraction": 1.0
+        },
+        "gru_r2": {
+          "n": 29,
+          "mean": 0.25746576410419275,
+          "median": 0.22947340302521724,
+          "q25": 0.1461822791053814,
+          "q75": 0.32577650321296203,
+          "positive_fraction": 1.0
+        },
+        "null_rate_r2": {
+          "n": 29,
+          "mean": 0.24074071819321824,
+          "median": 0.2130866531194966,
+          "q25": 0.14542744196093738,
+          "q75": 0.29736307205424517,
+          "positive_fraction": 1.0
+        },
+        "zero_r2": {
+          "n": 29,
+          "mean": -0.14898636083728367,
+          "median": -0.14180976208118246,
+          "q25": -0.19329256664369932,
+          "q75": -0.08116582952715135,
+          "positive_fraction": 0.0
+        }
+      }
+    },
+    "repeat_trial_reliability_proxy": {
+      "n": 29,
+      "median": 0.9580950873089905,
+      "q25": 0.9289633954609875,
+      "q75": 0.975220821116169,
+      "note": "Spearman-Brown corrected split-half PSTH reliability across repeated task conditions; a reliability proxy, not a strict information-theoretic ceiling."
+    },
+    "session_files": [
+      "0802ced5-33a3-405e-8336-b65ebc5cb07c.json",
+      "09394481-8dd2-4d5c-9327-f2753ede92d7.json",
+      "0cbeae00-e229-4b7d-bdcc-1b0569d7e0c3.json",
+      "12dc8b34-b18e-4cdd-90a9-da134a9be79c.json",
+      "16693458-0801-4d35-a3f1-9115c7e5acfd.json",
+      "19e66dc9-bf9f-430b-9d6a-acfa85de6fb7.json",
+      "28338153-4113-485b-835b-91cb96d984f2.json",
+      "29a6def1-fc5c-4eea-ac48-47e9b053dcb5.json",
+      "2d9bfc10-59fb-424a-b699-7c42f86c7871.json",
+      "3bcb81b4-d9ca-4fc9-a1cd-353a966239ca.json",
+      "5569f363-0934-464e-9a5b-77c8e67791a1.json",
+      "56956777-dca5-468c-87cb-78150432cc57.json",
+      "5c0c560e-9e1f-45e9-b66e-e4ee7855be84.json",
+      "5ec72172-3901-4771-8777-6e9490ca51fc.json",
+      "6713a4a7-faed-4df2-acab-ee4e63326f8d.json",
+      "6f6d2c8e-28be-49f4-ae4d-06be2d3148c1.json",
+      "77e6dc6a-66ed-433c-b1a2-778c914f523c.json",
+      "7cc74598-9c1b-436b-84fa-0bf89f31adf6.json",
+      "810b1e07-009e-4ebe-930a-915e4cd8ece4.json",
+      "8c025071-c4f3-426c-9aed-f149e8f75b7b.json",
+      "934dd7a4-fbdc-459c-8830-04fe9033bc28.json",
+      "b9c205c3-feac-485b-a89d-afc96d9cb280.json",
+      "c958919c-2e75-435d-845d-5b62190b520e.json",
+      "d0c91c3c-8cbb-4929-8657-31f18bffc294.json",
+      "dc21e80d-97d7-44ca-a729-a8e3f9b14305.json",
+      "e1931de1-cf7b-49af-af33-2ade15e8abe7.json",
+      "f4eb56a4-8bf8-4bbc-a8f3-6e6535134bad.json",
+      "f56194bc-8215-4ae8-bc6a-89781ad8e050.json",
+      "fe1fd79f-b051-411f-a0a9-2530a02cc78d.json"
+    ],
+    "metric_definition": "co-bps = (Poisson LL_model - LL_per-unit calibration-rate null)/(test spikes ln2)",
+    "baseline_definitions": {
+      "persistence": "per-unit mean count over preceding 200 ms",
+      "gru": "64-hidden-unit per-session GRU adapted on first 180 s; predicts 20/40/100/200/500 ms futures jointly",
+      "null": "per-unit mean count estimated on calibration prefix",
+      "zero": "all-zero count predictor, R2 only"
+    }
+  },
+  "abc_prior": {
+    "cells_high_quality_and_ccf_mapped": 2563364,
+    "regions": 672,
+    "compressed_prior_dimensions": 32,
+    "pretrain_exact_acronym_coverage": 0.8562418293158414,
+    "eval_exact_acronym_coverage": 0.8264125255275698
+  },
+  "social_slow_state": {
+    "n_trials": 68262,
+    "n_animals": 27,
+    "n_sessions": 362,
+    "next_action_exo_bits": 0.05926312445874705,
+    "next_action_history_bits": 0.0797119965867969,
+    "next_action_slow_bits": 0.17394617003671778,
+    "delta_slow_vs_history_bits": 0.09423417344992088,
+    "next_outcome_delta_slow_vs_history_bits": -0.010331382738361872,
+    "da_delta_slow_r2": -0.003014675966018343
+  },
+  "reward_slow_state": {
+    "n_animals": 11,
+    "n_bouts": 402,
+    "context_median_r2": 0.1299867227938033,
+    "short_median_r2": 0.15277120926431365,
+    "multiscale_median_r2": 0.16499119876492108,
+    "delta_multiscale_vs_context_r2": 0.03500447597111778
+  },
+  "real2p_cross_animal": {
+    "linear": {
+      "current_sub": {
+        "1": {
+          "horizon_s_approx": 0.15625953674316406,
+          "median_bits_per_sample_vs_persistence": 0.3232571539086474,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26061990738415963,
+            0.3858944004331351
+          ]
+        },
+        "4": {
+          "horizon_s_approx": 0.6250381469726562,
+          "median_bits_per_sample_vs_persistence": 0.32714790696511975,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26536889625976373,
+            0.3889269176704758
+          ]
+        },
+        "8": {
+          "horizon_s_approx": 1.2500762939453125,
+          "median_bits_per_sample_vs_persistence": 0.33022638388564,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.27045572457203537,
+            0.38999704319924466
+          ]
+        },
+        "16": {
+          "horizon_s_approx": 2.500152587890625,
+          "median_bits_per_sample_vs_persistence": 0.3425163607361202,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.29265912397675686,
+            0.3923735974954835
+          ]
+        }
+      },
+      "suite_sub": {
+        "1": {
+          "horizon_s_approx": 0.15625953674316406,
+          "median_bits_per_sample_vs_persistence": 0.3258003770463551,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26588588262672264,
+            0.38571487146598765
+          ]
+        },
+        "4": {
+          "horizon_s_approx": 0.6250381469726562,
+          "median_bits_per_sample_vs_persistence": 0.32712004062189803,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.26597704853092424,
+            0.3882630327128718
+          ]
+        },
+        "8": {
+          "horizon_s_approx": 1.2500762939453125,
+          "median_bits_per_sample_vs_persistence": 0.3290652294407075,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.2691959466452312,
+            0.3889345122361838
+          ]
+        },
+        "16": {
+          "horizon_s_approx": 2.500152587890625,
+          "median_bits_per_sample_vs_persistence": 0.3406134911330858,
+          "both_directions_positive": true,
+          "direction_values": [
+            0.29022423416034016,
+            0.3910027481058315
+          ]
+        }
+      }
+    },
+    "nonlinear_summary": {
+      "current_sub": {
+        "1": {
+          "median_nonlinear_bits_vs_persistence": 0.35583997380536725,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.0305520066782993
+        },
+        "4": {
+          "median_nonlinear_bits_vs_persistence": 0.3574257979746861,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.02678501743246864
+        },
+        "8": {
+          "median_nonlinear_bits_vs_persistence": 0.35279648368367733,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.027005637409581146
+        },
+        "16": {
+          "median_nonlinear_bits_vs_persistence": 0.3676655450061638,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.018969391078856757
+        }
+      },
+      "suite_sub": {
+        "1": {
+          "median_nonlinear_bits_vs_persistence": 0.3543008304448777,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.03205823071489325
+        },
+        "4": {
+          "median_nonlinear_bits_vs_persistence": 0.35350094042131786,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.028589945864272492
+        },
+        "8": {
+          "median_nonlinear_bits_vs_persistence": 0.3519105661643455,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.02451793414540754
+        },
+        "16": {
+          "median_nonlinear_bits_vs_persistence": 0.36417957530843803,
+          "both_directions_positive": true,
+          "median_delta_nonlinear_vs_ridge_bits": -0.01894461737731226
+        }
+      }
+    },
+    "note": "Two-animal VTA D6 transfer; no cell/session ID parameters."
+  },
+  "embodied_social_world": {
+    "n_animals": 27,
+    "event5_bits_vs_full_history_linear": 0.013478428212399434,
+    "event5_bits_vs_history_markov": 0.10876182272277149,
+    "neural_better_animals": 22,
+    "paired_p_one_sided": 0.0001504495739936,
+    "observe_to_active_delta": 0.0466060872488801,
+    "unrewarded_to_observe_delta": 0.19043741073425768
+  },
+  "cross_cohort_transfer": {
+    "n_cohorts": 7,
+    "median_delta_slow_vs_history_bits": 0.08490789489442159,
+    "positive_fraction": 1.0
+  },
+  "neuromodulator_state_audit": {
+    "effective_rank": 1.5383630823000847,
+    "top_correlated_pairs": [
+      {
+        "a": "lc_rpe_tr",
+        "b": "ht5_rpe_tr",
+        "spearman": 0.9949935089614068
+      },
+      {
+        "a": "ucl_rpe_tr",
+        "b": "ht5_rpe_tr",
+        "spearman": 0.8975951750443938
+      },
+      {
+        "a": "ucl_rpe_tr",
+        "b": "lc_rpe_tr",
+        "spearman": 0.8824692853457634
+      }
+    ],
+    "reward_contrast_best_model": "5ht_q",
+    "reward_contrast_relative_mse_reduction": 0.037057076484748985
+  },
+  "microns": {
+    "preflight": {
+      "2": {
+        "n_rois": 452,
+        "n_root_valid": 452,
+        "n_in_edgelist": 109,
+        "series_shape": [
+          40000,
+          452
+        ],
+        "data_chunks": [
+          1250,
+          15
+        ]
+      },
+      "4": {
+        "n_rois": 1389,
+        "n_root_valid": 1389,
+        "n_in_edgelist": 123,
+        "series_shape": [
+          40000,
+          1389
+        ],
+        "data_chunks": [
+          625,
+          44
+        ]
+      },
+      "6": {
+        "n_rois": 1411,
+        "n_root_valid": 1411,
+        "n_in_edgelist": 112,
+        "series_shape": [
+          40000,
+          1411
+        ],
+        "data_chunks": [
+          625,
+          45
+        ]
+      },
+      "8": {
+        "n_rois": 730,
+        "n_root_valid": 730,
+        "n_in_edgelist": 110,
+        "series_shape": [
+          40000,
+          730
+        ],
+        "data_chunks": [
+          625,
+          23
+        ]
+      }
+    },
+    "published_source_target": {
+      "status": "PASS",
+      "dataset": "MICrONS Functional Connectomics published matched source-target example",
+      "source_cell_nucleus_id": 294657,
+      "n_postsynaptic_functionally_registered_targets": 231,
+      "structure_metric": "summed EM synapse size from the published source neuron to each target",
+      "functional_metric": "Pearson similarity of trial-averaged oracle response traces across 6 stimulus conditions x 63 time bins",
+      "spearman_log_synapse_vs_trace_similarity": 0.009014003881503765,
+      "permutation_p_two_sided": 0.891621675664867,
+      "partial_spearman_controlling_oracle_score": 0.010928951108861154,
+      "partial_permutation_p_two_sided": 0.8710257948410318,
+      "cv_median": {
+        "oracle_only_r2": -0.024029572007262967,
+        "structure_only_r2": -0.010368824649363395,
+        "oracle_plus_structure_r2": -0.020332871180504197,
+        "oracle_only_bits_vs_null": 0.0011283482398785464,
+        "structure_only_bits_vs_null": 0.002277513729330644,
+        "oracle_plus_structure_bits_vs_null": 0.0022543361402094053
+      },
+      "cv_folds": [
+        {
+          "fold": 0,
+          "n_test": 47,
+          "null_r2": -0.02352657625137744,
+          "oracle_only_r2": -0.024029572007262967,
+          "oracle_only_bits_vs_null": -0.00035440761798821225,
+          "structure_only_r2": -0.018783283858336164,
+          "structure_only_bits_vs_null": 0.0033506848547923225,
+          "oracle_plus_structure_r2": -0.020332871180504197,
+          "oracle_plus_structure_bits_vs_null": 0.0022543361402094053
+        },
+        {
+          "fold": 1,
+          "n_test": 46,
+          "null_r2": -0.0034508106767281443,
+          "oracle_only_r2": -0.06055861244827576,
+          "oracle_only_bits_vs_null": -0.03992722862356332,
+          "structure_only_r2": -0.010368824649363395,
+          "structure_only_bits_vs_null": -0.004956066341233925,
+          "oracle_plus_structure_r2": -0.057512229813234894,
+          "oracle_plus_structure_bits_vs_null": -0.037852225246379594
+        },
+        {
+          "fold": 2,
+          "n_test": 46,
+          "null_r2": -0.01048584547667053,
+          "oracle_only_r2": -0.00890645605626017,
+          "oracle_only_bits_vs_null": 0.0011283482398785464,
+          "structure_only_r2": -0.0069570003078738285,
+          "structure_only_bits_vs_null": 0.002523517644081899,
+          "oracle_plus_structure_r2": -0.006716664582042675,
+          "oracle_plus_structure_bits_vs_null": 0.002695706001856423
+        },
+        {
+          "fold": 3,
+          "n_test": 46,
+          "null_r2": -0.02852881087457204,
+          "oracle_only_r2": -0.025465148233993373,
+          "oracle_only_bits_vs_null": 0.0021518730163193165,
+          "structure_only_r2": -0.02528655338335173,
+          "structure_only_bits_vs_null": 0.002277513729330644,
+          "oracle_plus_structure_r2": -0.02365649435107109,
+          "oracle_plus_structure_bits_vs_null": 0.003425265776888594
+        },
+        {
+          "fold": 4,
+          "n_test": 46,
+          "null_r2": -0.006418983662370481,
+          "oracle_only_r2": -0.0044480653585670105,
+          "oracle_only_bits_vs_null": 0.0014140342967006788,
+          "structure_only_r2": -0.00901682314214991,
+          "structure_only_bits_vs_null": -0.0018595939386870548,
+          "oracle_plus_structure_r2": -0.007568007523165443,
+          "oracle_plus_structure_bits_vs_null": -0.0008230893312339609
+        }
+      ],
+      "strength_bins": [
+        {
+          "bin": "(5.129, 7.678]",
+          "n": 47,
+          "median_summed_size": 948.0,
+          "mean_trace_corr": -0.002594634208522113,
+          "median_trace_corr": -0.019213310775789815,
+          "mean_oracle_score": 0.18241883489361704
+        },
+        {
+          "bin": "(7.678, 8.424]",
+          "n": 46,
+          "median_summed_size": 3176.0,
+          "mean_trace_corr": 0.011505065137771999,
+          "median_trace_corr": -0.003253845687728692,
+          "mean_oracle_score": 0.18171177891304346
+        },
+        {
+          "bin": "(8.424, 9.214]",
+          "n": 46,
+          "median_summed_size": 6946.0,
+          "mean_trace_corr": -0.00419282673074921,
+          "median_trace_corr": 0.004159035605703932,
+          "mean_oracle_score": 0.1994544369565217
+        },
+        {
+          "bin": "(9.214, 9.826]",
+          "n": 46,
+          "median_summed_size": 13182.0,
+          "mean_trace_corr": 0.011434804387227228,
+          "median_trace_corr": -0.01758211181349663,
+          "mean_oracle_score": 0.1994879229565217
+        },
+        {
+          "bin": "(9.826, 10.852]",
+          "n": 46,
+          "median_summed_size": 24864.0,
+          "mean_trace_corr": 0.028661764264206156,
+          "median_trace_corr": -0.005216493796982876,
+          "mean_oracle_score": 0.2248694739130435
+        }
+      ],
+      "interpretation": "A direct same-cell structure-function smoke test using published MICrONS EM connection strength and functional oracle traces. Any positive association is evidence that structural connectivity carries functional information in this matched circuit example.",
+      "guardrail": "Single presynaptic source-neuron example from a published figure panel; not a population-wide structure-to-function law and not a causal estimate."
+    },
+    "restricted_graph_smoke": {
+      "status": "INSUFFICIENT_GRAPH_COVERAGE",
+      "dataset": "MICrONS function-connectome matched smoke",
+      "n_cells": 42,
+      "n_connected_cells": 5,
+      "n_graph_edges": 5,
+      "frame_rate_hz": 6.297609494814058,
+      "reason": "Public Fig7abc edgelist overlaps too sparsely with this streamed functional session for a reliable graph-conditioned forecast.",
+      "next_action": "Use a fuller MICrONS synapse materialization / authenticated CAVE table or additional public matched structure-function releases; retain this as a coverage audit, not a failed scientific result."
+    },
+    "interpretation": "A simple single-source connection-strength feature did not predict full response-trace similarity; the streamed functional session has sparse overlap with the restricted Fig7abc graph. This motivates fuller connectivity + dynamics + molecular models rather than treating wiring strength alone as function."
+  },
+  "pending": {
+    "sessionfree_scaling": "10/50/150/423 sessions x tiny/base/large; queued on GPU",
+    "probabilistic_jepa_rollout": "depends on scaling authority",
+    "intervention_world": "depends on scaling authority",
+    "abc_prior_ablation": "depends on scaling authority",
+    "fast_adaptation": "depends on scaling authority"
+  }
+}
