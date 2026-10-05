@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="241.2pt" height="241.2pt" viewBox="0 0 241.2 241.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-05T12:38:22.211087</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 241.2
+L 241.2 241.2
+L 241.2 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m62fa2718ea" d="M 0 5.244044
+C 1.390737 5.244044 2.7247 4.691499 3.708099 3.708099
+C 4.691499 2.7247 5.244044 1.390737 5.244044 0
+C 5.244044 -1.390737 4.691499 -2.7247 3.708099 -3.708099
+C 2.7247 -4.691499 1.390737 -5.244044 0 -5.244044
+C -1.390737 -5.244044 -2.7247 -4.691499 -3.708099 -3.708099
+C -4.691499 -2.7247 -5.244044 -1.390737 -5.244044 0
+C -5.244044 1.390737 -4.691499 2.7247 -3.708099 3.708099
+C -2.7247 4.691499 -1.390737 5.244044 0 5.244044
+z
+" style="stroke: #555555"/>
+    </defs>
+    <g clip-path="url(#p3f22667e1c)">
+     <use xlink:href="#m62fa2718ea" x="49.2048" y="88.18272" style="fill: #ffffff; stroke: #555555"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 7px; font-family: 'Arial'" transform="translate(35.976441 120.14261)">sampled</text>
+    <text style="font-size: 7px; font-family: 'Arial'" transform="translate(38.896753 127.761262)">history</text>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#p3f22667e1c)">
+     <use xlink:href="#m62fa2718ea" x="118.6704" y="88.18272" style="fill: #ffffff; stroke: #555555"/>
+    </g>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7px; font-family: 'Arial'" transform="translate(101.940947 120.14261)">reference /</text>
+    <text style="font-size: 7px; font-family: 'Arial'" transform="translate(101.549384 127.761262)">latent state</text>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#p3f22667e1c)">
+     <use xlink:href="#m62fa2718ea" x="188.136" y="88.18272" style="fill: #ffffff; stroke: #555555"/>
+    </g>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 7px; font-family: 'Arial'" transform="translate(181.588813 120.14261)">VTA</text>
+    <text style="font-size: 7px; font-family: 'Arial'" transform="translate(176.266625 127.761262)">readout</text>
+   </g>
+   <g id="PathCollection_4">
+    <g clip-path="url(#p3f22667e1c)">
+     <use xlink:href="#m62fa2718ea" x="188.136" y="173.27808" style="fill: #ffffff; stroke: #555555"/>
+    </g>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7px; font-family: 'Arial'; text-anchor: middle" x="188.136" y="204.713311" transform="rotate(-0 188.136 204.713311)">behavior</text>
+   </g>
+   <g id="patch_2">
+    <path d="M 68.568166 88.18272
+Q 83.935067 88.18272 97.960326 88.18272
+" style="fill: none; stroke: #b2232e; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 94.560326 86.48272
+L 97.960326 88.18272
+L 94.560326 89.88272
+" style="fill: none; stroke: #b2232e; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 138.033766 88.18272
+Q 153.400667 88.18272 167.425926 88.18272
+" style="fill: none; stroke: #b2232e; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 164.025926 86.48272
+L 167.425926 88.18272
+L 164.025926 89.88272
+" style="fill: none; stroke: #b2232e; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 188.136 108.41483
+Q 188.136 130.728733 188.136 151.924602
+" style="fill: none; stroke: #9a9a9a; stroke-linecap: round"/>
+    <path d="M 189.836 148.524602
+L 188.136 151.924602
+L 186.436 148.524602
+" style="fill: none; stroke: #9a9a9a; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7px; font-family: 'Arial'; fill: #555555" transform="translate(38.821962 171.280277)">current reward +</text>
+    <text style="font-size: 7px; font-family: 'Arial'; fill: #555555" transform="translate(42.417666 178.89893)">recent context</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 101.133479 173.27808
+Q 132.782431 173.27808 163.089743 173.27808
+" style="fill: none; stroke: #87cdd4; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 159.689743 171.57808
+L 163.089743 173.27808
+L 159.689743 174.97808
+" style="fill: none; stroke: #87cdd4; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6.6px; font-family: 'Arial'; text-anchor: middle; fill: #9a9a9a" x="123.012" y="209.74752" transform="rotate(-0 123.012 209.74752)">deep R × current: not established</text>
+   </g>
+  </g>
+  <g id="text_7">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="8.442" y="15.722273" transform="rotate(-0 8.442 15.722273)">B</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3f22667e1c">
+   <rect x="14.472" y="19.296" width="217.08" height="202.608"/>
+  </clipPath>
+ </defs>
+</svg>

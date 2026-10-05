@@ -350,11 +350,15 @@
         每一对中，当前食物完全相同，主要区别只是之前的reward history不同。
       </p>
     </div>
-    <figure class="figure">
-      <picture>
-        <source media="(max-width: 640px)" srcset="../assets/Fig1_same_current_reward_manuscript_v2_mobile.png">
-        <img src="../assets/Fig1_same_current_reward_manuscript_v2.png" alt="fig1 figure">
-      </picture>
+    <figure class="figure strict-panels">
+      <div class="strict-panel-grid cols3">
+        <img src="../assets/Fig1_strict_v52_A.png" alt="Fig. 1 A">
+        <img src="../assets/Fig1_strict_v52_B.png" alt="Fig. 1 B">
+        <img src="../assets/Fig1_strict_v52_C.png" alt="Fig. 1 C">
+        <img src="../assets/Fig1_strict_v52_D.png" alt="Fig. 1 D">
+        <img src="../assets/Fig1_strict_v52_E.png" alt="Fig. 1 E">
+        <img src="../assets/Fig1_strict_v52_F.png" alt="Fig. 1 F">
+      </div>
       <figcaption>
         <strong>A、B，</strong>固定当前食物后的平均VTA GRAB-DA时间曲线：100E的H vs S、20E的L vs N；n=9，阴影为动物间SEM。
         <strong>C、D，</strong>四个条件的raw bout-duration分布并叠加每只动物均值；n=9。
@@ -441,14 +445,16 @@
           <strong>E，</strong>在匹配近期/local history后，更深的cumulative history仍增加ΔR²=.027（conditional permutation P=.0067）。
           <strong>F，</strong>自然任务recency profile峰值约α=.15（selection-aware permutation P=.0062），说明可辨识的是一个宽的recency regime。</figcaption>
       </figure>
-      <figure class="figure">
-        <picture>
-        <source media="(max-width: 640px)" srcset="../assets/Fig4_model_comparison_manuscript_v2_mobile.png">
-        <img src="../assets/Fig4_model_comparison_manuscript_v2.png" alt="alternative reward history models">
-      </picture>
+      <figure class="figure strict-panels">
+        <div class="strict-panel-grid cols2">
+        <img src="../assets/Fig4_strict_v52_A.png" alt="Fig. 4 A">
+        <img src="../assets/Fig4_strict_v52_B.png" alt="Fig. 4 B">
+        <img src="../assets/Fig4_strict_v52_C.png" alt="Fig. 4 C">
+        <img src="../assets/Fig4_strict_v52_D.png" alt="Fig. 4 D">
+      </div>
         <figcaption><strong>A、B，</strong>不同latent-state family及其对同一reward switch的不同适应轨迹（模型示意）。
           <strong>C，</strong>统一leave-one-animal-out protocol下把cumulative history自身也加入比较；cumulative history、belief、block sampling、reference RW与two-stage的normalized-MAE都很接近，说明单看prediction score无法确定机制。
-          <strong>D，</strong>192个matched post-switch bouts、11只小鼠的conditional unique-information test：cumulative history在belief之后P=.0124、continuous-time HMM之后P=.0090、average reward rate之后P=.0122、Value-RNN reward-only之后P=.0128、Value-RNN+time之后P=.0078仍有独立信息；反向unique term均不显著。图例已明确两组bar的方向。</figcaption>
+          <strong>D，</strong>192个matched post-switch bouts、11只小鼠的conditional unique-information test：cumulative history在belief之后P=.0124、continuous-time HMM之后P=.0090、average reward rate之后P=.0122、Value-RNN reward-only之后P=.0128、Value-RNN+time之后P=.0078仍有独立信息；反向unique term均不显著。红色bar表示history-unique information；灰色bar表示competitor-unique information，并用深/中/浅灰区分主要与辅助comparator。</figcaption>
       </figure>
     </div>
     <div class="callout">
@@ -736,25 +742,28 @@
       </picture>
           <figcaption><strong>ED7。</strong>direct sampled-history test在Natural（ΔR²=.0269，P=.00670）、QE（ΔR²=.0254，P=.00141）、Stim13（ΔR²=.00252，P=5×10<sup>−5</sup>）均为阳性；duration-history proxy在hunger（P=.283）、quinine（P=.466）、LiCl（P=.478）、Stim5（P=.562）均不显著。proxy bar本身可以有非零ΔR²，因此specificity判断依赖真实条件与proxy control的推断统计，而不是只看bar高度。</figcaption>
         </figure>
-                <figure class="figure">
-          <picture>
-            <source media="(max-width: 640px)" srcset="../assets/ED8_reward_type_memory_expression_manuscript_v1_mobile.png">
-            <img src="../assets/ED8_reward_type_memory_expression_manuscript_v1.png" alt="ED8 layered reward-history evidence and model">
-          </picture>
+                <figure class="figure strict-panels">
+          <div class="strict-panel-grid cols2">
+            <img src="../assets/ED8_strict_v52_A.png" alt="ED8_strict_v52 panel A">
+            <img src="../assets/ED8_strict_v52_B.png" alt="ED8_strict_v52 panel B">
+          </div>
           <figcaption><strong>ED8。</strong><strong>A，</strong>用evidence ladder把current reward的即时行为效应、neural history readout、marginal behavioral history和current-conditioned structure分开。Natural各层均有支持；QE的behavioral层仍为provisional；Stim13有稳定neural history，但没有稳定marginal duration-history effect，current-conditioned structure又明显依赖recent local context。<strong>B，</strong>工作模型：sampled reward history形成reference/latent history，并可在VTA dopamine中读出；current reward与recent local context共同塑造history如何进入behavior。目前尚未建立universal deep R×current gate。</figcaption>
         </figure>
-                <figure class="figure">
-          <picture>
-            <source media="(max-width: 640px)" srcset="../assets/ED9_memory_timescale_manuscript_v1_mobile.png">
-            <img src="../assets/ED9_memory_timescale_manuscript_v1.png" alt="ED9 reward-history memory-timescale sensitivity">
-          </picture>
+                <figure class="figure strict-panels">
+          <div class="strict-panel-grid cols3">
+            <img src="../assets/ED9_strict_v52_A.png" alt="ED9_strict_v52 panel A">
+            <img src="../assets/ED9_strict_v52_B.png" alt="ED9_strict_v52 panel B">
+            <img src="../assets/ED9_strict_v52_C.png" alt="ED9_strict_v52 panel C">
+          </div>
           <figcaption><strong>ED9。</strong>memory timescale不能解释<strong>marginal</strong> reward-history dissociation。<strong>A，Natural：</strong>neural history在α=.03–.60均稳定，behavioral history在α=.03–.30仍显著。<strong>B，QE：</strong>neural history跨α=.10–.30稳定，而duration经过α-family correction后仍为provisional。<strong>C，Stim13：</strong>8/8个α都有显著neural history，但8/8个α的marginal duration-history都为null。竖虚线为冻结的α=.20 primary值；current-conditioned structure由ED10单独adjudicate。</figcaption>
         </figure>
-        <figure class="figure">
-          <picture>
-            <source media="(max-width: 640px)" srcset="../assets/ED10_current_identity_adjudication_manuscript_v1_mobile.png">
-            <img src="../assets/ED10_current_identity_adjudication_manuscript_v1.png" alt="ED10 current reward identity adjudication">
-          </picture>
+        <figure class="figure strict-panels">
+          <div class="strict-panel-grid cols2">
+            <img src="../assets/ED10_strict_v52_A.png" alt="ED10_strict_v52 panel A">
+            <img src="../assets/ED10_strict_v52_B.png" alt="ED10_strict_v52 panel B">
+            <img src="../assets/ED10_strict_v52_C.png" alt="ED10_strict_v52 panel C">
+            <img src="../assets/ED10_strict_v52_D.png" alt="ED10_strict_v52 panel D">
+          </div>
           <figcaption><strong>ED10。</strong>current reward identity会改变观察到的behavioral history sensitivity，但还没有建立universal deep-reference gate。<strong>A，</strong>三个独立cohort共29只动物中，24/29在current-high条件下表现出更负的标准化reference slope（two-sided exact Wilcoxon P=.00215；Natural 8/10，QE 5/6，Stim13 11/13）。<strong>B，</strong>termination hazard方向一致（Natural HR=1.54，P=.00075；QE HR=2.22，P&lt;10<sup>−11</sup>；Stim13 HR=1.14，P=.0047）。<strong>C，</strong>local-history adjudication解释了为什么不能把它升格成universal gate：Natural在local main effects后仍保留，但加入local×current竞争后不再显著；QE功效不足；Stim13的base interaction被local history吸收。<strong>D，</strong>deep residual R×current在Natural（P=.309）、QE（P=.108）、Stim13（P=.154）均为null。</figcaption>
         </figure>
       </div>

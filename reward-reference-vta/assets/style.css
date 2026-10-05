@@ -711,3 +711,42 @@ html[lang="zh-CN"] table {
 html[lang="zh-CN"] .concept-node span {
   line-height: 1.55;
 }
+
+/* V52 strict panel geometry: square 3.35-inch source panels, compact equal gaps */
+.strict-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+.strict-panel-grid.cols3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.strict-panel-grid.cols2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.strict-panel-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 0;
+  background: #fff;
+}
+.figure.strict-panels { padding: 10px; }
+.figure.strict-panels figcaption { padding-top: 10px; }
+
+@media (max-width: 760px) {
+  .strict-panel-grid.cols3,
+  .strict-panel-grid.cols2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+@media (max-width: 620px) {
+  .strict-panel-grid,
+  .strict-panel-grid.cols3,
+  .strict-panel-grid.cols2 {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .figure.strict-panels { padding: 4px; }
+  .figure.strict-panels figcaption { padding: 9px 5px 5px; }
+}

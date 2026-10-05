@@ -343,11 +343,15 @@
         What differs within each pair is the recent reward environment.
       </p>
     </div>
-    <figure class="figure">
-      <picture>
-        <source media="(max-width: 640px)" srcset="assets/Fig1_same_current_reward_manuscript_v2_mobile.png">
-        <img src="assets/Fig1_same_current_reward_manuscript_v2.png" alt="fig1 figure">
-      </picture>
+    <figure class="figure strict-panels">
+      <div class="strict-panel-grid cols3">
+        <img src="assets/Fig1_strict_v52_A.png" alt="Fig. 1 A">
+        <img src="assets/Fig1_strict_v52_B.png" alt="Fig. 1 B">
+        <img src="assets/Fig1_strict_v52_C.png" alt="Fig. 1 C">
+        <img src="assets/Fig1_strict_v52_D.png" alt="Fig. 1 D">
+        <img src="assets/Fig1_strict_v52_E.png" alt="Fig. 1 E">
+        <img src="assets/Fig1_strict_v52_F.png" alt="Fig. 1 F">
+      </div>
       <figcaption>
         <strong>A,B,</strong> mean local VTA GRAB-DA time courses for matched current 100E (H versus S) and matched current 20E (L versus N); n=9 mice, shading denotes animal-level SEM; descriptive time courses.
         <strong>C,D,</strong> raw bout-duration distributions for the same four conditions with animal means overlaid; n=9 mice.
@@ -433,14 +437,16 @@
           <strong>E,</strong> deeper cumulative history adds ΔR²=.027 beyond matched recent/local history (conditional permutation P=.0067).
           <strong>F,</strong> the natural-task recency profile peaks near α=.15 (selection-aware permutation P=.0062), supporting a broad recency regime rather than a unique biological constant.</figcaption>
       </figure>
-      <figure class="figure">
-        <picture>
-        <source media="(max-width: 640px)" srcset="assets/Fig4_model_comparison_manuscript_v2_mobile.png">
-        <img src="assets/Fig4_model_comparison_manuscript_v2.png" alt="Alternative reward-history models">
-      </picture>
+      <figure class="figure strict-panels">
+        <div class="strict-panel-grid cols2">
+        <img src="assets/Fig4_strict_v52_A.png" alt="Fig. 4 A">
+        <img src="assets/Fig4_strict_v52_B.png" alt="Fig. 4 B">
+        <img src="assets/Fig4_strict_v52_C.png" alt="Fig. 4 C">
+        <img src="assets/Fig4_strict_v52_D.png" alt="Fig. 4 D">
+      </div>
         <figcaption><strong>A,B,</strong> alternative latent-state families and their distinct adaptation trajectories (schematic/model illustrations).
           <strong>C,</strong> common-protocol leave-one-animal-out prediction across 11 mice now includes cumulative history itself. Cumulative history, belief state, block sampling, reference RW and two-stage models achieve similar normalized-MAE improvements. Prediction alone does not identify the mechanism.
-          <strong>D,</strong> conditional unique-information tests in the 192 matched post-switch bouts (11 mice): cumulative history remains unique beyond belief (P=.0124), continuous-time HMM (P=.0090), average reward rate (P=.0122), Value-RNN reward-only (P=.0128) and Value-RNN+time (P=.0078), whereas the reverse unique terms are nonsignificant. The legend states the direction of each bar explicitly.</figcaption>
+          <strong>D,</strong> conditional unique-information tests in the 192 matched post-switch bouts (11 mice): cumulative history remains unique beyond belief (P=.0124), continuous-time HMM (P=.0090), average reward rate (P=.0122), Value-RNN reward-only (P=.0128) and Value-RNN+time (P=.0078), whereas the reverse unique terms are nonsignificant. Red bars show history-unique information; gray bars show competitor-unique information, with darker gray reserved for the stronger classical comparators.</figcaption>
       </figure>
     </div>
     <div class="callout">
@@ -717,25 +723,28 @@
       </picture>
           <figcaption><strong>ED7.</strong> Direct sampled-history tests are positive in Natural (ΔR²=.0269, P=.00670), QE (ΔR²=.0254, P=.00141) and Stim13 (ΔR²=.00252, P=5×10<sup>−5</sup>). Duration-history proxy tests are not significant for hunger (P=.283), quinine (P=.466), LiCl (P=.478) or Stim5 (P=.562). The proxy bars can have nonzero ΔR² while remaining statistically unsupported; this is why specificity is judged by the paired real/control inference rather than bar height alone.</figcaption>
         </figure>
-                <figure class="figure">
-          <picture>
-            <source media="(max-width: 640px)" srcset="assets/ED8_reward_type_memory_expression_manuscript_v1_mobile.png">
-            <img src="assets/ED8_reward_type_memory_expression_manuscript_v1.png" alt="ED8 layered reward-history evidence and model">
-          </picture>
+                <figure class="figure strict-panels">
+          <div class="strict-panel-grid cols2">
+            <img src="assets/ED8_strict_v52_A.png" alt="ED8_strict_v52 panel A">
+            <img src="assets/ED8_strict_v52_B.png" alt="ED8_strict_v52 panel B">
+          </div>
           <figcaption><strong>ED8.</strong> <strong>A,</strong> the evidence ladder separates the acute effect of the current reward, neural history readout, marginal behavioral history and current-conditioned structure. Natural is supported across these layers; QE behavioral effects remain provisional; Stim13 has robust neural history but no stable marginal duration-history effect, while its current-conditioned structure is sensitive to recent local context. <strong>B,</strong> working architecture: sampled reward history establishes a reference/latent history state that is readable in VTA dopamine, whereas current reward and recent local context shape how history is expressed in behavior. A universal deep R×current gate is not established.</figcaption>
         </figure>
-                <figure class="figure">
-          <picture>
-            <source media="(max-width: 640px)" srcset="assets/ED9_memory_timescale_manuscript_v1_mobile.png">
-            <img src="assets/ED9_memory_timescale_manuscript_v1.png" alt="ED9 reward-history memory-timescale sensitivity">
-          </picture>
+                <figure class="figure strict-panels">
+          <div class="strict-panel-grid cols3">
+            <img src="assets/ED9_strict_v52_A.png" alt="ED9_strict_v52 panel A">
+            <img src="assets/ED9_strict_v52_B.png" alt="ED9_strict_v52 panel B">
+            <img src="assets/ED9_strict_v52_C.png" alt="ED9_strict_v52 panel C">
+          </div>
           <figcaption><strong>ED9.</strong> Memory timescale does not explain the <em>marginal</em> reward-history dissociation. <strong>A, Natural:</strong> neural history survives α=.03–.60 (BH q≤.00131), while behavioral history remains significant over α=.03–.30 (BH q≈.0103). <strong>B, QE:</strong> neural history is robust across α=.10–.30, whereas duration remains provisional after α-family correction. <strong>C, Stim13:</strong> neural history is significant at all 8 scanned α values (BH q≤.0192), whereas the marginal duration-history term is null at all 8 (BH q≥.906). The dotted line marks the frozen α=.20 primary value; ED10 separately adjudicates current-conditioned structure.</figcaption>
         </figure>
-        <figure class="figure">
-          <picture>
-            <source media="(max-width: 640px)" srcset="assets/ED10_current_identity_adjudication_manuscript_v1_mobile.png">
-            <img src="assets/ED10_current_identity_adjudication_manuscript_v1.png" alt="ED10 current reward identity adjudication">
-          </picture>
+        <figure class="figure strict-panels">
+          <div class="strict-panel-grid cols2">
+            <img src="assets/ED10_strict_v52_A.png" alt="ED10_strict_v52 panel A">
+            <img src="assets/ED10_strict_v52_B.png" alt="ED10_strict_v52 panel B">
+            <img src="assets/ED10_strict_v52_C.png" alt="ED10_strict_v52 panel C">
+            <img src="assets/ED10_strict_v52_D.png" alt="ED10_strict_v52 panel D">
+          </div>
           <figcaption><strong>ED10.</strong> Current reward identity changes apparent behavioral history sensitivity, but a universal deep-reference gate is not established. <strong>A,</strong> standardized within-animal reference slopes are more negative under the current-high condition in 24/29 animals across the three independent cohorts (two-sided exact Wilcoxon P=.00215; Natural 8/10, QE 5/6, Stim13 11/13). <strong>B,</strong> termination-hazard sensitivity points in the same direction (Natural HR=1.54, P=.00075; QE HR=2.22, P&lt;10<sup>−11</sup>; Stim13 HR=1.14, P=.0047). <strong>C,</strong> local-history adjudication shows why this is not yet a universal gate: Natural survives local main effects but not local×current competition, QE is underpowered, and the Stim13 interaction is absorbed by local-history main effects. <strong>D,</strong> deep residual R×current interactions remain null in Natural (P=.309), QE (P=.108) and Stim13 (P=.154).</figcaption>
         </figure>
       </div>
