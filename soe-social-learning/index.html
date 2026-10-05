@@ -323,7 +323,14 @@
 <a class="figure-zoom" href="assets/SOE_feed_content_specificity_v1.png" rel="noopener" target="_blank">
 <picture><source media="(max-width: 620px)" srcset="assets/SOE_feed_content_specificity_v1_mobile.png"/><img alt="Recent observation versus observed content tests for native Feed" loading="lazy" src="assets/SOE_feed_content_specificity_v1.png"/></picture>
 </a><figcaption><strong>Content specificity.</strong> Recent Observe alone adds little beyond current state, whereas observed content improves held-animal Feed calibration; demonstrator-feeding content increases log probability on relevant Feed decisions in 26/26 animals (r_rb=1, P=1.49×10⁻⁸).</figcaption></figure>
-<div class="callout warn">Mechanistic implication: the preferred architecture is hierarchical. SLM controls adaptive sampling and reward credit, while native Feed is dominated by observer self-state plus a short-lived content-specific eligibility signal.</div>
+<figure class="figure evidence-figure">
+<a class="figure-zoom" href="assets/SOE_sampling_feed_separation_v1.png" rel="noopener" target="_blank">
+<picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_sampling_feed_separation_v1_mobile.png"/>
+<img alt="Sampling and feeding are separable controllers linked by sampled content" loading="lazy" src="assets/SOE_sampling_feed_separation_v1.png"/>
+</picture></a>
+<figcaption><strong>Controller separation.</strong> Current observer state predicts native Feed much more strongly than Observe (median held-animal AUC .839 vs .605). Generic history contributes to Observe discrimination but not Feed, and carrying the old SLM state into the native Feed controller does not add a reliable Feed gain. The bridge appears when the content of the sampled event is represented: observing demonstrator feeding produces a +7.54 percentage-point Feed-hazard increase within 3 s (+6.09 pp after state residualization).</figcaption>
+</figure><div class="callout warn">Mechanistic implication: the preferred architecture is hierarchical. SLM controls adaptive sampling and reward credit, while native Feed is dominated by observer self-state plus a short-lived content-specific eligibility signal.</div>
 <details><summary>Why the Feed bridge is a separate controller</summary><div class="detail-body"><div class="card info">
 <div class="metric-label">Generic recent Observe</div>
 <div class="metric">12/27</div>
@@ -599,6 +606,19 @@
 <tr><td>Aeon</td><td>recent partner history</td><td>self/current-social baselines</td><td>5 experiments</td><td>social-history component test</td></tr>
 <tr><td>Cooperative foraging</td><td>social information value / policy</td><td>self-only; flexible RF</td><td>fixed held-out trajectories from one dyad</td><td>within-dyad validation consistency; not animal-level generalization</td></tr>
 </tbody></table></div></div>
+
+<div class="cards-3">
+<div class="card good"><div class="metric-label">Macaque · frozen core</div><div class="metric">10/10</div><p>Full target data: all held-out sessions favor the SOE-trained recurrent core; both monkeys are positive in all five sessions.</p></div>
+<div class="card info"><div class="metric-label">Aeon · frozen core</div><div class="metric">4/5 · P=.0938</div><p>Direction is positive at full target data but does not reach the confirmatory threshold; transfer is not universal.</p></div>
+<div class="card violet"><div class="metric-label">Reverse transfer</div><div class="metric">low-data only</div><p>Macaque pretraining improves SOE in 5/5 folds with 2 or 4 SOE training animals, but the advantage disappears with 8 animals.</p></div>
+</div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_trained_model_cross_task_transfer_v1.png" rel="noopener" target="_blank"><picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_trained_model_cross_task_transfer_v1_mobile.png"/>
+<img alt="Frozen SOE recurrent dynamics transfer selectively to external tasks" loading="lazy" src="assets/SOE_trained_model_cross_task_transfer_v1.png"/></picture></a>
+<figcaption><strong>Frozen-core representation transfer.</strong> In macaque DANDI001435, the SOE-pretrained frozen core beats a frozen random core in 8/10 held-out sessions with 50% target data (rank-biserial=.745, P=.0186) and 10/10 sessions with full target data (rank-biserial=1.00, session-level P=.000977). Both Lalo and Offenbach are positive in all 5/5 held-out sessions at full target data. The sessions remain nested in only two monkeys, so this is a strong within-dataset transfer result rather than population-level primate inference. Aeon does not show a comparable confirmatory effect, establishing an important boundary. Reverse transfer into SOE is concentrated in low-data settings, consistent with sample-efficiency rather than universal asymptotic transfer.</figcaption></figure>
+<div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Trained-model transfer</div>
+<h3>SOE-learned recurrent dynamics transfer selectively to macaque choice</h3></div>
+<p>This is a stricter test than re-fitting the SLM equations in another dataset. The recurrent core is pretrained on SOE, frozen, and only a new target adapter/head is trained. The comparator uses the same target adapter/head with an equally frozen random recurrent core.</p></div>
 <div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">State-gated information value</div>
 <h3>Social information is useful conditionally, not uniformly</h3></div>
 <p>This is the strongest cross-task behavioral convergence: the value of partner information depends on decision-maker state, source identity, role and recent social history.</p></div>
@@ -630,7 +650,7 @@
 <div class="cards-4">
 <div class="card good"><div class="metric-label">SOURCE TAGGING</div><div class="metric">behavioral support</div><p>Rat demonstrator versus moving-object specificity and macaque source-aware state support source identity. Primate RPE remains literature/audit support until independent validation.</p></div>
 <div class="card good"><div class="metric-label">GATED VALUE</div><div class="metric">cross-task support</div><p>SOE state gating, cooperative role-by-uncertainty and Aeon partner history converge on conditional information value.</p></div>
-<div class="card info"><div class="metric-label">MULTISCALE STATE</div><div class="metric">strongest model transfer</div><p>Human and macaque structured states clear stronger Feature-Q comparators; rat 001169 and mouse 001632 add component-level support.</p></div>
+<div class="card info"><div class="metric-label">MULTISCALE STATE</div><div class="metric">equations + frozen dynamics</div><p>Human and macaque structured states clear stronger Feature-Q comparators; a frozen SOE recurrent core also transfers to macaque choice. Rat 001169 and mouse 001632 add component-level support.</p></div>
 <div class="card violet"><div class="metric-label">SAMPLE -&gt; ACTION</div><div class="metric">SOE direct; marmoset analogue</div><p>SOE establishes separate Observe and Feed control. Marmoset gaze-gated evidence accumulation is the closest current external architectural analogue.</p></div>
 </div></div>
 <details class="panel" style="margin-top:20px"><summary><strong>Dataset-depth audits and source plots</strong></summary>
@@ -647,6 +667,10 @@
 <div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v1.csv">Comparator audit</a><p class="small">Human and macaque stronger-comparator results plus explicit gaps.</p></div>
 <div class="download-card"><a href="data/SOE_crossspecies_SLM_evidence_table_v1.csv">SLM evidence table</a><p class="small">Evidence tier, SLM component, unit, effect and interpretation.</p></div>
 <div class="download-card"><a href="data/SOE_crossspecies_complete_registry_v1.csv">Complete external registry</a><p class="small">All external datasets, including component-only and control results.</p></div>
+
+<div class="download-card"><a href="data/SOE_to_external_frozen_v2_summary.csv">Frozen-core transfer summary</a><p class="small">Seed-averaged held-out-unit effects for macaque and Aeon.</p></div>
+<div class="download-card"><a href="data/SOE_to_macaque_frozen_transfer_by_monkey_v2.csv">Macaque frozen transfer by monkey</a><p class="small">Nested-session direction separately for Lalo and Offenbach.</p></div>
+<div class="download-card"><a href="data/external_to_SOE_transfer_targeted_v1.csv">External → SOE sample-efficiency</a><p class="small">Targeted reverse-transfer results across 2, 4 and 8 SOE training animals.</p></div>
 </div>
 </div></section><section class="alt" id="resources">
 <div class="container">
@@ -660,7 +684,7 @@
         focused mechanistic notes and downloadable CSV tables below.
       </p>
 </div>
-<div class="download-grid">
+<div class="download-grid"><div class="download-card"><a href="docs/SLM_TRANSFERABLE_CORE_AND_TRANSFER_v1_20261005.md">Transferable-core authority 2026-10-05</a><p class="small">Comparator correction, primate-RPE circularity audit, four-computation synthesis, frozen-core transfer, and same-animal generalization boundary.</p></div>
 <div class="download-card"><a href="docs/SOE_CURRENT_CHECKPOINT_v32_20261004.md">Current checkpoint v32</a><p class="small">Latest project-wide analysis authority, statistics, provenance and reproducibility records.</p></div>
 <div class="download-card"><a href="docs/SOE_LATEST_ANALYSIS_MASTER_v23_20261004.md">Analysis master v23</a><p class="small">Comprehensive analysis/results authority.</p></div>
 <div class="download-card"><a href="docs/SLM_NATIVE_SOCIAL_TO_FEED_CONVERSION_v1_20261004.md">Native social→Feed authority</a><p class="small">Strict future Feed contract and observed-content bridge.</p></div>
