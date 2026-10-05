@@ -1,0 +1,21 @@
+panel,category,item,metric,value,n,wins,p,note
+A,matched_comparator,Human exp/obs,rank_biserial,0.8909090909090909,10,8.0,0.0048828125,held-out subject
+A,matched_comparator,Macaque global,rank_biserial,0.9818181818181818,44,41.0,1.8758328224066645e-12,date cluster (2 monkeys nested)
+A,matched_comparator,Rat DANDI001169,rank_biserial,0.8909090909090909,10,8.0,0.0048828125,held-out rat
+B,frozen_core_transfer,aeon|0.2,mean_NLL_gain,0.0105611846625295,5,3,0.15625,target-data fraction
+B,frozen_core_transfer,aeon|0.5,mean_NLL_gain,0.0027254654819896,5,1,0.78125,target-data fraction
+B,frozen_core_transfer,aeon|1.0,mean_NLL_gain,0.0098857912499722,5,4,0.09375,target-data fraction
+B,frozen_core_transfer,macaque001435|0.2,mean_NLL_gain,0.0050149184183307,10,6,0.1875,target-data fraction
+B,frozen_core_transfer,macaque001435|0.5,mean_NLL_gain,0.014914673719076,10,8,0.0185546875,target-data fraction
+B,frozen_core_transfer,macaque001435|1.0,mean_NLL_gain,0.0128428997583784,10,10,0.0009765625,target-data fraction
+C,evidence_tier,source credit,component,,,,,rat maze
+C,evidence_tier,source credit,analogue,,,,,macaque / literature
+C,evidence_tier,state value,component,,,,,cooperative / Aeon
+C,evidence_tier,state value,analogue,,,,,marmoset
+C,evidence_tier,multiscale,strong,,,,,human + rat
+C,evidence_tier,multiscale,analogue,,,,,macaque
+C,evidence_tier,sample→act,analogue,,,,,marmoset / rat
+D,population_inference,Human,independent_animals_or_subjects,10,10,,,held-out subjects
+D,population_inference,Rat,independent_animals_or_subjects,10,10,,,held-out rats
+D,population_inference,Macaque,independent_animals_or_subjects,2,2,,,44 date clusters nested in 2 monkeys
+D,population_inference,Marmoset,independent_animals_or_subjects,2,2,,,neural analogue from 2 animals
