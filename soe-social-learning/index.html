@@ -585,7 +585,6 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="metric">61.07 vs 8.81 s</div>
 <p>Initial feeding engagement is more sustained after prior SOE training: Cliff δ=+.889, P=.00866.</p>
 </div></div>
-
 <div class="section-head compact-head" style="margin-top:30px">
 <div><div class="section-kicker">Computational phenotype → later behavior</div>
 <h3>SLM latents forecast domain-specific generalization, not one generic “social score”</h3></div>
@@ -614,6 +613,15 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <img alt="SLM latent dimensions grounded in SOE learning across all 40 animals" loading="lazy" src="assets/SOE_SLM_latent_grounding_all40_v1.png"/></a>
 <figcaption><strong>The generalization analysis lives in a latent space already grounded in the original task.</strong> Across all 40 SOE animals, multiple SLM dimensions track independent within-task learning readouts. The later-assay effects therefore do not begin from arbitrary post hoc variables chosen only in the six-mouse follow-up cohort.</figcaption>
 </figure>
+
+<div class="download-grid"><div class="download-card"><a href="data/SLM_generalization_crossdomain_double_mapping_v1.csv">2×2 cross-domain mapping</a><p class="small">Primary matched/mismatched correlations and exact permutation statistic.</p></div><div class="download-card"><a href="data/SLM_generalization_crossdomain_mapping_sensitivity_v1.csv">Definition/window sensitivity</a><p class="small">Three credit definitions × 2/3/4-day windows.</p></div><div class="download-card"><a href="docs/SLM_GENERALIZATION_LATENT_BRIDGE_v4_20261005.md">Generalization authority v4</a><p class="small">Double mapping, nested prediction and biological interpretation.</p></div></div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_SLM_crossdomain_double_mapping_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_crossdomain_double_mapping_v1_mobile.png"/><img alt="Cross-domain double mapping of SLM latent computations" loading="lazy" src="assets/SOE_SLM_crossdomain_double_mapping_v1.png"/></picture></a><figcaption><strong>Modular generalization rather than one scalar social-learning strength.</strong> Social-credit maintenance maps preferentially onto novel-food initiation, whereas late |APE| maps preferentially onto observational-fear shock reactivity. The matched diagonal exceeds the mismatched off-diagonal under an exact cross-domain permutation test (P=.00672). The contrast remains positive in 9/9 alternate credit/window definitions and is P&lt;.05 in 8/9.</figcaption></figure>
+<div class="cards-3">
+<div class="card good"><div class="metric-label">MATCHED LINKS</div><div class="metric">.886 / .943</div><p>Active-credit maintenance → novel-food initiation: ρ=.886; late |APE| → fear shock reactivity: ρ=.943.</p></div>
+<div class="card info"><div class="metric-label">MISMATCHED LINKS</div><div class="metric">.143 / −.086</div><p>Credit → fear is only ρ=.143; APE → food is ρ=−.086. One generic social-learning-strength explanation does not fit the mapping.</p></div>
+<div class="card violet"><div class="metric-label">DOUBLE-MAPPING TEST</div><div class="metric">P=.00672</div><p>Matched−mismatched contrast=1.771 under the full 720×720 independent-domain exact permutation.</p></div>
+</div>
+<div class="section-head compact-head" style="margin-top:30px"><div><div class="section-kicker">Cross-domain double mapping</div><h3>The latent-to-phenotype mapping is structured, not generic</h3></div><p>Two SOE latents and two later phenotypes are placed in one 2×2 map. The decisive question is whether the biologically matched links are stronger than the mismatched links.</p></div>
 <details class="panel"><summary><strong>Strict out-of-sample audit</strong></summary>
 <p>The domain-matched latent effects remain small-n results. For food, the nested credit-family model gives R²=.713 with permutation P=.0625, but its held-out absolute error is lower than the nested simple-behavior family in 6/6 mice and the direct full-model permutation comparison is P=.0486. For fear, the APE family gives R²=.307 (P=.0514) and predicted↔observed rank ρ=.829 (P=.0111); simple SOE behavior also predicts shock-velocity variance (R²=.548, P=.0333). Thus the strongest current claim is not that the latent always outperforms behavior, but that distinct computational variables forecast biologically matched later phenotypes, with the clearest incremental value in novel-food initiation.</p>
 <p>The earlier four-panel nested-validation figure is retained for audit: <a href="assets/SOE_SLM_latent_generalization_v2.png">open v2 figure</a>.</p>

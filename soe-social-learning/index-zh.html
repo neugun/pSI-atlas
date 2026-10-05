@@ -70,7 +70,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="bio-logic"><strong>生物学逻辑｜</strong>如果 SOE 只是局部的“跟着同伴吃”，它不应该影响完全不同的后续任务。现在更像是训练形成了可复用的社会信息处理状态；而且不同 SLM latent 可能对应不同类型的迁移。</div>
 <div class="cards-4"><div class="card good"><div class="metric-label">Observational fear · shock</div><div class="metric">δ=+.944</div><p>D1 shock velocity；P=.00433；late shock observation 也增加。</p></div><div class="card info"><div class="metric-label">D1→D2</div><div class="metric">attenuation</div><p>shock-velocity change δ=−.944；P=.00433。</p></div><div class="card violet"><div class="metric-label">陌生食物 latency</div><div class="metric">45.96 vs 199.47 s</div><p>social-trained 更快开始吃；P=.01948。</p></div><div class="card good"><div class="metric-label">第一段进食</div><div class="metric">61.07 vs 8.81 s</div><p>初始 feeding engagement 更持续；P=.00866。</p></div></div>
 <figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_generalization_multidomain_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_generalization_multidomain_v1_mobile.png"/><img alt="SOE 行为泛化" loading="lazy" src="assets/SOE_generalization_multidomain_v1.png"/></picture></a><figcaption><strong>行为泛化。</strong> prior SOE experience 改变之后的 observational-fear organization 与陌生食物 engagement。</figcaption></figure>
-
 <div class="section-head compact-head" style="margin-top:30px">
 <div><div class="section-kicker">计算表型 → 后续行为</div>
 <h3>SLM latent 可以预测“以后会怎样泛化”，而且不同 latent 对应不同的生物学结果</h3></div>
@@ -99,6 +98,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <img alt="全 40 只动物中的 SLM latent 与 SOE 学习" loading="lazy" src="assets/SOE_SLM_latent_grounding_all40_v1.png"/></a>
 <figcaption><strong>这些 latent 不是在 6 只 follow-up 小鼠里临时挑出来的抽象量。</strong> 在完整 40 只 SOE cohort 中，多个 SLM latent 已经和原任务里的独立学习指标相联系，因此后续泛化分析是在一个已有行为意义的计算空间里进行。</figcaption>
 </figure>
+
+<div class="download-grid"><div class="download-card"><a href="data/SLM_generalization_crossdomain_double_mapping_v1.csv">2×2 cross-domain mapping</a><p class="small">主映射与 exact permutation。</p></div><div class="download-card"><a href="data/SLM_generalization_crossdomain_mapping_sensitivity_v1.csv">定义 / 时间窗敏感性</a><p class="small">3 种 credit 定义 × 2/3/4-day window。</p></div><div class="download-card"><a href="docs/SLM_GENERALIZATION_LATENT_BRIDGE_v4_20261005.md">泛化 authority v4</a><p class="small">双映射、nested prediction 与生物学解释。</p></div></div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_SLM_crossdomain_double_mapping_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_SLM_crossdomain_double_mapping_v1_mobile.png"/><img alt="SLM latent 跨领域双映射" loading="lazy" src="assets/SOE_SLM_crossdomain_double_mapping_v1.png"/></picture></a><figcaption><strong>模块化泛化，而不是单一 social-learning strength。</strong> social-credit maintenance 主要映射到 novel-food initiation，而 late |APE| 主要映射到 observational-fear shock reactivity。matched 对角线显著强于 mismatched 非对角线，exact P=.00672。把 early/late window 改成 2、3、4 天，并分别用三种 credit 定义，9/9 个 contrast 都为正，8/9 为 P&lt;.05。</figcaption></figure>
+<div class="cards-3">
+<div class="card good"><div class="metric-label">匹配通路</div><div class="metric">.886 / .943</div><p>Active-credit maintenance → 陌生食物 initiation：ρ=.886；late |APE| → fear shock reactivity：ρ=.943。</p></div>
+<div class="card info"><div class="metric-label">不匹配通路</div><div class="metric">.143 / −.086</div><p>credit → fear 只有 ρ=.143；APE → food 为 ρ=−.086。不是一个“总体社会性” latent。</p></div>
+<div class="card violet"><div class="metric-label">双映射检验</div><div class="metric">P=.00672</div><p>matched−mismatched contrast=1.771；food 与 fear outcome 分别做全部 720×720 exact permutation。</p></div>
+</div>
+<div class="section-head compact-head" style="margin-top:30px"><div><div class="section-kicker">跨领域双映射</div><h3>不是“哪个 latent 都能预测哪个行为”：social credit 和 APE 分别映射到不同的后续表型</h3></div><p>把 2 个 latent × 2 个后续行为放进同一张 2×2 映射里，直接检验匹配关系是否强于不匹配关系。</p></div>
 <details class="panel"><summary><strong>严格 out-of-sample 审计</strong></summary>
 <p>food 的 nested credit-family model 为 R²=.713，permutation P=.0625；但相比同样 nested 的 simple-behavior family，6/6 小鼠绝对误差更低，完整模型比较 P=.0486。fear 的 APE family 为 R²=.307，P=.0514，但 predicted↔observed rank 为 ρ=.829，P=.0111；与此同时，简单 SOE behavior 也能解释一部分 shock-velocity variance（R²=.548，P=.0333）。因此现在最强的表述不是“SLM latent 在所有后续任务都碾压行为”，而是<strong>不同计算 latent 会预测与其生物学功能匹配的后续表型，其中 social-credit 对 novel-food initiation 的增量价值最清楚</strong>。</p>
 <p>较早的四面板 nested-validation 图继续保留作审计：<a href="assets/SOE_SLM_latent_generalization_v2.png">打开 v2 图</a>。</p>
