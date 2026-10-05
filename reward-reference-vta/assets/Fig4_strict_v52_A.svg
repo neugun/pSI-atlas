@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-05T12:33:32.893388</dc:date>
+    <dc:date>2026-10-05T12:50:57.686695</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,53 +30,53 @@ z
   </g>
   <g id="axes_1">
    <g id="line2d_1">
-    <path d="M 61.7472 51.456
-L 102.07584 51.456
-" clip-path="url(#p9341e1a52c)" style="fill: none; stroke: #b2232e; stroke-width: 2.8"/>
+    <path d="M 55.9584 44.622
+L 99.47088 44.622
+" clip-path="url(#p36a99f43f2)" style="fill: none; stroke: #b2232e; stroke-width: 2.8"/>
    </g>
    <g id="line2d_2">
-    <path d="M 61.7472 81.204
-L 102.07584 81.204
-" clip-path="url(#p9341e1a52c)" style="fill: none; stroke: #555555; stroke-width: 2.1"/>
+    <path d="M 55.9584 77.184
+L 99.47088 77.184
+" clip-path="url(#p36a99f43f2)" style="fill: none; stroke: #4a4a4a; stroke-width: 2.1"/>
    </g>
    <g id="line2d_3">
-    <path d="M 61.7472 110.952
-L 102.07584 110.952
-" clip-path="url(#p9341e1a52c)" style="fill: none; stroke: #9a9a9a; stroke-width: 1.8"/>
+    <path d="M 55.9584 109.746
+L 99.47088 109.746
+" clip-path="url(#p36a99f43f2)" style="fill: none; stroke: #888888; stroke-width: 1.8"/>
    </g>
    <g id="line2d_4">
-    <path d="M 61.7472 140.7
-L 102.07584 140.7
-" clip-path="url(#p9341e1a52c)" style="fill: none; stroke: #d4d4d4; stroke-width: 1.8"/>
+    <path d="M 55.9584 142.308
+L 99.47088 142.308
+" clip-path="url(#p36a99f43f2)" style="fill: none; stroke: #c4c4c4; stroke-width: 1.8"/>
    </g>
    <g id="line2d_5">
-    <path d="M 61.7472 170.448
-L 102.07584 170.448
-" clip-path="url(#p9341e1a52c)" style="fill: none; stroke: #d4d4d4; stroke-width: 1.8"/>
+    <path d="M 55.9584 174.87
+L 99.47088 174.87
+" clip-path="url(#p36a99f43f2)" style="fill: none; stroke: #c4c4c4; stroke-width: 1.8"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #b2232e" x="114.90768" y="53.655624" transform="rotate(-0 114.90768 53.655624)">cumulative history</text>
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'Arial'; text-anchor: start; fill: #b2232e" x="113.31576" y="46.899258" transform="rotate(-0 113.31576 46.899258)">cumulative history</text>
    </g>
    <g id="text_2">
-    <text style="font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="114.90768" y="83.403707" transform="rotate(-0 114.90768 83.403707)">belief / HMM</text>
+    <text style="font-size: 8.8px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="113.31576" y="79.461344" transform="rotate(-0 113.31576 79.461344)">belief / HMM</text>
    </g>
    <g id="text_3">
-    <text style="font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="114.90768" y="113.151707" transform="rotate(-0 114.90768 113.151707)">reward rate</text>
+    <text style="font-size: 8.8px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="113.31576" y="112.023344" transform="rotate(-0 113.31576 112.023344)">reward rate</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="114.90768" y="142.899624" transform="rotate(-0 114.90768 142.899624)">adaptive gain</text>
+    <text style="font-size: 8.8px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="113.31576" y="144.585258" transform="rotate(-0 113.31576 144.585258)">adaptive gain</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="114.90768" y="172.647707" transform="rotate(-0 114.90768 172.647707)">Value-RNN</text>
+    <text style="font-size: 8.8px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="113.31576" y="177.147344" transform="rotate(-0 113.31576 177.147344)">Value-RNN</text>
    </g>
   </g>
   <g id="text_6">
-   <text style="font-weight: 700; font-size: 10px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="8.442" y="15.722273" transform="rotate(-0 8.442 15.722273)">A</text>
+   <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="6.03" y="12.94626" transform="rotate(-0 6.03 12.94626)">A</text>
   </g>
  </g>
  <defs>
-  <clipPath id="p9341e1a52c">
-   <rect x="43.416" y="21.708" width="183.312" height="178.488"/>
+  <clipPath id="p36a99f43f2">
+   <rect x="36.18" y="12.06" width="197.784" height="195.372"/>
   </clipPath>
  </defs>
 </svg>

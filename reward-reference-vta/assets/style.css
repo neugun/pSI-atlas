@@ -166,14 +166,14 @@ nav a:hover { color: var(--navy); }
   font-size: 13px;
 }
 
-section { padding: 64px 0; scroll-margin-top: 78px; }
+section { padding: 52px 0; scroll-margin-top: 78px; }
 section.alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-head {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 50px;
+  gap: 36px;
   align-items: end;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 .section-kicker {
   color: var(--teal);
@@ -315,8 +315,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 12px;
-  box-shadow: var(--shadow);
-  margin: 28px 0;
+  box-shadow: none;
+  margin: 20px 0;
 }
 .figure img {
   width: 100%;
@@ -339,7 +339,7 @@ h3 {
   gap: 18px;
 }
 .figure-grid .figure { margin: 0; }
-.figure-grid.one-col { grid-template-columns: 1fr; gap: 26px; }
+.figure-grid.one-col { grid-template-columns: 1fr; gap: 16px; }
 
 .series-chapter {
   display: grid;
@@ -561,9 +561,9 @@ td strong { color: #233f5a; }
   .hero-grid, .cards-4, .cards-3, .cards-2, .resource-grid { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; }
   .phase + .phase { border-left: 0; border-top: 1px solid var(--line); }
-  section { padding: 48px 0; }
+  section { padding: 34px 0; }
   .container { width: min(calc(100vw - 26px), var(--max)); max-width: calc(100vw - 26px); }
-  .figure { padding: 7px; border-radius: 13px; }
+  .figure { padding: 4px; border-radius: 10px; margin: 12px 0; box-shadow: none; }
   .mobile-note { display: block; }
 }
 
@@ -716,7 +716,7 @@ html[lang="zh-CN"] .concept-node span {
 .strict-panel-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 6px;
   align-items: start;
 }
 .strict-panel-grid.cols3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -730,14 +730,14 @@ html[lang="zh-CN"] .concept-node span {
   border-radius: 0;
   background: #fff;
 }
-.figure.strict-panels { padding: 10px; }
-.figure.strict-panels figcaption { padding-top: 10px; }
+.figure.strict-panels { padding: 6px; }
+.figure.strict-panels figcaption { padding-top: 8px; }
 
 @media (max-width: 760px) {
   .strict-panel-grid.cols3,
   .strict-panel-grid.cols2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    gap: 4px;
   }
 }
 @media (max-width: 620px) {
@@ -745,8 +745,8 @@ html[lang="zh-CN"] .concept-node span {
   .strict-panel-grid.cols3,
   .strict-panel-grid.cols2 {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 2px;
   }
-  .figure.strict-panels { padding: 4px; }
-  .figure.strict-panels figcaption { padding: 9px 5px 5px; }
+  .figure.strict-panels { padding: 2px; }
+  .figure.strict-panels figcaption { padding: 7px 4px 4px; }
 }
