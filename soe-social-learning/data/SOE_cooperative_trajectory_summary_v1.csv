@@ -1,0 +1,9 @@
+result,n,wins,effect,p,test
+Follower social value > 0,200,182,0.2600272014375329,7.583071876803802e-31,trajectory-level signed test vs 0
+Leader social value > 0,200,134,0.0384289626406401,1.0123484957465976e-06,trajectory-level signed test vs 0
+Follower - Leader social value,200,169,0.2215982387968927,7.8774673448135845e-22,paired trajectory-level signed test
+Follower social_logit vs self_logit NLL,200,182,0.2529599739085706,1.3363234189903281e-30,paired held-out trajectory NLL
+Leader social_logit vs self_logit NLL,200,131,0.0371576457442252,7.648445772071114e-07,paired held-out trajectory NLL
+Follower entropy high-low social value,132,72,0.0659053901985026,0.0350530751398212,paired trajectory high-vs-low self entropy
+Leader entropy high-low social value,102,43,-0.1322531567991605,0.0021444740158737,paired trajectory high-vs-low self entropy
+Follower-Leader uncertainty gating interaction,77,47,0.1744243920517333,0.0030495166051124,paired matched-trajectory role interaction
