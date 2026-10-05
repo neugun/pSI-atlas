@@ -71,6 +71,7 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <a href="#information">Information</a>
 <a href="#dynamics">Dynamics</a>
 <a href="#slm">SLM</a>
+<a href="#swm">SWM</a>
 <a href="#feed">Feed</a>
 <a href="#agent">Agent</a>
 <a href="#vta">VTA</a>
@@ -307,6 +308,29 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="callout">Interpretation: synthetic recovery shows that the candidate algorithms are distinguishable from their generated data. Real VTA timing and causal perturbation then identify which recovered coordinates are biologically expressed.</div>
 </div>
 </section>
+
+<section class="alt" id="swm">
+<div class="container">
+<div class="section-head"><div><div class="section-kicker">Data-driven validation and extension</div>
+<h2>A structure-free Social World Model independently recovers SLM-like decision coordinates — and adds prospective social efficacy</h2></div>
+<p>SLM starts from interpretable hypotheses about policy, value, prediction error and source-specific credit. SWM asks the harder complementary question: if a recurrent model is trained without those SLM equations, does it rediscover the same decision space, and does it learn anything extra that helps explain when social sampling is useful?</p></div>
+<div class="bio-logic"><strong>Biological logic｜</strong>The key extra state is not “how informative observation will be” in the abstract. It is prospective efficacy: from the current latent state, how much choosing Observe is predicted to increase the chance of the animal's own effective Active feeding. This separates information availability from information that can change action.</div>
+<div class="cards-4">
+<div class="card good"><div class="metric-label">PROSPECTIVE EFFICACY</div><div class="metric">AUC .620</div><p>ΔActive = P(Active|z,Observe) − P(Active|z,Other) predicts whether an actual Observe becomes Active; all 27/27 held-out learners are above chance.</p></div>
+<div class="card info"><div class="metric-label">BEYOND VISIBLE CUES</div><div class="metric">+0.0209 AUC</div><p>Adding ΔActive to all 13 current visible social cues improves held-out efficacy prediction in 22/27 animals (P=2.68×10⁻⁴).</p></div>
+<div class="card violet"><div class="metric-label">SOCIAL CONTENT REQUIRED</div><div class="metric">.620 → .561</div><p>Replacing each held-out social trajectory with a matched training trajectory reduces efficacy AUC in 26/27 animals (P=1.49×10⁻⁸); no-social retraining independently reproduces the drop.</p></div>
+<div class="card good"><div class="metric-label">FUTURE DYNAMICS</div><div class="metric">NLL 1.835</div><p>For 12-motif future prediction, SWM beats the strongest direct nonlinear MLP (NLL 1.871; 25/27 animals) and retains its advantage across 1-, 3- and 5-step horizons.</p></div>
+</div>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="../virtual-mouse-atlas/assets/swm_prospective_eig_v15.svg" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="../virtual-mouse-atlas/assets/swm_prospective_eig_v15_mobile.svg"/><img alt="Prospective SWM efficacy compared with expected information gain" loading="lazy" src="../virtual-mouse-atlas/assets/swm_prospective_eig_v15.svg"/></picture></a><figcaption><strong>Prospective efficacy, not generic expected information gain, predicts Observe success.</strong> Both quantities are computed prospectively from the current state. ΔActive predicts effective social sampling, whereas cross-fitted expected information gain does not, closing the temporal-asymmetry concern.</figcaption></figure>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="../virtual-mouse-atlas/assets/swm_social_dependence_v15.svg" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="../virtual-mouse-atlas/assets/swm_social_dependence_v15_mobile.svg"/><img alt="SWM social trajectory replacement and no-social retraining controls" loading="lazy" src="../virtual-mouse-atlas/assets/swm_social_dependence_v15.svg"/></picture></a><figcaption><strong>The prospective efficacy state depends on correct social content.</strong> Two independent in-distribution controls — coherent trajectory replacement and retraining without social channels — reduce efficacy and Observe prediction while leaving much of the broad motif dynamics intact.</figcaption></figure>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="../virtual-mouse-atlas/assets/swm_slm_bridge_v15.svg" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="../virtual-mouse-atlas/assets/swm_slm_bridge_v15_mobile.svg"/><img alt="SWM to SLM computational bridge" loading="lazy" src="../virtual-mouse-atlas/assets/swm_slm_bridge_v15.svg"/></picture></a><figcaption><strong>SLM and SWM are complementary rather than competing stories.</strong> Held-animal decoders recover SLM-like policy/Q/belief coordinates from SWM latent state (ρ=.833–.886). Scrubbing that four-dimensional subspace selectively impairs Observe policy, while the full SWM still predicts future motifs substantially better than an SLM-coordinate-only readout.</figcaption></figure>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="../virtual-mouse-atlas/assets/swm_predictive_benchmarks_v15.svg" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="../virtual-mouse-atlas/assets/swm_predictive_benchmarks_v15_mobile.svg"/><img alt="Held-animal SWM predictive baseline ladder and multi-step horizons" loading="lazy" src="../virtual-mouse-atlas/assets/swm_predictive_benchmarks_v15.svg"/></picture></a><figcaption><strong>Strong-baseline test.</strong> The future-motif claim is evaluated against persistence, Markov families, current/full-history linear models, PCA-linear latent state and a direct nonlinear MLP. SWM's advantage is therefore not a comparison only against a weak current-state baseline.</figcaption></figure>
+<details class="panel"><summary><strong>What SWM does — and does not — add to the biology</strong></summary>
+<p>SWM strengthens three parts of the mechanism. First, it gives a prospective quantity that predicts when social sampling is likely to improve the animal's own future action. Second, a model trained without SLM structure independently contains SLM-like decision coordinates, and that subspace contributes selectively to Observe policy. Third, SWM captures additional sequential dynamics needed to predict future behavioral motifs.</p>
+<p>Two guardrails remain important. The increase in policy–efficacy alignment across training is not statistically learner-specific because non-learners also change; it should be described as training-dependent alignment, not a learner-only emergence. Cross-task pretraining improves sample efficiency only in some low-data settings and does not establish a universal foundation model. <a href="docs/SWM_METHOD_CONTROLS_BRIDGE_v10_20261005.md">Full method/control authority</a>.</p>
+</details>
+</div></section>
+
 <section id="feed">
 <div class="container">
 <div class="section-head">
