@@ -123,9 +123,9 @@
           <div class="d">Held-out social-efficacy AUC from 2 → 16 SOE training animals. All 15 matched fold × repeat comparisons improved (P=3.05×10<sup>−5</sup>).</div>
         </article>
         <article class="world-scaling-kpi">
-          <div class="k">5-SEED EXTERNAL TRANSFER</div>
-          <div class="v">25 / 27 animals</div>
-          <div class="d">With only 2 SOE training animals, all-external pretraining improves held-animal Brier by +0.00662 after averaging 5 independent initializations (P=1.0×10<sup>−6</sup>). The gain vanishes by 8 animals.</div>
+          <div class="k">5-SEED LOW-DATA TRANSFER</div>
+          <div class="v">5 / 5 seeds</div>
+          <div class="d">With only 2 SOE training animals, macaque pretraining improves Brier by +0.00530; 5/5 seed means and 5/5 held-animal fold means improve (clustered P=.031 each). Rat+mouse gives +0.00771 and all-external +0.00680. By 8 animals, these gains are ~0.</div>
         </article>
         <article class="world-scaling-kpi">
           <div class="k">PROSPECTIVE OBSERVE VALUE</div>
@@ -139,8 +139,8 @@
       </div>
       <div class="world-evidence world-evidence-scaling">
         <figure><img src="assets/world_scaling_in_domain_v8.svg" alt="SLM World Model in-domain scaling across SOE training animals"><figcaption><b>Data scaling.</b> Thin lines preserve matched held-animal fold × repeat trajectories. Observe-policy error, outcome prediction and future-motif prediction improve monotonically, while the held-out efficacy representation becomes substantially clearer.</figcaption></figure>
-        <figure><img src="assets/world_transfer_multiseed_v9.svg" alt="Five-seed external pretraining transfer separates action sample efficiency from social efficacy"><figcaption><b>External pretraining, 5 initializations.</b> Low-data action prediction improves robustly across several external task families and then converges to scratch by 8 SOE animals. In contrast, no external condition robustly transfers the social-efficacy latent; all-external pretraining reduces efficacy AUC in every held-out fold. This dissociation argues for a generic sequential prior plus an SOE-specific social-efficacy state.</figcaption></figure>
-        <figure class="world-evidence-wide"><img src="assets/world_observe_value_v8.svg" alt="Prospective Observe value and social-gate dependence across held-out animals"><figcaption><b>Model-based active sensing.</b> Holding the learned state fixed and changing only the action, ΔActive predicts both real Observe choices and Observe efficacy. Removing social channels reduces this discrimination by 0.063 AUC in 26/27 animals (P=1.49×10<sup>−8</sup>). This is a counterfactual inside the learned predictive model, not a randomized causal effect of choosing Observe.</figcaption></figure>
+        <figure><img src="assets/world_transfer_seedrep_v10.svg" alt="Five independent pretraining seeds separate low-data action transfer from social-efficacy transfer"><figcaption><b>External pretraining, 5 independent initializations.</b> Each point is one pretraining seed after averaging its five held-animal folds. At 2 SOE animals, action Brier improves reproducibly across macaque, mouse-reward, rat+mouse, and all-external pretraining. The efficacy latent does not show the same transfer: macaque is small and non-significant, while broader external mixtures are negative. This separates a reusable sequential/action prior from an SOE-specific relational efficacy state.</figcaption></figure>
+        <figure class="world-evidence-wide"><img src="assets/world_observe_value_v8.svg" alt="Prospective Observe value and social-gate dependence across held-out animals"><figcaption><b>Prospective Observe value.</b> Holding the learned state fixed and changing only the action, ΔActive predicts both real Observe choices and Observe efficacy. Removing social channels reduces this discrimination by 0.063 AUC in 26/27 animals (P=1.49×10<sup>−8</sup>). This is a counterfactual inside the learned predictive model, not evidence that an agent has already learned generic information seeking.</figcaption></figure>
       </div>
 
       <div class="world-benchmark-subhead">Model-family comparison · 27 held-out animals</div>
@@ -194,17 +194,21 @@
         <img src="assets/learning_policy_value_alignment_v8.svg" alt="Early to late learning increases prospective Observe value selection and policy-value alignment">
         <figcaption><b>Learning couples action selection to predicted future efficacy.</b> Each thin line is one held-out learner. The left panel asks whether the states actually selected for Observe carry more prospective Active advantage; the right asks whether the learned Observe policy increasingly tracks that advantage.</figcaption>
       </figure>
+      <figure class="learning-figure learning-figure-main learning-info-figure">
+        <img src="assets/learning_information_vs_efficacy_v10.svg" alt="Social information improves world-state prediction but generic information gain does not recruit Observe">
+        <figcaption><b>Informative does not mean selected.</b> Social cues strongly correct the model's next-state belief and this correction depends on the identity of the social event. Yet event-wise generic information gain neither predicts actual Observe nor covaries with ΔActive. Observe policy instead tracks prospective feeding efficacy. This separates goal-directed social sampling from generic uncertainty reduction.</figcaption>
+      </figure>
     </div>
 
     <div class="learning-interpretation">
       <div class="learning-main-claim">
         <div class="eyebrow">SUPPORTED INTERPRETATION</div>
-        <p>Learning does not merely increase Observe or rewrite transition frequencies. It increasingly deploys social sampling when the learned world model predicts that observing will improve future feeding efficacy.</p>
+        <p>Social observations carry substantial information about the evolving world state, but animals do not simply Observe where that information gain is largest. Learning increasingly recruits social sampling when the model predicts that it will improve future feeding efficacy.</p>
       </div>
       <div class="learning-boundary">
         <div class="eyebrow">IMPORTANT BOUNDARY</div>
-        <p>ΔActive is a same-state, action-conditioned counterfactual inside the learned predictive model. It is not a randomized causal effect of forcing the animal to Observe.</p>
-        <p>The factorized 5-event transition analysis remains useful as a descriptive behavioral substrate, but it is no longer the mechanistic headline.</p>
+        <p>This supports <b>goal-directed social information sampling</b>, not a generic uncertainty-seeking rule. ΔActive is a same-state counterfactual inside the learned predictive model, not a randomized causal effect of forcing Observe.</p>
+        <p>The current replay agent also does not yet justify a strong active-sensing claim: removing Observe-contingent information reveal had little effect on reward. The factorized 5-event transitions therefore remain descriptive support rather than the mechanistic headline.</p>
       </div>
     </div>
 
