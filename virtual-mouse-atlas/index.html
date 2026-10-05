@@ -6,7 +6,7 @@
 <title>Virtual Mouse Behavioral Atlas</title>
 <meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css?v=20261004v7">
+<link rel="stylesheet" href="style.css?v=20261004v8">
 </head>
 <body>
 <main>
@@ -114,6 +114,35 @@
     <details class="world-global">
       <summary>Global benchmark across 27 held-out animals</summary>
       <p class="world-global-note">The hero above is deliberately the clearest example; these population-level results establish that the advantage is not restricted to that event.</p>
+
+      <div class="world-benchmark-subhead">Scaling &amp; prospective Observe value</div>
+      <div class="world-scaling-kpis">
+        <article class="world-scaling-kpi">
+          <div class="k">IN-DOMAIN SCALING</div>
+          <div class="v">0.562 → 0.646</div>
+          <div class="d">Held-out social-efficacy AUC from 2 → 16 SOE training animals. All 15 matched fold × repeat comparisons improved (P=3.05×10<sup>−5</sup>).</div>
+        </article>
+        <article class="world-scaling-kpi">
+          <div class="k">CROSS-SPECIES SAMPLE EFFICIENCY</div>
+          <div class="v">5 / 5 folds</div>
+          <div class="d">Macaque actor–observer pretraining improves SOE Brier with only 2 training animals (0.1904 → 0.1856, P=.031); efficacy AUC also improves 5/5.</div>
+        </article>
+        <article class="world-scaling-kpi">
+          <div class="k">PROSPECTIVE OBSERVE VALUE</div>
+          <div class="v">AUC 0.620</div>
+          <div class="d">At the same latent state z<sub>t</sub>, ΔActive = P(Active|Observe) − P(Active|Other) predicts whether an actual Observe becomes Active rather than Unrewarded (27/27 above chance).</div>
+        </article>
+      </div>
+      <div class="world-scaling-claim">
+        <b>What scales is not only next-event prediction.</b>
+        More animals sharpen a transferable social-efficacy state; aligned macaque social experience can warm-start that state when SOE data are scarce, whereas blindly adding heterogeneous datasets is not monotonically beneficial.
+      </div>
+      <div class="world-evidence world-evidence-scaling">
+        <figure><img src="assets/world_scaling_in_domain_v8.svg" alt="SLM World Model in-domain scaling across SOE training animals"><figcaption><b>Data scaling.</b> Thin lines preserve matched held-animal fold × repeat trajectories. Observe-policy error, outcome prediction and future-motif prediction improve monotonically, while the held-out efficacy representation becomes substantially clearer.</figcaption></figure>
+        <figure><img src="assets/world_transfer_sample_efficiency_v8.svg" alt="Cross-species macaque pretraining improves low-data SOE sample efficiency"><figcaption><b>Cross-species transfer.</b> Macaque actor–observer pretraining improves low-data SOE learning, but the advantage disappears once 8 SOE animals are available. This is a sample-efficiency result, not a claim that more heterogeneous pretraining data always win.</figcaption></figure>
+        <figure class="world-evidence-wide"><img src="assets/world_observe_value_v8.svg" alt="Prospective Observe value and social-gate dependence across held-out animals"><figcaption><b>Model-based active sensing.</b> Holding the learned state fixed and changing only the action, ΔActive predicts both real Observe choices and Observe efficacy. Removing social channels reduces this discrimination by 0.063 AUC in 26/27 animals (P=1.49×10<sup>−8</sup>). This is a counterfactual inside the learned predictive model, not a randomized causal effect of choosing Observe.</figcaption></figure>
+      </div>
+
       <div class="world-benchmark-subhead">Model-family comparison · 27 held-out animals</div>
       <div class="world-evidence world-model-zoo-grid">
         <figure><img src="assets/event5_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> The SLM World Model is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
