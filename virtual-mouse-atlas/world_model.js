@@ -97,10 +97,10 @@ function renderHero(){
     const n=eventSummary("Neural social world"),lin=eventSummary("Full-history linear"),m=eventSummary("History Markov"),g=eventSummary("Global phase");
     const t=eventTest("Full-history linear");
     const cards=[
-      ["Closed-loop hero","Neural "+nn+"/"+nN,"History Markov "+mn+"/"+mN+" · Social-gated "+gn+"/"+gN],
+      ["Closed-loop hero","SLM "+nn+"/"+nN,"History Markov "+mn+"/"+mN+" · Social-gated SLM "+gn+"/"+gN],
       ["5-event accuracy",pct(n.event5_acc),"Linear "+pct(lin.event5_acc)+" · Markov "+pct(m.event5_acc)+" · Global "+pct(g.event5_acc)],
       ["5-event NLL",fmt(n.event5_nll,3),"Linear "+fmt(lin.event5_nll,3)+" · Markov "+fmt(m.event5_nll,3)+" · Global "+fmt(g.event5_nll,3)],
-      ["Neural vs linear",t.neural_better+"/27","lower NLL · P="+Number(t.p_one_sided).toExponential(1)]
+      ["SLM vs linear",t.neural_better+"/27","lower NLL · P="+Number(t.p_one_sided).toExponential(1)]
     ];
     heroStats.innerHTML=cards.map(c=>'<div class="world-hero-stat"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
     return;
@@ -109,12 +109,12 @@ function renderHero(){
   const [nn,nN]=matchCount(nw,act,"motif"),[mn,mN]=matchCount(mk,act,"motif");
   const best=WM.best_example&&Number(current.event_frame)===Number(WM.best_example.summary.event_frame);
   let cards=[
-    ["Neural exact future steps",nn+"/"+nN,"top-1 motif matches"],
+    ["SLM exact future steps",nn+"/"+nN,"top-1 motif matches"],
     ["Markov exact future steps",mn+"/"+mN,"same held-out future"]
   ];
   if(best){
     const s=WM.best_example.summary;
-    cards.push(["Future NLL",fmt(s.neural_nll,2)+" vs "+fmt(s.markov_nll,2),"Neural vs Markov · lower is better"]);
+    cards.push(["Future NLL",fmt(s.neural_nll,2)+" vs "+fmt(s.markov_nll,2),"SLM vs Markov · lower is better"]);
     cards.push(["Social-gate Active",pct(s.base_active_any)+" → "+pct(s.gate_active_any),"P(≥1 Active) across 8 steps"]);
   }else{
     cards.push(["Future Active",pct(current.base_active_any)+" → "+pct(current.gate_active_any),"normal → social-gated"]);
@@ -145,7 +145,7 @@ function renderSequence(){
   if(view==="event"){
     renderStepGrid([
       {label:"Actual",kind:"actual",seq:eventActual()},
-      {label:"Neural",kind:"neural",seq:eventNeural()},
+      {label:"SLM",kind:"neural",seq:eventNeural()},
       {label:"History Markov",kind:"markov",seq:eventMarkov()},
       {label:"Social-gated",kind:"gated",seq:eventGate()}
     ],"event","Next 8 semantic events = 4 action→bout trials from the same present");
@@ -153,7 +153,7 @@ function renderSequence(){
   }
   renderStepGrid([
     {label:"Actual",kind:"actual",seq:motifActual()},
-    {label:"Neural",kind:"neural",seq:motifNeural()},
+    {label:"SLM",kind:"neural",seq:motifNeural()},
     {label:"Markov",kind:"markov",seq:motifMarkov()},
     {label:"Social-gated",kind:"gated",seq:motifGate()}
   ],"motif","Next 8 real behavioral motifs from the same present");
@@ -165,8 +165,8 @@ function renderMetrics(){
     const [nn,nN]=matchCount(nw,act,"event"),[mn,mN]=matchCount(mk,act,"event");
     const n=eventSummary("Neural social world"),lin=eventSummary("Full-history linear"),m=eventSummary("History Markov");
     const cards=[
-      ["Closed-loop sequence","Neural "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact semantic-event steps"],
-      ["Sampling action NLL",fmt(n.action_nll,3)+" vs "+fmt(lin.action_nll,3),"Neural vs full-history linear"],
+      ["Closed-loop sequence","SLM "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact semantic-event steps"],
+      ["Sampling action NLL",fmt(n.action_nll,3)+" vs "+fmt(lin.action_nll,3),"SLM vs full-history linear"],
       ["Bout outcome NLL",fmt(n.outcome_nll,3)+" vs "+fmt(lin.outcome_nll,3),"linear is slightly better here"],
       ["Aggregate 5-event","Acc "+pct(n.event5_acc)+" · NLL "+fmt(n.event5_nll,3),"Markov "+pct(m.event5_acc)+" · "+fmt(m.event5_nll,3)]
     ];
@@ -178,7 +178,7 @@ function renderMetrics(){
   const tr=current.trajectory,first=tr[0],act=motifActual(),nw=motifNeural(),mk=motifMarkov();
   const [nn,nN]=matchCount(nw,act,"motif"),[mn,mN]=matchCount(mk,act,"motif");
   const cards=[
-    ["Prediction gain","Neural "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact future motif steps"],
+    ["Prediction gain","SLM "+nn+"/"+nN+" · Markov "+mn+"/"+mN,"exact future motif steps"],
     ["Step-1 P(Active)","Normal "+pct(first.base_p_active)+" · Gated "+pct(first.gate_p_active),"Δ "+fmt(first.delta_p_active,3)],
     ["8-step Active","Normal "+pct(current.base_active_any)+" · Gated "+pct(current.gate_active_any),"Δ "+fmt(current.delta_active_any,3)],
     ["Terminal state shift","Motif JS "+fmt(current.terminal_motif_js,4),"latent RMS "+fmt(current.terminal_latent_rms,3)]
@@ -186,16 +186,16 @@ function renderMetrics(){
   metrics.innerHTML=cards.map(c=>'<div class="world-metric"><div class="k">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="d">'+c[2]+'</div></div>').join("");
   const best=WM.best_example&&Number(current.event_frame)===Number(WM.best_example.summary.event_frame);
   future.innerHTML=best
-    ? "<b>Why this example:</b> the held-out neural world matches 6 of 8 recorded future motifs while the generative Markov baseline matches 0 of 8. The social-gated counterfactual uses the same real present with social inputs removed."
+    ? "<b>Why this example:</b> the held-out SLM World Model matches 6 of 8 recorded future motifs while the generative Markov baseline matches 0 of 8. The social-gated counterfactual uses the same real present with social inputs removed."
     : "<b>Alternative held-out example:</b> each step above compares the recorded future with model top-1 predictions from the same real present.";
   eventNote.textContent="";
 }
 
 function renderAll(){renderHero();renderSequence();renderMetrics();}
 Promise.all([
-  fetch("data/world_model.json?v=20261004v6",{cache:"no-store"}).then(r=>r.json()),
-  fetch("data/event5_world.json?v=20261004v6",{cache:"no-store"}).then(r=>r.json()),
-  fetch("data/atlas.json?v=20261004v6",{cache:"no-store"}).then(r=>r.json())
+  fetch("data/world_model.json?v=20261004v7",{cache:"no-store"}).then(r=>r.json()),
+  fetch("data/event5_world.json?v=20261004v7",{cache:"no-store"}).then(r=>r.json()),
+  fetch("data/atlas.json?v=20261004v7",{cache:"no-store"}).then(r=>r.json())
 ]).then(([wm,ew,a])=>{
   WM=wm;EW=ew;A=a;setupSelect();selectEvent(WM.default_event_frame);
 }).catch(e=>{console.error(e);present.textContent="Could not load world-model rollout.";});

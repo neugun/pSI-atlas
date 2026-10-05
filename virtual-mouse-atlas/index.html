@@ -6,7 +6,7 @@
 <title>Virtual Mouse Behavioral Atlas</title>
 <meta name="description" content="Interactive 12-motif behavioral atlas linking Virtual Mouse reconstructions to behavioral-space locations.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css?v=20261004v6">
+<link rel="stylesheet" href="style.css?v=20261004v7">
 </head>
 <body>
 <main>
@@ -36,14 +36,14 @@
     <div class="section-head world-head">
       <div>
         <div class="eyebrow">HELD-OUT BEST-CASE VISUALIZATION · ANM4 D139</div>
-        <h2>A future the social world model gets right</h2>
+        <h2>Social Learning World Model (SLM World Model)</h2>
       </div>
       <p>This held-out example compares the recorded future directly with saved model rollouts from the same real present. Each step and probability below comes from the real session/model outputs; no illustrative trajectory is drawn. The population benchmark remains available below.</p>
     </div>
 
-    <div class="wm-method" aria-label="Social world model architecture">
+    <div class="wm-method" aria-label="Social Learning World Model architecture">
       <section class="wm-method-panel">
-        <div class="wm-method-title"><span>A</span> Learn a predictive social state</div>
+        <div class="wm-method-title"><span>A</span> SLM World Model learns a predictive social state</div>
         <div class="wm-head-row">
           <div class="wm-head">P(Observe)</div>
           <div class="wm-head">P(outcome)</div>
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="wm-result-row">
-          <div><strong>6 / 8</strong><span>neural top-1 motif steps</span></div>
+          <div><strong>6 / 8</strong><span>SLM top-1 motif steps</span></div>
           <div><strong>0 / 8</strong><span>Markov top-1 motif steps</span></div>
           <div><strong>76.0 → 71.1%</strong><span>P(≥1 Active), normal → gated</span></div>
         </div>
@@ -116,14 +116,14 @@
       <p class="world-global-note">The hero above is deliberately the clearest example; these population-level results establish that the advantage is not restricted to that event.</p>
       <div class="world-benchmark-subhead">Model-family comparison · 27 held-out animals</div>
       <div class="world-evidence world-model-zoo-grid">
-        <figure><img src="assets/event5_model_zoo_accuracy_v1.png?v=20261004v6" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> Neural social world is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
-        <figure><img src="assets/event5_model_zoo_nll_v1.png?v=20261004v6" alt="Five-event model zoo negative log likelihood"><figcaption><b>Factorized 5-event NLL.</b> Neural is lower than full-history linear in 22/27 animals (P=1.5×10<sup>−4</sup>).</figcaption></figure>
-        <figure><img src="assets/motif_model_zoo_accuracy_v1.png?v=20261004v6" alt="Twelve motif model zoo accuracy"><figcaption><b>12-motif accuracy.</b> Eight model families span frequency, Markov, linear, MLP, PCA-latent, and neural-world baselines.</figcaption></figure>
-        <figure><img src="assets/motif_model_zoo_nll_v1.png?v=20261004v6" alt="Twelve motif model zoo negative log likelihood"><figcaption><b>12-motif NLL.</b> Neural world beats the strongest direct nonlinear MLP in 25/27 animals (P=3.2×10<sup>−7</sup>).</figcaption></figure>
+        <figure><img src="assets/event5_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> The SLM World Model is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
+        <figure><img src="assets/event5_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Five-event model zoo negative log likelihood"><figcaption><b>Factorized 5-event NLL.</b> SLM World Model is lower than full-history linear in 22/27 animals (P=1.5×10<sup>−4</sup>).</figcaption></figure>
+        <figure><img src="assets/motif_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo accuracy"><figcaption><b>12-motif accuracy.</b> Eight model families span frequency, Markov, linear, MLP, PCA-latent, and the SLM World Model.</figcaption></figure>
+        <figure><img src="assets/motif_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo negative log likelihood"><figcaption><b>12-motif NLL.</b> SLM World Model beats the strongest direct nonlinear MLP in 25/27 animals (P=3.2×10<sup>−7</sup>).</figcaption></figure>
       </div>
       <div class="world-benchmark-subhead">Multi-step predictive horizon</div>
       <div class="world-evidence world-evidence-horizon">
-        <figure><img src="assets/world_motif_horizon_clean_v5.png?v=20261004v6" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> Neural world remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
+        <figure><img src="assets/world_motif_horizon_slm_v2.png?v=20261004v7" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> SLM World Model remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
       </div>
     </details>
   </section>
@@ -132,28 +132,28 @@
     <div class="section-head learning-head">
       <div>
         <div class="eyebrow">LEARNING DEPENDENCE · 27 LEARNERS VS 13 NON-LEARNERS</div>
-        <h2>Learning rewrites the social-event transition graph</h2>
+        <h2>Learning rewrites the factorized 5-event transition graph</h2>
       </div>
-      <p>Training does not simply make every event easier to predict. Learners reorganize how behavior flows through <b>Observe</b> and <b>Active feeding</b>, while the world model continues to add predictive information beyond a strong stage-aware transition baseline.</p>
+      <p>Training reorganizes a <b>factorized 5-event graph</b>: Other/Observe sampling states lead to Unrewarded/Active/Passive bouts, which then lead into the next sampling state. The same event language is now used for learning and for the SLM World Model benchmark.</p>
     </div>
 
     <div class="learning-kpis" id="learningKpis"></div>
 
     <div class="learning-grid">
       <figure class="learning-figure learning-figure-main">
-        <img src="assets/learning_transition_story_v2.png?v=20261004v3" alt="Learner versus non-learner transition-graph reorganization across training">
-        <figcaption>Animal-level early→late changes, transition-matrix rewiring, direct Observe→Active conversion, and the relationship between graph reorganization and learning magnitude.</figcaption>
+        <img src="assets/learning_transition_story_5event_v1.png?v=20261004v7" alt="Learner versus non-learner factorized five-event transition graph across training">
+        <figcaption>Factorized 5-event transitions. The 5×5 matrices separate sampling states from bout outcomes; structurally impossible transitions are left blank rather than folded into Other.</figcaption>
       </figure>
       <figure class="learning-figure">
-        <img src="assets/learning_robustness_world_v3.png?v=20261004v3" alt="Learning-stage robustness with continuous slopes, matched cohorts, and world-model baseline">
-        <figcaption>Continuous training trajectories, cohort-matched Observe→Active interaction, and the world model evaluated against a strong stage-aware Markov baseline.</figcaption>
+        <img src="assets/learning_robustness_5event_v1.png?v=20261004v7" alt="Five-event learning robustness with continuous slopes and cohort-matched model">
+        <figcaption>Continuous 5-event learning trajectories and the cohort-matched Observe→Active bout interaction. The earlier 4-state graph is no longer used in the displayed learning result.</figcaption>
       </figure>
     </div>
 
     <div class="learning-interpretation">
       <div class="learning-main-claim">
         <div class="eyebrow">SUPPORTED INTERPRETATION</div>
-        <p id="learningHeadline">Learning shifts the social-event graph toward sustained observation and effective feeding.</p>
+        <p id="learningHeadline">Learning reorganizes the factorized 5-event graph.</p>
       </div>
       <div class="learning-boundary" id="learningBoundary"></div>
     </div>
@@ -222,8 +222,8 @@
   </footer>
 </main>
 <script src="explorer.js"></script>
-<script src="world_model.js?v=20261004v6"></script>
-<script src="learning_story.js?v=20261004v3"></script>
+<script src="world_model.js?v=20261004v7"></script>
+<script src="learning_story.js?v=20261004v7"></script>
 </body>
 </html>
 
