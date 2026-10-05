@@ -1,0 +1,7 @@
+domain,outcome,family,n,candidates,loocv_mse,loocv_r2,loocv_rho,p_exact_r2,p_exact_rho,selections
+food,food_fast,behavior_family,6,sri_late;sri_delta;conversion_late;conversion_delta,4133.335032346487,-3.052685396601391,-0.6571428571428573,0.8888888888888888,0.6902777777777778,conversion_delta;conversion_late;sri_late;conversion_delta;conversion_late;conversion_late
+food,food_fast,SLM_latent_family,6,credit_sep_late;credit_sep_delta,292.55585154336273,0.7131524984155503,0.5428571428571429,0.0625,0.1,credit_sep_delta;credit_sep_delta;credit_sep_delta;credit_sep_delta;credit_sep_delta;credit_sep_delta
+food,food_fast,SLM_minus_behavior_gain,6,nested family comparison,,3840.7791808031247,,0.04861111111111111,,
+fear,shock_velocity_all30,behavior_family,6,sri_late;sri_delta;conversion_late;conversion_delta,1.9926977196886637,0.5483545593160751,0.5428571428571429,0.03333333333333333,0.08333333333333333,sri_delta;sri_late;sri_delta;sri_late;sri_delta;sri_delta
+fear,shock_velocity_all30,SLM_latent_family,6,ape_abs_late;ape_abs_delta,3.057276986075564,0.3070674001249648,0.8285714285714287,0.05138888888888889,0.011111111111111112,ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late
+fear,shock_velocity_all30,SLM_minus_behavior_gain,6,nested family comparison,,-1.0645792663869005,,0.7402777777777778,,

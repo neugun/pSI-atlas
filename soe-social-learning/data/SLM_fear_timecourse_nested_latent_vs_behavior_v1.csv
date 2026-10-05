@@ -1,0 +1,10 @@
+outcome,family,n,loocv_mse,loocv_r2,loocv_rho,p_exact_r2,p_exact_rho,selections
+shock_velocity_first10,behavior_family,6,1.3077610525642256,0.5602238471632371,0.7142857142857143,0.008333333333333333,0.03194444444444444,sri_delta;sri_late;sri_delta;sri_late;sri_delta;sri_delta
+shock_velocity_first10,APE_family,6,4.141245507971374,-0.3926252153458549,0.2571428571428572,0.5388888888888889,0.2222222222222222,ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_delta;ape_abs_delta;ape_abs_delta
+shock_velocity_first10,APE_minus_behavior_gain,6,,-2.8334844554071483,,0.9930555555555556,,
+shock_velocity_mid10,behavior_family,6,3.2716259247483173,0.6433210285026523,0.5428571428571429,0.020833333333333332,0.08055555555555556,sri_delta;sri_late;sri_delta;sri_late;sri_delta;sri_delta
+shock_velocity_mid10,APE_family,6,3.8858067952893367,0.5763618448255731,0.8285714285714287,0.03611111111111111,0.025,ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late;ape_abs_late
+shock_velocity_mid10,APE_minus_behavior_gain,6,,-0.6141808705410194,,0.6847222222222222,,
+shock_velocity_last10,behavior_family,6,5.724566642748993,-0.49715794009244507,-0.08571428571428573,0.43194444444444446,0.3680555555555556,sri_delta;conversion_delta;conversion_late;conversion_delta;conversion_delta;conversion_delta
+shock_velocity_last10,APE_family,6,4.142215355970069,-0.08332228390049745,0.08571428571428573,0.2375,0.30833333333333335,ape_abs_late;ape_abs_late;ape_abs_delta;ape_abs_late;ape_abs_late;ape_abs_late
+shock_velocity_last10,APE_minus_behavior_gain,6,,1.5823512867789242,,0.5222222222222223,,
