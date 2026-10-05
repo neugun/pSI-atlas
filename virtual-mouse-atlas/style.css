@@ -348,3 +348,25 @@ footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:32px;col
 .world-model-zoo-grid figure,.world-evidence-horizon figure{padding:12px}
 .world-model-zoo-grid figcaption,.world-evidence-horizon figcaption{font-size:12px;line-height:1.45}
 @media(max-width:900px){.world-model-zoo-grid{grid-template-columns:1fr}}
+
+/* v8: scaling, cross-dataset transfer, and strict prospective Observe value */
+.world-scaling-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 10px}
+.world-scaling-kpi{border:1px solid var(--line);border-top:3px solid #222;background:#fff;padding:12px;min-width:0}
+.world-scaling-kpi .k{font-size:9px;font-weight:800;letter-spacing:.055em;color:var(--faint)}
+.world-scaling-kpi .v{font-size:20px;font-weight:760;line-height:1.15;margin-top:5px;font-variant-numeric:tabular-nums}
+.world-scaling-kpi .d{font-size:11px;line-height:1.45;color:var(--muted);margin-top:5px}
+.world-scaling-claim{border-left:4px solid #222;background:#f7f7f5;padding:11px 13px;margin:10px 0 2px;font-size:12px;line-height:1.55;color:var(--muted)}
+.world-scaling-claim b{color:var(--ink)}
+.world-evidence-scaling{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.world-evidence-scaling figure{padding:12px}
+.world-evidence-scaling .world-evidence-wide{grid-column:1/-1;max-width:900px;justify-self:center;width:100%}
+.world-evidence-scaling img{min-height:0}
+@media(max-width:900px){
+  .world-scaling-kpis{grid-template-columns:1fr}
+  .world-evidence-scaling{grid-template-columns:1fr}
+  .world-evidence-scaling .world-evidence-wide{grid-column:auto}
+}
+@media(max-width:600px){
+  .world-scaling-kpi .v{font-size:18px}
+  .world-scaling-claim{font-size:11px}
+}
