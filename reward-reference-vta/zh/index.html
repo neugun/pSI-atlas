@@ -557,7 +557,7 @@
         </p>
       </div>
       <div>
-        <h3>过去刺激历史改变之后的dopamine，但没有可靠改变之后的bout duration。</h3>
+        <h3>过去刺激历史改变之后的dopamine，但没有稳定的marginal bout-duration effect。</h3>
         <p>
           在Stim13中，控制当前stim condition、local adaptation和future-history之后，
           过去ON/OFF sampling history仍解释之后的dopamine：
@@ -577,6 +577,7 @@
       （β=.818，animal-clustered P=.034；within-animal serial-shift单侧P=.0287），
       但animal-level slope只有5/6为正（P=.156），因此这一behavioral-history结果目前标记为<strong>PROVISIONAL</strong>。
       新增的recency sensitivity进一步把reward class差异拆清楚：Natural在较宽的中等α范围同时表达neural与behavior history；而Stim13从α=.03一直扫到.60，neural history在8/8 timescale均显著（BH q≤.0192），但duration在8/8均为null（最小raw P=.682，BH q≥.906）。
+      进一步的current-conditioned分析提供了一个重要限定：Stim13在当前OFF与ON下可以出现不同的duration-history slope，但这一interaction对recent local history非常敏感（base exact-wild P=.0372；加入local-history主效应后P=.899；deep-residual interaction P=.154）。因此目前最准确的结论是：Stim13存在稳健的neural history，但没有建立稳定的marginal或deep behavioral reference effect；这并不等于所有condition-specific behavioral structure都不存在。
     </div>
   </div>
 </section>
@@ -697,13 +698,17 @@
           <img src="../assets/ED7_history_specificity_real_vs_controls_v1.png" alt="ED7 specificity">
           <figcaption><strong>ED7。</strong>direct sampled-history test在Natural（ΔR²=.0269，P=.00670）、QE（ΔR²=.0254，P=.00141）、Stim13（ΔR²=.00252，P=5×10<sup>−5</sup>）均为阳性；duration-history proxy在hunger（P=.283）、quinine（P=.466）、LiCl（P=.478）、Stim5（P=.562）均不显著。proxy bar本身可以有非零ΔR²，因此specificity判断依赖真实条件与proxy control的推断统计，而不是只看bar高度。</figcaption>
         </figure>
-        <figure class="figure">
-          <img src="../assets/ED8_reward_type_memory_expression_gate_v1.png" alt="ED8 reward type memory expression gate">
-          <figcaption><strong>ED8。</strong>把reward contrast拆成三个阶段：current reward是否能改变behavior、history是否改变VTA dopamine、history是否进一步改变behavior。Natural 100E/20E三层均PASS。QE/quinine history在当前100E固定时仍改变dopamine；同一冻结C对63个100E bouts的log duration为β=.818（cluster P=.034；serial-shift单侧P=.0287），但animal-level仍功效不足，因此behavioral cell为PROVISIONAL。Stim13构成关键dissociation：当前ON stimulation本身能够改变duration（11/13只，paired P=.00342），过去stimulation history也稳定改变之后的dopamine（unique ΔR²=.002524，conditional P=5×10<sup>−5</sup>），但past-history并不可靠改变之后duration（P=.742）。因此<strong>acute reward potency和persistent neural memory本身都不足以保证gross behavioral contrast</strong>。</figcaption>
+                <figure class="figure">
+          <img src="../assets/ED8_reward_type_memory_expression_gate_v2.png" alt="ED8 layered reward-history expression gate">
+          <figcaption><strong>ED8。</strong>更新后的layered adjudication，把current reward potency、neural history readout、marginal behavioral expression和current-conditioned structure分开。Natural的current reward、neural history和marginal behavior均为PASS；current-identity sensitivity有支持，但不能与local×current项唯一分离。QE的neural history为PASS，而same-current behavior和identity gate仍为PROVISIONAL。Stim13的acute reward potency和neural history为PASS，但稳定的marginal/deep duration-history effect尚未建立：marginal R→duration P=.742，跨α家族仍为null；base R×ON interaction exact-wild P=.0372，但加入local-history主效应后变为P=.899。</figcaption>
+        </figure>
+                <figure class="figure">
+          <img src="../assets/ED9_memory_timescale_vs_expression_gate_v1.png" alt="ED9 memory timescale versus expression gate">
+          <figcaption><strong>ED9。</strong>memory timescale不能解释<strong>marginal</strong> reward-history dissociation。<strong>A，Natural：</strong>neural history在α=.03–.60全部显著（BH q≤.00131）；log-duration history在α=.03–.30仍显著（BH q≈.0103），仅在极快α=.60时减弱。<strong>B，QE同一current 100E：</strong>neural AUC在α=.10–.30全部稳定（cluster BH q≤.0225；serial-shift双侧q≤.00665）；duration在α=.15–.30方向一致，但α-family校正后仍为PROVISIONAL。<strong>C，Stim13：</strong>neural history在8/8 α均显著（BH q≤.0192），而marginal duration-history在8/8均为null（最小raw P=.682；BH q≥.906）。current-conditioned duration structure由ED10单独adjudicate。α=.20仍是预先冻结的跨任务primary值。</figcaption>
         </figure>
         <figure class="figure">
-          <img src="../assets/ED9_memory_timescale_vs_expression_gate_v1.png" alt="ED9 memory timescale versus expression gate">
-          <figcaption><strong>ED9。</strong>memory timescale不能解释reward history为什么有时不能变成behavior。<strong>A，Natural：</strong>neural history在α=.03–.60全部显著（BH q≤.00131）；log-duration history在α=.03–.30仍显著（BH q≈.0103），仅在极快α=.60时减弱。<strong>B，QE同一current 100E：</strong>neural AUC在α=.10–.30全部稳定（cluster BH q≤.0225；serial-shift双侧q≤.00665）；duration在α=.15–.30方向一致，但α-family校正后仍为PROVISIONAL（cluster q≈.0555；directional serial q≈.057–.060）。<strong>C，Stim13：</strong>从原始lick stream重建Rpast后精确复现α=.20的neural effect与behavioral null；α=.03–.60中neural 8/8显著（BH q≤.0192），duration 8/8均null（最小raw P=.682；BH q≥.906）。α=.20仍是预先冻结的跨任务primary值；整个α扫描只作为sensitivity analysis，而不是重新挑最优α。</figcaption>
+          <img src="../assets/ED10_current_identity_gate_adjudication_v1.png" alt="ED10 current reward identity gate adjudication">
+          <figcaption><strong>ED10。</strong>current reward identity会改变观察到的behavioral history slope，但还没有建立一个universal deep-reference gate。<strong>A，</strong>within-animal common-support的R×current-high interaction在Natural为exact cluster-wild P=.0278，QE为P=.0769（只有6只common-support mice），Stim13为P=.0372。<strong>B，</strong>termination-hazard sensitivity方向一致，但不是primary small-cluster inference。<strong>C，</strong>local-history adjudication把任务区分开：Natural加入local主效应后仍P=.0122，但允许local×current竞争后P=.290；QE功效不足；Stim13加入local-history主效应后降为P=.899。<strong>D，</strong>对recent history做激进residualization后，deep R×current在Natural（P=.309）、QE（P=.108）和Stim13（P=.154）都为null。matching/caliper同样支持“存在conditional structure”，但不支持稳定的跨任务deep gate。</figcaption>
         </figure>
       </div>
     </details>
@@ -780,12 +785,15 @@
           <a class="resource" href="../data/NEURON_value_action_UR_control_v2.csv"><b>Action-adjusted U/R decomposition。</b><span>控制早期和同步licking后的raw-scale U/R结果。</span></a>
           <a class="resource" href="../data/NEURON_value_action_conditional_perm_v1.csv"><b>Action-controlled sensitivity table。</b><span>conditional permutation结果。</span></a>
           <a class="resource" href="../data/NEURON_value_action_timecourse_v2.csv"><b>Within-bout time course。</b><span>0.5-s时间分辨率的sampling与contrast分析。</span></a>
-          <a class="resource" href="../docs/REWARD_CONTRAST_REWARD_TYPE_GATE_AUTHORITY_v2_20261005.md"><b>Reward-type gate authority。</b><span>把Natural、QE和stimulation按current potency、neural history和behavioral history分层比较。</span></a>
-          <a class="resource" href="../data/NEURON_reward_type_memory_expression_gate_v2_20261005.csv"><b>Reward-type gate machine-readable table。</b><span>包含PASS / PROVISIONAL / NULL状态以及对应统计量。</span></a>
-          <a class="resource" href="../docs/NEURON_LATEST_BIOLOGICAL_SYNTHESIS_v2_20261005.md"><b>2026-10-05最新biological synthesis。</b><span>整合reward-type gate和新的memory-timescale sensitivity。</span></a>
+          <a class="resource" href="../docs/REWARD_CONTRAST_REWARD_TYPE_GATE_AUTHORITY_v3_20261005.md"><b>Reward-type gate authority。</b><span>把Natural、QE和stimulation按current potency、neural history和behavioral history分层比较。</span></a>
+          <a class="resource" href="../data/NEURON_reward_type_memory_expression_gate_v3_20261005.csv"><b>Reward-type gate machine-readable table。</b><span>包含PASS / PROVISIONAL / NULL状态以及对应统计量。</span></a>
+          <a class="resource" href="../docs/NEURON_LATEST_BIOLOGICAL_SYNTHESIS_v3_20261005.md"><b>2026-10-05最新biological synthesis。</b><span>整合reward-type gate和新的memory-timescale sensitivity。</span></a>
           <a class="resource" href="../data/REWARD_MEMORY_TIMESCALE_EXPRESSION_SUMMARY_v1.csv"><b>Timescale-expression跨任务汇总。</b><span>Natural、QE、Stim13的neural history与behavioral history分开汇总。</span></a>
           <a class="resource" href="../data/STIM13_memory_timescale_neural_vs_behavior_v2_BH.csv"><b>Stim13 timescale source table。</b><span>α=.03–.60的raw与BH-corrected neural-versus-behavior结果。</span></a>
-          <a class="resource" href="../data/NEURON_three_context_reference_evidence_v2_20261005.csv"><b>Cross-context evidence。</b><span>natural reward、QE与stimulation history的对照。</span></a>
+          <a class="resource" href="../data/CURRENT_IDENTITY_GATE_ADJUDICATION_SUMMARY_v1.csv"><b>Current-identity gate adjudication汇总。</b><span>把common support、hazard sensitivity、local-history control、deep residualization和animal-level direction分开。</span></a>
+          <a class="resource" href="../data/BEHAVIOR_IDENTITY_GATE_LOCAL_ADJUDICATION_v1.csv"><b>Local-history adjudication source table。</b><span>展示R×current在base、local-main和local×current模型中的变化。</span></a>
+          <a class="resource" href="../data/CURRENT_IDENTITY_PREVCONDITION_MATCH_CALIPER_SENSITIVITY_v1.csv"><b>严格matching sensitivity。</b><span>检查current-conditioned behavior在更严格R与recent-context matching下是否稳定。</span></a>
+          <a class="resource" href="../data/NEURON_three_context_reference_evidence_v3_20261005.csv"><b>Cross-context evidence。</b><span>natural reward、QE与stimulation history的对照。</span></a>
           <a class="resource" href="../data/NEURON_biological_model_experiment_predictions_v1.csv"><b>下一步experiment predictions。</b><span>delay、state、mediation和circuit实验的可证伪预测。</span></a>
         </div>
       </div>
