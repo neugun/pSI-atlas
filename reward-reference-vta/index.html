@@ -561,6 +561,7 @@
       Natural reward history changes the food-based reference and is expressed in both dopamine and persistence.
       Prior optogenetic stimulation can be remembered and read out by dopamine while producing too little downstream behavioral gain to shift gross bout duration once the current stimulation condition is accounted for.
       The independent QE task provides an intermediate case: in 63 same-current 100E bouts from 7 mice, frozen C predicts log bout duration (β=.818, animal-clustered P=.034; within-animal serial-shift one-sided P=.0287), but only 5/6 estimable animal slopes are positive (P=.156), so this behavioral-history result is treated as <strong>provisional</strong>.
+      A new recency sensitivity analysis makes the reward-class dissociation sharper: Natural history affects both dopamine and duration over a broad moderate-alpha range, whereas Stim13 history changes dopamine at every scanned alpha=.03–.60 but changes duration at none of them (neural BH q<=.0192; behavioral minimum raw P=.682, BH q>=.906).
     </div>
   </div>
 </section>
@@ -681,6 +682,10 @@
           <img src="assets/ED8_reward_type_memory_expression_gate_v1.png" alt="ED8 reward type memory expression gate">
           <figcaption><strong>ED8.</strong> Reward contrast is decomposed into current reward potency, neural history readout, and behavioral history expression. Natural 100E/20E passes all three stages. QE/quinine history also changes dopamine when the current 100E is held fixed, and the same frozen C predicts log duration in 63 bouts from 7 mice (β=.818, cluster P=.034; serial-shift one-sided P=.0287), but the animal-level test remains underpowered (5/6 positive, P=.156), so the behavioral cell is provisional. Stim13 is the key dissociation: current ON stimulation changes duration (11/13 mice, paired P=.00342) and past stimulation history changes later dopamine (unique ΔR²=.002524, conditional P=5×10<sup>−5</sup>), yet past stimulation history does not reliably change later duration (P=.742). Thus acute reward potency and persistent neural memory are not sufficient by themselves for gross behavioral contrast.</figcaption>
         </figure>
+        <figure class="figure">
+          <img src="assets/ED9_memory_timescale_vs_expression_gate_v1.png" alt="ED9 memory timescale versus behavioral expression">
+          <figcaption><strong>ED9.</strong> Memory timescale does not explain whether reward history becomes overt behavior. <strong>A, Natural:</strong> the neural history effect survives all scanned α=.03–.60 (BH q≤.00131), and log-duration history remains significant from α=.03–.30 (BH q≈.0103), weakening only at α=.60. <strong>B, QE same-current 100E:</strong> neural AUC is significant across α=.10–.30 (cluster BH q≤.0225; serial-shift two-sided q≤.00665), whereas duration is broad but provisional after α-family correction (α=.15–.30 cluster q≈.0555; directional serial q≈.057–.060). <strong>C, Stim13:</strong> raw lick-level reconstruction exactly reproduces the frozen α=.20 neural effect and behavioral null; across α=.03–.60, neural history is significant at 8/8 timescales (BH q≤.0192) while duration is null at 8/8 (minimum raw P=.682; BH q≥.906). α=.20 remains the pre-specified cross-task primary value; the scan is a sensitivity analysis rather than post-hoc α selection.</figcaption>
+        </figure>
       </div>
     </details>
 
@@ -761,10 +766,13 @@
           <a class="resource" href="data/NEURON_value_action_UR_control_v2.csv"><b>The action-adjusted table tests opponent U and R signs.</b><span>Raw-scale U/R decomposition after early and concurrent licking controls.</span></a>
           <a class="resource" href="data/NEURON_value_action_conditional_perm_v1.csv"><b>The sensitivity table quantifies action-controlled unique variance.</b><span>Conditional-permutation results after early, concurrent, and whole-bout action controls.</span></a>
           <a class="resource" href="data/NEURON_value_action_timecourse_v2.csv"><b>The time-course table resolves sampling and contrast within the bout.</b><span>Exploratory 0.5-s coefficients with multiple-comparison correction.</span></a>
-          <a class="resource" href="data/NEURON_three_context_reference_evidence_v1.csv"><b>The cross-context table compares reward-history datasets.</b><span>Alternating natural reward, QE, and stimulation-history evidence.</span></a>
+          <a class="resource" href="data/NEURON_three_context_reference_evidence_v2_20261005.csv"><b>The cross-context table compares reward-history datasets.</b><span>Alternating natural reward, QE, and stimulation-history evidence.</span></a>
           <a class="resource" href="data/NEURON_biological_model_experiment_predictions_v1.csv"><b>The experiment table links mechanisms to falsifiable tests.</b><span>Predictions for delay, state, mediation, and circuit experiments.</span></a>
-          <a class="resource" href="docs/REWARD_CONTRAST_REWARD_TYPE_GATE_AUTHORITY_v1_20261005.md"><b>The reward-type gate authority separates memory from expression.</b><span>Natural, QE and stimulation are compared at current-reward, neural-history and behavioral-history stages.</span></a>
-          <a class="resource" href="data/NEURON_reward_type_memory_expression_gate_v1.csv"><b>The reward-type gate table is machine readable.</b><span>PASS / PROVISIONAL / NULL status with the exact supporting statistics.</span></a>
+          <a class="resource" href="docs/REWARD_CONTRAST_REWARD_TYPE_GATE_AUTHORITY_v2_20261005.md"><b>The reward-type gate authority separates memory from expression.</b><span>Natural, QE and stimulation are compared at current-reward, neural-history and behavioral-history stages.</span></a>
+          <a class="resource" href="data/NEURON_reward_type_memory_expression_gate_v2_20261005.csv"><b>The reward-type gate table is machine readable.</b><span>PASS / PROVISIONAL / NULL status with the exact supporting statistics.</span></a>
+          <a class="resource" href="docs/NEURON_LATEST_BIOLOGICAL_SYNTHESIS_v2_20261005.md"><b>The current biological synthesis is dated 2026-10-05.</b><span>It integrates the reward-type gate and the new memory-timescale sensitivity result.</span></a>
+          <a class="resource" href="data/REWARD_MEMORY_TIMESCALE_EXPRESSION_SUMMARY_v1.csv"><b>The timescale-expression summary compares Natural, QE and Stim13.</b><span>Neural and behavioral history evidence are kept separate across scanned α values.</span></a>
+          <a class="resource" href="data/STIM13_memory_timescale_neural_vs_behavior_v2_BH.csv"><b>Stim13 timescale source table.</b><span>Raw and BH-corrected neural-versus-behavior history results from α=.03 to .60.</span></a>
         </div>
       </div>
     </details>
@@ -775,7 +783,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <span>Reward history and VTA dopamine during feeding</span>
-    <span>Updated October 2026 · prepublication analysis</span>
+    <span>Updated October 5, 2026 · prepublication analysis</span>
   </div>
 </footer>
 </body>

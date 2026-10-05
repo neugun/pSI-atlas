@@ -1,0 +1,4 @@
+dataset,neural_endpoint,behavior_endpoint,alpha_range,neural_result,behavior_result,interpretation
+Natural,sustained DA 2-5 s,log duration,0.03-0.60,5/5 alpha significant; all BH q<0.002,alpha .03-.30 significant; BH q<=.010; alpha .60 P=.101,reference is expressed in neural and behavioral outputs over a broad moderate recency range
+QE same-current 100E,whole-bout DA AUC,log duration,0.10-0.30,4/4 alpha significant; cluster BH q<=.0225; serial two-sided q<=.00665,cluster P=.034-.042 at .15-.30 but BH q=.055; directional serial P=.020-.045 at .15-.30 but BH q=.060,behavioral expression is broad and directionally consistent but remains provisional after alpha-family correction
+Stim13,AUC_S,log duration,0.03-0.60,8/8 alpha significant; BH q<=.0192,8/8 null; minimum P=.682; BH q>=.997,neural history survives across very long-to-fast recency scales while gross behavioral expression remains absent

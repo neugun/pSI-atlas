@@ -1,0 +1,4 @@
+context,n_animals,current_reward_behavior,history_neural,history_behavior,timescale_neural,timescale_behavior,interpretation
+Natural 100E/20E,11,PASS,PASS,PASS,α=.03-.60: 5/5 scanned values BH q<=.00131,α=.03-.30: BH q=.0103; α=.60 q=.101,broad sampled reference is expressed in both VTA dopamine and persistence
+QE same-current 100E,7,PASS,PASS,PROVISIONAL,AUC α=.10-.30: 4/4 cluster BH q<=.02253; serial two-sided q<=.00665,α=.15-.30 cluster P=.034-.042 but BH q=.05546; directional serial BH q=.056997-.06013,behavioral expression is not confined to α=.20 but remains provisional after alpha-family correction
+VTA stimulation interleaved,13,PASS,PASS,NULL,α=.03-.60: 8/8 significant; BH q<=.01916,α=.03-.60: 8/8 null; minimum raw P=.68244; BH q>=.9064,neural memory survives very long-to-fast recency scales but fails to reach gross behavioral persistence
