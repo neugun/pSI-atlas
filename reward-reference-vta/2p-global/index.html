@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Global two-photon CaRMA synthesis across ten real mice: current VTA, named 2021 and legacy 2017 cohorts.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Global 2P CaRMA synthesis — ten-mouse authority V47</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="brand-mark">2P</span> Global CaRMA synthesis</div>
+    <nav>
+      <a href="#summary">Summary</a>
+      <a href="#vta">5-mouse VTA</a>
+      <a href="#history2021">2021 cohort</a>
+      <a href="#legacy2017">2017 cohort</a>
+      <a href="#kinetics">Kinetics boundary</a>
+      <a href="#qc">QC scope</a>
+      <a href="#downloads">Data</a>
+      <a href="../">Reward-reference</a>
+      <a class="lang" href="zh/">中文</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="summary">
+  <div class="container">
+    <span class="eyebrow">Current biological authority · V47 · updated 2026-10-05</span>
+    <h1>Ten-mouse global analysis reveals a shared outcome→late response structure, with flexible predictive loading.</h1>
+    <p class="lede">
+      This page consolidates the strongest currently supported neural results across ten real animals:
+      five current VTA mice, three named 2021 mice, and two legacy 2017 mice.
+      Data quality, statistical power, and experimental design are treated separately.
+      The main cross-animal VTA result is a reproducible <strong>outcome-to-late response structure</strong>;
+      the stronger claim of a kinetics-independent sustained latent state is explicitly not made.
+    </p>
+    <div class="status">
+      <span class="pill">10 real mice</span><span class="pill">5 current VTA mice</span>
+      <span class="pill">3 named 2021 mice</span><span class="pill">2 legacy 2017 mice</span>
+      <span class="pill">Current authority: V47</span>
+    </div>
+    <div class="grid-3">
+      <article class="card good">
+        <h3>Five-mouse VTA invariant</h3>
+        <div class="metric">r = 0.655</div>
+        <p>Outcome→late coupling is positive in <strong>5/5 mice</strong>; animal-bootstrap 95% CI 0.534–0.740; hierarchical cell-identity permutation <strong>p=2×10⁻⁵</strong>.</p>
+      </article>
+      <article class="card violet">
+        <h3>2021 cross-animal geometry</h3>
+        <div class="metric">ρ = 0.721</div>
+        <p>Hunger-context state geometry is shared across all three named animals under historical normalization; exact global state-label null <strong>p=0.0020</strong>.</p>
+      </article>
+      <article class="card info">
+        <h3>2017 residualized geometry</h3>
+        <div class="metric">ρ = 0.824–0.851</div>
+        <p>Cross-animal ROC geometry remains strong after subtracting each cell's mean response across all 11 states; state-label permutation remains significant.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Global synthesis</span><h2>What survives the strongest available checks?</h2></div>
+      <p>The synthesis deliberately separates stable biological structure from analysis-specific or acquisition-specific details.</p>
+    </div>
+    <div class="figure">
+      <img src="assets/ten_mouse_biological_synthesis_v46.png" alt="Ten-mouse biological synthesis showing five-mouse VTA outcome-to-late coupling, predictive variability, 2021 hunger-specific geometry, and 2017 residualized geometry.">
+      <p class="caption"><strong>Ten-mouse synthesis.</strong> A: outcome→late coupling across the five current-VTA mice. B: predictive coupling is less conserved. C: the named-2021 cross-animal geometry is strongest in hunger. D: legacy-2017 state geometry survives removal of generic cell responsiveness. <a href="assets/ten_mouse_biological_synthesis_v46.pdf">PDF</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="vta">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Current VTA cohort</span><h2>The common five-mouse structure is outcome→late, not a fully invariant PC1.</h2></div>
+      <p>ANM54 and ANM181 contain the full longitudinal D3–D9 reward-contrast design. ANM112, ANM113-conditioning and ANM185 are fully analyzed conditioning datasets; their shorter acquisition count is not treated as lower image quality.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Mouse</th><th>Outcome→late r</th><th>Predictive→outcome r</th><th>Predictive→late r</th><th>Interpretation</th></tr></thead>
+        <tbody>
+          <tr><td>ANM54</td><td>0.633</td><td>positive</td><td>positive</td><td>Longitudinal primary cohort; shared post-outcome structure.</td></tr>
+          <tr><td>ANM181</td><td>0.769</td><td>positive</td><td>positive</td><td>Longitudinal primary cohort; shared post-outcome structure.</td></tr>
+          <tr><td>ANM112</td><td>0.404</td><td>positive</td><td>positive</td><td>High-quality single-day conditioning dataset.</td></tr>
+          <tr><td>ANM113</td><td>0.649</td><td>positive</td><td>positive</td><td>Conditioning session is high quality; separate perfusion session retains an explicit motion caveat.</td></tr>
+          <tr><td>ANM185</td><td>0.740</td><td>−0.039</td><td>−0.104</td><td>Preserves outcome→late coupling while predictive loading differs from the other four animals.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:20px">
+      <strong>Five-animal inference.</strong> The Fisher-mean outcome→late correlation is <strong>r=0.655</strong> with animal-bootstrap 95% CI <strong>0.534–0.740</strong>. A hierarchical null that breaks cell identity between outcome and late within each session gives <strong>p=2×10⁻⁵</strong>. Predictive→outcome and predictive→late are weaker (five-animal means 0.288 and 0.215) and positive in only 4/5 mice.
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="history2021">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Named 2021 cohort</span><h2>Cross-animal state geometry is context-specific and strongest in hunger.</h2></div>
+      <p>Original MATLAB selection authority confirms the identical <code>vtSel</code> vector across hunger, social and control within each animal. The geometry survives representation changes and leave-one-trial deletion.</p>
+    </div>
+    <div class="grid">
+      <article class="card good">
+        <h3>Hunger is the reproducible cross-animal context.</h3>
+        <p>Historical-normalized state-RDM mean ρ=<strong>0.721</strong>, exact global state-label null <strong>p=0.0020</strong>. Raw-baseline-z remains positive with mean ρ=<strong>0.560</strong>, p=<strong>0.0063</strong>.</p>
+      </article>
+      <article class="card warn">
+        <h3>Not every context is shared.</h3>
+        <p>Social geometry is not reproducibly shared across the three animals. Control is intermediate and representation dependent. Cell bootstrap puts hunger above social in <strong>99.96%</strong> of resamples in both representations.</p>
+      </article>
+    </div>
+    <p class="small">Animals: ANM492241 (38 same-selected cells), ANM496190 (44), ANM496191 (23). Across all nine animal×context matrices: exact expected frame count, 100% finite values, zero flat cells.</p>
+  </div>
+</section>
+
+<section class="block" id="legacy2017">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Legacy 2017 cohort</span><h2>State geometry survives removal of generic cell responsiveness.</h2></div>
+      <p>The legacy 319-cell matrix resolves to two real animals. The two ANM372321 lineages are within-animal robustness units and are never counted as two animals.</p>
+    </div>
+    <div class="grid">
+      <article class="card info">
+        <h3>Cell-centered geometry</h3>
+        <p>After subtracting each cell's mean response across all 11 states, ROC cross-animal RDM ρ remains <strong>0.824 / 0.851</strong>; N01 remains <strong>0.747 / 0.738</strong>.</p>
+      </article>
+      <article class="card violet">
+        <h3>Cell-z geometry</h3>
+        <p>After cell-wise z-scoring across states, ROC remains <strong>0.789 / 0.808</strong>; N01 remains <strong>0.739 / 0.715</strong>. State-label permutation remains significant and cell-bootstrap intervals remain positive.</p>
+      </article>
+    </div>
+    <div class="callout" style="margin-top:20px"><strong>Single-state robustness.</strong> Removing each state in turn, including Fear, does not abolish the cross-animal or within-ANM372321 geometry.</div>
+  </div>
+</section>
+
+<section class="block alt" id="kinetics">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Interpretive boundary</span><h2>The five-mouse result is a response-structure claim, not proof of an autonomous sustained latent state.</h2></div>
+      <p>This distinction is kept in the main text rather than hidden in a supplement.</p>
+    </div>
+    <div class="grid">
+      <div class="figure">
+        <img src="assets/outcome_late_kinetics_v47.png" alt="Outcome-to-late kinetics sensitivity analysis.">
+        <p class="caption">Raw delayed coupling remains positive in 5/5 animals at 8–10 s, but AR(1)-style removal of slow fluorescence carryover weakens the residual relation. <a href="assets/outcome_late_kinetics_v47.pdf">PDF</a></p>
+      </div>
+      <div>
+        <article class="card good">
+          <h3>Raw delayed structure</h3>
+          <p>8–10 s: five-animal mean r=<strong>0.664</strong>, 5/5 positive, 95% CI 0.503–0.761.<br>10–12 s: r=<strong>0.421</strong>, 4/5 positive.<br>12–14.5 s: r=<strong>0.384</strong>, 4/5 positive.</p>
+        </article>
+        <article class="card warn" style="margin-top:18px">
+          <h3>Calcium-kinetics caveat</h3>
+          <p>In the high-trial MAIN sessions, AR(1) positive-innovation coupling is no longer significant for assumed calcium-decay constants τ≥1 s. Therefore the data support a reproducible <strong>outcome-to-late response organization</strong>, not independent evidence for a kinetics-free sustained neural state.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="qc">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">QC scope</span><h2>What is fully re-auditable, and what remains historical?</h2></div>
+      <p>The page does not equate all cohorts with the same raw-imaging audit level.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Cohort</th><th>Current quality statement</th><th>Remaining boundary</th></tr></thead>
+        <tbody>
+          <tr><td>ANM54 / ANM181</td><td>V27 raw-imaging, residual motion, independent ROI support, extraction sensitivity, and cross-day identity re-audited.</td><td>Residual local deformation is small but explicitly retained; not described as zero.</td></tr>
+          <tr><td>ANM112 / 113-conditioning / 185</td><td>Strong motion, soma-like ROI, independent image support and extraction-sensitivity results. Short trial count is not a data-quality downgrade.</td><td>ANM113 perfusion is a separate motion-caveat session.</td></tr>
+          <tr><td>2021 named cohort</td><td>Exact same <code>vtSel</code> across contexts, clean matrices, normalization robustness, bootstrap, split-half and leave-one-trial checks.</td><td>Historical per-frame residual-motion re-audit cannot be repeated without the old raw mount.</td></tr>
+          <tr><td>2017 legacy cohort</td><td>Exact lineage provenance, clean matrices, dual representation, state-label permutation, residualization and leave-one-state robustness.</td><td>Original daily raw imaging is not currently mounted.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="downloads">
+  <div class="container">
+    <div class="section-head">
+      <div><span class="eyebrow">Authority files</span><h2>Download the current summary tables.</h2></div>
+      <p>Only derived summary outputs are published here; raw imaging and internal filesystem paths are not included.</p>
+    </div>
+    <div class="downloads">
+      <a class="button" href="data/ten_mouse_biological_result_authority_v46.csv">10-mouse authority CSV</a>
+      <a class="button" href="data/current_vta_5mouse_temporal_pair_meta_v45.csv">5-mouse VTA meta</a>
+      <a class="button" href="data/current_vta_5mouse_delayed_late_meta_v47.csv">Delayed-window meta</a>
+      <a class="button" href="data/named2021_context_specific_crossanimal_rdm_v44.csv">2021 cross-animal RDM</a>
+      <a class="button" href="data/legacy2017_cellresp_residual_rdm_v43.csv">2017 residualized RDM</a>
+      <a class="button secondary" href="data/TEN_MOUSE_GLOBAL_BIOLOGY_V47.md">V47 authority notes</a>
+      <a class="button secondary" href="data/claim_hierarchy_v47.csv">Claim hierarchy V47</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">Global 2P CaRMA synthesis · current biological authority V47 · linked from the Reward history × VTA dopamine project.</div></footer>
+</body>
+</html>
