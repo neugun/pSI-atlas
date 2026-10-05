@@ -1,0 +1,10 @@
+dataset,species,source_identity,multiscale_history,active_sampling,policy_value,neural_link
+DANDI001435 macaque,macaque,1,1,1,1,1
+Human exp/obs,human,1,1,1,1,0
+Rat observational maze,rat,1,0,1,1,0
+Cooperative SLM + MAIRL,mouse,1,1,1,1,1
+Marmoset Neuron 2026,marmoset,1,0,1,1,1
+Rat DANDI001169,rat,0,1,0,1,0
+Aeon social foraging,mouse,1,1,1,1,0
+Noritake/Isoda,macaque,1,0,0,1,1
+DANDI000351,mouse,0,0,0,0,1

@@ -1,0 +1,8 @@
+dataset,species,test,bounded_effect,positive,n,p
+DANDI001435 macaque,macaque,multiscale behavior,1.0,7,7,0.0078125
+DANDI001435 ACC,macaque,multiscale neural state,0.857,6,7,0.02344
+Human exp/obs,human,multiscale behavior,0.964,9,10,0.00391
+Rat observational maze,rat,social source identity,1.0,5,5,0.03125
+Rat DANDI001169,rat,multiscale event state,0.745,7,10,0.01855
+Aeon social foraging,mouse,recent partner history,1.0,5,5,0.03125
+DANDI000351 reward DA,mouse,neural→later behavior,0.857,6,7,0.02344
