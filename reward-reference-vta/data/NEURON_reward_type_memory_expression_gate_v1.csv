@@ -1,0 +1,13 @@
+dataset,n,current_status,current_text,neural_status,neural_text,behavior_status,behavior_text,interpretation
+Natural 100E/20E,11 mice,PASS,"Current reward quality changes persistence
+Δ log-duration=+1.043; 11/11; P=.000977",PASS,"Past reward history changes DA
+unique ΔR²=.0269; P=.00670",PASS,"Frozen reference predicts persistence
+β=.476, P=.00566; hazard OR=.459, P=.000180",Reference is expressed in both DA and behavior.
+QE / quinine history,7 mice,PASS,"Current QE devaluation changes persistence
+Δ log-duration=+2.013 (EE−QE); 7/7; P=.015625",PASS,"Same current 100E, different history changes DA
+AUC β=114.98, P=.00260; circular-shift P=5×10⁻⁵",PROVISIONAL,"Same current 100E: history predicts duration
+β=.818, cluster P=.034; serial-shift one-sided P=.0287","Sensory/devaluation history reaches behavior, but n is small."
+VTA stimulation history,13 mice,PASS,"Acute ON stimulation changes persistence
+Δ log-duration=+.208; 11/13; P=.00342",PASS,"Past stimulation history changes later DA
+unique ΔR²=.002524; conditional P=5×10⁻⁵",NULL,"Past stimulation history does not change duration
+P=.742","Neural reference persists, but behavioral output gain is weak."

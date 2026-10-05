@@ -1,0 +1,4 @@
+outcome,n_animals,positive,negative,median_beta,wilcoxon_one_sided_p
+AUC,6,5,1,88.36402624528486,0.078125
+AUC_S,6,5,1,0.8711641384372494,0.078125
+log_duration,6,5,1,0.5149296966638836,0.15625

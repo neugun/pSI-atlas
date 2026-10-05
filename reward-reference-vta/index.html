@@ -560,6 +560,7 @@
       Fig. 1 and Stim13 therefore address different routes to history-dependent behavior.
       Natural reward history changes the food-based reference and is expressed in both dopamine and persistence.
       Prior optogenetic stimulation can be remembered and read out by dopamine while producing too little downstream behavioral gain to shift gross bout duration once the current stimulation condition is accounted for.
+      The independent QE task provides an intermediate case: in 63 same-current 100E bouts from 7 mice, frozen C predicts log bout duration (β=.818, animal-clustered P=.034; within-animal serial-shift one-sided P=.0287), but only 5/6 estimable animal slopes are positive (P=.156), so this behavioral-history result is treated as <strong>provisional</strong>.
     </div>
   </div>
 </section>
@@ -676,6 +677,10 @@
           <img src="assets/ED7_history_specificity_real_vs_controls_v1.png" alt="ED7 history specificity">
           <figcaption><strong>ED7.</strong> Direct sampled-history tests are positive in Natural (ΔR²=.0269, P=.00670), QE (ΔR²=.0254, P=.00141) and Stim13 (ΔR²=.00252, P=5×10<sup>−5</sup>). Duration-history proxy tests are not significant for hunger (P=.283), quinine (P=.466), LiCl (P=.478) or Stim5 (P=.562). The proxy bars can have nonzero ΔR² while remaining statistically unsupported; this is why specificity is judged by the paired real/control inference rather than bar height alone.</figcaption>
         </figure>
+        <figure class="figure">
+          <img src="assets/ED8_reward_type_memory_expression_gate_v1.png" alt="ED8 reward type memory expression gate">
+          <figcaption><strong>ED8.</strong> Reward contrast is decomposed into current reward potency, neural history readout, and behavioral history expression. Natural 100E/20E passes all three stages. QE/quinine history also changes dopamine when the current 100E is held fixed, and the same frozen C predicts log duration in 63 bouts from 7 mice (β=.818, cluster P=.034; serial-shift one-sided P=.0287), but the animal-level test remains underpowered (5/6 positive, P=.156), so the behavioral cell is provisional. Stim13 is the key dissociation: current ON stimulation changes duration (11/13 mice, paired P=.00342) and past stimulation history changes later dopamine (unique ΔR²=.002524, conditional P=5×10<sup>−5</sup>), yet past stimulation history does not reliably change later duration (P=.742). Thus acute reward potency and persistent neural memory are not sufficient by themselves for gross behavioral contrast.</figcaption>
+        </figure>
       </div>
     </details>
 
@@ -758,6 +763,8 @@
           <a class="resource" href="data/NEURON_value_action_timecourse_v2.csv"><b>The time-course table resolves sampling and contrast within the bout.</b><span>Exploratory 0.5-s coefficients with multiple-comparison correction.</span></a>
           <a class="resource" href="data/NEURON_three_context_reference_evidence_v1.csv"><b>The cross-context table compares reward-history datasets.</b><span>Alternating natural reward, QE, and stimulation-history evidence.</span></a>
           <a class="resource" href="data/NEURON_biological_model_experiment_predictions_v1.csv"><b>The experiment table links mechanisms to falsifiable tests.</b><span>Predictions for delay, state, mediation, and circuit experiments.</span></a>
+          <a class="resource" href="docs/REWARD_CONTRAST_REWARD_TYPE_GATE_AUTHORITY_v1_20261005.md"><b>The reward-type gate authority separates memory from expression.</b><span>Natural, QE and stimulation are compared at current-reward, neural-history and behavioral-history stages.</span></a>
+          <a class="resource" href="data/NEURON_reward_type_memory_expression_gate_v1.csv"><b>The reward-type gate table is machine readable.</b><span>PASS / PROVISIONAL / NULL status with the exact supporting statistics.</span></a>
         </div>
       </div>
     </details>
