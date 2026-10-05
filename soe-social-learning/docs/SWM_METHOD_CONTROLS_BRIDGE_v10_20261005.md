@@ -173,13 +173,13 @@ A data-driven SWM trained without SLM structure recovers SLM-like decision coord
 - claiming SLM-coordinate scrub specifically disrupts efficacy.
 
 ## Authority result paths
-H:/soe_social_inference_20260928/results/prospective_expected_info_gain_v2/
-H:/soe_social_inference_20260928/results/delta_active_incremental_visible_state_v1/
-H:/soe_social_inference_20260928/results/policy_value_learning_controls_v2/
-H:/soe_social_inference_20260928/results/social_replacement_control_v1/
-H:/soe_social_inference_20260928/results/social_world_model_nosocial_v1/
-H:/soe_social_inference_20260928/results/compare_slm_swm_observe_v1/
-H:/soe_social_inference_20260928/results/decode_slm_coordinates_from_swm_v1/
-H:/soe_social_inference_20260928/results/decode_slm_coordinates_nosocial_control_v1/
-H:/soe_social_inference_20260928/results/scrub_slm_coordinate_subspace_v1/
-H:/soe_social_inference_20260928/results/slm_coordinate_motif_readout_vs_swm_v1/
+results/prospective_expected_info_gain_v2/
+results/delta_active_incremental_visible_state_v1/
+results/policy_value_learning_controls_v2/
+results/social_replacement_control_v1/
+results/social_world_model_nosocial_v1/
+results/compare_slm_swm_observe_v1/
+results/decode_slm_coordinates_from_swm_v1/
+results/decode_slm_coordinates_nosocial_control_v1/
+results/scrub_slm_coordinate_subspace_v1/
+results/slm_coordinate_motif_readout_vs_swm_v1/

@@ -1,0 +1,65 @@
+dataset,unit,unit_type,comparator,comparator_brier,structured,structured_brier
+Human,H01,held-out subject,Best Feature-Q,0.0461315744596797,multiscale_history,0.0456745053424471
+Human,H02,held-out subject,Best Feature-Q,0.0390748802389399,multiscale_history,0.0387307864347538
+Human,H03,held-out subject,Best Feature-Q,0.0459383227351824,multiscale_history,0.0453829628079869
+Human,H04,held-out subject,Best Feature-Q,0.0460356179837209,multiscale_history,0.0460944682161892
+Human,H05,held-out subject,Best Feature-Q,0.0780730270721979,multiscale_history,0.0766413600519955
+Human,H06,held-out subject,Best Feature-Q,0.0492542150805221,multiscale_history,0.0485865083794243
+Human,H07,held-out subject,Best Feature-Q,0.0457297088601078,multiscale_history,0.0457589928472192
+Human,H08,held-out subject,Best Feature-Q,0.053160278160859,multiscale_history,0.0518298687172235
+Human,H09,held-out subject,Best Feature-Q,0.0362506982287193,multiscale_history,0.0348699033574538
+Human,H10,held-out subject,Best Feature-Q,0.0521880793580163,multiscale_history,0.0510490175153613
+Rat DANDI001169,R01,held-out rat,fold-selected ck,0.211024124246985,multiscale_logit,0.2088096928091874
+Rat DANDI001169,R02,held-out rat,fold-selected ck,0.2057198609224197,multiscale_logit,0.2043070539655337
+Rat DANDI001169,R03,held-out rat,fold-selected ck,0.2478352245064343,multiscale_logit,0.248137857486134
+Rat DANDI001169,R04,held-out rat,fold-selected ck,0.1850881981422096,multiscale_logit,0.1824487083974516
+Rat DANDI001169,R05,held-out rat,fold-selected ck,0.2507971357487509,multiscale_logit,0.2475066089877829
+Rat DANDI001169,R06,held-out rat,fold-selected ck,0.2392612046826359,multiscale_logit,0.2381368608497383
+Rat DANDI001169,R07,held-out rat,fold-selected ck,0.2394763936384813,multiscale_logit,0.2380518666816455
+Rat DANDI001169,R08,held-out rat,fold-selected ck,0.2305062134107922,multiscale_logit,0.2309108045133329
+Rat DANDI001169,R09,held-out rat,fold-selected ck,0.2339897325571175,multiscale_logit,0.2330767484199968
+Rat DANDI001169,R10,held-out rat,fold-selected ck,0.2440844161639611,multiscale_logit,0.2433408913918096
+Macaque,D01,date cluster (2 monkeys nested),Best Feature-Q,0.19854668647841406,multiscale_plus_switchmem,0.184435753275902
+Macaque,D02,date cluster (2 monkeys nested),Best Feature-Q,0.10019087313571985,multiscale_plus_switchmem,0.1006893007845481
+Macaque,D03,date cluster (2 monkeys nested),Best Feature-Q,0.09315803822224229,multiscale_plus_switchmem,0.0871755945309788
+Macaque,D04,date cluster (2 monkeys nested),Best Feature-Q,0.18287702482310914,multiscale_plus_switchmem,0.18100357998411754
+Macaque,D05,date cluster (2 monkeys nested),Best Feature-Q,0.0698555734679309,multiscale_plus_switchmem,0.06813099171317125
+Macaque,D06,date cluster (2 monkeys nested),Best Feature-Q,0.08431799626414099,multiscale_plus_switchmem,0.08457436446075375
+Macaque,D07,date cluster (2 monkeys nested),Best Feature-Q,0.0695464996867507,multiscale_plus_switchmem,0.06998818238244364
+Macaque,D08,date cluster (2 monkeys nested),Best Feature-Q,0.0592348657066753,multiscale_plus_switchmem,0.057889688858450555
+Macaque,D09,date cluster (2 monkeys nested),Best Feature-Q,0.06103052659104745,multiscale_plus_switchmem,0.0601536745764728
+Macaque,D10,date cluster (2 monkeys nested),Best Feature-Q,0.0647602221860597,multiscale_plus_switchmem,0.0610768736651704
+Macaque,D11,date cluster (2 monkeys nested),Best Feature-Q,0.06774726735521035,multiscale_plus_switchmem,0.066271919900945
+Macaque,D12,date cluster (2 monkeys nested),Best Feature-Q,0.05825189412798045,multiscale_plus_switchmem,0.056461987062095945
+Macaque,D13,date cluster (2 monkeys nested),Best Feature-Q,0.08150613082778896,multiscale_plus_switchmem,0.07626751766957884
+Macaque,D14,date cluster (2 monkeys nested),Best Feature-Q,0.0624534400992425,multiscale_plus_switchmem,0.0586084511597994
+Macaque,D15,date cluster (2 monkeys nested),Best Feature-Q,0.0538357943498697,multiscale_plus_switchmem,0.05250108375983605
+Macaque,D16,date cluster (2 monkeys nested),Best Feature-Q,0.04866541965957795,multiscale_plus_switchmem,0.0478722334373977
+Macaque,D17,date cluster (2 monkeys nested),Best Feature-Q,0.0535550553689516,multiscale_plus_switchmem,0.0502351822203769
+Macaque,D18,date cluster (2 monkeys nested),Best Feature-Q,0.055707794049096204,multiscale_plus_switchmem,0.05517996677109225
+Macaque,D19,date cluster (2 monkeys nested),Best Feature-Q,0.055020785906341,multiscale_plus_switchmem,0.051051464612730246
+Macaque,D20,date cluster (2 monkeys nested),Best Feature-Q,0.07390162228551884,multiscale_plus_switchmem,0.07142044488507054
+Macaque,D21,date cluster (2 monkeys nested),Best Feature-Q,0.05482751826386235,multiscale_plus_switchmem,0.0538654262495045
+Macaque,D22,date cluster (2 monkeys nested),Best Feature-Q,0.0561865045596111,multiscale_plus_switchmem,0.05388325828572365
+Macaque,D23,date cluster (2 monkeys nested),Best Feature-Q,0.0576195170173614,multiscale_plus_switchmem,0.05456590464851355
+Macaque,D24,date cluster (2 monkeys nested),Best Feature-Q,0.06349369944173444,multiscale_plus_switchmem,0.061618088956733694
+Macaque,D25,date cluster (2 monkeys nested),Best Feature-Q,0.05599323177756785,multiscale_plus_switchmem,0.054549275878079354
+Macaque,D26,date cluster (2 monkeys nested),Best Feature-Q,0.0559542641536515,multiscale_plus_switchmem,0.05266443126579705
+Macaque,D27,date cluster (2 monkeys nested),Best Feature-Q,0.0533515343869444,multiscale_plus_switchmem,0.05125968619491565
+Macaque,D28,date cluster (2 monkeys nested),Best Feature-Q,0.055081238310348696,multiscale_plus_switchmem,0.0538930878132693
+Macaque,D29,date cluster (2 monkeys nested),Best Feature-Q,0.0580732532972979,multiscale_plus_switchmem,0.05733493764465015
+Macaque,D30,date cluster (2 monkeys nested),Best Feature-Q,0.04756856566632239,multiscale_plus_switchmem,0.045634576361170354
+Macaque,D31,date cluster (2 monkeys nested),Best Feature-Q,0.0526025287884632,multiscale_plus_switchmem,0.05045829096873915
+Macaque,D32,date cluster (2 monkeys nested),Best Feature-Q,0.04906668894950805,multiscale_plus_switchmem,0.046446670450285346
+Macaque,D33,date cluster (2 monkeys nested),Best Feature-Q,0.0626292783360264,multiscale_plus_switchmem,0.0616600690679813
+Macaque,D34,date cluster (2 monkeys nested),Best Feature-Q,0.0495026188942263,multiscale_plus_switchmem,0.04764773125021665
+Macaque,D35,date cluster (2 monkeys nested),Best Feature-Q,0.04828405356575065,multiscale_plus_switchmem,0.04733007089973745
+Macaque,D36,date cluster (2 monkeys nested),Best Feature-Q,0.051235808329027244,multiscale_plus_switchmem,0.05027007422713
+Macaque,D37,date cluster (2 monkeys nested),Best Feature-Q,0.043111544491690995,multiscale_plus_switchmem,0.040459014912604105
+Macaque,D38,date cluster (2 monkeys nested),Best Feature-Q,0.0487205645452342,multiscale_plus_switchmem,0.046683824232471804
+Macaque,D39,date cluster (2 monkeys nested),Best Feature-Q,0.05227156042904235,multiscale_plus_switchmem,0.05112961207129765
+Macaque,D40,date cluster (2 monkeys nested),Best Feature-Q,0.0458940175492685,multiscale_plus_switchmem,0.04496029472613765
+Macaque,D41,date cluster (2 monkeys nested),Best Feature-Q,0.0494526013038582,multiscale_plus_switchmem,0.04851580924048775
+Macaque,D42,date cluster (2 monkeys nested),Best Feature-Q,0.050889961590295546,multiscale_plus_switchmem,0.04814131182312385
+Macaque,D43,date cluster (2 monkeys nested),Best Feature-Q,0.06605309330922905,multiscale_plus_switchmem,0.0659646037546825
+Macaque,D44,date cluster (2 monkeys nested),Best Feature-Q,0.06450312961204935,multiscale_plus_switchmem,0.0628356301085854

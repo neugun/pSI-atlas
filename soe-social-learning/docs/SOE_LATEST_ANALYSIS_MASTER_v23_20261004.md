@@ -596,10 +596,10 @@ Thus the preferred causal statement is that VTA activity is required for updatin
 The observational-fear source chain has been recovered directly from the workstation rather than inferred from the old manuscript.
 
 Raw/derived roots:
-- Z:/sternsonlab/Zhenggang/Behavior/SocialOFL/D1_Fear
-- Z:/sternsonlab/Zhenggang/Behavior/SocialOFL/D2_Fear
-- Z:/sternsonlab/Zhenggang/Behavior/NonsocialOFL/D1_Fear
-- Z:/sternsonlab/Zhenggang/Behavior/NonsocialOFL/D2_Fear
+- [internal source: SocialOFL D1_Fear]
+- [internal source: SocialOFL D2_Fear]
+- [internal source: NonsocialOFL D1_Fear]
+- [internal source: NonsocialOFL D2_Fear]
 
 Training-history groups:
 - Social-trained: 85, 87, 97, 98, 99, 102.
@@ -682,7 +682,7 @@ Metric-wise exact max-cluster tests recover the same temporal structure as the p
 A stricter max-cluster correction over all eight pre-specified metric x subset families yields no family-wise P<.05. Use this as time-resolved shape/timing support; the pre-defined exact-window statistics remain inferential authority.
 
 ### 8.7 Food neophobia / SAFN is now source-rebuilt
-The raw source was recovered at Z:/sternsonlab/Zhenggang/Behavior/safn. The 12 animals exactly match the observational-fear training-history cohort.
+The raw source was recovered at [internal SAFN source]. The 12 animals exactly match the observational-fear training-history cohort.
 
 The protocol document identifies the assay as Social related Novelty-suppressed feeding: after social or nonsocial training, the observer watches a hungry demonstrator familiarized to sunflower seed for 10 min, the demonstrator is removed, and the observer receives unfamiliar sunflower seed for a 10-min test.
 

@@ -667,24 +667,24 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="section-head"><div><div class="section-kicker">Beyond SOE</div>
 <h2>Four SLM computations organize the cross-task evidence</h2></div>
 <p>The cross-species claim is no longer based on counting positive datasets. Each external result is assigned to the computation it tests, and the comparator level is shown explicitly. Direct behavioral transfer, component transfer, neural convergence and literature-only support are kept separate.</p></div><div class="bio-logic"><strong>Biological logic · </strong>Cross-species convergence is evaluated at the level of reusable computations, not identical equations: source-tagged credit, state-gated information value, task-matched multiscale state, and separation of information sampling from action execution.</div>
-<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_four_transferable_computations_v1.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_four_transferable_computations_v1_mobile.png"/>
-<img alt="Four transferable SLM computations and their external evidence" loading="lazy" src="assets/SOE_four_transferable_computations_v1.png"/></picture></a>
-<figcaption><strong>Cross-species framework.</strong> The four candidate transferable computations are: source-tagged credit; state-gated information value; a task-matched multiscale state; and separation of information sampling from action execution. VTA/DA is treated as an implementation layer rather than a fifth computation. The sampling-to-action architecture is established most directly in SOE; marmoset gaze-gated evidence accumulation is an architectural analogue, not a full two-policy replication.</figcaption></figure>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_four_transferable_computations_v2.png" rel="noopener" target="_blank"><picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_four_transferable_computations_v2_mobile.png"/>
+<img alt="Four transferable SLM computations and their external evidence" loading="lazy" src="assets/SOE_four_transferable_computations_v2.png"/></picture></a>
+<figcaption><strong>Cross-species framework.</strong> The four candidate transferable computations are: source-tagged credit; state-gated information value; task-matched multiscale state; and separation of information sampling from action execution. Human and rat now provide independent-unit stronger-comparator support for the multiscale-state component; macaque remains a two-monkey nested sensitivity. VTA/DA is treated as an implementation layer rather than a fifth computation.</figcaption></figure>
 <div class="section-head compact-head" style="margin-top:28px"><div><div class="section-kicker">Comparator audit</div>
 <h3>Where does the structured state clear a stronger model comparator?</h3></div>
 <p>A current-state/no-history baseline only establishes that history helps. The stronger question is whether the structured state improves over a matched alternative model and approaches a flexible ceiling.</p></div>
-<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_comparator_hierarchy_v1.png" rel="noopener" target="_blank"><picture>
-<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_comparator_hierarchy_v1_mobile.png"/>
-<img alt="Human and macaque external comparator hierarchy for structured SLM-style state" loading="lazy" src="assets/SOE_crossspecies_comparator_hierarchy_v1.png"/></picture></a>
-<figcaption><strong>Comparator hierarchy.</strong> Human held-subject prediction provides the cleanest current external comparator test: multiscale social history beats the best matched Feature-Q baseline in 8/10 subjects (r_rb=.891, exact one-sided P=.00488) and recovers 90.2% of the Feature-Q-to-RNN gain. The macaque result also improves over the best matched Feature-Q model, but the 44 date clusters are nested in only two monkeys; it is therefore shown as a sensitivity analysis, not as 44 independent animals. Exact RW/Q/CK-family adjudication is not yet available for every external task and is not implied by this panel.</figcaption></figure>
+<figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_comparator_hierarchy_v2.png" rel="noopener" target="_blank"><picture>
+<source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_comparator_hierarchy_v2_mobile.png"/>
+<img alt="Human, rat and macaque external comparator hierarchy for structured SLM-style state" loading="lazy" src="assets/SOE_crossspecies_comparator_hierarchy_v2.png"/></picture></a>
+<figcaption><strong>Comparator hierarchy.</strong> Human multiscale history clears the best matched Feature-Q model in 8/10 held-out subjects (r_rb=.891, P=.00488). Rat DANDI001169 now closes the previous classical-RL gap under the exact original 12,564-trial / 5-fold held-rat contract: the training fold selects among WSLS, Q, asymmetric-Q, forgetting-Q, CK and Q+CK by BIC; CK is selected in 5/5 folds, and multiscale history improves 8/10 held-out rats (mean Brier .22878→.22747; r_rb=.891, P=.00488). Macaque structured state also clears Feature-Q at the date-cluster level, but 44 dates remain nested in only two monkeys and are shown as sensitivity rather than population-level primate inference.</figcaption></figure>
 <div class="panel" style="margin-top:18px"><div class="section-kicker">Current comparator status</div>
 <h3 style="margin-top:6px">The external datasets do not all answer the same model-selection question</h3>
 <div class="table-wrap"><table><thead><tr><th>Dataset</th><th>What is tested now</th><th>Comparator</th><th>Independent unit</th><th>Current interpretation</th></tr></thead><tbody>
 <tr><td>Human exp/obs</td><td>multiscale social state</td><td>best matched Feature-Q; RNN ceiling</td><td>10 held-out subjects</td><td>8/10 vs Feature-Q; r_rb=.891; one-sided P=.00488</td></tr>
 <tr><td>Macaque behavior</td><td>multiscale + source structure</td><td>Feature-Q sensitivity; RNN ceiling</td><td>2 monkeys; 44 nested date clusters</td><td>41/44 date clusters improve; sensitivity, not animal-level population inference</td></tr>
 <tr><td>Rat observational maze</td><td>source-tagged social evidence</td><td>self-history; moving-object source</td><td>5 demonstrator rats</td><td>direct source-identity/component test; not a full classical-RL adjudication</td></tr>
-<tr><td>Rat DANDI001169</td><td>multiscale state</td><td>current baseline; TinyRNN</td><td>10 rats</td><td>structured-state/component test; matched classical RL family still missing</td></tr>
+<tr><td>Rat DANDI001169</td><td>multiscale state</td><td>foldwise BIC-selected WSLS/Q/asym-Q/forget-Q/CK/Q+CK</td><td>10 held-out rats</td><td>CK selected in 5/5 folds; multiscale wins 8/10; r_rb=.891; one-sided P=.00488</td></tr>
 <tr><td>Aeon</td><td>recent partner history</td><td>self/current-social baselines</td><td>5 experiments</td><td>social-history component test</td></tr>
 <tr><td>Cooperative foraging</td><td>social information value / policy</td><td>self-only; flexible RF</td><td>fixed held-out trajectories from one dyad</td><td>within-dyad validation consistency; not animal-level generalization</td></tr>
 </tbody></table></div></div>
@@ -731,7 +731,7 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="cards-4">
 <div class="card good"><div class="metric-label">SOURCE TAGGING</div><div class="metric">behavioral support</div><p>Rat demonstrator versus moving-object specificity and macaque source-aware state support source identity. Primate RPE remains literature/audit support until independent validation.</p></div>
 <div class="card good"><div class="metric-label">GATED VALUE</div><div class="metric">cross-task support</div><p>SOE state gating, cooperative role-by-uncertainty and Aeon partner history converge on conditional information value.</p></div>
-<div class="card info"><div class="metric-label">MULTISCALE STATE</div><div class="metric">equations + frozen dynamics</div><p>Human and macaque structured states clear stronger Feature-Q comparators; a frozen SOE recurrent core also transfers to macaque choice. Rat 001169 and mouse 001632 add component-level support.</p></div>
+<div class="card info"><div class="metric-label">MULTISCALE STATE</div><div class="metric">equations + frozen dynamics</div><p>Human, rat DANDI001169 and macaque structured states clear stronger matched classical/Feature-Q comparators; a frozen SOE recurrent core also transfers to macaque choice. Mouse 001632 remains component-level timing support.</p></div>
 <div class="card violet"><div class="metric-label">SAMPLE -&gt; ACTION</div><div class="metric">SOE direct; marmoset analogue</div><p>SOE establishes separate Observe and Feed control. Marmoset gaze-gated evidence accumulation is the closest current external architectural analogue.</p></div>
 </div></div>
 <details class="panel" style="margin-top:20px"><summary><strong>Dataset-depth audits and source plots</strong></summary>
@@ -745,7 +745,9 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="download-card"><a href="assets/SOE_001632_time_state_v2.png">DANDI001632 time-state component</a><p class="small">Task-adaptive temporal-state component test; not social SLM transfer.</p></div>
 </div></details>
 <div class="download-grid" style="margin-top:20px">
-<div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v1.csv">Comparator audit</a><p class="small">Human and macaque stronger-comparator results plus explicit gaps.</p></div>
+<div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v2.csv">Comparator audit v2</a><p class="small">Human, rat and macaque stronger-comparator results with the independent-unit contract explicit.</p></div>
+<div class="download-card"><a href="data/rat001169_multiscale_vs_selected_classical_v5.csv">Rat matched classical comparator</a><p class="small">Per-rat Brier values under the original same-zoo held-rat folds; classical family selected only from each training fold.</p></div>
+<div class="download-card"><a href="data/rat001169_multiscale_vs_each_classical_v5.csv">Rat classical model ladder</a><p class="small">WSLS, Q, asymmetric-Q, forgetting-Q, CK and Q+CK versus structured multiscale history.</p></div>
 <div class="download-card"><a href="data/SOE_crossspecies_SLM_evidence_table_v1.csv">SLM evidence table</a><p class="small">Evidence tier, SLM component, unit, effect and interpretation.</p></div>
 <div class="download-card"><a href="data/SOE_crossspecies_complete_registry_v1.csv">Complete external registry</a><p class="small">All external datasets, including component-only and control results.</p></div>
 <div class="download-card"><a href="data/SOE_to_external_frozen_v2_summary.csv">Frozen-core transfer summary</a><p class="small">Seed-averaged held-out-unit effects for macaque and Aeon.</p></div>
@@ -764,7 +766,7 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
         focused mechanistic notes and downloadable CSV tables below.
       </p>
 </div>
-<div class="download-grid"><div class="download-card"><a href="docs/SLM_TRANSFERABLE_CORE_AND_TRANSFER_v1_20261005.md">Transferable-core authority 2026-10-05</a><p class="small">Comparator correction, primate-RPE circularity audit, four-computation synthesis, frozen-core transfer, and same-animal generalization boundary.</p></div>
+<div class="download-grid"><div class="download-card"><a href="docs/SLM_TRANSFERABLE_CORE_AND_TRANSFER_v2_20261005.md">Transferable-core authority 2026-10-05</a><p class="small">Comparator correction, primate-RPE circularity audit, four-computation synthesis, frozen-core transfer, and same-animal generalization boundary.</p></div>
 <div class="download-card"><a href="docs/SOE_CURRENT_CHECKPOINT_v32_20261004.md">Current checkpoint v32</a><p class="small">Latest project-wide analysis authority, statistics, provenance and reproducibility records.</p></div>
 <div class="download-card"><a href="docs/SOE_LATEST_ANALYSIS_MASTER_v23_20261004.md">Analysis master v23</a><p class="small">Comprehensive analysis/results authority.</p></div>
 <div class="download-card"><a href="docs/SLM_NATIVE_SOCIAL_TO_FEED_CONVERSION_v1_20261004.md">Native social→Feed authority</a><p class="small">Strict future Feed contract and observed-content bridge.</p></div>
