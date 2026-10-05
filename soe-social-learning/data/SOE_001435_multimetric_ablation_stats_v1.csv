@@ -1,0 +1,7 @@
+dataset,contrast,metric,n,wins,rrb,p_one_sided,median_gain,mean_gain
+Macaque DANDI001435,dual_multiscale vs baseline,brier,7,7,1.0,0.0078125,0.0461518671028896,0.053472587406487096
+Macaque DANDI001435,dual_multiscale vs baseline,nll,7,7,1.0,0.0078125,0.1585233321534874,0.17474086266527575
+Macaque DANDI001435,dual_multiscale vs baseline,auc,7,7,1.0,0.0078125,0.1281720475696222,0.1321136634349633
+Macaque DANDI001435,shared_multiscale vs shared_single_g50,brier,7,7,1.0,0.0078125,0.012837134600295605,0.011971544923124088
+Macaque DANDI001435,dual_multiscale vs dual_single_g50,brier,7,7,1.0,0.0078125,0.011466448616341912,0.011159697690425185
+Macaque DANDI001435,dual_multiscale vs shared_multiscale,brier,7,7,1.0,0.0078125,0.004978220954530099,0.005271618504028271

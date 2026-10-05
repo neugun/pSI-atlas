@@ -1,0 +1,9 @@
+component,animal,n
+partner variability -> drift,K,20
+partner variability -> drift,D,26
+neural ramp -> social evidence,K,490
+neural ramp -> social evidence,D,466
+neural ramp -> model drift,K,464
+neural ramp -> model drift,D,361
+outcome history -> starting bias,K,18
+outcome history -> starting bias,D,21
