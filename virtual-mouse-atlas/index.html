@@ -138,8 +138,7 @@
         External sequence experience can warm-start low-data Observe/action dynamics, but the SOE social-efficacy representation does not transfer generically. In-domain animals progressively sharpen that efficacy state, whereas broad external pretraining can even weaken it.
       </div>
       <div class="world-evidence world-evidence-scaling">
-        <figure><img src="assets/world_scaling_in_domain_v8.svg" alt="SWM in-domain scaling across SOE training animals"><figcaption><b>Data scaling.</b> Thin lines preserve matched held-animal fold × repeat trajectories. Observe-policy error, outcome prediction and future-motif prediction improve monotonically, while the held-out efficacy representation becomes substantially clearer.</figcaption></figure>
-        <figure><img src="assets/world_transfer_seedrep_v10.svg" alt="Five independent pretraining seeds separate low-data action transfer from social-efficacy transfer"><figcaption><b>External pretraining, 5 independent initializations.</b> Each point is one pretraining seed after averaging its five held-animal folds. At 2 SOE animals, action Brier improves reproducibly across macaque, mouse-reward, rat+mouse, and all-external pretraining. The efficacy latent does not show the same transfer: macaque is small and non-significant, while broader external mixtures are negative. This separates a reusable sequential/action prior from an SOE-specific relational efficacy state.</figcaption></figure>
+        <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_scaling_transfer_v15_mobile.svg"><img src="assets/swm_scaling_transfer_v15.svg" alt="In-domain SWM scaling and external-pretraining transfer across held-out animals"></picture><figcaption><b>Scaling separates reusable sequence learning from SOE-specific efficacy.</b> Increasing SOE training animals improves Observe prediction and sharpens the held-out efficacy representation. External pretraining reproducibly warm-starts low-data action prediction, but the efficacy state does not transfer generically, separating a reusable sequential prior from a relational state learned in-domain.</figcaption></figure>
         <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_social_dependence_v15_mobile.svg"><img src="assets/swm_social_dependence_v15.svg" alt="In-distribution social trajectory replacement and no-social SWM retraining controls"></picture><figcaption><b>Correct social content is required.</b> Replacing each held-out social trajectory with a day- and duration-matched training trajectory reduces ΔActive efficacy AUC from 0.620 to 0.561 in 26/27 animals (P=1.49×10<sup>−8</sup>). Retraining SWM from scratch without all social channels yields 0.572 (26/27 drop; P=2.29×10<sup>−6</sup>). The no-social model also loses Observe-choice and outcome prediction, while global motif dynamics are largely preserved.</figcaption></figure>
       </div>
 
@@ -151,16 +150,9 @@
         <b>Interpretation:</b> SWM independently recovers decision-relevant SLM-like coordinates, and that subspace contributes selectively to Observe policy, while the full SWM retains additional predictive dynamics not captured by the SLM coordinates alone.
       </div>
 
-      <div class="world-benchmark-subhead">Model-family comparison · 27 held-out animals</div>
-      <div class="world-evidence world-model-zoo-grid">
-        <figure><img src="assets/event5_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Five-event model zoo accuracy"><figcaption><b>Factorized 5-event accuracy.</b> SWM is compared directly with global, History Markov, and full-history linear models; faint points are individual held-out animals.</figcaption></figure>
-        <figure><img src="assets/event5_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Five-event model zoo negative log likelihood"><figcaption><b>Factorized 5-event NLL.</b> SWM is lower than full-history linear in 22/27 animals (P=1.5×10<sup>−4</sup>).</figcaption></figure>
-        <figure><img src="assets/motif_model_zoo_accuracy_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo accuracy"><figcaption><b>12-motif accuracy.</b> Eight model families span frequency, Markov, linear, MLP, PCA-latent, and SWM.</figcaption></figure>
-        <figure><img src="assets/motif_model_zoo_nll_slm_v2.png?v=20261004v7" alt="Twelve motif model zoo negative log likelihood"><figcaption><b>12-motif NLL.</b> SWM beats the strongest direct nonlinear MLP in 25/27 animals (P=3.2×10<sup>−7</sup>).</figcaption></figure>
-      </div>
-      <div class="world-benchmark-subhead">Multi-step predictive horizon</div>
-      <div class="world-evidence world-evidence-horizon">
-        <figure><img src="assets/world_motif_horizon_slm_v2.png?v=20261004v7" alt="Held-out future motif prediction across horizons"><figcaption><b>Motif future.</b> SWM remains above the matched Markov transition model at 1, 3, and 5 future steps.</figcaption></figure>
+      <div class="world-benchmark-subhead">Predictive benchmarks · 27 held-out animals</div>
+      <div class="world-evidence world-evidence-scaling">
+        <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_predictive_benchmarks_v15_mobile.svg"><img src="assets/swm_predictive_benchmarks_v15.svg" alt="Held-animal SWM benchmarks for factorized event prediction, future motif prediction, and multi-step horizon advantage"></picture><figcaption><b>SWM preserves a predictive advantage without turning the page into a model-zoo wall.</b> For factorized 5-event prediction, SWM is comparable to the strongest full-history linear baseline. For future motifs, SWM outperforms the strongest direct nonlinear MLP, and the held-animal NLL advantage over Markov persists at 1-, 3-, and 5-step horizons.</figcaption></figure>
       </div>
     </details>
   </section>
