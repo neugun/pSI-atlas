@@ -1,0 +1,26 @@
+    A                               B
+
+       6            Choice-kernel NLL
+       4
+       2                        Choice-kernel
+       0
+SRI                 Full-history MLP
+C
+                    Actor/state-value
+  Early
+                                     Policy
+
+                                Feature-Q
+
+          Original Visual                      0.0       0.5
+                         Block
+                                     Prediction degradation (r_rb
+
+Middle
+
+Late
+
+          0.0  0.2              0.4            0.6  0.8       1.0
+
+               Original − Visual Block DA (r_rb)
+

@@ -1,0 +1,28 @@
+Efficacy AUC  A                                     Observe AUC  B
+
+Efficacy AUC  0.6                                   Observe AUC  0.8
+
+              0.4                                                0.6
+
+              0.2                                                0.4
+
+              0.0                                                0.2
+                         Replaced Correct
+                                            social               0.0
+                                                                            Replaced Correct
+              C                                                                                social
+
+              0.6                                                D
+
+              0.4                                                0.8
+
+              0.2                                                0.6
+
+              0.0                                                0.4
+                         No-social Full SWM
+                            retrain                              0.2
+
+                                                                 0.0
+                                                                            No-social Full SWM
+                                                                               retrain
+

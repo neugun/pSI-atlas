@@ -1,0 +1,39 @@
+                 A                                                            B
+                 0.8
+
+                                                                      0.8Held-episode AUC
+                 0.6
+
+Alignment        0.4                                                          0.7
+
+                0.2                                                           0.6
+                0.0
+               −0.2         occupancy
+
+                 C          transition                                        0.5
+
+                1.0         policy motifho
+                0.8
+                            Active Active+Passive                                  Current + SLM coords
+                                                                                    motif
+                            Active                             D
+                            Active+Passive                                                                                 1
+                                                            SLM
+
+Hidden-state R²  0.6                                        TinyRNN
+
+                                                                                                                                         0
+                 0.4
+
+                                                                   Q-all
+
+                 0.2
+
+                 0.0                        Choice kernel
+
+                                                                                                      −
+
+                      fast  slow     act   pas B unrpolicy                         Early Middle Post
+                                        B
+                                  B
+

@@ -1,0 +1,24 @@
+Held-animal Brier    A                           Held-animal Brier    B
+
+                   0.20                                             0.20
+                                                                    0.15
+                   0.15                                             0.10
+                                                                    0.05
+                   0.10                                             0.00
+
+                   0.05                                                          TinyRNN SLM+CK
+
+                   0.00                                                         SLM+CK
+                              Current+CK SLM+CK
+
+Held-animal BrierC
+
+                    0.20
+                    0.15
+                    0.10
+                    0.05
+                    0.00
+
+                          History
+                           MLP
+

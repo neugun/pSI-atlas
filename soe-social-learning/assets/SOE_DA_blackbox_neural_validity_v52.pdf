@@ -1,0 +1,29 @@
+                   A                                 B
+
+                                                                        SLM
+                   0.19
+
+Held-animal Brier  0.18
+                                                                  TinyRNN
+
+                   0.17
+
+                   0.16
+                                                              History MLP
+
+                          SLM TinyRNN HistMorLyP                             −1  0               1
+
+                   C                                                             Bounded effect
+
+                                                     D
+
+                   SLM                               SLM
+
+TinyRNN                                           TinyRNN
+
+History MLP                                       History MLP
+
+                        −1  0                     1                          −1  0               1
+
+                            Bounded effect                                       Bounded effect
+

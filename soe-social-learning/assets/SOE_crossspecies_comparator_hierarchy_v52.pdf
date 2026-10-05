@@ -1,0 +1,40 @@
+                A                                                                        B
+
+                0.08                                                                     0.25
+
+Held-out Brier  0.06                                                     Held-out Brier  0.20
+
+                                                                     0.15
+                0.04
+
+                                                                     0.10
+
+                0.02
+                                                                     0.05
+
+                0.00                                                                     0.00
+                             Feature-Q Structured                                                    Nested-CV Structured
+                                                                                                          CK
+
+                C                                                                        D
+
+                0.20                                                     WSLS
+
+Held-out Brier                                                           Q
+                0.15
+
+                                                                 asym-Q
+
+                0.10                               forget-Q
+
+                                                                         Q+CK
+
+                0.05                                                                     CK
+
+                                                             Structured
+                0.00
+
+                      Feature-Q Structured                                               0.0000 0.0025 0.0050 0.0075
+
+                                                                                               Excess Brier vs structured
+

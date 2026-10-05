@@ -1,0 +1,25 @@
+                      A                                                    B
+
+                           SOE                      Frozen-core NLL gain   0.04
+
+                                Frozen Target
+
+                                core  head                                 0.02
+
+                                Random frozen core                         0.00
+
+                                                                           −0.02     20% 50% 100%
+
+Frozen-core NLL gain      C                         Brier gain vs scratch     D      Macaque       Aeon
+                                                                                     Mouse 001632  All external
+                       0.075                                               0.010
+                       0.050
+                       0.025                                               0.005
+                       0.000
+                      −0.025                                               0.000
+                      −0.050
+
+                              20% 50% 100%                                        2  4                           8
+
+                                                                                     SOE training animals
+

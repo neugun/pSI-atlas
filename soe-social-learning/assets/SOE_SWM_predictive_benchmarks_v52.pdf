@@ -1,0 +1,31 @@
+A
+
+Global
+
+Motif Markov
+
+A+O Markov
+
+History linear
+
+Direct MLP
+
+         SWM
+
+                 1.80 1.85 1.90 1.95 2.00 2.05 2.10
+                                     One-step motif NLL
+
+         B          A+O Markov
+                    PCA latent
+          2.00      SWM
+
+Motif NLL 1.95
+
+           1.90
+
+           1.85
+
+                 1              3                   5
+
+                                Prediction horizon
+

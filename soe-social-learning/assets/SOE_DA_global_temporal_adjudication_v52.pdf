@@ -1,0 +1,35 @@
+A                                       B
+
+SLM
+
+Choice kernel
+
++ choice kernel
+
+Q-all
+
+TinyRNN
+
+History MLP
+
+                 −1  0               1     −1  0               1
+
+                     Bounded effect            Bounded effect
+
+C
+
+   SLM
+
+Choice kernel
+
++ choice kernel
+
+Q-all
+
+TinyRNN
+
+History MLP
+
+                −1.00 −0.75 −0.50 −0.25 0.00 0.25 0.50 0.75 1.00
+                                               Bounded effect
+
