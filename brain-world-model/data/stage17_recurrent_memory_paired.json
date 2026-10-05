@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "heldout_axis": "leave-one-experimental-cohort-out",
+  "comparison": "4-D learned GRU recurrent state versus feedforward current-state controls",
+  "tests": {
+    "current_linear_bits_per_trial": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "mean_delta_bits": 0.09033974724562786,
+      "median_delta_bits": 0.08093590487845406,
+      "sign_test_one_sided_p": 0.0078125,
+      "wilcoxon_one_sided_p": 0.0078125,
+      "deltas": [
+        0.16052833894783186,
+        0.038214190855380706,
+        0.07105570032479733,
+        0.09069977637844014,
+        0.06146572549278109,
+        0.08093590487845406,
+        0.12947859384170993
+      ]
+    },
+    "current_mlp8_bits_per_trial": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "mean_delta_bits": 0.09053174906444454,
+      "median_delta_bits": 0.0763892370268649,
+      "sign_test_one_sided_p": 0.0078125,
+      "wilcoxon_one_sided_p": 0.0078125,
+      "deltas": [
+        0.17565563350957056,
+        0.03858051349194573,
+        0.06537464007799046,
+        0.08215004078519893,
+        0.06431958137955408,
+        0.0763892370268649,
+        0.13125259717998713
+      ]
+    },
+    "current_plus_prev_linear_bits_per_trial": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "mean_delta_bits": 0.06547710196768006,
+      "median_delta_bits": 0.05790849999866399,
+      "sign_test_one_sided_p": 0.0078125,
+      "wilcoxon_one_sided_p": 0.0078125,
+      "deltas": [
+        0.10774155389822121,
+        0.03166743760268041,
+        0.04585329931111837,
+        0.07517732959513257,
+        0.04610934582862186,
+        0.05790849999866399,
+        0.09388224753932195
+      ]
+    },
+    "handengineered_slow_state_median_reference": {
+      "gru4_median": 0.17680896818637848,
+      "handengineered_median": 0.16358170686901435,
+      "median_difference": 0.013227261317364125,
+      "note": "Median-to-median reference only; not a paired test because the hand-engineered summary file does not store a directly aligned recurrent-vs-hand-engineered score per cohort in the same result object."
+    }
+  },
+  "folds": [
+    {
+      "cohort": "Chemo",
+      "gru4": 0.39276930689811707,
+      "current_linear_bits_per_trial": 0.2322409679502852,
+      "delta_vs_current_linear_bits_per_trial": 0.16052833894783186,
+      "current_mlp8_bits_per_trial": 0.2171136733885465,
+      "delta_vs_current_mlp8_bits_per_trial": 0.17565563350957056,
+      "current_plus_prev_linear_bits_per_trial": 0.28502775299989586,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.10774155389822121
+    },
+    {
+      "cohort": "Jaws",
+      "gru4": 0.058168478310108185,
+      "current_linear_bits_per_trial": 0.019954287454727476,
+      "delta_vs_current_linear_bits_per_trial": 0.038214190855380706,
+      "current_mlp8_bits_per_trial": 0.019587964818162454,
+      "delta_vs_current_mlp8_bits_per_trial": 0.03858051349194573,
+      "current_plus_prev_linear_bits_per_trial": 0.026501040707427776,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.03166743760268041
+    },
+    {
+      "cohort": "SF_Gcamp_DTFL",
+      "gru4": 0.17680896818637848,
+      "current_linear_bits_per_trial": 0.10575326786158115,
+      "delta_vs_current_linear_bits_per_trial": 0.07105570032479733,
+      "current_mlp8_bits_per_trial": 0.11143432810838802,
+      "delta_vs_current_mlp8_bits_per_trial": 0.06537464007799046,
+      "current_plus_prev_linear_bits_per_trial": 0.1309556688752601,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.04585329931111837
+    },
+    {
+      "cohort": "SocialFeedig_OXT",
+      "gru4": 0.10942604392766953,
+      "current_linear_bits_per_trial": 0.018726267549229385,
+      "delta_vs_current_linear_bits_per_trial": 0.09069977637844014,
+      "current_mlp8_bits_per_trial": 0.0272760031424706,
+      "delta_vs_current_mlp8_bits_per_trial": 0.08215004078519893,
+      "current_plus_prev_linear_bits_per_trial": 0.034248714332536956,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.07517732959513257
+    },
+    {
+      "cohort": "SocialFeeding_DMS",
+      "gru4": 0.15577949583530426,
+      "current_linear_bits_per_trial": 0.09431377034252317,
+      "delta_vs_current_linear_bits_per_trial": 0.06146572549278109,
+      "current_mlp8_bits_per_trial": 0.09145991445575018,
+      "delta_vs_current_mlp8_bits_per_trial": 0.06431958137955408,
+      "current_plus_prev_linear_bits_per_trial": 0.1096701500066824,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.04610934582862186
+    },
+    {
+      "cohort": "SocialFeeding_DMS_3",
+      "gru4": 0.19407713413238525,
+      "current_linear_bits_per_trial": 0.11314122925393119,
+      "delta_vs_current_linear_bits_per_trial": 0.08093590487845406,
+      "current_mlp8_bits_per_trial": 0.11768789710552036,
+      "delta_vs_current_mlp8_bits_per_trial": 0.0763892370268649,
+      "current_plus_prev_linear_bits_per_trial": 0.13616863413372127,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.05790849999866399
+    },
+    {
+      "cohort": "SocialFeeding_JAWS_VTAcopy",
+      "gru4": 0.2699502408504486,
+      "current_linear_bits_per_trial": 0.14047164700873868,
+      "delta_vs_current_linear_bits_per_trial": 0.12947859384170993,
+      "current_mlp8_bits_per_trial": 0.13869764367046147,
+      "delta_vs_current_mlp8_bits_per_trial": 0.13125259717998713,
+      "current_plus_prev_linear_bits_per_trial": 0.17606799331112666,
+      "delta_vs_current_plus_prev_linear_bits_per_trial": 0.09388224753932195
+    }
+  ],
+  "interpretation": "If GRU4 wins consistently over current-state and current+previous-state feedforward controls, the extra predictive information is attributable to learned recurrent history rather than only current-state nonlinearity.",
+  "guardrail": "Recurrent-history benefit is predictive evidence for memory/state dependence, not a claim that the GRU hidden units correspond to specific biological memory variables."
+}

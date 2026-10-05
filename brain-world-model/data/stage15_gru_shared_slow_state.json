@@ -1,0 +1,340 @@
+{
+  "status": "PASS",
+  "n_folds": 7,
+  "heldout_axis": "leave-one-experimental-cohort-out",
+  "learned_state_model": "GRU over current action, current outcome, demfeed, nearspout, session progress; hidden state resets each session; no hand-engineered belief/RPE/memory inputs",
+  "summary": {
+    "2": {
+      "n_folds": 7,
+      "median_bits_per_trial": 0.11311755329370499,
+      "mean_bits_per_trial": 0.14022475454424108,
+      "positive_fraction": 1.0,
+      "q25_bits": 0.0809482242912054,
+      "q75_bits": 0.151387020945549,
+      "median_balanced_accuracy": 0.6454077737823414,
+      "params": 69
+    },
+    "4": {
+      "n_folds": 7,
+      "median_bits_per_trial": 0.17680896818637848,
+      "mean_bits_per_trial": 0.19385423830577306,
+      "positive_fraction": 1.0,
+      "q25_bits": 0.1326027698814869,
+      "q75_bits": 0.23201368749141693,
+      "median_balanced_accuracy": 0.6543543943593553,
+      "params": 161
+    },
+    "8": {
+      "n_folds": 7,
+      "median_bits_per_trial": 0.1760585606098175,
+      "mean_bits_per_trial": 0.20367807575634547,
+      "positive_fraction": 1.0,
+      "q25_bits": 0.13658268749713898,
+      "q75_bits": 0.24778372049331665,
+      "median_balanced_accuracy": 0.6538181590670102,
+      "params": 417
+    }
+  },
+  "comparator_median_bits_per_trial": {
+    "exo_plus_one_step_history": 0.07867381197459276,
+    "full_handengineered_slow_state": 0.16358170686901435
+  },
+  "folds": [
+    {
+      "status": "PASS",
+      "heldout_cohort": "Chemo",
+      "n_train_sessions": 278,
+      "n_test_sessions": 84,
+      "n_test_animals": 6,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 11274,
+          "bits_per_trial": 0.3816234767436981,
+          "balanced_accuracy": 0.5379703824614048,
+          "train_prior": 0.4059801995754242,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 11274,
+          "bits_per_trial": 0.39276930689811707,
+          "balanced_accuracy": 0.5340232092903112,
+          "train_prior": 0.4059801995754242,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 11274,
+          "bits_per_trial": 0.4185711145401001,
+          "balanced_accuracy": 0.5404075503014515,
+          "train_prior": 0.4059801995754242,
+          "params": 417
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "Jaws",
+      "n_train_sessions": 351,
+      "n_test_sessions": 11,
+      "n_test_animals": 1,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 1271,
+          "bits_per_trial": 0.05586955323815346,
+          "balanced_accuracy": 0.62887771687959,
+          "train_prior": 0.4673314392566681,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 1271,
+          "bits_per_trial": 0.058168478310108185,
+          "balanced_accuracy": 0.6248401835535249,
+          "train_prior": 0.4673314392566681,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 1271,
+          "bits_per_trial": 0.06238403916358948,
+          "balanced_accuracy": 0.6256169658166248,
+          "train_prior": 0.4673314392566681,
+          "params": 417
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SF_Gcamp_DTFL",
+      "n_train_sessions": 326,
+      "n_test_sessions": 36,
+      "n_test_animals": 3,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 9258,
+          "bits_per_trial": 0.11311755329370499,
+          "balanced_accuracy": 0.6454077737823414,
+          "train_prior": 0.4728493094444275,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 9258,
+          "bits_per_trial": 0.17680896818637848,
+          "balanced_accuracy": 0.6893794122606727,
+          "train_prior": 0.4728493094444275,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 9258,
+          "bits_per_trial": 0.1760585606098175,
+          "balanced_accuracy": 0.6788479527566232,
+          "train_prior": 0.4728493094444275,
+          "params": 417
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeedig_OXT",
+      "n_train_sessions": 309,
+      "n_test_sessions": 53,
+      "n_test_animals": 4,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 11804,
+          "bits_per_trial": 0.10602689534425735,
+          "balanced_accuracy": 0.648815918451948,
+          "train_prior": 0.4530624449253082,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 11804,
+          "bits_per_trial": 0.10942604392766953,
+          "balanced_accuracy": 0.6525573601642404,
+          "train_prior": 0.4530624449253082,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 11804,
+          "bits_per_trial": 0.10732382535934448,
+          "balanced_accuracy": 0.6538181590670102,
+          "train_prior": 0.4530624449253082,
+          "params": 417
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeeding_DMS",
+      "n_train_sessions": 322,
+      "n_test_sessions": 40,
+      "n_test_animals": 3,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 9692,
+          "bits_per_trial": 0.022161761298775673,
+          "balanced_accuracy": 0.6291032261331722,
+          "train_prior": 0.4851459860801697,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 9692,
+          "bits_per_trial": 0.15577949583530426,
+          "balanced_accuracy": 0.6543543943593553,
+          "train_prior": 0.4851459860801697,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 9692,
+          "bits_per_trial": 0.16584154963493347,
+          "balanced_accuracy": 0.6545690339894158,
+          "train_prior": 0.4851459860801697,
+          "params": 417
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeeding_DMS_3",
+      "n_train_sessions": 292,
+      "n_test_sessions": 70,
+      "n_test_animals": 5,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 10408,
+          "bits_per_trial": 0.17775572836399078,
+          "balanced_accuracy": 0.7180722277941453,
+          "train_prior": 0.4745393693447113,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 10408,
+          "bits_per_trial": 0.19407713413238525,
+          "balanced_accuracy": 0.7280002796676777,
+          "train_prior": 0.4745393693447113,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 10408,
+          "bits_per_trial": 0.2116200029850006,
+          "balanced_accuracy": 0.7274543551008009,
+          "train_prior": 0.4745393693447113,
+          "params": 417
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeeding_JAWS_VTAcopy",
+      "n_train_sessions": 294,
+      "n_test_sessions": 68,
+      "n_test_animals": 5,
+      "input_features": [
+        "current_action_observe",
+        "outcome_active",
+        "outcome_passive",
+        "outcome_unrewarded",
+        "demfeed",
+        "nearspout",
+        "session_progress"
+      ],
+      "models": {
+        "2": {
+          "hidden": 2,
+          "n_test": 14555,
+          "bits_per_trial": 0.12501831352710724,
+          "balanced_accuracy": 0.662432553452607,
+          "train_prior": 0.5169717073440552,
+          "params": 69
+        },
+        "4": {
+          "hidden": 4,
+          "n_test": 14555,
+          "bits_per_trial": 0.2699502408504486,
+          "balanced_accuracy": 0.6621577290468125,
+          "train_prior": 0.5169717073440552,
+          "params": 161
+        },
+        "8": {
+          "hidden": 8,
+          "n_test": 14555,
+          "bits_per_trial": 0.2839474380016327,
+          "balanced_accuracy": 0.6483250046694253,
+          "train_prior": 0.5169717073440552,
+          "params": 417
+        }
+      }
+    }
+  ],
+  "interpretation": "Tests whether a learned recurrent low-dimensional state can recover transferable predictive information without explicit belief/RPE/memory features.",
+  "guardrail": "Positive bits indicate predictive transfer, not identification of a biological state variable."
+}

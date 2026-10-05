@@ -509,6 +509,33 @@
     "reward_contrast_best_model": "5ht_q",
     "reward_contrast_relative_mse_reduction": 0.037057076484748985
   },
+  "learned_slow_state": {
+    "pca_2d_fraction_full_gain": 0.9303873245913584,
+    "gru4_median_bits_per_trial": 0.17680896818637848,
+    "gru4_params": 161,
+    "current_linear_median_bits": 0.10575326786158115,
+    "current_mlp8_median_bits": 0.11143432810838802,
+    "current_plus_prev_linear_median_bits": 0.1309556688752601,
+    "paired_gru4_vs_current_prev": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "mean_delta_bits": 0.06547710196768006,
+      "median_delta_bits": 0.05790849999866399,
+      "sign_test_one_sided_p": 0.0078125,
+      "wilcoxon_one_sided_p": 0.0078125,
+      "deltas": [
+        0.10774155389822121,
+        0.03166743760268041,
+        0.04585329931111837,
+        0.07517732959513257,
+        0.04610934582862186,
+        0.05790849999866399,
+        0.09388224753932195
+      ]
+    },
+    "interpretation": "A compact recurrent state learned from raw trial history transfers across entire experimental cohorts and beats matched feedforward current-state controls."
+  },
   "microns": {
     "preflight": {
       "2": {

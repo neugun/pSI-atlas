@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "heldout_axis": "leave-one-experimental-cohort-out",
+  "current_features": [
+    "action_observe",
+    "out_active",
+    "out_passive",
+    "out_unrewarded",
+    "demfeed",
+    "nearspout",
+    "session_progress"
+  ],
+  "current_plus_prev_features": [
+    "action_observe",
+    "out_active",
+    "out_passive",
+    "out_unrewarded",
+    "demfeed",
+    "nearspout",
+    "session_progress",
+    "prev_action",
+    "prevout_active",
+    "prevout_none",
+    "prevout_passive",
+    "prevout_unrewarded"
+  ],
+  "summary": {
+    "current_linear_bits_per_trial": {
+      "n": 7,
+      "median": 0.10575326786158115,
+      "mean": 0.1035144910601452,
+      "q25": 0.05713402889862532,
+      "q75": 0.12680643813133494,
+      "positive_fraction": 1.0
+    },
+    "current_plus_prev_linear_bits_per_trial": {
+      "n": 7,
+      "median": 0.1309556688752601,
+      "mean": 0.128377136338093,
+      "q25": 0.07195943216960968,
+      "q75": 0.15611831372242396,
+      "positive_fraction": 1.0
+    },
+    "current_mlp8_bits_per_trial": {
+      "n": 7,
+      "median": 0.11143432810838802,
+      "mean": 0.1033224892413285,
+      "q25": 0.05936795879911039,
+      "q75": 0.12819277038799093,
+      "positive_fraction": 1.0
+    },
+    "gru2_bits_per_trial": {
+      "n_folds": 7,
+      "median_bits_per_trial": 0.11311755329370499,
+      "mean_bits_per_trial": 0.14022475454424108,
+      "positive_fraction": 1.0,
+      "q25_bits": 0.0809482242912054,
+      "q75_bits": 0.151387020945549,
+      "median_balanced_accuracy": 0.6454077737823414,
+      "params": 69
+    },
+    "gru4_bits_per_trial": {
+      "n_folds": 7,
+      "median_bits_per_trial": 0.17680896818637848,
+      "mean_bits_per_trial": 0.19385423830577306,
+      "positive_fraction": 1.0,
+      "q25_bits": 0.1326027698814869,
+      "q75_bits": 0.23201368749141693,
+      "median_balanced_accuracy": 0.6543543943593553,
+      "params": 161
+    },
+    "gru8_bits_per_trial": {
+      "n_folds": 7,
+      "median_bits_per_trial": 0.1760585606098175,
+      "mean_bits_per_trial": 0.20367807575634547,
+      "positive_fraction": 1.0,
+      "q25_bits": 0.13658268749713898,
+      "q75_bits": 0.24778372049331665,
+      "median_balanced_accuracy": 0.6538181590670102,
+      "params": 417
+    },
+    "gru4_minus_current_linear_median_bits": 0.07105570032479733,
+    "gru4_minus_current_mlp8_median_bits": 0.06537464007799046,
+    "gru4_minus_current_plus_prev_linear_median_bits": 0.04585329931111837
+  },
+  "folds": [
+    {
+      "heldout_cohort": "Chemo",
+      "n_test": 11274,
+      "n_animals": 6,
+      "current_linear_bits_per_trial": 0.2322409679502852,
+      "current_linear_balanced_accuracy": 0.558249657878683,
+      "current_plus_prev_linear_bits_per_trial": 0.28502775299989586,
+      "current_plus_prev_linear_balanced_accuracy": 0.5665361384533368,
+      "current_mlp8_bits_per_trial": 0.2171136733885465,
+      "current_mlp8_balanced_accuracy": 0.560896495248773
+    },
+    {
+      "heldout_cohort": "Jaws",
+      "n_test": 1271,
+      "n_animals": 1,
+      "current_linear_bits_per_trial": 0.019954287454727476,
+      "current_linear_balanced_accuracy": 0.5905366363717455,
+      "current_plus_prev_linear_bits_per_trial": 0.026501040707427776,
+      "current_plus_prev_linear_balanced_accuracy": 0.6173870382667472,
+      "current_mlp8_bits_per_trial": 0.019587964818162454,
+      "current_mlp8_balanced_accuracy": 0.6014252158141471
+    },
+    {
+      "heldout_cohort": "SF_Gcamp_DTFL",
+      "n_test": 9258,
+      "n_animals": 3,
+      "current_linear_bits_per_trial": 0.10575326786158115,
+      "current_linear_balanced_accuracy": 0.6760462099563844,
+      "current_plus_prev_linear_bits_per_trial": 0.1309556688752601,
+      "current_plus_prev_linear_balanced_accuracy": 0.67651819936468,
+      "current_mlp8_bits_per_trial": 0.11143432810838802,
+      "current_mlp8_balanced_accuracy": 0.6765116479124225
+    },
+    {
+      "heldout_cohort": "SocialFeedig_OXT",
+      "n_test": 11804,
+      "n_animals": 4,
+      "current_linear_bits_per_trial": 0.018726267549229385,
+      "current_linear_balanced_accuracy": 0.586881455049445,
+      "current_plus_prev_linear_bits_per_trial": 0.034248714332536956,
+      "current_plus_prev_linear_balanced_accuracy": 0.5975258707238589,
+      "current_mlp8_bits_per_trial": 0.0272760031424706,
+      "current_mlp8_balanced_accuracy": 0.5923092551737045
+    },
+    {
+      "heldout_cohort": "SocialFeeding_DMS",
+      "n_test": 9692,
+      "n_animals": 3,
+      "current_linear_bits_per_trial": 0.09431377034252317,
+      "current_linear_balanced_accuracy": 0.6326193670287447,
+      "current_plus_prev_linear_bits_per_trial": 0.1096701500066824,
+      "current_plus_prev_linear_balanced_accuracy": 0.6354177001018041,
+      "current_mlp8_bits_per_trial": 0.09145991445575018,
+      "current_mlp8_balanced_accuracy": 0.6483828691770532
+    },
+    {
+      "heldout_cohort": "SocialFeeding_DMS_3",
+      "n_test": 10408,
+      "n_animals": 5,
+      "current_linear_bits_per_trial": 0.11314122925393119,
+      "current_linear_balanced_accuracy": 0.6664818288337375,
+      "current_plus_prev_linear_bits_per_trial": 0.13616863413372127,
+      "current_plus_prev_linear_balanced_accuracy": 0.6738690636919027,
+      "current_mlp8_bits_per_trial": 0.11768789710552036,
+      "current_mlp8_balanced_accuracy": 0.6861302913847889
+    },
+    {
+      "heldout_cohort": "SocialFeeding_JAWS_VTAcopy",
+      "n_test": 14555,
+      "n_animals": 5,
+      "current_linear_bits_per_trial": 0.14047164700873868,
+      "current_linear_balanced_accuracy": 0.6434161196190451,
+      "current_plus_prev_linear_bits_per_trial": 0.17606799331112666,
+      "current_plus_prev_linear_balanced_accuracy": 0.6373278549726222,
+      "current_mlp8_bits_per_trial": 0.13869764367046147,
+      "current_mlp8_balanced_accuracy": 0.6522239689888196
+    }
+  ],
+  "interpretation": "Fair control for Stage15: all feedforward models receive the same current trial state used by the GRU; only the GRU can accumulate longer recurrent history.",
+  "guardrail": "A GRU advantage over these controls supports useful recurrent memory, not identification of a biological memory mechanism."
+}
