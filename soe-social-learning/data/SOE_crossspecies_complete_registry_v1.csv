@@ -1,0 +1,13 @@
+dataset,species,source_type,behavior,multiscale,source_identity,active_sampling,credit_update,neural_link,flexible_reference,evidence
+DANDI001435 macaque,macaque,social,2,2,2,2,1,2,2,behavior 7/7; ACC multiscale 6/7; flexible history benchmark available
+Human exp/obs,human,social,2,2,2,2,1,0,2,9/10 held subjects; near RNN ceiling
+Rat observational maze,rat,social,2,1,2,2,1,0,1,"Demo 5/5; demonstrator > moving object, Cliff δ=.867"
+Cooperative foraging,mouse,social,2,2,2,2,1,2,2,same-contract YC069 + published n=6/role MAIRL/mPFC
+Marmoset Neuron 2026,marmoset,social,2,1,2,2,2,2,0,"two animals; gaze-gated evidence, dmPFC accumulation, history bias"
+Rat DANDI001169,rat,non-social,2,2,0,0,1,0,2,multiscale 7/10; structured state beats TinyRNN
+Mouse DANDI001632,mouse,non-social,2,2,0,0,1,0,1,physical time becomes informative at 3600 s
+Aeon social foraging,mouse,social,2,2,2,2,1,0,1,recent partner history 5/5 experiments
+Noritake/Isoda,macaque,social,1,0,2,0,2,2,0,source-tagged self/other RPE cell populations
+DANDI000351 reward DA,mouse,non-social,2,0,0,0,2,2,0,reward DA adds to later licking prediction in 6/7 animals
+DANDI000559 DLS dLight,mouse,non-social,1,1,0,0,1,1,0,prospective neural increment tested after behavior-history control
+DANDI000114 OXT,mouse,social,1,1,1,1,1,1,0,observation→OXT→later-action chain; 2 animals × 3 days

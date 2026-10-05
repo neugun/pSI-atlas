@@ -113,7 +113,7 @@
 <p class="prepub">This page keeps the major behavioral, computational, neural, causal and generative results together so the full SOE mechanism can be inspected from one place. Main evidence panels use SOE project data.</p>
 <div class="section-kicker" style="margin-top:34px">Current result atlas</div>
 <div class="cards-4" style="margin-top:12px">
-<div class="card good"><div class="series-index">01</div><h3>SOE is learned</h3><p>Learner SRI rises strongly across training; live social input, visual access and familiarity all matter.</p></div>
+<div class="card good"><div class="series-index">01</div><h3>SOE is learned</h3><p>SRI rises in 35/40 animals; live social input, visual access and familiarity all matter.</p></div>
 <div class="card info"><div class="series-index">02</div><h3>Observation becomes efficient</h3><p>Learning changes conversion of observation into feeding more than it changes gross observation rate.</p></div>
 <div class="card violet"><div class="series-index">03</div><h3>Social value is adaptive</h3><p>Social information is most useful when current self-state leaves room for external evidence to alter policy.</p></div>
 <div class="card good"><div class="series-index">04</div><h3>SLM reaches the behavioral ceiling with mechanism</h3><p>The SLM family combines near-ceiling prediction with identifiable policy, APE, RPE and social-credit variables that can be tested neurally and causally.</p></div>
@@ -148,7 +148,7 @@
 <p class="mobile-note small">Swipe the table horizontally for all columns →</p>
 <details><summary>Foundational behavioral controls</summary><div class="table-wrap">
 <table class="metric-table">
-<thead><tr><th>Discovery</th><th>Result</th><th>Interpretation</th><th>Status</th></tr></thead>
+<thead><tr><th>Discovery</th><th>Result</th><th>Interpretation</th><th>Evidence type</th></tr></thead>
 <tbody>
 <tr><td>Acquisition</td><td>strict learner SRI ≈1.07→4.58; older n=13 lineage .67±.34→2.82±.44, P&lt;.001</td><td>Social coordination strengthens across training.</td><td>learner cohort</td></tr>
 <tr><td>Live social input</td><td>Live demonstrator &gt; simulated demonstrator; simulated SRI ≈.499±.258, n=13, P&lt;.001.</td><td>Live-social interaction carries the effective teaching signal.</td><td>live-social control</td></tr>
@@ -198,7 +198,7 @@
       roughly 20-event observation/action history adds substantial prediction, selected memory γ=.95–.97 corresponds to
       about 20–33 events (roughly 4.5–7.5 min), chronological day order ranked 1/501 against within-animal day shuffles,
       and a retained cross-day prior improved 29/40 animals (P=.0125), with its effect concentrated early in the next session.
-      These results independently establish the fast, medium and slow timescales represented in the SLM architecture.
+      These results establish the fast, medium and slow timescales later formalized in the SLM.
     </div></details>
 </div>
 </section>
@@ -264,12 +264,7 @@
       while preserving interpretable policy, APE, RPE and social-belief coordinates.
     </div>
 <h3 style="margin-top:30px">A common metric set makes the behavioral comparison explicit</h3>
-<p class="mobile-note small">Swipe the evidence matrix horizontally →</p>
-<p class="small" style="margin-top:10px">
-      This is the key distinction: a black-box history model can shave a few thousandths from behavioral Brier,
-      but SLM is the model family with the strongest coherent evidence across prediction, temporal neural expression,
-      causal perturbation, recovery and generation.
-    </p>
+<p class="small" style="margin-top:10px">Behavioral prediction alone leaves several high-capacity models close. The VTA section tests whether those behaviorally competitive models also reproduce the temporal neural sequence.</p>
 <figure class="figure evidence-figure">
 <a class="figure-zoom" href="assets/SOE_SLM_behavior_benchmark_v1.png" rel="noopener" target="_blank">
 <picture><source media="(max-width: 620px)" srcset="assets/SOE_SLM_behavior_benchmark_v1_mobile.png"/>
@@ -283,17 +278,12 @@
 <div class="cards-3" style="margin-top:18px">
 <div class="card good"><div class="metric-label">Classical RL</div><div class="metric">27/27 wins</div><p>SLM beats RW, WSLS, Q-active, Q-all, asymmetric-Q, forgetting-Q, choice-kernel and Q+choice-kernel under the restricted baseline contract; r<sub>rb</sub>=1, P=1.49×10⁻⁸.</p></div>
 <div class="card info"><div class="metric-label">Parsimonious extension</div><div class="metric">96.9%</div><p>SLM+choice persistence recovers 96.9% of Current→full-history-MLP improvement and 92.4% of Current→best-history-model improvement.</p></div>
-<div class="card violet"><div class="metric-label">VTA temporal sequence</div><div class="metric">3 stages</div><p>Early policy r_rb=.810, P=.0469; Middle APE ρ=.667, P=.0416; Post update r_rb=.867, P=.0195.</p></div>
+<div class="card violet"><div class="metric-label">VTA temporal sequence</div><div class="metric">3 stages</div><p>Early Actor-policy: r_rb=.810, one-sided exact P=.0469; Middle APE×learning: ρ=.667, P=.0416; Post Actor-Critic RPE: r_rb=.867, P=.0195; Post belief update: r_rb=.956, P=.00586.</p></div>
 </div>
 <h3 style="margin-top:28px">SLM+choice persistence reaches the flexible-history prediction ceiling</h3>
 <div class="cards-3">
 </div>
-<div class="callout">
-<strong>Best-predictor formulation:</strong>
-      among compact mechanistic models, the SLM family provides the strongest held-animal prediction;
-      adding one generic choice-persistence term brings it to the full-history black-box ceiling.
-      The decisive advantage is then biological: the same framework supplies the variables expressed in VTA and selectively disrupted by JAWS.
-    </div>
+<div class="callout">The advantage is then biological: the same interpretable SLM variables are expressed in VTA dopamine and the Active social-reward coordinate is selectively disrupted by JAWS.</div>
 <div class="figure-grid" style="margin-top:26px">
 <figure class="figure">
 <a class="figure-zoom" href="assets/SOE_SLM_identifiability_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_SLM_identifiability_v1_mobile.png"/><img alt="SLM model recovery and identifiability" loading="lazy" src="assets/SOE_SLM_identifiability_v1.png"/></picture></a>
@@ -378,7 +368,7 @@
 </figure>
 <figure class="figure">
 <a class="figure-zoom" href="assets/SOE_GenericRNN_SLM_convergence_v2.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_GenericRNN_SLM_convergence_v2_mobile.png"/><img alt="Generic recurrent agent convergence to SLM coordinates" loading="lazy" src="assets/SOE_GenericRNN_SLM_convergence_v2.png"/></picture></a>
-<figcaption><strong>Independent convergence.</strong> A generic GRU actor-critic trained without privileged SLM variables develops policies that become substantially more predictable when explicit SLM coordinates are supplied.</figcaption>
+<figcaption><strong>A generic agent converges on SLM coordinates.</strong> A GRU actor-critic trained without privileged SLM variables develops a policy that becomes more predictable when explicit SLM coordinates are supplied.</figcaption>
 </figure>
 </div>
 <div class="cards-3" style="margin-top:18px">
@@ -426,15 +416,15 @@
 </div><div class="card good">
 <div class="metric-label">Temporal decomposition</div>
 <div class="metric">SLM 3/3</div>
-<p>Early policy r_rb=.714, P=.0469; Middle APE ρ=.667, P=.0416; Post RPE r_rb=.867, P=.0195. No other tested family is positive and significant on all three axes.</p>
-</div><div class="card violet"><div class="metric-label">BEHAVIOR ↔ NEURAL VALIDITY</div><div class="metric">near-ceiling ≠ same DA</div><p>TinyRNN and History MLP approach the behavioral ceiling, yet neither reproduces the full Early→Middle→Post dopamine sequence. The neural comparison therefore distinguishes models that behavior alone leaves close.</p></div></div><figure class="figure">
+<p>Early Actor-policy r_rb=.810, one-sided exact Wilcoxon P=.0469 (n=6; 5/6 positive); Middle APE×learning ρ=.667, P=.0416; Post Actor-Critic RPE r_rb=.867, P=.0195.</p>
+</div><div class="card violet"><div class="metric-label">BEHAVIOR ↔ NEURAL VALIDITY</div><div class="metric">near-ceiling ≠ same DA</div><p>TinyRNN: Early −.867 (P=.0195), Middle −.548 (P=.924), Post +.733 (P=.0547). History MLP: Early −.378 (P=.359), Middle +.024 (P=.488), Post −.911 (P=.0117). Neither reproduces the three-epoch SLM sequence.</p></div></div><figure class="figure">
 <a class="figure-zoom" href="assets/SOE_DA_global_temporal_adjudication_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_DA_global_temporal_adjudication_v1_mobile.png"/><img alt="VTA dopamine temporal model adjudication" loading="lazy" src="assets/SOE_DA_global_temporal_adjudication_v1.png"/></picture></a>
-<figcaption><strong>Temporal model adjudication.</strong> SLM is the only current model family with positive significant support across the prespecified Early policy, Middle APE and Post update axes.</figcaption>
-</figure>
+<figcaption><strong>Temporal model adjudication.</strong> Only SLM is positive and significant across all three dopamine epochs: Early Actor-policy, Middle learner-linked APE and Post Actor-Critic RPE.</figcaption>
+</figure><figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_DA_blackbox_neural_validity_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_DA_blackbox_neural_validity_v1_mobile.png"/><img alt="Behavioral prediction versus VTA temporal validity for SLM TinyRNN and History MLP" loading="lazy" src="assets/SOE_DA_blackbox_neural_validity_v1.png"/></picture></a><figcaption><strong>Behavioral accuracy does not determine neural validity.</strong> Full SLM, TinyRNN and History MLP are close in held-animal Brier, but their VTA temporal signatures diverge. SLM is positive in all three epochs; TinyRNN is significantly opposite in Early and History MLP is significantly opposite in Post.</figcaption></figure>
 <div class="cards-3">
-<div class="card good"><div class="metric-label">Early policy</div><div class="metric">r_rb=.810, P=.0469</div><p>The pre-specified Early sampling-policy signal is positive in 5/6 animals.</p></div>
+<div class="card good"><div class="metric-label">Early policy</div><div class="metric">r_rb=.810, P=.0469</div><p>Actor-policy gain is positive in 5/6 animals; r_rb=.810. The primary P=.0469 is the pre-specified one-sided exact Wilcoxon signed-rank test.</p></div>
 <div class="card info"><div class="metric-label">Middle APE × learning</div><div class="metric">ρ=.667, P=.0416</div><p>APE coupling tracks learning in the middle observation window.</p></div>
-<div class="card violet"><div class="metric-label">Post update</div><div class="metric">r_rb=.867 / .956</div><p>Actor-Critic RPE: P=.0195; belief update: P=.00586.</p></div>
+<div class="card violet"><div class="metric-label">Post update</div><div class="metric">RPE .867 · belief .956</div><p>Actor-Critic RPE: r_rb=.867, P=.0195; outcome-belief update: r_rb=.956, P=.00586.</p></div>
 </div>
 </div>
 </section>
@@ -476,7 +466,7 @@
 <div class="figure-grid" style="margin-top:22px">
 <figure class="figure">
 <a class="figure-zoom" href="assets/SOE_ArtificialSLM_causal_double_dissociation_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_ArtificialSLM_causal_double_dissociation_v1_mobile.png"/><img alt="Artificial SLM causal double dissociation" loading="lazy" src="assets/SOE_ArtificialSLM_causal_double_dissociation_v1.png"/></picture></a>
-<figcaption><strong>Causal double dissociation.</strong> Information-access and reward-teaching lesions perturb different internal operations of the same social-foraging controller.</figcaption>
+<figcaption><strong>Artificial lesions dissociate information access from dopamine-dependent credit.</strong> The virtual perturbations target distinct internal operations of the social-foraging controller; the page reserves “double dissociation” for a direct real-data cross comparison.</figcaption>
 </figure>
 <div class="card good">
 <h3>Evidence for the two-policy architecture</h3>
@@ -520,7 +510,7 @@
 <tr><td>VB Observe→Active</td><td>.2830→.2137; P=.00427</td><td>observation-rate change P=.0863</td><td>reduced information-to-action conversion</td></tr>
 <tr><td>JAWS contingent</td><td>SRI 1.880→.786; r_rb=−.927; P=.00586</td><td>gross observation preserved</td><td>VTA-dependent reward-credit teaching</td></tr>
 <tr><td>JAWS Observe→Active</td><td>.3202→.1933; P=.003906</td><td>observation fraction Δ=+.044; P=.625</td><td>reduced successful conversion</td></tr>
-<tr><td>JAWS Active belief</td><td>acute r_rb=−1.000, P=.00195; continuous −.927, P=.00586; session −.964, P=.00391</td><td>choice-kernel update r_rb=+.164; P=.695</td><td>Active social-reward belief is the causal coordinate</td></tr>
+<tr><td>JAWS Active belief</td><td>acute r_rb=−1.000, P=.00195; continuous −.927, P=.00586; session −.964, P=.00391</td><td>choice-kernel update r_rb=+.164; P=.695</td><td>Active social-reward belief is the coordinate selectively disrupted by VTA inhibition</td></tr>
 </tbody>
 </table>
 </div>
@@ -587,8 +577,12 @@
 <section id="crossspecies"><div class="container">
 <div class="section-head"><div><div class="section-kicker">Beyond SOE</div>
 <h2>SLM principles recur across five species and multiple task families</h2></div>
-<p>The external claim is about recurring computational principles—not identical sensory features or one universal parameter set. Current evidence spans source identity, multiscale history, active sampling, policy/value structure and neural links in mouse, rat, macaque, marmoset and human.</p></div>
-<div class="cards-4"><div class="card good">
+<p>The current registry contains 12 external dataset families spanning five species. The strongest cross-task claim is not that every task uses identical features, but that the same computational questions recur: which source is informative, which history timescale matters, when sampling is useful, how value/credit is updated, and whether those states link to neural activity.</p></div>
+<div class="cards-3">
+<div class="card good"><div class="metric-label">EXTERNAL COVERAGE</div><div class="metric">12 families</div><p>Complete registry across mouse, rat, macaque, marmoset and human; social versus non-social information sources are labeled explicitly.</p></div>
+<div class="card info"><div class="metric-label">MATCHED-CONTRACT SUMMARY</div><div class="metric">7 contracts</div><p>Seven current contracts contain a frozen baseline, structured SLM-style state and a flexible reference under the same held-out evaluation.</p></div>
+<div class="card violet"><div class="metric-label">DESCRIPTIVE GAP RECOVERY</div><div class="metric">median 93%</div><p>Across those seven contracts, structured state recovers a median 93% of the baseline→flexible-reference improvement; this is a descriptive cross-contract summary, not a pooled inferential meta-effect.</p></div>
+</div><div class="cards-4"><div class="card good">
 <div class="metric-label">MACAQUE · DANDI001435</div>
 <div class="metric">7/7</div>
 <p>Dual source-aware multiscale state reduces Brier in all seven unique behavior sequences; median relative reduction 37.0%, r_rb=1, P=.00781.</p>
@@ -621,7 +615,7 @@
 <div class="metric">6/7</div>
 <p>In DANDI000351, reward-evoked DA improves held-out prediction of later licking beyond behavioral history in 6/7 animals; r_rb=.857, P=.0234.</p>
 </div></div>
-<figure class="figure evidence-figure">
+<div class="cards-4"><div class="card good"><div class="metric-label">SOURCE IDENTITY / SOCIAL SPECIFICITY</div><div class="metric">3 convergent tests</div><p>Macaque source-aware state improves behavior; rat demonstrator information beats a moving-object source (Cliff δ=.867, P=.0357); macaque self/other RPE populations carry source-tagged updates.</p></div><div class="card info"><div class="metric-label">MULTISCALE HISTORY</div><div class="metric">5 task families</div><p>SOE, macaque behavior/ACC, human, rat DANDI001169 and Aeon each show that history or state at more than one timescale contributes beyond immediate variables.</p></div><div class="card violet"><div class="metric-label">ACTIVE SAMPLING / POLICY</div><div class="metric">3 social paradigms</div><p>Rat observational choice, cooperative foraging and marmoset gaze-gated evidence each link social sampling to later choice/value computations.</p></div><div class="card good"><div class="metric-label">NEURAL LINKS</div><div class="metric">3 independent datasets</div><p>Macaque ACC encodes multiscale state; marmoset dmPFC tracks accumulated social evidence and model drift; mouse reward DA predicts later licking beyond behavioral history.</p></div></div><figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_gap_recovery_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_gap_recovery_v1_mobile.png"/><img alt="Same-contract structured-state recovery of baseline-to-flexible-model gain across tasks" loading="lazy" src="assets/SOE_crossspecies_gap_recovery_v1.png"/></picture></a><figcaption><strong>Matched-contract gap recovery.</strong> Where a frozen baseline, structured SLM-style model and flexible reference are all available, structured state recovers most of the baseline→flexible gain in SOE, source-aware macaque, human and cooperative-foraging contracts; Rat DANDI001169 exceeds the compact TinyRNN reference. Macaque-global is the main lower-recovery contract.</figcaption></figure><figure class="figure evidence-figure"><a class="figure-zoom" href="assets/SOE_crossspecies_complete_registry_v1.png" rel="noopener" target="_blank"><picture><source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_complete_registry_v1_mobile.png"/><img alt="Complete cross-species external registry across twelve dataset families" loading="lazy" src="assets/SOE_crossspecies_complete_registry_v1.png"/></picture></a><figcaption><strong>Complete external registry.</strong> All 12 external dataset families are shown. ✓ marks direct quantitative support, ○ a tested but scope-limited/data-limited link, and — a component that is not defined in that task. Social versus non-social information sources are labeled on every row.</figcaption></figure><figure class="figure evidence-figure">
 <a class="figure-zoom" href="assets/SOE_crossspecies_positive_evidence_v1.png" rel="noopener" target="_blank">
 <picture><source media="(max-width: 620px)" srcset="assets/SOE_crossspecies_positive_evidence_v1_mobile.png"/><img alt="Cross-species external evidence for SLM principles" loading="lazy" src="assets/SOE_crossspecies_positive_evidence_v1.png"/></picture>
 </a><figcaption><strong>Cross-species evidence map.</strong> The upper panel uses task-specific bounded effects without combining them into a meta-analytic scale. The lower matrix marks which SLM principles are directly represented by each current positive external evidence family; blank cells mean not directly represented in that test, not failure.</figcaption></figure><figure class="figure evidence-figure">
@@ -652,7 +646,7 @@
 <div class="download-card"><a href="docs/SOE_MASTER_RESULTS_INVENTORY_v1_20261002.md">Full result inventory</a><p class="small">Recovered early phenotype, social gaze, motifs, learning and historical controls.</p></div>
 <div class="download-card"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">DA temporal adjudication</a><p class="small">Frozen Early/Middle/Post model evidence.</p></div>
 <div class="download-card"><a href="data/SOE_GLOBAL_EFFECT_SIZE_REGISTRY_v12.csv">Global effect-size registry</a><p class="small">Project-wide bounded effects and inferential units.</p></div>
-<div class="download-card"><a href="data/SOE_uniform_model_family_table_v2.csv">Uniform four-metric model table</a><p class="small">Brier, AUC, paired rank-biserial effect and paired P on the same held-animal cohort.</p></div><div class="download-card"><a href="data/SOE_simple_alternatives_summary_v1.csv">Scalar / uncertainty / eligibility analysis</a><p class="small">Source values for the structured-state comparison figure.</p></div><div class="download-card"><a href="data/SOE_memory_multiscale_support_v2.csv">Within-session + cross-day memory</a><p class="small">Fast stopping, stop/re-entry, 20–33-event history, slow latent and cross-day prior statistics.</p></div><div class="download-card"><a href="data/SOE_JAWS_multiscale_support_v2.csv">JAWS temporal-scale support</a><p class="small">Contingent, noncontingent, continuous within-session, session-scale and cohort-replication statistics.</p></div><div class="download-card"><a href="data/SOE_generalization_support_v2.csv">Fear + SAFN support</a><p class="small">Detailed positive generalization endpoints used by the expanded figure.</p></div><div class="download-card"><a href="data/SOE_all40_acquisition_summary_v1.csv">All-40 acquisition</a><p class="small">Full-cohort SRI acquisition statistic used in the revised phenotype panel.</p></div><div class="download-card"><a href="data/SOE_SLM_CK_ceiling_pairwise_v1.csv">SLM ceiling pairwise tests</a><p class="small">Animal-level SLM+choice-persistence comparisons against Current+CK, TinyRNN and full-history MLP.</p></div><div class="download-card"><a href="data/SOE_crossspecies_positive_summary_v1.csv">Cross-species positive tests</a><p class="small">Current task-specific bounded effects and exact P values used in the external evidence plot.</p></div><div class="download-card"><a href="data/SOE_crossspecies_positive_component_map_v1.csv">Cross-species component map</a><p class="small">Dataset × SLM-principle map used in the cross-species evidence matrix.</p></div></div>
+<div class="download-card"><a href="data/SOE_uniform_model_family_table_v2.csv">Uniform four-metric model table</a><p class="small">Brier, AUC, paired rank-biserial effect and paired P on the same held-animal cohort.</p></div><div class="download-card"><a href="data/SOE_simple_alternatives_summary_v1.csv">Scalar / uncertainty / eligibility analysis</a><p class="small">Source values for the structured-state comparison figure.</p></div><div class="download-card"><a href="data/SOE_memory_multiscale_support_v2.csv">Within-session + cross-day memory</a><p class="small">Fast stopping, stop/re-entry, 20–33-event history, slow latent and cross-day prior statistics.</p></div><div class="download-card"><a href="data/SOE_JAWS_multiscale_support_v2.csv">JAWS temporal-scale support</a><p class="small">Contingent, noncontingent, continuous within-session, session-scale and cohort-replication statistics.</p></div><div class="download-card"><a href="data/SOE_generalization_support_v2.csv">Generalization endpoints</a><p class="small">Detailed generalization endpoints used by the expanded figure.</p></div><div class="download-card"><a href="data/SOE_all40_acquisition_summary_v1.csv">All-40 acquisition</a><p class="small">Full-cohort SRI acquisition statistic used in the revised phenotype panel.</p></div><div class="download-card"><a href="data/SOE_SLM_CK_ceiling_pairwise_v1.csv">SLM ceiling pairwise tests</a><p class="small">Animal-level SLM+choice-persistence comparisons against Current+CK, TinyRNN and full-history MLP.</p></div><div class="download-card"><a href="data/SOE_crossspecies_positive_summary_v1.csv">Cross-species tests</a><p class="small">Task-specific bounded effects and exact P values used in the cross-species evidence plot.</p></div><div class="download-card"><a href="data/SOE_crossspecies_positive_component_map_v1.csv">Cross-species component map</a><p class="small">Dataset × SLM-principle map used in the cross-species evidence matrix.</p></div><div class="download-card"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">DA temporal authority v4</a><p class="small">Corrected Early Actor-policy effect and the frozen Early/Middle/Post comparator statistics.</p></div><div class="download-card"><a href="data/SOE_crossspecies_gap_recovery_v1.csv">Cross-species matched-contract gap recovery</a><p class="small">Baseline, structured-state and flexible-reference losses for contracts with all three models available.</p></div><div class="download-card"><a href="data/SOE_crossspecies_complete_registry_v1.csv">Complete cross-species registry</a><p class="small">All 12 external dataset families with social/non-social source type and principle-level evidence coverage.</p></div></div>
 <p class="prepub">Current page build: 2026-10-04 · mobile-audited scientific working page.</p>
 </div>
 </section>
