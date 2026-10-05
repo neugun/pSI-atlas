@@ -1,0 +1,1117 @@
+{
+  "generated_at": "2026-10-05",
+  "contract_tests": [
+    {
+      "dataset": "allen_visual_coding_ophys",
+      "status": "PASS",
+      "source": "Allen Brain Observatory",
+      "species": "mouse",
+      "modality": [
+        "dff",
+        "event"
+      ],
+      "arrays": {
+        "dff_windows": {
+          "shape": [
+            256,
+            35,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "event_windows": {
+          "shape": [
+            256,
+            35,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "roi_ids": {
+          "shape": [
+            35
+          ],
+          "dtype": "int64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "dandi_000021_spikes",
+      "status": "PASS",
+      "source": "DANDI",
+      "species": "mouse",
+      "modality": "spikes",
+      "arrays": {
+        "windows": {
+          "shape": [
+            25,
+            64,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_ids": {
+          "shape": [
+            64
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "grating_start": {
+          "shape": [
+            20
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "grating_stop": {
+          "shape": [
+            20
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "grating_orientation_deg": {
+          "shape": [
+            20
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "running_speed": {
+          "shape": [
+            365065
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "running_timestamps": {
+          "shape": [
+            365065
+          ],
+          "dtype": "float64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "dandi_000402_microns_ophys",
+      "status": "PASS",
+      "source": "DANDI",
+      "species": "mouse",
+      "modality": "dff",
+      "arrays": {
+        "dff_windows": {
+          "shape": [
+            512,
+            128,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "frame_timestamps": {
+          "shape": [
+            40000
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "treadmill_velocity": {
+          "shape": [
+            480032
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "treadmill_timestamps": {
+          "shape": [
+            480032
+          ],
+          "dtype": "float64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "figshare_mcbride_opto_probeE",
+      "status": "PASS",
+      "source": "Figshare",
+      "species": "mouse",
+      "modality": [
+        "spikes",
+        "optogenetic_intervention",
+        "visual",
+        "running"
+      ],
+      "arrays": {
+        "trial_spike_windows": {
+          "shape": [
+            500,
+            13,
+            75
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "bin_centers_s": {
+          "shape": [
+            75
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "trial_start_s": {
+          "shape": [
+            500
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "trial_duration_s": {
+          "shape": [
+            500
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "trial_type": {
+          "shape": [
+            500
+          ],
+          "dtype": "<U16"
+        },
+        "stim_name": {
+          "shape": [
+            500
+          ],
+          "dtype": "<U32"
+        },
+        "condition_id": {
+          "shape": [
+            500
+          ],
+          "dtype": "int16",
+          "finite": true
+        },
+        "condition_name": {
+          "shape": [
+            500
+          ],
+          "dtype": "<U32"
+        },
+        "is_opto": {
+          "shape": [
+            500
+          ],
+          "dtype": "bool"
+        },
+        "pre_counts": {
+          "shape": [
+            500,
+            13
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "post_counts": {
+          "shape": [
+            500,
+            13
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_area": {
+          "shape": [
+            13
+          ],
+          "dtype": "<U32"
+        },
+        "unit_included": {
+          "shape": [
+            13
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_included_valid": {
+          "shape": [
+            13
+          ],
+          "dtype": "bool"
+        },
+        "unit_firing_rate_hz": {
+          "shape": [
+            13
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_firing_rate_valid": {
+          "shape": [
+            13
+          ],
+          "dtype": "bool"
+        }
+      }
+    },
+    {
+      "dataset": "figshare_v1_calcium_ses045",
+      "status": "PASS",
+      "source": "Figshare",
+      "species": "mouse",
+      "modality": [
+        "dff",
+        "event"
+      ],
+      "arrays": {
+        "dff_windows": {
+          "shape": [
+            512,
+            62,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "event_windows": {
+          "shape": [
+            512,
+            62,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "neuron_ids": {
+          "shape": [
+            62
+          ],
+          "dtype": "int32",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "gin_mouse_hdEEG_animal2",
+      "status": "PASS",
+      "source": "GIN G-Node",
+      "species": "mouse",
+      "modality": "EEG",
+      "arrays": {
+        "windows": {
+          "shape": [
+            256,
+            2,
+            800
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "time_mask": {
+          "shape": [
+            256,
+            800
+          ],
+          "dtype": "bool"
+        },
+        "channel_names": {
+          "shape": [
+            2
+          ],
+          "dtype": "<U3"
+        },
+        "trial_index": {
+          "shape": [
+            256
+          ],
+          "dtype": "int32",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "ibl_bwb_token_ready_example",
+      "status": "PASS",
+      "source": "IBL BrainWideBench",
+      "species": "mouse",
+      "modality": "spikes",
+      "arrays": {
+        "windows": {
+          "shape": [
+            512,
+            128,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_ids": {
+          "shape": [
+            128
+          ],
+          "dtype": "<U36"
+        },
+        "regions": {
+          "shape": [
+            128
+          ],
+          "dtype": "<U32"
+        }
+      }
+    },
+    {
+      "dataset": "mcbride_claustrum_opto",
+      "status": "PASS",
+      "source": "Figshare",
+      "species": "mouse",
+      "modality": [
+        "spikes",
+        "optogenetic_stimulation",
+        "visual_stimulation",
+        "running"
+      ],
+      "arrays": {
+        "spike_windows": {
+          "shape": [
+            500,
+            13,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "trial_type": {
+          "shape": [
+            500
+          ],
+          "dtype": "<U16"
+        },
+        "stim_name": {
+          "shape": [
+            500
+          ],
+          "dtype": "<U32"
+        },
+        "condition": {
+          "shape": [
+            500
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "trial_start_time": {
+          "shape": [
+            500
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "unit_area": {
+          "shape": [
+            13
+          ],
+          "dtype": "<U32"
+        }
+      }
+    },
+    {
+      "dataset": "omnimouse_smoke",
+      "status": "PASS",
+      "source": "OmniMouse",
+      "species": "mouse",
+      "modality": [
+        "calcium_activity",
+        "treadmill",
+        "eye",
+        "visual_stimulus"
+      ],
+      "arrays": {
+        "response_windows": {
+          "shape": [
+            1024,
+            128,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_ids": {
+          "shape": [
+            128
+          ],
+          "dtype": "uint16",
+          "finite": true
+        },
+        "fields": {
+          "shape": [
+            128
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "cell_motor_coordinates": {
+          "shape": [
+            128,
+            3
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "treadmill_native": {
+          "shape": [
+            200000
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "eye_native": {
+          "shape": [
+            4,
+            56935
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "eye_valid_mask": {
+          "shape": [
+            4,
+            56935
+          ],
+          "dtype": "bool"
+        },
+        "behavior_aligned_windows": {
+          "shape": [
+            1024,
+            5,
+            15
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "behavior_channel_names": {
+          "shape": [
+            5
+          ],
+          "dtype": "<U23"
+        },
+        "behavior_valid_mask_windows": {
+          "shape": [
+            1024,
+            5,
+            15
+          ],
+          "dtype": "bool"
+        }
+      }
+    },
+    {
+      "dataset": "openneuro_ds007058_human_eeg",
+      "status": "PASS",
+      "source": "OpenNeuro",
+      "species": "human",
+      "modality": "EEG",
+      "arrays": {
+        "windows": {
+          "shape": [
+            59,
+            2,
+            800
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "channel_names": {
+          "shape": [
+            2
+          ],
+          "dtype": "<U3"
+        },
+        "event_onset": {
+          "shape": [
+            616
+          ],
+          "dtype": "float64",
+          "finite": true
+        },
+        "event_duration": {
+          "shape": [
+            616
+          ],
+          "dtype": "float64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "openneuro_ds008610_nhp_vpl",
+      "status": "PASS",
+      "source": "OpenNeuro",
+      "species": "Macaca mulatta",
+      "modality": "intracranial LFP/iEEG",
+      "arrays": {
+        "continuous_ephys": {
+          "shape": [
+            32,
+            71119
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "brainmu_eeg_proxy_windows": {
+          "shape": [
+            17,
+            2,
+            1000
+          ],
+          "dtype": "float32",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "osf_accusleep_mouse01",
+      "status": "PASS",
+      "source": "OSF",
+      "species": "mouse",
+      "modality": "EEG+EMG",
+      "arrays": {
+        "windows": {
+          "shape": [
+            512,
+            2,
+            1000
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "labels": {
+          "shape": [
+            512
+          ],
+          "dtype": "int64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "physionet_sleep_edfx_sc4001e0",
+      "status": "PASS",
+      "source": "PhysioNet",
+      "species": "human",
+      "modality": "EEG",
+      "arrays": {
+        "windows": {
+          "shape": [
+            2048,
+            2,
+            1000
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "labels": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "window_indices_full": {
+          "shape": [
+            2048
+          ],
+          "dtype": "int64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "synthetic_causal_multiregion",
+      "status": "PASS",
+      "source": "Synthetic Data",
+      "species": "synthetic mouse-like",
+      "modality": null,
+      "arrays": {
+        "spike_windows": {
+          "shape": [
+            80,
+            192,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "latent": {
+          "shape": [
+            12000,
+            24
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "behavior": {
+          "shape": [
+            12000,
+            4
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "choice": {
+          "shape": [
+            12000
+          ],
+          "dtype": "int8",
+          "finite": true
+        },
+        "reward": {
+          "shape": [
+            12000
+          ],
+          "dtype": "int8",
+          "finite": true
+        },
+        "sensory": {
+          "shape": [
+            12000
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "intervention": {
+          "shape": [
+            12000
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "region_graph": {
+          "shape": [
+            6,
+            6
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "transition": {
+          "shape": [
+            24,
+            24
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "input_matrix": {
+          "shape": [
+            24,
+            2
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_readout": {
+          "shape": [
+            192,
+            24
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "unit_region": {
+          "shape": [
+            192
+          ],
+          "dtype": "int64",
+          "finite": true
+        }
+      }
+    },
+    {
+      "dataset": "synthetic_controlled_world_v1",
+      "status": "PASS",
+      "source": "Synthetic Data",
+      "species": "synthetic",
+      "modality": [
+        "spikes",
+        "behavior",
+        "intervention"
+      ],
+      "arrays": {
+        "spike_windows": {
+          "shape": [
+            1000,
+            128,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "behavior_windows": {
+          "shape": [
+            1000,
+            3,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "action_windows": {
+          "shape": [
+            1000,
+            4,
+            120
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "A": {
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "B": {
+          "shape": [
+            16,
+            4
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "C": {
+          "shape": [
+            128,
+            16
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "D": {
+          "shape": [
+            3,
+            16
+          ],
+          "dtype": "float32",
+          "finite": true
+        }
+      }
+    }
+  ],
+  "forecast_tests": [
+    {
+      "dataset": "allen_visual_coding_ophys",
+      "activity_key": "dff_windows",
+      "n_pairs": 255,
+      "ridge_r2": -1.2325494454606192,
+      "persistence_r2": -0.6251763320842045,
+      "mean_baseline_r2": -0.07582347692482583,
+      "status": "PASS"
+    },
+    {
+      "dataset": "dandi_000402_microns_ophys",
+      "activity_key": "dff_windows",
+      "n_pairs": 511,
+      "ridge_r2": -0.3871771274322573,
+      "persistence_r2": 0.14013169554913707,
+      "mean_baseline_r2": -0.24938648366390548,
+      "status": "PASS"
+    },
+    {
+      "dataset": "figshare_v1_calcium_ses045",
+      "activity_key": "dff_windows",
+      "n_pairs": 511,
+      "ridge_r2": -0.10327572075781322,
+      "persistence_r2": -0.17166227109013388,
+      "mean_baseline_r2": -0.005244152418793391,
+      "status": "PASS"
+    },
+    {
+      "dataset": "gin_mouse_hdEEG_animal2",
+      "activity_key": "windows",
+      "n_pairs": 255,
+      "ridge_r2": -0.003294419476574939,
+      "persistence_r2": -0.6207658470368074,
+      "mean_baseline_r2": -0.0007915910861839848,
+      "status": "PASS"
+    },
+    {
+      "dataset": "ibl_bwb_token_ready_example",
+      "activity_key": "windows",
+      "n_pairs": 511,
+      "ridge_r2": -2491.286864001216,
+      "persistence_r2": 0.14680618752080432,
+      "mean_baseline_r2": -2.4238168879628965,
+      "status": "PASS"
+    },
+    {
+      "dataset": "mcbride_claustrum_opto",
+      "activity_key": "spike_windows",
+      "n_pairs": 499,
+      "ridge_r2": 0.006331259450806592,
+      "persistence_r2": -0.1432900411643907,
+      "mean_baseline_r2": -0.12573675535614526,
+      "status": "PASS"
+    },
+    {
+      "dataset": "omnimouse_smoke",
+      "activity_key": "response_windows",
+      "n_pairs": 1023,
+      "ridge_r2": -0.31433092543882246,
+      "persistence_r2": -0.35739842678908285,
+      "mean_baseline_r2": -0.08747951525772657,
+      "status": "PASS"
+    },
+    {
+      "dataset": "openneuro_ds007058_human_eeg",
+      "activity_key": "windows",
+      "n_pairs": 58,
+      "ridge_r2": 0.15692532396806824,
+      "persistence_r2": -2.123000431225184,
+      "mean_baseline_r2": -0.005987490607821666,
+      "status": "PASS"
+    },
+    {
+      "dataset": "osf_accusleep_mouse01",
+      "activity_key": "windows",
+      "n_pairs": 511,
+      "ridge_r2": 0.2917527896550355,
+      "persistence_r2": -2.099569898988999,
+      "mean_baseline_r2": -0.00011237507171735217,
+      "status": "PASS"
+    },
+    {
+      "dataset": "physionet_sleep_edfx_sc4001e0",
+      "activity_key": "windows",
+      "n_pairs": 2047,
+      "ridge_r2": -0.010824914124388574,
+      "persistence_r2": -1.056063799143287,
+      "mean_baseline_r2": -0.0018288094244540698,
+      "status": "PASS"
+    },
+    {
+      "dataset": "synthetic_causal_multiregion",
+      "activity_key": "spike_windows",
+      "n_pairs": 79,
+      "ridge_r2": -0.41339318235813804,
+      "persistence_r2": -0.8882997476989134,
+      "mean_baseline_r2": -0.03675591482385099,
+      "status": "PASS"
+    },
+    {
+      "dataset": "synthetic_controlled_world_v1",
+      "activity_key": "spike_windows",
+      "n_pairs": 999,
+      "ridge_r2": -0.3475130430075042,
+      "persistence_r2": -0.9919399909016207,
+      "mean_baseline_r2": -0.0035624197482237996,
+      "status": "PASS"
+    }
+  ],
+  "applications": {
+    "sleep_state_decoding": {
+      "osf_accusleep_mouse01": {
+        "n": 512,
+        "classes": [
+          0,
+          1,
+          2
+        ],
+        "accuracy": 0.961038961038961,
+        "balanced_accuracy": 0.8823529411764706,
+        "majority_baseline": 0.7402597402597403,
+        "status": "PASS"
+      },
+      "physionet_sleep_edfx_sc4001e0": {
+        "n": 2048,
+        "classes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "accuracy": 0.9006514657980456,
+        "balanced_accuracy": 0.5390962485790072,
+        "majority_baseline": 0.755700325732899,
+        "status": "PASS"
+      }
+    },
+    "intervention_aware_forecasting": {
+      "horizons": {
+        "1": {
+          "no_action_r2": 0.20006748614839132,
+          "with_action_r2": 0.39370752346863314,
+          "delta_r2": 0.19364003732024182
+        },
+        "5": {
+          "no_action_r2": 0.13258356853504027,
+          "with_action_r2": 0.29608382930487087,
+          "delta_r2": 0.1635002607698306
+        },
+        "20": {
+          "no_action_r2": 0.021762473146961003,
+          "with_action_r2": 0.08244180147121227,
+          "delta_r2": 0.06067932832425127
+        }
+      },
+      "status": "PASS"
+    },
+    "omnimouse_neural_to_behavior": {
+      "n_windows": 1024,
+      "r2": {
+        "treadmill": 0.2540670780329465,
+        "pupil_radius": -1.842411155858283,
+        "pupil_radius_derivative": -0.7962658616172076,
+        "eye_x": -0.2969171465388678,
+        "eye_y": -2.1589378657297233
+      },
+      "status": "PASS"
+    },
+    "mcbride_opto_decoding": {
+      "dataset": "McBride et al. 2022 claustrum optogenetic Neuropixels",
+      "file": "exp029_probeE.hdf5",
+      "mouse": "491886",
+      "driver_line": "Gnb4",
+      "n_units": 13,
+      "areas": {
+        "RSPv6a": 3,
+        "ACAv5": 2,
+        "ccb": 2,
+        "ACAv6a": 2,
+        "MOp6a": 2,
+        "ACAd6b": 1,
+        "SSp-ll5": 1
+      },
+      "n_opto_trials": 400,
+      "stimuli": {
+        "500ms": 100,
+        "5ms": 100,
+        "40hz": 100,
+        "20hz": 100
+      },
+      "poststimulus_stimulus_decoding": {
+        "accuracy": 0.875,
+        "balanced_accuracy": 0.875,
+        "chance": 0.25,
+        "n_train": 280,
+        "n_test": 120,
+        "labels": [
+          "20hz",
+          "40hz",
+          "500ms",
+          "5ms"
+        ]
+      },
+      "prestimulus_control_decoding": {
+        "accuracy": 0.19166666666666668,
+        "balanced_accuracy": 0.19166666666666668,
+        "chance": 0.25,
+        "n_train": 280,
+        "n_test": 120,
+        "labels": [
+          "20hz",
+          "40hz",
+          "500ms",
+          "5ms"
+        ]
+      },
+      "population_modulation": {
+        "20hz": {
+          "n_trials": 100,
+          "baseline_hz": 13.369230769230771,
+          "post_0_100ms_hz": 17.392307692307696,
+          "delta_hz": 4.023076923076923
+        },
+        "40hz": {
+          "n_trials": 100,
+          "baseline_hz": 13.646153846153844,
+          "post_0_100ms_hz": 19.007692307692306,
+          "delta_hz": 5.361538461538462
+        },
+        "500ms": {
+          "n_trials": 100,
+          "baseline_hz": 14.161538461538463,
+          "post_0_100ms_hz": 18.723076923076924,
+          "delta_hz": 4.561538461538461
+        },
+        "5ms": {
+          "n_trials": 100,
+          "baseline_hz": 13.523076923076923,
+          "post_0_100ms_hz": 15.53076923076923,
+          "delta_hz": 2.0076923076923077
+        }
+      },
+      "interpretation": "Held-out decoding of optogenetic stimulation pattern from cortical population spiking; pre-stimulus decoding is a leakage/control baseline. This is a real perturbation application, not a causal-effect estimate across animals.",
+      "status": "PASS"
+    }
+  },
+  "architecture_smokes": {
+    "mtm_20m": {
+      "status": "PASS",
+      "linked_smoke_params": 46505624,
+      "best_val_avg": 0.3874
+    },
+    "neds_multimodal": {
+      "status": "PASS",
+      "linked_smoke_params": 35734440,
+      "best_val_avg": 0.9988
+    },
+    "causal_world_small": {
+      "status": "PASS",
+      "linked_smoke_params": 35734440,
+      "best_val_avg": 1.2742
+    },
+    "causal_world_large": {
+      "status": "PASS",
+      "linked_smoke_params": 128099496,
+      "best_val_avg": 1.8563
+    },
+    "mtm_large": {
+      "status": "PASS",
+      "linked_smoke_params": 109770548,
+      "best_val_avg": 0.3898
+    }
+  },
+  "parameter_audit": {
+    "neds_small": {
+      "total": 727222872,
+      "trainable": 727222872,
+      "shared_backbone_like": 9606144,
+      "session_or_stitcher": 717616728
+    },
+    "neds_world_large": {
+      "total": 1509729624,
+      "trainable": 1509729624,
+      "shared_backbone_like": 75893760,
+      "session_or_stitcher": 1433835864
+    },
+    "mtm20": {
+      "total": 546387250,
+      "trainable": 546387250,
+      "shared_backbone_like": 21045692,
+      "session_or_stitcher": 525341558
+    },
+    "mtm_large": {
+      "total": 747997902,
+      "trainable": 747997902,
+      "shared_backbone_like": 77264216,
+      "session_or_stitcher": 670733686
+    }
+  },
+  "summary": {
+    "datasets_contract_pass": 15,
+    "datasets_contract_total": 15,
+    "forecast_pass": 12,
+    "forecast_total": 12,
+    "applications_pass": 4,
+    "architecture_smoke_pass": 5
+  }
+}

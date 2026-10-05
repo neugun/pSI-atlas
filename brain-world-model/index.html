@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Brain World Model: multimodal neural-token ingestion, brain foundation models, predictive world modeling, applications, and tests.">
+<title>Brain World Model</title>
+<style>
+:root{
+  --bg:#07111e;--bg2:#0b1728;--panel:#0e2035;--panel2:#112944;--line:#24415f;
+  --text:#eef6ff;--muted:#9bb2c9;--cyan:#5ce1e6;--lime:#7df5a4;--gold:#ffc766;
+  --red:#ff8585;--blue:#75a7ff;--violet:#c29cff;--shadow:0 22px 60px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 12% 0%,#17395d 0,transparent 33%),
+radial-gradient(circle at 88% 8%,#173248 0,transparent 28%),
+linear-gradient(180deg,var(--bg),#050b13 72%);
+color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--cyan);text-decoration:none}
+.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(7,17,30,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(117,167,255,.16)}
+.nav-inner{height:64px;display:flex;align-items:center;gap:22px}
+.brand{font-weight:800;letter-spacing:.02em;margin-right:auto}
+.brand b{color:var(--cyan)}
+.nav a{color:#cfe3f7;font-size:13px}
+.hero{padding:72px 0 28px}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:800}
+h1{font-size:clamp(40px,7vw,78px);line-height:.98;margin:14px 0 18px;letter-spacing:-.045em;max-width:950px}
+.lede{font-size:clamp(17px,2vw,22px);max-width:850px;color:#c0d3e5;margin:0}
+.hero-note{display:inline-flex;gap:8px;align-items:center;margin-top:22px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(11,23,40,.7)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 16px var(--lime)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 28px}
+.metric{background:linear-gradient(180deg,rgba(17,41,68,.95),rgba(10,28,48,.92));border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.metric .n{font-size:34px;line-height:1;font-weight:850;letter-spacing:-.04em}
+.metric .t{margin-top:8px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.metric small{display:block;color:#718ba4;margin-top:5px}
+section{padding:46px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}
+h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.035em;margin:0}
+.section-head p{max-width:620px;margin:0;color:var(--muted)}
+.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{position:relative;background:rgba(14,32,53,.84);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:158px}
+.step .num{color:var(--cyan);font-weight:800;font-size:12px}
+.step h3{margin:8px 0 7px;font-size:17px}
+.step p{margin:0;color:var(--muted);font-size:13px}
+.step:not(:last-child):after{content:"→";position:absolute;right:-11px;top:63px;color:#6b89a5;font-weight:900;z-index:3}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(14,32,53,.95),rgba(9,25,42,.94));border-radius:19px;padding:20px;box-shadow:var(--shadow)}
+.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.tag{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:5px 8px;border-radius:99px;border:1px solid #2e5679;color:#b9d8f5;background:#0b2137;white-space:nowrap}
+.tag.pass{color:#b9ffd0;border-color:#2e6746;background:#0b2b21}
+.tag.mixed{color:#ffe0a5;border-color:#71562a;background:#30230e}
+.card h3{font-size:20px;margin:0 0 6px}
+.card p{color:var(--muted);margin:9px 0}
+.big{font-size:36px;font-weight:850;letter-spacing:-.035em;margin:18px 0 2px}
+.submetric{color:#a9bfd4;font-size:13px}
+.bar{height:10px;background:#091625;border:1px solid #1f3b57;border-radius:99px;overflow:hidden;margin:10px 0}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px}
+.delta-row{display:grid;grid-template-columns:56px 1fr 68px;align-items:center;gap:9px;font-size:12px;margin:9px 0}
+.delta-track{height:9px;background:#071522;border-radius:99px;overflow:hidden}
+.delta-track i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:99px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:rgba(9,25,42,.88)}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid rgba(36,65,95,.7);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#8fafc9;background:#0d2034}
+td{font-size:13px}
+td .quiet{color:var(--muted)}
+.data-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.data-chip{background:rgba(12,30,49,.85);border:1px solid var(--line);border-radius:14px;padding:14px}
+.data-chip strong{display:block;font-size:13px}
+.data-chip span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.testbox{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+.console{background:#02070d;border:1px solid #203b55;border-radius:18px;padding:18px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;min-height:260px;color:#c9e7ff;white-space:pre-wrap}
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}
+button,select{border:1px solid #315572;background:#10263c;color:var(--text);border-radius:10px;padding:10px 12px;font:inherit}
+button{cursor:pointer;font-weight:750}
+button.primary{background:linear-gradient(90deg,#1d7190,#2b668f);border-color:#3a88ad}
+button:hover{transform:translateY(-1px)}
+.explorer-result{border:1px solid var(--line);border-radius:14px;padding:16px;background:#09192a;min-height:150px}
+.audit{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.audit-row{background:#0a1c2e;border:1px solid var(--line);border-radius:13px;padding:14px}
+.stack{height:13px;border-radius:99px;background:#07111e;overflow:hidden;display:flex;margin-top:9px}
+.stack .shared{background:var(--cyan)}
+.stack .specific{background:#3c5470}
+.legend{display:flex;gap:14px;color:var(--muted);font-size:11px;margin-top:8px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.callout{border:1px solid #3f5570;border-radius:17px;padding:18px;background:linear-gradient(100deg,rgba(117,167,255,.10),rgba(92,225,230,.06))}
+.callout b{color:#fff}
+.footer{padding:40px 0 70px;color:#718aa1;border-top:1px solid rgba(36,65,95,.5);margin-top:38px}
+.loading{opacity:.65}
+@media(max-width:900px){
+  .metrics{grid-template-columns:1fr 1fr}.pipeline{grid-template-columns:1fr 1fr}.step:after{display:none}
+  .grid,.testbox,.audit{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr 1fr 1fr}
+  .nav a{display:none}
+}
+@media(max-width:560px){
+  .wrap{width:min(100% - 22px,1180px)}.hero{padding-top:46px}.metrics{grid-template-columns:1fr 1fr}
+  .metric{padding:15px}.metric .n{font-size:29px}.pipeline{grid-template-columns:1fr}.data-grid{grid-template-columns:1fr 1fr}
+  section{padding:34px 0}.card{padding:17px}.section-head{display:block}.section-head p{margin-top:8px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand"><b>BRAIN</b> WORLD MODEL</div>
+    <a href="#applications">Applications</a>
+    <a href="#tests">Tests</a>
+    <a href="#models">Models</a>
+    <a href="#data">Data</a>
+    <a href="#boundary">Boundaries</a>
+  </div>
+</nav>
+
+<main>
+<div class="wrap hero">
+  <div class="eyebrow">Neural foundation model · predictive world model · multimodal tokens</div>
+  <h1>From brain recordings to testable predictions of future brain and behavior.</h1>
+  <p class="lede">A public status page for a BrainToken-style multimodal ingestion layer, neural foundation models, causal-future objectives, and application-level tests across spikes, calcium, EEG, behavior, vision, and controlled interventions.</p>
+  <div class="hero-note"><span class="dot"></span><span id="updated">Loading verified results…</span></div>
+
+  <div class="metrics">
+    <div class="metric"><div class="n" id="m-contract">—</div><div class="t">Data contract tests</div><small>token-ready shards</small></div>
+    <div class="metric"><div class="n" id="m-forecast">—</div><div class="t">Forecast pipelines</div><small>cross-dataset execution</small></div>
+    <div class="metric"><div class="n" id="m-arch">—</div><div class="t">Architecture smokes</div><small>real Slurm training runs</small></div>
+    <div class="metric"><div class="n">1.51B</div><div class="t">Largest linked model</div><small>not equal to shared backbone size</small></div>
+  </div>
+</div>
+
+<section>
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">System design</div><h2>One substrate, multiple neural modalities.</h2></div>
+    <p>The central engineering decision is to separate modality-specific loading from a shared neural-token backbone, then test predictive and intervention-aware heads instead of treating parameter count as evidence.</p>
+  </div>
+  <div class="pipeline">
+    <div class="step"><div class="num">01 · INGEST</div><h3>Public neural data</h3><p>IBL, DANDI, Allen, OmniMouse, OSF, GIN, OpenNeuro, PhysioNet, Figshare and controlled synthetic data.</p></div>
+    <div class="step"><div class="num">02 · TOKENIZE</div><h3>BrainToken-style adapters</h3><p>Spikes, dF/F, events and EEG are normalized into explicit token-ready windows with provenance and split rules.</p></div>
+    <div class="step"><div class="num">03 · FOUNDATION</div><h3>Shared neural backbone</h3><p>MtM/NEDS-style objectives test neuron, causal-time, intra-region, inter-region and multimodal reconstruction.</p></div>
+    <div class="step"><div class="num">04 · WORLD</div><h3>Predict the future</h3><p>Causal-future masking hides future brain and behavior so the model must infer state transitions rather than classify static labels.</p></div>
+    <div class="step"><div class="num">05 · APPLY</div><h3>Behavior & intervention</h3><p>Decode state, predict behavior, quantify future dynamics, and test whether explicit interventions improve forecasting.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="applications">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">Applications</div><h2>What can already be tested?</h2></div>
+    <p>These are deliberately simple application heads over the current token-ready data. They are useful because they expose both successes and failures before a larger foundation model is allowed to claim generality.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="card-head"><div><h3>Mouse sleep-state decoding</h3><span class="submetric">OSF AccuSleep · EEG/EMG · Wake/NREM/REM</span></div><span class="tag pass">PASS</span></div>
+      <div class="big">96.1%</div>
+      <div class="submetric">accuracy · balanced accuracy 88.2% · majority baseline 74.0%</div>
+      <div class="bar"><i style="width:96.1%"></i></div>
+      <p>A compact spectral baseline already separates mouse sleep states, demonstrating that the unified ingestion layer preserves behaviorally meaningful EEG structure.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Intervention-aware forecasting</h3><span class="submetric">Controlled latent dynamics · known ground truth</span></div><span class="tag pass">PASS</span></div>
+      <div class="big">+0.194 R²</div>
+      <div class="submetric">action-aware gain at the shortest forecast horizon</div>
+      <div class="delta-row"><span>1 step</span><div class="delta-track"><i style="width:100%"></i></div><b>+0.194</b></div>
+      <div class="delta-row"><span>5 step</span><div class="delta-track"><i style="width:84%"></i></div><b>+0.164</b></div>
+      <div class="delta-row"><span>20 step</span><div class="delta-track"><i style="width:31%"></i></div><b>+0.061</b></div>
+      <p>Providing the intervention variable improves future-behavior prediction at all tested horizons. This is a ground-truth unit test, not biological causal evidence.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>OmniMouse neural → behavior</h3><span class="submetric">3,936-neuron calcium experiment · treadmill + eye</span></div><span class="tag mixed">MIXED</span></div>
+      <div class="big">R² 0.254</div>
+      <div class="submetric">held-out treadmill prediction from neural activity</div>
+      <div class="bar"><i style="width:25.4%"></i></div>
+      <p>The current ridge head recovers treadmill state, while pupil and eye-position targets remain below zero R². The failure is retained as a real benchmark for the shared world model.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Real optogenetic perturbation readout</h3><span class="submetric">McBride et al. · claustrum optogenetics · cortical Neuropixels</span></div><span class="tag pass">PASS</span></div>
+      <div class="big">87.5%</div>
+      <div class="submetric">held-out 4-way stimulation-pattern decoding · chance 25%</div>
+      <div class="bar"><i style="width:87.5%"></i></div>
+      <p>Post-stimulus cortical population activity distinguishes 20 Hz, 40 Hz, 500 ms and 5 ms optogenetic conditions. The pre-stimulus control is 19.2%, below 25% chance, arguing against simple trial-order leakage in this smoke test.</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Cross-dataset next-state tests</h3><span class="submetric">spikes · calcium · EEG · perturbation · synthetic</span></div><span class="tag pass">12 / 12 RUN</span></div>
+      <div class="big">12 datasets</div>
+      <div class="submetric">all next-window pipelines execute without numerical failure</div>
+      <p>Performance is intentionally not summarized as “solved”: simple ridge forecasts are positive for some streams and weak or negative for several calcium/spike datasets. The page distinguishes pipeline validity from scientific performance.</p>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="tests">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">Public QA</div><h2>Run the page’s own tests.</h2></div>
+    <p>The browser reloads the published result JSON and checks data contracts, forecast execution, intervention directionality, parameter accounting and application integrity.</p>
+  </div>
+  <div class="testbox">
+    <div>
+      <div class="controls">
+        <button class="primary" id="run-tests">Run browser self-test</button>
+        <button id="reload-data">Reload results.json</button>
+      </div>
+      <div class="console" id="console">Ready. Click “Run browser self-test”.</div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="eyebrow">Application explorer</div>
+        <h3 style="margin-top:7px">Inspect one result</h3>
+        <div class="controls">
+          <select id="app-select">
+            <option value="sleep">Mouse sleep decoding</option>
+            <option value="intervention">Intervention forecasting</option>
+            <option value="omni">OmniMouse brain → behavior</option>
+            <option value="mcbride">Real optogenetic perturbation</option>
+            <option value="forecast">Cross-dataset forecast matrix</option>
+          </select>
+          <button id="show-app">Show</button>
+        </div>
+        <div class="explorer-result" id="app-result">Select an application.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="models">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">Model audit</div><h2>Large linked models are not the same as large shared backbones.</h2></div>
+    <p>Full 423-session linking exposes a critical scaling problem: session-specific embeddings and stitchers dominate total parameters. That motivates a token-native shared backbone rather than simply inflating session-specific weights.</p>
+  </div>
+  <div class="audit" id="audit"></div>
+  <div class="legend"><span><i style="background:var(--cyan)"></i>shared backbone-like parameters</span><span><i style="background:#3c5470"></i>session/stitcher-specific parameters</span></div>
+  <div style="height:18px"></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Smoke model</th><th>Linked smoke parameters</th><th>Best validation aggregate</th><th>Interpretation</th></tr></thead>
+      <tbody id="model-table"></tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted);font-size:12px;margin-top:10px">Validation aggregates come from different objectives and are not directly comparable across model families.</p>
+</div>
+</section>
+
+<section id="data">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="eyebrow">Data substrate</div><h2>BrainToken-style loading across public ecosystems.</h2></div>
+    <p>Each source retains provenance, modality, species and split policy. Human EEG is treated as out-of-domain validation rather than silently mixed into mouse pretraining.</p>
+  </div>
+  <div class="data-grid">
+    <div class="data-chip"><strong>IBL BrainWideBench</strong><span>mouse · Neuropixels + behavior</span></div>
+    <div class="data-chip"><strong>OmniMouse</strong><span>mouse · calcium + eye + treadmill + vision</span></div>
+    <div class="data-chip"><strong>DANDI</strong><span>mouse · Neuropixels / NWB</span></div>
+    <div class="data-chip"><strong>Allen Observatory</strong><span>mouse · 2P dF/F + events</span></div>
+    <div class="data-chip"><strong>GIN G-Node</strong><span>mouse · high-density EEG</span></div>
+    <div class="data-chip"><strong>OSF AccuSleep</strong><span>mouse · EEG + EMG</span></div>
+    <div class="data-chip"><strong>Figshare V1</strong><span>mouse · dF/F + event traces</span></div>
+    <div class="data-chip"><strong>OpenNeuro</strong><span>human · EEG / OOD validation</span></div>
+    <div class="data-chip"><strong>PhysioNet</strong><span>human · sleep EEG / OOD validation</span></div>
+    <div class="data-chip"><strong>Synthetic controlled world</strong><span>known dynamics + interventions</span></div>
+  </div>
+</div>
+</section>
+
+<section id="boundary">
+<div class="wrap">
+  <div class="callout">
+    <div class="eyebrow">Scientific boundary</div>
+    <p><b>Prediction is not intervention.</b> IBL and other observational recordings can establish generalization and future-state prediction, but they cannot by themselves establish causal control. The intervention branch therefore uses controlled synthetic ground truth now and is ingesting real perturbation datasets separately.</p>
+    <p><b>Size is not evidence.</b> The full-data NEDS world-model configuration reaches 1.51B linked parameters, but only ~75.9M are shared backbone-like parameters; most of the linked count is session/stitcher-specific. Scaling decisions are gated by held-out predictive performance.</p>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+  Brain World Model · public progress and QA page · data and metrics are generated from the current test harness, not manually edited claims.
+</div>
+</footer>
+
+<script>
+let RESULTS=null;
+const fmt=n=>new Intl.NumberFormat("en-US").format(n);
+const pct=x=>(100*x).toFixed(1)+"%";
+async function loadResults(){
+  const r=await fetch("data/results.json?ts="+Date.now(),{cache:"no-store"});
+  if(!r.ok) throw new Error("results.json HTTP "+r.status);
+  RESULTS=await r.json();
+  render();
+  return RESULTS;
+}
+function render(){
+  const s=RESULTS.summary||{};
+  document.getElementById("m-contract").textContent=`${s.datasets_contract_pass||0}/${s.datasets_contract_total||0}`;
+  document.getElementById("m-forecast").textContent=`${s.forecast_pass||0}/${s.forecast_total||0}`;
+  document.getElementById("m-arch").textContent=`${s.architecture_smoke_pass||0}/5`;
+  document.getElementById("updated").textContent="Verified result bundle loaded · generated "+(RESULTS.generated_at||"current build");
+
+  const audit=document.getElementById("audit"); audit.innerHTML="";
+  Object.entries(RESULTS.parameter_audit||{}).forEach(([name,v])=>{
+    const shared=v.shared_backbone_like||0,total=v.total||1,specific=v.session_or_stitcher||0;
+    const q=document.createElement("div"); q.className="audit-row";
+    q.innerHTML=`<b>${name}</b><div class="submetric">${fmt(total)} linked · ${fmt(shared)} shared</div>
+      <div class="stack"><span class="shared" style="width:${100*shared/total}%"></span><span class="specific" style="width:${100*specific/total}%"></span></div>
+      <div class="submetric" style="margin-top:7px">${(100*shared/total).toFixed(1)}% shared backbone-like</div>`;
+    audit.appendChild(q);
+  });
+
+  const tbody=document.getElementById("model-table"); tbody.innerHTML="";
+  Object.entries(RESULTS.architecture_smokes||{}).forEach(([name,v])=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td><b>${name.replaceAll("_"," ")}</b></td><td>${fmt(v.linked_smoke_params||0)}</td><td>${v.best_val_avg??"—"}</td><td><span class="tag pass">${v.status}</span></td>`;
+    tbody.appendChild(tr);
+  });
+}
+function line(ok,msg){return `${ok?"✓":"✗"} ${msg}`;}
+function selfTest(){
+  const out=[];
+  if(!RESULTS){document.getElementById("console").textContent="No result bundle loaded.";return}
+  const s=RESULTS.summary||{};
+  out.push(line(s.datasets_contract_pass===s.datasets_contract_total,`data contracts: ${s.datasets_contract_pass}/${s.datasets_contract_total}`));
+  out.push(line(s.forecast_pass===s.forecast_total,`forecast pipelines: ${s.forecast_pass}/${s.forecast_total}`));
+  out.push(line(s.architecture_smoke_pass===5,`architecture smoke runs: ${s.architecture_smoke_pass}/5`));
+  const h=RESULTS.applications?.intervention_aware_forecasting?.horizons||{};
+  const deltas=Object.values(h).map(x=>x.delta_r2);
+  out.push(line(deltas.length>0&&deltas.every(x=>x>0),`intervention improves all tested horizons: ${deltas.map(x=>x.toFixed(3)).join(", ")}`));
+  const omni=RESULTS.applications?.omnimouse_neural_to_behavior?.r2?.treadmill;
+  out.push(line(Number.isFinite(omni)&&omni>0,`OmniMouse treadmill held-out R²: ${omni?.toFixed(3)}`));
+  const mc=RESULTS.applications?.mcbride_opto_decoding||{};
+  const post=mc.poststimulus_stimulus_decoding||{}, pre=mc.prestimulus_control_decoding||{};
+  out.push(line((post.accuracy||0)>(post.chance||1) && (pre.accuracy||1)<=(pre.chance||0)+0.05,
+    `real optogenetic readout: post ${(post.accuracy||0).toFixed(3)} vs chance ${(post.chance||0).toFixed(3)}; pre-control ${(pre.accuracy||0).toFixed(3)}`));
+  const audit=RESULTS.parameter_audit||{};
+  const account=Object.values(audit).every(x=>x.total>=x.shared_backbone_like && x.total===x.shared_backbone_like+x.session_or_stitcher);
+  out.push(line(account,"parameter accounting closes for all audited models"));
+  const passed=out.filter(x=>x.startsWith("✓")).length;
+  document.getElementById("console").textContent=`Brain World Model browser QA\n${"=".repeat(35)}\n${out.join("\n")}\n\n${passed}/${out.length} checks passed.`;
+}
+function showApp(){
+  if(!RESULTS)return;
+  const key=document.getElementById("app-select").value;
+  let html="";
+  if(key==="sleep"){
+    const a=RESULTS.applications?.sleep_state_decoding?.osf_accusleep_mouse01;
+    html=`<b>Mouse sleep-state decoding</b><p>n=${a?.n||"—"} windows</p><p>Accuracy <b>${pct(a?.accuracy||0)}</b><br>Balanced accuracy <b>${pct(a?.balanced_accuracy||0)}</b><br>Majority baseline ${pct(a?.majority_baseline||0)}</p>`;
+  }else if(key==="intervention"){
+    const h=RESULTS.applications?.intervention_aware_forecasting?.horizons||{};
+    html="<b>Intervention-aware forecasting</b>"+Object.entries(h).map(([k,v])=>`<p>h=${k}: R² ${v.no_action_r2.toFixed(3)} → <b>${v.with_action_r2.toFixed(3)}</b> (Δ ${v.delta_r2.toFixed(3)})</p>`).join("");
+  }else if(key==="omni"){
+    const a=RESULTS.applications?.omnimouse_neural_to_behavior;
+    const r=a?.r2||{};
+    html=`<b>OmniMouse neural → behavior</b><p>${a?.n_windows||"—"} held-out windows.</p><p>Treadmill R² <b>${r.treadmill?.toFixed(3)}</b>. Eye/pupil targets remain below zero with the current ridge baseline and are retained as open tests.</p>`;
+  }else if(key==="mcbride"){
+    const a=RESULTS.applications?.mcbride_opto_decoding||{};
+    const post=a.poststimulus_stimulus_decoding||{}, pre=a.prestimulus_control_decoding||{};
+    html=`<b>Real optogenetic perturbation readout</b><p>${a.n_opto_trials||"—"} optogenetic trials across 4 stimulation patterns and ${a.n_units||"—"} recorded units in the current probe smoke test.</p><p>Post-stimulus held-out accuracy <b>${pct(post.accuracy||0)}</b> vs ${pct(post.chance||0)} chance; pre-stimulus control ${pct(pre.accuracy||0)}.</p>`;
+  }else{
+    const f=RESULTS.forecast_tests||[];
+    html=`<b>Cross-dataset forecast matrix</b><p>${f.length} datasets with executable next-window tests.</p>`+
+      f.slice(0,6).map(x=>`<div style="font-size:12px;margin:5px 0;color:#b7cade">${x.dataset}: ridge R² ${x.ridge_r2?.toFixed(3)}</div>`).join("");
+  }
+  document.getElementById("app-result").innerHTML=html;
+}
+document.getElementById("run-tests").addEventListener("click",selfTest);
+document.getElementById("reload-data").addEventListener("click",async()=>{document.getElementById("console").textContent="Reloading…";try{await loadResults();selfTest()}catch(e){document.getElementById("console").textContent="FAIL "+e}});
+document.getElementById("show-app").addEventListener("click",showApp);
+loadResults().then(()=>{showApp();selfTest()}).catch(e=>{
+  document.getElementById("updated").textContent="Result bundle failed to load";
+  document.getElementById("console").textContent="FAIL "+e;
+});
+</script>
+</body>
+</html>
