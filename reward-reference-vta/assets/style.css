@@ -792,3 +792,23 @@ html[lang="zh-CN"] .concept-node span {
   .roadmap-table { font-size: .76rem; }
   .roadmap-details { margin: 10px 0; }
 }
+
+.future-experiments { margin-top: 28px; }
+.section-head.compact { margin-bottom: 12px; }
+.experiment-blueprint { margin: 12px 0; border: 1px solid #dfe4ea; border-radius: 10px; background: #fff; overflow: hidden; }
+.experiment-blueprint summary { cursor: pointer; padding: 11px 13px; color: #26364d; background: #f7f9fb; }
+.blueprint-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; }
+.blueprint-grid > div { padding: 10px 12px; border-top: 1px solid #e8ebef; min-height: 88px; }
+.blueprint-grid > div:nth-child(odd) { border-right: 1px solid #e8ebef; }
+.blueprint-grid b { display: block; margin-bottom: 4px; color: #26364d; font-size: .78rem; }
+.blueprint-grid span { display: block; color: #596474; font-size: .80rem; line-height: 1.45; }
+.meaning-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin: 16px 0; }
+.meaning-grid article { border-top: 2px solid #B2232E; padding: 9px 10px; background: #fafafa; }
+.meaning-grid b { display: block; margin-bottom: 4px; font-size: .78rem; color: #26364d; }
+.meaning-grid span { display: block; font-size: .76rem; line-height: 1.4; color: #596474; }
+@media (max-width: 620px) {
+  .blueprint-grid { grid-template-columns: 1fr; }
+  .blueprint-grid > div:nth-child(odd) { border-right: 0; }
+  .meaning-grid { grid-template-columns: 1fr; }
+  .experiment-blueprint summary { font-size: .86rem; line-height: 1.35; }
+}

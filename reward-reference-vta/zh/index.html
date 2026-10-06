@@ -23,6 +23,7 @@
       <a href="#fig6">Fig. 6</a>
       <a href="#fig7">Fig. 7</a>
       <a href="../2p-global/zh/">2P全局</a>
+      <a href="#future-experiments">未来实验</a>
       <a href="#roadmap">路线图</a>
       <a href="#limits">局限</a>
       <a href="#supplement">补充</a>
@@ -699,6 +700,105 @@
           <tr><td><strong>Need/state contrast</strong></td><td>将 history-state 与 probe-state 分开：fasting/refeeding、GLP-1/GIP/amylin、obesity、stress/inflammation、social isolation。</td><td>DA、reference update、contrast gain、action cost、behavior。</td><td>疾病究竟改变 U、R、update rate、asymmetry 还是 contrast-to-action transfer。</td><td><span class="status-tag exploratory">identifiability之后</span></td></tr>
         </tbody>
       </table>
+    </div>
+
+
+    <div id="future-experiments" class="future-experiments">
+      <div class="section-head compact">
+        <div>
+          <div class="section-kicker">未来实验蓝图</div>
+          <h3>每一个实验都对应当前故事中的一个明确 ambiguity，而不是单纯继续加 condition。</h3>
+        </div>
+        <p>
+          核心是先让 <strong>U、R、C、RPE、identity、internal state 与 action 可以被独立估计</strong>，再问这些变量如何由同一神经元、同一回路和同一分子类型实现。
+        </p>
+      </div>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>1. Fully crossed food history × current reward：最关键的 identifiability 实验</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>设计</b><span>同一动物内完成 High-history→High、High→Low、Low→High、Low→Low；后续可加入 neutral-history。并行做 free-consumption 与 controlled/intraoral probe 两个版本。</span></div>
+          <div><b>控制</b><span>当前 reward 完全相同、顺序 counterbalance、cue timing 匹配、pair-fed/yoked intake、deprivation/session progress 匹配；controlled 版本进一步把 reward delivery 与 licking 分开。</span></div>
+          <div><b>记录</b><span>VTA DA、纵向2P/CaRMA、licking、bout initiation/termination、pause、re-engagement、locomotion；必要时加 pupil/autonomic state。</span></div>
+          <div><b>分析</b><span>在单细胞与 population 层面同时竞争 U、R、C=U−R、RPE、unsigned surprise、identity、lick/action 与 state predictors，并只用 held-out trial/session 定义功能类别。</span></div>
+          <div><b>决定性结果</b><span>在完全相同 current reward 下，history 在控制 action 后仍改变 neural response 与 behavior。固定 cell membership 支持 dedicated class；稳定 population decoder 但 cell membership 旋转则支持 distributed manifold。</span></div>
+          <div><b>意义</b><span>这是解决原始 alternating design 中 U–R 共线问题最直接的实验，会把 Reward Contrast 从 descriptive history effect 推进为 identifiable computation。</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>2. Identical physical probe + reference formation/decay：R 到底是什么记忆？</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Induction</b><span>一个强版本是30-min baseline → 60-min rich / neutral / lean history → identical 8% sucrose probe；同时加入从秒级到几十分钟的更短 history。</span></div>
+          <div><b>Sampling test</b><span>比较 active consumption、reward present but inaccessible、cue-only、yoked elapsed time，以及相同 sample 数但不同时间分布。</span></div>
+          <div><b>窗口</b><span>switch 后0–30 s、30–120 s、2–5、5–10、10–20、20–30 min；神经信号另外拆 first sample、0–2 s 与 sustained 2–5 s。</span></div>
+          <div><b>行为</b><span>first-lick latency、acceptance、lick microstructure、bout size、pause、re-engagement、switch away。</span></div>
+          <div><b>模型</b><span>single-exponential、dual-timescale、event-count integrator、finite-window history、passive clock、HMM/belief、adaptive learning-rate。</span></div>
+          <div><b>意义</b><span>直接鉴别 R 是 event-integrator、passive latent state、physiological adaptation，还是 fast + slow memory hierarchy。</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>3. Contrast vs classical RPE：在同一只动物里拆开两种 dopamine computation</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>设计</b><span>不同 history context 都预测同一个 current probe，使 expected probe 的 classical RPE≈0，但因为 R 不同，C 仍不同；再加入 unexpected high/low catch probe 与 omission。</span></div>
+          <div><b>时间分辨</b><span>分别看 cue、first sample、0–2 s、sustained 2–5 s 与 post-bout，而不是把 dopamine 压成一个数。</span></div>
+          <div><b>预测</b><span>RPE-like cell 对 unexpected outcome 强、预测后减弱；contrast-like cell 在两个同样 predicted、物理完全相同的 probe 上仍随 recent R 不同而分离。</span></div>
+          <div><b>控制</b><span>加入 intraoral mechanistic version，最大限度降低 approach/seeking confound。</span></div>
+          <div><b>Population test</b><span>直接测试 early DA 是否更像 RPE，而 sustained DA 是否更像 C；若成立，则说明 dopamine multiplexes timescales。</span></div>
+          <div><b>意义</b><span>这是把 Reward Contrast 放到经典 dopamine theory 中最关键的实验。</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>4. Refined social contrast：固定 female identity，只改变 interaction access</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>设计</b><span>female 在 ON 与 OFF 都持续可见/存在；ON 允许 interaction，OFF 只保留 exposure。比较 ON→OFF vs OFF→OFF，以及 OFF→ON vs ON→ON。</span></div>
+          <div><b>pSI 定位</b><span>pSI 只作为 submaximal action-threshold probe。以既往5/10/20/40-Hz为 calibration 起点，选择中间 attack-probability regime，而不是 ceiling stimulation。</span></div>
+          <div><b>readout</b><span>approach、investigation、contact attempts、withdrawal/re-approach、USV、redirected aggression/object biting、VTA DA、pSI activity 与候选 PBN/pSI input。</span></div>
+          <div><b>identity 扩展</b><span>约30-min Female A history→Female A OFF probe，再做 Female A history→novel Female B OFF probe。</span></div>
+          <div><b>决定性结果</b><span>female sensory identity 相同，但相同 pSI input 在不同 social history 后产生不同 attack probability/I50。</span></div>
+          <div><b>意义</b><span>建立真正的 social hedonic-contrast analogue，同时把 social value 与 aggression induction 分开。</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>5. Observed reward history：别人经历的 reward 能否更新 observer 的 reference？</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>已有基础</b><span>visual access 与 familiarity 很重要；observer VTA DA 参与 demonstrator feeding；temporally contingent VTA-DA inhibition 抑制 observational feeding，而 replayed timing 不能复制。</span></div>
+          <div><b>新 manipulation</b><span>demonstrator 经历 palatable、bitter、transient-malaise-associated 或 no-reward outcome；observer 后续接受 same/different food 或 social probe。</span></div>
+          <div><b>状态空间</b><span>external event × relationship geometry × internal state × action preparation × outcome；重点检验 dem-feed×visibility、dem-feed×facing、social cue×hunger、dem-feed×history、social-information×future action。</span></div>
+          <div><b>physiology</b><span>加入 glucose、insulin、pupil、HR/HRV、ACTH/corticosterone 以及选择性的 inflammatory readout。</span></div>
+          <div><b>跨域测试</b><span>用 food contrast decoder 预测 social observational trial，再反向测试。</span></div>
+          <div><b>意义</b><span>直接回答 reference learning 能否通过观察获得，以及 direct reward 与 socially acquired value 是否共享 common currency。</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>6. Longitudinal single-cell → molecule → causality</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>当前线索</b><span>D1–D9 CaRMA 更支持共同 temporal/consumption scaffold + animal-specific residual geometry；D6 reward-quality effect 是 distributed 且存在 lick-independent component，而 D5/D8 的 concentration/value structure 更弱、更不普遍。</span></div>
+          <div><b>下一记录</b><span>在 fully crossed history×current 设计中做纵向2P/CaRMA；关键 condition 尽量得到约40–60次可分析重复，并跨日追踪稳定性。</span></div>
+          <div><b>cell label</b><span>只有在 held-out model competition 后才定义 identity、current-value、reference、contrast、RPE、salience、action 或 state-gain component；不再从单一 contrast 给细胞贴标签。</span></div>
+          <div><b>geometry</b><span>同时测 contrast axis、identity axis、action axis、state axis；检验 cross-day alignment、cross-reward transfer 与 food↔social transfer。</span></div>
+          <div><b>分子映射</b><span>同一细胞配准到 retrospective ~100-gene EASI/EASEQ-FISH 与 projection identity。Npy1r、Ntsr1、Esr1、Oxtr 等只能作为 candidate，不预设为 contrast marker。</span></div>
+          <div><b>决定性意义</b><span>same-cell stability + molecular/projection enrichment + causal double dissociation 支持 dedicated class；stable population decoder + rotating cell membership 支持 distributed manifold。</span></div>
+        </div>
+      </details>
+
+      <div class="meaning-grid">
+        <article><b>Food contrast 可以迁移到 social contrast</b><span>支持 domain-general relative-value coordinate。</span></article>
+        <article><b>只有同一 reward identity 能迁移</b><span>支持 identity-specific reference，在 downstream policy/action stage 汇合。</span></article>
+        <article><b>RPE 只解释 early response</b><span>提示 dopamine multiplexes fast prediction error 与 slower reference-relative consumption signal。</span></article>
+        <article><b>控制 action 后 history effect 消失</b><span>当前现象更接近 policy/motor，而不是 valuation；因果重点应下移。</span></article>
+        <article><b>疾病改变 R 而不是 U</b><span>病理更像 reference-memory disorder，而非简单 reward sensitivity 下降。</span></article>
+        <article><b>neural R 保留但 behavior 消失</b><span>reference memory 与 behavioral expression 是可分离的 computational stage。</span></article>
+      </div>
+
+      <p class="roadmap-doc-link">
+        <a href="../docs/REWARD_CONTRAST_EXPERIMENT_BLUEPRINTS_v1_20261006.md"><strong>打开完整实验蓝图</strong></a>
+        ——包含 food、social、observational、single-cell、circuit、disease/state 的详细设计、controls、analysis contract、决定性结果与意义。
+      </p>
     </div>
 
     <details class="roadmap-details" open>

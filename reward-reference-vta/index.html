@@ -23,6 +23,7 @@
       <a href="#fig6">Fig. 6</a>
       <a href="#fig7">Fig. 7</a>
       <a href="2p-global/">2P global</a>
+      <a href="#future-experiments">Future exp.</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#limits">Limits</a>
       <a href="#supplement">Supplement</a>
@@ -743,6 +744,105 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+
+    <div id="future-experiments" class="future-experiments">
+      <div class="section-head compact">
+        <div>
+          <div class="section-kicker">Detailed future experiments</div>
+          <h3>Each experiment is designed to eliminate one specific ambiguity in the current story.</h3>
+        </div>
+        <p>
+          The priority is not to add more conditions indiscriminately. It is to make <strong>U, R, C, RPE, identity, internal state and action independently identifiable</strong>, then ask how those variables are represented by the same neurons and circuits.
+        </p>
+      </div>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>1. Fully crossed food history × current reward — the decisive identifiability experiment</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Design</b><span>Within animal: High-history→High, High→Low, Low→High, Low→Low. Add a neutral-history arm later if dynamic range requires it. Run both free-consumption and controlled/intraoral probe versions.</span></div>
+          <div><b>Controls</b><span>Same physical current reward; counterbalanced order; matched cue timing; pair-fed/yoked intake; matched deprivation/session progress; reward delivery separated from licking in the controlled version.</span></div>
+          <div><b>Record</b><span>VTA DA, longitudinal 2P/CaRMA, licking, bout initiation/termination, pause and re-engagement, locomotion; optionally pupil/autonomic state.</span></div>
+          <div><b>Analysis</b><span>Per-cell and population competition among U, R, C=U−R, RPE, unsigned surprise, identity, lick/action and state terms using held-out trials/sessions.</span></div>
+          <div><b>Decisive result</b><span>At the same current reward, history still changes neural activity and behavior after action covariates are controlled. Stable single-cell membership supports a dedicated class; stable population decoding with rotating cells supports a distributed manifold.</span></div>
+          <div><b>Why it matters</b><span>This directly solves the main confound of the original alternating design and converts Reward Contrast from a descriptive history effect into an identifiable computation.</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>2. Same physical probe + reference formation/decay — what exactly is the memory R?</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Induction</b><span>One strong version: 30-min baseline → 60-min rich / neutral / lean history → identical 8% sucrose probe. Complement with shorter history durations from seconds to tens of minutes.</span></div>
+          <div><b>Sampling test</b><span>Compare active consumption, reward present but inaccessible, cue-only exposure, yoked elapsed time and matched sample counts with different temporal spacing.</span></div>
+          <div><b>Windows</b><span>0–30 s, 30–120 s, 2–5, 5–10, 10–20 and 20–30 min after the switch, together with first-sample, 0–2 s and sustained 2–5 s neural windows.</span></div>
+          <div><b>Behavior</b><span>First-lick latency, acceptance, lick microstructure, bout size, pauses, re-engagement and switching away from the probe.</span></div>
+          <div><b>Models</b><span>Single-exponential reference, dual-timescale reference, event-count integrator, finite history window, passive clock, HMM/belief state and adaptive learning-rate models.</span></div>
+          <div><b>Why it matters</b><span>The result identifies whether R is an event-integrator, a passive latent state, a physiological adaptation process or a hierarchy of fast and slow memories.</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>3. Contrast versus classical RPE — separate two dopamine computations in the same animal</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Design</b><span>Contexts predict the same probe, so the expected probe has approximately zero classical RPE while C differs because history differs. Add unexpected high/low catch probes and omission trials.</span></div>
+          <div><b>Temporal readout</b><span>Separate cue, first-sample, 0–2 s, sustained 2–5 s and post-bout responses rather than collapsing them into one dopamine number.</span></div>
+          <div><b>Prediction</b><span>RPE-like cells should respond to unexpected outcomes and diminish with prediction; contrast-like cells should distinguish two equally predicted identical probes solely because recent R differs.</span></div>
+          <div><b>Control</b><span>Use intraoral delivery in a mechanistic version to reduce approach and seeking confounds.</span></div>
+          <div><b>Population test</b><span>Ask whether early dopamine is better decoded by RPE while sustained dopamine is better decoded by C, which would imply multiplexed timescales rather than one canonical scalar signal.</span></div>
+          <div><b>Why it matters</b><span>This is the strongest experiment for placing Reward Contrast relative to classical dopamine theory.</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>4. Refined social contrast — hold female identity constant and move only interaction access</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Design</b><span>Female remains perceptually present in both states. ON allows interaction; OFF preserves exposure but blocks interaction. Compare ON→OFF vs OFF→OFF and OFF→ON vs ON→ON.</span></div>
+          <div><b>pSI role</b><span>Use pSI stimulation only as a submaximal action-threshold probe. Start from the previous 5/10/20/40-Hz calibration range and choose an intermediate attack-probability regime rather than ceiling stimulation.</span></div>
+          <div><b>Readouts</b><span>Approach, investigation, contact attempts, withdrawal/re-approach, USVs, redirected aggression/object biting, VTA DA, pSI activity and candidate PBN/pSI inputs.</span></div>
+          <div><b>Identity extension</b><span>~30-min Female A history → Female A OFF probe, then Female A history → novel Female B OFF probe to separate partner-specific reference from generalized social-value state.</span></div>
+          <div><b>Decisive result</b><span>The same pSI input produces different attack probability/I50 after different social histories while female sensory identity is held constant.</span></div>
+          <div><b>Why it matters</b><span>This creates a true social analogue of hedonic contrast and connects social value to aggression threshold without confounding value induction with aggression induction.</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>5. Observed reward history — can another animal update the observer's reference?</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Foundation</b><span>Visual access and familiarity matter; observer VTA dopamine tracks demonstrator feeding; temporally contingent VTA-DA inhibition suppresses observational feeding whereas replayed timing does not reproduce the effect.</span></div>
+          <div><b>New manipulation</b><span>Demonstrator consumes palatable, bitter, transient-malaise-associated or neutral/no-reward outcomes; the observer later receives the same or a different food or social probe.</span></div>
+          <div><b>Model state</b><span>External event × relationship geometry × internal state × action preparation × outcome. Key terms include dem-feed×visibility, dem-feed×facing, social cue×hunger, dem-feed×history and social-information×future action.</span></div>
+          <div><b>Physiology</b><span>Add glucose, insulin, pupil, HR/HRV, ACTH/corticosterone and selected inflammatory readouts to ask whether observed reward history primes whole-body state as well as neural value.</span></div>
+          <div><b>Cross-domain test</b><span>Train a food-contrast decoder and test it on social observational trials, and vice versa.</span></div>
+          <div><b>Why it matters</b><span>This asks whether reference learning can be vicarious and whether direct and socially acquired value share a common currency.</span></div>
+        </div>
+      </details>
+
+      <details class="experiment-blueprint" open>
+        <summary><strong>6. Longitudinal single-cell → molecule → causality</strong></summary>
+        <div class="blueprint-grid">
+          <div><b>Current clue</b><span>D1–D9 CaRMA data favor a common temporal/consumption scaffold plus animal-specific residual geometry; D6 reward-quality effects are distributed and lick-independent, while D5/D8 concentration/value structure is weaker and less universal.</span></div>
+          <div><b>Next recording</b><span>Run the fully crossed history×current design under longitudinal 2P/CaRMA with roughly 40–60 analyzable repetitions per critical condition where feasible and repeated days for stability.</span></div>
+          <div><b>Cell labels</b><span>Only assign identity-, current-value-, reference-, contrast-, RPE-, salience-, action- or state-gain components after held-out model competition; never classify from one contrast alone.</span></div>
+          <div><b>Geometry</b><span>Measure contrast, identity, action and state axes; test cross-day alignment, cross-reward transfer and food↔social transfer.</span></div>
+          <div><b>Molecular follow-up</b><span>Register same cells to retrospective ~100-gene EASI/EASEQ-FISH and projection identity. Candidate marker families such as Npy1r, Ntsr1, Esr1, Oxtr and disease-related markers are hypotheses, not preassigned contrast labels.</span></div>
+          <div><b>Decisive meaning</b><span>Stable same cells + molecular/projection enrichment + causal double dissociation support a dedicated class. Stable population decoding with rotating cell membership supports a distributed manifold.</span></div>
+        </div>
+      </details>
+
+      <div class="meaning-grid">
+        <article><b>If food contrast transfers to social contrast</b><span>Evidence for a domain-general relative-value coordinate.</span></article>
+        <article><b>If only the same reward identity transfers</b><span>Reference memory is identity-specific, with convergence likely downstream at policy/action stages.</span></article>
+        <article><b>If RPE dominates only early responses</b><span>Dopamine multiplexes fast prediction error and slower reference-relative consumption signals.</span></article>
+        <article><b>If history disappears after action matching</b><span>The current effect is more policy/motor than valuation; causal emphasis should move downstream.</span></article>
+        <article><b>If disease changes R but not U</b><span>Pathology is a reference-memory disorder rather than a simple loss of reward sensitivity.</span></article>
+        <article><b>If neural R persists without behavior</b><span>Reference memory and its behavioral expression are separable computational stages.</span></article>
+      </div>
+
+      <p class="roadmap-doc-link">
+        <a href="docs/REWARD_CONTRAST_EXPERIMENT_BLUEPRINTS_v1_20261006.md"><strong>Open the full experimental blueprints</strong></a>
+        — detailed designs, controls, analysis contracts, decisive outcomes and significance for food, social, observational, single-cell, circuit and disease-state experiments.
+      </p>
     </div>
 
     <details class="roadmap-details" open>
