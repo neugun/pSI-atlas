@@ -1,0 +1,294 @@
+{
+  "version": "REFERENCE_IMPLEMENTATION_V5_20261005",
+  "privacy": "public structural/QC summary only; full trial\u00d7time\u00d7ROI neural traces and frozen ROI masks remain local",
+  "animals": {
+    "54": {
+      "bundle": {
+        "bundle": "ANM54_REFERENCE_V3",
+        "animal": "54",
+        "n_sessions": 8,
+        "n_identity_candidates": 34,
+        "sessions": [
+          "54_D1",
+          "54_D2",
+          "54_D3",
+          "54_D5",
+          "54_D6",
+          "54_D7",
+          "54_D8",
+          "54_D9"
+        ],
+        "privacy": "local_full_detail_not_for_public_raw_trace_upload"
+      },
+      "sessions": [
+        {
+          "session_id": "54_D1",
+          "day": "D1",
+          "task": "trace_conditioning",
+          "n_trials": 120,
+          "n_roi": 22,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D2",
+          "day": "D2",
+          "task": "trace_conditioning",
+          "n_trials": 120,
+          "n_roi": 26,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D3",
+          "day": "D3",
+          "task": "single_100E",
+          "n_trials": 71,
+          "n_roi": 27,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D5",
+          "day": "D5",
+          "task": "100E_vs_20E",
+          "n_trials": 20,
+          "n_roi": 24,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D6",
+          "day": "D6",
+          "task": "100E_vs_100E+Q",
+          "n_trials": 60,
+          "n_roi": 16,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D7",
+          "day": "D7",
+          "task": "single_50E",
+          "n_trials": 34,
+          "n_roi": 30,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D8",
+          "day": "D8",
+          "task": "100E_vs_50E",
+          "n_trials": 30,
+          "n_roi": 29,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "54_D9",
+          "day": "D9",
+          "task": "single_20E",
+          "n_trials": 34,
+          "n_roi": 25,
+          "final_signal_method": "sub1"
+        }
+      ]
+    },
+    "181": {
+      "bundle": {
+        "bundle": "ANM181_REFERENCE_V1",
+        "animal": "181",
+        "n_sessions": 9,
+        "n_identity_candidates": 12,
+        "sessions": [
+          "181_D1",
+          "181_D2",
+          "181_D3",
+          "181_D4",
+          "181_D5",
+          "181_D6",
+          "181_D7",
+          "181_D8",
+          "181_D9"
+        ],
+        "privacy": "local_full_detail_not_for_public_raw_trace_upload"
+      },
+      "sessions": [
+        {
+          "session_id": "181_D1",
+          "day": "D1",
+          "task": "trace_conditioning",
+          "n_trials": 121,
+          "n_roi": 25,
+          "final_signal_method": "alpha_sub"
+        },
+        {
+          "session_id": "181_D2",
+          "day": "D2",
+          "task": "trace_conditioning",
+          "n_trials": 150,
+          "n_roi": 19,
+          "final_signal_method": "alpha_sub"
+        },
+        {
+          "session_id": "181_D3",
+          "day": "D3",
+          "task": "single_100E",
+          "n_trials": 80,
+          "n_roi": 17,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "181_D4",
+          "day": "D4",
+          "task": "single_20E",
+          "n_trials": 52,
+          "n_roi": 18,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "181_D5",
+          "day": "D5",
+          "task": "100E_vs_20E",
+          "n_trials": 42,
+          "n_roi": 14,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "181_D6",
+          "day": "D6",
+          "task": "100E_vs_100E+Q",
+          "n_trials": 52,
+          "n_roi": 21,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "181_D7",
+          "day": "D7",
+          "task": "single_50E",
+          "n_trials": 50,
+          "n_roi": 16,
+          "final_signal_method": "sub1"
+        },
+        {
+          "session_id": "181_D8",
+          "day": "D8",
+          "task": "100E_vs_50E",
+          "n_trials": 63,
+          "n_roi": 12,
+          "final_signal_method": "alpha07"
+        },
+        {
+          "session_id": "181_D9",
+          "day": "D9",
+          "task": "single_20E",
+          "n_trials": 34,
+          "n_roi": 16,
+          "final_signal_method": "sub1"
+        }
+      ]
+    },
+    "112": {
+      "bundle": {
+        "bundle": "ANM112_REFERENCE_V1",
+        "animal": "112",
+        "n_sessions": 1,
+        "n_identity_candidates": 0,
+        "sessions": [
+          "112_D1"
+        ],
+        "privacy": "local_full_detail_not_for_public_raw_trace_upload"
+      },
+      "sessions": [
+        {
+          "session_id": "112_D1",
+          "day": "D1",
+          "task": "trace_conditioning_support",
+          "n_trials": 5,
+          "n_roi": 150,
+          "n_frames_per_trial": 87,
+          "final_signal_method": "sub1"
+        }
+      ]
+    },
+    "113": {
+      "bundle": {
+        "bundle": "ANM113_REFERENCE_V1",
+        "animal": "113",
+        "n_sessions": 1,
+        "n_identity_candidates": 0,
+        "sessions": [
+          "113_test"
+        ],
+        "privacy": "local_full_detail_not_for_public_raw_trace_upload"
+      },
+      "sessions": [
+        {
+          "session_id": "113_test",
+          "day": 527,
+          "task": "trace_conditioning_support",
+          "n_trials": 5,
+          "n_roi": 124,
+          "n_frames_per_trial": 87,
+          "final_signal_method": "sub1"
+        }
+      ]
+    },
+    "185": {
+      "bundle": {
+        "bundle": "ANM185_REFERENCE_V1",
+        "animal": "185",
+        "n_sessions": 1,
+        "n_identity_candidates": 0,
+        "sessions": [
+          "185_D1"
+        ],
+        "privacy": "local_full_detail_not_for_public_raw_trace_upload"
+      },
+      "sessions": [
+        {
+          "session_id": "185_D1",
+          "day": "D1",
+          "task": "trace_conditioning_support",
+          "n_trials": 6,
+          "n_roi": 199,
+          "n_frames_per_trial": 87,
+          "final_signal_method": "sub1"
+        }
+      ]
+    }
+  },
+  "coverage": {
+    "54": "8 longitudinal sessions; full Stage07/08",
+    "181": "9 longitudinal sessions; full Stage07/08",
+    "112": "1 support conditioning session; Stage07/08 NA",
+    "113": "1 support conditioning session; Stage07/08 NA",
+    "185": "1 support conditioning session; Stage07/08 NA"
+  },
+  "capabilities": {
+    "session_viewer": [
+      "Stage00-10 ledger",
+      "real frozen ROI mask",
+      "per-ROI QC/authority",
+      "trial heatmap",
+      "condition mean trace",
+      "single-trial raw/background/final traces",
+      "stage QC figures"
+    ],
+    "stage07": [
+      "cross-day image transform evidence",
+      "registered reference images",
+      "candidate transform metrics"
+    ],
+    "stage08": [
+      "candidate generation",
+      "independent reviewer import",
+      "ACCEPT/REJECT/UNCERTAIN",
+      "minimum reviewer consensus",
+      "one-to-one collision check",
+      "frozen edge export only after consensus"
+    ]
+  },
+  "identity_test": {
+    "status": "PASS",
+    "n_candidates": 2,
+    "n_accepted": 1,
+    "n_rejected": 1,
+    "n_unresolved": 0,
+    "n_reviewers": 2,
+    "one_to_one_conflicts": 0
+  }
+}
