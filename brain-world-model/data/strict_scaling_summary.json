@@ -1,0 +1,304 @@
+{
+  "status": "PASS",
+  "n_completed": 12,
+  "expected": 12,
+  "metric": "strict continuous held-out 100-ms co-bits/spike against fixed early-rate null; persistence computed on same targets",
+  "rows": [
+    {
+      "name": "s10_tiny",
+      "sessions": 10,
+      "size": "tiny",
+      "params": 2185753,
+      "100ms_model": 0.13958601682281332,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7698297178929652,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.24269314263638833,
+      "500ms_model": -0.044831407977635775
+    },
+    {
+      "name": "s10_base",
+      "sessions": 10,
+      "size": "base",
+      "params": 15794713,
+      "100ms_model": 0.1521668632649274,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7475015059492152,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.24525853962767696,
+      "500ms_model": -0.05591280544435655
+    },
+    {
+      "name": "s10_large",
+      "sessions": 10,
+      "size": "large",
+      "params": 63488025,
+      "100ms_model": 0.14979123542652947,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7463490798708994,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.25572867825858936,
+      "500ms_model": -0.08645192221708793
+    },
+    {
+      "name": "s50_tiny",
+      "sessions": 50,
+      "size": "tiny",
+      "params": 2185753,
+      "100ms_model": 0.15249510914151265,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7742025696889856,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.29531512826842754,
+      "500ms_model": -0.05230829834503993
+    },
+    {
+      "name": "s50_base",
+      "sessions": 50,
+      "size": "base",
+      "params": 15794713,
+      "100ms_model": 0.16321868607389345,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7835818858411676,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.3056783469955237,
+      "500ms_model": -0.06101426694382308
+    },
+    {
+      "name": "s50_large",
+      "sessions": 50,
+      "size": "large",
+      "params": 63488025,
+      "100ms_model": 0.14583863834230382,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7755149931679854,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.2967711220707706,
+      "500ms_model": -0.05677677215350279
+    },
+    {
+      "name": "s150_tiny",
+      "sessions": 150,
+      "size": "tiny",
+      "params": 2185753,
+      "100ms_model": 0.15339674294532046,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7761771979477308,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.29958013062873234,
+      "500ms_model": -0.053354856665732454
+    },
+    {
+      "name": "s150_base",
+      "sessions": 150,
+      "size": "base",
+      "params": 15794713,
+      "100ms_model": 0.14384245279130103,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7697868832872294,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.3000412690173574,
+      "500ms_model": -0.06360094400763512
+    },
+    {
+      "name": "s150_large",
+      "sessions": 150,
+      "size": "large",
+      "params": 63488025,
+      "100ms_model": 0.147956888072995,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7769795448838468,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.29406232314058034,
+      "500ms_model": -0.06276466695162557
+    },
+    {
+      "name": "s423_tiny",
+      "sessions": 423,
+      "size": "tiny",
+      "params": 2185753,
+      "100ms_model": 0.14809141413869942,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7761395958102804,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.29427038603900363,
+      "500ms_model": -0.05627733055878027
+    },
+    {
+      "name": "s423_base",
+      "sessions": 423,
+      "size": "base",
+      "params": 15794713,
+      "100ms_model": 0.16505179051179866,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7829269883196002,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.30071096677821785,
+      "500ms_model": -0.0559196690810527
+    },
+    {
+      "name": "s423_large",
+      "sessions": 423,
+      "size": "large",
+      "params": 63488025,
+      "100ms_model": 0.14468977381426046,
+      "100ms_persistence200": -1.5496479174668134,
+      "100ms_delta_vs_persistence200": 1.7774525486586805,
+      "100ms_win_fraction": 1.0,
+      "20ms_model": 0.3014545545041688,
+      "500ms_model": -0.051980873769353286
+    }
+  ],
+  "session_scaling": {
+    "tiny": {
+      "scores": [
+        {
+          "sessions": 10,
+          "co_bps": 0.13958601682281332
+        },
+        {
+          "sessions": 50,
+          "co_bps": 0.15249510914151265
+        },
+        {
+          "sessions": 150,
+          "co_bps": 0.15339674294532046
+        },
+        {
+          "sessions": 423,
+          "co_bps": 0.14809141413869942
+        }
+      ],
+      "log10_session_slope": 0.0056923295816609315
+    },
+    "base": {
+      "scores": [
+        {
+          "sessions": 10,
+          "co_bps": 0.1521668632649274
+        },
+        {
+          "sessions": 50,
+          "co_bps": 0.16321868607389345
+        },
+        {
+          "sessions": 150,
+          "co_bps": 0.14384245279130103
+        },
+        {
+          "sessions": 423,
+          "co_bps": 0.16505179051179866
+        }
+      ],
+      "log10_session_slope": 0.0035980920186678344
+    },
+    "large": {
+      "scores": [
+        {
+          "sessions": 10,
+          "co_bps": 0.14979123542652947
+        },
+        {
+          "sessions": 50,
+          "co_bps": 0.14583863834230382
+        },
+        {
+          "sessions": 150,
+          "co_bps": 0.147956888072995
+        },
+        {
+          "sessions": 423,
+          "co_bps": 0.14468977381426046
+        }
+      ],
+      "log10_session_slope": -0.0025387115035345057
+    }
+  },
+  "parameter_scaling": {
+    "10": {
+      "scores": [
+        {
+          "size": "tiny",
+          "params": 2185753,
+          "co_bps": 0.13958601682281332
+        },
+        {
+          "size": "base",
+          "params": 15794713,
+          "co_bps": 0.1521668632649274
+        },
+        {
+          "size": "large",
+          "params": 63488025,
+          "co_bps": 0.14979123542652947
+        }
+      ],
+      "log10_parameter_slope": 0.0074926650947916154
+    },
+    "50": {
+      "scores": [
+        {
+          "size": "tiny",
+          "params": 2185753,
+          "co_bps": 0.15249510914151265
+        },
+        {
+          "size": "base",
+          "params": 15794713,
+          "co_bps": 0.16321868607389345
+        },
+        {
+          "size": "large",
+          "params": 63488025,
+          "co_bps": 0.14583863834230382
+        }
+      ],
+      "log10_parameter_slope": -0.0034004809426795178
+    },
+    "150": {
+      "scores": [
+        {
+          "size": "tiny",
+          "params": 2185753,
+          "co_bps": 0.15339674294532046
+        },
+        {
+          "size": "base",
+          "params": 15794713,
+          "co_bps": 0.14384245279130103
+        },
+        {
+          "size": "large",
+          "params": 63488025,
+          "co_bps": 0.147956888072995
+        }
+      ],
+      "log10_parameter_slope": -0.00421762400619125
+    },
+    "423": {
+      "scores": [
+        {
+          "size": "tiny",
+          "params": 2185753,
+          "co_bps": 0.14809141413869942
+        },
+        {
+          "size": "base",
+          "params": 15794713,
+          "co_bps": 0.16505179051179866
+        },
+        {
+          "size": "large",
+          "params": 63488025,
+          "co_bps": 0.14468977381426046
+        }
+      ],
+      "log10_parameter_slope": -0.0008360945260276811
+    }
+  },
+  "claim_gate": {
+    "data_scaling_supported": false,
+    "parameter_scaling_supported_all_session_counts": false
+  },
+  "guardrail": "Only this strict continuous-segment metric should be used for scaling claims; sampled-window metrics remain engineering diagnostics."
+}

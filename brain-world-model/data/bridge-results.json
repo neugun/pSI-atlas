@@ -796,11 +796,11 @@
     "interpretation": "A simple single-source connection-strength feature did not predict full response-trace similarity; the streamed functional session has sparse overlap with the restricted Fig7abc graph. This motivates fuller connectivity + dynamics + molecular models rather than treating wiring strength alone as function."
   },
   "pending": {
-    "strict_sessionfree_scaling": "fixed held-out 10/25/50/100/200/423 x tiny/base/large, then 12/32/64/all-unit and compute-unlocked tests",
-    "fast_adaptation": "collect/audit existing submitted adaptation run first; then add frozen-head/full/scratch comparators if absent",
-    "intervention_world": "collect/audit existing submitted intervention run first; resubmit only missing comparator/horizon cells",
-    "probabilistic_jepa_rollout": "run after strict scaling identifies information-vs-optimization bottleneck",
-    "molecular_prior_ablation": "replace simple ABC region prior with cell-type/topology/state-aware prior; simple prior is already negative"
+    "jepa_v1_strict_reval": "Slurm 54963105; retain only if strict continuous metric improves.",
+    "next_objective_if_jepa_fails": "explicit exogenous/state-conditioned multi-step world objective; do not increase parameters by default",
+    "cross_session_adaptation": "test whether pretrained data-efficiency advantage survives session/animal transfer",
+    "multi_session_intervention": "expand fixed no/wrong/shuffle perturbation controls to independent sessions/animals",
+    "molecular_graph_state": "combine molecular identity with topology/state rather than simple region prior"
   },
   "sessionfree_scaling": {
     "status": "DIAGNOSED_INITIAL_12CELL_SWEEP",
@@ -850,14 +850,14 @@
   },
   "task_specific_world_scaling": {
     "status": "PASS",
-    "train_animals": "2->16",
+    "soe_train_animals": "2->16",
     "efficacy_auc": "0.562->0.646",
     "matched_improved": "15/15",
     "one_sided_sign_p": 3.0517578125e-05,
+    "correct_social_auc": 0.62,
     "wrong_social_auc": 0.561,
     "no_social_auc": 0.572,
-    "future_nll_better_than_direct_mlp": "25/27 animals",
-    "authority": "stage20_task_specific_world_scaling.json"
+    "future_motif_nll_better_than_direct_mlp": "25/27 animals"
   },
   "next_run_contract": {
     "status": "LOCKED_BEFORE_COMPUTE",
@@ -877,5 +877,400 @@
     "behavioral_coupling_rho": 0.6727272727272726,
     "behavioral_coupling_p": 0.0330412225454377,
     "interpretation": "Real VTA dopamine inhibition is a causal anchor for the slow reward-credit state: Active belief/value collapses under ON while gross observation amount and Passive belief do not show the same acute endpoint."
+  },
+  "strict_sessionfree_scaling": {
+    "status": "CLOSED_NEGATIVE_SCALE_LAW",
+    "claim_gate": {
+      "data_scaling_supported": false,
+      "parameter_scaling_supported_all_session_counts": false
+    },
+    "metric": "strict continuous held-out co-bps",
+    "100ms": {
+      "s10_tiny": 0.13958601682281332,
+      "s10_base": 0.1521668632649274,
+      "s10_large": 0.14979123542652947,
+      "s50_tiny": 0.15249510914151265,
+      "s50_base": 0.16321868607389345,
+      "s50_large": 0.14583863834230382,
+      "s150_tiny": 0.15339674294532046,
+      "s150_base": 0.14384245279130103,
+      "s150_large": 0.147956888072995,
+      "s423_tiny": 0.14809141413869942,
+      "s423_base": 0.16505179051179866,
+      "s423_large": 0.14468977381426046
+    },
+    "allunit_423_100ms": {
+      "tiny": 0.17795271812460267,
+      "base": 0.176926447007737,
+      "large": 0.1665949103065403
+    },
+    "compute_unlocked_423_100ms": {
+      "tiny": 0.16219262199739587,
+      "base": 0.15299578192625962,
+      "large": 0.16575123739581918
+    },
+    "authority": "strict_scaling_summary.json"
+  },
+  "fast_adaptation_data_efficiency": {
+    "status": "PASS_WITH_SCRATCH_COMPARATOR",
+    "n_sessions": 29,
+    "summary": {
+      "30": {
+        "frozen": {
+          "n": 29,
+          "median": 0.0723166849310296,
+          "mean": 0.2216563886365419
+        },
+        "lora": {
+          "n": 29,
+          "median": 0.08853040155469209,
+          "mean": 0.23698447552242202
+        },
+        "lora_exogenous": {
+          "n": 29,
+          "median": 0.08962312601862801,
+          "mean": 0.2367786493036256
+        },
+        "head_exogenous": {
+          "n": 29,
+          "median": 0.09111134439324993,
+          "mean": 0.24302113302853665
+        },
+        "full_exogenous": {
+          "n": 29,
+          "median": 0.07834916790720554,
+          "mean": 0.25288616535891517
+        },
+        "scratch_exogenous": {
+          "n": 29,
+          "median": 0.045792898245748684,
+          "mean": 0.20261464640223073
+        },
+        "lora_exogenous_vs_frozen": {
+          "n": 29,
+          "median_delta": 0.005740207517399434,
+          "win_fraction": 0.7586206896551724,
+          "sign_p_one_sided": 0.004065029323101044
+        },
+        "head_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.029209817167999558,
+          "win_fraction": 0.9655172413793104,
+          "sign_p_one_sided": 5.587935447692871e-08
+        },
+        "full_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.04297376885728286,
+          "win_fraction": 1.0,
+          "sign_p_one_sided": 1.862645149230957e-09
+        },
+        "lora_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.020360630359256053,
+          "win_fraction": 0.8620689655172413,
+          "sign_p_one_sided": 5.1857903599739075e-05
+        }
+      },
+      "60": {
+        "frozen": {
+          "n": 29,
+          "median": 0.0723166849310296,
+          "mean": 0.2216563886365419
+        },
+        "lora": {
+          "n": 29,
+          "median": 0.08815882561538275,
+          "mean": 0.23877605251095196
+        },
+        "lora_exogenous": {
+          "n": 29,
+          "median": 0.09082391748092819,
+          "mean": 0.23950310587737272
+        },
+        "head_exogenous": {
+          "n": 29,
+          "median": 0.08911996683462252,
+          "mean": 0.2422485277979371
+        },
+        "full_exogenous": {
+          "n": 29,
+          "median": 0.10408629812817034,
+          "mean": 0.2605359615701591
+        },
+        "scratch_exogenous": {
+          "n": 29,
+          "median": 0.05221526150843325,
+          "mean": 0.2313383638031086
+        },
+        "lora_exogenous_vs_frozen": {
+          "n": 29,
+          "median_delta": 0.008028542957755238,
+          "win_fraction": 0.7586206896551724,
+          "sign_p_one_sided": 0.004065029323101044
+        },
+        "head_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.010634514255981324,
+          "win_fraction": 0.7241379310344828,
+          "sign_p_one_sided": 0.01205977238714695
+        },
+        "full_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.022191757750604113,
+          "win_fraction": 1.0,
+          "sign_p_one_sided": 1.862645149230957e-09
+        },
+        "lora_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.0015156252461503428,
+          "win_fraction": 0.5172413793103449,
+          "sign_p_one_sided": 0.5
+        }
+      },
+      "180": {
+        "frozen": {
+          "n": 29,
+          "median": 0.0723166849310296,
+          "mean": 0.2216563886365419
+        },
+        "lora": {
+          "n": 29,
+          "median": 0.08963793481516444,
+          "mean": 0.24423322390916505
+        },
+        "lora_exogenous": {
+          "n": 29,
+          "median": 0.09271386313028501,
+          "mean": 0.24721543231578585
+        },
+        "head_exogenous": {
+          "n": 29,
+          "median": 0.10403035814955326,
+          "mean": 0.2580969672683643
+        },
+        "full_exogenous": {
+          "n": 29,
+          "median": 0.1376158042308461,
+          "mean": 0.28865305811503794
+        },
+        "scratch_exogenous": {
+          "n": 29,
+          "median": 0.10855770668752047,
+          "mean": 0.2728834928418355
+        },
+        "lora_exogenous_vs_frozen": {
+          "n": 29,
+          "median_delta": 0.012110574003044806,
+          "win_fraction": 0.896551724137931,
+          "sign_p_one_sided": 7.618218660354614e-06
+        },
+        "head_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": -0.013037639904154404,
+          "win_fraction": 0.13793103448275862,
+          "sign_p_one_sided": 0.9999923817813396
+        },
+        "full_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.01164509345990248,
+          "win_fraction": 0.7586206896551724,
+          "sign_p_one_sided": 0.004065029323101044
+        },
+        "lora_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": -0.02627809325599003,
+          "win_fraction": 0.10344827586206896,
+          "sign_p_one_sided": 0.9999991878867149
+        }
+      },
+      "300": {
+        "frozen": {
+          "n": 29,
+          "median": 0.0723166849310296,
+          "mean": 0.2216563886365419
+        },
+        "lora": {
+          "n": 29,
+          "median": 0.08986534256281607,
+          "mean": 0.24566681400062484
+        },
+        "lora_exogenous": {
+          "n": 29,
+          "median": 0.09372284169183101,
+          "mean": 0.2495898636248258
+        },
+        "head_exogenous": {
+          "n": 29,
+          "median": 0.10447413018159984,
+          "mean": 0.26119643094557055
+        },
+        "full_exogenous": {
+          "n": 29,
+          "median": 0.15053482358848994,
+          "mean": 0.30091700968597074
+        },
+        "scratch_exogenous": {
+          "n": 29,
+          "median": 0.11042266784603388,
+          "mean": 0.2768638273925934
+        },
+        "lora_exogenous_vs_frozen": {
+          "n": 29,
+          "median_delta": 0.013736659274227781,
+          "win_fraction": 0.9655172413793104,
+          "sign_p_one_sided": 5.587935447692871e-08
+        },
+        "head_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": -0.011715188041290278,
+          "win_fraction": 0.13793103448275862,
+          "sign_p_one_sided": 0.9999923817813396
+        },
+        "full_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": 0.015944335387394162,
+          "win_fraction": 0.9655172413793104,
+          "sign_p_one_sided": 5.587935447692871e-08
+        },
+        "lora_exogenous_vs_scratch_exogenous": {
+          "n": 29,
+          "median_delta": -0.02346659158401937,
+          "win_fraction": 0.13793103448275862,
+          "sign_p_one_sided": 0.9999923817813396
+        }
+      }
+    },
+    "main_claim": "Pretrained full fine-tuning beats same-architecture scratch at all 30/60/180/300-s budgets; 29/29 wins at 30 and 60 s.",
+    "authority": "stage23_fast_adaptation_comparators.json"
+  },
+  "real_intervention_world_strict": {
+    "status": "PASS_WITH_BOUNDARY",
+    "paired_trial_loglikelihood": {
+      "true_vs_no_action": {
+        "n": 120,
+        "mean_delta_ll": 0.5939402956574393,
+        "median_delta_ll": 0.4393032690273202,
+        "win_fraction": 0.8833333333333333,
+        "sign_p_one_sided": 5.7840450220901445e-19,
+        "median_delta_ll_boot95": [
+          0.3877719612053454,
+          0.5472942887854231
+        ],
+        "wilcoxon_one_sided_p": 7.549911495579342e-19
+      },
+      "true_vs_cyclic_wrong": {
+        "n": 120,
+        "mean_delta_ll": 0.747571280471828,
+        "median_delta_ll": 0.15597782381276204,
+        "win_fraction": 0.7333333333333333,
+        "sign_p_one_sided": 1.590530158518539e-07,
+        "median_delta_ll_boot95": [
+          0.08789209030069856,
+          0.7752653663285969
+        ],
+        "wilcoxon_one_sided_p": 1.2319757121586113e-11
+      },
+      "true_vs_mean_wrong": {
+        "n": 120,
+        "mean_delta_ll": 0.7597585255266635,
+        "median_delta_ll": 0.7447780138136721,
+        "win_fraction": 0.9,
+        "sign_p_one_sided": 8.900632364205765e-21,
+        "median_delta_ll_boot95": [
+          0.6155494802570964,
+          0.8565789539612183
+        ],
+        "wilcoxon_one_sided_p": 1.2007120091246042e-19
+      },
+      "true_vs_best_wrong_adversarial": {
+        "n": 120,
+        "mean_delta_ll": -0.011821913410080497,
+        "median_delta_ll": 0.024440363489304673,
+        "win_fraction": 0.5833333333333334,
+        "sign_p_one_sided": 0.04120373966376328,
+        "median_delta_ll_boot95": [
+          -0.005104687583497025,
+          0.044366504956684594
+        ],
+        "wilcoxon_one_sided_p": 0.13740151563983205
+      }
+    },
+    "action_identity": {
+      "generative_4way_accuracy": 0.5833333333333334,
+      "chance": 0.25,
+      "label_permutation_p": 9.999000099990002e-05,
+      "true_action_mean_ll": -201.83407328789139,
+      "shuffled_action_mean_ll_null_mean": -202.40418996308046,
+      "true_vs_shuffled_assignment_permutation_p": 9.999000099990002e-05,
+      "true_beats_every_wrong_fraction": 0.5833333333333334
+    },
+    "future_horizons": {
+      "40": {
+        "actual_horizon_ms": 40,
+        "true_action_co_bps": -0.028227253615060562,
+        "no_action_co_bps": -0.03042657227530939,
+        "cyclic_wrong_action_co_bps": -0.030539260514748208,
+        "delta_true_minus_no": 0.0021993186602488266,
+        "delta_true_minus_cyclic_wrong": 0.0023120068996876457
+      },
+      "100": {
+        "actual_horizon_ms": 100,
+        "true_action_co_bps": -0.05141890684662421,
+        "no_action_co_bps": -0.05595498207629748,
+        "cyclic_wrong_action_co_bps": -0.05722063210570196,
+        "delta_true_minus_no": 0.004536075229673274,
+        "delta_true_minus_cyclic_wrong": 0.005801725259077753
+      },
+      "240": {
+        "actual_horizon_ms": 240,
+        "true_action_co_bps": -0.058772070127063196,
+        "no_action_co_bps": -0.06602667342618494,
+        "cyclic_wrong_action_co_bps": -0.06744678489486171,
+        "delta_true_minus_no": 0.0072546032991217466,
+        "delta_true_minus_cyclic_wrong": 0.008674714767798512
+      },
+      "500": {
+        "actual_horizon_ms": 500,
+        "true_action_co_bps": -0.03160594724679762,
+        "no_action_co_bps": -0.03899917241550204,
+        "cyclic_wrong_action_co_bps": -0.04091153330491139,
+        "delta_true_minus_no": 0.007393225168704422,
+        "delta_true_minus_cyclic_wrong": 0.009305586058113768
+      }
+    },
+    "prestimulus_control": {
+      "accuracy": 0.19166666666666668,
+      "balanced_accuracy": 0.19166666666666668,
+      "chance": 0.25,
+      "n_train": 280,
+      "n_test": 120,
+      "labels": [
+        "20hz",
+        "40hz",
+        "500ms",
+        "5ms"
+      ]
+    },
+    "boundary": "Single mouse/probe; post-hoc best-wrong is borderline/non-robust; absolute co-bps remains below zero.",
+    "authority": "stage22_mcbride_strict_counterfactual.json"
+  },
+  "external_shared_state_transfer": {
+    "status": "PASS_REPRESENTATIVE_POSITIVE_TESTS",
+    "macaque_frozen_core_100pct": "10/10 sessions",
+    "macaque_mean_nll_gain": 0.012842902508032486,
+    "macaque_one_sided_p": 0.0009765625,
+    "human_structured_state": "8/10 subjects",
+    "rat_brier_nll": "8/10 rats",
+    "rat_auc": "9/10 rats",
+    "guardrail": "Not universal transfer; macaque sessions nested within two monkeys."
+  },
+  "jepa_rollout_v1": {
+    "status": "SAMPLED_METRIC_NEGATIVE_STRICT_REEVAL_SUBMITTED",
+    "selected_size": "tiny",
+    "sampled_base_100ms": 1.3346181267413957,
+    "sampled_stage3_100ms": 1.3342187634813942,
+    "delta": -0.0003993632600014507,
+    "strict_job": "54963105",
+    "authority": "stage3_jepa_rollout_v1.json"
   }
 }

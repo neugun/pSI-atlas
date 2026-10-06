@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "dataset": "McBride et al. 2022 claustrum optogenetic Neuropixels",
+  "scope": "single probe, held-out trials; intervention-conditioned future cortical population prediction",
+  "n_test_trials": 120,
+  "n_units": 13,
+  "conditions": [
+    "20hz",
+    "40hz",
+    "500ms",
+    "5ms"
+  ],
+  "paired_trial_loglikelihood": {
+    "true_vs_no_action": {
+      "n": 120,
+      "mean_delta_ll": 0.5939402956574393,
+      "median_delta_ll": 0.4393032690273202,
+      "win_fraction": 0.8833333333333333,
+      "sign_p_one_sided": 5.7840450220901445e-19,
+      "median_delta_ll_boot95": [
+        0.3877719612053454,
+        0.5472942887854231
+      ],
+      "wilcoxon_one_sided_p": 7.549911495579342e-19
+    },
+    "true_vs_cyclic_wrong": {
+      "n": 120,
+      "mean_delta_ll": 0.747571280471828,
+      "median_delta_ll": 0.15597782381276204,
+      "win_fraction": 0.7333333333333333,
+      "sign_p_one_sided": 1.590530158518539e-07,
+      "median_delta_ll_boot95": [
+        0.08789209030069856,
+        0.7752653663285969
+      ],
+      "wilcoxon_one_sided_p": 1.2319757121586113e-11
+    },
+    "true_vs_mean_wrong": {
+      "n": 120,
+      "mean_delta_ll": 0.7597585255266635,
+      "median_delta_ll": 0.7447780138136721,
+      "win_fraction": 0.9,
+      "sign_p_one_sided": 8.900632364205765e-21,
+      "median_delta_ll_boot95": [
+        0.6155494802570964,
+        0.8565789539612183
+      ],
+      "wilcoxon_one_sided_p": 1.2007120091246042e-19
+    },
+    "true_vs_best_wrong_adversarial": {
+      "n": 120,
+      "mean_delta_ll": -0.011821913410080497,
+      "median_delta_ll": 0.024440363489304673,
+      "win_fraction": 0.5833333333333334,
+      "sign_p_one_sided": 0.04120373966376328,
+      "median_delta_ll_boot95": [
+        -0.005104687583497025,
+        0.044366504956684594
+      ],
+      "wilcoxon_one_sided_p": 0.13740151563983205
+    }
+  },
+  "action_identity": {
+    "generative_4way_accuracy": 0.5833333333333334,
+    "chance": 0.25,
+    "label_permutation_p": 9.999000099990002e-05,
+    "true_action_mean_ll": -201.83407328789139,
+    "shuffled_action_mean_ll_null_mean": -202.40418996308046,
+    "true_vs_shuffled_assignment_permutation_p": 9.999000099990002e-05,
+    "true_beats_every_wrong_fraction": 0.5833333333333334
+  },
+  "future_horizons": {
+    "40": {
+      "actual_horizon_ms": 40,
+      "true_action_co_bps": -0.028227253615060562,
+      "no_action_co_bps": -0.03042657227530939,
+      "cyclic_wrong_action_co_bps": -0.030539260514748208,
+      "delta_true_minus_no": 0.0021993186602488266,
+      "delta_true_minus_cyclic_wrong": 0.0023120068996876457
+    },
+    "100": {
+      "actual_horizon_ms": 100,
+      "true_action_co_bps": -0.05141890684662421,
+      "no_action_co_bps": -0.05595498207629748,
+      "cyclic_wrong_action_co_bps": -0.05722063210570196,
+      "delta_true_minus_no": 0.004536075229673274,
+      "delta_true_minus_cyclic_wrong": 0.005801725259077753
+    },
+    "240": {
+      "actual_horizon_ms": 240,
+      "true_action_co_bps": -0.058772070127063196,
+      "no_action_co_bps": -0.06602667342618494,
+      "cyclic_wrong_action_co_bps": -0.06744678489486171,
+      "delta_true_minus_no": 0.0072546032991217466,
+      "delta_true_minus_cyclic_wrong": 0.008674714767798512
+    },
+    "500": {
+      "actual_horizon_ms": 500,
+      "true_action_co_bps": -0.03160594724679762,
+      "no_action_co_bps": -0.03899917241550204,
+      "cyclic_wrong_action_co_bps": -0.04091153330491139,
+      "delta_true_minus_no": 0.007393225168704422,
+      "delta_true_minus_cyclic_wrong": 0.009305586058113768
+    }
+  },
+  "independent_prestimulus_leakage_control": {
+    "accuracy": 0.19166666666666668,
+    "balanced_accuracy": 0.19166666666666668,
+    "chance": 0.25,
+    "n_train": 280,
+    "n_test": 120,
+    "labels": [
+      "20hz",
+      "40hz",
+      "500ms",
+      "5ms"
+    ]
+  },
+  "independent_poststimulus_decoding": {
+    "accuracy": 0.875,
+    "balanced_accuracy": 0.875,
+    "chance": 0.25,
+    "n_train": 280,
+    "n_test": 120,
+    "labels": [
+      "20hz",
+      "40hz",
+      "500ms",
+      "5ms"
+    ]
+  },
+  "guardrails": [
+    "No across-animal causal generalization claim: this is one mouse/probe with held-out trials.",
+    "Best-wrong is an adversarial outcome-selected comparator and is intentionally harder than a predeclared cyclic wrong-action control.",
+    "Prestimulus control is an independent held-out decoder, not the intervention world model run backward in time."
+  ]
+}

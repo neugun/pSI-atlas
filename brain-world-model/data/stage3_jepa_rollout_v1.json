@@ -1,0 +1,2524 @@
+{
+  "status": "PASS",
+  "sessions": 423,
+  "heldout_sessions": 29,
+  "selected_size": "tiny",
+  "base_direct_100ms_median_co_bps": 1.3346181267413957,
+  "stage3_best_100ms_median_co_bps": 1.3342187634813942,
+  "delta_vs_direct": -0.0003993632600014507,
+  "model_params": {
+    "total": 2185753,
+    "trainable": 2185753,
+    "session_specific": 0,
+    "unit_id_specific": 0,
+    "shared_fraction": 1.0
+  },
+  "jepa_predictor_params": 148416,
+  "objectives": {
+    "probabilistic": "Poisson NLL over next 500 ms",
+    "jepa": "EMA latent prediction of future 400-ms population state",
+    "rollout": "100-ms predicted rates fed back, subsequent 400-ms Poisson loss"
+  },
+  "history": [
+    {
+      "step": 400,
+      "eval": {
+        "summary": {
+          "20": {
+            "model_median_co_bps": 1.4217069950078491,
+            "model_mean_co_bps": 1.623955351146184,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": 0.016271748246087268,
+            "delta_vs_persistence_median": 1.7612025981961854,
+            "n_sessions": 29
+          },
+          "40": {
+            "model_median_co_bps": 1.3176897383329182,
+            "model_mean_co_bps": 1.6367621851888787,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": 0.046841882897756155,
+            "delta_vs_persistence_median": 1.5165460719163328,
+            "n_sessions": 29
+          },
+          "100": {
+            "model_median_co_bps": 1.330729478759651,
+            "model_mean_co_bps": 1.576198357339951,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.18194094656101992,
+            "delta_vs_persistence_median": 1.8890775428101596,
+            "n_sessions": 29
+          },
+          "200": {
+            "model_median_co_bps": 1.328939810594013,
+            "model_mean_co_bps": 1.5426399544057694,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.3757275538832644,
+            "delta_vs_persistence_median": 1.8160324453931351,
+            "n_sessions": 29
+          },
+          "500": {
+            "model_median_co_bps": 1.1645329980193961,
+            "model_mean_co_bps": 1.4027007311324473,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.862769587252028,
+            "delta_vs_persistence_median": 2.2146903436187264,
+            "n_sessions": 29
+          }
+        },
+        "per_session": {
+          "0802ced5-33a3-405e-8336-b65ebc5cb07c": {
+            "20": {
+              "co_bps": 0.7739385131788702,
+              "persistence_co_bps": -1.0701702652630563,
+              "spikes": 1462
+            },
+            "40": {
+              "co_bps": 0.6586243153646796,
+              "persistence_co_bps": -1.2109306264034507,
+              "spikes": 1439
+            },
+            "100": {
+              "co_bps": 0.5414870846757506,
+              "persistence_co_bps": -1.6887272729381406,
+              "spikes": 1376
+            },
+            "200": {
+              "co_bps": 0.4783658824663867,
+              "persistence_co_bps": -2.001914362413613,
+              "spikes": 1453
+            },
+            "500": {
+              "co_bps": 0.48209137265761687,
+              "persistence_co_bps": -2.0527079334131217,
+              "spikes": 1376
+            }
+          },
+          "09394481-8dd2-4d5c-9327-f2753ede92d7": {
+            "20": {
+              "co_bps": 5.023909128244669,
+              "persistence_co_bps": 4.721615577955236,
+              "spikes": 1257
+            },
+            "40": {
+              "co_bps": 4.9987153606710635,
+              "persistence_co_bps": 4.564915038846734,
+              "spikes": 1319
+            },
+            "100": {
+              "co_bps": 4.787100288627229,
+              "persistence_co_bps": 4.240610173714739,
+              "spikes": 1316
+            },
+            "200": {
+              "co_bps": 4.914991788618164,
+              "persistence_co_bps": 4.11504336110386,
+              "spikes": 1258
+            },
+            "500": {
+              "co_bps": 4.058853558199377,
+              "persistence_co_bps": 2.691635854108964,
+              "spikes": 1296
+            }
+          },
+          "0cbeae00-e229-4b7d-bdcc-1b0569d7e0c3": {
+            "20": {
+              "co_bps": 2.5653271762749448,
+              "persistence_co_bps": 0.6285027982356889,
+              "spikes": 1480
+            },
+            "40": {
+              "co_bps": 2.8293208965815637,
+              "persistence_co_bps": 0.643303836778002,
+              "spikes": 1479
+            },
+            "100": {
+              "co_bps": 2.7962060887736926,
+              "persistence_co_bps": 0.47416045219792696,
+              "spikes": 1540
+            },
+            "200": {
+              "co_bps": 2.33421109244731,
+              "persistence_co_bps": -0.08682961364380896,
+              "spikes": 1484
+            },
+            "500": {
+              "co_bps": 2.3327310661799245,
+              "persistence_co_bps": -0.2549434623633159,
+              "spikes": 1415
+            }
+          },
+          "12dc8b34-b18e-4cdd-90a9-da134a9be79c": {
+            "20": {
+              "co_bps": 2.03948478277694,
+              "persistence_co_bps": -0.20786798390947384,
+              "spikes": 244
+            },
+            "40": {
+              "co_bps": 1.7465451412209907,
+              "persistence_co_bps": 0.4049662964025501,
+              "spikes": 246
+            },
+            "100": {
+              "co_bps": 2.0443668713829948,
+              "persistence_co_bps": 0.14955561503510065,
+              "spikes": 275
+            },
+            "200": {
+              "co_bps": 1.6585178415031014,
+              "persistence_co_bps": -1.5879619117125314,
+              "spikes": 256
+            },
+            "500": {
+              "co_bps": 2.04685086356553,
+              "persistence_co_bps": -0.862769587252028,
+              "spikes": 237
+            }
+          },
+          "16693458-0801-4d35-a3f1-9115c7e5acfd": {
+            "20": {
+              "co_bps": 0.7038545611860128,
+              "persistence_co_bps": 0.19355929544553266,
+              "spikes": 3123
+            },
+            "40": {
+              "co_bps": 0.6813602976506913,
+              "persistence_co_bps": 0.021507290506028953,
+              "spikes": 3093
+            },
+            "100": {
+              "co_bps": 0.6097417007963508,
+              "persistence_co_bps": -0.20297946198234457,
+              "spikes": 3117
+            },
+            "200": {
+              "co_bps": 0.5833000883456072,
+              "persistence_co_bps": -0.09646638112806556,
+              "spikes": 2997
+            },
+            "500": {
+              "co_bps": 0.4606213246350262,
+              "persistence_co_bps": -0.5053234700721873,
+              "spikes": 3034
+            }
+          },
+          "19e66dc9-bf9f-430b-9d6a-acfa85de6fb7": {
+            "20": {
+              "co_bps": 1.617705949894855,
+              "persistence_co_bps": 0.13929714059181428,
+              "spikes": 1889
+            },
+            "40": {
+              "co_bps": 1.7570474038035204,
+              "persistence_co_bps": 0.24050133188718756,
+              "spikes": 1769
+            },
+            "100": {
+              "co_bps": 1.778260364995691,
+              "persistence_co_bps": 0.0380422733271963,
+              "spikes": 1705
+            },
+            "200": {
+              "co_bps": 1.4347038425989402,
+              "persistence_co_bps": -0.6537696801122153,
+              "spikes": 1753
+            },
+            "500": {
+              "co_bps": 1.2908995038999587,
+              "persistence_co_bps": -1.1677131999267316,
+              "spikes": 1575
+            }
+          },
+          "28338153-4113-485b-835b-91cb96d984f2": {
+            "20": {
+              "co_bps": 1.1547699437983194,
+              "persistence_co_bps": -0.7642169613549892,
+              "spikes": 953
+            },
+            "40": {
+              "co_bps": 1.1834076836969105,
+              "persistence_co_bps": -0.6164139580665963,
+              "spikes": 947
+            },
+            "100": {
+              "co_bps": 0.8448622005983902,
+              "persistence_co_bps": -1.1699215521187851,
+              "spikes": 906
+            },
+            "200": {
+              "co_bps": 1.1157861228275343,
+              "persistence_co_bps": -0.6585714000723417,
+              "spikes": 971
+            },
+            "500": {
+              "co_bps": 1.0132129133730752,
+              "persistence_co_bps": -1.201477430245651,
+              "spikes": 910
+            }
+          },
+          "29a6def1-fc5c-4eea-ac48-47e9b053dcb5": {
+            "20": {
+              "co_bps": 0.7566044015208929,
+              "persistence_co_bps": 0.3034822179362713,
+              "spikes": 2617
+            },
+            "40": {
+              "co_bps": 0.7081101152098169,
+              "persistence_co_bps": 0.046841882897756155,
+              "spikes": 2650
+            },
+            "100": {
+              "co_bps": 0.7499911123849194,
+              "persistence_co_bps": -0.1358506589707781,
+              "spikes": 2601
+            },
+            "200": {
+              "co_bps": 0.4858420803790345,
+              "persistence_co_bps": -0.8042129786441017,
+              "spikes": 2725
+            },
+            "500": {
+              "co_bps": 0.5800411860757713,
+              "persistence_co_bps": -0.5512867284627229,
+              "spikes": 2536
+            }
+          },
+          "2d9bfc10-59fb-424a-b699-7c42f86c7871": {
+            "20": {
+              "co_bps": 5.1552767971254525,
+              "persistence_co_bps": 2.847729118290174,
+              "spikes": 579
+            },
+            "40": {
+              "co_bps": 5.418519743519717,
+              "persistence_co_bps": 3.5881381007233766,
+              "spikes": 658
+            },
+            "100": {
+              "co_bps": 5.373585704396499,
+              "persistence_co_bps": 2.6959251786964704,
+              "spikes": 597
+            },
+            "200": {
+              "co_bps": 6.0371738219279445,
+              "persistence_co_bps": 3.320629389779372,
+              "spikes": 626
+            },
+            "500": {
+              "co_bps": 5.032333697414576,
+              "persistence_co_bps": 2.0735647975077964,
+              "spikes": 543
+            }
+          },
+          "3bcb81b4-d9ca-4fc9-a1cd-353a966239ca": {
+            "20": {
+              "co_bps": 0.639417175942791,
+              "persistence_co_bps": -0.3124682926184567,
+              "spikes": 2189
+            },
+            "40": {
+              "co_bps": 0.689819453466958,
+              "persistence_co_bps": -0.055522154832219575,
+              "spikes": 2120
+            },
+            "100": {
+              "co_bps": 0.560773554949245,
+              "persistence_co_bps": -0.48758610342544006,
+              "spikes": 2081
+            },
+            "200": {
+              "co_bps": 0.6097801661677974,
+              "persistence_co_bps": -0.3757275538832644,
+              "spikes": 2118
+            },
+            "500": {
+              "co_bps": 0.47031542048895975,
+              "persistence_co_bps": -0.769767998416977,
+              "spikes": 2076
+            }
+          },
+          "5569f363-0934-464e-9a5b-77c8e67791a1": {
+            "20": {
+              "co_bps": 1.4217069950078491,
+              "persistence_co_bps": -0.3394956031883364,
+              "spikes": 750
+            },
+            "40": {
+              "co_bps": 1.2636307326243228,
+              "persistence_co_bps": -0.9012417630095527,
+              "spikes": 720
+            },
+            "100": {
+              "co_bps": 1.3333640256271235,
+              "persistence_co_bps": -1.6880962052032567,
+              "spikes": 717
+            },
+            "200": {
+              "co_bps": 1.328939810594013,
+              "persistence_co_bps": -1.9129430002275802,
+              "spikes": 761
+            },
+            "500": {
+              "co_bps": 1.128364138339726,
+              "persistence_co_bps": -1.8667842509239212,
+              "spikes": 878
+            }
+          },
+          "56956777-dca5-468c-87cb-78150432cc57": {
+            "20": {
+              "co_bps": 1.631408580453203,
+              "persistence_co_bps": -0.13035174160160107,
+              "spikes": 1167
+            },
+            "40": {
+              "co_bps": 1.7786710577325626,
+              "persistence_co_bps": -0.12026851058192867,
+              "spikes": 1220
+            },
+            "100": {
+              "co_bps": 1.5171425212744662,
+              "persistence_co_bps": -0.5894443505552244,
+              "spikes": 1259
+            },
+            "200": {
+              "co_bps": 1.6608538208263617,
+              "persistence_co_bps": -0.15517862456677345,
+              "spikes": 1293
+            },
+            "500": {
+              "co_bps": 1.5933029940411312,
+              "persistence_co_bps": -0.48912403280741445,
+              "spikes": 1123
+            }
+          },
+          "5c0c560e-9e1f-45e9-b66e-e4ee7855be84": {
+            "20": {
+              "co_bps": 1.4626310417061654,
+              "persistence_co_bps": 0.6431764989369875,
+              "spikes": 1519
+            },
+            "40": {
+              "co_bps": 1.4047407161749736,
+              "persistence_co_bps": 0.6103497251675988,
+              "spikes": 1449
+            },
+            "100": {
+              "co_bps": 1.330729478759651,
+              "persistence_co_bps": 0.5454498515275004,
+              "spikes": 1483
+            },
+            "200": {
+              "co_bps": 1.4741531445817595,
+              "persistence_co_bps": 0.5907958682579282,
+              "spikes": 1493
+            },
+            "500": {
+              "co_bps": 1.1645329980193961,
+              "persistence_co_bps": -0.32501670428511487,
+              "spikes": 1466
+            }
+          },
+          "5ec72172-3901-4771-8777-6e9490ca51fc": {
+            "20": {
+              "co_bps": 2.603013567786654,
+              "persistence_co_bps": 0.22229522842988622,
+              "spikes": 919
+            },
+            "40": {
+              "co_bps": 2.6747319982377418,
+              "persistence_co_bps": 0.09704818083311838,
+              "spikes": 928
+            },
+            "100": {
+              "co_bps": 2.5305812707808792,
+              "persistence_co_bps": 0.25767449926564057,
+              "spikes": 908
+            },
+            "200": {
+              "co_bps": 2.408888023364774,
+              "persistence_co_bps": -0.06507989711645054,
+              "spikes": 945
+            },
+            "500": {
+              "co_bps": 2.3035855071129796,
+              "persistence_co_bps": -0.6050707642353165,
+              "spikes": 897
+            }
+          },
+          "6713a4a7-faed-4df2-acab-ee4e63326f8d": {
+            "20": {
+              "co_bps": 2.4252968525534753,
+              "persistence_co_bps": -0.2209185764493837,
+              "spikes": 712
+            },
+            "40": {
+              "co_bps": 2.2885957684407474,
+              "persistence_co_bps": -0.5173002628445011,
+              "spikes": 704
+            },
+            "100": {
+              "co_bps": 2.547036015304778,
+              "persistence_co_bps": -0.5966638730851413,
+              "spikes": 744
+            },
+            "200": {
+              "co_bps": 2.096119024897547,
+              "persistence_co_bps": -1.3534904817022562,
+              "spikes": 752
+            },
+            "500": {
+              "co_bps": 2.0548392279860077,
+              "persistence_co_bps": -1.7735299855380835,
+              "spikes": 735
+            }
+          },
+          "6f6d2c8e-28be-49f4-ae4d-06be2d3148c1": {
+            "20": {
+              "co_bps": 0.3842834591486472,
+              "persistence_co_bps": -2.0952784978953725,
+              "spikes": 877
+            },
+            "40": {
+              "co_bps": 0.576527109494854,
+              "persistence_co_bps": -1.4830648473267536,
+              "spikes": 842
+            },
+            "100": {
+              "co_bps": 0.42417747836938485,
+              "persistence_co_bps": -1.4649000644407748,
+              "spikes": 881
+            },
+            "200": {
+              "co_bps": 0.41909077682815443,
+              "persistence_co_bps": -2.2978975750952197,
+              "spikes": 914
+            },
+            "500": {
+              "co_bps": 0.281253105306858,
+              "persistence_co_bps": -2.576408182090862,
+              "spikes": 920
+            }
+          },
+          "77e6dc6a-66ed-433c-b1a2-778c914f523c": {
+            "20": {
+              "co_bps": 1.3354411872112455,
+              "persistence_co_bps": -0.7365661236699833,
+              "spikes": 759
+            },
+            "40": {
+              "co_bps": 1.079244307445115,
+              "persistence_co_bps": -1.1459031637095374,
+              "spikes": 738
+            },
+            "100": {
+              "co_bps": 1.0511752281911029,
+              "persistence_co_bps": -1.7476847998519147,
+              "spikes": 727
+            },
+            "200": {
+              "co_bps": 1.006681898784074,
+              "persistence_co_bps": -1.7910346225550084,
+              "spikes": 747
+            },
+            "500": {
+              "co_bps": 0.8767709345553603,
+              "persistence_co_bps": -2.1936026209881145,
+              "spikes": 696
+            }
+          },
+          "7cc74598-9c1b-436b-84fa-0bf89f31adf6": {
+            "20": {
+              "co_bps": 1.703969847490016,
+              "persistence_co_bps": -0.07483931513164621,
+              "spikes": 1035
+            },
+            "40": {
+              "co_bps": 1.7812143395303097,
+              "persistence_co_bps": 0.10426951196302278,
+              "spikes": 924
+            },
+            "100": {
+              "co_bps": 1.622487212701319,
+              "persistence_co_bps": -0.7440902643755072,
+              "spikes": 980
+            },
+            "200": {
+              "co_bps": 1.4373074701523252,
+              "persistence_co_bps": -1.2041530734990407,
+              "spikes": 952
+            },
+            "500": {
+              "co_bps": 1.2503223495108091,
+              "persistence_co_bps": -2.0030045047436285,
+              "spikes": 941
+            }
+          },
+          "810b1e07-009e-4ebe-930a-915e4cd8ece4": {
+            "20": {
+              "co_bps": 3.6949102798659803,
+              "persistence_co_bps": 3.377559576178004,
+              "spikes": 4969
+            },
+            "40": {
+              "co_bps": 3.7727907232594347,
+              "persistence_co_bps": 3.4234753710198897,
+              "spikes": 4972
+            },
+            "100": {
+              "co_bps": 3.706580913647292,
+              "persistence_co_bps": 3.2332214952354286,
+              "spikes": 5011
+            },
+            "200": {
+              "co_bps": 3.686353481927469,
+              "persistence_co_bps": 3.193781969687189,
+              "spikes": 4908
+            },
+            "500": {
+              "co_bps": 3.702145986040875,
+              "persistence_co_bps": 3.146030611173645,
+              "spikes": 4983
+            }
+          },
+          "8c025071-c4f3-426c-9aed-f149e8f75b7b": {
+            "20": {
+              "co_bps": 0.8512969928079802,
+              "persistence_co_bps": 0.32578176383620816,
+              "spikes": 1901
+            },
+            "40": {
+              "co_bps": 0.8744457803404265,
+              "persistence_co_bps": 0.2264061485658962,
+              "spikes": 1941
+            },
+            "100": {
+              "co_bps": 0.8263556203963489,
+              "persistence_co_bps": 0.2609167536299968,
+              "spikes": 1904
+            },
+            "200": {
+              "co_bps": 0.8530655694808567,
+              "persistence_co_bps": 0.16615967336990675,
+              "spikes": 1916
+            },
+            "500": {
+              "co_bps": 0.771379434228347,
+              "persistence_co_bps": -0.20013713329170835,
+              "spikes": 1888
+            }
+          },
+          "934dd7a4-fbdc-459c-8830-04fe9033bc28": {
+            "20": {
+              "co_bps": 1.9044865743337291,
+              "persistence_co_bps": 0.016271748246087268,
+              "spikes": 1128
+            },
+            "40": {
+              "co_bps": 1.7413321704336446,
+              "persistence_co_bps": -0.21508574956197946,
+              "spikes": 1068
+            },
+            "100": {
+              "co_bps": 1.6211170387080696,
+              "persistence_co_bps": -0.4674708473427247,
+              "spikes": 1045
+            },
+            "200": {
+              "co_bps": 1.8112392090048932,
+              "persistence_co_bps": -0.8572158697816862,
+              "spikes": 1113
+            },
+            "500": {
+              "co_bps": 1.8292480517903802,
+              "persistence_co_bps": -0.9238700501008411,
+              "spikes": 1087
+            }
+          },
+          "b9c205c3-feac-485b-a89d-afc96d9cb280": {
+            "20": {
+              "co_bps": 0.841447415696676,
+              "persistence_co_bps": 0.2688164044999736,
+              "spikes": 2206
+            },
+            "40": {
+              "co_bps": 0.832134156345104,
+              "persistence_co_bps": 0.16981908966687942,
+              "spikes": 2231
+            },
+            "100": {
+              "co_bps": 0.8401633808991079,
+              "persistence_co_bps": 0.21343494813714078,
+              "spikes": 2154
+            },
+            "200": {
+              "co_bps": 0.7361977861048504,
+              "persistence_co_bps": 0.008030668049335075,
+              "spikes": 2261
+            },
+            "500": {
+              "co_bps": 0.5021602623868646,
+              "persistence_co_bps": -1.0469784107535922,
+              "spikes": 2217
+            }
+          },
+          "c958919c-2e75-435d-845d-5b62190b520e": {
+            "20": {
+              "co_bps": 1.5930550388188836,
+              "persistence_co_bps": 1.1892419489201105,
+              "spikes": 1978
+            },
+            "40": {
+              "co_bps": 1.653512528448751,
+              "persistence_co_bps": 1.2204288554348788,
+              "spikes": 2031
+            },
+            "100": {
+              "co_bps": 1.5250511615341005,
+              "persistence_co_bps": 0.7711449255077952,
+              "spikes": 2087
+            },
+            "200": {
+              "co_bps": 1.479547085595074,
+              "persistence_co_bps": 0.7564918649908546,
+              "spikes": 2020
+            },
+            "500": {
+              "co_bps": 1.3246781229799927,
+              "persistence_co_bps": -0.18628760826103652,
+              "spikes": 1889
+            }
+          },
+          "d0c91c3c-8cbb-4929-8657-31f18bffc294": {
+            "20": {
+              "co_bps": 1.150417756946153,
+              "persistence_co_bps": -0.735168344788561,
+              "spikes": 522
+            },
+            "40": {
+              "co_bps": 1.3176897383329182,
+              "persistence_co_bps": -0.7371635850922605,
+              "spikes": 491
+            },
+            "100": {
+              "co_bps": 1.259059835570712,
+              "persistence_co_bps": -0.773068424124435,
+              "spikes": 472
+            },
+            "200": {
+              "co_bps": 1.2395079187552533,
+              "persistence_co_bps": -1.74962505864302,
+              "spikes": 492
+            },
+            "500": {
+              "co_bps": 1.1745907972052612,
+              "persistence_co_bps": -1.850024372972444,
+              "spikes": 451
+            }
+          },
+          "dc21e80d-97d7-44ca-a729-a8e3f9b14305": {
+            "20": {
+              "co_bps": 0.47522817568236986,
+              "persistence_co_bps": -0.38490138230099274,
+              "spikes": 663
+            },
+            "40": {
+              "co_bps": 0.4474946074675649,
+              "persistence_co_bps": -0.6008461785678694,
+              "spikes": 678
+            },
+            "100": {
+              "co_bps": 0.39528946249178126,
+              "persistence_co_bps": -0.18194094656101992,
+              "spikes": 640
+            },
+            "200": {
+              "co_bps": 0.4091118883721089,
+              "persistence_co_bps": -0.8690639662646287,
+              "spikes": 706
+            },
+            "500": {
+              "co_bps": 0.40564722061619857,
+              "persistence_co_bps": -1.3153705508093207,
+              "spikes": 682
+            }
+          },
+          "e1931de1-cf7b-49af-af33-2ade15e8abe7": {
+            "20": {
+              "co_bps": 0.6107668788579872,
+              "persistence_co_bps": 0.15414133348727949,
+              "spikes": 3552
+            },
+            "40": {
+              "co_bps": 0.6237572250126435,
+              "persistence_co_bps": 0.22387064236288165,
+              "spikes": 3617
+            },
+            "100": {
+              "co_bps": 0.6108292211807573,
+              "persistence_co_bps": 0.07989228536406534,
+              "spikes": 3619
+            },
+            "200": {
+              "co_bps": 0.47861325415515105,
+              "persistence_co_bps": -0.1849491540580066,
+              "spikes": 3677
+            },
+            "500": {
+              "co_bps": 0.47042531418941624,
+              "persistence_co_bps": -0.48714960483512865,
+              "spikes": 3614
+            }
+          },
+          "f4eb56a4-8bf8-4bbc-a8f3-6e6535134bad": {
+            "20": {
+              "co_bps": 0.2765210791267374,
+              "persistence_co_bps": -3.2380980215746757,
+              "spikes": 317
+            },
+            "40": {
+              "co_bps": 0.2981612270291384,
+              "persistence_co_bps": -3.0999994330653142,
+              "spikes": 326
+            },
+            "100": {
+              "co_bps": 0.19296000792341467,
+              "persistence_co_bps": -3.8795678744084374,
+              "spikes": 317
+            },
+            "200": {
+              "co_bps": 0.27963825839690354,
+              "persistence_co_bps": -4.015574373106132,
+              "spikes": 367
+            },
+            "500": {
+              "co_bps": 0.16984416790065962,
+              "persistence_co_bps": -3.8665264903109713,
+              "spikes": 293
+            }
+          },
+          "f56194bc-8215-4ae8-bc6a-89781ad8e050": {
+            "20": {
+              "co_bps": 1.635737388025822,
+              "persistence_co_bps": 0.8791225911262243,
+              "spikes": 1781
+            },
+            "40": {
+              "co_bps": 1.752650292008614,
+              "persistence_co_bps": 0.809790406806257,
+              "spikes": 1791
+            },
+            "100": {
+              "co_bps": 1.6620732222458756,
+              "persistence_co_bps": 0.4995126726365219,
+              "spikes": 1777
+            },
+            "200": {
+              "co_bps": 1.6249496004185806,
+              "persistence_co_bps": 0.15623354497125994,
+              "spikes": 1843
+            },
+            "500": {
+              "co_bps": 1.4211332958403975,
+              "persistence_co_bps": -0.30750920598250003,
+              "spikes": 1823
+            }
+          },
+          "fe1fd79f-b051-411f-a0a9-2530a02cc78d": {
+            "20": {
+              "co_bps": 0.6627976417760164,
+              "persistence_co_bps": -0.34248803253159654,
+              "spikes": 2396
+            },
+            "40": {
+              "co_bps": 0.633308480932698,
+              "persistence_co_bps": -0.40649189361308014,
+              "spikes": 2433
+            },
+            "100": {
+              "co_bps": 0.6272042956716567,
+              "persistence_co_bps": -0.4485300534611651,
+              "spikes": 2384
+            },
+            "200": {
+              "co_bps": 0.6536279282453399,
+              "persistence_co_bps": -0.3730630617424055,
+              "spikes": 2477
+            },
+            "500": {
+              "co_bps": 0.4861463883005002,
+              "persistence_co_bps": -0.8822712061451996,
+              "spikes": 2439
+            }
+          }
+        }
+      },
+      "score_100ms_median_co_bps": 1.330729478759651
+    },
+    {
+      "step": 800,
+      "eval": {
+        "summary": {
+          "20": {
+            "model_median_co_bps": 1.4215476986619857,
+            "model_mean_co_bps": 1.630799647682101,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": 0.016271748246087268,
+            "delta_vs_persistence_median": 1.761043301850322,
+            "n_sessions": 29
+          },
+          "40": {
+            "model_median_co_bps": 1.3282853880527044,
+            "model_mean_co_bps": 1.643755782299502,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": 0.046841882897756155,
+            "delta_vs_persistence_median": 1.5363012630827702,
+            "n_sessions": 29
+          },
+          "100": {
+            "model_median_co_bps": 1.3342187634813942,
+            "model_mean_co_bps": 1.5864098271708271,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.18194094656101992,
+            "delta_vs_persistence_median": 1.8813229253953654,
+            "n_sessions": 29
+          },
+          "200": {
+            "model_median_co_bps": 1.330914259613638,
+            "model_mean_co_bps": 1.5493434293943653,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.3757275538832644,
+            "delta_vs_persistence_median": 1.8320516867556007,
+            "n_sessions": 29
+          },
+          "500": {
+            "model_median_co_bps": 1.154475027613095,
+            "model_mean_co_bps": 1.4031079120307577,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.862769587252028,
+            "delta_vs_persistence_median": 2.2052970168971506,
+            "n_sessions": 29
+          }
+        },
+        "per_session": {
+          "0802ced5-33a3-405e-8336-b65ebc5cb07c": {
+            "20": {
+              "co_bps": 0.7996727338082519,
+              "persistence_co_bps": -1.0701702652630563,
+              "spikes": 1462
+            },
+            "40": {
+              "co_bps": 0.6731907967224572,
+              "persistence_co_bps": -1.2109306264034507,
+              "spikes": 1439
+            },
+            "100": {
+              "co_bps": 0.5771250740145073,
+              "persistence_co_bps": -1.6887272729381406,
+              "spikes": 1376
+            },
+            "200": {
+              "co_bps": 0.5031172044053637,
+              "persistence_co_bps": -2.001914362413613,
+              "spikes": 1453
+            },
+            "500": {
+              "co_bps": 0.49586415069996087,
+              "persistence_co_bps": -2.0527079334131217,
+              "spikes": 1376
+            }
+          },
+          "09394481-8dd2-4d5c-9327-f2753ede92d7": {
+            "20": {
+              "co_bps": 5.011204077163586,
+              "persistence_co_bps": 4.721615577955236,
+              "spikes": 1257
+            },
+            "40": {
+              "co_bps": 4.996518006193265,
+              "persistence_co_bps": 4.564915038846734,
+              "spikes": 1319
+            },
+            "100": {
+              "co_bps": 4.786658737859648,
+              "persistence_co_bps": 4.240610173714739,
+              "spikes": 1316
+            },
+            "200": {
+              "co_bps": 4.910152976543724,
+              "persistence_co_bps": 4.11504336110386,
+              "spikes": 1258
+            },
+            "500": {
+              "co_bps": 4.063901224198725,
+              "persistence_co_bps": 2.691635854108964,
+              "spikes": 1296
+            }
+          },
+          "0cbeae00-e229-4b7d-bdcc-1b0569d7e0c3": {
+            "20": {
+              "co_bps": 2.5928877450205556,
+              "persistence_co_bps": 0.6285027982356889,
+              "spikes": 1480
+            },
+            "40": {
+              "co_bps": 2.855756128024046,
+              "persistence_co_bps": 0.643303836778002,
+              "spikes": 1479
+            },
+            "100": {
+              "co_bps": 2.8273649743195444,
+              "persistence_co_bps": 0.47416045219792696,
+              "spikes": 1540
+            },
+            "200": {
+              "co_bps": 2.3490926613645557,
+              "persistence_co_bps": -0.08682961364380896,
+              "spikes": 1484
+            },
+            "500": {
+              "co_bps": 2.3396845622270064,
+              "persistence_co_bps": -0.2549434623633159,
+              "spikes": 1415
+            }
+          },
+          "12dc8b34-b18e-4cdd-90a9-da134a9be79c": {
+            "20": {
+              "co_bps": 2.0640824083986664,
+              "persistence_co_bps": -0.20786798390947384,
+              "spikes": 244
+            },
+            "40": {
+              "co_bps": 1.7407371975379802,
+              "persistence_co_bps": 0.4049662964025501,
+              "spikes": 246
+            },
+            "100": {
+              "co_bps": 2.069980536780455,
+              "persistence_co_bps": 0.14955561503510065,
+              "spikes": 275
+            },
+            "200": {
+              "co_bps": 1.674868777250208,
+              "persistence_co_bps": -1.5879619117125314,
+              "spikes": 256
+            },
+            "500": {
+              "co_bps": 2.036464944078343,
+              "persistence_co_bps": -0.862769587252028,
+              "spikes": 237
+            }
+          },
+          "16693458-0801-4d35-a3f1-9115c7e5acfd": {
+            "20": {
+              "co_bps": 0.7032376505297769,
+              "persistence_co_bps": 0.19355929544553266,
+              "spikes": 3123
+            },
+            "40": {
+              "co_bps": 0.679509656181478,
+              "persistence_co_bps": 0.021507290506028953,
+              "spikes": 3093
+            },
+            "100": {
+              "co_bps": 0.6145050589982357,
+              "persistence_co_bps": -0.20297946198234457,
+              "spikes": 3117
+            },
+            "200": {
+              "co_bps": 0.5824754265241342,
+              "persistence_co_bps": -0.09646638112806556,
+              "spikes": 2997
+            },
+            "500": {
+              "co_bps": 0.46192468310749724,
+              "persistence_co_bps": -0.5053234700721873,
+              "spikes": 3034
+            }
+          },
+          "19e66dc9-bf9f-430b-9d6a-acfa85de6fb7": {
+            "20": {
+              "co_bps": 1.6411777271913672,
+              "persistence_co_bps": 0.13929714059181428,
+              "spikes": 1889
+            },
+            "40": {
+              "co_bps": 1.7768025949699577,
+              "persistence_co_bps": 0.24050133188718756,
+              "spikes": 1769
+            },
+            "100": {
+              "co_bps": 1.8026369530144037,
+              "persistence_co_bps": 0.0380422733271963,
+              "spikes": 1705
+            },
+            "200": {
+              "co_bps": 1.4542010750334027,
+              "persistence_co_bps": -0.6537696801122153,
+              "spikes": 1753
+            },
+            "500": {
+              "co_bps": 1.301860479822901,
+              "persistence_co_bps": -1.1677131999267316,
+              "spikes": 1575
+            }
+          },
+          "28338153-4113-485b-835b-91cb96d984f2": {
+            "20": {
+              "co_bps": 1.1616630184751306,
+              "persistence_co_bps": -0.7642169613549892,
+              "spikes": 953
+            },
+            "40": {
+              "co_bps": 1.191986939608019,
+              "persistence_co_bps": -0.6164139580665963,
+              "spikes": 947
+            },
+            "100": {
+              "co_bps": 0.8498121702914703,
+              "persistence_co_bps": -1.1699215521187851,
+              "spikes": 906
+            },
+            "200": {
+              "co_bps": 1.1205834771187724,
+              "persistence_co_bps": -0.6585714000723417,
+              "spikes": 971
+            },
+            "500": {
+              "co_bps": 1.0038195866514996,
+              "persistence_co_bps": -1.201477430245651,
+              "spikes": 910
+            }
+          },
+          "29a6def1-fc5c-4eea-ac48-47e9b053dcb5": {
+            "20": {
+              "co_bps": 0.7524118848164908,
+              "persistence_co_bps": 0.3034822179362713,
+              "spikes": 2617
+            },
+            "40": {
+              "co_bps": 0.7117296761809826,
+              "persistence_co_bps": 0.046841882897756155,
+              "spikes": 2650
+            },
+            "100": {
+              "co_bps": 0.7618599769819504,
+              "persistence_co_bps": -0.1358506589707781,
+              "spikes": 2601
+            },
+            "200": {
+              "co_bps": 0.4924661666371636,
+              "persistence_co_bps": -0.8042129786441017,
+              "spikes": 2725
+            },
+            "500": {
+              "co_bps": 0.5847426833151588,
+              "persistence_co_bps": -0.5512867284627229,
+              "spikes": 2536
+            }
+          },
+          "2d9bfc10-59fb-424a-b699-7c42f86c7871": {
+            "20": {
+              "co_bps": 5.15339362934346,
+              "persistence_co_bps": 2.847729118290174,
+              "spikes": 579
+            },
+            "40": {
+              "co_bps": 5.441016327037265,
+              "persistence_co_bps": 3.5881381007233766,
+              "spikes": 658
+            },
+            "100": {
+              "co_bps": 5.370578156983817,
+              "persistence_co_bps": 2.6959251786964704,
+              "spikes": 597
+            },
+            "200": {
+              "co_bps": 6.04133104702658,
+              "persistence_co_bps": 3.320629389779372,
+              "spikes": 626
+            },
+            "500": {
+              "co_bps": 5.013368792144082,
+              "persistence_co_bps": 2.0735647975077964,
+              "spikes": 543
+            }
+          },
+          "3bcb81b4-d9ca-4fc9-a1cd-353a966239ca": {
+            "20": {
+              "co_bps": 0.6517724502075545,
+              "persistence_co_bps": -0.3124682926184567,
+              "spikes": 2189
+            },
+            "40": {
+              "co_bps": 0.6990413044593959,
+              "persistence_co_bps": -0.055522154832219575,
+              "spikes": 2120
+            },
+            "100": {
+              "co_bps": 0.5731098242081444,
+              "persistence_co_bps": -0.48758610342544006,
+              "spikes": 2081
+            },
+            "200": {
+              "co_bps": 0.6146224716968218,
+              "persistence_co_bps": -0.3757275538832644,
+              "spikes": 2118
+            },
+            "500": {
+              "co_bps": 0.47137680479538263,
+              "persistence_co_bps": -0.769767998416977,
+              "spikes": 2076
+            }
+          },
+          "5569f363-0934-464e-9a5b-77c8e67791a1": {
+            "20": {
+              "co_bps": 1.4215476986619857,
+              "persistence_co_bps": -0.3394956031883364,
+              "spikes": 750
+            },
+            "40": {
+              "co_bps": 1.261012108584267,
+              "persistence_co_bps": -0.9012417630095527,
+              "spikes": 720
+            },
+            "100": {
+              "co_bps": 1.3381453154061245,
+              "persistence_co_bps": -1.6880962052032567,
+              "spikes": 717
+            },
+            "200": {
+              "co_bps": 1.330914259613638,
+              "persistence_co_bps": -1.9129430002275802,
+              "spikes": 761
+            },
+            "500": {
+              "co_bps": 1.147366512797659,
+              "persistence_co_bps": -1.8667842509239212,
+              "spikes": 878
+            }
+          },
+          "56956777-dca5-468c-87cb-78150432cc57": {
+            "20": {
+              "co_bps": 1.6377924117381293,
+              "persistence_co_bps": -0.13035174160160107,
+              "spikes": 1167
+            },
+            "40": {
+              "co_bps": 1.796359348947945,
+              "persistence_co_bps": -0.12026851058192867,
+              "spikes": 1220
+            },
+            "100": {
+              "co_bps": 1.5407167744993013,
+              "persistence_co_bps": -0.5894443505552244,
+              "spikes": 1259
+            },
+            "200": {
+              "co_bps": 1.6768730621888273,
+              "persistence_co_bps": -0.15517862456677345,
+              "spikes": 1293
+            },
+            "500": {
+              "co_bps": 1.5984711997268348,
+              "persistence_co_bps": -0.48912403280741445,
+              "spikes": 1123
+            }
+          },
+          "5c0c560e-9e1f-45e9-b66e-e4ee7855be84": {
+            "20": {
+              "co_bps": 1.4663942055037835,
+              "persistence_co_bps": 0.6431764989369875,
+              "spikes": 1519
+            },
+            "40": {
+              "co_bps": 1.3988224782124603,
+              "persistence_co_bps": 0.6103497251675988,
+              "spikes": 1449
+            },
+            "100": {
+              "co_bps": 1.3342187634813942,
+              "persistence_co_bps": 0.5454498515275004,
+              "spikes": 1483
+            },
+            "200": {
+              "co_bps": 1.4729567373440315,
+              "persistence_co_bps": 0.5907958682579282,
+              "spikes": 1493
+            },
+            "500": {
+              "co_bps": 1.1694592698541717,
+              "persistence_co_bps": -0.32501670428511487,
+              "spikes": 1466
+            }
+          },
+          "5ec72172-3901-4771-8777-6e9490ca51fc": {
+            "20": {
+              "co_bps": 2.6276677138971705,
+              "persistence_co_bps": 0.22229522842988622,
+              "spikes": 919
+            },
+            "40": {
+              "co_bps": 2.7072146132853248,
+              "persistence_co_bps": 0.09704818083311838,
+              "spikes": 928
+            },
+            "100": {
+              "co_bps": 2.5472224765793916,
+              "persistence_co_bps": 0.25767449926564057,
+              "spikes": 908
+            },
+            "200": {
+              "co_bps": 2.412606286203245,
+              "persistence_co_bps": -0.06507989711645054,
+              "spikes": 945
+            },
+            "500": {
+              "co_bps": 2.2954387388440782,
+              "persistence_co_bps": -0.6050707642353165,
+              "spikes": 897
+            }
+          },
+          "6713a4a7-faed-4df2-acab-ee4e63326f8d": {
+            "20": {
+              "co_bps": 2.429768264973843,
+              "persistence_co_bps": -0.2209185764493837,
+              "spikes": 712
+            },
+            "40": {
+              "co_bps": 2.3017588247192404,
+              "persistence_co_bps": -0.5173002628445011,
+              "spikes": 704
+            },
+            "100": {
+              "co_bps": 2.5764190837054937,
+              "persistence_co_bps": -0.5966638730851413,
+              "spikes": 744
+            },
+            "200": {
+              "co_bps": 2.115803930007598,
+              "persistence_co_bps": -1.3534904817022562,
+              "spikes": 752
+            },
+            "500": {
+              "co_bps": 2.061425738670473,
+              "persistence_co_bps": -1.7735299855380835,
+              "spikes": 735
+            }
+          },
+          "6f6d2c8e-28be-49f4-ae4d-06be2d3148c1": {
+            "20": {
+              "co_bps": 0.38384034897189423,
+              "persistence_co_bps": -2.0952784978953725,
+              "spikes": 877
+            },
+            "40": {
+              "co_bps": 0.5693399059006292,
+              "persistence_co_bps": -1.4830648473267536,
+              "spikes": 842
+            },
+            "100": {
+              "co_bps": 0.41642286095459063,
+              "persistence_co_bps": -1.4649000644407748,
+              "spikes": 881
+            },
+            "200": {
+              "co_bps": 0.41590634046099495,
+              "persistence_co_bps": -2.2978975750952197,
+              "spikes": 914
+            },
+            "500": {
+              "co_bps": 0.26824956259896293,
+              "persistence_co_bps": -2.576408182090862,
+              "spikes": 920
+            }
+          },
+          "77e6dc6a-66ed-433c-b1a2-778c914f523c": {
+            "20": {
+              "co_bps": 1.3452433666772463,
+              "persistence_co_bps": -0.7365661236699833,
+              "spikes": 759
+            },
+            "40": {
+              "co_bps": 1.0984592852899515,
+              "persistence_co_bps": -1.1459031637095374,
+              "spikes": 738
+            },
+            "100": {
+              "co_bps": 1.083170977205684,
+              "persistence_co_bps": -1.7476847998519147,
+              "spikes": 727
+            },
+            "200": {
+              "co_bps": 1.0276376886499519,
+              "persistence_co_bps": -1.7910346225550084,
+              "spikes": 747
+            },
+            "500": {
+              "co_bps": 0.8784655206872156,
+              "persistence_co_bps": -2.1936026209881145,
+              "spikes": 696
+            }
+          },
+          "7cc74598-9c1b-436b-84fa-0bf89f31adf6": {
+            "20": {
+              "co_bps": 1.7098073318583615,
+              "persistence_co_bps": -0.07483931513164621,
+              "spikes": 1035
+            },
+            "40": {
+              "co_bps": 1.7737847496472743,
+              "persistence_co_bps": 0.10426951196302278,
+              "spikes": 924
+            },
+            "100": {
+              "co_bps": 1.626536148367184,
+              "persistence_co_bps": -0.7440902643755072,
+              "spikes": 980
+            },
+            "200": {
+              "co_bps": 1.4302837728818583,
+              "persistence_co_bps": -1.2041530734990407,
+              "spikes": 952
+            },
+            "500": {
+              "co_bps": 1.2398102116057725,
+              "persistence_co_bps": -2.0030045047436285,
+              "spikes": 941
+            }
+          },
+          "810b1e07-009e-4ebe-930a-915e4cd8ece4": {
+            "20": {
+              "co_bps": 3.696531265716592,
+              "persistence_co_bps": 3.377559576178004,
+              "spikes": 4969
+            },
+            "40": {
+              "co_bps": 3.7741243987550472,
+              "persistence_co_bps": 3.4234753710198897,
+              "spikes": 4972
+            },
+            "100": {
+              "co_bps": 3.709073482667463,
+              "persistence_co_bps": 3.2332214952354286,
+              "spikes": 5011
+            },
+            "200": {
+              "co_bps": 3.688765758331356,
+              "persistence_co_bps": 3.193781969687189,
+              "spikes": 4908
+            },
+            "500": {
+              "co_bps": 3.706096793373786,
+              "persistence_co_bps": 3.146030611173645,
+              "spikes": 4983
+            }
+          },
+          "8c025071-c4f3-426c-9aed-f149e8f75b7b": {
+            "20": {
+              "co_bps": 0.855578138058072,
+              "persistence_co_bps": 0.32578176383620816,
+              "spikes": 1901
+            },
+            "40": {
+              "co_bps": 0.8809617069876556,
+              "persistence_co_bps": 0.2264061485658962,
+              "spikes": 1941
+            },
+            "100": {
+              "co_bps": 0.829258978688474,
+              "persistence_co_bps": 0.2609167536299968,
+              "spikes": 1904
+            },
+            "200": {
+              "co_bps": 0.8535845513602582,
+              "persistence_co_bps": 0.16615967336990675,
+              "spikes": 1916
+            },
+            "500": {
+              "co_bps": 0.7715840323955527,
+              "persistence_co_bps": -0.20013713329170835,
+              "spikes": 1888
+            }
+          },
+          "934dd7a4-fbdc-459c-8830-04fe9033bc28": {
+            "20": {
+              "co_bps": 1.9171284626506984,
+              "persistence_co_bps": 0.016271748246087268,
+              "spikes": 1128
+            },
+            "40": {
+              "co_bps": 1.770694916949247,
+              "persistence_co_bps": -0.21508574956197946,
+              "spikes": 1068
+            },
+            "100": {
+              "co_bps": 1.645282335759919,
+              "persistence_co_bps": -0.4674708473427247,
+              "spikes": 1045
+            },
+            "200": {
+              "co_bps": 1.8336953734399233,
+              "persistence_co_bps": -0.8572158697816862,
+              "spikes": 1113
+            },
+            "500": {
+              "co_bps": 1.850045944330466,
+              "persistence_co_bps": -0.9238700501008411,
+              "spikes": 1087
+            }
+          },
+          "b9c205c3-feac-485b-a89d-afc96d9cb280": {
+            "20": {
+              "co_bps": 0.8505048786328627,
+              "persistence_co_bps": 0.2688164044999736,
+              "spikes": 2206
+            },
+            "40": {
+              "co_bps": 0.8410828626184725,
+              "persistence_co_bps": 0.16981908966687942,
+              "spikes": 2231
+            },
+            "100": {
+              "co_bps": 0.84948548434225,
+              "persistence_co_bps": 0.21343494813714078,
+              "spikes": 2154
+            },
+            "200": {
+              "co_bps": 0.748361264573895,
+              "persistence_co_bps": 0.008030668049335075,
+              "spikes": 2261
+            },
+            "500": {
+              "co_bps": 0.5363687962807749,
+              "persistence_co_bps": -1.0469784107535922,
+              "spikes": 2217
+            }
+          },
+          "c958919c-2e75-435d-845d-5b62190b520e": {
+            "20": {
+              "co_bps": 1.5817239228149353,
+              "persistence_co_bps": 1.1892419489201105,
+              "spikes": 1978
+            },
+            "40": {
+              "co_bps": 1.6410603729738942,
+              "persistence_co_bps": 1.2204288554348788,
+              "spikes": 2031
+            },
+            "100": {
+              "co_bps": 1.5208886315936627,
+              "persistence_co_bps": 0.7711449255077952,
+              "spikes": 2087
+            },
+            "200": {
+              "co_bps": 1.4706195589070798,
+              "persistence_co_bps": 0.7564918649908546,
+              "spikes": 2020
+            },
+            "500": {
+              "co_bps": 1.3092966079886208,
+              "persistence_co_bps": -0.18628760826103652,
+              "spikes": 1889
+            }
+          },
+          "d0c91c3c-8cbb-4929-8657-31f18bffc294": {
+            "20": {
+              "co_bps": 1.1706317926808574,
+              "persistence_co_bps": -0.735168344788561,
+              "spikes": 522
+            },
+            "40": {
+              "co_bps": 1.3282853880527044,
+              "persistence_co_bps": -0.7371635850922605,
+              "spikes": 491
+            },
+            "100": {
+              "co_bps": 1.2639122067962498,
+              "persistence_co_bps": -0.773068424124435,
+              "spikes": 472
+            },
+            "200": {
+              "co_bps": 1.2345190125371752,
+              "persistence_co_bps": -1.74962505864302,
+              "spikes": 492
+            },
+            "500": {
+              "co_bps": 1.154475027613095,
+              "persistence_co_bps": -1.850024372972444,
+              "spikes": 451
+            }
+          },
+          "dc21e80d-97d7-44ca-a729-a8e3f9b14305": {
+            "20": {
+              "co_bps": 0.47402543937353925,
+              "persistence_co_bps": -0.38490138230099274,
+              "spikes": 663
+            },
+            "40": {
+              "co_bps": 0.44766939917805276,
+              "persistence_co_bps": -0.6008461785678694,
+              "spikes": 678
+            },
+            "100": {
+              "co_bps": 0.3899692484884548,
+              "persistence_co_bps": -0.18194094656101992,
+              "spikes": 640
+            },
+            "200": {
+              "co_bps": 0.41889067878536423,
+              "persistence_co_bps": -0.8690639662646287,
+              "spikes": 706
+            },
+            "500": {
+              "co_bps": 0.4177033638616849,
+              "persistence_co_bps": -1.3153705508093207,
+              "spikes": 682
+            }
+          },
+          "e1931de1-cf7b-49af-af33-2ade15e8abe7": {
+            "20": {
+              "co_bps": 0.6193228316889902,
+              "persistence_co_bps": 0.15414133348727949,
+              "spikes": 3552
+            },
+            "40": {
+              "co_bps": 0.6276787080376225,
+              "persistence_co_bps": 0.22387064236288165,
+              "spikes": 3617
+            },
+            "100": {
+              "co_bps": 0.6200363013229018,
+              "persistence_co_bps": 0.07989228536406534,
+              "spikes": 3619
+            },
+            "200": {
+              "co_bps": 0.4844921419725689,
+              "persistence_co_bps": -0.1849491540580066,
+              "spikes": 3677
+            },
+            "500": {
+              "co_bps": 0.480291289327072,
+              "persistence_co_bps": -0.48714960483512865,
+              "spikes": 3614
+            }
+          },
+          "f4eb56a4-8bf8-4bbc-a8f3-6e6535134bad": {
+            "20": {
+              "co_bps": 0.2763161027554917,
+              "persistence_co_bps": -3.2380980215746757,
+              "spikes": 317
+            },
+            "40": {
+              "co_bps": 0.2995116843113724,
+              "persistence_co_bps": -3.0999994330653142,
+              "spikes": 326
+            },
+            "100": {
+              "co_bps": 0.18982978576437623,
+              "persistence_co_bps": -3.8795678744084374,
+              "spikes": 317
+            },
+            "200": {
+              "co_bps": 0.29206762821427185,
+              "persistence_co_bps": -4.015574373106132,
+              "spikes": 367
+            },
+            "500": {
+              "co_bps": 0.13136774202031437,
+              "persistence_co_bps": -3.8665264903109713,
+              "spikes": 293
+            }
+          },
+          "f56194bc-8215-4ae8-bc6a-89781ad8e050": {
+            "20": {
+              "co_bps": 1.6296238589101462,
+              "persistence_co_bps": 0.8791225911262243,
+              "spikes": 1781
+            },
+            "40": {
+              "co_bps": 1.7430227948767874,
+              "persistence_co_bps": 0.809790406806257,
+              "spikes": 1791
+            },
+            "100": {
+              "co_bps": 1.6600043409876792,
+              "persistence_co_bps": 0.4995126726365219,
+              "spikes": 1777
+            },
+            "200": {
+              "co_bps": 1.6258031444555912,
+              "persistence_co_bps": 0.15623354497125994,
+              "spikes": 1843
+            },
+            "500": {
+              "co_bps": 1.4200760031843709,
+              "persistence_co_bps": -0.30750920598250003,
+              "spikes": 1823
+            }
+          },
+          "fe1fd79f-b051-411f-a0a9-2530a02cc78d": {
+            "20": {
+              "co_bps": 0.66823842226149,
+              "persistence_co_bps": -0.34248803253159654,
+              "spikes": 2396
+            },
+            "40": {
+              "co_bps": 0.6417855124427674,
+              "persistence_co_bps": -0.40649189361308014,
+              "spikes": 2433
+            },
+            "100": {
+              "co_bps": 0.631660327891217,
+              "persistence_co_bps": -0.4485300534611651,
+              "spikes": 2384
+            },
+            "200": {
+              "co_bps": 0.6542669789082444,
+              "persistence_co_bps": -0.3730630617424055,
+              "spikes": 2477
+            },
+            "500": {
+              "co_bps": 0.48112918269051297,
+              "persistence_co_bps": -0.8822712061451996,
+              "spikes": 2439
+            }
+          }
+        }
+      },
+      "score_100ms_median_co_bps": 1.3342187634813942
+    },
+    {
+      "step": 1400,
+      "eval": {
+        "summary": {
+          "20": {
+            "model_median_co_bps": 1.4268535495571788,
+            "model_mean_co_bps": 1.631394632959397,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": 0.016271748246087268,
+            "delta_vs_persistence_median": 1.7663491527455153,
+            "n_sessions": 29
+          },
+          "40": {
+            "model_median_co_bps": 1.331107120053447,
+            "model_mean_co_bps": 1.643343555043172,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": 0.046841882897756155,
+            "delta_vs_persistence_median": 1.530343653456076,
+            "n_sessions": 29
+          },
+          "100": {
+            "model_median_co_bps": 1.334211758489876,
+            "model_mean_co_bps": 1.5862017020428973,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.18194094656101992,
+            "delta_vs_persistence_median": 1.8810567510769427,
+            "n_sessions": 29
+          },
+          "200": {
+            "model_median_co_bps": 1.3343664200536411,
+            "model_mean_co_bps": 1.548550049434107,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.3757275538832644,
+            "delta_vs_persistence_median": 1.827785978581751,
+            "n_sessions": 29
+          },
+          "500": {
+            "model_median_co_bps": 1.1625485878366666,
+            "model_mean_co_bps": 1.4038679534434941,
+            "model_positive_fraction": 1.0,
+            "persistence_median_co_bps": -0.862769587252028,
+            "delta_vs_persistence_median": 2.2065038682441087,
+            "n_sessions": 29
+          }
+        },
+        "per_session": {
+          "0802ced5-33a3-405e-8336-b65ebc5cb07c": {
+            "20": {
+              "co_bps": 0.800927885344358,
+              "persistence_co_bps": -1.0701702652630563,
+              "spikes": 1462
+            },
+            "40": {
+              "co_bps": 0.6780292573400208,
+              "persistence_co_bps": -1.2109306264034507,
+              "spikes": 1439
+            },
+            "100": {
+              "co_bps": 0.5823531229655206,
+              "persistence_co_bps": -1.6887272729381406,
+              "spikes": 1376
+            },
+            "200": {
+              "co_bps": 0.5061470602115847,
+              "persistence_co_bps": -2.001914362413613,
+              "spikes": 1453
+            },
+            "500": {
+              "co_bps": 0.5003471942943859,
+              "persistence_co_bps": -2.0527079334131217,
+              "spikes": 1376
+            }
+          },
+          "09394481-8dd2-4d5c-9327-f2753ede92d7": {
+            "20": {
+              "co_bps": 5.02119849121874,
+              "persistence_co_bps": 4.721615577955236,
+              "spikes": 1257
+            },
+            "40": {
+              "co_bps": 4.997604143989428,
+              "persistence_co_bps": 4.564915038846734,
+              "spikes": 1319
+            },
+            "100": {
+              "co_bps": 4.783402019140784,
+              "persistence_co_bps": 4.240610173714739,
+              "spikes": 1316
+            },
+            "200": {
+              "co_bps": 4.91816745627186,
+              "persistence_co_bps": 4.11504336110386,
+              "spikes": 1258
+            },
+            "500": {
+              "co_bps": 4.066433948174811,
+              "persistence_co_bps": 2.691635854108964,
+              "spikes": 1296
+            }
+          },
+          "0cbeae00-e229-4b7d-bdcc-1b0569d7e0c3": {
+            "20": {
+              "co_bps": 2.587032703245518,
+              "persistence_co_bps": 0.6285027982356889,
+              "spikes": 1480
+            },
+            "40": {
+              "co_bps": 2.851388858697658,
+              "persistence_co_bps": 0.643303836778002,
+              "spikes": 1479
+            },
+            "100": {
+              "co_bps": 2.827834624929028,
+              "persistence_co_bps": 0.47416045219792696,
+              "spikes": 1540
+            },
+            "200": {
+              "co_bps": 2.345122969408279,
+              "persistence_co_bps": -0.08682961364380896,
+              "spikes": 1484
+            },
+            "500": {
+              "co_bps": 2.3429522929697604,
+              "persistence_co_bps": -0.2549434623633159,
+              "spikes": 1415
+            }
+          },
+          "12dc8b34-b18e-4cdd-90a9-da134a9be79c": {
+            "20": {
+              "co_bps": 2.0642176229297027,
+              "persistence_co_bps": -0.20786798390947384,
+              "spikes": 244
+            },
+            "40": {
+              "co_bps": 1.7410479104627878,
+              "persistence_co_bps": 0.4049662964025501,
+              "spikes": 246
+            },
+            "100": {
+              "co_bps": 2.0704669830831794,
+              "persistence_co_bps": 0.14955561503510065,
+              "spikes": 275
+            },
+            "200": {
+              "co_bps": 1.6778385936056477,
+              "persistence_co_bps": -1.5879619117125314,
+              "spikes": 256
+            },
+            "500": {
+              "co_bps": 2.034812181596674,
+              "persistence_co_bps": -0.862769587252028,
+              "spikes": 237
+            }
+          },
+          "16693458-0801-4d35-a3f1-9115c7e5acfd": {
+            "20": {
+              "co_bps": 0.7047204817812103,
+              "persistence_co_bps": 0.19355929544553266,
+              "spikes": 3123
+            },
+            "40": {
+              "co_bps": 0.679649199867535,
+              "persistence_co_bps": 0.021507290506028953,
+              "spikes": 3093
+            },
+            "100": {
+              "co_bps": 0.6108882972487955,
+              "persistence_co_bps": -0.20297946198234457,
+              "spikes": 3117
+            },
+            "200": {
+              "co_bps": 0.5836247567381709,
+              "persistence_co_bps": -0.09646638112806556,
+              "spikes": 2997
+            },
+            "500": {
+              "co_bps": 0.4603475974672998,
+              "persistence_co_bps": -0.5053234700721873,
+              "spikes": 3034
+            }
+          },
+          "19e66dc9-bf9f-430b-9d6a-acfa85de6fb7": {
+            "20": {
+              "co_bps": 1.6313052845720704,
+              "persistence_co_bps": 0.13929714059181428,
+              "spikes": 1889
+            },
+            "40": {
+              "co_bps": 1.7708449853432635,
+              "persistence_co_bps": 0.24050133188718756,
+              "spikes": 1769
+            },
+            "100": {
+              "co_bps": 1.8070636481466378,
+              "persistence_co_bps": 0.0380422733271963,
+              "spikes": 1705
+            },
+            "200": {
+              "co_bps": 1.4528126698564658,
+              "persistence_co_bps": -0.6537696801122153,
+              "spikes": 1753
+            },
+            "500": {
+              "co_bps": 1.3068016164027962,
+              "persistence_co_bps": -1.1677131999267316,
+              "spikes": 1575
+            }
+          },
+          "28338153-4113-485b-835b-91cb96d984f2": {
+            "20": {
+              "co_bps": 1.164983844916433,
+              "persistence_co_bps": -0.7642169613549892,
+              "spikes": 953
+            },
+            "40": {
+              "co_bps": 1.1921832425028065,
+              "persistence_co_bps": -0.6164139580665963,
+              "spikes": 947
+            },
+            "100": {
+              "co_bps": 0.8468435665966986,
+              "persistence_co_bps": -1.1699215521187851,
+              "spikes": 906
+            },
+            "200": {
+              "co_bps": 1.117786295538631,
+              "persistence_co_bps": -0.6585714000723417,
+              "spikes": 971
+            },
+            "500": {
+              "co_bps": 1.0050264379984577,
+              "persistence_co_bps": -1.201477430245651,
+              "spikes": 910
+            }
+          },
+          "29a6def1-fc5c-4eea-ac48-47e9b053dcb5": {
+            "20": {
+              "co_bps": 0.7507641240346071,
+              "persistence_co_bps": 0.3034822179362713,
+              "spikes": 2617
+            },
+            "40": {
+              "co_bps": 0.70737601386277,
+              "persistence_co_bps": 0.046841882897756155,
+              "spikes": 2650
+            },
+            "100": {
+              "co_bps": 0.7589892506182268,
+              "persistence_co_bps": -0.1358506589707781,
+              "spikes": 2601
+            },
+            "200": {
+              "co_bps": 0.4857968931202708,
+              "persistence_co_bps": -0.8042129786441017,
+              "spikes": 2725
+            },
+            "500": {
+              "co_bps": 0.5831853673072619,
+              "persistence_co_bps": -0.5512867284627229,
+              "spikes": 2536
+            }
+          },
+          "2d9bfc10-59fb-424a-b699-7c42f86c7871": {
+            "20": {
+              "co_bps": 5.15941864730483,
+              "persistence_co_bps": 2.847729118290174,
+              "spikes": 579
+            },
+            "40": {
+              "co_bps": 5.4331900115543394,
+              "persistence_co_bps": 3.5881381007233766,
+              "spikes": 658
+            },
+            "100": {
+              "co_bps": 5.37304510752381,
+              "persistence_co_bps": 2.6959251786964704,
+              "spikes": 597
+            },
+            "200": {
+              "co_bps": 6.0456616477309435,
+              "persistence_co_bps": 3.320629389779372,
+              "spikes": 626
+            },
+            "500": {
+              "co_bps": 5.020493949733658,
+              "persistence_co_bps": 2.0735647975077964,
+              "spikes": 543
+            }
+          },
+          "3bcb81b4-d9ca-4fc9-a1cd-353a966239ca": {
+            "20": {
+              "co_bps": 0.6438490716564309,
+              "persistence_co_bps": -0.3124682926184567,
+              "spikes": 2189
+            },
+            "40": {
+              "co_bps": 0.692374391084498,
+              "persistence_co_bps": -0.055522154832219575,
+              "spikes": 2120
+            },
+            "100": {
+              "co_bps": 0.567327638315131,
+              "persistence_co_bps": -0.48758610342544006,
+              "spikes": 2081
+            },
+            "200": {
+              "co_bps": 0.6073755404898408,
+              "persistence_co_bps": -0.3757275538832644,
+              "spikes": 2118
+            },
+            "500": {
+              "co_bps": 0.467341731967318,
+              "persistence_co_bps": -0.769767998416977,
+              "spikes": 2076
+            }
+          },
+          "5569f363-0934-464e-9a5b-77c8e67791a1": {
+            "20": {
+              "co_bps": 1.4268535495571788,
+              "persistence_co_bps": -0.3394956031883364,
+              "spikes": 750
+            },
+            "40": {
+              "co_bps": 1.2655899727596653,
+              "persistence_co_bps": -0.9012417630095527,
+              "spikes": 720
+            },
+            "100": {
+              "co_bps": 1.3441241434688436,
+              "persistence_co_bps": -1.6880962052032567,
+              "spikes": 717
+            },
+            "200": {
+              "co_bps": 1.3343664200536411,
+              "persistence_co_bps": -1.9129430002275802,
+              "spikes": 761
+            },
+            "500": {
+              "co_bps": 1.145831868013056,
+              "persistence_co_bps": -1.8667842509239212,
+              "spikes": 878
+            }
+          },
+          "56956777-dca5-468c-87cb-78150432cc57": {
+            "20": {
+              "co_bps": 1.6411234172485083,
+              "persistence_co_bps": -0.13035174160160107,
+              "spikes": 1167
+            },
+            "40": {
+              "co_bps": 1.794616414390104,
+              "persistence_co_bps": -0.12026851058192867,
+              "spikes": 1220
+            },
+            "100": {
+              "co_bps": 1.5397485216904343,
+              "persistence_co_bps": -0.5894443505552244,
+              "spikes": 1259
+            },
+            "200": {
+              "co_bps": 1.6726073540149775,
+              "persistence_co_bps": -0.15517862456677345,
+              "spikes": 1293
+            },
+            "500": {
+              "co_bps": 1.59795751931321,
+              "persistence_co_bps": -0.48912403280741445,
+              "spikes": 1123
+            }
+          },
+          "5c0c560e-9e1f-45e9-b66e-e4ee7855be84": {
+            "20": {
+              "co_bps": 1.464812419325753,
+              "persistence_co_bps": 0.6431764989369875,
+              "spikes": 1519
+            },
+            "40": {
+              "co_bps": 1.3972807897334985,
+              "persistence_co_bps": 0.6103497251675988,
+              "spikes": 1449
+            },
+            "100": {
+              "co_bps": 1.334211758489876,
+              "persistence_co_bps": 0.5454498515275004,
+              "spikes": 1483
+            },
+            "200": {
+              "co_bps": 1.4719221989647184,
+              "persistence_co_bps": 0.5907958682579282,
+              "spikes": 1493
+            },
+            "500": {
+              "co_bps": 1.1713585949080754,
+              "persistence_co_bps": -0.32501670428511487,
+              "spikes": 1466
+            }
+          },
+          "5ec72172-3901-4771-8777-6e9490ca51fc": {
+            "20": {
+              "co_bps": 2.6276420637526563,
+              "persistence_co_bps": 0.22229522842988622,
+              "spikes": 919
+            },
+            "40": {
+              "co_bps": 2.7041435313919937,
+              "persistence_co_bps": 0.09704818083311838,
+              "spikes": 928
+            },
+            "100": {
+              "co_bps": 2.550889869413917,
+              "persistence_co_bps": 0.25767449926564057,
+              "spikes": 908
+            },
+            "200": {
+              "co_bps": 2.416776784543672,
+              "persistence_co_bps": -0.06507989711645054,
+              "spikes": 945
+            },
+            "500": {
+              "co_bps": 2.300427579477358,
+              "persistence_co_bps": -0.6050707642353165,
+              "spikes": 897
+            }
+          },
+          "6713a4a7-faed-4df2-acab-ee4e63326f8d": {
+            "20": {
+              "co_bps": 2.431490351335549,
+              "persistence_co_bps": -0.2209185764493837,
+              "spikes": 712
+            },
+            "40": {
+              "co_bps": 2.299837569911765,
+              "persistence_co_bps": -0.5173002628445011,
+              "spikes": 704
+            },
+            "100": {
+              "co_bps": 2.5789592682874347,
+              "persistence_co_bps": -0.5966638730851413,
+              "spikes": 744
+            },
+            "200": {
+              "co_bps": 2.1124389290343037,
+              "persistence_co_bps": -1.3534904817022562,
+              "spikes": 752
+            },
+            "500": {
+              "co_bps": 2.059394613712439,
+              "persistence_co_bps": -1.7735299855380835,
+              "spikes": 735
+            }
+          },
+          "6f6d2c8e-28be-49f4-ae4d-06be2d3148c1": {
+            "20": {
+              "co_bps": 0.38261231051241656,
+              "persistence_co_bps": -2.0952784978953725,
+              "spikes": 877
+            },
+            "40": {
+              "co_bps": 0.5740242101209317,
+              "persistence_co_bps": -1.4830648473267536,
+              "spikes": 842
+            },
+            "100": {
+              "co_bps": 0.41615668663616784,
+              "persistence_co_bps": -1.4649000644407748,
+              "spikes": 881
+            },
+            "200": {
+              "co_bps": 0.41416175455423915,
+              "persistence_co_bps": -2.2978975750952197,
+              "spikes": 914
+            },
+            "500": {
+              "co_bps": 0.2657111843517471,
+              "persistence_co_bps": -2.576408182090862,
+              "spikes": 920
+            }
+          },
+          "77e6dc6a-66ed-433c-b1a2-778c914f523c": {
+            "20": {
+              "co_bps": 1.3438319568221937,
+              "persistence_co_bps": -0.7365661236699833,
+              "spikes": 759
+            },
+            "40": {
+              "co_bps": 1.0949719310818868,
+              "persistence_co_bps": -1.1459031637095374,
+              "spikes": 738
+            },
+            "100": {
+              "co_bps": 1.0782671127503176,
+              "persistence_co_bps": -1.7476847998519147,
+              "spikes": 727
+            },
+            "200": {
+              "co_bps": 1.0250734326409137,
+              "persistence_co_bps": -1.7910346225550084,
+              "spikes": 747
+            },
+            "500": {
+              "co_bps": 0.8797064540712008,
+              "persistence_co_bps": -2.1936026209881145,
+              "spikes": 696
+            }
+          },
+          "7cc74598-9c1b-436b-84fa-0bf89f31adf6": {
+            "20": {
+              "co_bps": 1.7080655185267692,
+              "persistence_co_bps": -0.07483931513164621,
+              "spikes": 1035
+            },
+            "40": {
+              "co_bps": 1.7816698603886378,
+              "persistence_co_bps": 0.10426951196302278,
+              "spikes": 924
+            },
+            "100": {
+              "co_bps": 1.6240824471894968,
+              "persistence_co_bps": -0.7440902643755072,
+              "spikes": 980
+            },
+            "200": {
+              "co_bps": 1.4356365835120026,
+              "persistence_co_bps": -1.2041530734990407,
+              "spikes": 952
+            },
+            "500": {
+              "co_bps": 1.2389327248100948,
+              "persistence_co_bps": -2.0030045047436285,
+              "spikes": 941
+            }
+          },
+          "810b1e07-009e-4ebe-930a-915e4cd8ece4": {
+            "20": {
+              "co_bps": 3.6948211413016843,
+              "persistence_co_bps": 3.377559576178004,
+              "spikes": 4969
+            },
+            "40": {
+              "co_bps": 3.77249774129266,
+              "persistence_co_bps": 3.4234753710198897,
+              "spikes": 4972
+            },
+            "100": {
+              "co_bps": 3.7058471566976907,
+              "persistence_co_bps": 3.2332214952354286,
+              "spikes": 5011
+            },
+            "200": {
+              "co_bps": 3.6848848459755614,
+              "persistence_co_bps": 3.193781969687189,
+              "spikes": 4908
+            },
+            "500": {
+              "co_bps": 3.6982097038751034,
+              "persistence_co_bps": 3.146030611173645,
+              "spikes": 4983
+            }
+          },
+          "8c025071-c4f3-426c-9aed-f149e8f75b7b": {
+            "20": {
+              "co_bps": 0.8620697230552145,
+              "persistence_co_bps": 0.32578176383620816,
+              "spikes": 1901
+            },
+            "40": {
+              "co_bps": 0.8814360365420544,
+              "persistence_co_bps": 0.2264061485658962,
+              "spikes": 1941
+            },
+            "100": {
+              "co_bps": 0.8295898725746065,
+              "persistence_co_bps": 0.2609167536299968,
+              "spikes": 1904
+            },
+            "200": {
+              "co_bps": 0.8545646268195596,
+              "persistence_co_bps": 0.16615967336990675,
+              "spikes": 1916
+            },
+            "500": {
+              "co_bps": 0.7727886258274524,
+              "persistence_co_bps": -0.20013713329170835,
+              "spikes": 1888
+            }
+          },
+          "934dd7a4-fbdc-459c-8830-04fe9033bc28": {
+            "20": {
+              "co_bps": 1.911053906067618,
+              "persistence_co_bps": 0.016271748246087268,
+              "spikes": 1128
+            },
+            "40": {
+              "co_bps": 1.7616626980379042,
+              "persistence_co_bps": -0.21508574956197946,
+              "spikes": 1068
+            },
+            "100": {
+              "co_bps": 1.645728721889327,
+              "persistence_co_bps": -0.4674708473427247,
+              "spikes": 1045
+            },
+            "200": {
+              "co_bps": 1.8298216293009668,
+              "persistence_co_bps": -0.8572158697816862,
+              "spikes": 1113
+            },
+            "500": {
+              "co_bps": 1.845840570628995,
+              "persistence_co_bps": -0.9238700501008411,
+              "spikes": 1087
+            }
+          },
+          "b9c205c3-feac-485b-a89d-afc96d9cb280": {
+            "20": {
+              "co_bps": 0.8483054205978869,
+              "persistence_co_bps": 0.2688164044999736,
+              "spikes": 2206
+            },
+            "40": {
+              "co_bps": 0.8377286422454054,
+              "persistence_co_bps": 0.16981908966687942,
+              "spikes": 2231
+            },
+            "100": {
+              "co_bps": 0.8486324215373466,
+              "persistence_co_bps": 0.21343494813714078,
+              "spikes": 2154
+            },
+            "200": {
+              "co_bps": 0.7427968422761692,
+              "persistence_co_bps": 0.008030668049335075,
+              "spikes": 2261
+            },
+            "500": {
+              "co_bps": 0.5362976097533482,
+              "persistence_co_bps": -1.0469784107535922,
+              "spikes": 2217
+            }
+          },
+          "c958919c-2e75-435d-845d-5b62190b520e": {
+            "20": {
+              "co_bps": 1.6018005313382482,
+              "persistence_co_bps": 1.1892419489201105,
+              "spikes": 1978
+            },
+            "40": {
+              "co_bps": 1.6574359674989643,
+              "persistence_co_bps": 1.2204288554348788,
+              "spikes": 2031
+            },
+            "100": {
+              "co_bps": 1.531851638680675,
+              "persistence_co_bps": 0.7711449255077952,
+              "spikes": 2087
+            },
+            "200": {
+              "co_bps": 1.485981743294725,
+              "persistence_co_bps": 0.7564918649908546,
+              "spikes": 2020
+            },
+            "500": {
+              "co_bps": 1.3287390824629728,
+              "persistence_co_bps": -0.18628760826103652,
+              "spikes": 1889
+            }
+          },
+          "d0c91c3c-8cbb-4929-8657-31f18bffc294": {
+            "20": {
+              "co_bps": 1.1616380883064903,
+              "persistence_co_bps": -0.735168344788561,
+              "spikes": 522
+            },
+            "40": {
+              "co_bps": 1.331107120053447,
+              "persistence_co_bps": -0.7371635850922605,
+              "spikes": 491
+            },
+            "100": {
+              "co_bps": 1.2628600993837495,
+              "persistence_co_bps": -0.773068424124435,
+              "spikes": 472
+            },
+            "200": {
+              "co_bps": 1.2325136904934988,
+              "persistence_co_bps": -1.74962505864302,
+              "spikes": 492
+            },
+            "500": {
+              "co_bps": 1.1625485878366666,
+              "persistence_co_bps": -1.850024372972444,
+              "spikes": 451
+            }
+          },
+          "dc21e80d-97d7-44ca-a729-a8e3f9b14305": {
+            "20": {
+              "co_bps": 0.4745028479710245,
+              "persistence_co_bps": -0.38490138230099274,
+              "spikes": 663
+            },
+            "40": {
+              "co_bps": 0.44634494168109806,
+              "persistence_co_bps": -0.6008461785678694,
+              "spikes": 678
+            },
+            "100": {
+              "co_bps": 0.3818321253183754,
+              "persistence_co_bps": -0.18194094656101992,
+              "spikes": 640
+            },
+            "200": {
+              "co_bps": 0.4109776014409586,
+              "persistence_co_bps": -0.8690639662646287,
+              "spikes": 706
+            },
+            "500": {
+              "co_bps": 0.40716832563135075,
+              "persistence_co_bps": -1.3153705508093207,
+              "spikes": 682
+            }
+          },
+          "e1931de1-cf7b-49af-af33-2ade15e8abe7": {
+            "20": {
+              "co_bps": 0.6227283083070461,
+              "persistence_co_bps": 0.15414133348727949,
+              "spikes": 3552
+            },
+            "40": {
+              "co_bps": 0.6253841563193663,
+              "persistence_co_bps": 0.22387064236288165,
+              "spikes": 3617
+            },
+            "100": {
+              "co_bps": 0.6170096569759779,
+              "persistence_co_bps": 0.07989228536406534,
+              "spikes": 3619
+            },
+            "200": {
+              "co_bps": 0.4816013866090821,
+              "persistence_co_bps": -0.1849491540580066,
+              "spikes": 3677
+            },
+            "500": {
+              "co_bps": 0.4798321010980764,
+              "persistence_co_bps": -0.48714960483512865,
+              "spikes": 3614
+            }
+          },
+          "f4eb56a4-8bf8-4bbc-a8f3-6e6535134bad": {
+            "20": {
+              "co_bps": 0.2794628182185937,
+              "persistence_co_bps": -3.2380980215746757,
+              "spikes": 317
+            },
+            "40": {
+              "co_bps": 0.3049633907191685,
+              "persistence_co_bps": -3.0999994330653142,
+              "spikes": 326
+            },
+            "100": {
+              "co_bps": 0.1944427981312711,
+              "persistence_co_bps": -3.8795678744084374,
+              "spikes": 317
+            },
+            "200": {
+              "co_bps": 0.288222570301424,
+              "persistence_co_bps": -4.015574373106132,
+              "spikes": 367
+            },
+            "500": {
+              "co_bps": 0.1425508431075736,
+              "persistence_co_bps": -3.8665264903109713,
+              "spikes": 293
+            }
+          },
+          "f56194bc-8215-4ae8-bc6a-89781ad8e050": {
+            "20": {
+              "co_bps": 1.6299534818422494,
+              "persistence_co_bps": 0.8791225911262243,
+              "spikes": 1781
+            },
+            "40": {
+              "co_bps": 1.7429161541841858,
+              "persistence_co_bps": 0.809790406806257,
+              "spikes": 1791
+            },
+            "100": {
+              "co_bps": 1.659958877604487,
+              "persistence_co_bps": 0.4995126726365219,
+              "spikes": 1777
+            },
+            "200": {
+              "co_bps": 1.6234314613075802,
+              "persistence_co_bps": 0.15623354497125994,
+              "spikes": 1843
+            },
+            "500": {
+              "co_bps": 1.417778654322104,
+              "persistence_co_bps": -0.30750920598250003,
+              "spikes": 1823
+            }
+          },
+          "fe1fd79f-b051-411f-a0a9-2530a02cc78d": {
+            "20": {
+              "co_bps": 0.6692583447315333,
+              "persistence_co_bps": -0.34248803253159654,
+              "spikes": 2396
+            },
+            "40": {
+              "co_bps": 0.6396639531941489,
+              "persistence_co_bps": -0.40649189361308014,
+              "spikes": 2433
+            },
+            "100": {
+              "co_bps": 0.6274419239562087,
+              "persistence_co_bps": -0.4485300534611651,
+              "spikes": 2384
+            },
+            "200": {
+              "co_bps": 0.6498376954794086,
+              "persistence_co_bps": -0.3730630617424055,
+              "spikes": 2477
+            },
+            "500": {
+              "co_bps": 0.47335368874808553,
+              "persistence_co_bps": -0.8822712061451996,
+              "spikes": 2439
+            }
+          }
+        }
+      },
+      "score_100ms_median_co_bps": 1.334211758489876
+    }
+  ],
+  "elapsed_s": 47.57538938522339
+}

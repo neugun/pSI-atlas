@@ -251,12 +251,30 @@ button:hover{transform:translateY(-1px)}
     </article>
 
     <article class="card">
-      <div class="card-head"><div><h3>Session-free scaling bottleneck</h3><span class="submetric">same held-out evaluation; zero learned session/unit-ID parameters</span></div><span class="tag mixed">DIAGNOSED</span></div>
-      <div class="big">10&rarr;50 gain; then plateau</div>
-      <div class="submetric">first 10&rarr;423-session sweep &middot; tiny / base / large</div>
-      <p>The full 10 / 50 / 150 / 423-session curves are tiny <b>1.268 / 1.325 / 1.334 / 1.335</b>, base <b>1.262 / 1.338 / 1.327 / 1.333</b>, and large <b>1.274 / 1.336 / 1.317 / 1.330 co-bps</b>. The mean jumps from <b>1.268 to 1.333</b> by 50 sessions and is essentially flat thereafter; simply adding sessions or parameters does not yet produce a monotonic scaling law.</p>
-      <p>The next decisive runs are <b>strict fixed-cell</b>, <b>all-unit</b>, and <b>compute-matched/unlocked</b> scaling, followed by 0/30/60/180/300 s unseen-brain adaptation and intervention-conditioned future-trajectory prediction. The held-out rules, seeds, controls and output schema are now locked before compute resumes.</p>
-      <p><a href="data/stage19_sessionfree_scaling_status.json">current scaling checkpoint JSON</a> &middot; <a href="data/stage21_next_run_contract.json">next-run contract</a></p>
+      <div class="card-head"><div><h3>Session-free scaling bottleneck</h3><span class="submetric">strict continuous held-out evaluation &middot; zero learned session/unit-ID parameters</span></div><span class="tag mixed">CLOSED NEGATIVE SCALE LAW</span></div>
+      <div class="big">No monotonic scale law</div>
+      <div class="submetric">10 / 50 / 150 / 423 sessions &times; tiny / base / large</div>
+      <p>The initial sampled-window plateau survives the stricter test. At 423 sessions, continuous held-out 100-ms co-bps is tiny <b>0.148</b>, base <b>0.165</b>, and large <b>0.145</b>; the formal gates for both data scaling and globally monotonic parameter scaling are <b>FALSE</b>.</p>
+      <p>Using all selected units improves absolute 100-ms performance to <b>0.178 / 0.177 / 0.167</b>. Extended compute gives <b>0.162 / 0.153 / 0.166</b>. Thus more information and optimization can help specific horizons, but neither makes the large model consistently superior. The current bottleneck is representation/objective/information rather than raw parameter count.</p>
+      <p><a href="data/strict_scaling_summary.json">strict scaling JSON</a> &middot; <a href="data/latest_checkpoint_20261005.json">current checkpoint</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Shared backbone reduces target-data need</h3><span class="submetric">29 held-out IBL sessions &middot; pretrained vs same-architecture scratch</span></div><span class="tag pass">DATA EFFICIENCY</span></div>
+      <div class="big">29 / 29 at 30 s</div>
+      <div class="submetric">pretrained full fine-tune beats scratch &middot; sign p = 1.86&times;10<sup>&minus;9</sup></div>
+      <p>With only <b>30 s</b> of target-session data, pretrained full fine-tuning has a median paired advantage of <b>+0.0430 co-bps</b> and wins in every held-out session. It is again <b>29/29</b> at 60 s, remains significant at 180 s, and is <b>28/29</b> at 300 s.</p>
+      <p>At the extreme low-data end, LoRA+exogenous is also useful: at 30 s it beats scratch in <b>25/29</b> sessions. With more target data, full fine-tuning from the pretrained backbone becomes the stronger regime. This is direct evidence that shared pretraining lowers target-data requirements.</p>
+      <p><a href="data/stage23_fast_adaptation_comparators.json">full adaptation comparator JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Real intervention-conditioned forecasting</h3><span class="submetric">McBride claustrum optogenetics &middot; cortical Neuropixels &middot; held-out trials</span></div><span class="tag pass">PERTURBATION AWARE</span></div>
+      <div class="big">106 / 120 trials</div>
+      <div class="submetric">true action beats no-action likelihood &middot; sign p = 5.78&times;10<sup>&minus;19</sup></div>
+      <p>True intervention identity improves future cortical population likelihood over no-action and predeclared wrong-action controls. It beats cyclic-wrong on <b>88/120 trials</b> (sign p = <b>1.59&times;10<sup>&minus;7</sup></b>), while generative 4-way action identification reaches <b>58.3%</b> vs 25% chance with permutation p &lt; 10<sup>&minus;4</sup>.</p>
+      <p>The true-action gain grows from <b>+0.00220 co-bps at 40 ms</b> to <b>+0.00739 at 500 ms</b>. A deliberately adversarial post-hoc best-wrong comparator is only borderline/non-robust (sign p = 0.041; Wilcoxon p = 0.137), and absolute co-bps remains below zero. This is one mouse/probe, not an across-animal causal-generalization claim.</p>
+      <p><a href="data/stage22_mcbride_strict_counterfactual.json">strict perturbation audit JSON</a></p>
     </article>
   </div>
 </div>
