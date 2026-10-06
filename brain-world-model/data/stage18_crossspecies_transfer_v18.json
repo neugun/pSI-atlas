@@ -1,0 +1,283 @@
+{
+  "version": "v18",
+  "status": "PASS_REPRESENTATIVE_POSITIVE_EXTERNAL_TESTS",
+  "framing": "Representative positive external tests of SOE-trained SWM dynamics and shared multiscale state; not a universal-transfer claim.",
+  "learned_recurrent_state": {
+    "comparison": "4-D learned GRU recurrent state versus feedforward current-state controls",
+    "heldout_axis": "leave-one-experimental-cohort-out",
+    "gru4_median_bits_per_trial": 0.17680896818637848,
+    "gru4_params": 161,
+    "paired_vs_current_plus_prev": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "mean_delta_bits": 0.06547710196768006,
+      "median_delta_bits": 0.05790849999866399,
+      "sign_test_one_sided_p": 0.0078125,
+      "wilcoxon_one_sided_p": 0.0078125,
+      "deltas": [
+        0.10774155389822121,
+        0.03166743760268041,
+        0.04585329931111837,
+        0.07517732959513257,
+        0.04610934582862186,
+        0.05790849999866399,
+        0.09388224753932195
+      ]
+    },
+    "folds": [
+      {
+        "cohort": "Chemo",
+        "gru4": 0.39276930689811707,
+        "current_linear_bits_per_trial": 0.2322409679502852,
+        "delta_vs_current_linear_bits_per_trial": 0.16052833894783186,
+        "current_mlp8_bits_per_trial": 0.2171136733885465,
+        "delta_vs_current_mlp8_bits_per_trial": 0.17565563350957056,
+        "current_plus_prev_linear_bits_per_trial": 0.28502775299989586,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.10774155389822121
+      },
+      {
+        "cohort": "Jaws",
+        "gru4": 0.058168478310108185,
+        "current_linear_bits_per_trial": 0.019954287454727476,
+        "delta_vs_current_linear_bits_per_trial": 0.038214190855380706,
+        "current_mlp8_bits_per_trial": 0.019587964818162454,
+        "delta_vs_current_mlp8_bits_per_trial": 0.03858051349194573,
+        "current_plus_prev_linear_bits_per_trial": 0.026501040707427776,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.03166743760268041
+      },
+      {
+        "cohort": "SF_Gcamp_DTFL",
+        "gru4": 0.17680896818637848,
+        "current_linear_bits_per_trial": 0.10575326786158115,
+        "delta_vs_current_linear_bits_per_trial": 0.07105570032479733,
+        "current_mlp8_bits_per_trial": 0.11143432810838802,
+        "delta_vs_current_mlp8_bits_per_trial": 0.06537464007799046,
+        "current_plus_prev_linear_bits_per_trial": 0.1309556688752601,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.04585329931111837
+      },
+      {
+        "cohort": "SocialFeedig_OXT",
+        "gru4": 0.10942604392766953,
+        "current_linear_bits_per_trial": 0.018726267549229385,
+        "delta_vs_current_linear_bits_per_trial": 0.09069977637844014,
+        "current_mlp8_bits_per_trial": 0.0272760031424706,
+        "delta_vs_current_mlp8_bits_per_trial": 0.08215004078519893,
+        "current_plus_prev_linear_bits_per_trial": 0.034248714332536956,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.07517732959513257
+      },
+      {
+        "cohort": "SocialFeeding_DMS",
+        "gru4": 0.15577949583530426,
+        "current_linear_bits_per_trial": 0.09431377034252317,
+        "delta_vs_current_linear_bits_per_trial": 0.06146572549278109,
+        "current_mlp8_bits_per_trial": 0.09145991445575018,
+        "delta_vs_current_mlp8_bits_per_trial": 0.06431958137955408,
+        "current_plus_prev_linear_bits_per_trial": 0.1096701500066824,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.04610934582862186
+      },
+      {
+        "cohort": "SocialFeeding_DMS_3",
+        "gru4": 0.19407713413238525,
+        "current_linear_bits_per_trial": 0.11314122925393119,
+        "delta_vs_current_linear_bits_per_trial": 0.08093590487845406,
+        "current_mlp8_bits_per_trial": 0.11768789710552036,
+        "delta_vs_current_mlp8_bits_per_trial": 0.0763892370268649,
+        "current_plus_prev_linear_bits_per_trial": 0.13616863413372127,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.05790849999866399
+      },
+      {
+        "cohort": "SocialFeeding_JAWS_VTAcopy",
+        "gru4": 0.2699502408504486,
+        "current_linear_bits_per_trial": 0.14047164700873868,
+        "delta_vs_current_linear_bits_per_trial": 0.12947859384170993,
+        "current_mlp8_bits_per_trial": 0.13869764367046147,
+        "delta_vs_current_mlp8_bits_per_trial": 0.13125259717998713,
+        "current_plus_prev_linear_bits_per_trial": 0.17606799331112666,
+        "delta_vs_current_plus_prev_linear_bits_per_trial": 0.09388224753932195
+      }
+    ]
+  },
+  "frozen_core_transfer": {
+    "dataset": "Macaque DANDI001435",
+    "contract": "Freeze SOE-trained recurrent core; train only target adapter/head; compare with equally frozen random recurrent core.",
+    "nested_animals": 2,
+    "fractions": [
+      {
+        "target": "macaque001435",
+        "frac": "0.2",
+        "n": "10",
+        "wins": "6",
+        "mean_gain": "0.005014918418330764",
+        "median_gain": "0.004551321806735648",
+        "rrb": "0.34545454545454546",
+        "p_one_sided": "0.1875"
+      },
+      {
+        "target": "macaque001435",
+        "frac": "0.5",
+        "n": "10",
+        "wins": "8",
+        "mean_gain": "0.014914673719076085",
+        "median_gain": "0.01576844923845915",
+        "rrb": "0.7454545454545455",
+        "p_one_sided": "0.0185546875"
+      },
+      {
+        "target": "macaque001435",
+        "frac": "1.0",
+        "n": "10",
+        "wins": "10",
+        "mean_gain": "0.012842899758378462",
+        "median_gain": "0.014518940828807605",
+        "rrb": "1.0",
+        "p_one_sided": "0.0009765625"
+      }
+    ],
+    "by_monkey": {
+      "Lalo": [
+        {
+          "frac": "0.2",
+          "monkey": "Lalo",
+          "n_sessions": "5",
+          "mean_gain": "0.0010909529229147803",
+          "median_gain": "0.0005739017292334",
+          "wins": "3"
+        },
+        {
+          "frac": "0.5",
+          "monkey": "Lalo",
+          "n_sessions": "5",
+          "mean_gain": "0.0166438312115479",
+          "median_gain": "0.0191143656040724",
+          "wins": "4"
+        },
+        {
+          "frac": "1.0",
+          "monkey": "Lalo",
+          "n_sessions": "5",
+          "mean_gain": "0.01444792501652922",
+          "median_gain": "0.01517107270619",
+          "wins": "5"
+        }
+      ],
+      "Offenbach": [
+        {
+          "frac": "0.2",
+          "monkey": "Offenbach",
+          "n_sessions": "5",
+          "mean_gain": "0.00893888391374672",
+          "median_gain": "0.0239171440085775",
+          "wins": "3"
+        },
+        {
+          "frac": "0.5",
+          "monkey": "Offenbach",
+          "n_sessions": "5",
+          "mean_gain": "0.013185516226604202",
+          "median_gain": "0.0044384189930976",
+          "wins": "4"
+        },
+        {
+          "frac": "1.0",
+          "monkey": "Offenbach",
+          "n_sessions": "5",
+          "mean_gain": "0.0112378745002276",
+          "median_gain": "0.0138668089514251",
+          "wins": "5"
+        }
+      ]
+    },
+    "inference_note": "Session-level sensitivity statistics are nested within two monkeys and are not population-level primate inference."
+  },
+  "rat_multiscale_state": {
+    "dataset": "Rat DANDI001169",
+    "contract": "Outer held-rat CV with classical-family selection only inside training folds; CK selected in 5/5 outer folds.",
+    "metrics": {
+      "brier": {
+        "metric": "brier",
+        "n": "10",
+        "wins": "8",
+        "mean_gain": "0.001305515351814096",
+        "median_gain": "0.001268529613566119",
+        "rank_biserial": "0.8909090909090909",
+        "p_one_sided": "0.0048828125",
+        "mean_classical": "0.2287782247020754",
+        "mean_multiscale": "0.22747270935026132"
+      },
+      "nll": {
+        "metric": "nll",
+        "n": "10",
+        "wins": "8",
+        "mean_gain": "0.0028348430323265283",
+        "median_gain": "0.002781622336890832",
+        "rank_biserial": "0.8909090909090909",
+        "p_one_sided": "0.0048828125",
+        "mean_classical": "0.6496146841911221",
+        "mean_multiscale": "0.6467798411587955"
+      },
+      "auc": {
+        "metric": "auc",
+        "n": "10",
+        "wins": "9",
+        "mean_gain": "0.015025711271340846",
+        "median_gain": "0.01683443126806411",
+        "rank_biserial": "0.9272727272727272",
+        "p_one_sided": "0.0029296875",
+        "mean_classical": "0.5299544022317362",
+        "mean_multiscale": "0.5449801135030772"
+      }
+    }
+  },
+  "crossspecies_structured_state": {
+    "human": {
+      "dataset": "Human exp/obs",
+      "tier": "classical-comparator",
+      "structured": "multiscale_history",
+      "comparator": "featureq_multiscale",
+      "selection_rule": "best aggregate Feature-Q under same held-subject OOF",
+      "unit": "held-out subject",
+      "n": "10",
+      "wins": "8.0",
+      "rrb": "0.8909090909090909",
+      "p_one_sided": "0.0048828125",
+      "median_brier_gain": "0.0006115333141466",
+      "mean_brier_gain": "0.000721802850789"
+    },
+    "rat": {
+      "dataset": "Rat DANDI001169",
+      "tier": "classical-comparator",
+      "structured": "multiscale_logit",
+      "comparator": "foldwise BIC-selected classical RL (CK in 5/5 folds)",
+      "selection_rule": "training-fold BIC among WSLS/Q/asymQ/forgetQ/CK/Q+CK; same 12,564 violation-filtered trials and original 5-fold held-rat split",
+      "unit": "held-out rat",
+      "n": "10",
+      "wins": "8.0",
+      "rrb": "0.8909090909090909",
+      "p_one_sided": "0.0048828125",
+      "median_brier_gain": "0.0012685753948918",
+      "mean_brier_gain": "0.0013055410517175"
+    },
+    "macaque_sensitivity": {
+      "dataset": "Macaque global",
+      "tier": "classical-comparator sensitivity",
+      "structured": "multiscale_plus_switchmem",
+      "comparator": "featureq_multiscale",
+      "selection_rule": "best aggregate Feature-Q; average 2 monkeys within date",
+      "unit": "date cluster (2 monkeys nested)",
+      "n": "44",
+      "wins": "41.0",
+      "rrb": "0.9818181818181818",
+      "p_one_sided": "1.8758328224066645e-12",
+      "median_brier_gain": "0.001757244410322",
+      "mean_brier_gain": "0.0021311443276652"
+    }
+  },
+  "sources": [
+    "../brain-world-model/data/stage17_recurrent_memory_paired.json",
+    "../soe-social-learning/data/SOE_to_external_frozen_v2_summary.csv",
+    "../soe-social-learning/data/SOE_to_macaque_frozen_transfer_by_monkey_v2.csv",
+    "../soe-social-learning/data/rat001169_nestedCV_multimetric_summary_v7.csv",
+    "../soe-social-learning/data/SOE_crossspecies_classical_comparator_audit_v2.csv"
+  ]
+}

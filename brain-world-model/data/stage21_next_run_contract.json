@@ -1,0 +1,144 @@
+{
+  "generated_at": "2026-10-05",
+  "authority": "Brain World Model next decisive runs",
+  "invariant_rules": {
+    "evaluation": "same immutable held-out sessions/animals across compared scale points",
+    "no_learned_identity": "no learned session-ID or unit-ID embeddings in session-free runs",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "report": "per-fold/per-seed raw metrics plus aggregate; never report only best seed",
+    "baselines": "all baselines receive the same observable inputs unless the ablation explicitly removes one",
+    "leakage": "fit normalization/tokenizer/PCA/adapter statistics on training data only"
+  },
+  "run_groups": {
+    "strict_scaling": {
+      "priority": 1,
+      "question": "Does transferable neural forecasting improve with independent data scale once cell count and compute are controlled?",
+      "phase_A_fixed12": {
+        "session_counts": [
+          10,
+          25,
+          50,
+          100,
+          200,
+          423
+        ],
+        "models": [
+          "tiny",
+          "base",
+          "large"
+        ],
+        "neurons_per_session": 12,
+        "compute": [
+          "matched_budget",
+          "convergence_budget"
+        ],
+        "primary_metric": "heldout co-bps",
+        "secondary": [
+          "NLL",
+          "multi-horizon co-bps",
+          "seed variance"
+        ]
+      },
+      "phase_B_neuron_scale": {
+        "session_count": 423,
+        "models": [
+          "base"
+        ],
+        "neurons_per_session": [
+          12,
+          32,
+          64,
+          "all_available"
+        ],
+        "primary_metric": "heldout co-bps"
+      },
+      "phase_C_capacity_at_information_scale": {
+        "session_count": 423,
+        "models": [
+          "tiny",
+          "base",
+          "large"
+        ],
+        "neurons_per_session": [
+          64,
+          "all_available"
+        ],
+        "compute": "convergence_budget",
+        "purpose": "separate capacity bottleneck from 12-cell information bottleneck"
+      },
+      "pass_logic": "positive monotonic trend with data or neuron scale on immutable held-out evaluation; otherwise retain plateau as a genuine negative result"
+    },
+    "unseen_brain_adaptation": {
+      "priority": 2,
+      "question": "How much target data is required to adapt a shared backbone to an unseen brain?",
+      "target_seconds": [
+        0,
+        30,
+        60,
+        180,
+        300
+      ],
+      "methods": [
+        "frozen_head",
+        "lora",
+        "full_finetune",
+        "scratch"
+      ],
+      "primary_metric": "heldout future neural co-bps",
+      "secondary": [
+        "adaptation_gain_over_scratch",
+        "time_to_90pct_full_data",
+        "parameter_updates"
+      ],
+      "split_rule": "adaptation segment precedes and is disjoint from evaluation windows within each held-out target session/animal",
+      "pass_logic": "shared-backbone methods reduce the target-data requirement versus scratch, especially at <=300 s"
+    },
+    "mcbride_counterfactual": {
+      "priority": 3,
+      "question": "Can the model predict the future cortical population trajectory conditional on the optogenetic action?",
+      "dataset": "McBride claustrum optogenetic Neuropixels",
+      "conditions": [
+        "20hz",
+        "40hz",
+        "500ms",
+        "5ms"
+      ],
+      "evaluation_conditions": [
+        "true_action",
+        "wrong_action",
+        "no_action",
+        "shuffled_action"
+      ],
+      "prestim_control": true,
+      "horizons_ms": [
+        50,
+        100,
+        250,
+        500
+      ],
+      "primary_metric": "future-population co-bps",
+      "secondary": [
+        "R2",
+        "trajectory correlation",
+        "condition discriminability from predicted trajectory"
+      ],
+      "paired_tests": [
+        "true_action_vs_no_action",
+        "true_action_vs_wrong_action",
+        "true_action_vs_shuffled_action"
+      ],
+      "pass_logic": "true intervention improves future trajectory prediction over all counterfactual controls on held-out trials; prestim control should show no analogous advantage"
+    }
+  },
+  "required_outputs": [
+    "raw per-fold/per-seed table",
+    "aggregate JSON",
+    "failure/NaN audit",
+    "training metadata and git commit",
+    "single authority summary suitable for the public page"
+  ]
+}

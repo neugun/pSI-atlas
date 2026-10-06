@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "dataset": "user JAWS VTA dopamine inhibition authority",
+  "acute_contingent_off_on": {
+    "n": 10,
+    "active_belief_off": 0.0320268579927777,
+    "active_belief_on": -0.0080355723944796,
+    "active_belief_on_minus_off": -0.0400624303872573,
+    "active_belief_p_two_sided": 0.001953125,
+    "active_belief_negative_animals": 10,
+    "passive_belief_on_minus_off": 0.0109073269132302,
+    "passive_belief_p": 0.275390625,
+    "qactive_on_minus_off": -0.0180356467307162,
+    "qactive_p": 0.0078125,
+    "observation_fraction_on_minus_off": 0.0432418833948825,
+    "observation_fraction_p": 0.921875
+  },
+  "count_order_preserving_null": {
+    "active_belief_empirical_p": 0.0493901219756048,
+    "active_minus_passive_empirical_p": 0.0463907218556288,
+    "n_permutations": 5000
+  },
+  "continuous_no_reset_replay": {
+    "active_belief_episode_update_on_minus_off": -0.0032997659531363,
+    "active_belief_negative_animals": 10,
+    "active_belief_p": 0.001953125,
+    "passive_belief_episode_update_on_minus_off": 0.0006677678529643,
+    "passive_belief_p": 0.375,
+    "qactive_episode_update_on_minus_off": -0.0012456450801048,
+    "qactive_p": 0.0078125
+  },
+  "session_scale_normal_to_full_jaws_null_test": {
+    "active_belief_full_minus_normal": -0.0847384084421466,
+    "active_belief_null_mean": -0.0418109856891522,
+    "active_belief_empirical_p": 0.0001999600079984,
+    "active_minus_passive_empirical_p": 0.0001999600079984
+  },
+  "behavioral_coupling": {
+    "delta_active_belief_vs_delta_rewarded_observation_numerator_rho": 0.6727272727272726,
+    "p": 0.0330412225454377,
+    "delta_qactive_vs_delta_rewarded_observation_numerator_rho": 0.709090909090909,
+    "q_p": 0.0216659233675324,
+    "delta_active_belief_vs_delta_observation_amount_rho": 0.3536651113250804,
+    "obs_amount_p": 0.3160781991074149
+  },
+  "interpretation": "Real VTA dopamine inhibition selectively weakens an observation-conditioned Active reward/belief coordinate and active observation value, while gross observation amount and Passive belief do not show the same acute endpoint. The effect survives a count/order-preserving null and a continuous no-reset replay.",
+  "bridge_role": "This supplies a real intervention anchor for the Mouse Emulation Bridge: the model must represent a slow reward-credit state that changes under causal perturbation without reducing the phenomenon to immediate action suppression.",
+  "guardrails": [
+    "Use corrected OFF/ON state labels from the accepted JAWS authority; do not infer laser state from filenames or raw day order.",
+    "Acute OFF->ON is the primary causal comparison. Normal->Full JAWS is session-scale supportive evidence with day/context differences.",
+    "Do not claim statistically established contingent-versus-noncontingent interaction specificity at the latent level.",
+    "Do not claim immediate next-observation policy suppression."
+  ]
+}

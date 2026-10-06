@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-10-05",
+  "status": "PRELIMINARY_CURRENT_CHECKPOINT",
+  "scope": "initial 12-cell session-free scaling sweep; strict fixed-cell continuous held-out re-evaluation, all-unit, and compute-unlocked runs are not yet final",
+  "metric": "co-bps",
+  "session_counts": [
+    10,
+    50,
+    150,
+    423
+  ],
+  "models": {
+    "tiny": {
+      "shared_params_m": 2.19,
+      "session_or_unit_id_params": 0,
+      "co_bps": [
+        1.268,
+        1.325,
+        1.334,
+        1.335
+      ]
+    },
+    "base": {
+      "shared_params_m": 15.79,
+      "session_or_unit_id_params": 0,
+      "co_bps": [
+        1.262,
+        1.338,
+        1.327,
+        1.333
+      ]
+    },
+    "large": {
+      "shared_params_m": 63.49,
+      "session_or_unit_id_params": 0,
+      "co_bps": [
+        1.274,
+        1.336,
+        1.317,
+        1.33
+      ]
+    }
+  },
+  "mean_across_models": [
+    1.268,
+    1.333,
+    1.326,
+    1.333
+  ],
+  "increments": {
+    "tiny": [
+      0.057,
+      0.009,
+      0.001
+    ],
+    "base": [
+      0.076,
+      -0.011,
+      0.006
+    ],
+    "large": [
+      0.062,
+      -0.019,
+      0.013
+    ]
+  },
+  "interpretation": "The dominant gain occurs from 10 to 50 sessions. From 50 to 423 sessions the mean curve is essentially flat and model size does not monotonically improve performance. Treat this as a bottleneck diagnosis, not a final scaling law.",
+  "next": [
+    "strict fixed-cell continuous held-out scaling",
+    "all-unit scaling",
+    "compute-matched / compute-unlocked scaling",
+    "0/30/60/180/300 s unseen-brain adaptation",
+    "McBride intervention-conditioned future-trajectory prediction"
+  ]
+}

@@ -125,6 +125,17 @@
 <div class="world-evidence world-evidence-scaling">
 <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_predictive_core_v17_zh_mobile.svg"/><img alt="SWM improves future motif prediction and retains the advantage across horizons" src="assets/swm_predictive_core_v17_zh.svg"/></picture><figcaption><b>SWM 稳定优于最强直接基线，并把优势延伸到更远未来。</b> 未来 motif NLL 优于 direct nonlinear MLP（25/27 动物），相对 Markov 的预测优势在 1、3、5 步未来范围内持续存在。</figcaption></figure>
 </div>
+<div class="world-benchmark-subhead">可迁移的 learned state · recurrent memory 与跨物种检验</div>
+<div class="world-scaling-kpis">
+<article class="world-scaling-kpi"><div class="k">学到的 RECURRENT MEMORY</div><div class="v">7 / 7 cohorts</div><div class="d">一个只有 161 个参数的 4-D GRU，仅从原始 action/outcome 与外源线索学习，就在每个留出实验 cohort 中优于最强的“当前+前一 trial”前馈控制。配对 median gain = +0.0579 bits/trial（P=.0078）。</div></article>
+<article class="world-scaling-kpi"><div class="k">冻结 SOE CORE → 猕猴</div><div class="v">10 / 10 sessions</div><div class="d">在 DANDI001435 中，冻结的 SOE recurrent core 在 100% target data 下优于同样冻结的随机 core（mean ΔNLL=+0.01284）；两只猴各自 5/5 留出 sessions 均为正。session 统计明确嵌套在 2 只猴内。</div></article>
+<article class="world-scaling-kpi"><div class="k">外部 STATE 验证</div><div class="v">Human + Rat</div><div class="d">Structured multiscale state 在 8/10 留出 human subjects 与 8/10 留出 rats 中优于强匹配 comparator；rat 中，在 nested classical-RL family selection 后，NLL 优势同样为 8/10，AUC 为 9/10。</div></article>
+</div>
+<div class="world-evidence world-evidence-scaling">
+<figure class="world-evidence-wide"><picture><img alt="SWM learned recurrent memory 与代表性跨物种迁移检验" src="assets/swm_transfer_v18_zh.svg"/></picture><figcaption><b>这个状态是学出来的、紧凑的，而且可以被复用。</b> recurrent-memory 优势在 SOE 内 leave-one-cohort-out 迁移中保持；冻结的 SOE 动力学可以直接迁移到猕猴任务；独立的人类与大鼠任务又支持同一 structured multiscale-state 原理。猕猴的 session/date 效应始终按嵌套 sensitivity evidence 处理，而不冒充群体水平的灵长类统计。</figcaption></figure>
+</div>
+<div class="world-scaling-claim"><b>模型层面的结论：</b> SWM 不只是一个域内更好的分类器。它学到一个紧凑 recurrent state，能够跨实验 cohort 携带历史信息；其中一部分学到的动力学甚至可以在不微调 recurrent core 的情况下跨物种复用。</div>
+<p class="world-global-note"><a href="data/swm_transfer_v18.json">v18 迁移审计 JSON</a> · <a href="../brain-world-model/data/stage17_recurrent_memory_paired.json">recurrent-memory 配对检验</a> · <a href="../soe-social-learning/data/SOE_to_external_frozen_v2_summary.csv">frozen-core 源表</a> · <a href="../soe-social-learning/data/rat001169_nestedCV_multimetric_summary_v7.csv">rat nested-CV 源表</a></p>
 </details>
 </section>
 <section class="learning-story wrap" id="learning-story">

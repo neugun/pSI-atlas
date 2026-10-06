@@ -534,7 +534,78 @@
         0.09388224753932195
       ]
     },
-    "interpretation": "A compact recurrent state learned from raw trial history transfers across entire experimental cohorts and beats matched feedforward current-state controls."
+    "interpretation": "A compact recurrent state learned from raw trial history transfers across entire experimental cohorts and beats matched feedforward current-state controls. Resetting the same GRU state progressively recovers performance as more trial history is retained.",
+    "memory_horizon": {
+      "1": {
+        "n": 7,
+        "median_bits_per_trial": 0.06878671257334958,
+        "mean_bits_per_trial": 0.09650717078398219,
+        "q25": 0.03638462891503577,
+        "q75": 0.1184223329366729,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.601908136173685,
+        "fraction_of_full_median_bits": 0.41707193449231406
+      },
+      "2": {
+        "n": 7,
+        "median_bits_per_trial": 0.07895197265357888,
+        "mean_bits_per_trial": 0.10904601895427582,
+        "q25": 0.05073756660050491,
+        "q75": 0.13401844778071687,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.6067258822392912,
+        "fraction_of_full_median_bits": 0.47870658059868026
+      },
+      "4": {
+        "n": 7,
+        "median_bits_per_trial": 0.09335310906705821,
+        "mean_bits_per_trial": 0.1264651349811672,
+        "q25": 0.07059205745853957,
+        "q75": 0.1544009120715198,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.6140311107886406,
+        "fraction_of_full_median_bits": 0.5660244592726
+      },
+      "8": {
+        "n": 7,
+        "median_bits_per_trial": 0.11369715494783345,
+        "mean_bits_per_trial": 0.14563553721991704,
+        "q25": 0.08816793554927861,
+        "q75": 0.17657223021792307,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.6267411383927013,
+        "fraction_of_full_median_bits": 0.6893757614859098
+      },
+      "16": {
+        "n": 7,
+        "median_bits_per_trial": 0.1359180892003257,
+        "mean_bits_per_trial": 0.16365052291134083,
+        "q25": 0.10521995537287096,
+        "q75": 0.19659492953168478,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.6384179964066119,
+        "fraction_of_full_median_bits": 0.8241071316619591
+      },
+      "32": {
+        "n": 7,
+        "median_bits_per_trial": 0.15153768596606668,
+        "mean_bits_per_trial": 0.17708221331480578,
+        "q25": 0.11800201862221901,
+        "q75": 0.2113968492700078,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.6427829083264371,
+        "fraction_of_full_median_bits": 0.9188128559997933
+      },
+      "full_session": {
+        "n": 7,
+        "median_bits_per_trial": 0.16492769444455918,
+        "mean_bits_per_trial": 0.19127998628912565,
+        "q25": 0.1287542627613046,
+        "q75": 0.23035740785894962,
+        "positive_fraction": 1.0,
+        "median_balanced_accuracy": 0.647781014430277
+      }
+    }
   },
   "microns": {
     "preflight": {
@@ -725,10 +796,86 @@
     "interpretation": "A simple single-source connection-strength feature did not predict full response-trace similarity; the streamed functional session has sparse overlap with the restricted Fig7abc graph. This motivates fuller connectivity + dynamics + molecular models rather than treating wiring strength alone as function."
   },
   "pending": {
-    "sessionfree_scaling": "10/50/150/423 sessions x tiny/base/large; queued on GPU",
-    "probabilistic_jepa_rollout": "depends on scaling authority",
-    "intervention_world": "depends on scaling authority",
-    "abc_prior_ablation": "depends on scaling authority",
-    "fast_adaptation": "depends on scaling authority"
+    "strict_sessionfree_scaling": "fixed held-out 10/25/50/100/200/423 x tiny/base/large, then 12/32/64/all-unit and compute-unlocked tests",
+    "fast_adaptation": "collect/audit existing submitted adaptation run first; then add frozen-head/full/scratch comparators if absent",
+    "intervention_world": "collect/audit existing submitted intervention run first; resubmit only missing comparator/horizon cells",
+    "probabilistic_jepa_rollout": "run after strict scaling identifies information-vs-optimization bottleneck",
+    "molecular_prior_ablation": "replace simple ABC region prior with cell-type/topology/state-aware prior; simple prior is already negative"
+  },
+  "sessionfree_scaling": {
+    "status": "DIAGNOSED_INITIAL_12CELL_SWEEP",
+    "metric": "co-bps",
+    "session_counts": [
+      10,
+      50,
+      150,
+      423
+    ],
+    "tiny": [
+      1.268,
+      1.325,
+      1.334,
+      1.335
+    ],
+    "base": [
+      1.262,
+      1.338,
+      1.327,
+      1.333
+    ],
+    "large": [
+      1.274,
+      1.336,
+      1.317,
+      1.33
+    ],
+    "mean_across_models": [
+      1.268,
+      1.333,
+      1.326,
+      1.333
+    ],
+    "interpretation": "dominant gain by 50 sessions; plateau thereafter; parameter scale is not monotonic under the 12-cell initial sweep",
+    "authority": "stage19_sessionfree_scaling_status.json"
+  },
+  "crossspecies_shared_state": {
+    "status": "PASS_REPRESENTATIVE_POSITIVE_EXTERNAL_TESTS",
+    "macaque_frozen_core_full_target_wins": "10/10 sessions",
+    "macaque_mean_nll_gain": 0.012842902508032486,
+    "macaque_one_sided_p": 0.0009765625,
+    "human_structured_state_wins": "8/10 held-out subjects",
+    "rat_brier_nll_wins": "8/10 rats",
+    "rat_auc_wins": "9/10 rats",
+    "authority": "stage18_crossspecies_transfer_v18.json"
+  },
+  "task_specific_world_scaling": {
+    "status": "PASS",
+    "train_animals": "2->16",
+    "efficacy_auc": "0.562->0.646",
+    "matched_improved": "15/15",
+    "one_sided_sign_p": 3.0517578125e-05,
+    "wrong_social_auc": 0.561,
+    "no_social_auc": 0.572,
+    "future_nll_better_than_direct_mlp": "25/27 animals",
+    "authority": "stage20_task_specific_world_scaling.json"
+  },
+  "next_run_contract": {
+    "status": "LOCKED_BEFORE_COMPUTE",
+    "authority": "stage21_next_run_contract.json"
+  },
+  "real_jaws_intervention": {
+    "acute_active_belief_on_minus_off": -0.0400624303872573,
+    "acute_active_belief_p": 0.001953125,
+    "active_belief_negative_animals": 10,
+    "passive_belief_on_minus_off": 0.0109073269132302,
+    "passive_belief_p": 0.275390625,
+    "observation_fraction_on_minus_off": 0.0432418833948825,
+    "observation_fraction_p": 0.921875,
+    "continuous_replay_active_update": -0.0032997659531363,
+    "continuous_replay_p": 0.001953125,
+    "count_order_null_p": 0.0493901219756048,
+    "behavioral_coupling_rho": 0.6727272727272726,
+    "behavioral_coupling_p": 0.0330412225454377,
+    "interpretation": "Real VTA dopamine inhibition is a causal anchor for the slow reward-credit state: Active belief/value collapses under ON while gross observation amount and Passive belief do not show the same acute endpoint."
   }
 }

@@ -1,0 +1,444 @@
+{
+  "status": "PASS",
+  "n_folds": 7,
+  "heldout_axis": "leave-one-experimental-cohort-out",
+  "summary": {
+    "1": {
+      "n": 7,
+      "median_bits_per_trial": 0.06878671257334958,
+      "mean_bits_per_trial": 0.09650717078398219,
+      "q25": 0.03638462891503577,
+      "q75": 0.1184223329366729,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.601908136173685,
+      "fraction_of_full_median_bits": 0.41707193449231406
+    },
+    "2": {
+      "n": 7,
+      "median_bits_per_trial": 0.07895197265357888,
+      "mean_bits_per_trial": 0.10904601895427582,
+      "q25": 0.05073756660050491,
+      "q75": 0.13401844778071687,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.6067258822392912,
+      "fraction_of_full_median_bits": 0.47870658059868026
+    },
+    "4": {
+      "n": 7,
+      "median_bits_per_trial": 0.09335310906705821,
+      "mean_bits_per_trial": 0.1264651349811672,
+      "q25": 0.07059205745853957,
+      "q75": 0.1544009120715198,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.6140311107886406,
+      "fraction_of_full_median_bits": 0.5660244592726
+    },
+    "8": {
+      "n": 7,
+      "median_bits_per_trial": 0.11369715494783345,
+      "mean_bits_per_trial": 0.14563553721991704,
+      "q25": 0.08816793554927861,
+      "q75": 0.17657223021792307,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.6267411383927013,
+      "fraction_of_full_median_bits": 0.6893757614859098
+    },
+    "16": {
+      "n": 7,
+      "median_bits_per_trial": 0.1359180892003257,
+      "mean_bits_per_trial": 0.16365052291134083,
+      "q25": 0.10521995537287096,
+      "q75": 0.19659492953168478,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.6384179964066119,
+      "fraction_of_full_median_bits": 0.8241071316619591
+    },
+    "32": {
+      "n": 7,
+      "median_bits_per_trial": 0.15153768596606668,
+      "mean_bits_per_trial": 0.17708221331480578,
+      "q25": 0.11800201862221901,
+      "q75": 0.2113968492700078,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.6427829083264371,
+      "fraction_of_full_median_bits": 0.9188128559997933
+    },
+    "full_session": {
+      "n": 7,
+      "median_bits_per_trial": 0.16492769444455918,
+      "mean_bits_per_trial": 0.19127998628912565,
+      "q25": 0.1287542627613046,
+      "q75": 0.23035740785894962,
+      "positive_fraction": 1.0,
+      "median_balanced_accuracy": 0.647781014430277
+    }
+  },
+  "folds": [
+    {
+      "status": "PASS",
+      "heldout_cohort": "Chemo",
+      "n_test_animals": 6,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 11274,
+          "bits_per_trial": 0.28236091505878824,
+          "balanced_accuracy": 0.5460105082081637
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 11274,
+          "bits_per_trial": 0.29659557071201814,
+          "balanced_accuracy": 0.5439143625002061
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 11274,
+          "bits_per_trial": 0.3168249725091478,
+          "balanced_accuracy": 0.5489549499046458
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 11274,
+          "bits_per_trial": 0.3424065383492635,
+          "balanced_accuracy": 0.5501666639187043
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 11274,
+          "bits_per_trial": 0.36493440208553696,
+          "balanced_accuracy": 0.5475188647617791
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 11274,
+          "bits_per_trial": 0.38161504363164994,
+          "balanced_accuracy": 0.5428495270756734
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 11274,
+          "bits_per_trial": 0.39697340567372175,
+          "balanced_accuracy": 0.538757811083082
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "Jaws",
+      "n_test_animals": 1,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 1271,
+          "bits_per_trial": 0.014788644152320191,
+          "balanced_accuracy": 0.5613608432361715
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 1271,
+          "bits_per_trial": 0.018262560551890194,
+          "balanced_accuracy": 0.588508578054848
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 1271,
+          "bits_per_trial": 0.02509192423184564,
+          "balanced_accuracy": 0.594551869728535
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 1271,
+          "bits_per_trial": 0.03386473570791908,
+          "balanced_accuracy": 0.6056461044431449
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 1271,
+          "bits_per_trial": 0.04107139928441185,
+          "balanced_accuracy": 0.6168530778913148
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 1271,
+          "bits_per_trial": 0.047625027821470343,
+          "balanced_accuracy": 0.6199106514564358
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 1271,
+          "bits_per_trial": 0.05883546266509001,
+          "balanced_accuracy": 0.6311894803611604
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SF_Gcamp_DTFL",
+      "n_test_animals": 3,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 9258,
+          "bits_per_trial": 0.053966909314483835,
+          "balanced_accuracy": 0.6943924126207177
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 9258,
+          "bits_per_trial": 0.07114338294683385,
+          "balanced_accuracy": 0.6975030706371885
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 9258,
+          "bits_per_trial": 0.09261376573985532,
+          "balanced_accuracy": 0.6968517708290607
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 9258,
+          "bits_per_trial": 0.11369715494783345,
+          "balanced_accuracy": 0.6951998079000259
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 9258,
+          "bits_per_trial": 0.1359180892003257,
+          "balanced_accuracy": 0.6951565113459759
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 9258,
+          "bits_per_trial": 0.15153768596606668,
+          "balanced_accuracy": 0.6938531996153443
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 9258,
+          "bits_per_trial": 0.16492769444455918,
+          "balanced_accuracy": 0.6805365183645752
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeedig_OXT",
+      "n_test_animals": 4,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 11804,
+          "bits_per_trial": 0.018802348515587708,
+          "balanced_accuracy": 0.5600866380781451
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 11804,
+          "bits_per_trial": 0.030331750254175956,
+          "balanced_accuracy": 0.5720600195538813
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 11804,
+          "bits_per_trial": 0.04857034917722382,
+          "balanced_accuracy": 0.5940560427761291
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 11804,
+          "bits_per_trial": 0.06477959245011514,
+          "balanced_accuracy": 0.6135075437890039
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 11804,
+          "bits_per_trial": 0.08276485760651354,
+          "balanced_accuracy": 0.624444332228429
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 11804,
+          "bits_per_trial": 0.09611581566063564,
+          "balanced_accuracy": 0.6347404644224368
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 11804,
+          "bits_per_trial": 0.10456445201977876,
+          "balanced_accuracy": 0.647781014430277
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeeding_DMS",
+      "n_test_animals": 3,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 9692,
+          "bits_per_trial": 0.06878671257334958,
+          "balanced_accuracy": 0.601908136173685
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 9692,
+          "bits_per_trial": 0.07895197265357888,
+          "balanced_accuracy": 0.6251290061129902
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 9692,
+          "bits_per_trial": 0.09335310906705821,
+          "balanced_accuracy": 0.6386868994393058
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 9692,
+          "bits_per_trial": 0.11155627864844209,
+          "balanced_accuracy": 0.6406428249561286
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 9692,
+          "bits_per_trial": 0.1276750531392284,
+          "balanced_accuracy": 0.6434091786596599
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 9692,
+          "bits_per_trial": 0.13988822158380237,
+          "balanced_accuracy": 0.6427829083264371
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 9692,
+          "bits_per_trial": 0.15294407350283046,
+          "balanced_accuracy": 0.6441343822873737
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeeding_DMS_3",
+      "n_test_animals": 5,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 10408,
+          "bits_per_trial": 0.08334394985793848,
+          "balanced_accuracy": 0.6168575418657691
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 10408,
+          "bits_per_trial": 0.10135396248087887,
+          "balanced_accuracy": 0.6421237686183935
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 10408,
+          "bits_per_trial": 0.12301017439363347,
+          "balanced_accuracy": 0.6653975138507828
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 10408,
+          "bits_per_trial": 0.14301438838045652,
+          "balanced_accuracy": 0.687553643153687
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 10408,
+          "bits_per_trial": 0.16123387878038645,
+          "balanced_accuracy": 0.7074611298091991
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 10408,
+          "bits_per_trial": 0.1761635190006313,
+          "balanced_accuracy": 0.7173882775846356
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 10408,
+          "bits_per_trial": 0.1992803900103839,
+          "balanced_accuracy": 0.7245803779371134
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "heldout_cohort": "SocialFeeding_JAWS_VTAcopy",
+      "n_test_animals": 5,
+      "model_params": 161,
+      "hidden_dim": 4,
+      "controls": "Same trained GRU and same current-trial inputs; only recurrent state is forcibly reset every K trials at evaluation.",
+      "results": [
+        {
+          "reset_every_trials": 1,
+          "n": 14555,
+          "bits_per_trial": 0.1535007160154073,
+          "balanced_accuracy": 0.6030934878824079
+        },
+        {
+          "reset_every_trials": 2,
+          "n": 14555,
+          "bits_per_trial": 0.16668293308055485,
+          "balanced_accuracy": 0.6067258822392912
+        },
+        {
+          "reset_every_trials": 4,
+          "n": 14555,
+          "bits_per_trial": 0.1857916497494061,
+          "balanced_accuracy": 0.6140311107886406
+        },
+        {
+          "reset_every_trials": 8,
+          "n": 14555,
+          "bits_per_trial": 0.2101300720553896,
+          "balanced_accuracy": 0.6267411383927013
+        },
+        {
+          "reset_every_trials": 16,
+          "n": 14555,
+          "bits_per_trial": 0.23195598028298314,
+          "balanced_accuracy": 0.6384179964066119
+        },
+        {
+          "reset_every_trials": 32,
+          "n": 14555,
+          "bits_per_trial": 0.2466301795393843,
+          "balanced_accuracy": 0.6494710659103654
+        },
+        {
+          "reset_every_trials": "full_session",
+          "n": 14555,
+          "bits_per_trial": 0.26143442570751535,
+          "balanced_accuracy": 0.659585209831879
+        }
+      ]
+    }
+  ],
+  "interpretation": "Within the same trained GRU, resetting recurrent state every K trials isolates how much prediction requires accumulated multi-trial history.",
+  "guardrail": "Memory-horizon dependence is a model property and does not directly measure a biological decay constant."
+}

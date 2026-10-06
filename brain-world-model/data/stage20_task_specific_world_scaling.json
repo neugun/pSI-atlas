@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-10-05",
+  "status": "PASS_TASK_SPECIFIC_SCALING",
+  "system": "SOE / Social Learning World Model (SWM)",
+  "heldout_axis": "held-out animals",
+  "in_domain_scaling": {
+    "train_animals_start": 2,
+    "train_animals_end": 16,
+    "prospective_efficacy_auc_start": 0.562,
+    "prospective_efficacy_auc_end": 0.646,
+    "matched_comparisons": 15,
+    "matched_improved": 15,
+    "sign_test_one_sided_p": 0.000030517578125,
+    "claim": "Increasing in-domain SOE training animals continuously strengthens held-animal prospective social efficacy."
+  },
+  "content_specificity": {
+    "correct_social_auc": 0.62,
+    "wrong_social_trajectory_auc": 0.561,
+    "no_social_retraining_auc": 0.572,
+    "animals_decreased": 26,
+    "n_animals": 27,
+    "claim": "The scaling gain depends on correct social content rather than generic added trajectory information."
+  },
+  "future_prediction": {
+    "n_animals": 27,
+    "swm_better_than_direct_nonlinear_mlp": 25,
+    "horizons_steps": [
+      1,
+      3,
+      5
+    ],
+    "claim": "SWM future-motif NLL beats the strongest direct nonlinear MLP in 25/27 animals and retains an advantage over Markov across 1-, 3-, and 5-step horizons."
+  },
+  "interpretation": "Task-specific world-state scaling is strongly positive even though the initial generic 12-cell neural forecast scaling sweep plateaus after ~50 sessions. This separates a substrate/optimization bottleneck from an absence of learnable world-state scaling.",
+  "provenance": [
+    "../virtual-mouse-atlas/index.html",
+    "../virtual-mouse-atlas/assets/swm_in_domain_scaling_v17.svg",
+    "../virtual-mouse-atlas/assets/swm_social_dependence_v16.svg",
+    "../virtual-mouse-atlas/assets/swm_predictive_core_v17.svg"
+  ]
+}

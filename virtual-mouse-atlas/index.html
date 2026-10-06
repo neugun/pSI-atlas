@@ -125,6 +125,17 @@
 <div class="world-evidence world-evidence-scaling">
 <figure class="world-evidence-wide"><picture><source media="(max-width:600px)" srcset="assets/swm_predictive_core_v17_mobile.svg"/><img alt="SWM improves future motif prediction and retains the advantage across horizons" src="assets/swm_predictive_core_v17.svg"/></picture><figcaption><b>SWM consistently beats the strongest direct baseline and carries the advantage farther into the future.</b> Future-motif NLL is lower than the direct nonlinear MLP in 25/27 animals, and the advantage over Markov persists at 1-, 3-, and 5-step horizons.</figcaption></figure>
 </div>
+<div class="world-benchmark-subhead">Transferable learned state · recurrent memory and cross-species tests</div>
+<div class="world-scaling-kpis">
+<article class="world-scaling-kpi"><div class="k">LEARNED RECURRENT MEMORY</div><div class="v">7 / 7 cohorts</div><div class="d">A 4-D GRU with only 161 parameters, trained from raw action/outcome and exogenous cues, beats the strongest current+previous-trial feedforward control in every held-out experimental cohort. Median paired gain = +0.0579 bits/trial (P=.0078).</div></article>
+<article class="world-scaling-kpi"><div class="k">FROZEN SOE CORE → MACAQUE</div><div class="v">10 / 10 sessions</div><div class="d">On DANDI001435, a frozen SOE recurrent core beats an equally frozen random core at 100% target data (mean ΔNLL=+0.01284); both monkeys are positive in 5/5 held-out sessions. Session statistics are nested within two monkeys.</div></article>
+<article class="world-scaling-kpi"><div class="k">EXTERNAL STATE VALIDATION</div><div class="v">Human + Rat</div><div class="d">The structured multiscale state beats strong matched comparators in 8/10 held-out human subjects and 8/10 held-out rats; in rat, the advantage also holds for NLL and for AUC in 9/10 animals after nested classical-RL family selection.</div></article>
+</div>
+<div class="world-evidence world-evidence-scaling">
+<figure class="world-evidence-wide"><picture><img alt="SWM learned recurrent memory and representative cross-species transfer tests" src="assets/swm_transfer_v18.svg"/></picture><figcaption><b>The state is learned, compact, and reusable.</b> The recurrent-memory advantage survives leave-one-cohort-out transfer inside SOE; the frozen SOE dynamics transfer directly to the macaque task; independent human and rat tasks support the same structured multiscale-state principle. Macaque session/date effects are explicitly treated as nested sensitivity evidence rather than population-level primate inference.</figcaption></figure>
+</div>
+<div class="world-scaling-claim"><b>Model-level conclusion:</b> SWM is not only a better within-task classifier. It learns a compact recurrent state that carries history across cohorts, and part of that learned dynamics can be reused across species without fine-tuning the recurrent core.</div>
+<p class="world-global-note"><a href="data/swm_transfer_v18.json">v18 audited transfer JSON</a> · <a href="../brain-world-model/data/stage17_recurrent_memory_paired.json">paired recurrent-memory test</a> · <a href="../soe-social-learning/data/SOE_to_external_frozen_v2_summary.csv">frozen-core source table</a> · <a href="../soe-social-learning/data/rat001169_nestedCV_multimetric_summary_v7.csv">rat nested-CV source table</a></p>
 </details>
 </section>
 <section class="learning-story wrap" id="learning-story">

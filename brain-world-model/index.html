@@ -209,7 +209,18 @@ button:hover{transform:translateY(-1px)}
       <p>A stricter leave-one-experimental-cohort-out test gives a median <b>+0.0849 bits/trial</b> slow-state lift over exogenous+history, positive in <b>7/7 cohorts</b>. This includes Chemo, Jaws, OXT, DMS and VTA-JAWS cohorts rather than only leave-one-animal-out.</p>
       <p>A training-only PCA compression shows a <b>2-D shared slow latent preserves 93.0%</b> of the full six-feature median transfer gain and remains positive in <b>7/7 held-out cohorts</b>. This supports a compact shared slow-state bottleneck rather than separate transmitter-specific state copies.</p>
       <p>More importantly, the state no longer needs to be hand-engineered: a <b>4-D GRU with only 161 parameters</b>, trained only from current action/outcome and current exogenous cues, reaches <b>0.1768 bits/trial</b> median on leave-one-cohort-out transfer. It beats a matched current-state linear model, an 8-unit feedforward MLP, and a current+previous-trial linear control in <b>7/7 cohorts</b>. Against the strongest current+previous control the paired median gain is <b>+0.0579 bits/trial</b> (one-sided sign and Wilcoxon p = <b>0.0078</b>).</p>
-      <p><a href="data/stage11_embodied_social_world.json">embodied world JSON</a> &middot; <a href="data/stage12_crosscohort_slowstate.json">cross-cohort transfer JSON</a> &middot; <a href="data/stage13_neuromodulator_state_audit.json">slow-state audit JSON</a> &middot; <a href="data/stage14_shared_slow_latent.json">2-D latent JSON</a> &middot; <a href="data/stage15_gru_shared_slow_state.json">learned GRU state JSON</a> &middot; <a href="data/stage16_current_state_controls.json">matched controls JSON</a> &middot; <a href="data/stage17_recurrent_memory_paired.json">paired memory test JSON</a></p>
+      <p>The history requirement is graded rather than one-step: keeping the same trained GRU but forcibly resetting its recurrent state every 1 / 2 / 4 / 8 / 16 / 32 trials yields median predictive information of <b>0.0688 / 0.0790 / 0.0934 / 0.1137 / 0.1359 / 0.1515 bits/trial</b>, versus <b>0.1649</b> with full-session memory. Thus 32 trials retain <b>91.9%</b> of full-session median predictive information, showing that the useful state integrates tens of trials rather than only the immediately preceding event.</p>
+      <p><a href="data/stage11_embodied_social_world.json">embodied world JSON</a> &middot; <a href="data/stage12_crosscohort_slowstate.json">cross-cohort transfer JSON</a> &middot; <a href="data/stage13_neuromodulator_state_audit.json">slow-state audit JSON</a> &middot; <a href="data/stage14_shared_slow_latent.json">2-D latent JSON</a> &middot; <a href="data/stage15_gru_shared_slow_state.json">learned GRU state JSON</a> &middot; <a href="data/stage16_current_state_controls.json">matched controls JSON</a> &middot; <a href="data/stage17_recurrent_memory_paired.json">paired memory test JSON</a> &middot; <a href="data/stage22_memory_horizon.json">memory-horizon JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Real VTA dopamine intervention anchors the slow state</h3><span class="submetric">user JAWS authority &middot; corrected OFF / ON labels &middot; 10 animals</span></div><span class="tag pass">CAUSAL ANCHOR</span></div>
+      <div class="big">&Delta; Active belief = &minus;0.0401</div>
+      <div class="submetric">ON &minus; OFF &middot; 10/10 animals decrease &middot; p = 0.00195</div>
+      <p>Acute VTA dopamine inhibition selectively weakens the observation-conditioned Active reward/belief coordinate and active observation value. Passive belief changes by only <b>+0.0109</b> (p = 0.275), while gross observation fraction changes by <b>+0.0432</b> (p = 0.922), arguing against a simple suppression of observing itself.</p>
+      <p>The result survives a count/order-preserving null (Active-belief empirical p = <b>0.0494</b>) and a continuous no-reset replay (Active-belief update p = <b>0.00195</b>). Across animals, the JAWS-induced Active-belief shift covaries with the change in rewarded-observation conversion (<b>&rho; = 0.673, p = 0.033</b>), but not with total observation amount.</p>
+      <p>This makes the slow state biologically interpretable without claiming that GRU units are literal dopamine variables: the learned recurrent state tracks a reward-credit quantity that is selectively perturbed by causal VTA manipulation.</p>
+      <p><a href="data/stage23_jaws_intervention_bridge.json">verified JAWS intervention JSON</a></p>
     </article>
 
     <article class="card">
@@ -222,10 +233,30 @@ button:hover{transform:translateY(-1px)}
     </article>
 
     <article class="card">
-      <div class="card-head"><div><h3>What is running next</h3><span class="submetric">gated by held-out performance, not parameter count</span></div><span class="tag">IN QUEUE</span></div>
-      <div class="big">12-cell scaling matrix</div>
-      <div class="submetric">10 / 50 / 150 / 423 sessions &times; tiny / base / large</div>
-      <p>After scaling: JEPA + probabilistic rollout, intervention-conditioned prediction, ABC-prior ablation, and 0/30/60/180/300 s fast-adaptation curves.</p>
+      <div class="card-head"><div><h3>Cross-species shared-state transfer</h3><span class="submetric">SOE-trained recurrent state &rarr; external macaque and rat datasets</span></div><span class="tag pass">EXTERNAL</span></div>
+      <div class="big">10 / 10 macaque sessions</div>
+      <div class="submetric">SOE frozen recurrent core beats an equally frozen random core at 100% target data</div>
+      <p>On Macaque DANDI001435, the frozen SOE recurrent core improves target NLL in <b>10/10 sessions</b> at full target data (mean gain <b>+0.01284</b>, one-sided p = <b>0.00098</b>) and in <b>8/10</b> sessions at 50% target data. The evaluation freezes the source recurrent core and trains only the target adapter/head.</p>
+      <p>Independent external tasks support the same structured-state principle without being mislabeled as frozen-core transfer: multiscale history improves the matched comparator in <b>8/10 held-out human subjects</b>, while Rat DANDI001169 improves in <b>8/10 rats</b> for Brier/NLL and <b>9/10</b> for AUC (median AUC gain <b>+0.0168</b>). The macaque session statistics are nested within two monkeys, and all of these are representative positive external tests rather than a universal-transfer claim.</p>
+      <p><a href="data/stage18_crossspecies_transfer_v18.json">verified cross-species transfer JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Task-specific world scaling succeeds</h3><span class="submetric">SOE / SWM &middot; held-out animals</span></div><span class="tag pass">POSITIVE SCALE</span></div>
+      <div class="big">AUC 0.562&rarr;0.646</div>
+      <div class="submetric">2&rarr;16 training animals &middot; 15/15 matched comparisons improve</div>
+      <p>In-domain scale continuously strengthens held-animal prospective social efficacy (one-sided sign p = <b>3.05&times;10<sup>&minus;5</sup></b>). The gain is content-specific: efficacy AUC is <b>0.620</b> with correct social trajectories but falls to <b>0.561</b> with matched wrong-social trajectories and <b>0.572</b> after no-social retraining; <b>26/27</b> animals decrease.</p>
+      <p>The learned world state also improves future-motif NLL over the strongest direct nonlinear MLP in <b>25/27 animals</b> and retains an advantage over Markov across 1-, 3-, and 5-step horizons.</p>
+      <p><a href="data/stage20_task_specific_world_scaling.json">audited task-specific scaling JSON</a></p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div><h3>Session-free scaling bottleneck</h3><span class="submetric">same held-out evaluation; zero learned session/unit-ID parameters</span></div><span class="tag mixed">DIAGNOSED</span></div>
+      <div class="big">10&rarr;50 gain; then plateau</div>
+      <div class="submetric">first 10&rarr;423-session sweep &middot; tiny / base / large</div>
+      <p>The full 10 / 50 / 150 / 423-session curves are tiny <b>1.268 / 1.325 / 1.334 / 1.335</b>, base <b>1.262 / 1.338 / 1.327 / 1.333</b>, and large <b>1.274 / 1.336 / 1.317 / 1.330 co-bps</b>. The mean jumps from <b>1.268 to 1.333</b> by 50 sessions and is essentially flat thereafter; simply adding sessions or parameters does not yet produce a monotonic scaling law.</p>
+      <p>The next decisive runs are <b>strict fixed-cell</b>, <b>all-unit</b>, and <b>compute-matched/unlocked</b> scaling, followed by 0/30/60/180/300 s unseen-brain adaptation and intervention-conditioned future-trajectory prediction. The held-out rules, seeds, controls and output schema are now locked before compute resumes.</p>
+      <p><a href="data/stage19_sessionfree_scaling_status.json">current scaling checkpoint JSON</a> &middot; <a href="data/stage21_next_run_contract.json">next-run contract</a></p>
     </article>
   </div>
 </div>
