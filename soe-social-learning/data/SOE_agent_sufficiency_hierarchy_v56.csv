@@ -1,0 +1,21 @@
+block,item,measure,value,secondary
+generative_benchmark,baseline,learning_trajectory_pearson_r,0.7684118344599843,rmse=0.1690577905494325; sign=nan
+generative_benchmark,baseline,local_strategy_kernel_pearson_r,0.2743382159647391,rmse=0.0898609779660512; sign=0.58875
+generative_benchmark,q_allreward,learning_trajectory_pearson_r,0.7768498267509231,rmse=0.1664587330669297; sign=nan
+generative_benchmark,q_allreward,local_strategy_kernel_pearson_r,0.2734729758738311,rmse=0.0867038343187558; sign=0.61375
+generative_benchmark,outcome_belief_full4,learning_trajectory_pearson_r,0.7742173234338303,rmse=0.1669631243977629; sign=nan
+generative_benchmark,outcome_belief_full4,local_strategy_kernel_pearson_r,0.2463798130847282,rmse=0.0881445770652745; sign=0.5625
+generative_benchmark,Full SLM closed-loop,learning_trajectory_pearson_r,0.7792688292431823,rmse=0.1682899028620189; sign=nan
+generative_benchmark,Full SLM closed-loop,local_strategy_kernel_pearson_r,0.3117564071098554,rmse=0.0825507916897002; sign=0.62125
+generative_benchmark,Full SLM closed-loop,outcome_composition_pearson_r,0.988157458459922,rmse=0.044687230208085; sign=nan
+motif_rollout,Full SLM,occupancy_js,0.0520085928766784,occupancy_r=0.8215368412480627; transition_r=0.732807333456229
+motif_rollout,Outcome-belief,occupancy_js,0.0541692016190397,occupancy_r=0.812570716700135; transition_r=0.7291356831344641
+motif_rollout,Q-allreward,occupancy_js,0.053664768515181,occupancy_r=0.8143031181882862; transition_r=0.7335035788216709
+motif_paired,FullSLM_vs_Q-allreward,occupancy_js_advantage,0.0016561756385024,wins=24/40; p=0.0256998426393693
+motif_paired,FullSLM_vs_Outcome-belief,occupancy_js_advantage,0.0021606087423612,wins=25/40; p=0.0129493053209444
+generic_RNN_probe,active_only,brier_gain_SLM,0.0328268434243108,positive=5/5; p=0.03125
+generic_RNN_probe,active_only,nll_gain_SLM,0.0749910964945658,positive=5/5; p=0.03125
+generic_RNN_probe,active_only,auc_gain_SLM,0.2096602460579554,positive=5/5; p=0.03125
+generic_RNN_probe,food_all,brier_gain_SLM,0.0335180749673683,positive=5/5; p=0.03125
+generic_RNN_probe,food_all,nll_gain_SLM,0.0785484381346765,positive=5/5; p=0.03125
+generic_RNN_probe,food_all,auc_gain_SLM,0.2278362124219803,positive=5/5; p=0.03125
