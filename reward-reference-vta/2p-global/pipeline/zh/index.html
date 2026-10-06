@@ -8,7 +8,7 @@
 </head>
 <body class="soe-page">
 <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">2P</span> CaRMA 2P</div>
-<nav><a href="../../zh/">Overview</a><a href="#registration">Registration</a><a href="#roi">ROI</a><a href="#signal">Signal</a><a href="#identity">Identity</a><a href="#population">Population</a><a href="#audit">Audit</a><a href="../" class="lang">English</a></nav></div></header>
+<nav><a href="../../zh/">Overview</a><a href="#registration">Registration</a><a href="#roi">ROI</a><a href="#basic">基础 activity</a><a href="#signal">Robustness</a><a href="#identity">Identity</a><a href="#population">Population</a><a href="#audit">Audit</a><a href="../" class="lang">English</a></nav></div></header>
 <main>
 <section class="hero"><div class="container">
 <span class="eyebrow">真实数据分析门户 · ANM54 D6 authority</span>
@@ -45,8 +45,28 @@
 <details><summary>Whole-FOV ROI overlay 与 Suite2p/CaImAn 风格 intermediate checks</summary><div class="detail-body"><figure class="figure"><img src="../../assets/real2p_registration_allroi_v3.png" alt="Whole FOV all ROI overlays and intermediate image evidence"><figcaption>Plane-level overlays, independent image peaks/candidates, and ROI/neuropil SubRing geometry are retained as intermediate evidence rather than hidden after segmentation.</figcaption></figure></div></details>
 </div></section>
 
+<section class="block alt" id="basic"><div class="container">
+<div class="section-head"><div><div class="section-kicker">先把最基础的 neural activity 讲清楚</div><h2>复杂分析之前，先按照正常 calcium-imaging 文章的顺序展示信号</h2></div><p>先给真实连续 fluorescence trace，再给 event-aligned condition average/PSTH、single-trial heatmap、代表性 cell、all-cell heatmap 和 population summary；extraction robustness、cross-day identity、decoding 等全部放在后面。</p></div>
+<div class="section-significance"><strong>基本顺序 · </strong>continuous trace → event-aligned PSTH → single-trial heatmap → representative cells → all-cell heatmap → population summary → 再进入复杂 QC / model。</div>
+<div class="unit-note"><strong>单位不混用。</strong> 当前 frozen D6 event-aligned authority 是 <em>baseline z</em>，所以明确写 baseline z，不把它伪装成 ΔF/F；连续 trace 显示真实 fluorescence a.u.。后续只要 F0/ΔF/F authority freeze，就应该把 raw fluorescence、ΔF/F、z 并排提供。</div>
+<div class="basic-grid">
+<figure class="figure basic-card"><div class="source-crop crop-tr" style="background-image:url('../../assets/real2p_B_trial_signal_v2.png')" role="img" aria-label="真实 trial fluorescence"></div><figcaption><strong>真实连续 fluorescence。</strong> raw ROI、local background、background-subtracted signal 同时显示，先看信号本体，再谈平均和模型。</figcaption></figure>
+<figure class="figure basic-card"><div class="source-crop crop-br" style="background-image:url('../../assets/real2p_B_trial_signal_v2.png')" role="img" aria-label="event aligned response"></div><figcaption><strong>Event-aligned PSTH-style response。</strong> 100E 与 100E+Q 的 mean ± SEM；单位是 frozen baseline z，并保留 5-s alignment marker。</figcaption></figure>
+<figure class="figure basic-card"><div class="source-crop crop-bl" style="background-image:url('../../assets/real2p_B_trial_signal_v2.png')" role="img" aria-label="single cell trial heatmap"></div><figcaption><strong>Single-cell trial heatmap。</strong> 60 个 trial 全部显示，避免只看均值掩盖 trial-to-trial variability。</figcaption></figure>
+<figure class="figure basic-card"><div class="source-crop crop-onepage" style="background-image:url('../../assets/real_anm54_d6_onepage_v1.png')" role="img" aria-label="two representative cells"></div><figcaption><strong>两个代表性 cell。</strong> ROI40 与 ROI47 同时保留 morphology 和两种 condition 的平均 response，直接看到 cell heterogeneity。</figcaption></figure>
+</div>
+<div class="section-head compact-head"><div><div class="section-kicker">全部条件与尺度</div><h2>不能停在一个漂亮 example cell</h2></div><p>同一 D6 authority 从 behavior、trial、single cell 一直展开到 16-cell population，100E / 100E+Q 两种条件始终保持可见。</p></div>
+<div class="basic-grid">
+<figure class="figure basic-card"><div class="source-crop crop-tl" style="background-image:url('../../assets/real2p_E_behavior_population_v2.png')" role="img" aria-label="60 behavior trials"></div><figcaption><strong>60 个真实 behavior trial。</strong> 条件序列保留，方便把 neural response 和实际行为对应起来。</figcaption></figure>
+<figure class="figure basic-card"><div class="source-crop crop-tr" style="background-image:url('../../assets/real2p_E_behavior_population_v2.png')" role="img" aria-label="60 by 16 heatmap"></div><figcaption><strong>All-cell heatmap。</strong> 60 trials × 16 cells，在 dimensionality reduction / decoder 之前先展示 population 原始结构。</figcaption></figure>
+<figure class="figure basic-card"><div class="source-crop crop-bl" style="background-image:url('../../assets/real2p_E_behavior_population_v2.png')" role="img" aria-label="trial distribution"></div><figcaption><strong>逐 trial condition distribution。</strong> 每个 trial 点都显示，并叠加 mean ± SEM，不用一个柱子把离散性藏掉。</figcaption></figure>
+<figure class="figure basic-card"><div class="source-crop crop-br" style="background-image:url('../../assets/real2p_E_behavior_population_v2.png')" role="img" aria-label="all cell effects"></div><figcaption><strong>16 个 cell 全部 effect。</strong> 最终 sustained contrast 保留每个 cell，而不是只剩 population average。</figcaption></figure>
+</div>
+<div class="result-strip"><span><b>Conditions</b> 100E / 100E+Q</span><span><b>Trials</b> 60</span><span><b>Cells</b> 16</span><span><b>Basic views</b> trace / PSTH / heatmap / population</span></div>
+</div></section>
+
 <section class="block alt" id="signal"><div class="container">
-<div class="section-head"><div><div class="section-kicker">Signal extraction</div><h2>每个 ROI 始终连接到 raw signal、background、trial structure 和 condition response</h2></div><p>extraction layer 不直接跳到一个 coefficient；在 cell-level model 总结前，真实 raw/background/subtracted trace 和完整 trial matrix 都保留可见。</p></div>
+<div class="section-head"><div><div class="section-kicker">Extraction robustness</div><h2>每个 ROI 始终连接到 raw signal、background、trial structure 和 condition response</h2></div><p>extraction layer 不直接跳到一个 coefficient；在 cell-level model 总结前，真实 raw/background/subtracted trace 和完整 trial matrix 都保留可见。</p></div>
 <div class="section-significance"><strong>Why this matters · </strong>只有当 biological effect 经得住 signal-source choice，并且仍能在底层 trial-resolved activity 中看到时，它才有可解释性。</div>
 <div class="reader-guide"><div class="reader-step"><b>Question</b><span>cell effect 是否真的存在于 measured activity？</span></div><div class="reader-step"><b>What we compare</b><span>比较 raw fluorescence、local background、background-subtracted signal、全部 60 trials 和 condition means。</span></div><div class="reader-step"><b>Meaning</b><span>model coefficient 可以回溯到真实 trial structure 与 extraction choice。</span></div></div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="../../assets/real2p_trial_signal_soe_v6.png" target="_blank" rel="noopener"><img src="../../assets/real2p_trial_signal_soe_v6.png" alt="Real ANM54 D6 trial-resolved signal"></a>
