@@ -30,6 +30,9 @@ jobs:
           fetch-depth: 1
           lfs: false
 
+      - name: Validate reward figure geometry
+        run: python reward-reference-vta/validate_site.py
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
