@@ -1,0 +1,216 @@
+{
+  "generated_at": "2026-10-05",
+  "status": "PARTIAL_TOKEN_SPECIFICITY",
+  "task": "Specificity controls for Stage27 block-level JAWS intervention token transfer.",
+  "controls": {
+    "flipped_test_token": "Train on true JAWS mapping, invert ON/OFF token only at held-out test.",
+    "train_shuffled_token": "Within each training animal, shuffle ON/OFF labels across suffix blocks while preserving block counts; test on true held-out token.",
+    "n_training_token_permutations": 3,
+    "training_seeds_per_model": [
+      20261101,
+      20261102,
+      20261103
+    ]
+  },
+  "summary": {
+    "true_vs_flipped_gain_bits_all10": {
+      "n": 10,
+      "mean": 0.07390600232905326,
+      "median": 0.0738548635988446,
+      "positive": 9,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.001953125
+    },
+    "true_vs_flipped_gain_bits_adequate": {
+      "n": 9,
+      "mean": 0.0639831114608349,
+      "median": 0.06752245418504095,
+      "positive": 8,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.00390625
+    },
+    "true_vs_train_shuffled_gain_bits_all10": {
+      "n": 10,
+      "mean": 0.0010325750675258052,
+      "median": 0.0046882334562555975,
+      "positive": 7,
+      "negative": 3,
+      "wilcoxon_one_sided_p": 0.2783203125
+    },
+    "true_vs_train_shuffled_gain_bits_adequate": {
+      "n": 9,
+      "mean": -0.003256312771947033,
+      "median": 0.004348667179865615,
+      "positive": 6,
+      "negative": 3,
+      "wilcoxon_one_sided_p": 0.3671875
+    }
+  },
+  "gate_results": {
+    "flipped_test_token": true,
+    "train_shuffled_token": false
+  },
+  "folds": [
+    {
+      "held_out_animal": 98,
+      "n_transitions": 109,
+      "stage27_true_aware_nll_5seed": 0.4838150801870022,
+      "retrained_true_aware_nll_3seed": 0.4924349064519351,
+      "flipped_test_token_nll": 0.5392379051947843,
+      "train_shuffled_token_ensemble_nll": 0.4954491728468525,
+      "train_shuffled_permutation_nll": [
+        0.4963288050527089,
+        0.49263042079077957,
+        0.5035040688715562
+      ],
+      "true_vs_flipped_gain_bits": 0.06752245418504095,
+      "true_vs_train_shuffled_gain_bits": 0.004348667179865615,
+      "stage27_true_vs_blind_gain_bits": 0.017624008850429102
+    },
+    {
+      "held_out_animal": 103,
+      "n_transitions": 125,
+      "stage27_true_aware_nll_5seed": 0.6250460477757591,
+      "retrained_true_aware_nll_3seed": 0.6334646714988783,
+      "flipped_test_token_nll": 0.747744466620313,
+      "train_shuffled_token_ensemble_nll": 0.6485402094446896,
+      "train_shuffled_permutation_nll": [
+        0.6334526429840992,
+        0.6695854048556754,
+        0.6499564574045719
+      ],
+      "true_vs_flipped_gain_bits": 0.16487089369550062,
+      "true_vs_train_shuffled_gain_bits": 0.02174940383315534,
+      "stage27_true_vs_blind_gain_bits": 0.07675484413316992
+    },
+    {
+      "held_out_animal": 109,
+      "n_transitions": 37,
+      "stage27_true_aware_nll_5seed": 0.5061980491569132,
+      "retrained_true_aware_nll_3seed": 0.502385660438358,
+      "flipped_test_token_nll": 0.5225604312659975,
+      "train_shuffled_token_ensemble_nll": 0.5003405612826513,
+      "train_shuffled_permutation_nll": [
+        0.5097995099388698,
+        0.49955103785342403,
+        0.4959316386195159
+      ],
+      "true_vs_flipped_gain_bits": 0.029106041824106865,
+      "true_vs_train_shuffled_gain_bits": -0.002950454410064291,
+      "stage27_true_vs_blind_gain_bits": 0.007590110812524375
+    },
+    {
+      "held_out_animal": 111,
+      "n_transitions": 55,
+      "stage27_true_aware_nll_5seed": 0.6559145125792167,
+      "retrained_true_aware_nll_3seed": 0.6492505112020421,
+      "flipped_test_token_nll": 0.7120321272863734,
+      "train_shuffled_token_ensemble_nll": 0.6527355164111455,
+      "train_shuffled_permutation_nll": [
+        0.6416668985702751,
+        0.6620830129779333,
+        0.6635794628777073
+      ],
+      "true_vs_flipped_gain_bits": 0.09057472618385956,
+      "true_vs_train_shuffled_gain_bits": 0.005027799732645581,
+      "stage27_true_vs_blind_gain_bits": 0.0021026153768965816
+    },
+    {
+      "held_out_animal": 112,
+      "n_transitions": 85,
+      "stage27_true_aware_nll_5seed": 0.6290957129941764,
+      "retrained_true_aware_nll_3seed": 0.6175675259189949,
+      "flipped_test_token_nll": 0.6900205096629788,
+      "train_shuffled_token_ensemble_nll": 0.6297202998737379,
+      "train_shuffled_permutation_nll": [
+        0.62337974839806,
+        0.6254397230460023,
+        0.6598073378811561
+      ],
+      "true_vs_flipped_gain_bits": 0.10452756034505425,
+      "true_vs_train_shuffled_gain_bits": 0.0175327467175523,
+      "stage27_true_vs_blind_gain_bits": 0.01261409653581015
+    },
+    {
+      "held_out_animal": 276,
+      "n_transitions": 63,
+      "stage27_true_aware_nll_5seed": 0.4977346375269209,
+      "retrained_true_aware_nll_3seed": 0.521125558046464,
+      "flipped_test_token_nll": 0.531423058628764,
+      "train_shuffled_token_ensemble_nll": 0.4872799237079311,
+      "train_shuffled_permutation_nll": [
+        0.5075703071703006,
+        0.49055773139905123,
+        0.4719245160282595
+      ],
+      "true_vs_flipped_gain_bits": 0.014856153023635505,
+      "true_vs_train_shuffled_gain_bits": -0.0488289288159426,
+      "stage27_true_vs_blind_gain_bits": 0.016117589134301728
+    },
+    {
+      "held_out_animal": 281,
+      "n_transitions": 61,
+      "stage27_true_aware_nll_5seed": 0.46670018811401554,
+      "retrained_true_aware_nll_3seed": 0.4763514246692423,
+      "flipped_test_token_nll": 0.49953643085666366,
+      "train_shuffled_token_ensemble_nll": 0.47721371469138246,
+      "train_shuffled_permutation_nll": [
+        0.48896573963827666,
+        0.467173988254677,
+        0.48121940252626866
+      ],
+      "true_vs_flipped_gain_bits": 0.033448893449572734,
+      "true_vs_train_shuffled_gain_bits": 0.0012440215387496524,
+      "stage27_true_vs_blind_gain_bits": 0.02790658232333712
+    },
+    {
+      "held_out_animal": 282,
+      "n_transitions": 22,
+      "stage27_true_aware_nll_5seed": 0.41451213611706966,
+      "retrained_true_aware_nll_3seed": 0.41785720547632876,
+      "flipped_test_token_nll": 0.4734387876818365,
+      "train_shuffled_token_ensemble_nll": 0.43139930712143126,
+      "train_shuffled_permutation_nll": [
+        0.4395263973550021,
+        0.42123601568345737,
+        0.43676609035578245
+      ],
+      "true_vs_flipped_gain_bits": 0.08018727301264827,
+      "true_vs_train_shuffled_gain_bits": 0.019537122886603652,
+      "stage27_true_vs_blind_gain_bits": 0.05276818542515656
+    },
+    {
+      "held_out_animal": 290,
+      "n_transitions": 6,
+      "stage27_true_aware_nll_5seed": 0.40564540379408265,
+      "retrained_true_aware_nll_3seed": 0.420586386190039,
+      "flipped_test_token_nll": 0.5337163377856653,
+      "train_shuffled_token_ensemble_nll": 0.4480575873098269,
+      "train_shuffled_permutation_nll": [
+        0.4487557008768151,
+        0.4650137148150911,
+        0.4316219094053045
+      ],
+      "true_vs_flipped_gain_bits": 0.1632120201430185,
+      "true_vs_train_shuffled_gain_bits": 0.03963256562278135,
+      "stage27_true_vs_blind_gain_bits": 0.057209938673399324
+    },
+    {
+      "held_out_animal": 296,
+      "n_transitions": 84,
+      "stage27_true_aware_nll_5seed": 0.3268567718365549,
+      "retrained_true_aware_nll_3seed": 0.34262143375405774,
+      "flipped_test_token_nll": 0.3362126000713638,
+      "train_shuffled_token_ensemble_nll": 0.3100662559244118,
+      "train_shuffled_permutation_nll": [
+        0.3340600754736538,
+        0.3148608133817939,
+        0.28740507351075617
+      ],
+      "true_vs_flipped_gain_bits": -0.009245992571904728,
+      "true_vs_train_shuffled_gain_bits": -0.046967193610088546,
+      "stage27_true_vs_blind_gain_bits": -0.0386856759002415
+    }
+  ],
+  "guardrail": "Suffix state is block-constant; even a PASS supports mapping-specific block-level intervention conditioning, not within-session randomized causal identification."
+}

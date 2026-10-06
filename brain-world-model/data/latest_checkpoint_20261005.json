@@ -406,7 +406,9 @@
     "54962964": "completed adaptation comparator array",
     "54962965": "completed adaptation comparator merge",
     "54962972": "completed McBride strict counterfactual",
-    "54963105": "strict JEPA/rollout re-evaluation submitted"
+    "54963105": "strict JEPA/rollout re-evaluation submitted",
+    "54971413": "completed JAWS leave-one-animal intervention-token transfer",
+    "54973666": "completed JAWS token-specificity controls"
   },
   "learned_latent_jaws_audit": {
     "status": "MIXED_COMPOSITION_SENSITIVE_NOT_HEADLINE",
@@ -496,5 +498,91 @@
     },
     "decision": "All pre-registered composition-robust learned-state gates failed. Do not treat the observational GRU hidden state as an independent causal VTA latent. Stage23 exact-replay belief-coordinate evidence remains the causal anchor.",
     "next_stage": "Explicit intervention-aware dynamics: encode JAWS ON/OFF as an action token and test held-out-animal future-event likelihood/counterfactual effects rather than expecting an intervention-blind latent to shift causally."
+  },
+  "jaws_intervention_token_transfer": {
+    "status": "PASS_BLOCK_LEVEL_INTERVENTION_TOKEN_TRANSFER",
+    "job_id": "54971413",
+    "task": "Leave-one-animal-out next-Active prediction on contingent JAWS event sequences.",
+    "n_animals": 10,
+    "n_transitions": 647,
+    "state_boundary_audit": "All 233 contingent suffixes are single-state blocks; there are zero within-suffix ON/OFF transitions.",
+    "gru_aware_vs_blind_all10": {
+      "n": 10,
+      "mean": 0.023200229536478337,
+      "median": 0.016870798992365415,
+      "positive": 9,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.0185546875
+    },
+    "gru_aware_vs_blind_adequate": {
+      "n": 9,
+      "mean": 0.019421372965709338,
+      "median": 0.016117589134301728,
+      "positive": 8,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.037109375
+    },
+    "token_replay_on_minus_off_all10": {
+      "n": 10,
+      "mean": -0.12442840337753296,
+      "median": -0.11573021486401558,
+      "positive": 0,
+      "negative": 10,
+      "wilcoxon_one_sided_p": 0.0009765625
+    },
+    "token_replay_on_minus_off_adequate": {
+      "n": 9,
+      "mean": -0.12169781823952992,
+      "median": -0.11011755466461182,
+      "positive": 0,
+      "negative": 9,
+      "wilcoxon_one_sided_p": 0.001953125
+    },
+    "gate_results": {
+      "predictive": true,
+      "directional": true
+    },
+    "boundary": "Positive held-out-animal block-level intervention-conditioned transfer. Because every suffix is ON-only or OFF-only, this is not within-session randomized causal identification."
+  },
+  "jaws_token_specificity": {
+    "status": "PARTIAL_TOKEN_SPECIFICITY",
+    "job_id": "54973666",
+    "true_vs_flipped_all10": {
+      "n": 10,
+      "mean": 0.07390600232905326,
+      "median": 0.0738548635988446,
+      "positive": 9,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.001953125
+    },
+    "true_vs_flipped_adequate": {
+      "n": 9,
+      "mean": 0.0639831114608349,
+      "median": 0.06752245418504095,
+      "positive": 8,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.00390625
+    },
+    "true_vs_train_shuffled_all10": {
+      "n": 10,
+      "mean": 0.0010325750675258052,
+      "median": 0.0046882334562555975,
+      "positive": 7,
+      "negative": 3,
+      "wilcoxon_one_sided_p": 0.2783203125
+    },
+    "true_vs_train_shuffled_adequate": {
+      "n": 9,
+      "mean": -0.003256312771947033,
+      "median": 0.004348667179865615,
+      "positive": 6,
+      "negative": 3,
+      "wilcoxon_one_sided_p": 0.3671875
+    },
+    "gate_results": {
+      "flipped_test_token": true,
+      "train_shuffled_token": false
+    },
+    "decision": "Test-time token identity matters strongly, but true training mapping does not beat within-animal block-shuffled token mapping. Treat Stage27 as block-context-conditioned transfer, not evidence of a stable cross-animal causal token semantics."
   }
 }

@@ -1,0 +1,389 @@
+{
+  "generated_at": "2026-10-05",
+  "status": "PASS_BLOCK_LEVEL_INTERVENTION_TOKEN_TRANSFER",
+  "task": "Leave-one-animal-out next-Active prediction on contingent JAWS event sequences.",
+  "data": {
+    "n_animals": 10,
+    "n_sequences": 189,
+    "n_transitions": 647,
+    "adequacy_sensitivity": "Primary results use all 10 held-out animals; sensitivity excludes only folds with <20 test transitions (ANM290), a threshold set from the pre-model data-count audit.",
+    "state_boundary_audit": "All 233 contingent suffixes are single-state blocks; there are zero within-suffix ON/OFF transitions."
+  },
+  "model": {
+    "base_inputs": "current observe action, current outcome one-hot, within-block progress, log1p(abs(boundary_distance_frames))",
+    "aware_extra_input": "JAWS ON/OFF token",
+    "target": "next event is Active",
+    "gru": "8 hidden units; 5 training seeds ensembled per held-out animal; seeds are not inferential replicates",
+    "linear_control": "matched logistic regression, with and without JAWS token",
+    "state_only_control": "logistic regression using only JAWS token"
+  },
+  "claim_gate": {
+    "predictive": "aware GRU must improve blind GRU NLL with median gain >0 and one-sided Wilcoxon p<0.05 in both all-10 and >=20-transition sensitivity sets",
+    "directional": "teacher-forced full-block token replay must give mean P(next Active | ON)-P(next Active | OFF)<0 across animals with median<0 and one-sided Wilcoxon p<0.05 in both sets",
+    "causal_boundary": "Because state is constant within every suffix, a PASS is evidence for held-out-animal block-level intervention-conditioned transfer, not trial-randomized or within-session causal identification."
+  },
+  "summary": {
+    "gru_aware_vs_blind_gain_bits_all10": {
+      "n": 10,
+      "mean": 0.023200229536478337,
+      "median": 0.016870798992365415,
+      "positive": 9,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.0185546875
+    },
+    "gru_token_replay_on_minus_off_all10": {
+      "n": 10,
+      "mean": -0.12442840337753296,
+      "median": -0.11573021486401558,
+      "positive": 0,
+      "negative": 10,
+      "wilcoxon_one_sided_p": 0.0009765625
+    },
+    "gru_aware_vs_blind_gain_bits_adequate": {
+      "n": 9,
+      "mean": 0.019421372965709338,
+      "median": 0.016117589134301728,
+      "positive": 8,
+      "negative": 1,
+      "wilcoxon_one_sided_p": 0.037109375
+    },
+    "gru_token_replay_on_minus_off_adequate": {
+      "n": 9,
+      "mean": -0.12169781823952992,
+      "median": -0.11011755466461182,
+      "positive": 0,
+      "negative": 9,
+      "wilcoxon_one_sided_p": 0.001953125
+    },
+    "glm_aware_vs_blind_gain_bits_all10": {
+      "n": 10,
+      "mean": 0.010376655260892586,
+      "median": 0.014930030403987424,
+      "positive": 7,
+      "negative": 3,
+      "wilcoxon_one_sided_p": 0.0966796875
+    },
+    "glm_token_replay_on_minus_off_all10": {
+      "n": 10,
+      "mean": -0.11437567621820306,
+      "median": -0.11339538766404283,
+      "positive": 0,
+      "negative": 10,
+      "wilcoxon_one_sided_p": 0.0009765625
+    },
+    "gru_aware_vs_stateonly_gain_bits_all10": {
+      "n": 10,
+      "mean": -0.006602852313033864,
+      "median": 0.006567079659274888,
+      "positive": 5,
+      "negative": 5,
+      "wilcoxon_one_sided_p": 0.4609375
+    }
+  },
+  "gate_results": {
+    "predictive": true,
+    "directional": true
+  },
+  "folds": [
+    {
+      "held_out_animal": 98,
+      "n_transitions": 109,
+      "n_active_next": 27,
+      "observed_on_fraction": 0.4220183491706848,
+      "glm": {
+        "blind_nll": 0.5082255512162357,
+        "aware_nll": 0.5007022917534372,
+        "aware_gain_bits": 0.010853769118300402,
+        "blind_brier": 0.16836000549535424,
+        "aware_brier": 0.1651422178733496,
+        "aware_brier_gain": 0.003217787622004642,
+        "blind_auc": 0.7479674796747967,
+        "aware_auc": 0.7348690153568203,
+        "token_replay_on_minus_off_active_p": -0.10482593889093685,
+        "state_only_nll": 0.5600368739867031
+      },
+      "gru": {
+        "blind_nll": 0.49603111223184065,
+        "aware_nll": 0.4838150801870022,
+        "aware_gain_bits": 0.017624008850429102,
+        "blind_brier": 0.16555472026351298,
+        "aware_brier": 0.16084220379306874,
+        "aware_brier_gain": 0.004712516470444239,
+        "blind_auc": 0.7497741644083107,
+        "aware_auc": 0.7687443541102078,
+        "token_replay_on_minus_off_active_p": -0.14258132874965668,
+        "aware_vs_stateonly_gain_bits": 0.10996480392248963
+      }
+    },
+    {
+      "held_out_animal": 103,
+      "n_transitions": 125,
+      "n_active_next": 43,
+      "observed_on_fraction": 0.4480000138282776,
+      "glm": {
+        "blind_nll": 0.6429853363145843,
+        "aware_nll": 0.6197220944625416,
+        "aware_gain_bits": 0.03356176365494268,
+        "blind_brier": 0.2262444338265847,
+        "aware_brier": 0.21792349333920985,
+        "aware_brier_gain": 0.008320940487374862,
+        "blind_auc": 0.7144072603516733,
+        "aware_auc": 0.7685762904140669,
+        "token_replay_on_minus_off_active_p": -0.07172507028424766,
+        "state_only_nll": 0.6821037943729764
+      },
+      "gru": {
+        "blind_nll": 0.6782484515809839,
+        "aware_nll": 0.6250460477757591,
+        "aware_gain_bits": 0.07675484413316992,
+        "blind_brier": 0.23589185786125627,
+        "aware_brier": 0.21712567942004996,
+        "aware_brier_gain": 0.018766178441206316,
+        "blind_auc": 0.7090187180941577,
+        "aware_auc": 0.7819058423142372,
+        "token_replay_on_minus_off_active_p": -0.09564119577407837,
+        "aware_vs_stateonly_gain_bits": 0.08231692806010452
+      }
+    },
+    {
+      "held_out_animal": 109,
+      "n_transitions": 37,
+      "n_active_next": 8,
+      "observed_on_fraction": 0.4864864945411682,
+      "glm": {
+        "blind_nll": 0.49028399405612827,
+        "aware_nll": 0.4954971558554288,
+        "aware_gain_bits": -0.0075210026752026695,
+        "blind_brier": 0.1604161452487801,
+        "aware_brier": 0.1603629528948857,
+        "aware_brier_gain": 5.3192353894393474e-05,
+        "blind_auc": 0.6810344827586207,
+        "aware_auc": 0.7025862068965517,
+        "token_replay_on_minus_off_active_p": -0.11672492499752447,
+        "state_only_nll": 0.529515471798124
+      },
+      "gru": {
+        "blind_nll": 0.5114591130667521,
+        "aware_nll": 0.5061980491569132,
+        "aware_gain_bits": 0.007590110812524375,
+        "blind_brier": 0.16627244777193978,
+        "aware_brier": 0.1620301191961238,
+        "aware_brier_gain": 0.004242328575815968,
+        "blind_auc": 0.6896551724137931,
+        "aware_auc": 0.75,
+        "token_replay_on_minus_off_active_p": -0.12134287506341934,
+        "aware_vs_stateonly_gain_bits": 0.03363993001078675
+      }
+    },
+    {
+      "held_out_animal": 111,
+      "n_transitions": 55,
+      "n_active_next": 17,
+      "observed_on_fraction": 0.30909091234207153,
+      "glm": {
+        "blind_nll": 0.6554273502495264,
+        "aware_nll": 0.6422531927519286,
+        "aware_gain_bits": 0.019006291689674444,
+        "blind_brier": 0.22139448700110093,
+        "aware_brier": 0.21802226146911982,
+        "aware_brier_gain": 0.0033722255319811045,
+        "blind_auc": 0.6238390092879258,
+        "aware_auc": 0.6253869969040248,
+        "token_replay_on_minus_off_active_p": -0.09609280661620977,
+        "state_only_nll": 0.6266792515358199
+      },
+      "gru": {
+        "blind_nll": 0.6573719344995146,
+        "aware_nll": 0.6559145125792167,
+        "aware_gain_bits": 0.0021026153768965816,
+        "blind_brier": 0.22464605955582412,
+        "aware_brier": 0.2233649137239212,
+        "aware_brier_gain": 0.001281145831902919,
+        "blind_auc": 0.609907120743034,
+        "aware_auc": 0.6191950464396285,
+        "token_replay_on_minus_off_active_p": -0.09189390391111374,
+        "aware_vs_stateonly_gain_bits": -0.04217756612640287
+      }
+    },
+    {
+      "held_out_animal": 112,
+      "n_transitions": 85,
+      "n_active_next": 21,
+      "observed_on_fraction": 0.5176470875740051,
+      "glm": {
+        "blind_nll": 0.5830860950354202,
+        "aware_nll": 0.5758709363092059,
+        "aware_gain_bits": 0.010409273713536036,
+        "blind_brier": 0.1929193357552983,
+        "aware_brier": 0.18998306551773128,
+        "aware_brier_gain": 0.0029362702375670124,
+        "blind_auc": 0.5476190476190477,
+        "aware_auc": 0.5877976190476191,
+        "token_replay_on_minus_off_active_p": -0.11006585033056121,
+        "state_only_nll": 0.5556784724521971
+      },
+      "gru": {
+        "blind_nll": 0.6378391384432842,
+        "aware_nll": 0.6290957129941764,
+        "aware_gain_bits": 0.01261409653581015,
+        "blind_brier": 0.21565693972335154,
+        "aware_brier": 0.20140379189976343,
+        "aware_brier_gain": 0.014253147823588108,
+        "blind_auc": 0.4947916666666667,
+        "aware_auc": 0.5297619047619048,
+        "token_replay_on_minus_off_active_p": -0.16660234332084656,
+        "aware_vs_stateonly_gain_bits": -0.10591868884566567
+      }
+    },
+    {
+      "held_out_animal": 276,
+      "n_transitions": 63,
+      "n_active_next": 11,
+      "observed_on_fraction": 0.4920634925365448,
+      "glm": {
+        "blind_nll": 0.4808466813688532,
+        "aware_nll": 0.4924573316319803,
+        "aware_gain_bits": -0.016750627556109572,
+        "blind_brier": 0.1552982816993359,
+        "aware_brier": 0.15925466021807907,
+        "aware_brier_gain": -0.00395637851874317,
+        "blind_auc": 0.5961538461538461,
+        "aware_auc": 0.5541958041958042,
+        "token_replay_on_minus_off_active_p": -0.13278161508802583,
+        "state_only_nll": 0.48352112038638806
+      },
+      "gru": {
+        "blind_nll": 0.5089064989927857,
+        "aware_nll": 0.4977346375269209,
+        "aware_gain_bits": 0.016117589134301728,
+        "blind_brier": 0.16950796928426595,
+        "aware_brier": 0.16218811373996905,
+        "aware_brier_gain": 0.007319855544296899,
+        "blind_auc": 0.5559440559440559,
+        "aware_auc": 0.5716783216783217,
+        "token_replay_on_minus_off_active_p": -0.161493718624115,
+        "aware_vs_stateonly_gain_bits": -0.020505770692236976
+      }
+    },
+    {
+      "held_out_animal": 281,
+      "n_transitions": 61,
+      "n_active_next": 15,
+      "observed_on_fraction": 0.44262295961380005,
+      "glm": {
+        "blind_nll": 0.48454571992784695,
+        "aware_nll": 0.4711711653292244,
+        "aware_gain_bits": 0.019295403593531477,
+        "blind_brier": 0.16061947396561943,
+        "aware_brier": 0.15533768913552007,
+        "aware_brier_gain": 0.005281784830099362,
+        "blind_auc": 0.7492753623188406,
+        "aware_auc": 0.7855072463768116,
+        "token_replay_on_minus_off_active_p": -0.10425683728990175,
+        "state_only_nll": 0.5508486548487456
+      },
+      "gru": {
+        "blind_nll": 0.48604355697050067,
+        "aware_nll": 0.46670018811401554,
+        "aware_gain_bits": 0.02790658232333712,
+        "blind_brier": 0.15548299382265784,
+        "aware_brier": 0.1504074769545045,
+        "aware_brier_gain": 0.005075516868153357,
+        "blind_auc": 0.7710144927536232,
+        "aware_auc": 0.7768115942028986,
+        "token_replay_on_minus_off_active_p": -0.11011755466461182,
+        "aware_vs_stateonly_gain_bits": 0.12140057565660492
+      }
+    },
+    {
+      "held_out_animal": 282,
+      "n_transitions": 22,
+      "n_active_next": 2,
+      "observed_on_fraction": 0.4545454680919647,
+      "glm": {
+        "blind_nll": 0.43609490550575386,
+        "aware_nll": 0.41573278367087596,
+        "aware_gain_bits": 0.029376332193155226,
+        "blind_brier": 0.13168901988269324,
+        "aware_brier": 0.1251120459976152,
+        "aware_brier_gain": 0.006576973885078052,
+        "blind_auc": 0.47500000000000003,
+        "aware_auc": 0.675,
+        "token_replay_on_minus_off_active_p": -0.1253631351821497,
+        "state_only_nll": 0.3593111879485642
+      },
+      "gru": {
+        "blind_nll": 0.45108825506778133,
+        "aware_nll": 0.41451213611706966,
+        "aware_gain_bits": 0.05276818542515656,
+        "blind_brier": 0.13875465662717976,
+        "aware_brier": 0.12856108243008352,
+        "aware_brier_gain": 0.010193574197096239,
+        "blind_auc": 0.44999999999999996,
+        "aware_auc": 0.575,
+        "token_replay_on_minus_off_active_p": -0.09887048602104187,
+        "aware_vs_stateonly_gain_bits": -0.07963813417507154
+      }
+    },
+    {
+      "held_out_animal": 290,
+      "n_transitions": 6,
+      "n_active_next": 0,
+      "observed_on_fraction": 0.6666666865348816,
+      "glm": {
+        "blind_nll": 0.4083748910324099,
+        "aware_nll": 0.38115692168228366,
+        "aware_gain_bits": 0.03926722940449497,
+        "blind_brier": 0.11348731130370697,
+        "aware_brier": 0.10523264811914622,
+        "aware_brier_gain": 0.008254663184560751,
+        "blind_auc": null,
+        "aware_auc": null,
+        "token_replay_on_minus_off_active_p": -0.14355593768905994,
+        "state_only_nll": 0.24332155298410607
+      },
+      "gru": {
+        "blind_nll": 0.44530031148555677,
+        "aware_nll": 0.40564540379408265,
+        "aware_gain_bits": 0.057209938673399324,
+        "blind_brier": 0.12986909483137618,
+        "aware_brier": 0.11485687326069687,
+        "aware_brier_gain": 0.015012221570679316,
+        "blind_auc": null,
+        "aware_auc": null,
+        "token_replay_on_minus_off_active_p": -0.14900366961956024,
+        "aware_vs_stateonly_gain_bits": -0.23418381458155316
+      }
+    },
+    {
+      "held_out_animal": 296,
+      "n_transitions": 84,
+      "n_active_next": 6,
+      "observed_on_fraction": 0.369047611951828,
+      "glm": {
+        "blind_nll": 0.3695808055557692,
+        "aware_nll": 0.39296196343831946,
+        "aware_gain_bits": -0.03373188052739713,
+        "blind_brier": 0.10256702082135602,
+        "aware_brier": 0.11514776200349212,
+        "aware_brier_gain": -0.012580741182136104,
+        "blind_auc": 0.6837606837606838,
+        "aware_auc": 0.6752136752136751,
+        "token_replay_on_minus_off_active_p": -0.13836464581341357,
+        "state_only_nll": 0.3747346751237556
+      },
+      "gru": {
+        "blind_nll": 0.3000419046582467,
+        "aware_nll": 0.3268567718365549,
+        "aware_gain_bits": -0.0386856759002415,
+        "blind_brier": 0.08098334632837735,
+        "aware_brier": 0.09069466701005029,
+        "aware_brier_gain": -0.009711320681672936,
+        "blind_auc": 0.6837606837606838,
+        "aware_auc": 0.7200854700854701,
+        "token_replay_on_minus_off_active_p": -0.10673695802688599,
+        "aware_vs_stateonly_gain_bits": 0.06907321364060579
+      }
+    }
+  ]
+}
