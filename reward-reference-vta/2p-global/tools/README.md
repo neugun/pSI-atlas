@@ -17,7 +17,7 @@ Executable, auditable Stage00→10 workflow for a new two-photon dataset.
     python carma.py status <project_dir>
     python carma.py report <project_dir>
 
-`report` now writes a dataset dashboard plus one report per session. For every completed session it exposes the Stage00→10 ledger, inputs/parameters/outputs/QC, ROI overlay, per-ROI authority table, and a real single-ROI explorer with mask, continuous raw/background/final traces, event-aligned mean traces, and trial × time heatmap. The viewer is file:// compatible and can be opened by double-clicking `reports/index.html`.
+`report` now writes a dataset dashboard plus one report per session. For every completed session it exposes the Stage00→10 ledger, inputs/parameters/outputs/QC, ROI overlay, per-ROI authority table, and a real single-ROI explorer with mask, continuous raw/background/final traces, event-aligned mean traces, and trial × time heatmap. When Stage08 candidates exist, it also creates `reports/identity-review/<source_session>/index.html`, an independent reviewer workbench with paired ROI masks and distance/reciprocal/area/local-correlation evidence. The viewer is file:// compatible and can be opened by double-clicking `reports/index.html`.
 
 ## Selective rerun / invalidation
 
@@ -54,9 +54,10 @@ The bundle includes reference-plane overlays, ROI mask crops, mean traces, trial
 ## Regression and reference validation
 
     python carma.py cold-test <work_dir>
-    python validate_reference_invariants_v1.py
+    python carma.py crossday-test <work_dir>
+    python validate_reference_invariants_v1.py --root <local_reference_root>
 
-The cold test starts from a synthetic raw TIFF and must reach Stage10 plus a functional per-ROI report. The reference validator checks bundle animal/session consistency, candidate endpoint existence, ROI existence, duplicate IDs, and manifest counts.
+The cold test starts from a synthetic raw TIFF and must reach Stage10 plus a functional per-ROI report while preserving non-contiguous ROI IDs. The cross-day test uses two raw-movie sessions with different ROI IDs, verifies stage-major scheduling, Stage07 transforms, Stage08 reciprocal/image-supported candidates, two independent reviewer consensus, one-to-one integrity, downstream invalidation, rerun and release refreeze. The reference validator checks bundle animal/session consistency, candidate endpoint existence, ROI existence, duplicate IDs, and manifest counts. The reference root can also be supplied through `CARMA_REFERENCE_ROOT`; private reference bundles are intentionally not shipped in the public Pages repository.
 
 ## Persistent stage record
 

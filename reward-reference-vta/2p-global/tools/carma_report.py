@@ -181,11 +181,16 @@ def build_project_report(root):
     idx=pd.DataFrame(index_rows)
     idx.to_csv(out/"stage_status_matrix.csv",index=False)
     if all_per: pd.concat(all_per,ignore_index=True).to_csv(out/"per_roi_all.csv",index=False)
+    from identity_review_report import build_identity_review_pages
+    review_cards=build_identity_review_pages(root,out,CSS)
     cards=[]
     for rec in index_rows:
         ss=rec["session_id"]; st=[v for k,v in rec.items() if k.startswith("stage_")]
         done=sum(x in {"PASS","WARN","FROZEN","MIGRATED","NA","REVIEW_REQUIRED"} for x in st)
         cards.append(f"<div class='card'><a href='sessions/{html.escape(ss)}/index.html'><b>{html.escape(ss)}</b></a><div>{html.escape(str(rec['task']))}</div><div class='metric'>{done}/11</div><div class='small'>stages recorded</div></div>")
-    index=f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{html.escape(str(cfg.get('dataset_id','CaRMA')))}</title><style>{CSS}</style></head><body><div class='top'><div class='wrap'><div class='eyebrow'>CaRMA 00→10 project report</div><h1>{html.escape(str(cfg.get('dataset_id','CaRMA dataset')))}</h1><p>Every session links to its stage ledger, provenance, QC, and—when Stage06 is complete—a real per-ROI mask/trace/trial-heatmap explorer.</p></div></div><main class='wrap'><div class='grid'>{''.join(cards)}</div><h2>Stage status matrix</h2><div class='scroll'>{idx.to_html(index=False,escape=True)}</div></main></body></html>"""
+    review_html=""
+    if review_cards:
+        review_html="<h2>Stage08 review queues</h2><div class='grid'>"+"".join("<div class='card'><a href='"+html.escape(x['href'])+"'><b>"+html.escape(x['session_id'])+"</b></a><div class='metric'>"+str(x['n_candidates'])+"</div><div class='small'>identity candidates: independent review required</div></div>" for x in review_cards)+"</div>"
+    index=f"""<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{html.escape(str(cfg.get('dataset_id','CaRMA')))}</title><style>{CSS}</style></head><body><div class='top'><div class='wrap'><div class='eyebrow'>CaRMA 00→10 project report</div><h1>{html.escape(str(cfg.get('dataset_id','CaRMA dataset')))}</h1><p>Every session links to its stage ledger, provenance, QC, and—when Stage06 is complete—a real per-ROI mask/trace/trial-heatmap explorer.</p></div></div><main class='wrap'><div class='grid'>{''.join(cards)}</div>{review_html}<h2>Stage status matrix</h2><div class='scroll'>{idx.to_html(index=False,escape=True)}</div></main></body></html>"""
     (out/"index.html").write_text(index,encoding="utf-8")
     return out/"index.html"
