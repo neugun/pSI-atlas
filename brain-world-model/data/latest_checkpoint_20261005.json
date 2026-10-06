@@ -433,5 +433,68 @@
     },
     "decision": "Retain as diagnostic audit only. Do not use the raw P=0.00488 as a headline causal claim. Stage23's exact replay / belief-coordinate result remains the causal anchor until a composition-robust learned-state test passes.",
     "next_test": "Pre-event recurrent state plus nuisance-scrubbed hidden state; fit only on non-JAWS data and evaluate JAWS ON/OFF held out."
+  },
+  "composition_robust_learned_latent": {
+    "status": "FAIL_COMPOSITION_ROBUST_LEARNED_STATE",
+    "job_id": "54966811",
+    "training": {
+      "n_train_sessions": 283,
+      "gru_params": 137,
+      "jaws_used_for_fitting": false,
+      "note": "All GRU, nuisance regressions and belief probes are fit on non-JAWS data only."
+    },
+    "pre_registered_gate": {
+      "expected_direction": "ON minus OFF < 0",
+      "requirements": "n=10; >=8/10 negative; median<0; one-sided Wilcoxon p<0.05",
+      "primary": "pre-event hidden state, with current-event nuisance removed using non-JAWS training only",
+      "secondary": "post-event hidden state after removing current+2 previous event nuisance using non-JAWS training only"
+    },
+    "gate_results": {
+      "primary_pre_event_pass": false,
+      "secondary_local3_pass": false,
+      "post_current_scrubbed_pass": false
+    },
+    "pre_event_scrubbed": {
+      "raw": {
+        "n": 10,
+        "mean": 0.0012693252414464951,
+        "median": 1.74669548869133e-05,
+        "negative": 5,
+        "positive": 5,
+        "wilcoxon_one_sided_less_p": 0.5390625
+      },
+      "composition_adjusted": {
+        "n": 10,
+        "mean": -0.0002897168905474246,
+        "median": 0.00013061321806162596,
+        "negative": 5,
+        "positive": 5,
+        "wilcoxon_one_sided_less_p": 0.5
+      },
+      "train_residual_probe_r2": 0.09942495822906494,
+      "min_history_depth": 1
+    },
+    "post_local3_scrubbed": {
+      "raw": {
+        "n": 10,
+        "mean": 0.0009232570184394718,
+        "median": -0.0012403016444295645,
+        "negative": 6,
+        "positive": 4,
+        "wilcoxon_one_sided_less_p": 0.24609375
+      },
+      "composition_adjusted": {
+        "n": 10,
+        "mean": 0.0005802569266719125,
+        "median": -0.00015029528876766562,
+        "negative": 6,
+        "positive": 4,
+        "wilcoxon_one_sided_less_p": 0.34765625
+      },
+      "train_residual_probe_r2": 0.054452359676361084,
+      "min_history_depth": 3
+    },
+    "decision": "All pre-registered composition-robust learned-state gates failed. Do not treat the observational GRU hidden state as an independent causal VTA latent. Stage23 exact-replay belief-coordinate evidence remains the causal anchor.",
+    "next_stage": "Explicit intervention-aware dynamics: encode JAWS ON/OFF as an action token and test held-out-animal future-event likelihood/counterfactual effects rather than expecting an intervention-blind latent to shift causally."
   }
 }

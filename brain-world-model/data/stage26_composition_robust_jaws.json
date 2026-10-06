@@ -1,0 +1,241 @@
+{
+  "generated_at": "2026-10-05",
+  "status": "FAIL_COMPOSITION_ROBUST_LEARNED_STATE",
+  "pre_registered_gate": {
+    "expected_direction": "ON minus OFF < 0",
+    "requirements": "n=10; >=8/10 negative; median<0; one-sided Wilcoxon p<0.05",
+    "primary": "pre-event hidden state, with current-event nuisance removed using non-JAWS training only",
+    "secondary": "post-event hidden state after removing current+2 previous event nuisance using non-JAWS training only"
+  },
+  "training": {
+    "n_train_sessions": 283,
+    "gru_params": 137,
+    "jaws_used_for_fitting": false,
+    "note": "All GRU, nuisance regressions and belief probes are fit on non-JAWS data only."
+  },
+  "tests": {
+    "pre_event_scrubbed_active_belief": {
+      "raw": {
+        "n": 10,
+        "mean": 0.0012693252414464951,
+        "median": 1.74669548869133e-05,
+        "negative": 5,
+        "positive": 5,
+        "wilcoxon_one_sided_less_p": 0.5390625
+      },
+      "composition_adjusted": {
+        "n": 10,
+        "mean": -0.0002897168905474246,
+        "median": 0.00013061321806162596,
+        "negative": 5,
+        "positive": 5,
+        "wilcoxon_one_sided_less_p": 0.5
+      },
+      "animals": [
+        {
+          "animal_id": 98,
+          "raw_on_minus_off": 0.0010068733245134354,
+          "composition_adjusted_on_minus_off": -0.006541142985224724
+        },
+        {
+          "animal_id": 103,
+          "raw_on_minus_off": -0.003480406478047371,
+          "composition_adjusted_on_minus_off": 0.00029880646616220474
+        },
+        {
+          "animal_id": 109,
+          "raw_on_minus_off": 0.00018554367125034332,
+          "composition_adjusted_on_minus_off": 0.001502676634117961
+        },
+        {
+          "animal_id": 111,
+          "raw_on_minus_off": -0.0024546049535274506,
+          "composition_adjusted_on_minus_off": 0.0005501373670995235
+        },
+        {
+          "animal_id": 112,
+          "raw_on_minus_off": -0.00015060976147651672,
+          "composition_adjusted_on_minus_off": 0.0006022227462381124
+        },
+        {
+          "animal_id": 276,
+          "raw_on_minus_off": 0.0025076698511838913,
+          "composition_adjusted_on_minus_off": -3.758003003895283e-05
+        },
+        {
+          "animal_id": 281,
+          "raw_on_minus_off": -0.008904758840799332,
+          "composition_adjusted_on_minus_off": -0.0050302615854889154
+        },
+        {
+          "animal_id": 282,
+          "raw_on_minus_off": -0.002888001501560211,
+          "composition_adjusted_on_minus_off": -0.007621763274073601
+        },
+        {
+          "animal_id": 290,
+          "raw_on_minus_off": 0.022802460938692093,
+          "composition_adjusted_on_minus_off": 0.01369873946532607
+        },
+        {
+          "animal_id": 296,
+          "raw_on_minus_off": 0.004069086164236069,
+          "composition_adjusted_on_minus_off": -0.00031900370959192514
+        }
+      ],
+      "train_residual_probe_r2": 0.09942495822906494,
+      "min_history_depth": 1
+    },
+    "post_current_scrubbed_active_belief": {
+      "raw": {
+        "n": 10,
+        "mean": 0.001926720980554819,
+        "median": 0.001499638892710209,
+        "negative": 4,
+        "positive": 6,
+        "wilcoxon_one_sided_less_p": 0.8623046875
+      },
+      "composition_adjusted": {
+        "n": 10,
+        "mean": -0.0004184630699455738,
+        "median": 0.0006230738945305347,
+        "negative": 3,
+        "positive": 7,
+        "wilcoxon_one_sided_less_p": 0.65234375
+      },
+      "animals": [
+        {
+          "animal_id": 98,
+          "raw_on_minus_off": 0.0025640539824962616,
+          "composition_adjusted_on_minus_off": -0.0070645460858941075
+        },
+        {
+          "animal_id": 103,
+          "raw_on_minus_off": -0.0007255431264638901,
+          "composition_adjusted_on_minus_off": 0.0007333910092711448
+        },
+        {
+          "animal_id": 109,
+          "raw_on_minus_off": 0.001838991418480873,
+          "composition_adjusted_on_minus_off": 0.001847670879215002
+        },
+        {
+          "animal_id": 111,
+          "raw_on_minus_off": -0.00049639493227005,
+          "composition_adjusted_on_minus_off": 0.0010522734373807907
+        },
+        {
+          "animal_id": 112,
+          "raw_on_minus_off": 0.0011602863669395447,
+          "composition_adjusted_on_minus_off": 0.0006325608119368553
+        },
+        {
+          "animal_id": 276,
+          "raw_on_minus_off": 0.0028589628636837006,
+          "composition_adjusted_on_minus_off": 0.0006135869771242142
+        },
+        {
+          "animal_id": 281,
+          "raw_on_minus_off": -0.008072217926383018,
+          "composition_adjusted_on_minus_off": -0.005129768047481775
+        },
+        {
+          "animal_id": 282,
+          "raw_on_minus_off": -0.0021600397303700447,
+          "composition_adjusted_on_minus_off": -0.007352977059781551
+        },
+        {
+          "animal_id": 290,
+          "raw_on_minus_off": 0.019671622663736343,
+          "composition_adjusted_on_minus_off": 0.01034744386561215
+        },
+        {
+          "animal_id": 296,
+          "raw_on_minus_off": 0.002627488225698471,
+          "composition_adjusted_on_minus_off": 0.00013573351316154003
+        }
+      ],
+      "train_residual_probe_r2": 0.09783029556274414,
+      "min_history_depth": 1
+    },
+    "post_local3_scrubbed_active_belief": {
+      "raw": {
+        "n": 10,
+        "mean": 0.0009232570184394718,
+        "median": -0.0012403016444295645,
+        "negative": 6,
+        "positive": 4,
+        "wilcoxon_one_sided_less_p": 0.24609375
+      },
+      "composition_adjusted": {
+        "n": 10,
+        "mean": 0.0005802569266719125,
+        "median": -0.00015029528876766562,
+        "negative": 6,
+        "positive": 4,
+        "wilcoxon_one_sided_less_p": 0.34765625
+      },
+      "animals": [
+        {
+          "animal_id": 98,
+          "raw_on_minus_off": -0.0020107775926589966,
+          "composition_adjusted_on_minus_off": -0.004868448339402675
+        },
+        {
+          "animal_id": 103,
+          "raw_on_minus_off": 0.0013536633923649788,
+          "composition_adjusted_on_minus_off": -0.00024177581071853637
+        },
+        {
+          "animal_id": 109,
+          "raw_on_minus_off": -0.002722452161833644,
+          "composition_adjusted_on_minus_off": 0.0001535988412797451
+        },
+        {
+          "animal_id": 111,
+          "raw_on_minus_off": -0.005445023998618126,
+          "composition_adjusted_on_minus_off": -0.007292178925126791
+        },
+        {
+          "animal_id": 112,
+          "raw_on_minus_off": 0.0015520905144512653,
+          "composition_adjusted_on_minus_off": 0.003506407083477825
+        },
+        {
+          "animal_id": 276,
+          "raw_on_minus_off": -0.0012554880231618881,
+          "composition_adjusted_on_minus_off": 0.0013413146953098476
+        },
+        {
+          "animal_id": 281,
+          "raw_on_minus_off": -0.0015868782065808773,
+          "composition_adjusted_on_minus_off": -5.881476681679487e-05
+        },
+        {
+          "animal_id": 282,
+          "raw_on_minus_off": -0.0012251152656972408,
+          "composition_adjusted_on_minus_off": -0.0028322401146094003
+        },
+        {
+          "animal_id": 290,
+          "raw_on_minus_off": 0.02035481482744217,
+          "composition_adjusted_on_minus_off": 0.01849968731403351
+        },
+        {
+          "animal_id": 296,
+          "raw_on_minus_off": 0.00021773669868707657,
+          "composition_adjusted_on_minus_off": -0.002404980710707605
+        }
+      ],
+      "train_residual_probe_r2": 0.054452359676361084,
+      "min_history_depth": 3
+    }
+  },
+  "gate_results": {
+    "primary_pre_event_pass": false,
+    "secondary_local3_pass": false,
+    "post_current_scrubbed_pass": false
+  },
+  "interpretation": "Primary pre-event state cannot contain the current action/outcome by construction; nuisance regression additionally removes current-event correlations learned in non-JAWS data. The local3 analysis asks whether any shift survives removal of the current and two immediately preceding event compositions. A PASS therefore supports a slower learned recurrent-state perturbation; a FAIL means stage23 exact-replay belief-coordinate evidence remains the causal anchor.",
+  "guardrail": "Do not promote a raw or unadjusted latent effect if the pre-registered composition-adjusted gate fails."
+}
