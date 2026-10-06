@@ -43,6 +43,12 @@ Stage08 produces candidates only. It never silently freezes cross-day identity.
 
 Consensus requires independent reviewer names and enforces one-to-one integrity. ACCEPT edges are frozen only after consensus; unresolved/conflicted candidates keep Stage08 at REVIEW_REQUIRED.
 
+For a local frozen reference bundle with `identity_review_candidates.csv`, build the higher-throughput reviewer UI with:
+
+    python build_reference_review_workbench_v2.py <bundle_root> --label ANM54 --storage-key anm54_identity_review
+
+The V2 workbench keeps decisions manual but adds session-pair / grade / authority / review-state filters, evidence sorting, reviewed-progress counters, next-unreviewed navigation, keyboard shortcuts (1/2/3), and review JSON import/export. It does not mutate the candidate authority or make automatic same-cell decisions.
+
 ## Rich viewer bundle for migrated/reference sessions
 
 For a session whose frozen checkpoint already contains per-trial `raw/bg/sub/time_s` arrays:

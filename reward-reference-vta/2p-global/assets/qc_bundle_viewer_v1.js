@@ -1,6 +1,6 @@
 (()=> {
 const $=id=>document.getElementById(id);
-const fmt=(v,d=3)=>v==null||Number.isNaN(+v)?"—":typeof v==="number"?v.toFixed(d):String(v);
+const fmt=(v,d=3)=>v==null?"—":typeof v==="number"?(Number.isFinite(v)?v.toFixed(d):"—"):String(v);
 function median(a){const z=a.filter(Number.isFinite).sort((x,y)=>x-y);if(!z.length)return null;const m=z.length>>1;return z.length%2?z[m]:(z[m-1]+z[m])/2}
 function renderPlane(b,i){
  const p=b.planes[i]; $("qcPlaneImg").src=p.image_png; $("qcPlaneCap").textContent="Plane "+p.plane+" · "+p.roi_count+" ROI masks · "+(p.reference_name||"mask-only fallback");

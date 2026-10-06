@@ -65,7 +65,7 @@ def build_identity_review_pages(root, out, css=""):
         js = r"""
 const C=window.CARMA_IDENTITY_CANDIDATES||[];let i=0;
 const KEY=document.body.dataset.key;let D=JSON.parse(localStorage.getItem(KEY)||'{}');
-const f=(v,d=3)=>v==null||Number.isNaN(+v)?'-':typeof v==='number'?v.toFixed(d):String(v);
+const f=(v,d=3)=>v==null?'-':typeof v==='number'?(Number.isFinite(v)?v.toFixed(d):'-'):String(v);
 function show(){
   if(!C.length)return;
   const c=C[i];

@@ -1,6 +1,6 @@
 (()=> {
 const $=id=>document.getElementById(id);
-const fmt=(v,d=3)=>v==null||Number.isNaN(+v)?"—":typeof v==="number"?v.toFixed(d):String(v);
+const fmt=(v,d=3)=>v==null?"—":typeof v==="number"?(Number.isFinite(v)?v.toFixed(d):"—"):String(v);
 function qtile(a,q){const z=a.filter(Number.isFinite).sort((x,y)=>x-y); if(!z.length)return 0; const i=(z.length-1)*q,lo=Math.floor(i),hi=Math.ceil(i); return z[lo]*(hi-i)+z[hi]*(i-lo)}
 function svgTrace(time, series){
   const W=720,H=250,L=54,R=18,T=18,B=38;
