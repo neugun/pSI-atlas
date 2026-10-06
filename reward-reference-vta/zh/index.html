@@ -23,6 +23,7 @@
       <a href="#fig6">Fig. 6</a>
       <a href="#fig7">Fig. 7</a>
       <a href="../2p-global/zh/">2P全局</a>
+      <a href="#roadmap">路线图</a>
       <a href="#limits">局限</a>
       <a href="#supplement">补充</a>
       <a class="lang-link" href="../">English</a>
@@ -651,6 +652,97 @@
       新增的recency sensitivity进一步把reward class差异拆清楚：Natural在较宽的中等α范围同时表达neural与behavior history；而Stim13从α=.03一直扫到.60，neural history在8/8 timescale均显著（BH q≤.0192），但duration在8/8均为null（最小raw P=.682，BH q≥.906）。
       进一步的current-conditioned分析提供了一个重要限定：Stim13在当前OFF与ON下可以出现不同的duration-history slope，但这一interaction对recent local history非常敏感（base exact-wild P=.0372；加入local-history主效应后P=.899；deep-residual interaction P=.154）。因此目前最准确的结论是：Stim13存在稳健的neural history，但没有建立稳定的marginal或deep behavioral reference effect；这并不等于所有condition-specific behavioral structure都不存在。
     </div>
+  </div>
+</section>
+
+<section id="roadmap" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">研究路线图</div>
+        <h2>从 bulk reward history 推进到跨领域、单细胞尺度的 reference computation。</h2>
+      </div>
+      <p>
+        下一阶段不是简单重复“更多 reward contrast”，而是要在同一动物、最终在同一神经元中把
+        <strong>current reward U</strong>、<strong>stored reference R</strong>、<strong>signed contrast C=U−R</strong>、
+        classical RPE、reward identity 与 action policy 真正分开。
+      </p>
+    </div>
+
+    <div class="cards-3">
+      <article class="card good">
+        <h3>已经建立的基础</h3>
+        <p>近期 sampled reward history 会改变 sustained VTA dopamine 与 feeding persistence，即使当前食物相同；该效应不能被简单 clock、categorical belief、unsigned salience 或多种替代模型完全吸收。</p>
+      </article>
+      <article class="card info">
+        <h3>最关键的下一步 food experiment</h3>
+        <p>采用<strong>fully crossed history × current reward</strong>或 identical-probe induction，使 U 与 R 可以独立估计。这是单细胞尺度上区分 reference、contrast、RPE、identity 与 action 的最干净设计。</p>
+      </article>
+      <article class="card violet">
+        <h3>最关键的下一步 social experiment</h3>
+        <p>保持 female 持续可见/存在，只切换<strong>interaction ON 与 exposure-only OFF</strong>。pSI stimulation 只作为 submaximal action-threshold probe，而不是 social value 的来源。</p>
+      </article>
+    </div>
+
+    <h3 class="table-title">从过去 Reward Contrast 讨论中恢复出的优先范式</h3>
+    <div class="table-wrap">
+      <table class="roadmap-table">
+        <thead><tr><th>方向</th><th>核心设计</th><th>主要 readout</th><th>解决的问题</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Acute food contrast</strong></td><td>2-min H→L vs L→L；L→H vs H→H。窗口：−30–0 s、0–10/20 s、0–30 s、30–90 s、90–120 s。</td><td>VTA DA、bout initiation/duration、lick adaptation、pause、re-engagement、termination hazard。</td><td>快速 signed contrast vs 当前 reward 与 generic transition。</td><td><span class="status-tag priority">优先</span></td></tr>
+          <tr><td><strong>Sustained same-probe contrast</strong></td><td>约30-min H→L vs L→L，或30-min baseline → 60-min rich/neutral/lean induction → identical 8% sucrose probe。</td><td>0–30 s、30–120 s、2–5、5–10、10–20、20–30 min；lick microstructure 与 DA。</td><td>reference persistence、recovery 与 multi-timescale updating。</td><td><span class="status-tag priority">优先</span></td></tr>
+          <tr><td><strong>Contrast vs RPE</strong></td><td>所有 context 都预测相同 probe，使 expected-probe RPE≈0 但 C 不同；再加入 unexpected high/low catch probe 与 intraoral control。</td><td>DA、acceptance、seeking、consumption、surprise/omission。</td><td>reference contrast vs classical cue-RPE / unsigned surprise。</td><td><span class="status-tag design">已设计</span></td></tr>
+          <tr><td><strong>Social contrast</strong></td><td>female 始终存在；interaction ON vs exposure-only OFF。ON→OFF vs OFF→OFF；OFF→ON vs ON→ON。</td><td>approach、investigation、withdrawal、USV、VTA DA、pSI threshold/I50、attack latency 与 redirection。</td><td>在固定 social identity / sensory exposure 下建立干净的 social reference。</td><td><span class="status-tag priority">优先</span></td></tr>
+          <tr><td><strong>Social identity/generalization</strong></td><td>约30-min Female A history → Female A OFF probe；再做 Female A history → novel Female B OFF probe。</td><td>behavior transfer、DA、pSI input-output curve、decay。</td><td>identity-specific social reference vs generalized social-value state。</td><td><span class="status-tag design">已设计</span></td></tr>
+          <tr><td><strong>Single-cell crossed reference</strong></td><td>fully cross high/low history × high/low current probe；关键 condition 尽量获得约40–60次可分析重复。</td><td>纵向2P/CaRMA、same-cell coding、population geometry、behavior。</td><td>同一神经元中区分 current value、reference/history、contrast、RPE、salience、identity、action。</td><td><span class="status-tag priority">最高优先</span></td></tr>
+          <tr><td><strong>Function → molecule</strong></td><td>纵向 same-cell imaging 后接 retrospective ~100-gene EASI/EASEQ-FISH 与 projection annotation。</td><td>molecular enrichment、cross-day stability、projection identity、causal perturbation。</td><td>专门 cell class vs distributed state-dependent contrast manifold。</td><td><span class="status-tag design">平台方向</span></td></tr>
+          <tr><td><strong>Need/state contrast</strong></td><td>将 history-state 与 probe-state 分开：fasting/refeeding、GLP-1/GIP/amylin、obesity、stress/inflammation、social isolation。</td><td>DA、reference update、contrast gain、action cost、behavior。</td><td>疾病究竟改变 U、R、update rate、asymmetry 还是 contrast-to-action transfer。</td><td><span class="status-tag exploratory">identifiability之后</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="roadmap-details" open>
+      <summary><strong>Hedonic contrast：最干净的实验递进</strong></summary>
+      <p>
+        原始100E/20E和quinine范式已经建立signed、sustained consumption contrast。下一步最有价值的是保持current probe完全相同，只操纵此前的reward history。
+        过去提出的30-min baseline → 60-min rich/neutral/lean induction → 30-min identical 8% sucrose probe尤其适合，因为它直接把reference与物理刺激分开。
+        Pair-fed/non-oral calorie、cue/timing、locomotion、deprivation与intraoral controls可以继续拆开liking、wanting、sensory adaptation、satiety和classical RPE。
+      </p>
+    </details>
+
+    <details class="roadmap-details" open>
+      <summary><strong>Social contrast：精炼后的设计与 observational feeding 的联系</strong></summary>
+      <p>
+        早期方案把receptive-female interaction与pSI stimulation放在同一个block里，虽然机制上很有意思，但把social value与action induction混在了一起。
+        精炼后的方案保持female exposure不变，只操纵interaction access。pSI最适合作为<strong>submaximal action-threshold probe</strong>；既往5/10/20/40-Hz经验可以用于校准，但不应预设一个固定频率。
+        Social observational feeding则提供了相邻框架：visual access、familiarity、VTA-dopamine temporal contingency以及OXT相关social-state信号，可以用来测试“observed reward history”是否更新同一个reference system，还是形成identity-specific social reference。
+      </p>
+    </details>
+
+    <details class="roadmap-details" open>
+      <summary><strong>Single-cell：D1–D9 CaRMA 数据真正提示了什么</strong></summary>
+      <p>
+        当前纵向VTA序列包括D1/D2 trace conditioning、D3 100E、D4/D9 20E、D5 100E vs 20E、D6 100E vs 100E+3 mM quinine、D7 50E、D8 100E vs 50E。
+        现有结果更接近“共同 temporal/consumption scaffold + animal-specific residual geometry”，而不是普遍稳定的concentration-preferring cell class或classical line attractor。
+        reward-quality effect可以是distributed、lick-independent，却并不自动产生稳定的single-cell “contrast neuron”类别。
+      </p>
+      <p>
+        因此下一实验必须先正交化U与R，再用model competition给同一神经元分解identity、reference、contrast、RPE、salience、action与state-gain。
+        真正支持“专门分子cell class”的证据需要same-cell cross-day stability、matched-current generalization、molecular/projection enrichment以及causal double dissociation；反之，如果population decoder稳定但single-cell membership旋转，则更支持distributed manifold。
+      </p>
+    </details>
+
+    <div class="callout">
+      <strong>下一阶段的边界。</strong>
+      不应把α≈0.15–0.20当作固定 biological learning rate；不应把sustained contrast直接等同于classical cue RPE；
+      不应从bulk photometry或当前D1–D9设计宣称普遍“contrast neuron”类群；也不应在没有直接证据时把pSI称为social reward comparator。
+      真正的核心问题是：近期经历如何建立reference，使完全相同的current reward获得不同的value/action meaning，而这个reference究竟由专门的molecular cell class还是distributed、state-dependent manifold实现。
+    </div>
+
+    <p class="roadmap-doc-link">
+      <a href="../docs/REWARD_CONTRAST_GLOBAL_RESEARCH_ROADMAP_v1_20261006.md"><strong>查看完整研究路线图</strong></a>
+      ——包含food、social、single-cell、molecular、disease/state与causal experiment的详细整合。
+    </p>
   </div>
 </section>
 
