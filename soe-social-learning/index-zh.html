@@ -13,19 +13,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">S</span> SOE × SLM × VTA</div>
 <nav aria-label="中文页面导航"><a class="lang-btn" href="index.html">EN</a><a class="lang-btn active" href="index-zh.html">中文</a><a href="#overview">总览</a><a href="#phenotype">行为</a><a href="#information">信息价值</a><a href="#dynamics">动态</a><a href="#slm">SLM</a>
 <a href="#swm">SWM</a><a href="#feed">进食</a><a href="#agent">智能体</a><a href="#vta">VTA</a><a href="#architecture">机制架构</a><a href="#causality">因果</a><a href="#generalization">泛化</a><a href="#crossspecies">跨物种</a><a href="#resources">数据</a></nav></div></header><main>
-<section class="hero" id="overview"><div class="container"><span class="eyebrow">中文机制版 · authority 2026-10-05</span>
+<section class="hero" id="overview"><div class="container">
+<span class="eyebrow">中文机制版 · authority 2026-10-05</span>
 <h1>从观察到行动：动物如何主动采样社会信息，并把它变成自己的行为</h1>
-<p class="lede">SOE 研究动物如何判断什么时候值得看别人、从观察内容中提取可用信息、把信息转成自己的行动，并把结果归因给不同的社会来源。SLM 把这条链拆成可以预测、可以在 VTA 中读取、可以被 JAWS 选择性破坏、也可以装进人工 agent 的计算变量。</p>
+<p class="lede">动物会判断什么时候值得采样社会信息，把一次观察的影响保留在不同时间尺度上，将采样到的内容转成自己的行动，并把 outcome credit 归到具体社会来源。default SLM 把这些操作写成可实验检验的变量；SWM 检验数据驱动 recurrent state 中哪些成分具有独立功能；VTA 与 JAWS 检验神经实现和因果作用；外部数据再按严格 evidence tier 检验哪些 computation 能跨任务重复出现。</p>
 <div class="hero-grid">
-<div class="card good"><div class="metric-label">预测能力</div><div class="metric">27/27</div><p>Default behavioral SLM 定义为 mechanistic SLM + generic choice persistence。它相对 Current+CK 在 20/27 动物更好，相对 TinyRNN 在 23/27 更好；full-history MLP 仅用于容量审计。</p></div>
-<div class="card info"><div class="metric-label">核心可迁移计算</div><div class="metric">4</div><p>来源标记的 credit、状态门控的信息价值、多时间尺度状态，以及信息采样与行动执行的分离。</p></div>
-<div class="card violet"><div class="metric-label">VTA 时间序列</div><div class="metric">policy → APE → credit</div><p>一次 Observe 中，VTA DA 按事件时间依次对应 pre-outcome sampling policy、sampling APE 与 post-outcome social-credit / reward update。</p></div>
-<div class="card good"><div class="metric-label">因果 credit</div><div class="metric">10/10 · 9/10</div><p>JAWS 在 10/10 动物中降低 post-outcome Active social-credit update，并在 9/10 动物中降低 session-scale accumulated Active credit。</p></div>
-<div class="card info"><div class="metric-label">内容→行动</div><div class="metric">+7.54 pp</div><p>learner cohort 中，看到示范鼠正在进食后 3 秒内自身 Feed hazard 上升；控制当前自身/社会状态后仍 +6.09 pp。</p></div>
-<div class="card violet"><div class="metric-label">AI 收敛</div><div class="metric">30/30</div><p>通用 recurrent agent 学出的策略可被 SLM multiscale-memory 与 source-credit coordinates 进一步解释；30/30 个 run 的 Brier、NLL、AUC 都改善。</p></div>
+<div class="card good"><div class="metric-label">DEFAULT SLM</div><div class="metric">.1654 Brier</div><p>mechanistic SLM + generic choice persistence 相对 Current+CK 在 20/27 动物更好，相对 TinyRNN 在 23/27 更好；full-history MLP 只承担 capacity-ceiling audit。</p></div>
+<div class="card info"><div class="metric-label">SWM FUNCTIONAL BRIDGE</div><div class="metric">+.0209 AUC</div><p>prospective efficacy 在完整 13-current-social-cue readout 上仍有增量；删除 SLM-coordinate subspace 会相对 matched random subspace 选择性损害 Observe policy。</p></div>
+<div class="card violet"><div class="metric-label">VTA 时间序列</div><div class="metric">policy → APE → credit</div><p>一次 Observe 中，VTA DA 按时间依次对应 pre-outcome sampling policy、sampling APE、post-outcome reward / social-credit update。</p></div>
+<div class="card good"><div class="metric-label">因果 CREDIT</div><div class="metric">10/10 · 9/10</div><p>JAWS 在 10/10 动物降低 post-outcome Active social-credit update，在 9/10 动物降低 accumulated Active credit；gross observation 保持。</p></div>
+<div class="card info"><div class="metric-label">内容 → 行动</div><div class="metric">+7.54 pp</div><p>learner 观察 demonstrator feeding 后 3 秒内 native Feed hazard 增加；控制当前 self/social state 后仍 +6.09 pp。</p></div>
+<div class="card violet"><div class="metric-label">强外部 COMPARATOR</div><div class="metric">8/10 · 8/10</div><p>multiscale state 在 8/10 held-out Human subjects 与 8/10 held-out Rats 中超过更强 matched model；primate 结果保持 nested / architectural evidence 定位。</p></div>
 </div>
-<div class="equation chain">社会状态 → Observe 采样 → 观察内容 → 自身 Feed 转化<span class="sub">并行：观察结果 → social credit / belief / Q → 改变未来采样策略</span></div>
-<p class="prepub">下面按“行为现象 → 信息价值 → 多时间尺度 → SLM → Feed → agent → VTA → 因果 → 泛化 → 跨物种”组织。页面按生物学问题递进组织，每一层都说明下一层分析为何必要。</p>
+<div class="equation chain">social state → adaptive Observe sampling → sampled content → native Feed conversion
+<span class="sub">feedback：social outcome → post-outcome source-specific credit / value update → future Observe policy</span></div>
+<p class="prepub">页面按照生物学问题顺序展开：行为获得 → 信息价值 → 记忆 → default SLM → data-driven SWM → content-to-action conversion → 神经实现 → 因果拆解 → 机制综合 → 后续泛化 → 跨任务证据。</p>
+<div class="section-kicker" style="margin-top:34px">当前结果图谱</div>
+<div class="cards-4" style="margin-top:12px">
+<div class="card good"><div class="series-index">01</div><h3>SOE 被逐步习得</h3><p>35/40 动物的 SRI 随训练增加；live social input、visual access 与 familiarity 共同约束 acquisition。</p></div>
+<div class="card info"><div class="series-index">02</div><h3>社会信息具有适应性价值</h3><p>held-out social-state value 依赖当前 self-state，并随训练阶段改变。</p></div>
+<div class="card violet"><div class="series-index">03</div><h3>记忆横跨秒到跨天</h3><p>下一决策、约 4.5–7.5 分钟近期历史和 transient cross-day prior 分别得到独立支持。</p></div>
+<div class="card good"><div class="series-index">04</div><h3>Default SLM 的复杂度有行为依据</h3><p>mechanistic state + generic persistence 超过弱 baseline 与 classical model，同时保留可直接实验检验的 coordinates。</p></div>
+<div class="card info"><div class="series-index">05</div><h3>SWM 分离出两个功能成分</h3><p>SLM-like subspace 参与 Observe policy；prospective social efficacy 是另一个依赖正确 social content 的变量。</p></div>
+<div class="card violet"><div class="series-index">06</div><h3>采样内容推动自身 Feed</h3><p>demonstrator-feeding content 带来 learner native Feed hazard 的短时增加。</p></div>
+<div class="card good"><div class="series-index">07</div><h3>VTA 按 episode 时间展开 computation</h3><p>Q/RPE 可以解释 Post DA；pre-outcome Early policy 与 Middle APE 需要更完整的 temporal SLM account。</p></div>
+<div class="card info"><div class="series-index">08</div><h3>视觉信息进入与 dopamine teaching 可拆分</h3><p>Visual Block 限制有用 content；JAWS 削弱 post-outcome Active social-credit teaching，同时 gross sampling 保留。</p></div>
+<div class="card violet"><div class="series-index">09</div><h3>形成耦合的 two-policy architecture</h3><p>Observe policy 控制信息获取；native Feed 主要受 self-state 控制，并接收 sampled content 的短时信号。</p></div>
+<div class="card good"><div class="series-index">10</div><h3>SLM 具有生成充分性</h3><p>closed-loop SLM 重建 broad learning trajectory 与 behavioral-state organization；recurrent-agent policy 也可由 SLM coordinates 紧凑描述。</p></div>
+<div class="card info"><div class="series-index">11</div><h3>后续泛化具有模块化结构</h3><p>social credit 对 novel-food initiation 有 simple-behavior 之外的增量；APE 强映射到之后 shock reactivity，当前尚无 behavior-superiority 证据。</p></div>
+<div class="card violet"><div class="series-index">12</div><h3>跨任务证据按等级组织</h3><p>Human 与 Rat 对 multiscale state 提供最强 independent-unit external support；其他 computation 当前处于 component、nested 或 architecture-analogue 级别。</p></div>
+</div>
 </div></section>
 <section class="alt" id="phenotype"><div class="container"><div class="section-head"><div><div class="section-kicker">行为发现</div><h2>动物学习将社会观察转化成自己的行动</h2></div><p>40 只动物中 35 只的 SRI 从早期到晚期上升。learner 的关键变化集中在 Observe→Active 转化，gross observation rate 的变化较小。</p></div>
 <div class="bio-logic"><strong>生物学逻辑｜</strong>社会学习的关键行为单位是一次成功的信息→行动转化。视觉输入、熟悉同伴和真实社会互动共同决定这条转化是否成立。</div>

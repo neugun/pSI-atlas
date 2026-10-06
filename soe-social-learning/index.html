@@ -87,52 +87,36 @@ nav a.lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)
 <div class="container">
 <span class="eyebrow">Prepublication analysis portal · authority 2026-10-05</span>
 <h1>From observation to action: social information foraging, dopamine timing and causal credit assignment</h1>
-<p class="lede">Animals learn when social information is worth sampling, convert sampled content into their own action, and assign credit to social outcomes. VTA dopamine expresses these computations in sequence, while the same computational principles recur across current external tests in mouse, rat, macaque, marmoset and human.</p>
-<div class="hero-grid"><div class="card good">
-<div class="metric-label">PREDICTION</div>
-<div class="metric">27/27</div>
-<p>Default behavioral SLM = mechanistic SLM + generic choice persistence. It beats Current+CK in 20/27 animals and TinyRNN in 23/27; full-history MLP is retained as a capacity ceiling audit.</p>
-</div><div class="card info">
-<div class="metric-label">CROSS-SPECIES</div>
-<div class="metric">4 computations</div>
-<p>External evidence is organized around source-tagged credit, state-gated information value, task-matched multiscale state, and sampling-to-action separation; each dataset is labeled by what it actually tests.</p>
-</div><div class="card violet">
-<div class="metric-label">NEURAL SEQUENCE</div>
-<div class="metric">policy → APE → credit</div>
-<p>VTA dopamine follows the episode chronology: pre-outcome sampling policy, sampling action-prediction error (APE), then post-outcome reward/social-credit update.</p>
-</div><div class="card good">
-<div class="metric-label">CAUSAL CREDIT</div>
-<div class="metric">10/10 · 9/10</div>
-<p>JAWS lowers the post-outcome Active social-credit update in 10/10 animals and the accumulated Active credit state in 9/10; both JAWS cohorts replicate the endpoint direction.</p>
-</div><div class="card info">
-<div class="metric-label">CONTENT → ACTION</div>
-<div class="metric">+7.54 pp</div>
-<p>In the learner cohort, Feed hazard rises within 3 s after observing demonstrator feeding; the state-residualized increase is +6.09 pp.</p>
-</div><div class="card violet">
-<div class="metric-label">AI CONVERGENCE</div>
-<div class="metric">30/30</div>
-<p>The learned recurrent policy is better explained by explicit SLM coordinates in every fold × seed × reward run, supporting these coordinates as a reusable description of task solution.</p>
-</div></div>
-<div class="equation chain">
-      social state → adaptive Observe sampling → observed content → native Feed conversion
-      <span class="sub">in parallel: observation outcome → SLM belief / Q credit → future sampling policy</span>
+<p class="lede">Animals learn when social information is worth sampling, carry its consequences across multiple timescales, convert sampled content into their own action, and assign credit to social outcomes. The default SLM turns these operations into testable variables; SWM tests which parts emerge in a data-driven recurrent state, VTA and JAWS test their neural and causal roles, and external datasets test which computations recur under matched evidence tiers.</p>
+<div class="hero-grid">
+<div class="card good"><div class="metric-label">DEFAULT SLM</div><div class="metric">.1654 Brier</div><p>Mechanistic SLM + generic choice persistence beats Current+CK in 20/27 animals and TinyRNN in 23/27; full-history MLP is retained as a capacity ceiling.</p></div>
+<div class="card info"><div class="metric-label">SWM FUNCTIONAL BRIDGE</div><div class="metric">+.0209 AUC</div><p>Prospective efficacy adds beyond all 13 current social cues. Scrubbing the SLM-coordinate subspace selectively impairs Observe policy relative to matched random subspaces.</p></div>
+<div class="card violet"><div class="metric-label">NEURAL SEQUENCE</div><div class="metric">policy → APE → credit</div><p>VTA dopamine follows episode chronology: pre-outcome sampling policy, sampling action-prediction error, then post-outcome reward/social-credit update.</p></div>
+<div class="card good"><div class="metric-label">CAUSAL CREDIT</div><div class="metric">10/10 · 9/10</div><p>JAWS lowers the post-outcome Active social-credit update in 10/10 animals and accumulated Active credit in 9/10, while gross observation is preserved.</p></div>
+<div class="card info"><div class="metric-label">CONTENT → ACTION</div><div class="metric">+7.54 pp</div><p>In learners, observing demonstrator feeding raises native Feed hazard within 3 s; the state-residualized increase remains +6.09 pp.</p></div>
+<div class="card violet"><div class="metric-label">STRONG EXTERNAL COMPARATOR</div><div class="metric">8/10 · 8/10</div><p>Multiscale state clears stronger matched models in 8/10 held-out Human subjects and 8/10 held-out Rats. Primate results remain explicitly nested or architectural evidence.</p></div>
 </div>
-<p class="prepub">This page keeps the major behavioral, computational, neural, causal and generative results together so the full SOE mechanism can be inspected from one place. Main evidence panels use SOE project data.</p>
+<div class="equation chain">
+social state → adaptive Observe sampling → sampled content → native Feed conversion
+<span class="sub">feedback: social outcome → post-outcome source-specific credit / value update → future Observe policy</span>
+</div>
+<p class="prepub">The page follows the biological problem in order: acquisition → information value → memory → default SLM → data-driven SWM → content-to-action conversion → neural implementation → causal decomposition → mechanistic synthesis → later generalization → cross-task evidence.</p>
+
 <div class="section-kicker" style="margin-top:34px">Current result atlas</div>
 <div class="cards-4" style="margin-top:12px">
-<div class="card good"><div class="series-index">01</div><h3>SOE is learned</h3><p>SRI rises in 35/40 animals; live social input, visual access and familiarity all matter.</p></div>
-<div class="card info"><div class="series-index">02</div><h3>Observation becomes efficient</h3><p>Learning changes conversion of observation into feeding more than it changes gross observation rate.</p></div>
-<div class="card violet"><div class="series-index">03</div><h3>Social value is adaptive</h3><p>Social information is most useful when current self-state leaves room for external evidence to alter policy.</p></div>
-<div class="card good"><div class="series-index">04</div><h3>Default SLM earns its complexity</h3><p>The default SLM outperforms weak and classical baselines; its mechanistic coordinates are then tested independently in VTA and JAWS.</p></div>
-<div class="card info"><div class="series-index">05</div><h3>Learning has multiple timescales</h3><p>The same strategy uses next-decision, ~5-minute and cross-day memory.</p></div>
-<div class="card violet"><div class="series-index">06</div><h3>Observed content drives Feed</h3><p>Demonstrator feeding during the preceding Observe predicts a short-latency increase in native Feed hazard.</p></div>
-<div class="card good"><div class="series-index">07</div><h3>SLM is predictive and generative</h3><p>Mouse-derived SLM variables fit held-out behavior and regenerate trajectory, local strategy and behavioral-state organization in closed loop.</p></div>
-<div class="card info"><div class="series-index">08</div><h3>VTA expresses SLM computations in sequence</h3><p>Q/RPE can explain Post DA; only SLM also captures the pre-outcome Early policy and Middle APE axes.</p></div>
-<div class="card violet"><div class="series-index">09</div><h3>Information access and dopamine credit are separable</h3><p>Visual Block limits useful social content; VTA inhibition weakens post-outcome Active social-credit teaching and its accumulated state.</p></div>
-<div class="card good"><div class="series-index">10</div><h3>SOE experience generalizes</h3><p>Prior SOE training alters later novel-food engagement and observational-fear organization.</p></div>
-<div class="card violet"><div class="series-index">11</div>
-<h3>Four SLM computations organize cross-task evidence</h3>
-<p>Cross-task evidence is stratified into direct comparator tests, component transfer, neural convergence and literature-only support, with each tier carrying a different evidential weight.</p></div></div>
+<div class="card good"><div class="series-index">01</div><h3>SOE is acquired</h3><p>SRI rises in 35/40 animals; live social input, visual access and familiarity constrain successful acquisition.</p></div>
+<div class="card info"><div class="series-index">02</div><h3>Social information has adaptive value</h3><p>Held-out social-state value depends on current self-state and changes with training.</p></div>
+<div class="card violet"><div class="series-index">03</div><h3>Learning spans seconds to days</h3><p>Next-decision switching, ~4.5–7.5 min history and a transient cross-day prior are independently recovered.</p></div>
+<div class="card good"><div class="series-index">04</div><h3>Default SLM earns its complexity</h3><p>The mechanistic state plus generic persistence clears weak/classical baselines while retaining experimentally testable coordinates.</p></div>
+<div class="card info"><div class="series-index">05</div><h3>SWM separates two functional components</h3><p>An SLM-like subspace contributes to Observe policy; prospective social efficacy is a distinct social-content-dependent variable.</p></div>
+<div class="card violet"><div class="series-index">06</div><h3>Sampled content drives Feed</h3><p>Demonstrator-feeding content produces a short-latency increase in the learner’s native Feed hazard.</p></div>
+<div class="card good"><div class="series-index">07</div><h3>VTA resolves the episode in time</h3><p>Q/RPE can explain Post DA; the pre-outcome Early policy and Middle APE require the broader temporal SLM account.</p></div>
+<div class="card info"><div class="series-index">08</div><h3>Visual access and dopamine teaching separate</h3><p>Visual Block limits useful content; JAWS weakens post-outcome Active social-credit teaching while gross sampling remains.</p></div>
+<div class="card violet"><div class="series-index">09</div><h3>A coupled two-policy architecture emerges</h3><p>Observe policy controls information acquisition; native Feed is self-state dominated and receives a short-lived sampled-content signal.</p></div>
+<div class="card good"><div class="series-index">10</div><h3>SLM is generatively sufficient</h3><p>A closed-loop SLM regenerates broad learning trajectories and behavioral-state organization; recurrent-agent policy is compactly described by SLM coordinates.</p></div>
+<div class="card info"><div class="series-index">11</div><h3>Later generalization is modular</h3><p>Social credit adds behavior-independent prediction for novel-food initiation; APE strongly maps to later shock reactivity without demonstrated superiority over simple behavior.</p></div>
+<div class="card violet"><div class="series-index">12</div><h3>Cross-task evidence is tiered</h3><p>Human and Rat give the strongest independent-unit external support for multiscale state; other computations currently have component, nested or architectural support.</p></div>
+</div>
 </div>
 </section>
 <section class="alt" id="phenotype">
