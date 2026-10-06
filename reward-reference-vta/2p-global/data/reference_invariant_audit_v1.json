@@ -1,11 +1,14 @@
 {
-  "schema": "CARMA_REFERENCE_INVARIANT_AUDIT_V1",
+  "schema": "CARMA_REFERENCE_INVARIANT_AUDIT_V2",
   "bundles": [
     {
       "bundle": "ANM54_REFERENCE_V3",
       "animal": "54",
       "sessions": 8,
       "identity_candidates": 34,
+      "review_mask_pairs": 34,
+      "review_js_matches_csv": true,
+      "visual_review_qa": "PASS",
       "status": "PASS"
     },
     {
@@ -13,6 +16,9 @@
       "animal": "181",
       "sessions": 9,
       "identity_candidates": 12,
+      "review_mask_pairs": 12,
+      "review_js_matches_csv": true,
+      "visual_review_qa": "PASS",
       "status": "PASS"
     },
     {
@@ -20,6 +26,7 @@
       "animal": "112",
       "sessions": 1,
       "identity_candidates": 0,
+      "review_mask_pairs": 0,
       "status": "PASS"
     },
     {
@@ -27,6 +34,7 @@
       "animal": "113",
       "sessions": 1,
       "identity_candidates": 0,
+      "review_mask_pairs": 0,
       "status": "PASS"
     },
     {
@@ -34,6 +42,7 @@
       "animal": "185",
       "sessions": 1,
       "identity_candidates": 0,
+      "review_mask_pairs": 0,
       "status": "PASS"
     }
   ],
@@ -41,8 +50,18 @@
     "manifest animal/session consistency",
     "candidate endpoint session belongs to bundle",
     "candidate endpoint ROI exists",
+    "candidate endpoint animal prefix matches bundle",
     "duplicate candidate_id",
-    "manifest candidate counts"
+    "manifest candidate counts",
+    "every Stage08 candidate has source and target reviewer mask",
+    "identity_review_data.js candidate IDs exactly match CSV authority",
+    "identity-review HTML/JS workbench files exist"
   ],
+  "reviewer_evidence": {
+    "candidate_pairs": 46,
+    "mask_images_required": 92,
+    "mask_pairs_present": 46,
+    "mask_images_missing": 0
+  },
   "all_pass": true
 }
