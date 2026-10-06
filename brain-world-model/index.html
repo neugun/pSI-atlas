@@ -220,7 +220,8 @@ button:hover{transform:translateY(-1px)}
       <p>Acute VTA dopamine inhibition selectively weakens the observation-conditioned Active reward/belief coordinate and active observation value. Passive belief changes by only <b>+0.0109</b> (p = 0.275), while gross observation fraction changes by <b>+0.0432</b> (p = 0.922), arguing against a simple suppression of observing itself.</p>
       <p>The result survives a count/order-preserving null (Active-belief empirical p = <b>0.0494</b>) and a continuous no-reset replay (Active-belief update p = <b>0.00195</b>). Across animals, the JAWS-induced Active-belief shift covaries with the change in rewarded-observation conversion (<b>&rho; = 0.673, p = 0.033</b>), but not with total observation amount.</p>
       <p>This makes the slow state biologically interpretable without claiming that GRU units are literal dopamine variables: the learned recurrent state tracks a reward-credit quantity that is selectively perturbed by causal VTA manipulation.</p>
-      <p><a href="data/stage23_jaws_intervention_bridge.json">verified JAWS intervention JSON</a></p>
+      <p><b>Learned-latent audit:</b> a separate GRU hidden-state probe shows a raw ON&minus;OFF shift in 9/10 animals (p = 0.00488), but the effect disappears after current action/outcome composition adjustment (5/10 negative; p = 0.348). It is therefore retained as a diagnostic of event-composition leakage, <b>not</b> as an additional causal headline. The exact-replay belief-coordinate result above remains the causal anchor while a pre-event / nuisance-scrubbed latent test is run.</p>
+      <p><a href="data/stage23_jaws_intervention_bridge.json">verified JAWS intervention JSON</a> &middot; <a href="data/stage25_learned_latent_jaws_audit.json">learned-latent diagnostic audit</a></p>
     </article>
 
     <article class="card">
@@ -318,7 +319,7 @@ button:hover{transform:translateY(-1px)}
       <div class="big">87.5%</div>
       <div class="submetric">held-out 4-way stimulation-pattern decoding · chance 25%</div>
       <div class="bar"><i style="width:87.5%"></i></div>
-      <p>Post-stimulus cortical population activity distinguishes 20 Hz, 40 Hz, 500 ms and 5 ms optogenetic conditions. The pre-stimulus control is 19.2%, below 25% chance, arguing against simple trial-order leakage in this smoke test.</p>
+      <p>Post-stimulus cortical population activity distinguishes 20 Hz, 40 Hz, 500 ms and 5 ms optogenetic conditions. This <b>87.5% discriminative decoder</b> is an application/readout smoke test, not the generative counterfactual metric above (58.3% action identification). The pre-stimulus control is 19.2%, below 25% chance, arguing against simple trial-order leakage.</p>
     </article>
 
     <article class="card">

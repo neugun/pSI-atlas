@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-10-05",
+  "status": "MIXED_COMPOSITION_SENSITIVE_NOT_HEADLINE",
+  "training": {
+    "model": "GRU4 trained only on non-JAWS cohorts using current observe action, current outcome, and session progress; Ridge probe from hidden state to intact-data active-belief coordinate",
+    "n_train_sessions": 283,
+    "gru_params": 137,
+    "belief_probe_training_r2": 0.16240191459655762,
+    "jaws_used_for_fitting": false
+  },
+  "contingent_jaws_learned_active_belief": {
+    "raw": {
+      "n": 10,
+      "mean_on_minus_off": -0.004135607555508613,
+      "median_on_minus_off": -0.0042307255789637566,
+      "negative": 9,
+      "positive": 1,
+      "wilcoxon_one_sided_less_p": 0.0048828125
+    },
+    "composition_adjusted": {
+      "n": 10,
+      "mean_on_minus_off": -0.001220646866907676,
+      "median_on_minus_off": 0.00029669779663284623,
+      "negative": 5,
+      "positive": 5,
+      "wilcoxon_one_sided_less_p": 0.34765625
+    }
+  },
+  "next_observe_logit": {
+    "raw": {
+      "n": 10,
+      "mean_on_minus_off": -0.020054355263710022,
+      "negative": 6,
+      "positive": 4,
+      "wilcoxon_one_sided_less_p": 0.2783203125
+    },
+    "composition_adjusted": {
+      "n": 10,
+      "mean_on_minus_off": -0.0016164251665274243,
+      "negative": 7,
+      "positive": 3,
+      "wilcoxon_one_sided_less_p": 0.2783203125
+    }
+  },
+  "learned_vs_handengineered_animal_delta_spearman": {
+    "n": 10,
+    "rho": -0.18787878787878787,
+    "p": 0.603217610029209
+  },
+  "interpretation": "The raw learned-latent ON/OFF shift is directionally consistent in 9/10 animals, but disappears after matching/adjusting current action-outcome composition. Therefore it is not independent evidence that VTA JAWS directly perturbs the learned GRU latent; the current learned coordinate still mixes slow history with event composition.",
+  "decision": "Retain as diagnostic audit only. Do not use the raw P=0.00488 as a headline causal claim. Stage23's exact replay / belief-coordinate result remains the causal anchor until a composition-robust learned-state test passes.",
+  "source_authority": "Titan results/user_bridge/stage20_learned_latent_jaws.json"
+}

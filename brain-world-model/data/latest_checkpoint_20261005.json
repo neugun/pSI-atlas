@@ -407,5 +407,31 @@
     "54962965": "completed adaptation comparator merge",
     "54962972": "completed McBride strict counterfactual",
     "54963105": "strict JEPA/rollout re-evaluation submitted"
+  },
+  "learned_latent_jaws_audit": {
+    "status": "MIXED_COMPOSITION_SENSITIVE_NOT_HEADLINE",
+    "training": {
+      "n_train_sessions": 283,
+      "gru_params": 137,
+      "jaws_used_for_fitting": false
+    },
+    "raw_active_belief": {
+      "n": 10,
+      "mean_on_minus_off": -0.004135607555508613,
+      "median_on_minus_off": -0.0042307255789637566,
+      "negative": 9,
+      "positive": 1,
+      "wilcoxon_one_sided_less_p": 0.0048828125
+    },
+    "composition_adjusted_active_belief": {
+      "n": 10,
+      "mean_on_minus_off": -0.001220646866907676,
+      "median_on_minus_off": 0.00029669779663284623,
+      "negative": 5,
+      "positive": 5,
+      "wilcoxon_one_sided_less_p": 0.34765625
+    },
+    "decision": "Retain as diagnostic audit only. Do not use the raw P=0.00488 as a headline causal claim. Stage23's exact replay / belief-coordinate result remains the causal anchor until a composition-robust learned-state test passes.",
+    "next_test": "Pre-event recurrent state plus nuisance-scrubbed hidden state; fit only on non-JAWS data and evaluate JAWS ON/OFF held out."
   }
 }
