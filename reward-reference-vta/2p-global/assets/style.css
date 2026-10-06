@@ -39,3 +39,13 @@ footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted)}
 input[type=file]{max-width:100%;padding:7px;background:#fff;border:1px solid var(--line);border-radius:8px}
 @media(max-width:1050px){.rich-grid{grid-template-columns:1fr 1fr}.rich-grid .figure-card:last-child{grid-column:1/-1}}
 @media(max-width:760px){.rich-grid,.grid-2{grid-template-columns:1fr}.rich-grid .figure-card:last-child{grid-column:auto}.trial-heat{height:220px}}
+
+.real-pipeline .section-head{margin-bottom:26px}
+.manuscript-figure{margin:0 auto 44px;max-width:940px;background:#fff}
+.manuscript-figure img{display:block;width:100%;height:auto}
+.manuscript-figure figcaption{margin-top:10px;font-size:14px;line-height:1.55;color:var(--muted)}
+.manuscript-figure figcaption strong{color:var(--ink)}
+.regression-supplement{max-width:940px;margin:34px auto 0;border-top:1px solid var(--line);padding-top:16px}
+.regression-supplement summary{cursor:pointer;font-weight:700}
+.regression-supplement img{display:block;width:100%;height:auto;margin-top:14px}
+@media(max-width:760px){.manuscript-figure{margin-bottom:30px}.manuscript-figure figcaption{font-size:13px}}
