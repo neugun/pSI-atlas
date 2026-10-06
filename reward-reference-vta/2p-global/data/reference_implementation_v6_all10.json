@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "REFERENCE_IMPLEMENTATION_V6_ALL10_20261005",
   "privacy": "public structural/QC summary only; unpublished raw traces/masks remain local",
   "current_vta": {
@@ -469,7 +469,7 @@
         "09": "PASS",
         "10": "FROZEN"
       },
-      "raw_imaging_boundary": "old Z:\\Imaging daily raw sessions are not currently mounted; no V27-style residual-motion re-audit",
+      "raw_imaging_boundary": "legacy daily raw imaging sessions are not currently mounted; no V27-style residual-motion re-audit",
       "animal_count_rule": "ANMID2 and ANMID3 are two lineages from one real animal, ANM372321"
     },
     "372321": {
@@ -525,7 +525,7 @@
         "09": "PASS",
         "10": "FROZEN"
       },
-      "raw_imaging_boundary": "old Z:\\Imaging daily raw sessions are not currently mounted; no V27-style residual-motion re-audit",
+      "raw_imaging_boundary": "legacy daily raw imaging sessions are not currently mounted; no V27-style residual-motion re-audit",
       "animal_count_rule": "ANMID2 and ANMID3 are two lineages from one real animal, ANM372321"
     }
   },

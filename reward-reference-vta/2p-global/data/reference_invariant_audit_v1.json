@@ -1,0 +1,48 @@
+{
+  "schema": "CARMA_REFERENCE_INVARIANT_AUDIT_V1",
+  "bundles": [
+    {
+      "bundle": "ANM54_REFERENCE_V3",
+      "animal": "54",
+      "sessions": 8,
+      "identity_candidates": 34,
+      "status": "PASS"
+    },
+    {
+      "bundle": "ANM181_REFERENCE_V1",
+      "animal": "181",
+      "sessions": 9,
+      "identity_candidates": 12,
+      "status": "PASS"
+    },
+    {
+      "bundle": "ANM112_REFERENCE_V1",
+      "animal": "112",
+      "sessions": 1,
+      "identity_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "bundle": "ANM113_REFERENCE_V1",
+      "animal": "113",
+      "sessions": 1,
+      "identity_candidates": 0,
+      "status": "PASS"
+    },
+    {
+      "bundle": "ANM185_REFERENCE_V1",
+      "animal": "185",
+      "sessions": 1,
+      "identity_candidates": 0,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    "manifest animal/session consistency",
+    "candidate endpoint session belongs to bundle",
+    "candidate endpoint ROI exists",
+    "duplicate candidate_id",
+    "manifest candidate counts"
+  ],
+  "all_pass": true
+}

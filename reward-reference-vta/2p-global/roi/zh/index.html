@@ -1,14 +1,46 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>ROI Explorer · CaRMA 2P</title><link rel="stylesheet" href="../../assets/style.css"></head><body>
-<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">2P</span> ROI Explorer</div><nav><a href="../../">Portal</a><a href="../../datasets/zh/">Datasets</a><a href="../../pipeline/zh/">Pipeline</a><a href="../../roi/zh/">ROI Explorer</a><a href="../../new-dataset/zh/">新数据</a><a href="../../biology/zh/">Biology</a><a href="../../methods/zh/">Methods</a><a href="../" class="lang">English</a></nav></div></header>
-<main><section class="hero compact"><div class="container"><span class="eyebrow">Per-ROI authority</span><h1>841 个 current-VTA ROI 已经统一到同一个可浏览 schema。</h1><p class="lede">新 raw dataset 的 Stage06 会生成完全相同的 per-ROI schema。可以按动物、session、QC 搜索 morphology、signal、SNR、temporal effect、identity 和 exclusion flags。</p></div></section><section class="block"><div class="container"><div class="filterbar"><select id="a"><option value="">All animals</option></select><select id="s"><option value="">All sessions</option></select><select id="q"><option value="">All QC</option><option>PASS</option><option>WARN</option><option>FAIL</option></select><input id="find" placeholder="ROI / task / track"></div><p id="count" class="small"></p>
-<div class="scrollbox"><table class="data-table"><thead><tr><th>Session</th><th>ROI</th><th>QC</th><th>x</th><th>y</th><th>Area</th><th>SNR</th><th>BG corr</th><th>Signal</th><th>Cue</th><th>Predictive</th><th>Outcome</th><th>Late</th><th>Reliability</th><th>Identity</th></tr></thead><tbody id="rows"></tbody></table></div><div id="detail" class="detail-box" style="margin-top:16px">Click a row to inspect the full per-ROI record.</div></div></section>
+[Reading 42 lines from start (total: 42 lines, 0 remaining)]
+
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>ROI Explorer · CaRMA 2P</title>
+<link rel="stylesheet" href="../../assets/style.css"></head><body>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">2P</span> ROI Explorer</div><nav><a href="../../">Portal</a><a href="../../datasets/zh/">Datasets</a><a href="../../pipeline/zh/">Pipeline</a><a href="../../qc/zh/">QC</a><a href="../../identity-review/zh/">Identity Review</a><a href="../../biology/zh/">Biology</a><a href="../" class="lang">English</a></nav></div></header>
+<main>
+<section class="hero compact"><div class="container"><span class="eyebrow">Per-ROI authority</span><h1>??? session record ?????????trace?mask ?? trial response?</h1><p class="lede">?????? frozen 841-ROI summary????????????? private <code>CARMA_RICH_ROI_BUNDLE_V1</code> generated from a session. The browser reads it locally; raw traces and masks are not uploaded to GitHub.</p></div></section>
+
+<section class="block"><div class="container">
+<div class="section-head"><div><span class="eyebrow">???? viewer</span><h2>Mask + trace + trial heatmap + statistics</h2></div><p>Use <a href="../../tools/build_rich_roi_bundle_v1.py"><code>tools/build_rich_roi_bundle_v1.py</code></a> on any completed Stage06 session, then select the generated JSON here.</p></div>
+<div class="callout"><label><strong>???? rich bundle?</strong> <input id="richFile" type="file" accept=".json,application/json"></label><div id="richStatus" class="small" style="margin-top:8px">???? private bundle?</div></div>
+<div id="richViewer" hidden>
+<div class="filterbar" style="margin-top:18px"><label>ROI <select id="roiPick"></select></label></div>
+<div class="rich-grid">
+  <div class="figure-card"><h3>ROI mask on reference image</h3><img id="roiMask" class="roi-mask-large" alt="ROI mask crop"></div>
+  <div class="figure-card"><h3>Mean raw / background / subtracted trace</h3><div id="tracePlot" class="trace-svg"></div></div>
+  <div class="figure-card"><h3>Trial × time heatmap · subtracted signal</h3><canvas id="trialHeat" class="trial-heat"></canvas><p id="heatCaption" class="small"></p></div>
+</div>
+<div class="grid-2" style="margin-top:18px">
+  <div class="card"><h3>ROI morphology & QC</h3><div id="roiQC"></div></div>
+  <div class="card"><h3>Cell-model statistics</h3><div id="roiModels" class="scrollbox"></div></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Trial metrics · first 12 rows</h3><div id="roiTrials" class="scrollbox"></div></div>
+<details style="margin-top:16px"><summary>Source integrity manifest</summary><div id="sourceManifest" class="scrollbox" style="margin-top:10px"></div></details>
+</div>
+</div></section>
+
+<section class="block alt"><div class="container"><div class="section-head"><div><span class="eyebrow">Frozen summary</span><h2>841 ? migrated current-VTA ROI</h2></div><p>Filter the standardized Stage06 schema by animal/session/QC. This table contains only the public summary fields.</p></div>
+<div class="filterbar"><select id="a"><option value="">All animals</option></select><select id="s"><option value="">All sessions</option></select><select id="q"><option value="">All QC</option><option>PASS</option><option>WARN</option><option>FAIL</option></select><input id="find" placeholder="ROI / task / track"></div><p id="count" class="small"></p>
+<div class="scrollbox"><table class="data-table"><thead><tr><th>Session</th><th>ROI</th><th>QC</th><th>x</th><th>y</th><th>Area</th><th>SNR</th><th>BG corr</th><th>Signal</th><th>Cue</th><th>Predictive</th><th>Outcome</th><th>Late</th><th>Reliability</th><th>Identity</th></tr></thead><tbody id="rows"></tbody></table></div><pre id="detail" class="detail-box" style="margin-top:16px">??????????? per-ROI record?</pre></div></section>
 <script>
 fetch('../../data/tool_current_vta_roi_v1.json').then(r=>r.json()).then(data=>{
  let A=document.getElementById('a'),S=document.getElementById('s'),Q=document.getElementById('q'),F=document.getElementById('find');
  [...new Set(data.map(x=>x.animal))].forEach(v=>A.innerHTML+='<option>'+v+'</option>');
  function sessions(){let vals=[...new Set(data.filter(x=>!A.value||x.animal==A.value).map(x=>x.session_id))];S.innerHTML='<option value="">All sessions</option>'+vals.map(v=>'<option>'+v+'</option>').join('')}
  function n(v,d=3){return v==null?'—':typeof v=='number'?v.toFixed(d):v}
- function render(){let f=F.value.toLowerCase();let z=data.filter(x=>(!A.value||x.animal==A.value)&&(!S.value||x.session_id==S.value)&&(!Q.value||x.qc_status==Q.value)&&(!f||JSON.stringify(x).toLowerCase().indexOf(f)>=0));document.getElementById('count').textContent=z.length+' ROIs';document.getElementById('rows').innerHTML=z.slice(0,500).map((x,i)=>'<tr data-i="'+data.indexOf(x)+'"><td>'+x.session_id+'</td><td>'+x.roi_id+'</td><td>'+x.qc_status+'</td><td>'+n(x.x,1)+'</td><td>'+n(x.y,1)+'</td><td>'+n(x.area_px,0)+'</td><td>'+n(x.trace_snr,2)+'</td><td>'+n(x.bg_corr,2)+'</td><td>'+n(x.final_signal_method,2)+'</td><td>'+n(x.cue_effect,2)+'</td><td>'+n(x.predictive_effect,2)+'</td><td>'+n(x.outcome_effect,2)+'</td><td>'+n(x.late_effect,2)+'</td><td>'+n(x.trial_reliability,2)+'</td><td>'+n(x.identity_status,2)+'</td></tr>').join('');document.querySelectorAll('#rows tr').forEach(tr=>tr.onclick=()=>document.getElementById('detail').textContent=JSON.stringify(data[+tr.dataset.i],null,2))}
+ function render(){let f=F.value.toLowerCase();let z=data.filter(x=>(!A.value||x.animal==A.value)&&(!S.value||x.session_id==S.value)&&(!Q.value||x.qc_status==Q.value)&&(!f||JSON.stringify(x).toLowerCase().indexOf(f)>=0));document.getElementById('count').textContent=z.length+' ROIs';document.getElementById('rows').innerHTML=z.slice(0,500).map(x=>'<tr data-i="'+data.indexOf(x)+'"><td>'+x.session_id+'</td><td>'+x.roi_id+'</td><td>'+x.qc_status+'</td><td>'+n(x.x,1)+'</td><td>'+n(x.y,1)+'</td><td>'+n(x.area_px,0)+'</td><td>'+n(x.trace_snr,2)+'</td><td>'+n(x.bg_corr,2)+'</td><td>'+n(x.final_signal_method,2)+'</td><td>'+n(x.cue_effect,2)+'</td><td>'+n(x.predictive_effect,2)+'</td><td>'+n(x.outcome_effect,2)+'</td><td>'+n(x.late_effect,2)+'</td><td>'+n(x.trial_reliability,2)+'</td><td>'+n(x.identity_status,2)+'</td></tr>').join('');document.querySelectorAll('#rows tr').forEach(tr=>tr.onclick=()=>document.getElementById('detail').textContent=JSON.stringify(data[+tr.dataset.i],null,2))}
  A.onchange=()=>{sessions();render()};S.onchange=render;Q.onchange=render;F.oninput=render;sessions();render();
 });
-</script></main><footer><div class="container">CaRMA 2P Portal · Tool V1 + Biology V51</div></footer></body></html>
+</script>
+<script src="../../assets/rich_roi_viewer_v1.js"></script>
+</main><footer><div class="container">CaRMA 2P Portal · Stage06 rich ROI viewer V1</div></footer></body></html>
+
+[executed on device: zzhu-workstation (c5f9276d-4cc2-45a1-af76-820df2199a67)]

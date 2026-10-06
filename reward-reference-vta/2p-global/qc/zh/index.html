@@ -1,12 +1,37 @@
+[Reading 33 lines from start (total: 33 lines, 0 remaining)]
+
 <!doctype html>
-<html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow,noarchive"><title>2P QC V51</title>
-<link rel="stylesheet" href="../../assets/style.css"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>2P QC · CaRMA</title><link rel="stylesheet" href="../../assets/style.css"></head>
 <body>
-<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">2P</span> 2P QC</div><nav><a href="../../">全局</a><a href="../../current-vta/zh/">Current VTA</a><a href="../../named-2021/zh/">2021</a><a href="../../legacy-2017/zh/">2017</a><a href="../" class="lang">English</a></nav></div></header>
-<main><section class="hero compact"><div class="container"><span class="eyebrow">QC · V51 strict</span>
-<h1>motion、ROI validity、extraction robustness 分层展示，不再压成一个 composite QC 图。</h1>
-<p class="lede">数据质量不再由 imaging-linked trial 数量反推。</p></div></section><section class="block"><div class="container"><div class="gallery"><div class="figure-card"><img src="../../assets/strict_newmice_motion_p95_v51.png" alt="Local residual motion · P95"><h3>Local residual motion · P95</h3><p>ANM112/113/185 remain subpixel at P95. <a href="../../assets/strict_newmice_motion_p95_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_motion_p95_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../../assets/strict_newmice_motion_p99_v51.png" alt="Local residual motion · P99"><h3>Local residual motion · P99</h3><p>Even the P99 tail remains <1 px in all three new current-VTA mice. <a href="../../assets/strict_newmice_motion_p99_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_motion_p99_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../../assets/strict_newmice_roi_blob_v51.png" alt="Independent ROI support · blob"><h3>Independent ROI support · blob</h3><p>Canonical ROIs are independently supported by image-structure blobs. <a href="../../assets/strict_newmice_roi_blob_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_roi_blob_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../../assets/strict_newmice_roi_peak_v51.png" alt="Independent ROI support · peak"><h3>Independent ROI support · peak</h3><p>Peak-distance support is shown separately rather than merged into one QC score. <a href="../../assets/strict_newmice_roi_peak_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_roi_peak_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../../assets/strict_newmice_extract_r_v51.png" alt="Extraction robustness · effect correlation"><h3>Extraction robustness · effect correlation</h3><p>Condition-effect vectors remain highly correlated under alternative extraction. <a href="../../assets/strict_newmice_extract_r_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_extract_r_v51.svg">SVG</a></p></div><div class="figure-card"><img src="../../assets/strict_newmice_extract_sign_v51.png" alt="Extraction robustness · sign"><h3>Extraction robustness · sign</h3><p>Condition-effect signs remain highly concordant under alternative extraction. <a href="../../assets/strict_newmice_extract_sign_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_extract_sign_v51.svg">SVG</a></p></div></div></div></section></main>
-<footer><div class="container">2P global · V51 strict plotting standard · 2026-10-05</div></footer>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">2P</span> QC Viewer</div><nav><a href="../../">Portal</a><a href="../../datasets/zh/">Datasets</a><a href="../../pipeline/zh/">Pipeline</a><a href="../../roi/zh/">ROI Explorer</a><a href="../../identity-review/zh/">Identity Review</a><a href="../" class="lang">English</a></nav></div></header>
+<main>
+<section class="hero compact"><div class="container"><span class="eyebrow">QC · session-level + image evidence</span><h1>QC should be inspectable at the image, ROI and source-file levels—not reduced to one score.</h1><p class="lede">Load the same private rich bundle used by the ROI explorer to inspect reference planes, all ROI masks, morphology/SNR/background statistics and the hashed input lineage. Nothing selected here is uploaded.</p></div></section>
+
+<section class="block"><div class="container">
+<div class="callout"><label><strong>???? rich bundle?</strong> <input id="qcBundleFile" type="file" accept=".json,application/json"></label><div id="qcBundleStatus" class="small" style="margin-top:8px">???? private bundle?</div></div>
+<div id="qcPrivate" hidden>
+<div id="qcKpis" class="tool-grid" style="margin-top:20px"></div>
+<div class="grid-2" style="margin-top:20px">
+ <div class="figure-card"><div class="filterbar"><label>Reference plane <select id="qcPlanePick"></select></label></div><img id="qcPlaneImg" alt="reference plane with ROI masks"><p id="qcPlaneCap" class="small"></p></div>
+ <div class="card"><h3>Per-ROI QC table</h3><div id="qcRoiTable" class="scrollbox"></div></div>
+</div>
+<details style="margin-top:18px"><summary>Source integrity manifest</summary><div id="qcSources" class="scrollbox" style="margin-top:10px"></div></details>
+</div>
+</div></section>
+
+<section class="block alt"><div class="container">
+<div class="section-head"><div><span class="eyebrow">Frozen cohort-level checks</span><h2>?? strict V51 evidence</h2></div><p>These remain useful as cohort summaries, but the private viewer above is the auditable session/ROI layer needed for new data.</p></div>
+<div class="gallery">
+<div class="figure-card"><img src="../../assets/strict_newmice_motion_p95_v51.png" alt="Local residual motion · P95"><h3>Local residual motion · P95</h3><p>ANM112/113/185 remain subpixel at P95. <a href="../../assets/strict_newmice_motion_p95_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_motion_p95_v51.svg">SVG</a></p></div>
+<div class="figure-card"><img src="../../assets/strict_newmice_motion_p99_v51.png" alt="Local residual motion · P99"><h3>Local residual motion · P99</h3><p>The P99 tail remains &lt;1 px in all three new current-VTA mice. <a href="../../assets/strict_newmice_motion_p99_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_motion_p99_v51.svg">SVG</a></p></div>
+<div class="figure-card"><img src="../../assets/strict_newmice_roi_blob_v51.png" alt="Independent ROI support · blob"><h3>Independent ROI support · blob</h3><p>Canonical ROIs are independently supported by image-structure blobs. <a href="../../assets/strict_newmice_roi_blob_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_roi_blob_v51.svg">SVG</a></p></div>
+<div class="figure-card"><img src="../../assets/strict_newmice_roi_peak_v51.png" alt="Independent ROI support · peak"><h3>Independent ROI support · peak</h3><p>Peak-distance support is shown separately rather than merged into one QC score. <a href="../../assets/strict_newmice_roi_peak_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_roi_peak_v51.svg">SVG</a></p></div>
+<div class="figure-card"><img src="../../assets/strict_newmice_extract_r_v51.png" alt="Extraction robustness · effect correlation"><h3>Extraction robustness · effect correlation</h3><p>Condition-effect vectors remain highly correlated under alternative extraction. <a href="../../assets/strict_newmice_extract_r_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_extract_r_v51.svg">SVG</a></p></div>
+<div class="figure-card"><img src="../../assets/strict_newmice_extract_sign_v51.png" alt="Extraction robustness · sign"><h3>Extraction robustness · sign</h3><p>Condition-effect signs remain highly concordant under alternative extraction. <a href="../../assets/strict_newmice_extract_sign_v51.pdf">PDF</a> · <a href="../../assets/strict_newmice_extract_sign_v51.svg">SVG</a></p></div>
+</div></div></section>
+<script src="../../assets/qc_bundle_viewer_v1.js"></script>
+</main><footer><div class="container">CaRMA 2P · rich QC viewer V1 + frozen V51 cohort QC</div></footer>
 </body></html>
+
+[executed on device: zzhu-workstation (c5f9276d-4cc2-45a1-af76-820df2199a67)]
