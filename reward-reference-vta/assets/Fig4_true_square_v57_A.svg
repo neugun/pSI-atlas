@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="241.2pt" height="241.2pt" viewBox="0 0 241.2 241.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-05T23:15:51.806633</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 241.2
+L 241.2 241.2
+L 241.2 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 35.50464 43.60896
+L 63.86976 43.60896
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #b2232e; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 35.50464 60.71808
+L 63.86976 60.71808
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #4a4a4a; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 35.50464 77.8272
+L 63.86976 77.8272
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #4a4a4a; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 35.50464 94.93632
+L 63.86976 94.93632
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #888888; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 35.50464 112.04544
+L 63.86976 112.04544
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #888888; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 35.50464 129.15456
+L 63.86976 129.15456
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #888888; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 35.50464 146.26368
+L 63.86976 146.26368
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #c6c6c6; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 35.50464 163.3728
+L 63.86976 163.3728
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #c6c6c6; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 35.50464 180.48192
+L 63.86976 180.48192
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #c6c6c6; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 35.50464 197.59104
+L 63.86976 197.59104
+" clip-path="url(#p5cc64878fa)" style="fill: none; stroke: #c6c6c6; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #b2232e" x="76.02624" y="45.472171" transform="rotate(-0 76.02624 45.472171)">sampled history / FullHistory</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="62.581361" transform="rotate(-0 76.02624 62.581361)">canonical TD / RPE</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="79.690481" transform="rotate(-0 76.02624 79.690481)">belief + continuous HMM</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="96.799531" transform="rotate(-0 76.02624 96.799531)">average reward rate</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="113.908721" transform="rotate(-0 76.02624 113.908721)">Pearce–Hall adaptive α</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="131.017771" transform="rotate(-0 76.02624 131.017771)">Kalman / uncertainty</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="148.126891" transform="rotate(-0 76.02624 148.126891)">multi-timescale history</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="165.236011" transform="rotate(-0 76.02624 165.236011)">unsigned salience</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="182.345131" transform="rotate(-0 76.02624 182.345131)">adaptive gain</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.2px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="76.02624" y="199.454321" transform="rotate(-0 76.02624 199.454321)">Value-RNN / recurrent TD</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 5.9px; font-family: 'Arial'; text-anchor: start; fill: #4a4a4a" x="35.50464" y="214.81272" transform="rotate(-0 35.50464 214.81272)">Full tested / boundary zoo below Fig. 4.</text>
+   </g>
+  </g>
+  <g id="text_12">
+   <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="8.442" y="15.35826" transform="rotate(-0 8.442 15.35826)">A</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5cc64878fa">
+   <rect x="19.296" y="19.296" width="202.608" height="202.608"/>
+  </clipPath>
+ </defs>
+</svg>

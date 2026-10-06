@@ -753,3 +753,26 @@ html[lang="zh-CN"] .concept-node span {
   .figure.strict-panels { padding: 2px; }
   .figure.strict-panels figcaption { padding: 7px 4px 4px; }
 }
+
+.model-zoo-details { margin: 18px 0 24px; border-top: 1px solid #d9dee6; border-bottom: 1px solid #d9dee6; padding: 12px 0 14px; }
+.model-zoo-details summary { cursor: pointer; font-size: .98rem; color: #25364d; }
+.model-zoo-note { margin: 10px 0 12px; color: #566171; font-size: .86rem; line-height: 1.45; }
+.model-zoo-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.model-zoo-table { width: 100%; min-width: 1380px; border-collapse: collapse; font-size: .76rem; line-height: 1.35; }
+.model-zoo-table th { text-align: left; padding: 7px 8px; border-bottom: 1px solid #aeb7c3; color: #34435a; }
+.model-zoo-table td { vertical-align: top; padding: 7px 8px; border-bottom: 1px solid #e4e7eb; }
+.model-zoo-table .mz-family { font-weight: 600; color: #222; white-space: nowrap; }
+.mz-status { display: inline-block; padding: 2px 5px; border-radius: 4px; background: #eceff2; color: #555; font-size: .68rem; white-space: nowrap; }
+.mz-status.tested { border-left: 2px solid #B2232E; }
+.mz-status.boundary { border-left: 2px solid #888; }
+.model-zoo-links { margin: 10px 0 0; font-size: .78rem; color: #667080; }
+@media (max-width: 620px) {
+  .model-zoo-details { margin: 12px 0 16px; padding: 9px 0 10px; }
+  .model-zoo-note { font-size: .80rem; }
+  .model-zoo-table { font-size: .72rem; }
+}
+
+.model-zoo-table .mz-c1 { width: 210px; }
+.model-zoo-table .mz-c2 { width: 180px; }
+.model-zoo-table .mz-c3 { width: 680px; }
+.model-zoo-table .mz-c4 { width: 310px; }

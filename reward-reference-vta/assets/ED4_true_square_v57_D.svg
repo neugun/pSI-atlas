@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="241.2pt" height="241.2pt" viewBox="0 0 241.2 241.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-05T23:16:44.997939</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 241.2
+L 241.2 241.2
+L 241.2 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 69.948 192.96
+L 231.552 192.96
+L 231.552 31.356
+L 69.948 31.356
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 69.948 83.284752
+L 223.570496 83.284752
+L 223.570496 61.306608
+L 69.948 61.306608
+z
+" clip-path="url(#pfe75f93cd7)" style="fill: #b2232e"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 69.948 137.152752
+L 223.856571 137.152752
+L 223.856571 115.174608
+L 69.948 115.174608
+z
+" clip-path="url(#pfe75f93cd7)" style="fill: #b2232e"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 69.948 109.141392
+L 70.234075 109.141392
+L 70.234075 87.163248
+L 69.948 87.163248
+z
+" clip-path="url(#pfe75f93cd7)" style="fill: #c6c6c6"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 69.948 163.009392
+L 70.234075 163.009392
+L 70.234075 141.031248
+L 69.948 141.031248
+z
+" clip-path="url(#pfe75f93cd7)" style="fill: #c6c6c6"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mc17f4e2ec5" d="M 0 0
+L 0 3.2
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mc17f4e2ec5" x="69.948" y="192.96" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: middle" x="69.948" y="203.547402" transform="rotate(-0 69.948 203.547402)">0.000</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mc17f4e2ec5" x="98.555541" y="192.96" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: middle" x="98.555541" y="203.547402" transform="rotate(-0 98.555541 203.547402)">0.005</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mc17f4e2ec5" x="127.163082" y="192.96" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: middle" x="127.163082" y="203.547402" transform="rotate(-0 127.163082 203.547402)">0.010</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mc17f4e2ec5" x="155.770623" y="192.96" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: middle" x="155.770623" y="203.547402" transform="rotate(-0 155.770623 203.547402)">0.015</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mc17f4e2ec5" x="184.378165" y="192.96" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: middle" x="184.378165" y="203.547402" transform="rotate(-0 184.378165 203.547402)">0.020</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mc17f4e2ec5" x="212.985706" y="192.96" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: middle" x="212.985706" y="203.547402" transform="rotate(-0 212.985706 203.547402)">0.025</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <!-- unique Δ$R^2$ -->
+     <g transform="translate(129.717 216.812727)">
+      <text>
+       <tspan x="0" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">u</tspan>
+       <tspan x="4.553497" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">n</tspan>
+       <tspan x="9.106995" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">i</tspan>
+       <tspan x="10.925995" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">q</tspan>
+       <tspan x="15.479492" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">u</tspan>
+       <tspan x="20.03299" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">e</tspan>
+       <tspan x="24.586487" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'"> </tspan>
+       <tspan x="26.861237" y="-0.358713" style="font-size: 8.2px; font-family: 'Arial'">Δ</tspan>
+       <tspan x="32.330231" y="-0.358713" style="font-style: oblique; font-size: 8.2px; font-family: 'DejaVu Sans'">R</tspan>
+       <tspan x="38.59314" y="-3.745313" style="font-size: 5.74px; font-family: 'DejaVu Sans'">2</tspan>
+      </text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m448ffbab5a" d="M 0 0
+L -3.2 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m448ffbab5a" x="69.948" y="85.224" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: end" x="64.748" y="87.917701" transform="rotate(-0 64.748 87.917701)">reward</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m448ffbab5a" x="69.948" y="139.092" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 7.4px; font-family: 'Arial'; text-anchor: end" x="64.748" y="141.785701" transform="rotate(-0 64.748 141.785701)">reward+time</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 69.948 192.96
+L 69.948 31.356
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 69.948 192.96
+L 231.552 192.96
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+  </g>
+  <g id="text_10">
+   <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #111111" x="8.442" y="15.35826" transform="rotate(-0 8.442 15.35826)">D</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfe75f93cd7">
+   <rect x="69.948" y="31.356" width="161.604" height="161.604"/>
+  </clipPath>
+ </defs>
+</svg>

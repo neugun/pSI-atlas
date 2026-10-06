@@ -353,8 +353,8 @@
         <img src="assets/Fig1_true_square_v55_B.png" alt="Fig. 1 B">
         <img src="assets/Fig1_true_square_v55_C.png" alt="Fig. 1 C">
         <img src="assets/Fig1_true_square_v55_D.png" alt="Fig. 1 D">
-        <img src="assets/Fig1_true_square_v55_E.png" alt="Fig. 1 E">
-        <img src="assets/Fig1_true_square_v55_F.png" alt="Fig. 1 F">
+        <img src="assets/Fig1_true_square_v57_E.png" alt="Fig. 1 E">
+        <img src="assets/Fig1_true_square_v57_F.png" alt="Fig. 1 F">
       </div>
       <figcaption>
         <strong>A,B,</strong> mean local VTA GRAB-DA time courses for matched current 100E (H versus S) and matched current 20E (L versus N); n=9 mice, shading denotes animal-level SEM; descriptive time courses.
@@ -400,8 +400,8 @@
       <div class="strict-panel-grid cols2">
         <img src="assets/Fig2_true_square_v54_A.png" alt="Fig. 2 A">
         <img src="assets/Fig2_true_square_v54_B.png" alt="Fig. 2 B">
-        <img src="assets/Fig2_true_square_v54_C.png" alt="Fig. 2 C">
-        <img src="assets/Fig2_true_square_v54_D.png" alt="Fig. 2 D">
+        <img src="assets/Fig2_true_square_v57_C.png" alt="Fig. 2 C">
+        <img src="assets/Fig2_true_square_v57_D.png" alt="Fig. 2 D">
       </div>
       <figcaption>
         <strong>A,</strong> causal-order schematic distinguishing unsampled passive time from sampled reward exposure (schematic; no inferential test).
@@ -413,7 +413,7 @@
     <div class="callout">
       Before the first new reward sample, passive-time models contributed at most <strong>ΔR²=.00385</strong> to sustained dopamine
       across <strong>9 mice</strong> (animal-clustered regression across candidate clock constants; all P&gt;.55).
-      Once sampling began, the amount of consumed reward carried additional information beyond simple bout rank.
+      Once sampling began, direct consumption-history terms carried additional information beyond simple bout rank, although the descriptive exposure quartiles themselves are non-monotonic.
     </div>
   </div>
 </section>
@@ -434,9 +434,9 @@
       <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
         <img src="assets/Fig3_true_square_v54_A.png" alt="Fig. 3 A">
-        <img src="assets/Fig3_true_square_v54_B.png" alt="Fig. 3 B">
+        <img src="assets/Fig3_true_square_v57_B.png" alt="Fig. 3 B">
         <img src="assets/Fig3_true_square_v54_C.png" alt="Fig. 3 C">
-        <img src="assets/Fig3_true_square_v54_D.png" alt="Fig. 3 D">
+        <img src="assets/Fig3_true_square_v57_D.png" alt="Fig. 3 D">
         <img src="assets/Fig3_true_square_v54_E.png" alt="Fig. 3 E">
         <img src="assets/Fig3_true_square_v54_F.png" alt="Fig. 3 F">
       </div>
@@ -449,16 +449,48 @@
       </figure>
       <figure class="figure strict-panels">
         <div class="strict-panel-grid cols2">
-        <img src="assets/Fig4_true_square_v54_A.png" alt="Fig. 4 A">
-        <img src="assets/Fig4_true_square_v54_B.png" alt="Fig. 4 B">
-        <img src="assets/Fig4_true_square_v54_C.png" alt="Fig. 4 C">
-        <img src="assets/Fig4_true_square_v54_D.png" alt="Fig. 4 D">
+        <img src="assets/Fig4_true_square_v57_A.png" alt="Fig. 4 A">
+        <img src="assets/Fig4_true_square_v57_B.png" alt="Fig. 4 B">
+        <img src="assets/Fig4_true_square_v57_C.png" alt="Fig. 4 C">
+        <img src="assets/Fig4_true_square_v57_D.png" alt="Fig. 4 D">
       </div>
-        <figcaption><strong>A,B,</strong> alternative latent-state families and their distinct adaptation trajectories (schematic/model illustrations).
-          <strong>C,</strong> common-protocol leave-one-animal-out prediction across 11 mice now includes cumulative history itself. Cumulative history, belief state, block sampling, reference RW and two-stage models achieve similar normalized-MAE improvements. Prediction alone does not identify the mechanism.
-          <strong>D,</strong> conditional unique-information tests in the 192 matched post-switch bouts (11 mice): cumulative history remains unique beyond belief (P=.0124), continuous-time HMM (P=.0090), average reward rate (P=.0122), Value-RNN reward-only (P=.0128) and Value-RNN+time (P=.0078), whereas the reverse unique terms are nonsignificant. Red bars show history-unique information; gray bars show competitor-unique information, with darker gray reserved for the stronger classical comparators.</figcaption>
+        <figcaption><strong>A,</strong> expanded model room including sampled FullHistory, canonical TD/RPE, belief/HMM, average reward rate, Pearce–Hall, Kalman/uncertainty, multi-timescale history, unsigned salience, adaptive gain and Value-RNN. <strong>B,</strong> representative adaptation trajectories, now including a canonical phasic TD/RPE innovation at the switch. <strong>C,</strong> held-out prediction across 10 tested theoretical models: HMM, reward-rate and belief models predict well, whereas several canonical RPE/adaptive models remain near baseline; prediction rank alone therefore does not identify the dopamine mechanism. <strong>D,</strong> protocol-matched conditional horse races: FullHistory remains unique beyond belief, continuous HMM, reward rate and recurrent TD states, while canonical TD/RW is selectively favored over adaptive gain but not uniformly over Pearce–Hall, multi-timescale, Kalman or unsigned-salience alternatives. Filled dots are the anchor/focal unique term; open dots are the competitor-unique term.</figcaption>
       </figure>
     </div>
+<details class="model-zoo-details" open>
+<summary><strong>Complete dopamine model zoo: tested, historical recovery, boundary, and non-identifiable families</strong></summary>
+<p class="model-zoo-note">Three evidence layers are kept separate: held-out relative MAE in panel C, protocol-matched unique-information horse races in panel D, and the historical model-recovery matrix. They answer different questions and are not collapsed into one leaderboard. Canonical RPE/TD, HMM/belief, reward rate, Pearce–Hall, Kalman, distributional RL, Value-RNN, BlockSampling, ReferenceRW, TwoStage, and task-adapted LC/5-HT/Harkin structural analogues are retained.</p>
+<div class="model-zoo-table-wrap"><table class="model-zoo-table"><colgroup><col class="mz-c1"><col class="mz-c2"><col class="mz-c3"><col class="mz-c4"></colgroup><thead><tr><th>Model family</th><th>Status</th><th>Key result</th><th>Role</th></tr></thead><tbody>
+<tr><td class="mz-family">Canonical TD RW</td><td><span class="mz-status tested">tested</span></td><td>Schultz_TD_RW mean rel MAE=1.005; baseline-comparable; serves canonical scalar reference</td><td>core comparator</td></tr>
+<tr><td class="mz-family">Reward uncertainty</td><td><span class="mz-status tested">tested</span></td><td>entropy dR2=0.001916 P=0.4755; posterior variance dR2=0.002706 P=0.4037</td><td>boundary/control</td></tr>
+<tr><td class="mz-family">Adaptive value coding</td><td><span class="mz-status tested">tested</span></td><td>mean rel MAE=1.031; TD/RW unique beyond gain dR2=0.01563 P=0.0464; gain beyond TD/RW dR2=0.00047 P=0.698</td><td>strong negative comparator</td></tr>
+<tr><td class="mz-family">Marginal utility</td><td><span class="mz-status boundary">not identifiable</span></td><td>two physical reward levels make any monotonic utility transform affine in reward category; RW error is collinear up to scale</td><td>explicit task-design boundary</td></tr>
+<tr><td class="mz-family">Belief state RPE</td><td><span class="mz-status tested">tested</span></td><td>held-out mean rel MAE=0.971; 9/11 better than baseline P=0.240; FullHistory beyond belief dR2=0.02541 P=0.0124; belief beyond FullHistory dR2=0.000465 P=0.726</td><td>core theoretical comparator</td></tr>
+<tr><td class="mz-family">Bayesian uncertainty</td><td><span class="mz-status tested">tested</span></td><td>no unique sustained-DA information beyond FullHistory+belief</td><td>boundary/control</td></tr>
+<tr><td class="mz-family">Distributional RL</td><td><span class="mz-status tested">tested</span></td><td>distributional mean r=0.993 with FullHistory; spread beyond FH+mean dR2=0.000012 P=0.941</td><td>single-cell future direction; population boundary</td></tr>
+<tr><td class="mz-family">State uncertainty ramp</td><td><span class="mz-status tested">tested</span></td><td>uncertainty terms add no unique sustained-DA information; clock is already in existing zoo</td><td>supplementary theory control</td></tr>
+<tr><td class="mz-family">Adaptive learning rate</td><td><span class="mz-status tested">tested</span></td><td>mean rel MAE=0.981; 8/11 better than baseline P=0.520; no unique info vs TD/RW in either direction</td><td>supplementary strong comparator</td></tr>
+<tr><td class="mz-family">Asymmetric learning rates</td><td><span class="mz-status tested">tested</span></td><td>asym vs symmetric mean delta MAE=-0.00337; 7/11; P=0.577</td><td>supplementary control</td></tr>
+<tr><td class="mz-family">Past reward multi timescale</td><td><span class="mz-status tested">tested</span></td><td>mean rel MAE=1.015; no unique info vs scalar TD/RW</td><td>supplementary control</td></tr>
+<tr><td class="mz-family">Future discount timescale</td><td><span class="mz-status boundary">task mismatch</span></td><td>primary reward-contrast task does not manipulate future delay independently; do not relabel past-history mixture as the Masset model</td><td>discussion/future boundary</td></tr>
+<tr><td class="mz-family">Value RNN</td><td><span class="mz-status tested">tested</span></td><td>corrected v5 reducer: H50/12-seed ensemble mean rel MAE 1.011 reward-only and 1.013 reward+time (P=0.465/0.413); FullHistory beyond RNN dR2=0.02685 P=0.0128/0.0078; RNN beyond FullHistory ~4-5e-5 P~0.86. H2 three-seed nominal residual dR2=0.0153 P=0.0226 did not survive 12-config maxT (family-wise P=0.0646) and disappeared in H2/12-seed confirmation: RNN beyond FullHistory P=0.186 reward-only and 0.686 reward+time while FullHistory remained significant P=0.0018/0.0120. Fresh reward-only H2 seeds100-111 replicate the boundary: mean rel MAE=0.969 P=0.240; FullHistory unique dR2=0.02668 P=0.0070; RNN unique dR2=0.00082 P=0.616</td><td>decisive learned-state comparator; supports sufficiency of interpretable cumulative-history reference</td></tr>
+<tr><td class="mz-family">Prospective state representation</td><td><span class="mz-status tested">tested family level</span></td><td>Value-RNN learns a history-related state but does not robustly add beyond FullHistory; H50 RNN unique P~0.86 while FullHistory unique P=0.0078-0.0128</td><td>supplementary model-room; task-specific prospective-state claims remain outside identifiability</td></tr>
+<tr><td class="mz-family">Direct policy adaptive rate</td><td><span class="mz-status boundary">task mismatch</span></td><td>requires acquisition/action-policy trajectories</td><td>discussion boundary</td></tr>
+<tr><td class="mz-family">Feature specific RPE</td><td><span class="mz-status boundary">not identifiable primary task</span></td><td>20E/100E changes one reward-quality axis; testable only in richer cross-reward datasets</td><td>future/supplementary boundary</td></tr>
+<tr><td class="mz-family">Average reward rate</td><td><span class="mz-status tested">tested</span></td><td>mean rel MAE=0.938; 9/11 better than baseline P=0.240; FullHistory beyond reward-rate dR2=0.02565 P=0.0122; reverse dR2=0.000432 P=0.722</td><td>core theoretical comparator</td></tr>
+<tr><td class="mz-family">Signed vs unsigned two component</td><td><span class="mz-status tested">tested</span></td><td>0-2 s not separable; 2-5 s signed beyond unsigned dR2=0.01867 P=0.0328; unsigned reverse P=0.375</td><td>core temporal theoretical comparator</td></tr>
+<tr><td class="mz-family">Reward memory timescales</td><td><span class="mz-status tested">tested task adapted analogue</span></td><td>multi-timescale analogue does not show stable held-out superiority over scalar history state</td><td>supplementary comparator</td></tr>
+<tr><td class="mz-family">LC asym analogue</td><td><span class="mz-status tested">tested task adapted analogue</span></td><td>mean rel MAE=1.0132; 7/11 better; vs FullHistory P=.577</td><td>extended model zoo</td></tr>
+<tr><td class="mz-family">FiveHT uncertainty analogue</td><td><span class="mz-status tested">tested task adapted analogue</span></td><td>mean rel MAE=1.0196; 7/11 better; vs FullHistory P=.577</td><td>extended model zoo</td></tr>
+<tr><td class="mz-family">Harkin filter analogue</td><td><span class="mz-status tested">tested task adapted analogue</span></td><td>mean rel MAE=.9809; 8/11 better; vs FullHistory P=.520</td><td>extended model zoo</td></tr>
+<tr><td class="mz-family">FullHistoryRW</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.925; confusion matrix retained separately from held-out prediction</td><td>focal sampled-history recovery model</td></tr>
+<tr><td class="mz-family">ReferenceRW</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.580; confusion matrix retained separately from held-out prediction</td><td>historical reference-RW comparator</td></tr>
+<tr><td class="mz-family">BlockSampling</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.225; confusion matrix retained separately from held-out prediction</td><td>historical block-sampling comparator</td></tr>
+<tr><td class="mz-family">TwoStage</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.520; confusion matrix retained separately from held-out prediction</td><td>historical two-stage comparator</td></tr>
+<tr><td class="mz-family">Absolute</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.595; confusion matrix retained separately from held-out prediction</td><td>historical absolute-value comparator</td></tr>
+<tr><td class="mz-family">OneShot</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.355; confusion matrix retained separately from held-out prediction</td><td>historical one-shot comparator</td></tr>
+<tr><td class="mz-family">Clock</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.930; confusion matrix retained separately from held-out prediction</td><td>historical passive-clock comparator</td></tr>
+</tbody></table></div><p class="model-zoo-links">Data: <a href="data/NEURON_DOPAMINE_MODEL_ZOO_REGISTRY_v57.csv">complete registry</a> · <a href="data/NEURON_MODEL_ZOO_NUMERIC_v57.csv">held-out numeric ledger</a> · <a href="data/NEURON_HISTORICAL_MODEL_RECOVERY_v57.csv">historical recovery matrix</a> · <a href="data/NEUROMOD_ZOO_SUMMARY_v57.csv">neuromodulator structural zoo</a></p></details>
     <div class="callout">
       In leave-one-animal-out prediction across <strong>11 mice</strong>, held-out sustained-dopamine R² was
       .038 for current reward alone, .123 with categorical context, .175 with the continuous history coordinate, and .178 with context plus that coordinate
@@ -486,9 +518,9 @@
     <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
         <img src="assets/Fig5_true_square_v54_A.png" alt="Fig. 5 A">
-        <img src="assets/Fig5_true_square_v54_B.png" alt="Fig. 5 B">
+        <img src="assets/Fig5_true_square_v57_B.png" alt="Fig. 5 B">
         <img src="assets/Fig5_true_square_v54_C.png" alt="Fig. 5 C">
-        <img src="assets/Fig5_true_square_v54_D.png" alt="Fig. 5 D">
+        <img src="assets/Fig5_true_square_v57_D.png" alt="Fig. 5 D">
       </div>
       <figcaption>
         <strong>A,</strong> time-resolved coefficients for C=U−R and the U+R control across the same 192 post-switch bouts from 11 mice; coefficients switch from negative/preparatory before licking to positive during sustained consumption.
@@ -501,10 +533,10 @@
     <div class="figure-grid">
       <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
-        <img src="assets/ED1_true_square_v54_A.png" alt="ED1 A">
+        <img src="assets/ED1_true_square_v57_A.png" alt="ED1 A">
         <img src="assets/ED1_true_square_v54_B.png" alt="ED1 B">
-        <img src="assets/ED1_true_square_v54_C.png" alt="ED1 C">
-        <img src="assets/ED1_true_square_v54_D.png" alt="ED1 D">
+        <img src="assets/ED1_true_square_v57_C.png" alt="ED1 C">
+        <img src="assets/ED1_true_square_v57_D.png" alt="ED1 D">
       </div>
         <figcaption>
           Sustained dopamine contains both ongoing consummatory-action information and a history-relative component.
@@ -544,8 +576,8 @@
       <div class="strict-panel-grid cols2">
         <img src="assets/Fig6_true_square_v54_A.png" alt="Fig. 6 A">
         <img src="assets/Fig6_true_square_v54_B.png" alt="Fig. 6 B">
-        <img src="assets/Fig6_true_square_v54_C.png" alt="Fig. 6 C">
-        <img src="assets/Fig6_true_square_v54_D.png" alt="Fig. 6 D">
+        <img src="assets/Fig6_true_square_v57_C.png" alt="Fig. 6 C">
+        <img src="assets/Fig6_true_square_v57_D.png" alt="Fig. 6 D">
       </div>
       <figcaption><strong>A,</strong> frozen α=.20 history state is tested in an independent QE task; descriptive quartiles use history-defined pure-100E bouts, while the primary 66-bout/7-mouse test gives ΔR²=.02540 (animal-clustered P=.00141; circular-shift P=.00205). <strong>B,</strong> QE transfer remains strong from α=.10–.30, with frozen α=.20 marked explicitly. <strong>C,</strong> lower→higher value directions are concordant in quinine 7/7, hunger 7/7, LiCl 7/7, Stim13 12/13 and Stim5 5/5 animals. <strong>D,</strong> source-available per-animal quinine, hunger, LiCl and Stim13 effects are projected onto the frozen Natural two-readout value axis without refitting; Stim5 remains summarized in C. These panels support shared value geometry, not identical history updating for every manipulation.</figcaption>
     </figure>
@@ -575,7 +607,7 @@
       <div class="strict-panel-grid cols3">
         <img src="assets/Fig7_true_square_v54_A.png" alt="Fig. 7 A">
         <img src="assets/Fig7_true_square_v54_B.png" alt="Fig. 7 B">
-        <img src="assets/Fig7_true_square_v54_C.png" alt="Fig. 7 C">
+        <img src="assets/Fig7_true_square_v57_C.png" alt="Fig. 7 C">
       </div>
       <figcaption><strong>A,</strong> descriptive empirical persistence curves after a within-current-reward split of the natural history-relative state; the primary hazard model gives termination OR=.459 (P=.00018). <strong>B,</strong> Stim13 activation increases persistence relative to laser-off bouts (primary termination OR=.690, P=3.29×10<sup>−10</sup>). <strong>C,</strong> the common forest axis places natural history, DA activation, contingent Jaws inhibition and noncontingent Jaws on the same bout-termination scale. Contingent inhibition shifts termination earlier (OR=1.34, P=.0289), whereas the noncontingent control is weaker and not significant (OR=1.12, P=.0976). Inferential claims come from the hazard models, not visual separation of the survival curves.</figcaption>
     </figure>
@@ -693,43 +725,43 @@
       <div class="details-body">
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
-        <img src="assets/ED1_true_square_v54_A.png" alt="ED1 A">
+        <img src="assets/ED1_true_square_v57_A.png" alt="ED1 A">
         <img src="assets/ED1_true_square_v54_B.png" alt="ED1 B">
-        <img src="assets/ED1_true_square_v54_C.png" alt="ED1 C">
-        <img src="assets/ED1_true_square_v54_D.png" alt="ED1 D">
+        <img src="assets/ED1_true_square_v57_C.png" alt="ED1 C">
+        <img src="assets/ED1_true_square_v57_D.png" alt="ED1 D">
       </div>
           <figcaption><strong>ED1.</strong> Action-control adjudication for sustained dopamine. The history-relative component remains after causal-order licking controls; the most flexible 0–2 s + 2–5 s sensitivity model gives unique C ΔR²=.04895 in 11 mice (conditional permutation P=.0449). This is supportive sensitivity evidence, not the primary discovery test.</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="assets/ED2_true_square_v54_A.png" alt="ED2 A">
-        <img src="assets/ED2_true_square_v54_B.png" alt="ED2 B">
+        <img src="assets/ED2_true_square_v57_A.png" alt="ED2 A">
+        <img src="assets/ED2_true_square_v57_B.png" alt="ED2 B">
         <img src="assets/ED2_true_square_v54_C.png" alt="ED2 C">
       </div>
           <figcaption><strong>ED2A,</strong> Stim13 past stimulation history remains after full controls (ΔR²=.00338) and after adding the future-history control (ΔR²=.00252; both conditional permutation P=5×10<sup>−5</sup>), 1,833 bouts from 13 mice. <strong>ED2B,</strong> animal-level effects independently recomputed from the current reconstructed-history authority are positive in 9/13 mice; this is descriptive only. <strong>ED2C,</strong> past-history added R² remains broad across α=.03–.60, with α=.20 shown as the frozen transfer value.</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="assets/ED3_true_square_v54_A.png" alt="ED3 A">
-        <img src="assets/ED3_true_square_v54_B.png" alt="ED3 B">
-        <img src="assets/ED3_true_square_v54_C.png" alt="ED3 C">
+        <img src="assets/ED3_true_square_v57_A.png" alt="ED3 A">
+        <img src="assets/ED3_true_square_v57_B.png" alt="ED3 B">
+        <img src="assets/ED3_true_square_v57_C.png" alt="ED3 C">
       </div>
           <figcaption><strong>ED3.</strong> Separate mismatch channels [U−R]+ and [R−U]+. Natural: gain ΔR²=.0292, P=.00370; loss ΔR²=.00352, P=.324; gain-versus-loss interaction P=.216. QE: gain ΔR²=.0196, P=.0233; loss ΔR²=.00439, P=.258; interaction P=.000527. Stim13: gain ΔR²=.00127, P=.00470; loss ΔR²=.0000265, P=.666; interaction P=.197. Conditional permutation tests unless noted.</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="assets/ED4_true_square_v54_A.png" alt="ED4 A">
-        <img src="assets/ED4_true_square_v54_B.png" alt="ED4 B">
-        <img src="assets/ED4_true_square_v54_C.png" alt="ED4 C">
-        <img src="assets/ED4_true_square_v54_D.png" alt="ED4 D">
-        <img src="assets/ED4_true_square_v54_E.png" alt="ED4 E">
+        <img src="assets/ED4_true_square_v57_A.png" alt="ED4 A">
+        <img src="assets/ED4_true_square_v57_B.png" alt="ED4 B">
+        <img src="assets/ED4_true_square_v57_C.png" alt="ED4 C">
+        <img src="assets/ED4_true_square_v57_D.png" alt="ED4 D">
+        <img src="assets/ED4_true_square_v57_E.png" alt="ED4 E">
       </div>
           <figcaption><strong>ED4A,</strong> raw, non-pre-subtracted signal retains the sustained C effect (P=.0399) while the early effect is absent (P=.718), n=192 bouts/11 mice. <strong>ED4B,</strong> exact 0–2 s lick matching gives 9/11 animals in the expected DA direction (one-sided exact Wilcoxon P=.0415); stricter 0–5 s matching is weaker (7/11, P=.183). <strong>ED4C,</strong> nonlinear nuisance models leave positive residual C slopes (conditional permutation P=.010–.0172). <strong>ED4D,</strong> cumulative history remains unique beyond H50 Value-RNN reward-only (P=.0128) and reward+time (P=.0078), whereas RNN-unique terms are null. <strong>ED4E,</strong> leave-one-cohort-out effects remain positive but smaller subsets lose power; full-data conditional P=.0092.</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="assets/ED5_true_square_v54_A.png" alt="ED5 A">
-        <img src="assets/ED5_true_square_v54_B.png" alt="ED5 B">
+        <img src="assets/ED5_true_square_v57_A.png" alt="ED5 A">
+        <img src="assets/ED5_true_square_v57_B.png" alt="ED5 B">
         <img src="assets/ED5_true_square_v54_C.png" alt="ED5 C">
       </div>
           <figcaption><strong>ED5A,</strong> hunger increases mean bout duration in 7 mice (paired exact Wilcoxon P=.03125). <strong>ED5B,</strong> LiCl devaluation reduces duration in the same 7-mouse family (P=.015625). Per the current plotting standard, paired animals are shown as thin gray connecting lines without redundant point markers; colored horizontal ticks show group means and black whiskers SEM. <strong>ED5C,</strong> the authoritative semaglutide summary is shown without reconstructing unavailable individual coordinates: day-1 VTA dopamine AUC is lower by 2.22 units versus PBS, 6/7 mice are lower, paired P=.03125. Semaglutide is a physiological-state manipulation, not a direct reward-history test.</figcaption>
@@ -744,7 +776,7 @@
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols1">
-        <img src="assets/ED7_true_square_v54_A.png" alt="ED7 A">
+        <img src="assets/ED7_true_square_v57_A.png" alt="ED7 A">
       </div>
           <figcaption><strong>ED7.</strong> Direct sampled-history tests are positive in Natural (ΔR²=.0269, P=.00670), QE (ΔR²=.0254, P=.00141) and Stim13 (ΔR²=.00252, P=5×10<sup>−5</sup>). Duration-history proxy tests are not significant for hunger (P=.283), quinine (P=.466), LiCl (P=.478) or Stim5 (P=.562). The proxy bars can have nonzero ΔR² while remaining statistically unsupported; this is why specificity is judged by the paired real/control inference rather than bar height alone.</figcaption>
         </figure>
@@ -766,9 +798,9 @@
         <figure class="figure strict-panels">
           <div class="strict-panel-grid cols2">
             <img src="assets/ED10_true_square_v54_A.png" alt="ED10_strict_v52 panel A">
-            <img src="assets/ED10_true_square_v54_B.png" alt="ED10_strict_v52 panel B">
-            <img src="assets/ED10_true_square_v54_C.png" alt="ED10_strict_v52 panel C">
-            <img src="assets/ED10_true_square_v54_D.png" alt="ED10_strict_v52 panel D">
+            <img src="assets/ED10_true_square_v57_B.png" alt="ED10_strict_v52 panel B">
+            <img src="assets/ED10_true_square_v57_C.png" alt="ED10_strict_v52 panel C">
+            <img src="assets/ED10_true_square_v57_D.png" alt="ED10_strict_v52 panel D">
           </div>
           <figcaption><strong>ED10.</strong> Current reward identity changes apparent behavioral history sensitivity, but a universal deep-reference gate is not established. <strong>A,</strong> standardized within-animal reference slopes are more negative under the current-high condition in 24/29 animals across the three independent cohorts (two-sided exact Wilcoxon P=.00215; Natural 8/10, QE 5/6, Stim13 11/13). <strong>B,</strong> termination-hazard sensitivity points in the same direction (Natural HR=1.54, P=.00075; QE HR=2.22, P&lt;10<sup>−11</sup>; Stim13 HR=1.14, P=.0047). <strong>C,</strong> local-history adjudication shows why this is not yet a universal gate: Natural survives local main effects but not local×current competition, QE is underpowered, and the Stim13 interaction is absorbed by local-history main effects. <strong>D,</strong> deep residual R×current interactions remain null in Natural (P=.309), QE (P=.108) and Stim13 (P=.154).</figcaption>
         </figure>

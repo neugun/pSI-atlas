@@ -360,8 +360,8 @@
         <img src="../assets/Fig1_true_square_v55_B.png" alt="Fig. 1 B">
         <img src="../assets/Fig1_true_square_v55_C.png" alt="Fig. 1 C">
         <img src="../assets/Fig1_true_square_v55_D.png" alt="Fig. 1 D">
-        <img src="../assets/Fig1_true_square_v55_E.png" alt="Fig. 1 E">
-        <img src="../assets/Fig1_true_square_v55_F.png" alt="Fig. 1 F">
+        <img src="../assets/Fig1_true_square_v57_E.png" alt="Fig. 1 E">
+        <img src="../assets/Fig1_true_square_v57_F.png" alt="Fig. 1 F">
       </div>
       <figcaption>
         <strong>A、B，</strong>固定当前食物后的平均VTA GRAB-DA时间曲线：100E的H vs S、20E的L vs N；n=9，阴影为动物间SEM。
@@ -407,8 +407,8 @@
       <div class="strict-panel-grid cols2">
         <img src="../assets/Fig2_true_square_v54_A.png" alt="Fig. 2 A">
         <img src="../assets/Fig2_true_square_v54_B.png" alt="Fig. 2 B">
-        <img src="../assets/Fig2_true_square_v54_C.png" alt="Fig. 2 C">
-        <img src="../assets/Fig2_true_square_v54_D.png" alt="Fig. 2 D">
+        <img src="../assets/Fig2_true_square_v57_C.png" alt="Fig. 2 C">
+        <img src="../assets/Fig2_true_square_v57_D.png" alt="Fig. 2 D">
       </div>
       <figcaption>
         <strong>A，</strong>因果顺序示意：未采样的passive time与真正reward exposure分开（无推断统计）。
@@ -442,9 +442,9 @@
       <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
         <img src="../assets/Fig3_true_square_v54_A.png" alt="Fig. 3 A">
-        <img src="../assets/Fig3_true_square_v54_B.png" alt="Fig. 3 B">
+        <img src="../assets/Fig3_true_square_v57_B.png" alt="Fig. 3 B">
         <img src="../assets/Fig3_true_square_v54_C.png" alt="Fig. 3 C">
-        <img src="../assets/Fig3_true_square_v54_D.png" alt="Fig. 3 D">
+        <img src="../assets/Fig3_true_square_v57_D.png" alt="Fig. 3 D">
         <img src="../assets/Fig3_true_square_v54_E.png" alt="Fig. 3 E">
         <img src="../assets/Fig3_true_square_v54_F.png" alt="Fig. 3 F">
       </div>
@@ -457,16 +457,48 @@
       </figure>
       <figure class="figure strict-panels">
         <div class="strict-panel-grid cols2">
-        <img src="../assets/Fig4_true_square_v54_A.png" alt="Fig. 4 A">
-        <img src="../assets/Fig4_true_square_v54_B.png" alt="Fig. 4 B">
-        <img src="../assets/Fig4_true_square_v54_C.png" alt="Fig. 4 C">
-        <img src="../assets/Fig4_true_square_v54_D.png" alt="Fig. 4 D">
+        <img src="../assets/Fig4_true_square_v57_A.png" alt="Fig. 4 A">
+        <img src="../assets/Fig4_true_square_v57_B.png" alt="Fig. 4 B">
+        <img src="../assets/Fig4_true_square_v57_C.png" alt="Fig. 4 C">
+        <img src="../assets/Fig4_true_square_v57_D.png" alt="Fig. 4 D">
       </div>
-        <figcaption><strong>A、B，</strong>不同latent-state family及其对同一reward switch的不同适应轨迹（模型示意）。
-          <strong>C，</strong>统一leave-one-animal-out protocol下把cumulative history自身也加入比较；cumulative history、belief、block sampling、reference RW与two-stage的normalized-MAE都很接近，说明单看prediction score无法确定机制。
-          <strong>D，</strong>192个matched post-switch bouts、11只小鼠的conditional unique-information test：cumulative history在belief之后P=.0124、continuous-time HMM之后P=.0090、average reward rate之后P=.0122、Value-RNN reward-only之后P=.0128、Value-RNN+time之后P=.0078仍有独立信息；反向unique term均不显著。红色bar表示history-unique information；灰色bar表示competitor-unique information，并用深/中/浅灰区分主要与辅助comparator。</figcaption>
+        <figcaption><strong>A，</strong>扩展后的model room纳入sampled FullHistory、canonical TD/RPE、belief/HMM、average reward rate、Pearce–Hall、Kalman/uncertainty、multi-timescale history、unsigned salience、adaptive gain与Value-RNN。<strong>B，</strong>代表性状态适应轨迹，并加入reward switch处的canonical phasic TD/RPE innovation。<strong>C，</strong>10个有held-out结果的理论模型：HMM、reward-rate与belief的raw prediction较强，而多种经典RPE/adaptive模型接近baseline，因此prediction rank本身不能确定机制。<strong>D，</strong>protocol-matched conditional horse race：FullHistory在belief、continuous HMM、reward-rate与recurrent TD states之后仍保留独立信息；canonical TD/RW相对adaptive gain有优势，但对Pearce–Hall、multi-timescale、Kalman与unsigned-salience并不存在统一胜出。实心点为anchor/focal unique term，空心点为competitor unique term。</figcaption>
       </figure>
     </div>
+<details class="model-zoo-details" open>
+<summary><strong>完整 dopamine model zoo：已测试、历史 recovery、边界与任务不可辨识模型</strong></summary>
+<p class="model-zoo-note">这里明确分开三类证据：主图 C 的 held-out relative-MAE、主图 D 的 protocol-matched unique-information horse race、以及历史 model-recovery matrix。它们回答不同问题，不混成一个总排行榜。RPE/TD、HMM/belief、reward rate、Pearce–Hall、Kalman、distributional RL、Value-RNN、BlockSampling、ReferenceRW、TwoStage，以及 LC/5-HT/Harkin 的任务适配结构类比都保留。</p>
+<div class="model-zoo-table-wrap"><table class="model-zoo-table"><colgroup><col class="mz-c1"><col class="mz-c2"><col class="mz-c3"><col class="mz-c4"></colgroup><thead><tr><th>模型 family</th><th>状态</th><th>关键结果</th><th>在文章中的作用</th></tr></thead><tbody>
+<tr><td class="mz-family">Canonical TD RW</td><td><span class="mz-status tested">已测试</span></td><td>Schultz_TD_RW mean rel MAE=1.005; baseline-comparable; serves canonical scalar reference</td><td>core comparator</td></tr>
+<tr><td class="mz-family">Reward uncertainty</td><td><span class="mz-status tested">已测试</span></td><td>entropy dR2=0.001916 P=0.4755; posterior variance dR2=0.002706 P=0.4037</td><td>boundary/control</td></tr>
+<tr><td class="mz-family">Adaptive value coding</td><td><span class="mz-status tested">已测试</span></td><td>mean rel MAE=1.031; TD/RW unique beyond gain dR2=0.01563 P=0.0464; gain beyond TD/RW dR2=0.00047 P=0.698</td><td>strong negative comparator</td></tr>
+<tr><td class="mz-family">Marginal utility</td><td><span class="mz-status boundary">当前任务不可辨识</span></td><td>two physical reward levels make any monotonic utility transform affine in reward category; RW error is collinear up to scale</td><td>explicit task-design boundary</td></tr>
+<tr><td class="mz-family">Belief state RPE</td><td><span class="mz-status tested">已测试</span></td><td>held-out mean rel MAE=0.971; 9/11 better than baseline P=0.240; FullHistory beyond belief dR2=0.02541 P=0.0124; belief beyond FullHistory dR2=0.000465 P=0.726</td><td>core theoretical comparator</td></tr>
+<tr><td class="mz-family">Bayesian uncertainty</td><td><span class="mz-status tested">已测试</span></td><td>no unique sustained-DA information beyond FullHistory+belief</td><td>boundary/control</td></tr>
+<tr><td class="mz-family">Distributional RL</td><td><span class="mz-status tested">已测试</span></td><td>distributional mean r=0.993 with FullHistory; spread beyond FH+mean dR2=0.000012 P=0.941</td><td>single-cell future direction; population boundary</td></tr>
+<tr><td class="mz-family">State uncertainty ramp</td><td><span class="mz-status tested">已测试</span></td><td>uncertainty terms add no unique sustained-DA information; clock is already in existing zoo</td><td>supplementary theory control</td></tr>
+<tr><td class="mz-family">Adaptive learning rate</td><td><span class="mz-status tested">已测试</span></td><td>mean rel MAE=0.981; 8/11 better than baseline P=0.520; no unique info vs TD/RW in either direction</td><td>supplementary strong comparator</td></tr>
+<tr><td class="mz-family">Asymmetric learning rates</td><td><span class="mz-status tested">已测试</span></td><td>asym vs symmetric mean delta MAE=-0.00337; 7/11; P=0.577</td><td>supplementary control</td></tr>
+<tr><td class="mz-family">Past reward multi timescale</td><td><span class="mz-status tested">已测试</span></td><td>mean rel MAE=1.015; no unique info vs scalar TD/RW</td><td>supplementary control</td></tr>
+<tr><td class="mz-family">Future discount timescale</td><td><span class="mz-status boundary">任务不匹配</span></td><td>primary reward-contrast task does not manipulate future delay independently; do not relabel past-history mixture as the Masset model</td><td>discussion/future boundary</td></tr>
+<tr><td class="mz-family">Value RNN</td><td><span class="mz-status tested">已测试</span></td><td>corrected v5 reducer: H50/12-seed ensemble mean rel MAE 1.011 reward-only and 1.013 reward+time (P=0.465/0.413); FullHistory beyond RNN dR2=0.02685 P=0.0128/0.0078; RNN beyond FullHistory ~4-5e-5 P~0.86. H2 three-seed nominal residual dR2=0.0153 P=0.0226 did not survive 12-config maxT (family-wise P=0.0646) and disappeared in H2/12-seed confirmation: RNN beyond FullHistory P=0.186 reward-only and 0.686 reward+time while FullHistory remained significant P=0.0018/0.0120. Fresh reward-only H2 seeds100-111 replicate the boundary: mean rel MAE=0.969 P=0.240; FullHistory unique dR2=0.02668 P=0.0070; RNN unique dR2=0.00082 P=0.616</td><td>decisive learned-state comparator; supports sufficiency of interpretable cumulative-history reference</td></tr>
+<tr><td class="mz-family">Prospective state representation</td><td><span class="mz-status tested">已测试·family level</span></td><td>Value-RNN learns a history-related state but does not robustly add beyond FullHistory; H50 RNN unique P~0.86 while FullHistory unique P=0.0078-0.0128</td><td>supplementary model-room; task-specific prospective-state claims remain outside identifiability</td></tr>
+<tr><td class="mz-family">Direct policy adaptive rate</td><td><span class="mz-status boundary">任务不匹配</span></td><td>requires acquisition/action-policy trajectories</td><td>discussion boundary</td></tr>
+<tr><td class="mz-family">Feature specific RPE</td><td><span class="mz-status boundary">主任务不可辨识</span></td><td>20E/100E changes one reward-quality axis; testable only in richer cross-reward datasets</td><td>future/supplementary boundary</td></tr>
+<tr><td class="mz-family">Average reward rate</td><td><span class="mz-status tested">已测试</span></td><td>mean rel MAE=0.938; 9/11 better than baseline P=0.240; FullHistory beyond reward-rate dR2=0.02565 P=0.0122; reverse dR2=0.000432 P=0.722</td><td>core theoretical comparator</td></tr>
+<tr><td class="mz-family">Signed vs unsigned two component</td><td><span class="mz-status tested">已测试</span></td><td>0-2 s not separable; 2-5 s signed beyond unsigned dR2=0.01867 P=0.0328; unsigned reverse P=0.375</td><td>core temporal theoretical comparator</td></tr>
+<tr><td class="mz-family">Reward memory timescales</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>multi-timescale analogue does not show stable held-out superiority over scalar history state</td><td>supplementary comparator</td></tr>
+<tr><td class="mz-family">LC asym analogue</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>mean rel MAE=1.0132; 7/11 better; vs FullHistory P=.577</td><td>extended model zoo</td></tr>
+<tr><td class="mz-family">FiveHT uncertainty analogue</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>mean rel MAE=1.0196; 7/11 better; vs FullHistory P=.577</td><td>extended model zoo</td></tr>
+<tr><td class="mz-family">Harkin filter analogue</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>mean rel MAE=.9809; 8/11 better; vs FullHistory P=.520</td><td>extended model zoo</td></tr>
+<tr><td class="mz-family">FullHistoryRW</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.925; confusion matrix retained separately from held-out prediction</td><td>focal sampled-history recovery model</td></tr>
+<tr><td class="mz-family">ReferenceRW</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.580; confusion matrix retained separately from held-out prediction</td><td>historical reference-RW comparator</td></tr>
+<tr><td class="mz-family">BlockSampling</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.225; confusion matrix retained separately from held-out prediction</td><td>historical block-sampling comparator</td></tr>
+<tr><td class="mz-family">TwoStage</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.520; confusion matrix retained separately from held-out prediction</td><td>historical two-stage comparator</td></tr>
+<tr><td class="mz-family">Absolute</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.595; confusion matrix retained separately from held-out prediction</td><td>historical absolute-value comparator</td></tr>
+<tr><td class="mz-family">OneShot</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.355; confusion matrix retained separately from held-out prediction</td><td>historical one-shot comparator</td></tr>
+<tr><td class="mz-family">Clock</td><td><span class="mz-status boundary">历史 recovery audit</span></td><td>self-recovery probability=0.930; confusion matrix retained separately from held-out prediction</td><td>historical passive-clock comparator</td></tr>
+</tbody></table></div><p class="model-zoo-links">数据：<a href="../data/NEURON_DOPAMINE_MODEL_ZOO_REGISTRY_v57.csv">完整 registry</a> · <a href="../data/NEURON_MODEL_ZOO_NUMERIC_v57.csv">held-out 数值 ledger</a> · <a href="../data/NEURON_HISTORICAL_MODEL_RECOVERY_v57.csv">历史 recovery matrix</a> · <a href="../data/NEUROMOD_ZOO_SUMMARY_v57.csv">neuromodulator structural zoo</a></p></details>
     <div class="callout">
       在<strong>11只小鼠</strong>的leave-one-animal-out prediction中，held-out sustained-dopamine R²：
       current reward only = .038；加入categorical context = .123；加入continuous history coordinate = .175；
@@ -494,9 +526,9 @@
     <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
         <img src="../assets/Fig5_true_square_v54_A.png" alt="Fig. 5 A">
-        <img src="../assets/Fig5_true_square_v54_B.png" alt="Fig. 5 B">
+        <img src="../assets/Fig5_true_square_v57_B.png" alt="Fig. 5 B">
         <img src="../assets/Fig5_true_square_v54_C.png" alt="Fig. 5 C">
-        <img src="../assets/Fig5_true_square_v54_D.png" alt="Fig. 5 D">
+        <img src="../assets/Fig5_true_square_v57_D.png" alt="Fig. 5 D">
       </div>
       <figcaption>
         <strong>A，</strong>同一批192个post-switch bouts、11只小鼠中，C=U−R与U+R control的time-resolved coefficient；lick之前为负/preparatory，持续进食后转为正。
@@ -509,10 +541,10 @@
     <div class="figure-grid">
       <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
-        <img src="../assets/ED1_true_square_v54_A.png" alt="ED1 A">
+        <img src="../assets/ED1_true_square_v57_A.png" alt="ED1 A">
         <img src="../assets/ED1_true_square_v54_B.png" alt="ED1 B">
-        <img src="../assets/ED1_true_square_v54_C.png" alt="ED1 C">
-        <img src="../assets/ED1_true_square_v54_D.png" alt="ED1 D">
+        <img src="../assets/ED1_true_square_v57_C.png" alt="ED1 C">
+        <img src="../assets/ED1_true_square_v57_D.png" alt="ED1 D">
       </div>
         <figcaption>
           sustained dopamine同时包含当前consummatory action / sampling信息和history-relative component。
@@ -554,8 +586,8 @@
       <div class="strict-panel-grid cols2">
         <img src="../assets/Fig6_true_square_v54_A.png" alt="Fig. 6 A">
         <img src="../assets/Fig6_true_square_v54_B.png" alt="Fig. 6 B">
-        <img src="../assets/Fig6_true_square_v54_C.png" alt="Fig. 6 C">
-        <img src="../assets/Fig6_true_square_v54_D.png" alt="Fig. 6 D">
+        <img src="../assets/Fig6_true_square_v57_C.png" alt="Fig. 6 C">
+        <img src="../assets/Fig6_true_square_v57_D.png" alt="Fig. 6 D">
       </div>
       <figcaption><strong>A，</strong>冻结α=.20的history state在独立QE任务中测试；图中quartile为history-defined pure-100E bouts的描述性展示，primary 66-bout/7鼠检验为ΔR²=.02540（animal-clustered P=.00141；circular-shift P=.00205）。<strong>B，</strong>QE effect在α=.10–.30保持稳定，并明确标出冻结α=.20。<strong>C，</strong>统一按lower→higher value定向后，quinine 7/7、hunger 7/7、LiCl 7/7、Stim13 12/13、Stim5 5/5动物方向一致。<strong>D，</strong>对有完整source的quinine、hunger、LiCl和Stim13逐动物投影到冻结Natural two-readout value axis，不重新拟合；Stim5保留在C的方向汇总中。这些panel支持共享value geometry，而不是所有操作使用完全相同的history-update机制。</figcaption>
     </figure>
@@ -583,7 +615,7 @@
       <div class="strict-panel-grid cols3">
         <img src="../assets/Fig7_true_square_v54_A.png" alt="Fig. 7 A">
         <img src="../assets/Fig7_true_square_v54_B.png" alt="Fig. 7 B">
-        <img src="../assets/Fig7_true_square_v54_C.png" alt="Fig. 7 C">
+        <img src="../assets/Fig7_true_square_v57_C.png" alt="Fig. 7 C">
       </div>
       <figcaption><strong>A，</strong>Natural history-relative state在current reward内部高低分组后的经验persistence curve仅作描述性展示；primary hazard model为termination OR=.459（P=.00018）。<strong>B，</strong>Stim13 laser-on相对off延长feeding persistence（primary termination OR=.690，P=3.29×10<sup>−10</sup>）。<strong>C，</strong>统一forest axis把natural history、DA activation、contingent Jaws和noncontingent Jaws放在同一个bout-termination尺度上。contingent inhibition促进更早终止（OR=1.34，P=.0289），noncontingent control较弱且不显著（OR=1.12，P=.0976）。推断统计以hazard model为准，而不是survival curve的视觉分离。</figcaption>
     </figure>
@@ -712,43 +744,43 @@
       <div class="details-body">
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
-        <img src="../assets/ED1_true_square_v54_A.png" alt="ED1 A">
+        <img src="../assets/ED1_true_square_v57_A.png" alt="ED1 A">
         <img src="../assets/ED1_true_square_v54_B.png" alt="ED1 B">
-        <img src="../assets/ED1_true_square_v54_C.png" alt="ED1 C">
-        <img src="../assets/ED1_true_square_v54_D.png" alt="ED1 D">
+        <img src="../assets/ED1_true_square_v57_C.png" alt="ED1 C">
+        <img src="../assets/ED1_true_square_v57_D.png" alt="ED1 D">
       </div>
           <figcaption><strong>ED1。</strong>持续性DA的action-control adjudication。按因果顺序加入licking control后，history-relative component仍存在；最灵活的0–2 s + 2–5 s sensitivity model中，C仍有unique ΔR²=.04895（11鼠；conditional permutation P=.0449）。这是supportive sensitivity evidence，不是主发现检验。</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="../assets/ED2_true_square_v54_A.png" alt="ED2 A">
-        <img src="../assets/ED2_true_square_v54_B.png" alt="ED2 B">
+        <img src="../assets/ED2_true_square_v57_A.png" alt="ED2 A">
+        <img src="../assets/ED2_true_square_v57_B.png" alt="ED2 B">
         <img src="../assets/ED2_true_square_v54_C.png" alt="ED2 C">
       </div>
           <figcaption><strong>ED2A，</strong>Stim13 past stimulation history在full controls后仍有ΔR²=.00338，加入future-history control后仍有ΔR²=.00252；两者conditional permutation均P=5×10<sup>−5</sup>，共1,833 bouts、13只小鼠。<strong>ED2B，</strong>从当前reconstructed-history authority独立重算的animal-level effect有9/13只为正，仅作描述性展示。<strong>ED2C，</strong>past-history added R²在α=.03–.60范围内保持宽profile，α=.20标为冻结transfer值。</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="../assets/ED3_true_square_v54_A.png" alt="ED3 A">
-        <img src="../assets/ED3_true_square_v54_B.png" alt="ED3 B">
-        <img src="../assets/ED3_true_square_v54_C.png" alt="ED3 C">
+        <img src="../assets/ED3_true_square_v57_A.png" alt="ED3 A">
+        <img src="../assets/ED3_true_square_v57_B.png" alt="ED3 B">
+        <img src="../assets/ED3_true_square_v57_C.png" alt="ED3 C">
       </div>
           <figcaption><strong>ED3。</strong>分别估计[U−R]+与[R−U]+。Natural：gain ΔR²=.0292，P=.00370；loss ΔR²=.00352，P=.324；interaction P=.216。QE：gain ΔR²=.0196，P=.0233；loss ΔR²=.00439，P=.258；interaction P=.000527。Stim13：gain ΔR²=.00127，P=.00470；loss ΔR²=.0000265，P=.666；interaction P=.197。除interaction外均为conditional permutation。</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="../assets/ED4_true_square_v54_A.png" alt="ED4 A">
-        <img src="../assets/ED4_true_square_v54_B.png" alt="ED4 B">
-        <img src="../assets/ED4_true_square_v54_C.png" alt="ED4 C">
-        <img src="../assets/ED4_true_square_v54_D.png" alt="ED4 D">
-        <img src="../assets/ED4_true_square_v54_E.png" alt="ED4 E">
+        <img src="../assets/ED4_true_square_v57_A.png" alt="ED4 A">
+        <img src="../assets/ED4_true_square_v57_B.png" alt="ED4 B">
+        <img src="../assets/ED4_true_square_v57_C.png" alt="ED4 C">
+        <img src="../assets/ED4_true_square_v57_D.png" alt="ED4 D">
+        <img src="../assets/ED4_true_square_v57_E.png" alt="ED4 E">
       </div>
           <figcaption><strong>ED4A，</strong>raw、未做pre-subtraction的signal仍保留sustained C（P=.0399），early无效（P=.718），n=192/11鼠。<strong>ED4B，</strong>精确匹配0–2 s lick后9/11动物DA方向一致（one-sided exact Wilcoxon P=.0415）；更严格0–5 s匹配较弱（7/11，P=.183）。<strong>ED4C，</strong>RF、ExtraTrees、HistGB等nonlinear nuisance model后residual C仍为正（conditional permutation P=.010–.0172）。<strong>ED4D，</strong>history在H50 Value-RNN reward-only之后P=.0128、reward+time之后P=.0078仍有unique信息，RNN反向unique为null。<strong>ED4E，</strong>leave-one-cohort-out方向仍为正，但小样本subset功效下降；full-data conditional P=.0092。</figcaption>
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols3">
-        <img src="../assets/ED5_true_square_v54_A.png" alt="ED5 A">
-        <img src="../assets/ED5_true_square_v54_B.png" alt="ED5 B">
+        <img src="../assets/ED5_true_square_v57_A.png" alt="ED5 A">
+        <img src="../assets/ED5_true_square_v57_B.png" alt="ED5 B">
         <img src="../assets/ED5_true_square_v54_C.png" alt="ED5 C">
       </div>
           <figcaption><strong>ED5A，</strong>hunger提高mean bout duration（7鼠，paired exact Wilcoxon P=.03125）。<strong>ED5B，</strong>LiCl devaluation降低duration（同一7鼠family，P=.015625）。按最新版作图规范，paired panel只保留每只动物的细灰连线，不再叠加重复点；彩色横线为group mean，黑色whisker为SEM。<strong>ED5C，</strong>semaglutide个体source在当前model zoo中没有单独保留，因此不手工重建个体坐标，只显示authority summary：Day-1 VTA dopamine AUC相对PBS低2.22 units，6/7只更低，paired P=.03125。</figcaption>
@@ -763,7 +795,7 @@
         </figure>
         <figure class="figure strict-panels">
       <div class="strict-panel-grid cols1">
-        <img src="../assets/ED7_true_square_v54_A.png" alt="ED7 A">
+        <img src="../assets/ED7_true_square_v57_A.png" alt="ED7 A">
       </div>
           <figcaption><strong>ED7。</strong>direct sampled-history test在Natural（ΔR²=.0269，P=.00670）、QE（ΔR²=.0254，P=.00141）、Stim13（ΔR²=.00252，P=5×10<sup>−5</sup>）均为阳性；duration-history proxy在hunger（P=.283）、quinine（P=.466）、LiCl（P=.478）、Stim5（P=.562）均不显著。proxy bar本身可以有非零ΔR²，因此specificity判断依赖真实条件与proxy control的推断统计，而不是只看bar高度。</figcaption>
         </figure>
@@ -785,9 +817,9 @@
         <figure class="figure strict-panels">
           <div class="strict-panel-grid cols2">
             <img src="../assets/ED10_true_square_v54_A.png" alt="ED10_strict_v52 panel A">
-            <img src="../assets/ED10_true_square_v54_B.png" alt="ED10_strict_v52 panel B">
-            <img src="../assets/ED10_true_square_v54_C.png" alt="ED10_strict_v52 panel C">
-            <img src="../assets/ED10_true_square_v54_D.png" alt="ED10_strict_v52 panel D">
+            <img src="../assets/ED10_true_square_v57_B.png" alt="ED10_strict_v52 panel B">
+            <img src="../assets/ED10_true_square_v57_C.png" alt="ED10_strict_v52 panel C">
+            <img src="../assets/ED10_true_square_v57_D.png" alt="ED10_strict_v52 panel D">
           </div>
           <figcaption><strong>ED10。</strong>current reward identity会改变观察到的behavioral history sensitivity，但还没有建立universal deep-reference gate。<strong>A，</strong>三个独立cohort共29只动物中，24/29在current-high条件下表现出更负的标准化reference slope（two-sided exact Wilcoxon P=.00215；Natural 8/10，QE 5/6，Stim13 11/13）。<strong>B，</strong>termination hazard方向一致（Natural HR=1.54，P=.00075；QE HR=2.22，P&lt;10<sup>−11</sup>；Stim13 HR=1.14，P=.0047）。<strong>C，</strong>local-history adjudication解释了为什么不能把它升格成universal gate：Natural在local main effects后仍保留，但加入local×current竞争后不再显著；QE功效不足；Stim13的base interaction被local history吸收。<strong>D，</strong>deep residual R×current在Natural（P=.309）、QE（P=.108）、Stim13（P=.154）均为null。</figcaption>
         </figure>
