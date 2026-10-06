@@ -4,12 +4,12 @@ A,efficacy_baseline,visible4,AUC,0.5714134726030343,27,,
 A,efficacy_baseline,current_social,AUC,0.615197543771827,27,,
 A,efficacy_baseline,delta_only,AUC,0.6195653647075497,27,,
 A,efficacy_baseline,current_social_plus_delta,AUC,0.6360523302586266,27,,
-A,increment,current_social_plus_delta_vs_current_social,AUC_gain,0.0208547864867995,27,22,0.0002678334712982
+A,increment,current_social_plus_delta_vs_current_social,AUC_gain,0.0208547864867995,27,22.0,0.0002678334712982
 B,social_content,original,efficacy_AUC,0.6195653647075497,27,,
 B,social_content,coherent_social_replacement,efficacy_AUC,0.5608961496896202,27,,
-B,social_content_drop,replacement,AUC_drop,0.0586692150179294,27,26,1.4901161193847656e-08
+B,social_content_drop,replacement,AUC_drop,0.0586692150179294,27,26.0,1.4901161193847656e-08
 B,social_content,no_social_retrain,efficacy_AUC,0.5715044711703298,27,,
-B,social_content_drop,no_social_retrain,AUC_drop,0.0480608935372199,27,26,2.2873282432556152e-06
+B,social_content_drop,no_social_retrain,AUC_drop,0.0480608935372199,27,26.0,2.2873282432556152e-06
 C,coordinate_decoding,slm_actor_statevalue_score|PCA32 encoder,Spearman,0.9122517343832022,27,,
 C,coordinate_decoding,slm_actor_statevalue_score|SWM latent,Spearman,0.885684119573961,27,,
 C,coordinate_decoding,slm_actor_statevalue_score|raw encoder,Spearman,0.920331684646878,27,,
@@ -22,8 +22,15 @@ C,coordinate_decoding,slm_policy_active|raw encoder,Spearman,0.935269015687104,2
 C,coordinate_decoding,slm_q_allreward_score|PCA32 encoder,Spearman,0.9125124083083138,27,,
 C,coordinate_decoding,slm_q_allreward_score|SWM latent,Spearman,0.8857605025404107,27,,
 C,coordinate_decoding,slm_q_allreward_score|raw encoder,Spearman,0.9206128829371104,27,,
-D,specific_scrub_vs_random,drop_action_auc,specific_AUC_loss,0.0106514273012434,27,26,5.21540641784668e-07
-D,specific_scrub_vs_random,drop_efficacy_auc,specific_AUC_loss,-0.0106371053436806,27,4,0.9997863844037056
+D,specific_scrub_vs_random,drop_action_auc,specific_AUC_loss,0.0106514273012434,27,26.0,5.21540641784668e-07
+D,specific_scrub_vs_random,drop_efficacy_auc,specific_AUC_loss,-0.0106371053436806,27,4.0,0.9997863844037056
 D,future_motif,SLM-coordinate readout,NLL,1.9709706478804696,27,,
 D,future_motif,SWM,NLL,1.834702725763674,27,,
 D,future_motif,action+outcome baseline,NLL,2.0302921133604124,27,,
+A,strict_efficacy_baseline,current13,AUC,0.615197543771827,27,,
+A,strict_efficacy_baseline,slm_prestate_plus_current13,AUC,0.6246595025689976,27,,
+A,strict_efficacy_baseline,slm_prestate_plus_current13_plus_efficacy,AUC,0.6390666362104042,27,,
+A,strict_efficacy_baseline,slm_prestate_plus_persistence,AUC,0.5535047088633741,27,,
+A,strict_increment,SLM_prestate+current13+efficacy_vs_SLM_prestate+current13,AUC_gain,0.0144071336414066,27,21,0.0008434876799583
+A,strict_increment,SLM_prestate+current13+efficacy_vs_SLM_prestate+current13,Brier_gain,0.0036212943979879,27,18,0.0707029327750206
+A,strict_increment,SLM_prestate+current13+efficacy_vs_SLM_prestate+current13,logloss_gain,0.007430530528165,27,18,0.0674449354410171
