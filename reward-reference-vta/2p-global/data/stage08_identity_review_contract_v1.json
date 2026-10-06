@@ -1,0 +1,32 @@
+{
+  "contract": "STAGE08_INDEPENDENT_IDENTITY_REVIEW_V1",
+  "status": "implemented_and_unit_tested",
+  "candidate_default": "REVIEW_REQUIRED",
+  "decisions": [
+    "ACCEPT",
+    "REJECT",
+    "UNCERTAIN",
+    "UNREVIEWED"
+  ],
+  "minimum_independent_reviewers": 2,
+  "consensus": {
+    "ACCEPT": "at least 2 ACCEPT and 0 REJECT",
+    "REJECT": "at least 2 REJECT and 0 ACCEPT",
+    "CONFLICT": "mixed ACCEPT/REJECT or one-to-one collision",
+    "UNRESOLVED": "fewer than 2 useful independent reviews"
+  },
+  "integrity": [
+    "reviewer uniqueness",
+    "candidate-id validation",
+    "one-to-one source/target enforcement",
+    "frozen edges only from ACCEPT consensus"
+  ],
+  "unit_test": {
+    "status": "PASS",
+    "accepted": 1,
+    "rejected": 1,
+    "unresolved": 0,
+    "reviewers": 2,
+    "collisions": 0
+  }
+}
