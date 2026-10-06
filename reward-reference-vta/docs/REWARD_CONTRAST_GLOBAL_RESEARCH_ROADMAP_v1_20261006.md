@@ -1,7 +1,7 @@
 # Reward Contrast Global Research Roadmap
 
-**Version:** 2026-10-06  
-**Scope:** synthesis of the Reward Contrast discussion history, current authority analyses, social extensions, hedonic-contrast experiments, longitudinal single-cell work, and next-paradigm design.  
+**Version:** 2026-10-06
+**Scope:** synthesis of the Reward Contrast discussion history, current authority analyses, social extensions, hedonic-contrast experiments, longitudinal single-cell work, and next-paradigm design.
 **Use:** research-planning document. Completed findings, preliminary observations, priority experiments, and speculative mechanisms are kept separate.
 
 ---
@@ -10,19 +10,19 @@
 
 The program has evolved through five increasingly stringent questions.
 
-1. **Does ongoing VTA dopamine encode more than the physical reward currently being consumed?**  
+1. **Does ongoing VTA dopamine encode more than the physical reward currently being consumed?**
    The original variable-palatability work established sustained consumption-phase VTA dopamine and behavioral contrast across high- and low-value food conditions.
 
-2. **Does recent sampled reward history alter the representation of the same current reward?**  
+2. **Does recent sampled reward history alter the representation of the same current reward?**
    Matched-current H/L/S/N analyses and the recursive reference model showed that recent sampled outcomes contribute information beyond current reward, local action, categorical latent state, and several model alternatives.
 
-3. **Is the history signal a classical cue-RPE, an unsigned surprise signal, or a continuously updated reference?**  
+3. **Is the history signal a classical cue-RPE, an unsigned surprise signal, or a continuously updated reference?**
    Current authority favors a signed reference-relative signal during sustained consumption. Raw prediction can favor HMM/belief models, but cumulative sampled history retains unique information. Unsigned salience and uncertainty do not absorb the sustained signal.
 
-4. **Does the same computation generalize across reward identity and social reward?**  
+4. **Does the same computation generalize across reward identity and social reward?**
    Quinine and stimulation datasets suggest partial transfer of reference memory and dissociation between neural memory and behavioral expression. Social contrast is the major next domain.
 
-5. **How is contrast represented at single-cell and molecular resolution?**  
+5. **How is contrast represented at single-cell and molecular resolution?**
    Longitudinal 2P/CaRMA data show distributed, animal-dependent coding rather than a simple stable concentration-preferring cell class. The next decisive experiment must orthogonalize current reward, reference history, identity, RPE, salience, and action within the same recorded neurons.
 
 ---
@@ -572,7 +572,7 @@ Candidate marker families discussed previously:
 - social-related: Esr1, Oxtr
 - disease / broader program: Syn2 and other ASD-related or state-related markers
 
-The molecular question is not merely “which gene marks reward neurons?”  
+The molecular question is not merely “which gene marks reward neurons?”
 It is whether molecular identity predicts:
 - reference coding,
 - contrast sign,
