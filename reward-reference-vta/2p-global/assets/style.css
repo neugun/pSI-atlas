@@ -118,3 +118,7 @@ input[type=file]{max-width:100%;padding:7px;background:#fff;border:1px solid var
 .soe-page figure[id]{scroll-margin-top:72px}
 @media(max-width:760px){.soe-page .figure-index-grid{grid-template-columns:1fr 1fr}.soe-page .basic-figure-stack{grid-template-columns:1fr}}
 @media(max-width:520px){.soe-page .figure-index-grid{grid-template-columns:1fr}}
+
+.soe-page .atlas-callout{margin:0 0 24px;padding:15px 17px;border:1px solid #cfe0ea;border-left:4px solid #1f7a77;border-radius:12px;background:#f7fbfc;color:#42586b;font-size:14px;line-height:1.6}
+.soe-page .atlas-callout strong{color:#173a5e}
+.soe-page .atlas-callout a{font-weight:800;margin-left:4px}
