@@ -1,0 +1,73 @@
+{
+  "schema": "CARMA_CROSSDAY_TEST_V1",
+  "dataset_id": "synthetic_crossday",
+  "purpose": "end-to-end two-session regression for Stage07 transform, Stage08 candidate generation, independent review consensus, downstream invalidation, and release refreeze",
+  "scheduler": "stage-major across sessions",
+  "sessions": [
+    "SYN_D1",
+    "SYN_D2"
+  ],
+  "source_roi_ids": [
+    11,
+    24,
+    37,
+    58
+  ],
+  "target_roi_ids": [
+    101,
+    205,
+    309,
+    444
+  ],
+  "expected_pairs": [
+    [
+      11,
+      101
+    ],
+    [
+      24,
+      205
+    ],
+    [
+      37,
+      309
+    ],
+    [
+      58,
+      444
+    ]
+  ],
+  "transform": {
+    "dy": 3.900000095367432,
+    "dx": -2,
+    "registered_image_corr": 0.9457562092699116
+  },
+  "candidates": {
+    "n": 4,
+    "n_reciprocal": 4,
+    "max_distance_px": 2.1470911397507675,
+    "area_ratio": 1,
+    "local_corr_min": 0.9151428226638091,
+    "local_corr_max": 0.9161106884579293
+  },
+  "stage08_before_review": {
+    "SYN_D1": "REVIEW_REQUIRED",
+    "SYN_D2": "NA"
+  },
+  "review_consensus": {
+    "reviewers": 2,
+    "accepted": 4,
+    "rejected": 0,
+    "unresolved": 0,
+    "one_to_one_conflicts": 0,
+    "status": "PASS"
+  },
+  "downstream_after_consensus": {
+    "stage09_invalidated": true,
+    "stage10_invalidated": true,
+    "stage09_rerun": "PASS",
+    "stage10_rerun": "PASS",
+    "release_refrozen": true
+  },
+  "overall": "PASS"
+}

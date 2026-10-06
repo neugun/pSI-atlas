@@ -311,25 +311,67 @@ def run_07(root,sid,row):
         if psid==sid: continue
         pp=stage_dir(root,psid,"01")/"mean_image.npy"
         if not pp.exists(): continue
-        ref=np.load(pp); sh,err,_=phase_cross_correlation(ref,cur,upsample_factor=10); rows.append({"source_session":sid,"target_session":psid,"dy":float(sh[0]),"dx":float(sh[1]),"error":float(err)})
-    pd.DataFrame(rows).to_csv(d/"crossday_transforms.csv",index=False); metrics={"n_peer_transforms":len(rows)}; status="PASS" if rows else "NA"
-    write_stage_provenance(root,sid,"07",[stage_dir(root,sid,"01")/"mean_image.npy"],{"method":"phase_cross_correlation candidate transform"},[d/"crossday_transforms.csv"] if rows else [],status,metrics); return status,metrics,[d/"crossday_transforms.csv"] if rows else []
+        ref=np.load(pp); sh,err,_=phase_cross_correlation(ref,cur,upsample_factor=10)
+        moved=ndimage.shift(cur,shift=sh,order=1,mode="nearest",prefilter=False)
+        a=ref.ravel().astype(float); b=moved.ravel().astype(float)
+        image_corr=float(np.corrcoef(a,b)[0,1]) if np.std(a)>0 and np.std(b)>0 else np.nan
+        rows.append({"source_session":sid,"target_session":psid,"dy":float(sh[0]),"dx":float(sh[1]),"phase_error":float(err),"registered_image_corr":image_corr})
+    pd.DataFrame(rows).to_csv(d/"crossday_transforms.csv",index=False)
+    metrics={"n_peer_transforms":len(rows),"median_registered_image_corr":float(np.nanmedian([x["registered_image_corr"] for x in rows])) if rows else None}
+    status="PASS" if rows else "NA"
+    write_stage_provenance(root,sid,"07",[stage_dir(root,sid,"01")/"mean_image.npy"],{"method":"phase_cross_correlation; all peer sessions must have Stage01 first"},[d/"crossday_transforms.csv"] if rows else [],status,metrics)
+    return status,metrics,[d/"crossday_transforms.csv"] if rows else []
+
+def local_patch_corr(a,b,ax,ay,bx,by,radius=10):
+    ax=int(round(ax)); ay=int(round(ay)); bx=int(round(bx)); by=int(round(by)); r=int(radius)
+    def crop(x,cx,cy):
+        y0=max(0,cy-r); y1=min(x.shape[0],cy+r+1); x0=max(0,cx-r); x1=min(x.shape[1],cx+r+1)
+        return x[y0:y1,x0:x1]
+    pa=crop(a,ax,ay); pb=crop(b,bx,by)
+    h=min(pa.shape[0],pb.shape[0]); w=min(pa.shape[1],pb.shape[1])
+    if h<5 or w<5: return np.nan
+    x=pa[:h,:w].ravel().astype(float); y=pb[:h,:w].ravel().astype(float)
+    return float(np.corrcoef(x,y)[0,1]) if np.std(x)>0 and np.std(y)>0 else np.nan
 
 def run_08(root,sid,row):
     d=stage_dir(root,sid,"08"); d.mkdir(parents=True,exist_ok=True); tr=stage_dir(root,sid,"07")/"crossday_transforms.csv"
     if not tr.exists():
         metrics={"reason":"no cross-day transforms"}; write_stage_provenance(root,sid,"08",[],{},[],"NA",metrics); return "NA",metrics,[]
-    cur=pd.read_csv(stage_dir(root,sid,"02")/"per_roi_qc.csv"); cand=[]
+    sess=sessions_df(root); order={str(x):i for i,x in enumerate(sess.session_id.astype(str))}
+    cur=pd.read_csv(stage_dir(root,sid,"02")/"per_roi_qc.csv"); curim=np.load(stage_dir(root,sid,"01")/"mean_image.npy")
+    params=cfg(root).get("identity",{}); maxdist=float(params.get("max_distance_px",12.0)); patch_radius=int(params.get("patch_radius_px",10))
+    cand=[]
     for _,t in pd.read_csv(tr).iterrows():
-        tsid=str(t.target_session); tp=stage_dir(root,tsid,"02")/"per_roi_qc.csv"
-        if not tp.exists(): continue
-        tar=pd.read_csv(tp)
-        for _,r in cur.iterrows():
-            px=float(r.x)+float(t.dx); py=float(r.y)+float(t.dy); dist=np.sqrt((tar.x-px)**2+(tar.y-py)**2); j=int(np.argmin(dist))
-            sr=int(r.roi_id); trgt=int(tar.iloc[j].roi_id)
-            cand.append({"candidate_id":f"{sid}:{sr}->{tsid}:{trgt}","source_session":sid,"source_roi":sr,"target_session":tsid,"target_roi":trgt,"distance_px":float(dist.iloc[j]),"review_status":"REVIEW_REQUIRED"})
-    pd.DataFrame(cand).to_csv(d/"identity_candidates.csv",index=False); metrics={"n_candidates":len(cand),"independent_review_required":True}
-    write_stage_provenance(root,sid,"08",[tr],{"rule":"nearest transformed centroid; candidate only"},[d/"identity_candidates.csv"],"REVIEW_REQUIRED",metrics,"Automatic candidates are not frozen identity."); return "REVIEW_REQUIRED",metrics,[d/"identity_candidates.csv"]
+        tsid=str(t.target_session)
+        if order.get(tsid,-1)<=order.get(sid,-1): continue
+        tp=stage_dir(root,tsid,"02")/"per_roi_qc.csv"; tip=stage_dir(root,tsid,"01")/"mean_image.npy"
+        if not tp.exists() or not tip.exists(): continue
+        tar=pd.read_csv(tp); tarim=np.load(tip)
+        sx=cur.x.to_numpy(float)+float(t.dx); sy=cur.y.to_numpy(float)+float(t.dy)
+        tx=tar.x.to_numpy(float); ty=tar.y.to_numpy(float)
+        D=np.sqrt((sy[:,None]-ty[None,:])**2+(sx[:,None]-tx[None,:])**2)
+        src_near=np.argmin(D,axis=1); tgt_near=np.argmin(D,axis=0)
+        for i,r in cur.reset_index(drop=True).iterrows():
+            j=int(src_near[i]); dd=float(D[i,j])
+            if not np.isfinite(dd) or dd>maxdist: continue
+            q=tar.iloc[j]; sr=int(r.roi_id); trgt=int(q.roi_id)
+            reciprocal=bool(tgt_near[j]==i)
+            ar=float(q.area_px)/float(r.area_px) if float(r.area_px)>0 else np.nan
+            lc=local_patch_corr(curim,tarim,float(r.x),float(r.y),float(q.x),float(q.y),patch_radius)
+            cand.append({"candidate_id":f"{sid}:{sr}->{tsid}:{trgt}","source_session":sid,"source_roi":sr,"target_session":tsid,"target_roi":trgt,
+                         "distance_px":dd,"reciprocal_nearest":reciprocal,"area_ratio":ar,"local_corr":lc,
+                         "source_morphology_pass":bool(r.morphology_pass),"target_morphology_pass":bool(q.morphology_pass),
+                         "review_status":"REVIEW_REQUIRED"})
+    out=pd.DataFrame(cand)
+    if len(out): out=out.sort_values(["target_session","distance_px","source_roi"]).reset_index(drop=True)
+    out.to_csv(d/"identity_candidates.csv",index=False)
+    if not len(out):
+        metrics={"reason":"no forward candidate within distance gate","max_distance_px":maxdist}
+        write_stage_provenance(root,sid,"08",[tr],params,[d/"identity_candidates.csv"],"NA",metrics)
+        return "NA",metrics,[d/"identity_candidates.csv"]
+    metrics={"n_candidates":len(out),"n_reciprocal":int(out.reciprocal_nearest.sum()),"max_distance_px":maxdist,"independent_review_required":True}
+    write_stage_provenance(root,sid,"08",[tr],{"rule":"forward-session nearest centroid + reciprocal/area/local-corr evidence; candidate only",**params},[d/"identity_candidates.csv"],"REVIEW_REQUIRED",metrics,"Automatic candidates are not frozen identity.")
+    return "REVIEW_REQUIRED",metrics,[d/"identity_candidates.csv"]
 
 def run_09(root,sid,row):
     d=stage_dir(root,sid,"09"); d.mkdir(parents=True,exist_ok=True); per=pd.read_csv(stage_dir(root,sid,"06")/"per_roi.csv"); trial=pd.read_parquet(stage_dir(root,sid,"06")/"trial_roi.parquet"); conds=list(pd.unique(trial.condition)); metrics={"n_roi":int((per.qc_status=="PASS").sum()),"n_conditions":len(conds)}
@@ -360,8 +402,10 @@ def run_stage(root,sid,stage,force=False):
         log_stage(root,sid,stage,"FAIL",f"{type(e).__name__}: {e}"); sd=stage_dir(root,sid,stage); sd.mkdir(parents=True,exist_ok=True); (sd/"error.txt").write_text(f"{type(e).__name__}: {e}\n",encoding="utf-8"); print(f"{sid} stage {stage}: FAIL {e}"); raise
 def run_pipeline(root,sessions=None,from_stage="00",to_stage="10",force=False):
     ids=list(sessions_df(root).session_id.astype(str)) if sessions is None else sessions; stages=list(STAGES); a=stages.index(from_stage); b=stages.index(to_stage)
-    for sid in ids:
-        for stage in stages[a:b+1]: run_stage(root,sid,stage,force)
+    # Stage-major scheduling is required for cross-day work: every peer must finish Stage01/02
+    # before any session attempts Stage07/08.
+    for stage in stages[a:b+1]:
+        for sid in ids: run_stage(root,sid,stage,force)
 def invalidate(root,sid,stage,reason):
     st=read_state(root,sid); affected=[stage]+descendants(stage)
     for sg in affected: st["stages"][sg].update({"status":"INVALID","message":f"invalidated from {stage}: {reason}","updated_at":now()})
@@ -474,6 +518,59 @@ def cold_test(work):
     assert (proj/"reports"/"sessions"/"SYN_D1"/"roi_explorer_data.js").exists()
     print("COLD_TEST_PASS",proj,"ROI_IDS",sorted(expected))
 
+def make_crossday_fixture(dest):
+    dest=Path(dest); dest.mkdir(parents=True,exist_ok=True)
+    rng=np.random.default_rng(7); n=140; h=w=64; fr=10.0; yy,xx=np.mgrid[0:h,0:w]
+    centers1=[(18,18),(45,20),(32,44),(50,48)]; ids1=[11,24,37,58]
+    dx,dy=-3,2; centers2=[(x+dx,y+dy) for x,y in centers1]; ids2=[101,205,309,444]
+    masks=np.array([((xx-x)**2+(yy-y)**2<=4**2) for x,y in centers1])
+    base=rng.normal(100,1.6,(n,h,w)).astype(np.float32); event_frames=[25,50,75,100,120]; cond=["A","B","A","B","A"]
+    for ri,m in enumerate(masks): base[:,m]+=22+ri*4
+    for ef,c in zip(event_frames,cond):
+        for ri,m in enumerate(masks):
+            amp=(2.5+ri*.8)+(4.5 if c=="B" and ri in (0,2) else 0)
+            for f in range(max(0,ef),min(n,ef+15)): base[f,m]+=amp*np.exp(-(f-ef)/7)
+    mov1=np.empty_like(base)
+    for i,fr0 in enumerate(base): mov1[i]=ndimage.shift(fr0,(1.2*np.sin(i/15),.9*np.cos(i/19)),order=1,mode="nearest",prefilter=False)
+    mov2=np.empty_like(base)
+    for i,fr0 in enumerate(base):
+        q=ndimage.shift(fr0,(dy+1.0*np.sin(i/17),dx+.8*np.cos(i/21)),order=1,mode="nearest",prefilter=False)
+        mov2[i]=q+rng.normal(0,.35,q.shape)
+    tifffile.imwrite(dest/"raw_D1.tif",mov1.astype(np.float32)); tifffile.imwrite(dest/"raw_D2.tif",mov2.astype(np.float32))
+    pd.DataFrame({"trial_id":np.arange(1,6),"event_frame":event_frames,"event_name":"outcome"}).to_csv(dest/"events.csv",index=False)
+    pd.DataFrame({"trial_id":np.arange(1,6),"condition":cond}).to_csv(dest/"behavior.csv",index=False)
+    pd.DataFrame({"roi_id":ids1,"x":[c[0] for c in centers1],"y":[c[1] for c in centers1],"radius":4}).to_csv(dest/"roi_D1.csv",index=False)
+    pd.DataFrame({"roi_id":ids2,"x":[c[0] for c in centers2],"y":[c[1] for c in centers2],"radius":4}).to_csv(dest/"roi_D2.csv",index=False)
+    rows=[]
+    for sid,day,movie,roi in [("SYN_D1","D1","raw_D1.tif","roi_D1.csv"),("SYN_D2","D2","raw_D2.tif","roi_D2.csv")]:
+        rows.append({"session_id":sid,"animal":"SYN","day":day,"task":"A_vs_B","raw_tiff":str((dest/movie).resolve()),"registered_tiff":"","evt_file":str((dest/"events.csv").resolve()),"behavior_file":str((dest/"behavior.csv").resolve()),"roi_source":str((dest/roi).resolve()),"analysis_role":"MAIN","capability":"RAW_MOVIE","frame_rate":fr})
+    pd.DataFrame(rows).to_csv(dest/"sessions.csv",index=False)
+    save_yaml(dest/"dataset.yaml",{"dataset_id":"synthetic_crossday","sessions_file":"sessions.csv","frame_rate":fr,"condition_column":"condition","registration":{"upsample_factor":10},"roi_qc":{"min_area_px":20,"max_area_px":500,"default_radius_px":4},"extraction":{"neuropil_inner_px":2,"neuropil_outer_px":7,"alpha":0.7},"signal_selection":{"candidate_alphas":[0.0,0.5,0.7,1.0]},"identity":{"max_distance_px":6.0,"patch_radius_px":10},"windows":{"cue":[-2,-1],"predictive":[-1,0],"outcome":[0,1],"late":[1,2],"post":[2,3]}})
+    return {"expected_pairs":list(zip(ids1,ids2)),"expected_shift":[dy,dx]}
+
+def crossday_test(work):
+    work=Path(work)
+    if work.exists(): shutil.rmtree(work)
+    src=work/"source"; proj=work/"project"; truth=make_crossday_fixture(src); init_project(src/"dataset.yaml",proj); run_pipeline(proj,to_stage="10")
+    tr=pd.read_csv(proj/"sessions"/"SYN_D1"/"stage_07"/"crossday_transforms.csv")
+    c=pd.read_csv(proj/"sessions"/"SYN_D1"/"stage_08"/"identity_candidates.csv")
+    got={(int(r.source_roi),int(r.target_roi)) for _,r in c.iterrows()}
+    expected=set(tuple(x) for x in truth["expected_pairs"])
+    assert got==expected, f"cross-day candidate mismatch: got={got} expected={expected}"
+    assert c.reciprocal_nearest.astype(bool).all(), "expected reciprocal-nearest candidates"
+    assert float(c.distance_px.max())<3.0, f"candidate distance too large: {c.distance_px.max()}"
+    assert read_state(proj,"SYN_D1")["stages"]["08"]["status"]=="REVIEW_REQUIRED"
+    assert read_state(proj,"SYN_D2")["stages"]["08"]["status"]=="NA"
+    decisions={"timestamp":now(),"decisions":[{"candidate_id":x,"decision":"ACCEPT"} for x in c.candidate_id.astype(str)]}
+    a=work/"reviewA.json"; b=work/"reviewB.json"; jdump(a,decisions); jdump(b,decisions)
+    identity_review_import(proj,"SYN_D1","reviewerA",a); identity_review_import(proj,"SYN_D1","reviewerB",b); identity_consensus(proj,"SYN_D1",2)
+    cons=pd.read_csv(proj/"sessions"/"SYN_D1"/"stage_08"/"identity_consensus.csv")
+    assert len(cons)==4 and (cons.consensus=="ACCEPT").all() and not cons.one_to_one_conflict.astype(bool).any()
+    assert read_state(proj,"SYN_D1")["stages"]["09"]["status"]=="INVALID" and read_state(proj,"SYN_D1")["stages"]["10"]["status"]=="INVALID"
+    run_pipeline(proj,["SYN_D1"],from_stage="09",to_stage="10")
+    assert read_state(proj,"SYN_D1")["stages"]["09"]["status"]=="PASS" and read_state(proj,"SYN_D1")["stages"]["10"]["status"]=="PASS"
+    report(proj)
+    print("CROSSDAY_TEST_PASS","transform",tr[["dy","dx","registered_image_corr"]].to_dict("records"),"pairs",sorted(got),"release_refrozen",True)
 
 def canonical_identity_candidates(cand):
     cand=cand.copy()
@@ -549,6 +646,12 @@ def identity_consensus(root,sid,min_reviewers=2):
     status08="PASS" if unresolved==0 else "REVIEW_REQUIRED"
     metrics={"n_candidates":len(out),"n_accepted":int((out.consensus=="ACCEPT").sum()),"n_rejected":int((out.consensus=="REJECT").sum()),"n_unresolved":unresolved,"n_reviewers":int(R.reviewer.astype(str).nunique()),"one_to_one_conflicts":int(out.one_to_one_conflict.sum())}
     log_stage(root,sid,"08",status08,"independent reviewer consensus",metrics,[outp,d/"identity_edges_frozen.csv"])
+    # Stage09/10 may have been produced before manual review; refresh downstream release state.
+    st=read_state(root,sid)
+    for sg in ["09","10"]:
+        if st["stages"][sg]["status"] in STATUS_OK:
+            st["stages"][sg].update({"status":"INVALID","message":"Stage08 reviewer consensus changed; rerun downstream","updated_at":now()})
+    write_state(root,sid,st)
     print("CONSENSUS",sid,status08,metrics)
     return outp
 
@@ -566,6 +669,7 @@ def main():
     p=sp.add_parser("migrate-existing"); p.add_argument("dest")
     p=sp.add_parser("make-fixture"); p.add_argument("dest")
     p=sp.add_parser("cold-test"); p.add_argument("work")
+    p=sp.add_parser("crossday-test"); p.add_argument("work")
     p=sp.add_parser("identity-review-import"); p.add_argument("project"); p.add_argument("--session",required=True); p.add_argument("--reviewer",required=True); p.add_argument("--decisions",required=True)
     p=sp.add_parser("identity-consensus"); p.add_argument("project"); p.add_argument("--session",required=True); p.add_argument("--min-reviewers",type=int,default=2)
     a=ap.parse_args()
@@ -580,6 +684,7 @@ def main():
     elif a.cmd=="migrate-existing": migrate_existing(a.dest)
     elif a.cmd=="make-fixture": make_fixture(a.dest)
     elif a.cmd=="cold-test": cold_test(a.work)
+    elif a.cmd=="crossday-test": crossday_test(a.work)
     elif a.cmd=="identity-review-import": identity_review_import(project_root(a.project),a.session,a.reviewer,a.decisions)
     elif a.cmd=="identity-consensus": identity_consensus(project_root(a.project),a.session,a.min_reviewers)
 if __name__=="__main__": main()
