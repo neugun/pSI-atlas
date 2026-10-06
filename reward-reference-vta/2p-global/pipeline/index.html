@@ -1,3 +1,5 @@
+[Reading 38 lines from start (total: 38 lines, 0 remaining)]
+
 [Reading 19 lines from start (total: 19 lines, 0 remaining)]
 
 [Reading 14 lines from start (total: 14 lines, 0 remaining)]
@@ -13,8 +15,8 @@
 <section class="block real-pipeline"><div class="container">
 <div class="section-head"><div><span class="eyebrow">Real-data pipeline · ANM54 D6</span><h2>The pipeline is shown with real FOVs, real trials and real cells.</h2></div><p>Representative session: ANM54 Day19 / D6, 100E versus 100E+Q. Synthetic data are kept only as a regression test below.</p></div>
 
-<figure class="manuscript-figure"><img src="../assets/real2p_A_registration_roi_v2.png" alt="Real ANM54 D6 registration and ROI QC"><figcaption><strong>Stage00–02 · Registration and ROI authority.</strong> Raw and registered mean images are shown directly from the real D6 imaging stream, followed by the real ROI overlay and all 16 ROI SNR values. Registration increased median frame-template correlation from 0.335 to 0.508 and high-pass structural correlation from 0.322 to 0.483; local non-rigid residual motion remained subpixel at P95 = 0.51 px. Median ROI SNR = 12.13; independent blob support = 99.1%, and 90.9% of ROI peaks were within 6 px of independent image peaks. <a href="../assets/real2p_A_registration_roi_v2.pdf">PDF</a> · <a href="../assets/real2p_A_registration_roi_v2.svg">SVG</a></figcaption></figure>
-
+<figure class="manuscript-figure"><img src="../assets/real2p_registration_allroi_v3.png" alt="Real ANM54 D6 registration and all ROIs"><figcaption><strong>Stage00–02 · Real registration and segmentation intermediates.</strong> A is the true pre-registration raw mean and is deliberately not overlaid. B is the registered mean. C is the real raw(red)/registered(green) overlay shown only after registration, so alignment can be judged directly. D/E are the frozen frame-template and high-pass structural correlation QC outputs. F/G draw every accepted ROI in Plane 3 and Plane 4; D6 contains 16 accepted ROIs (36–51), all taken from the frozen mask/label authority. H/I expose Suite2p/CaImAn-like intermediate evidence—independent image peaks/candidates and ROI/neuropil SubRing geometry—rather than jumping straight to the final ROI list. J summarizes SNR for all 16 ROIs. <a href="../assets/real2p_registration_allroi_v3.pdf">PDF</a> · <a href="../assets/real2p_registration_allroi_v3.svg">SVG</a></figcaption></figure>
+<figure class="manuscript-figure"><img src="../assets/real2p_all16_roi_gallery_v3.png" alt="All 16 real ANM54 D6 ROIs"><figcaption><strong>Every ROI, individually.</strong> ROI36–51 are all shown as real local crops with the frozen mask contour and real SNR; no synthetic or invented ROI is used. <a href="../assets/real2p_all16_roi_gallery_v3.pdf">PDF</a> · <a href="../assets/real2p_all16_roi_gallery_v3.svg">SVG</a></figcaption></figure>
 <figure class="manuscript-figure"><img src="../assets/real2p_B_trial_signal_v2.png" alt="Real ANM54 D6 trial resolved signal"><figcaption><strong>Stage03–05 · Trial-resolved extraction and alignment.</strong> ROI40 morphology, one real raw/background/subtracted trial, all 60 real trials after within-trial baseline z-scoring, and condition means ± SEM for 30 100E and 30 100E+Q trials. The dashed line marks the 5-s analysis transition used by the frozen D6 analysis. <a href="../assets/real2p_B_trial_signal_v2.pdf">PDF</a> · <a href="../assets/real2p_B_trial_signal_v2.svg">SVG</a></figcaption></figure>
 
 <figure class="manuscript-figure"><img src="../assets/real2p_C_extraction_robustness_v2.png" alt="Real ANM54 D6 extraction robustness"><figcaption><strong>Stage04–06 · Signal-source robustness and cell-level effects.</strong> All 16 cells are carried through raw, background and subtracted signal estimates rather than summarized by one dashboard score. The cell-model panel reports lick-adjusted sustained β ± 95% CI; ROI40 remains positive (β = 0.277, P = 5.1×10⁻⁴, BH q = 0.0245), whereas ROI47 is negative (β = −0.230, P = 0.013; not BH-significant). The frozen authority uses sub1, while α-pooled and α=0.7 are explicit sensitivity analyses; split-half cell-rank r is 0.606, 0.762 and 0.468, respectively. <a href="../assets/real2p_C_extraction_robustness_v2.pdf">PDF</a> · <a href="../assets/real2p_C_extraction_robustness_v2.svg">SVG</a></figcaption></figure>
@@ -32,6 +34,8 @@ Promise.all([fetch('../data/tool_stages_v1.json').then(r=>r.json()),fetch('../da
  document.getElementById('coldGrid').innerHTML=Object.keys(c.stages).sort().map(k=>{let x=c.stages[k];return '<div class="stage-card"><div class="stage-num">'+k+'</div><strong>'+x.name+'</strong><p class="status-pass">'+x.status+'</p><p class="small">'+Object.entries(x.metrics||{}).slice(0,3).map(y=>y[0]+'='+y[1]).join('<br>')+'</p></div>'}).join('');
 });
 </script></main><footer><div class="container">CaRMA 2P Portal · Tool V1</div></footer></body></html>
+
+[executed on device: zzhu-workstation (c5f9276d-4cc2-45a1-af76-820df2199a67)]
 
 [executed on device: zzhu-workstation (c5f9276d-4cc2-45a1-af76-820df2199a67)]
 

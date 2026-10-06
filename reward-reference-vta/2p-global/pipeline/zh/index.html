@@ -1,3 +1,5 @@
+[Reading 38 lines from start (total: 38 lines, 0 remaining)]
+
 [Reading 19 lines from start (total: 19 lines, 0 remaining)]
 
 [Reading 14 lines from start (total: 14 lines, 0 remaining)]
@@ -13,8 +15,8 @@
 <section class="block real-pipeline"><div class="container">
 <div class="section-head"><div><span class="eyebrow">真实数据 pipeline · ANM54 D6</span><h2>主页面直接展示真实 FOV、真实 trial 和真实 cell。</h2></div><p>代表性 session：ANM54 Day19 / D6，100E versus 100E+Q。synthetic 只保留为页面最下方的 regression test，不再充当主结果。</p></div>
 
-<figure class="manuscript-figure"><img src="../../assets/real2p_A_registration_roi_v2.png" alt="ANM54 D6 registration and ROI QC"><figcaption><strong>Stage00–02 · Registration 与 ROI authority。</strong> 直接展示真实 D6 imaging stream 的 raw/registered mean image、真实 ROI overlay 和全部 16 个 ROI 的 SNR。median frame-template correlation 从 0.335 提高到 0.508，high-pass structural correlation 从 0.322 提高到 0.483；local non-rigid residual motion 在 P95 为 0.51 px。ROI SNR 中位数 12.13；independent blob support 99.1%，90.9% ROI peak 距独立 image peak ≤6 px。 <a href="../../assets/real2p_A_registration_roi_v2.pdf">PDF</a> · <a href="../../assets/real2p_A_registration_roi_v2.svg">SVG</a></figcaption></figure>
-
+<figure class="manuscript-figure"><img src="../../assets/real2p_registration_allroi_v3.png" alt="ANM54 D6 真实 registration 与全部 ROI"><figcaption><strong>Stage00–02 · 真实 registration 与 segmentation 中间过程。</strong> A 是校准前的 raw mean，不做 overlay；B 是 registered mean；C 才显示真实 raw(red)/registered(green) overlay，用来检查校准后结构是否重合。D/E 是真实 frame-template 与 high-pass structural correlation QC。F/G 直接画出 Plane 3 与 Plane 4 的全部 accepted ROI——当前 D6 共 16 个 ROI（36–51），全部来自 frozen mask/label authority。H/I 保留类似 Suite2p/CaImAn 的中间证据：independent image peaks/candidates 与 ROI/neuropil SubRing geometry；J 汇总全部 16 个 ROI 的 SNR。 <a href="../../assets/real2p_registration_allroi_v3.pdf">PDF</a> · <a href="../../assets/real2p_registration_allroi_v3.svg">SVG</a></figcaption></figure>
+<figure class="manuscript-figure"><img src="../../assets/real2p_all16_roi_gallery_v3.png" alt="ANM54 D6 全部16个真实ROI单独展示"><figcaption><strong>Every ROI, individually.</strong> ROI36–51 全部逐个显示真实局部 crop、真实 frozen mask contour 和对应 SNR，不再只挑几个“代表 ROI”。 <a href="../../assets/real2p_all16_roi_gallery_v3.pdf">PDF</a> · <a href="../../assets/real2p_all16_roi_gallery_v3.svg">SVG</a></figcaption></figure>
 <figure class="manuscript-figure"><img src="../../assets/real2p_B_trial_signal_v2.png" alt="ANM54 D6 trial resolved signal"><figcaption><strong>Stage03–05 · Trial-resolved extraction 与 alignment。</strong> ROI40 的真实 morphology、一个真实 trial 的 raw/background/subtracted trace、全部 60 个真实 trial 的 baseline-z heatmap，以及 30 个 100E 与 30 个 100E+Q trial 的 condition mean ± SEM。虚线标记 frozen D6 analysis 使用的 5-s transition。 <a href="../../assets/real2p_B_trial_signal_v2.pdf">PDF</a> · <a href="../../assets/real2p_B_trial_signal_v2.svg">SVG</a></figcaption></figure>
 
 <figure class="manuscript-figure"><img src="../../assets/real2p_C_extraction_robustness_v2.png" alt="ANM54 D6 extraction robustness"><figcaption><strong>Stage04–06 · Signal-source robustness 与 cell-level effect。</strong> 16 个 cell 全部保留 raw、background、subtracted 三种 signal estimate，而不是压成一个 dashboard score。lick-adjusted sustained cell model 中 ROI40 为正（β=0.277，P=5.1×10⁻⁴，BH q=0.0245），ROI47 为负（β=−0.230，P=0.013；BH 后不显著）。frozen authority 使用 sub1，同时把 α-pooled 和 α=0.7 明确作为 sensitivity analysis；三者 split-half cell-rank r 分别为 0.606、0.762、0.468。 <a href="../../assets/real2p_C_extraction_robustness_v2.pdf">PDF</a> · <a href="../../assets/real2p_C_extraction_robustness_v2.svg">SVG</a></figcaption></figure>
@@ -32,6 +34,8 @@ Promise.all([fetch('../../data/tool_stages_v1.json').then(r=>r.json()),fetch('..
  document.getElementById('coldGrid').innerHTML=Object.keys(c.stages).sort().map(k=>{let x=c.stages[k];return '<div class="stage-card"><div class="stage-num">'+k+'</div><strong>'+x.name+'</strong><p class="status-pass">'+x.status+'</p><p class="small">'+Object.entries(x.metrics||{}).slice(0,3).map(y=>y[0]+'='+y[1]).join('<br>')+'</p></div>'}).join('');
 });
 </script></main><footer><div class="container">CaRMA 2P Portal · Tool V1</div></footer></body></html>
+
+[executed on device: zzhu-workstation (c5f9276d-4cc2-45a1-af76-820df2199a67)]
 
 [executed on device: zzhu-workstation (c5f9276d-4cc2-45a1-af76-820df2199a67)]
 
