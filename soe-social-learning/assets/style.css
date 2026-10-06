@@ -573,3 +573,15 @@ td strong { color: #233f5a; }
   .figure { padding: 4px; border-radius: 8px; margin:16px 0; }
   .mobile-note { display: block; }
 }
+
+
+/* v60: non-model-reader logic guide + mobile figure clarity */
+.reader-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 22px}
+.reader-step{min-width:0;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px}
+.reader-step b{display:block;margin:0 0 4px;color:var(--navy);font-size:11px;line-height:1.25;letter-spacing:.06em;text-transform:uppercase}
+.reader-step span{display:block;color:#53677b;font-size:13px;line-height:1.42}
+@media (max-width:620px){
+.reader-guide{grid-template-columns:1fr;gap:8px;margin:12px 0 18px}
+.reader-step{padding:10px 12px}.reader-step b{font-size:10.5px}.reader-step span{font-size:12.5px}
+details .figure{margin-top:10px}details summary{line-height:1.35}
+}

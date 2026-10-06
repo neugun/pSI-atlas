@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<style>.title{font:700 38px Arial;fill:#173a5e}.sub{font:400 24px Arial;fill:#657286}.panel{font:700 24px Arial;fill:#162131}.ct{font:700 27px Arial}.body{font:400 22px Arial;fill:#52677a}.foot{font:400 20px Arial;fill:#7b8797}</style>
+<rect width="1000" height="1000" fill="#fff"/>
+<text x="50" y="62" class="title">Cross-species evidence hierarchy</text>
+<text x="50" y="98" class="sub">Strong comparator evidence separated from nested/component/analogue support</text>
+<rect x="50" y="150" width="900" height="210" rx="22" fill="#fff" stroke="#dfe5ec" stroke-width="2"/><text x="78" y="192" class="panel">A</text><text x="78" y="230" class="ct" fill="#b9232f">Strong independent-unit support</text><text x="78" y="268" class="body">Human: 8/10 subjects, P=.00488</text><text x="78" y="302" class="body">Rat: 8/10 rats, P=.00488</text><rect x="50" y="390" width="900" height="210" rx="22" fill="#fff" stroke="#dfe5ec" stroke-width="2"/><text x="78" y="432" class="panel">B</text><text x="78" y="470" class="ct" fill="#555">Nested sensitivity</text><text x="78" y="508" class="body">Macaque: strong date-level pattern</text><text x="78" y="542" class="body">44 dates remain nested in only 2 monkeys</text><rect x="50" y="630" width="900" height="210" rx="22" fill="#fff" stroke="#dfe5ec" stroke-width="2"/><text x="78" y="672" class="panel">C</text><text x="78" y="710" class="ct" fill="#173a5e">Component / analogue support</text><text x="78" y="748" class="body">source credit, state value and sample→act recur</text><text x="78" y="782" class="body">kept separate from independent-unit replication</text>
+<text x="50" y="972" class="foot">Tap to open the full quantitative figure</text>
+</svg>

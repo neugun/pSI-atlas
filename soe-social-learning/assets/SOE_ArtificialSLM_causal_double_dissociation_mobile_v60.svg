@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<style>.title{font:700 38px Arial;fill:#173a5e}.sub{font:400 24px Arial;fill:#657286}.panel{font:700 24px Arial;fill:#162131}.ct{font:700 27px Arial}.body{font:400 22px Arial;fill:#52677a}.foot{font:400 20px Arial;fill:#7b8797}</style>
+<rect width="1000" height="1000" fill="#fff"/>
+<text x="50" y="62" class="title">Model lesion: access vs teaching</text>
+<text x="50" y="98" class="sub">Same frozen agent, different disrupted links</text>
+<rect x="50" y="140" width="900" height="210" rx="22" fill="#fff" stroke="#dfe5ec" stroke-width="2"/><text x="78" y="182" class="panel">A</text><text x="78" y="220" class="ct" fill="#173a5e">Episode chain</text><text x="78" y="258" class="body">social evidence → Observe sampling → outcome</text><text x="78" y="292" class="body">outcome → Active social-credit update → future policy</text><rect x="50" y="380" width="900" height="230" rx="22" fill="#fff" stroke="#dfe5ec" stroke-width="2"/><text x="78" y="422" class="panel">B</text><text x="78" y="460" class="ct" fill="#79c6cb">VB-like sensory mask</text><text x="78" y="498" class="body">information access / observation ↓</text><text x="78" y="532" class="body">teaching-related state is comparatively less affected</text><rect x="50" y="640" width="900" height="230" rx="22" fill="#fff" stroke="#dfe5ec" stroke-width="2"/><text x="78" y="682" class="panel">C</text><text x="78" y="720" class="ct" fill="#b9232f">JAWS-like teaching attenuation</text><text x="78" y="758" class="body">Active social-credit update ↓</text><text x="78" y="792" class="body">gross observation is comparatively preserved</text>
+<text x="50" y="972" class="foot">Tap to open the full quantitative figure</text>
+</svg>
