@@ -20,6 +20,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 .model-role{display:inline-block;padding:2px 7px;margin-right:4px;border-radius:999px;background:#eef1f4;font-size:.78rem}
 @media(max-width:720px){.model-layers{grid-template-columns:1fr 1fr}}@media(max-width:480px){.model-layers{grid-template-columns:1fr}}
 </style>
+
+<style id="model-explainer-v66">
+.model-map{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:16px 0}
+.model-family{border:1px solid #d9dde2;border-radius:10px;padding:12px;background:#fff}
+.model-family h4{font-size:14px;margin:0 0 6px}.model-family p{font-size:12px;line-height:1.45;margin:4px 0}
+.model-tag{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#666}
+.model-contract{border-left:3px solid #bd202b;padding:10px 12px;margin:14px 0;background:#fafafa;font-size:13px;line-height:1.55}
+@media(max-width:850px){.model-map{grid-template-columns:1fr 1fr}}@media(max-width:520px){.model-map{grid-template-columns:1fr}}
+</style>
 </head><body>
 <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-mark">S</span> SOE × SLM × VTA</div>
 <nav aria-label="中文页面导航"><a class="lang-btn" href="index.html">EN</a><a class="lang-btn active" href="index-zh.html">中文</a><a href="#overview">总览</a><a href="#phenotype">行为</a><a href="#information">信息价值</a><a href="#dynamics">动态</a><a href="#slm">SLM</a>
@@ -76,6 +85,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 </div></section>
 <section id="slm"><div class="container"><div class="section-head"><div><div class="section-kicker">核心计算模型</div><h2>默认行为模型定义为 SLM mechanistic state + generic choice persistence</h2></div><p>SLM 的目标是用紧凑、可实验检验的变量解释社会信息采样。choice persistence 吸收通用 serial choice bias，保留在默认行为模型中；policy、APE、source-specific credit 与 value 构成机制核心。</p></div>
 <div class="reader-guide" data-guide="slm"><div class="reader-step"><b>问题</b><span>什么样的紧凑计算能解释这些选择？</span></div><div class="reader-step"><b>怎么做</b><span>从弱 baseline、经典 RL，一直到 default SLM；flexible model 只做 capacity audit。</span></div><div class="reader-step"><b>意味着什么</b><span>SLM 保留接近 ceiling 的预测能力，同时留下可做神经和因果检验的变量。</span></div></div>
+<div class="model-contract"><strong>同一个 model zoo，不同的检验 contract。</strong> 全页使用一套冻结的模型注册表，但不同科学问题的预测目标并不相同。一个模型可以擅长<em>行为预测</em>，却不适合做<em>机制解释</em>；也可以只作为<em>容量上限</em>。因此只有在目标、held-animal split、可见输入和评价指标一致时才比较。“最佳模型”只表示在当前 contract 下最佳，不表示全局最佳。</div>
+<div class="model-map">
+<div class="model-family"><div class="model-tag">0 · 空模型 / 线性读出</div><h4>Prevalence、clock、current state、logistic readout</h4><p><b>原理：</b>不学习隐状态，直接对可观测变量做加权求和。</p><p><b>参数：</b>截距、特征权重；正则化只在训练 fold 内选择。</p><p><b>用途：</b>回答“不需要学习和非线性记忆，本身能预测多少”。</p></div>
+<div class="model-family"><div class="model-tag">1 · 经典学习规则</div><h4>RW / WSLS / Q / forgetting-Q / choice kernel</h4><p><b>原理：</b>用少数标量 value 随 outcome 更新；Q/RPE 的核心误差为 δ=r+γV′−V。</p><p><b>参数：</b>学习率/遗忘率、reward/value 权重、inverse temperature 或 logistic readout；choice-kernel 的衰减和权重。</p><p><b>用途：</b>可解释的 RL 替代模型与 choice persistence 对照。</p></div>
+<div class="model-family"><div class="model-tag">2 · 机制假说</div><h4>SLM core → default SLM</h4><p><b>原理：</b>多时间尺度 social memory 与 source/outcome-specific credit 决定 <b>Observe policy</b>；采样后、奖赏前产生 <b>APE</b>，奖赏后产生 source-specific value/credit update。</p><p><b>默认模型：</b>SLM core + 一个通用 choice-persistence 项，用于行为预测。</p><p><b>用途：</b>在 VTA/JAWS 结果之前先定义 policy、APE、post-outcome credit，使神经结果成为预先定义变量的检验。</p></div>
+<div class="model-family"><div class="model-tag">3 · 灵活非线性对照</div><h4>Full-history MLP / TinyRNN / generic recurrent agent</h4><p><b>原理：</b>非线性 hidden units 自由学习 history interaction，不强制 SLM 的机制结构。</p><p><b>参数：</b>hidden-state/hidden-layer 权重和正则化在训练数据内选择；不预设 SLM latent 的生物学含义。</p><p><b>用途：</b>容量上限、identifiability 压力测试和独立收敛验证；默认不作为机制参照系。</p></div>
+<div class="model-family"><div class="model-tag">4 · 动力学模型</div><h4>SWM（Social World Model）</h4><p><b>原理：</b>recurrent latent state 预测未来行为/社会动力学，并支持 counterfactual perturbation。</p><p><b>参数：</b>encoder、recurrent latent dynamics 与 readout 端到端学习；训练时不提供 SLM 方程。</p><p><b>用途：</b>检验 SLM-like coordinates 是否自行涌现，以及还存在什么额外 prospective state。SWM 属于 world/dynamics model；SLM 属于机制化 choice/value model，两者承担不同 contract。</p></div>
+</div>
+<div class="model-contract"><strong>后文统一术语。</strong> <b>Policy</b> = outcome 发生前选择 Observe 的概率/规则。<b>APE</b> = 采样到的社会信息是否把 learner 推向 Active 的 action-prediction error，发生在 reward 前，因此与 RPE 不同。<b>RPE</b> = outcome 后的 reward/value prediction error，所以经典 Q/RPE 主要是 post-outcome comparator。<b>Social credit</b> = sampled outcome 后分配给特定信息来源/结果的更新，JAWS 检验的是这个 credit assignment。linear/nonlinear 描述模型的函数形式；policy/RPE/APE 描述模型内部计算的变量，两者是正交概念，不应混成不同“模型名”。</div>
+
 
 <div class="model-framework" id="model-framework">
 <h3>模型地图：四类问题，统一一套术语</h3>
