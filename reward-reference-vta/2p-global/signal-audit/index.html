@@ -66,6 +66,10 @@
 </div>
 </div>
 
+<h2>Exact method validation across all source-auditable sessions</h2>
+<div class="policy"><strong>CaRMA v3 definition is now fixed and source-validated.</strong> The authoritative CaRMA imaging geometry is <code>ExtractVOlResp_SubRing_v3</code> with a 20-pixel local disk, 2-pixel cell exclusion and coefficient 1.0 — not an immediate 2-pixel ring. The corrected rerun passed 1149/1149 trial files across 20 sessions and 5 mice.</div>
+<figure class="figure manuscript-square"><a href="../assets/all_animals_carma_v3_vs_suite2p_v2.png" target="_blank"><img src="../assets/all_animals_carma_v3_vs_suite2p_v2.png" alt="All-animal CaRMA v3 vs Suite2p audit"></a><figcaption><strong>Source-level validation.</strong> Exact CaRMA v3 reconstructs frozen checkpoint traces at r=1.000; Suite2p remains very close (median checkpoint r=0.993). Across all 20 sessions, corrected CaRMA v3 and Suite2p traces have median r=0.994. The old immediate 2-pixel ring is rejected as a method-definition control.</figcaption></figure>
+<p><a href="all-animals/">Open the full all-animal extraction audit →</a></p>
 <h2>Frame-level registration QC</h2>
 <p>A mean image can look acceptable while individual frames still move. The audit therefore uses the <em>same raw and registered frames</em>. The bottom panels compare current-frame edges (red) against a reference image (cyan); white overlap means better alignment.</p>
 <div class="audit-grid">
@@ -85,10 +89,9 @@
 </div>
 </div>
 
-<h2>Provisional analysis policy</h2>
-<div class="policy"><strong>Do not replace ?=1 with another single constant yet.</strong> For every cell/session, retain four parallel views: <code>raw</code>, <code>background</code>, historical <code>raw?bg</code>, and a sensitivity family <code>raw???bg</code>. A biological conclusion is called extraction-robust only if its direction survives reasonable ? changes and is not explained by spatially broad background activity.</div>
-
-<p>The next authority step is to compute event-triggered pixel maps and cell/background spatial profiles for all 16 D6 cells, then propagate the same audit to the daily same-cell tracks. Cells whose conclusions change with signal source will be flagged rather than silently discarded.</p>
+<h2>Current analysis policy</h2>
+<div class="policy"><strong>No single corrected trace is allowed to define biology by itself.</strong> Every cell/session carries raw ROI, exact CaRMA v3 and Suite2p in parallel. Method agreement is a technical validation; raw fluorescence remains necessary because both accepted background methods can remove shared condition-locked activity.</div>
+<p>The next authority step is event-level biological sensitivity: continuous traces, PSTHs, trial heatmaps, per-cell effects and same-cell cross-day responses under all three signal definitions.</p>
 
 <p><a href="background_subtraction_audit.csv">16-cell audit CSV</a> ? <a href="cell40_alpha_sweep.csv">ROI40 ? sweep</a> ? <a href="../cell-atlas/daily-cell-matrix.html">Daily same-cell identity matrix</a> ? <a href="../pipeline/">Back to 2P pipeline</a></p>
 </div></section>
