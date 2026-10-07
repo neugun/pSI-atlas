@@ -1,99 +1,56 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2P signal extraction audit</title>
-<link rel="stylesheet" href="../assets/style.css">
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2P signal extraction audit</title><link rel="stylesheet" href="../assets/style.css">
 <style>
 .audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 .audit-card{border:1px solid #dfe5eb;border-radius:12px;padding:14px;background:#fff}
 .audit-card img,.audit-card video{display:block;width:100%;height:auto;border-radius:8px;background:#000}
 .audit-table{width:100%;border-collapse:collapse;font-size:13px}
-.audit-table th,.audit-table td{padding:8px 10px;border-bottom:1px solid #e5eaee;text-align:left}
+.audit-table th,.audit-table td{padding:8px 10px;border-bottom:1px solid #e5eaee;text-align:left;vertical-align:top}
 .audit-table th{background:#f6f9fb}
 .warning{border-left:4px solid #B2232E;background:#fff8f8;padding:14px 16px;border-radius:8px;margin:16px 0}
 .policy{border-left:4px solid #79C7D3;background:#f7fbfc;padding:14px 16px;border-radius:8px;margin:16px 0}
 @media(max-width:800px){.audit-grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body class="soe-page">
-<main>
+</style></head><body class="soe-page"><main>
 <section class="hero"><div class="container">
-<span class="eyebrow">Signal extraction audit ? ANM54 D6</span>
-<h1>Full local-background subtraction is not safe as the sole biological authority</h1>
-<p class="lede">The historical extractor used a local background mask and exported <code>sub = raw ? 1.0?background</code>. The audit below asks whether that operation removes only contamination or also condition-locked biology.</p>
+<span class="eyebrow">Signal extraction audit ? source-level validation</span>
+<h1>Background correction is now an explicit biological sensitivity analysis</h1>
+<p class="lede">Historical corrected traces are reproducible, but no corrected trace is allowed to define biology by itself. Raw ROI, exact CaRMA v3 background correction and Suite2p-style neuropil correction are carried in parallel.</p>
 </div></section>
-
 <section class="block"><div class="container">
-<div class="section-significance"><strong>Current result ? </strong>D6 background fluorescence is itself strongly condition-locked. A fixed ?=1 changes effect magnitude, significance and sometimes sign. Raw, background and corrected signals therefore have to remain visible together while image-level localization is checked.</div>
+<div class="section-significance"><strong>Current conclusion.</strong> CaRMA v3 and Suite2p give nearly identical corrected traces, so the original concern is not primarily a software-method mismatch. The remaining biological issue is that local background itself can contain condition-locked signal.</div>
 
-<figure class="figure manuscript-square">
-<a href="../assets/background_subtraction_audit_v2.png" target="_blank"><img src="../assets/background_subtraction_audit_v2.png" alt="Background subtraction audit"></a>
-<figcaption><strong>D6 background-subtraction audit.</strong> A, ROI40 effect decreases monotonically as ? rises. B, background condition effects track raw-cell effects. C, ?=1 attenuates many effects and flips some signs. D, baseline-fitted ? varies widely across cells; this is a diagnostic, not yet a recommended correction coefficient.</figcaption>
-</figure>
-
+<h2>Exact CaRMA v3 versus Suite2p across source-auditable recordings</h2>
 <div class="result-strip">
-<span><b>Raw significant</b> 4/16</span>
-<span><b>Background significant</b> 11/16</span>
-<span><b>Full-sub significant</b> 3/16</span>
-<span><b>Sign flips</b> 6/16</span>
-<span><b>Median |sub/raw ?|</b> 0.705</span>
-<span><b>|??1| &gt; 0.3</b> 12/16</span>
+<span><b>Trials passed</b> 1150 / 1150</span><span><b>Sessions</b> 21</span><span><b>Cell x session</b> 954</span><span><b>Animals</b> 5 source-level</span>
 </div>
+<div class="policy"><strong>CaRMA definition verified.</strong> <code>ExtractVOlResp_SubRing_v3</code> uses a 20-pixel centroid disk, excludes all cell masks plus a 2-pixel margin, and subtracts the background mean with coefficient 1.0. This exact geometry reproduces frozen historical D6 checkpoints at r=1.000. The previously tested immediate 2-pixel ring is rejected.</div>
+<figure class="figure manuscript-square"><a href="../assets/all_animals_carma_v3_vs_suite2p_exact_v3.png" target="_blank"><img src="../assets/all_animals_carma_v3_vs_suite2p_exact_v3.png" alt="Exact CaRMA v3 versus Suite2p"></a>
+<figcaption>Across the 21 source-level sessions, corrected-trace method agreement is uniformly high (session medians 0.992-0.998; median 0.994).</figcaption></figure>
+<p><a href="all-animals/">Open the full all-animal extraction audit ?</a></p>
 
-<div class="warning"><strong>What changes biologically?</strong> Three cells that are significant in the raw signal lose significance after ?=1 subtraction: ROI39, ROI45 and ROI48. ROI48 also changes sign. Conversely, ROI47 and ROI50 become significant only after subtraction. That pattern is too consequential to treat background subtraction as a harmless preprocessing detail.</div>
+<h2>D6 shows why raw signal must still be retained</h2>
+<div class="warning"><strong>Event-level result.</strong> CaRMA-v3 and Suite2p event effects agree strongly (r=0.987), yet both differ from raw because the local background carries condition-locked signal. Raw-to-CaRMA changes sign in 6/16 cells; raw-to-Suite2p changes sign in 4/16. Three of four raw-significant cells lose significance after either correction.</div>
+<figure class="figure manuscript-square"><a href="../assets/d6_event_effect_raw_carma_v3_suite2p_v3.png" target="_blank"><img src="../assets/d6_event_effect_raw_carma_v3_suite2p_v3.png" alt="D6 event-level background audit"></a>
+<figcaption>Same 60 D6 trials and same 16 cells. The 10-25 s condition effect is estimated with lick count and trial index covariates.</figcaption></figure>
 
-<h2>What the extractor actually did</h2>
+<h2>What the historical background actually contains</h2>
 <div class="audit-grid">
-<div class="audit-card">
-<img src="../assets/background_mask_geometry_v2.png" alt="Background mask geometry">
-<p>The local background is not an empty black region. The historical geometry uses a 20-px disk around each centroid, excludes detected somata after a small dilation, but still samples a large field of neuropil and local processes. In the examples above the background mask contains roughly ten to twenty times more pixels than the soma ROI.</p>
-</div>
-<div class="audit-card">
-<table class="audit-table">
-<thead><tr><th>Quantity</th><th>D6 result</th></tr></thead>
-<tbody>
-<tr><td>Historical correction</td><td><code>raw ? 1.0?background</code></td></tr>
-<tr><td>ROI40 raw ?</td><td>0.649</td></tr>
-<tr><td>ROI40 background ?</td><td>1.417</td></tr>
-<tr><td>ROI40 ?=1 ?</td><td>0.277</td></tr>
-<tr><td>ROI40 background-covariate ?</td><td>0.095, P=0.276</td></tr>
-<tr><td>Baseline-fitted ? range</td><td>?0.03 to 2.67</td></tr>
-<tr><td>Baseline-fitted ? median</td><td>1.16</td></tr>
-<tr><td>Raw/background ? correlation</td><td>r=0.86</td></tr>
-</tbody></table>
-</div>
-</div>
+<div class="audit-card"><img src="../assets/background_mask_geometry_v2.png" alt="Historical background mask geometry"><p>CaRMA v3 samples a broad local field around each soma while excluding detected cell masks. It therefore includes neuropil, processes and potentially other local event-locked fluorescence.</p></div>
+<div class="audit-card"><table class="audit-table"><thead><tr><th>D6 quantity</th><th>Result</th></tr></thead><tbody>
+<tr><td>ROI40 raw condition effect</td><td>0.649</td></tr><tr><td>ROI40 CaRMA background effect</td><td>1.417</td></tr><tr><td>ROI40 CaRMA-v3 corrected effect</td><td>0.277</td></tr><tr><td>ROI40 Suite2p corrected effect</td><td>0.391</td></tr>
+</tbody></table></div></div>
 
-<h2>Exact method validation across all source-auditable sessions</h2>
-<div class="policy"><strong>CaRMA v3 definition is now fixed and source-validated.</strong> The authoritative CaRMA imaging geometry is <code>ExtractVOlResp_SubRing_v3</code> with a 20-pixel local disk, 2-pixel cell exclusion and coefficient 1.0 — not an immediate 2-pixel ring. The corrected rerun passed 1149/1149 trial files across 20 sessions and 5 mice.</div>
-<figure class="figure manuscript-square"><a href="../assets/all_animals_carma_v3_vs_suite2p_v2.png" target="_blank"><img src="../assets/all_animals_carma_v3_vs_suite2p_v2.png" alt="All-animal CaRMA v3 vs Suite2p audit"></a><figcaption><strong>Source-level validation.</strong> Exact CaRMA v3 reconstructs frozen checkpoint traces at r=1.000; Suite2p remains very close (median checkpoint r=0.993). Across all 20 sessions, corrected CaRMA v3 and Suite2p traces have median r=0.994. The old immediate 2-pixel ring is rejected as a method-definition control.</figcaption></figure>
-<p><a href="all-animals/">Open the full all-animal extraction audit →</a></p>
 <h2>Frame-level registration QC</h2>
-<p>A mean image can look acceptable while individual frames still move. The audit therefore uses the <em>same raw and registered frames</em>. The bottom panels compare current-frame edges (red) against a reference image (cyan); white overlap means better alignment.</p>
-<div class="audit-grid">
-<div class="audit-card">
-<img src="../assets/D6_T01_S3_raw_vs_registered.webp" alt="Animated raw-versus-registered frame QC" loading="eager">
-<p class="note"><strong>Inline animated fallback.</strong> This is rendered directly by the page so the frame sequence remains visible even if the native video player is blocked.</p>
-<video controls playsinline muted loop preload="metadata" poster="../assets/D6_T01_S3_frame_strip.png">
-<source src="../assets/D6_T01_S3_raw_vs_registered.mp4" type="video/mp4">
-</video>
-<p><strong>D6 ? S3 ? Trial 1.</strong> All 192 frames are inspected. High-pass frame-to-reference similarity rises from mean r=0.042 before registration to r=0.171 after registration (~4.1?). The registered sequence is clearly more stable, although the edge overlay still shows residual non-rigid mismatch and intensity/z variation that mean-image QC alone would miss.</p>
-<p><a href="../assets/frame_registration_metrics.csv">Frame-level metrics CSV</a> ? <a href="../assets/D6_T01_S3_frame_strip.png">Open still frame</a></p><img src="../assets/frame_registration_metrics.png" alt="Frame registration metrics"><p class="note">The raw movie contains a small number of large displacement outliers; after registration the frame-to-template metric becomes much more stable. The image movie remains the primary QA because correlation alone cannot reveal non-rigid or z-axis mismatch.</p>
-</div>
-<div class="audit-card">
-<h3>What this movie can and cannot establish</h3>
-<p><strong>It can establish:</strong> whether registration reduces frame-to-frame displacement, whether ROI boundaries remain over the same structures, and whether large transient shifts remain.</p>
-<p><strong>It cannot by itself establish:</strong> whether a condition-locked background response is neuropil biology, out-of-plane fluorescence, hemodynamic/global intensity change, or residual motion. That requires event-triggered pixel maps and signal-source comparisons on the same trials.</p>
-</div>
-</div>
+<p>The player now has an animated WebP fallback and an H.264/yuv420p MP4. The frame sequence uses real raw and registered D6 frames, not a mean-image surrogate.</p>
+<div class="audit-grid"><div class="audit-card">
+<img src="../assets/D6_T01_S3_raw_vs_registered.webp" alt="Animated raw versus registered frame QC" loading="eager">
+<video controls playsinline muted loop preload="metadata" poster="../assets/D6_T01_S3_frame_strip.png"><source src="../assets/D6_T01_S3_raw_vs_registered.mp4" type="video/mp4"></video>
+<p>D6 S3 Trial 1, 192 frames. High-pass frame-to-reference similarity increases from mean r=0.042 before registration to r=0.171 after registration.</p>
+<p><a href="../assets/D6_T01_S3_raw_vs_registered.mp4">Open MP4 directly</a> ? <a href="../assets/frame_registration_metrics.csv">Frame metrics CSV</a></p>
+</div><div class="audit-card"><img src="../assets/frame_registration_metrics.png" alt="Registration metrics"><p>Registration is visibly improved but residual non-rigid and z/intensity variation remains. Registration QC therefore stays separate from signal-extraction QC.</p></div></div>
 
-<h2>Current analysis policy</h2>
-<div class="policy"><strong>No single corrected trace is allowed to define biology by itself.</strong> Every cell/session carries raw ROI, exact CaRMA v3 and Suite2p in parallel. Method agreement is a technical validation; raw fluorescence remains necessary because both accepted background methods can remove shared condition-locked activity.</div>
-<p>The next authority step is event-level biological sensitivity: continuous traces, PSTHs, trial heatmaps, per-cell effects and same-cell cross-day responses under all three signal definitions.</p>
-
-<p><a href="background_subtraction_audit.csv">16-cell audit CSV</a> ? <a href="cell40_alpha_sweep.csv">ROI40 ? sweep</a> ? <a href="../cell-atlas/daily-cell-matrix.html">Daily same-cell identity matrix</a> ? <a href="../pipeline/">Back to 2P pipeline</a></p>
-</div></section>
-</main>
-</body></html>
+<h2>Current authority rule</h2>
+<div class="policy"><strong>No single corrected trace is the sole authority.</strong> Raw ROI, exact CaRMA v3 and Suite2p are retained together. A biological conclusion is marked extraction-robust only when its direction remains interpretable across these views. The processed-only five mice remain in their own capability tier and are not given a fake framewise re-extraction.</div>
+<p><a href="../data/d6_event_effect_raw_carma_v3_suite2p_v3.csv">D6 per-cell event table</a> ? <a href="../data/all_animals_carma_v3_vs_suite2p_session_metrics_v3.csv">All-session method table</a> ? <a href="../cell-atlas/daily-cell-matrix.html">Daily same-cell matrix</a> ? <a href="../pipeline/">Back to pipeline</a></p>
+</div></section></main></body></html>
