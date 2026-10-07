@@ -794,6 +794,26 @@
       </figcaption>
     </figure>
 
+
+    <div id="fig5-validation" class="card">
+      <h3>图 5 新增有效性审计：长进食段筛选与留一动物验证（10 月 7 日）</h3>
+      <p><strong>为何要查：</strong>11 只动物共有 402 个进食段，其中 203 个短于 5 秒；短进食段也可能存有 2–5 秒多巴胺数值，但那时动物可能已经停吃。原图 5 使用区块切换后的 192 个至少 5 秒的进食段。区块后的较低奖赏有 65/197 个达到 5 秒，较高奖赏有 127/190 个，因此进入持续期分析的概率本身与当前奖赏密切相关。</p>
+      <p><strong>全新的敏感性模型，不是重现旧图中的 +1.458。</strong> 使用历史对比代理 C_lick_a0.1，控制当前奖赏、采样次数、会话进度、区块时间与动物差异以后，持续期相对早期的多巴胺系数：≥5 秒为 +1.305（P=.00536），≥7 秒为 +1.664（P=.000084），≥10 秒为 +1.563（P=.000920）。额外控制进食段时长，≥5 秒系数降为 +1.148（P=.0327）；≥20 秒且调整时长则为 −0.304（P=.609）。以上 P 值按动物聚类计算。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>整只动物留出预测</th><th>历史对比使均方误差下降</th><th>改善动物数</th><th>动物配对 P 值</th></tr></thead>
+          <tbody>
+            <tr><td>≥5 秒，不调时长</td><td>2.50%</td><td>7/11</td><td>.207</td></tr>
+            <tr><td>≥5 秒，调整时长</td><td>2.48%</td><td>8/11</td><td>.139</td></tr>
+            <tr><td>≥10 秒，不调时长（探索性）</td><td>6.86%</td><td>9/11</td><td>.0122</td></tr>
+            <tr><td>≥10 秒，调整时长（探索性）</td><td>1.04%</td><td>5/11</td><td>.382</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>科学解释：</strong>样本内的持续期历史效应保持正向是积极证据，但在主要的 5 秒阈值下，尚不能证明历史变量显著改善对全新动物的预测。10 秒阈值是在多阈值检查中得到的探索性结果，调整进食时长后不稳健，不能当作确定发现。统计只涉及 11 个动物聚类。原图 5 的时序模型和这次的独立敏感性模型不能混为一谈；完整逐舔动作与原始多巴胺仍待重新分析。</p>
+      <p><strong>核查材料：</strong><a href="../docs/FIG5_BOUT_SURVIVAL_AUDIT_CN_v1_20261007.md">中文详细方法和局限</a> · <a href="../data/FIG5_bout_duration_sensitivity_v1.csv">时长阈值敏感性</a> · <a href="../data/FIG5_nested_LOAO_contrast_gain_v1.csv">跨动物验证</a> · <a href="../data/FIG5_survival_selection_logit_v1.csv">样本选择模型</a>。</p>
+    </div>
+
     <div class="figure-grid">
       <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">

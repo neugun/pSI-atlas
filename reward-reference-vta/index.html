@@ -783,6 +783,26 @@
       </figcaption>
     </figure>
 
+
+    <div id="fig5-validation" class="card">
+      <h3>New Fig. 5 validity audit: bout survival and held-mouse prediction (October 7)</h3>
+      <p><strong>Why we checked:</strong> 402 recorded bouts from 11 mice include 203 shorter than 5 s; DA reported for a 2–5 s window on those shorter bouts may include post-feeding signal. The original Fig. 5 uses 192 post-switch bouts lasting at least 5 s. Across eligible post-switch bouts, 65/197 lower-quality and 127/190 higher-quality bouts reach 5 s, so selection into the sustained epoch is strongly reward-dependent.</p>
+      <p><strong>New sensitivity fits—not a reproduction of the original +1.458 coefficient.</strong> With the historical contrast proxy C_lick_a0.1, 11-animal fixed-effect/clustered analysis of 2–5 s minus 0–2 s DA gives beta=+1.305 (P=.00536) at >=5 s, +1.664 (P=.000084) at >=7 s, and +1.563 (P=.000920) at >=10 s; adding bout duration reduces the >=5 s effect to +1.148 (P=.0327). At >=20 s, the adjusted effect is -0.304 (P=.609), so this dependence must remain explicit.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Strict held-mouse test</th><th>Historical contrast MSE gain</th><th>Mice improving</th><th>Animal paired P</th></tr></thead>
+          <tbody>
+            <tr><td>Bout >=5 s, without duration adjustment</td><td>+2.50%</td><td>7/11</td><td>.207</td></tr>
+            <tr><td>Bout >=5 s, adjusting duration</td><td>+2.48%</td><td>8/11</td><td>.139</td></tr>
+            <tr><td>Bout >=10 s, without duration adjustment (exploratory)</td><td>+6.86%</td><td>9/11</td><td>.0122</td></tr>
+            <tr><td>Bout >=10 s, adjusting duration (exploratory)</td><td>+1.04%</td><td>5/11</td><td>.382</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Interpretation:</strong> positive in-sample temporal history coefficients are encouraging, but at the prespecified >=5 s threshold the incremental prediction of entirely new mice is not established. The >=10 s signal was found among several threshold checks and loses significance with duration adjustment; it is not confirmatory. Mouse-clustered P values are based on only 11 clusters. Original Fig. 5 and the new independent sensitivity model must not be conflated. Full licking microstructure and raw photometry still need reanalysis.</p>
+      <p><strong>Auditable outputs:</strong> <a href="docs/FIG5_BOUT_SURVIVAL_AUDIT_EN_v1_20261007.md">methods and limitations</a> · <a href="data/FIG5_bout_duration_sensitivity_v1.csv">duration sensitivity</a> · <a href="data/FIG5_nested_LOAO_contrast_gain_v1.csv">held-mouse tests</a> · <a href="data/FIG5_survival_selection_logit_v1.csv">sample selection</a>.</p>
+    </div>
+
     <div class="figure-grid">
       <figure class="figure strict-panels">
       <div class="strict-panel-grid cols2">
