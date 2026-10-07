@@ -788,6 +788,17 @@
       <h3>New Fig. 5 validity audit: bout survival and held-mouse prediction (October 7)</h3>
       <p><strong>Why we checked:</strong> 402 recorded bouts from 11 mice include 203 shorter than 5 s; DA reported for a 2–5 s window on those shorter bouts may include post-feeding signal. The original Fig. 5 uses 192 post-switch bouts lasting at least 5 s. Across eligible post-switch bouts, 65/197 lower-quality and 127/190 higher-quality bouts reach 5 s, so selection into the sustained epoch is strongly reward-dependent.</p>
       <p><strong>New sensitivity fits—not a reproduction of the original +1.458 coefficient.</strong> With the historical contrast proxy C_lick_a0.1, 11-animal fixed-effect/clustered analysis of 2–5 s minus 0–2 s DA gives beta=+1.305 (P=.00536) at >=5 s, +1.664 (P=.000084) at >=7 s, and +1.563 (P=.000920) at >=10 s; adding bout duration reduces the >=5 s effect to +1.148 (P=.0327). At >=20 s, the adjusted effect is -0.304 (P=.609), so this dependence must remain explicit.</p>
+
+      <div class="figure-grid">
+        <figure class="figure">
+          <img src="assets/Fig5_bout_selection_audit_v1.png" alt="Minimum bout-duration threshold versus sustained-minus-early historical contrast coefficient, with mouse-cluster standard errors. Both models use task and prior-sampling controls; the orange series additionally adjusts bout duration.">
+          <figcaption><strong>New audit panel A.</strong> Contrast slopes across >=5/7/10/15/20 s cutoffs; points are descriptive model coefficients ± one animal-clustered SE (11 mice, nested subsets with n=192/154/116/87/69), <em>not</em> independent estimates across thresholds. <a href="assets/Fig5_bout_selection_audit_v1.svg">Editable SVG</a>.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/Fig5_heldmouse_increment_audit_v1.png" alt="Nested leave-one-animal-out change in predictive MSE after adding contrast to identical control models. The number labels indicate how many of 11 mice improve.">
+          <figcaption><strong>New audit panel B.</strong> Fully held-mouse nested CV incremental MSE improvement (%); labels are animals with improvement out of 11, not confidence limits. At >=5 s, mouse-paired P=.207 without duration adjustment and P=.139 with duration adjustment. >=10 s comparisons are exploratory. <a href="assets/Fig5_heldmouse_increment_audit_v1.svg">Editable SVG</a>.</figcaption>
+        </figure>
+      </div>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Strict held-mouse test</th><th>Historical contrast MSE gain</th><th>Mice improving</th><th>Animal paired P</th></tr></thead>
