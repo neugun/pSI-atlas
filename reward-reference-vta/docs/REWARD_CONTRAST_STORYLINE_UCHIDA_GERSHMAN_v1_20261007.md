@@ -256,17 +256,9 @@ Use a fully crossed history × current reward design:
 
 Then separately manipulate explicit cue expectation.
 
-This orthogonalizes:
+The design independently manipulates sampled history, current reward U, and explicitly trained cue expectation E, with reward identity and action measured or balanced. It improves empirical support for U and R, and for cue-expectation contrasts. However, C=U−R and cue-RPE=U−E are algebraically derived: they cannot be fitted alongside their constituent columns as independent free regressors.
 
-- U: current reward;
-- R: sampled history/reference;
-- C: U-R;
-- classical RPE;
-- unsigned surprise;
-- reward identity;
-- action.
-
-At single-cell resolution, compare these models on held-out trials.
+At single-cell resolution, use held-out trials to compare unconstrained U+R against a constrained C model, cue-based RPE against history-augmented TD/RNN, and action/state-controlled versions of each. Behaviorally check that cue expectation is actually matched.
 
 ### If the same cells encode C across matched probes and days
 

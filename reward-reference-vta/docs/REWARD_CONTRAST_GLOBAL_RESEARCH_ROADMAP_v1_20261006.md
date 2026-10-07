@@ -23,7 +23,7 @@ The program has evolved through five increasingly stringent questions.
    Quinine and stimulation datasets suggest partial transfer of reference memory and dissociation between neural memory and behavioral expression. Social contrast is the major next domain.
 
 5. **How is contrast represented at single-cell and molecular resolution?**
-   Longitudinal 2P/CaRMA data show distributed, animal-dependent coding rather than a simple stable concentration-preferring cell class. The next decisive experiment must orthogonalize current reward, reference history, identity, RPE, salience, and action within the same recorded neurons.
+   Longitudinal 2P/CaRMA data show distributed, animal-dependent coding rather than a simple stable concentration-preferring cell class. The next decisive experiment must cross sampled history, current reward and independently trained cue expectation within the same recorded neurons, while controlling reward identity, salience and action. Derived C and RPE terms are competing model hypotheses, not mutually independent regressors.
 
 ---
 

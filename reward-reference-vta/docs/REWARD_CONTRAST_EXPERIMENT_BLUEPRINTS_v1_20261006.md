@@ -304,9 +304,11 @@ Make cue/context expectation and reward history independently manipulable.
 Use contexts that predict the **same current probe**, while recent reward histories differ.
 
 Expected identical probe:
-- predicted outcome is the same;
-- classical RPE should be approximately zero;
+- train and behaviorally verify cue-based predictions in each history;
+- the cue-based RPE may be small for the expected probe; history-aware generalized RPE need not be zero;
 - C can still differ because R differs.
+
+Identifiability guardrail: C=U−R and cue-RPE=U−E are deterministic transforms, so do not enter U/R/C or U/E/RPE together as unrestricted regression columns. Cross U, sampled history R and cue expectation E by design, and compare the constrained C model with free U+R, cue-RPE, and augmented-state TD/RNN in held-out data.
 
 Then add catch trials:
 - unexpectedly high reward;
@@ -335,7 +337,7 @@ Separate:
 RPE-like cells:
 - respond strongly to unexpected outcomes;
 - diminish when outcome is predicted;
-- should not differentiate two equally predicted identical probes solely because history differs.
+- should not differentiate two equally cue-predicted identical probes if the relevant inferred value state is truly matched; history-augmented RPE models may still differentiate.
 
 Contrast-like cells:
 - differentiate identical expected probes according to recent reference.

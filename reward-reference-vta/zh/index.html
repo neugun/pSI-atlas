@@ -219,7 +219,7 @@
           <span class="mechanism-label">模型 B</span>
           <h4>持续性 参照值-相对 状态 / 对照模型 信号</h4>
           <p>近期 历史 在 进食段 前建立 参照值；当前 奖赏 真正被 采样 后，持续进行的 多巴胺 信号 本身持续携带 当前 奖赏 <strong>U</strong> 与 参照值 <strong>R</strong> 的 有方向 比较。</p>
-          <div class="mechanism-prediction"><b>关键预测：</b>即使 显式 线索 expectation 已经让 经典 RPE≈0，完全相同且同样 expected 的 探测阶段 仍会因为不同 历史 在 持续性 进食 阶段分离，而且该 信号 会因果改变 持续性。</div>
+          <div class="mechanism-prediction"><b>关键预测：</b>即使经过行为验证的线索期待使线索 RPE 很小，相同的当前探测奖赏仍可能因历史不同而在持续摄食期分离；这不排除历史相关的广义 RPE，而且该 信号 会因果改变 持续性。</div>
         </article>
       </div>
       <div class="mechanism-decision">
@@ -915,7 +915,7 @@
         <tbody>
           <tr><td><strong>Acute 食物 相对价值</strong></td><td>2-min H→L 对比 L→L；L→H 对比 H→H。窗口：−30–0 s、0–10/20 s、0–30 s、30–90 s、90–120 s。</td><td>VTA 多巴胺、进食段 initiation/时长、舔舐 适应、pause、re-engagement、终止 终止风险。</td><td>快速 有方向 相对价值 对比 当前 奖赏 与 generic transition。</td><td><span class="status-tag priority">优先</span></td></tr>
           <tr><td><strong>持续性 相同条件的探测阶段 相对价值</strong></td><td>约30-min H→L 对比 L→L，或30-min 基线 → 60-min rich/neutral/lean 诱导 → 完全相同 8% sucrose 探测阶段。</td><td>0–30 s、30–120 s、2–5、5–10、10–20、20–30 min；舔舐 microstructure 与 多巴胺。</td><td>参照值 持续性、恢复 与 多时间尺度 updating。</td><td><span class="status-tag priority">优先</span></td></tr>
-          <tr><td><strong>相对价值 对比 RPE</strong></td><td>所有 情境 都预测相同 探测阶段，使 expected-探测阶段 RPE≈0 但 C 不同；再加入 unexpected 高/低 catch 探测阶段 与 intraoral 控制实验。</td><td>多巴胺、acceptance、seeking、进食、surprise/omission。</td><td>参照值 相对价值 对比 经典 线索-RPE / 无符号 surprise。</td><td><span class="status-tag design">已设计</span></td></tr>
+          <tr><td><strong>相对价值 对比 RPE</strong></td><td>各历史条件中使用期待已验证的相同探测奖赏，使线索 RPE 较小但 C 不同；不能假定广义 RPE 为零；再加入 unexpected 高/低 catch 探测阶段 与 intraoral 控制实验。</td><td>多巴胺、acceptance、seeking、进食、surprise/omission。</td><td>参照值 相对价值 对比 经典 线索-RPE / 无符号 surprise。</td><td><span class="status-tag design">已设计</span></td></tr>
           <tr><td><strong>社会 相对价值</strong></td><td>雌鼠 始终存在；交互项 ON 对比 暴露-仅 OFF。ON→OFF 对比 OFF→OFF；OFF→ON 对比 ON→ON。</td><td>approach、investigation、withdrawal、USV、VTA 多巴胺、pSI 阈值/I50、attack latency 与 redirection。</td><td>在固定 社会身份 / 感觉 暴露 下建立干净的 社会 参照值。</td><td><span class="status-tag priority">优先</span></td></tr>
           <tr><td><strong>社会 身份/泛化</strong></td><td>约30-min 雌鼠 A 历史 → 雌鼠 A OFF 探测阶段；再做 雌鼠 A 历史 → novel 雌鼠 B OFF 探测阶段。</td><td>行为 迁移、多巴胺、pSI 输入-输出 curve、decay。</td><td>身份-特异 社会 参照值 对比 广义 社会-价值 状态。</td><td><span class="status-tag design">已设计</span></td></tr>
           <tr><td><strong>Single-细胞 crossed 参照值</strong></td><td>fully cross 高/低 历史 × 高/低 当前 探测阶段；关键 条件 尽量获得约40–60次可分析重复。</td><td>纵向2P/CaRMA、相同条件的细胞 coding、群体 几何结构、行为。</td><td>同一神经元中区分 当前 价值、参照值/历史、相对价值、RPE、显著性、身份、行为。</td><td><span class="status-tag priority">最高优先</span></td></tr>
@@ -926,6 +926,10 @@
     </div>
 
 
+    <div class="callout" id="program-audit">
+      <strong>全局科学审计 · 2026 年 10 月 7 日。</strong> Fig.0–7、扩展数据、Natural/QE/Stim13、31 类模型、单细胞准备状态和后续实验已经统一整理。<a href="../docs/REWARD_CONTRAST_GLOBAL_STATUS_EXECUTION_CN_v2_20261007.md"><strong>打开完整证据表与执行方案</strong></a>。关键更正：C=U−R 是由 U、R 计算出的对比量，不能同时作为第三个自由自变量；线索 RPE=U−E 也一样。应交叉操纵历史、显式线索期待 E 和当前结果 U，再在留出数据上竞争受约束的 C、线索 RPE 与扩充状态的 TD/RNN。物理刺激相同并不保证所有广义 RPE 为零。
+    </div>
+
     <div id="future-experiments" class="future-experiments">
       <div class="section-head compact">
         <div>
@@ -933,13 +937,13 @@
           <h3>每一个实验都对应当前故事中的一个明确未解决问题，而不是单纯继续增加实验条件。</h3>
         </div>
         <p>
-          核心是先让 <strong>U、R、C、RPE、身份、内部状态与行为可以被独立估计</strong>，再问这些变量如何由同一神经元、同一回路和同一分子类型实现。
+          核心是独立操纵<strong>历史参照 R、线索期待 E 和当前奖赏 U</strong>；再用留出验证比较受约束的 C=U−R、线索 RPE 和扩充状态模型，并控制身份、内部状态与动作。
         </p>
       </div>
 
       <div class="callout">
         <strong>下一轮实验的执行顺序。</strong>
-        不再同时铺开很多互不相干的条件。第一步先在一个食物任务里让 <strong>U、R、C、经典 RPE 与行为可以同时、独立估计</strong>；第二步把完全相同的任务搬到纵向单细胞记录；食物相对价值轴冻结之后，再把跨奖赏和社会迁移当作真正的泛化检验。
+        不再同时铺开很多互不相干的条件。第一步先在一个食物任务里<strong>分别操纵 U、R 和线索期待 E，再区分 C 与 RPE 的不同模型</strong>；第二步把完全相同的任务搬到纵向单细胞记录；食物相对价值轴冻结之后，再把跨奖赏和社会迁移当作真正的泛化检验。
       </div>
       <div class="cards-3">
         <article class="card good"><h3>优先级 A——先把食物相对价值做成可辨识任务</h3><p>同一动物完成 2×2 的“历史 × 当前奖赏”，再加入“两个历史都预测同一个完全相同探测奖赏”以及意外高/低奖赏。线索、第一次采样、0–2 秒、2–5 秒分开分析。主要终点是：同一当前奖赏在不同历史后，持续性 VTA 多巴胺与进食终止风险是否仍不同。</p></article>
@@ -974,7 +978,7 @@
       <details class="experiment-blueprint" open>
         <summary><strong>3. 奖赏相对价值 vs. 经典 RPE：在同一只动物里拆开两种多巴胺计算</strong></summary>
         <div class="blueprint-grid">
-          <div><b>设计</b><span>不同历史条件都预测同一个当前探测奖赏，使预期探测时的经典 RPE≈0；但由于 R 不同，C 仍不同。再加入意外高/低奖赏和 omission 试次，显式建立 RPE 轴。</span></div>
+          <div><b>设计</b><span>用独立训练的线索让相同探测奖赏具有可验证的相似期待；线索 RPE 可以接近零，但历史不同仍可使 C 不同。广义状态 RPE 不一定为零；另加意外高/低奖赏和遗漏试次识别它。</span></div>
           <div><b>时间分辨</b><span>分别看线索、第一次采样、0–2 秒、持续性 2–5 秒和进食段结束后，而不是把多巴胺压缩成一个数。</span></div>
           <div><b>预测</b><span>RPE 型细胞应对意外结果反应更强，并在结果被预测后减弱；相对价值型细胞则应在两个同样可预测、物理完全相同的探测奖赏上，仍因近期 R 不同而分离。</span></div>
           <div><b>控制</b><span>加入口腔内给液的机制版本，最大限度降低接近/寻找动作的混杂。</span></div>
@@ -1028,7 +1032,7 @@
         </div>
         <figcaption><strong>图 8｜食物 奖赏对比：下一阶段最关键的 任务 模型族。</strong>
           <strong>A，</strong>完全交叉 历史 × 当前 奖赏 让 U 与 R 可以独立估计；真正关键的是在 当前 奖赏 完全相同的情况下比较不同 已采样 历史。
-          <strong>B，</strong>完全相同 expected 探测阶段 可以让 线索-RPE≈0，但 C=U−R 仍因 历史 不同而不同；unexpected catch 结果 则在同一动物中提供明确的 RPE 轴。
+          <strong>B，</strong>经过行为校准的相同探测奖赏可降低线索-RPE，但 C=U−R 仍可随历史改变；广义 RPE 需要另行比较；unexpected catch 结果 则在同一动物中提供明确的 RPE 轴。
           <strong>C，</strong>一个可以被证伪的 conceptual 预测：早期 transient 可能更像 预测 误差，而 持续性 进食-phase activity 更像 历史-相对 相对价值。C 为预测示意，不是数据。
         </figcaption>
       </figure>

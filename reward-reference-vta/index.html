@@ -27,7 +27,7 @@
       <a href="#fig7">Fig. 7</a>
       <a href="2p-global/">2P global</a>
       <a href="#future-experiments">Future exp.</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#roadmap">Roadmap</a><a href="#program-audit">Audit</a>
       <a href="#limits">Limits</a>
       <a href="#supplement">Supplement</a>
       <a class="lang-link" href="zh/">中文</a>
@@ -216,7 +216,7 @@
           <span class="mechanism-label">Model B</span>
           <h4>Sustained reference-relative state / comparator signal</h4>
           <p>Recent history establishes a reference before the bout, and after sampling the ongoing dopamine signal itself carries a sustained signed comparison between current reward <strong>U</strong> and reference <strong>R</strong>.</p>
-          <div class="mechanism-prediction"><b>Key prediction:</b> even when explicit cue expectation makes classical RPE ~0, the same expected probe should still separate by history during sustained consumption, and that signal should causally control persistence.</div>
+          <div class="mechanism-prediction"><b>Key prediction:</b> with empirically matched cue predictions, identical probes can still differ by history during sustained consumption; generalized state-dependent RPE remains an alternative until directly compared.</div>
         </article>
       </div>
       <div class="mechanism-decision">
@@ -967,6 +967,10 @@
     </div>
 
 
+    <div class="callout" id="program-audit">
+      <strong>Global audit · October 7, 2026.</strong> Figures 0–7, Extended Data, Natural/QE/Stim13 evidence, 31 model families, single-cell readiness and next-step experiments are now consolidated. <a href="docs/REWARD_CONTRAST_GLOBAL_STATUS_EXECUTION_EN_v2_20261007.md"><strong>Read the complete evidence ledger and execution gates</strong></a>. Critical identifiability correction: C=U−R is a deterministic contrast, not a third independent regression column alongside U and R. Similarly a cue RPE of U−E is derived from its components. Cross history, explicit cue expectation and delivered U, then compare constrained comparator vs cue-RPE vs augmented-state TD/RNN models in held-out data. Matching a physical probe does not guarantee zero generalized RPE.
+    </div>
+
     <div id="future-experiments" class="future-experiments">
       <div class="section-head compact">
         <div>
@@ -974,13 +978,13 @@
           <h3>Each experiment is designed to eliminate one specific ambiguity in the current story.</h3>
         </div>
         <p>
-          The priority is not to add more conditions indiscriminately. It is to make <strong>U, R, C, RPE, identity, internal state and action independently identifiable</strong>, then ask how those variables are represented by the same neurons and circuits.
+          The priority is not to add conditions indiscriminately: independently manipulate <strong>history R, cue expectation E and current reward U</strong>, then distinguish constrained C=U−R from cue-RPE and augmented-state alternatives in held-out tests while controlling identity, internal state and action.
         </p>
       </div>
 
       <div class="callout">
         <strong>Execution order for the next experiments.</strong>
-        The next phase should not branch into many unrelated manipulations. First make <strong>U, R, C, classical RPE and action jointly identifiable in one food task</strong>; then carry that exact task into longitudinal single-cell recording; only after the food contrast axis is frozen should cross-reward and social transfer be treated as a generalization test.
+        The next phase should not branch into many unrelated manipulations. First make <strong>U, reference-history and cue expectation separately manipulable, and their competing C/RPE models identifiable in one food task</strong>; then carry that exact task into longitudinal single-cell recording; only after the food contrast axis is frozen should cross-reward and social transfer be treated as a generalization test.
       </div>
       <div class="cards-3">
         <article class="card good"><h3>Priority A — identifiable food contrast</h3><p>Use a within-animal 2×2 history × current-reward task, add expected identical probes plus unexpected high/low catch outcomes, and analyze cue/first-sample/0–2 s/2–5 s separately. Primary endpoints are sustained VTA dopamine and bout-termination hazard for the same current reward after different histories.</p></article>
@@ -1015,7 +1019,7 @@
       <details class="experiment-blueprint" open>
         <summary><strong>3. Contrast versus classical RPE — separate two dopamine computations in the same animal</strong></summary>
         <div class="blueprint-grid">
-          <div><b>Design</b><span>Contexts predict the same probe, so the expected probe has approximately zero classical RPE while C differs because history differs. Add unexpected high/low catch probes and omission trials.</span></div>
+          <div><b>Design</b><span>Use independently trained cues with empirically verified probe expectation. An identical expected outcome can minimize a cue-based RPE while C varies by sampled history; it does not force a generalized history-aware RPE to zero. Add high/low catch probes and omissions.</span></div>
           <div><b>Temporal readout</b><span>Separate cue, first-sample, 0–2 s, sustained 2–5 s and post-bout responses rather than collapsing them into one dopamine number.</span></div>
           <div><b>Prediction</b><span>RPE-like cells should respond to unexpected outcomes and diminish with prediction; contrast-like cells should distinguish two equally predicted identical probes solely because recent R differs.</span></div>
           <div><b>Control</b><span>Use intraoral delivery in a mechanistic version to reduce approach and seeking confounds.</span></div>
@@ -1069,7 +1073,7 @@
         </div>
         <figcaption><strong>Fig. 8 | Food Reward Contrast: the next decisive task family.</strong>
           <strong>A,</strong> fully crossed history × current reward makes U and R independently estimable by comparing the same current reward after different sampled histories.
-          <strong>B,</strong> an identical expected probe can have approximately zero cue-RPE while C=U−R still differs; unexpected catch outcomes then provide an explicit RPE axis in the same animal.
+          <strong>B,</strong> an identical probe can minimize empirically calibrated cue-based RPE while C=U−R differs; unexpected catch outcomes then provide an explicit RPE axis in the same animal.
           <strong>C,</strong> a falsifiable conceptual prediction: an early transient may track prediction error while sustained consumption-phase activity separates according to history-relative contrast. Panel C is a prediction schematic, not measured data.
         </figcaption>
       </figure>
