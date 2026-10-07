@@ -187,12 +187,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="table-wrap"><table class="metric-table"><thead><tr><th>候选信号家族</th><th>早期</th><th>中段</th><th>结果后</th><th>正向且显著</th></tr></thead><tbody>
 <tr><td>SLM</td><td>+0.810 · P=.0469</td><td>+0.667 · P=.0416</td><td>+0.867 · P=.0195</td><td>3/3</td></tr>
 <tr><td>选择惯性</td><td>−0.238 · P=.688</td><td>−0.286 · P=.769</td><td>+0.467 · P=.250</td><td>0/3</td></tr>
-<tr><td>TinyRNN</td><td>−0.867 · P=.0195</td><td>−0.548 · P=.924</td><td>+0.733 · P=.0547</td><td>0/3</td></tr>
-<tr><td>History MLP</td><td>−0.378 · P=.359</td><td>+0.024 · P=.488</td><td>−0.911 · P=.0117</td><td>0/3</td></tr>
+<tr><td>TinyRNN</td><td>−0.867 · P=.0195 <strong>（反向）</strong></td><td>−0.548 · P=.924</td><td>+0.733 · P=.0547</td><td>0/3</td></tr>
+<tr><td>History MLP</td><td>−0.378 · P=.359</td><td>+0.024 · P=.488</td><td>−0.911 · P=.0117 <strong>（反向）</strong></td><td>0/3</td></tr>
 <tr><td>Q-all</td><td>+0.048 · P=1.000</td><td>−0.357 · P=.820</td><td>+0.867 · P=.0195</td><td>1/3</td></tr>
 <tr><td>Q + 选择惯性</td><td>−0.333 · P=.562</td><td>−0.333 · P=.805</td><td>+0.467 · P=.250</td><td>0/3</td></tr>
 </tbody></table></div>
-<p class="small"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">冻结时间轴数据表</a>。TinyRNN 与 History MLP 提供灵活容量对照；Q-all 与选择惯性检验经典价值和持续性解释。</p>
+<p class="small"><strong>P 值约定｜</strong>本表沿用各时间轴冻结的统计合同，不把不同检验的 P 值当作统一排行榜。SLM 早期使用预设方向检验；经典替代模型和灵活模型沿用各自冻结的比较约定。<strong>正向且显著</strong>仅计 effect &gt; 0 且 authority P &lt; .05；显著负向单元格标记为<strong>反向</strong>。</p><p class="small"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">冻结时间轴数据表</a>。TinyRNN 与 History MLP 提供灵活容量对照；Q-all 与选择惯性检验经典价值和持续性解释。</p>
 </div></details>
 <div class="cards-3">
 <div class="card good"><div class="metric-label">证据层级 1 · 严格重提取复现</div><div class="metric">问题不变，只重建神经信号</div><p>事件、场次阶段、行为潜变量、协变量、交叉验证和动物级统计全部保持不变，只从原始光纤信号重新计算多巴胺。这一层检验数据来源与分析实现能否复现原结果；估计目标本身保持不变。</p></div>
