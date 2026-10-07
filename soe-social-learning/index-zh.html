@@ -30,7 +30,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <nav aria-label="中文页面导航"><a class="lang-btn" href="index.html">EN</a><a class="lang-btn active" href="index-zh.html">中文</a><a href="#overview">总览</a><a href="#phenotype">行为</a><a href="#information">信息价值</a><a href="#dynamics">动态</a><a href="#slm">SLM</a>
 <a href="#swm">SWM</a><a href="#feed">进食</a><a href="#agent">智能体</a><a href="#vta">VTA</a><a href="#architecture">机制架构</a><a href="#causality">因果</a><a href="#generalization">泛化</a><a href="#crossspecies">跨物种</a><a href="#resources">数据</a></nav></div></header><main>
 <section class="hero" id="overview"><div class="container">
-<span class="eyebrow">中文机制版 · authority 2026-10-06</span>
+<span class="eyebrow">中文机制版 · authority 2026-10-07</span>
 <h1>一个社会学习闭环：小鼠如何决定何时观察同伴、如何把社会信息转化为自身行动，并根据结果继续学习</h1>
 <p class="lede">这项工作把社会学习拆成一条可检验的闭环：小鼠先判断同伴是否值得观察，把短期和跨天经验整合成采样策略；观察到的具体内容会改变自身进食；结果出现后，腹侧被盖区多巴胺参与更新未来的社会信息采样。社会学习模型（SLM）给出可解释机制，社会世界模型（SWM）提供独立的数据驱动检验和扩展。</p>
 <div class="bio-logic"><strong>主要术语｜</strong>社会观察进食（SOE）；社会学习模型（SLM）；社会世界模型（SWM）；腹侧被盖区（VTA）；多巴胺（DA）；动作预测误差（APE）；奖励预测误差（RPE）；强化学习（RL）；社会反应指数（SRI）。JAWS 指本研究使用的红移光遗传抑制工具。预测指标中，AUC 表示曲线下面积，Brier 表示概率校准误差，NLL 表示负对数似然，RMSE 表示均方根误差，SEM 表示均值标准误。</div><div class="hero-grid">
@@ -170,7 +170,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="download-grid"><div class="download-card"><a href="docs/SLM_AGENT_BIOLOGICAL_MEANING_v2_20261005.md">Agent biological-meaning authority v2</a><p>generative comparator hierarchy、生物学 scope 与 recurrent-policy convergence。</p></div><div class="download-card"><a href="data/SOE_agent_sufficiency_hierarchy_v56.csv">Agent V56 source summary</a><p>trajectory、local strategy、motif occupancy 与 recurrent-policy comparator 数值。</p></div></div>
 </div></section>
 <section class="alt" id="vta"><div class="container">
-<div class="section-head"><div><div class="section-kicker">神经实现</div><h2>VTA 多巴胺沿着 SLM 的计算顺序展开：先决定是否采样社会信息，再处理采样误差，最后根据结果更新</h2></div><p>这里先保留原来的核心发现；随后把原始 FP 重新重建成 observation-bout DA，在完全相同的 Early/Middle 分析合同下做严格复现；结果期再用固定 0–6 秒与真实行动时长两种读出交叉验证，最后用 PSTH 解释这些效应的真实时间形状。</p></div>
+<div class="section-head"><div><div class="section-kicker">神经实现</div><h2>VTA 多巴胺沿着 SLM 的计算顺序展开：先决定是否采样社会信息，再处理采样误差，最后根据结果更新</h2></div><p>这里先保留原来的核心发现；随后从原始光纤信号重新计算观察片段多巴胺，在完全相同的早期/中段分析合同下做严格复现；结果期再用固定 0–6 秒与真实行动时长两种读出交叉验证，最后用围事件时间曲线解释这些效应的真实时间形状。</p></div>
 <div class="section-significance"><strong>这一节的主问题 · </strong>行为模型已经提出采样策略、动作预测误差（APE）、奖励预测误差（RPE）和社会结果归因。VTA 分析检验这些计算能否按照社会学习真实发生的顺序在多巴胺中出现，并检查结论是否依赖某一种 光纤信号→多巴胺 量化方式。</div>
 <div class="section-kicker" style="margin-top:28px">核心发现｜原来的 VTA–SLM 结果先回答“计算顺序是否正确”</div>
 <div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>如果 SLM 描述了真实神经计算，相关变量应出现在与其功能一致的时间位置。</span></div><div class="reader-step"><b>怎么做</b><span>分别检验结果前采样策略、中段 APE 和结果后更新，并用 Q 学习、选择惯性与灵活模型作竞争对照。</span></div><div class="reader-step"><b>结论</b><span>SLM 在三个预设时间轴均得到支持；通用 Q/RPE 主要解释结果后阶段。</span></div></div>
@@ -181,11 +181,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 </div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_DA_temporal_logic_v67.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_DA_temporal_logic_v67_mobile.png"/><img alt="SLM 三阶段计算与 VTA 多巴胺时间顺序" loading="lazy" src="assets/SOE_DA_temporal_logic_v67.png"/></picture></a><figcaption><strong>原始核心结果：SLM 的三个计算阶段按正确的时间顺序出现在 VTA 多巴胺中。</strong>A，结果前采样策略；B，中段 APE；C，结果后 RPE；D，模型家族的时间轴比较。SLM 为 3/3，Q/RPE 主要只在结果后阶段得到支持。这个结果构成行为模型与 VTA 神经计算之间的主要机制桥梁。</figcaption></figure>
 <div class="callout"><strong>先把原结论固定下来｜</strong>VTA 数据最有区分力的地方来自事件内部的时间顺序。结果后 RPE 本身并不特殊；真正增加机制信息的是更早出现的采样策略和 APE。</div>
-<div class="section-kicker" style="margin-top:28px">最重要的复现｜Early / Middle 保持原分析合同不变，只把 observation-bout DA 从原始 FP 重新重建</div>
-<div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>最关键的是固定原分析问题，仅更换 FP→DA 数值，检验原来的 Early policy 和 Middle APE 结果能否直接重现。</span></div><div class="reader-step"><b>怎么做</b><span>从 9 只动物各自的原始连续 FP 信号重新计算 observation-bout DA；事件划分、session 阶段、行为 latent、协变量、交叉验证和动物级统计全部沿用原分析。新旧 observation DA 共 1,041 个有效事件，逐动物相关中位 r=.9994。</span></div><div class="reader-step"><b>结论</b><span>Early policy 和 Middle APE 两个核心结果都原样复现；不只组水平 P 值一致，逐动物效应排序也完全一致。</span></div></div>
-<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_VTA_early_middle_raw_recon_replication_v102.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_VTA_early_middle_raw_recon_replication_v102_mobile.png"/><img alt="原始 FP 重建后 Early policy 与 Middle APE 的严格复现" loading="lazy" src="assets/SOE_VTA_early_middle_raw_recon_replication_v102.png"/></picture></a><figcaption><strong>Early / Middle 的严格 raw-reconstruction 复现。</strong>A，重新从原始 FP 计算的 observation-bout DA 与旧读出在 9 只动物、1,041 个事件中几乎一致（逐动物相关中位 r=.9994）。B，Early policy 使用同一 5-fold 动物内 block-CV 与同一行为 latent，仍为 5/6 动物改善，rank-biserial=.810，P=.0469；旧值与新值的逐动物 gain 排序 ρ=1.0。C，Middle APE 使用同一中段、同一 residualization 与 SRI 检验，仍为 ρ=.667，exact one-sided permutation P=.0416；逐动物 APE coupling 的新旧排序同样 ρ=1.0。D，总结三层跨方法一致性。</figcaption></figure>
-<div class="callout"><strong>这一层回答的是最重要的复现问题｜</strong>采样策略和 APE 的神经结果在保持原 estimand 与统计合同不变时，用重新从 raw FP 得到的 DA 仍得到同一结论。这是对原问题本身的直接复现，不依赖近似替代统计。Early 与 Middle 因此可以继续作为 SLM 区分经典结果期 RPE 的关键时间证据。</div>
-<div class="section-kicker" style="margin-top:28px">第二层复现｜结果期再换成真实行动时长读出，检验社会归因与 RPE 结构</div>
+<div class="model-contract" id="vta-signal-zoo-v105"><strong>为什么行为模型库到了 VTA 变成“候选计算信号库”｜</strong>行为部分比较完整系统预测“是否观察”的能力；神经部分冻结这些系统产生的计算量，再检验它们分别出现在预设的早期、中段和结果后时间轴上的程度。某一模型家族可以解释结果期多巴胺，同时在更早时间轴缺乏支持。因此结果期 RPE 有效，只说明结果更新家族能解释这一阶段；覆盖完整社会学习链还需要早期采样策略和中段 APE。</div>
+<details><summary>完整 VTA 候选信号库（固定时间轴）</summary><div class="detail-body">
+<p class="small">这里每一行代表候选计算信号家族，和上方“完整行为系统预测排名”属于不同问题。效应量沿冻结的时间轴定义读取：早期检验采样策略相关预测增益，中段检验与学习强度相关的 APE/误差耦合，结果后检验结果期预测增益。</p>
+<div class="table-wrap"><table class="metric-table"><thead><tr><th>候选信号家族</th><th>早期</th><th>中段</th><th>结果后</th><th>正向且显著</th></tr></thead><tbody>
+<tr><td>SLM</td><td>+0.810 · P=.0469</td><td>+0.667 · P=.0416</td><td>+0.867 · P=.0195</td><td>3/3</td></tr>
+<tr><td>选择惯性</td><td>−0.238 · P=.688</td><td>−0.286 · P=.769</td><td>+0.467 · P=.250</td><td>0/3</td></tr>
+<tr><td>TinyRNN</td><td>−0.867 · P=.0195</td><td>−0.548 · P=.924</td><td>+0.733 · P=.0547</td><td>0/3</td></tr>
+<tr><td>History MLP</td><td>−0.378 · P=.359</td><td>+0.024 · P=.488</td><td>−0.911 · P=.0117</td><td>0/3</td></tr>
+<tr><td>Q-all</td><td>+0.048 · P=1.000</td><td>−0.357 · P=.820</td><td>+0.867 · P=.0195</td><td>1/3</td></tr>
+<tr><td>Q + 选择惯性</td><td>−0.333 · P=.562</td><td>−0.333 · P=.805</td><td>+0.467 · P=.250</td><td>0/3</td></tr>
+</tbody></table></div>
+<p class="small"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">冻结时间轴数据表</a>。TinyRNN 与 History MLP 提供灵活容量对照；Q-all 与选择惯性检验经典价值和持续性解释。</p>
+</div></details>
+<div class="cards-3">
+<div class="card good"><div class="metric-label">证据层级 1 · 严格重提取复现</div><div class="metric">问题不变，只重建神经信号</div><p>事件、场次阶段、行为潜变量、协变量、交叉验证和动物级统计全部保持不变，只从原始光纤信号重新计算多巴胺。这一层检验数据来源与分析实现能否复现原结果；估计目标本身保持不变。</p></div>
+<div class="card info"><div class="metric-label">证据层级 2 · 替代读出稳健性</div><div class="metric">同一生物学问题，换积分方式</div><p>结果期在同一 1,371 个事件上，把固定 0–6 秒多巴胺换成真实行动时长多巴胺。这一层对社会归因和标量 RPE 提供更独立的读出稳健性检验。</p></div>
+<div class="card violet"><div class="metric-label">证据层级 3 · 时间与机制定位</div><div class="metric">信号何时出现、为何出现</div><p>围事件时间曲线和事件控制显示真实时间形状，并排除位置或普通事件等更简单解释。它们负责解释模型结果，逐动物模型推断仍承担主要统计证据。</p></div>
+</div>
+<div class="section-kicker" style="margin-top:28px">严格重提取复现｜早期 / 中段保持原分析合同不变，只从原始光纤信号重建观察片段多巴胺</div>
+<div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>最关键的是固定原分析问题，仅更换光纤信号→多巴胺的计算方式，检验原来的早期采样策略和中段 APE 结果能否直接重现。</span></div><div class="reader-step"><b>怎么做</b><span>从 9 只动物各自的原始连续光纤信号重新计算观察片段多巴胺；事件划分、场次阶段、行为潜变量、协变量、交叉验证和动物级统计全部沿用原分析。新旧观察片段多巴胺共 1,041 个有效事件，逐动物相关中位 r=.9994。</span></div><div class="reader-step"><b>结论</b><span>早期采样策略和中段 APE 两个核心结果都原样复现；组水平 P 值一致，逐动物效应排序也完全一致。</span></div></div>
+<figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_VTA_early_middle_raw_recon_replication_v102.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_VTA_early_middle_raw_recon_replication_v102_mobile.png"/><img alt="原始 FP 重建后 Early policy 与 Middle APE 的严格复现" loading="lazy" src="assets/SOE_VTA_early_middle_raw_recon_replication_v102.png"/></picture></a><figcaption><strong>早期 / 中段的严格原始信号重建复现。</strong>A，从原始光纤信号重新计算的观察片段多巴胺与旧读出在 9 只动物、1,041 个事件中几乎一致（逐动物相关中位 r=.9994）。B，早期采样策略使用同一 5 折动物内分块交叉验证与同一行为潜变量，仍为 5/6 动物改善，秩双列相关=.810，P=.0469；旧值与新值的逐动物增益排序 ρ=1.0。C，中段 APE 使用同一中段、同一残差化与 SRI 检验，仍为 ρ=.667，精确单侧置换检验 P=.0416；逐动物 APE 耦合效应的新旧排序同样 ρ=1.0。D，总结三层跨方法一致性。</figcaption></figure>
+<div class="callout"><strong>这一层回答的是最重要的复现问题｜</strong>采样策略和 APE 的神经结果在保持原估计目标与统计合同不变时，用重新从原始光纤信号得到的多巴胺仍得到同一结论。这是对原问题本身的直接复现，不依赖近似替代统计。早期与中段因此可以继续作为 SLM 区分经典结果期 RPE 的关键时间证据。</div>
+<div class="section-kicker" style="margin-top:28px">替代读出稳健性｜结果期换成真实行动时长读出，检验社会归因与 RPE 结构</div>
 <div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>确认原来的 SLM→VTA 结果没有依赖固定 0–6 秒这一种积分方式。</span></div><div class="reader-step"><b>怎么做</b><span>锁定同一批 1,371 个结果事件、9 只动物以及同一套行为参数和模型比较，只把多巴胺读出换成新方法得到的真实行动片段 AUC/秒；持续时间低于 0.05 秒的近零片段排除。</span></div><div class="reader-step"><b>结论</b><span>社会结果归因和标量 RPE 的主要结构跨两种读出保留；RPE 相关效应在固定结果后窗口更强。</span></div></div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_VTA_codex_exact_replication_v96.png" rel="noopener" target="_blank"><img alt="固定结果后窗口与 Codex 真实行为时长读出对 SLM 结果期分析的复现" loading="lazy" src="assets/SOE_VTA_codex_exact_replication_v96.png"/></a><figcaption><strong>把结果期分析原样换成新方法得到的真实行为时长读出后，核心 SLM→VTA 关系仍保留。</strong>A，两种 多巴胺数值在每只动物中均正相关，中位 ρ=.785。B，RPE 家族在两种读出中保持相同方向，但真实行动片段的效应较弱。C，只用行为数据确定的被动结果归因在两种读出中都优于固定权重；真实行动片段中相对 0.75 和 1.0 均为 9/9 动物改善（P=.0039）。D，在两种读出中，结果向量误差加入标量 RPE 后都没有额外预测收益。</figcaption></figure>
 <div class="cards-3">
@@ -193,7 +211,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="card info"><div class="metric-label">误差表示的结论也保留</div><div class="metric">标量 RPE 更简洁</div><p>两种多巴胺读出中，标量 RPE 家族都强于测试的结果向量误差；在标量 RPE 已进入模型后再加入向量项均无增益。</p></div>
 <div class="card violet"><div class="metric-label">窗口改变的是灵敏度</div><div class="metric">结果后持续更新</div><p>RPE 家族在真实行动片段中方向仍保留，但固定 0–6 秒通常更强，提示结果评估和教学更新可延续到动作结束之后。</p></div>
 </div>
-<div class="bio-logic"><strong>Whole-bout 检查现在只作为边界/敏感性分析，不再当作复现检验｜</strong>先前把整段 observation-bout DA 与 policy 或 APE 做简化相关时得到 Early P=.438、Middle ρ=−.119（P=.779）。但这一步同时改变了神经 readout 的汇总方式和统计 estimand，不能据此说原 Early/Middle 结果“没有复现”。上面的 raw-reconstruction 严格镜像才回答复现问题；whole-bout 阴性结果只说明把原模型合同换成整段平均的简化相关会丢失判别力。</div>
+<div class="bio-logic"><strong>整段观察平均现在只作为边界/敏感性分析，不再当作复现检验｜</strong>先前把整段观察片段多巴胺与采样策略或 APE 做简化相关时得到早期采样策略 P=.438、中段 APE×SRI ρ=−.119（P=.779）。但这一步同时改变了神经信号的汇总方式和统计估计目标，不能据此说原早期/中段结果“没有复现”。上面的原始信号重建严格镜像才回答复现问题；这个阴性结果只说明把原模型合同换成整段平均的简化相关会丢失判别力。</div>
 <div id="vta-psth-biological-v84">
 <div class="section-kicker" style="margin-top:28px">原始时间过程｜模型告诉我们“什么变量有关”，围事件时间曲线进一步告诉我们“信号什么时候出现”</div>
 <div class="bio-logic"><strong>围事件时间曲线的目的｜</strong>模型比较给出计算变量的预测价值，围事件时间曲线直接显示多巴胺的时间形状。页面上的围事件时间曲线仅为帮助观察趋势进行轻度高斯平滑：固定时间曲线 σ=1.5 个 0.1 秒时间格，行为片段相位曲线 σ=2 个相位点；所有窗口均值、逐动物统计和 P 值都使用未平滑数据。</div>
@@ -220,12 +238,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_FP_DA_cross_readout_consensus_v78.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_FP_DA_cross_readout_consensus_v78_mobile.png"/><img alt="两种 FP 到 DA 读出的逐动物一致性" loading="lazy" src="assets/SOE_FP_DA_cross_readout_consensus_v78.png"/></picture></a><figcaption>双读出的逐动物稳健性辅助图；主页面的 v96 图已把结果重新组织成 SLM 复现问题。</figcaption></figure>
 </div></details>
 </div>
-<div class="callout"><strong>VTA 部分的整合结论｜</strong>行为数据先定义 SLM 的计算坐标，原始 VTA 分析再把采样策略、APE 和结果后更新放到正确的事件内时间位置。最关键的 raw-FP 重建保持 Early/Middle 原分析合同不变，得到同一个 Early policy P=.0469 和 Middle APE×SRI ρ=.667、P=.0416；结果期的真实行动时长读出又独立保留了社会归因与标量 RPE 的主要结构。PSTH 最后解释这些计算何时出现以及为什么不同窗口灵敏度不同。由此得到一条连续神经计算链：<strong>决定是否观察 → 获取社会信息 → 处理采样误差 → 根据结果更新 → 改变下一次社会采样。</strong></div>
+<div class="callout"><strong>VTA 部分的整合结论｜</strong>行为数据先定义 SLM 的计算坐标，原始 VTA 分析再把采样策略、APE 和结果后更新放到正确的事件内时间位置。最关键的原始光纤信号重建保持早期/中段原分析合同不变，得到同一个早期采样策略 P=.0469 和中段 APE×SRI ρ=.667、P=.0416；结果期的真实行动时长读出又独立保留了社会归因与标量 RPE 的主要结构。围事件时间曲线最后解释这些计算何时出现以及为什么不同窗口灵敏度不同。由此得到一条连续神经计算链：<strong>决定是否观察 → 获取社会信息 → 处理采样误差 → 根据结果更新 → 改变下一次社会采样。</strong></div>
 <div class="download-grid">
 <div class="download-card"><a href="data/DA_global_temporal_model_adjudication_v4_authority.csv">原始 VTA 三阶段 authority</a><p>采样策略、APE、结果后更新与竞争模型的逐阶段结果。</p></div>
-<div class="download-card"><a href="data/SOE_VTA_EARLY_MIDDLE_RAW_RECON_SUMMARY_v102.csv">Early/Middle raw-FP 严格复现</a><p>保持原分析合同不变，仅重建 observation-bout DA；包含 Early policy、Middle APE 与逐动物跨方法一致性。</p></div>
+<div class="download-card"><a href="data/SOE_VTA_EARLY_MIDDLE_RAW_RECON_SUMMARY_v102.csv">早期/中段原始光纤信号严格复现</a><p>保持原分析合同不变，仅重建观察片段多巴胺；包含早期采样策略、中段 APE 与逐动物跨方法一致性。</p></div>
 <div class="download-card"><a href="data/SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv">新方法 双读出复现结果</a><p>同一 1,371 个结果事件上固定 0–6 秒与真实行动片段的逐项模型结果。</p></div>
-<div class="download-card"><a href="data/SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv">Whole-bout 边界检查</a><p>简化 whole-bout 相关改变了 estimand，只用于说明这种简化分析会丢失判别力，不作为复现结论。</p></div>
+<div class="download-card"><a href="data/SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv">整段观察平均的边界检查</a><p>整段平均的简化相关改变了统计估计目标，只用于说明这种简化分析会丢失判别力，不作为复现结论。</p></div>
 <div class="download-card"><a href="data/SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv">社会采样特异性</a><p>真实观察、位置匹配、观察区内外与示范鼠转换控制。</p></div>
 <div class="download-card"><a href="data/SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv">下一次观察状态</a><p>上一结果如何延续到下一观察前、后及真实观察片段。</p></div>
 <div class="download-card"><a href="data/SOE_FP_PSTH_MODEL_VARIABLES_v88.csv">SLM 变量分层 围事件时间曲线 源数据</a><p>采样策略、|RPE| 和更新幅度高低条件下的逐动物时间曲线。</p></div>
@@ -376,6 +394,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="download-card"><a href="data/SOE_crossspecies_positive_summary_v1.csv">Positive-summary archive</a><p>较早 positive-result summary；当前证据层级以 V55 hierarchy 为准。</p></div>
 <div class="download-card"><a href="data/SOE_crossspecies_positive_component_map_v1.csv">Component-map archive</a><p>较早 dataset×principle map，保留 provenance。</p></div>
 </div></details>
-<div class="prepub">Current page build: 2026-10-06 · V55 logic hierarchy · V52 figure-style authority.</div>
+<div class="prepub">Current page build: 2026-10-07 · V55 logic hierarchy · V52 figure-style authority.</div>
 </div></section>
 </main></body></html>

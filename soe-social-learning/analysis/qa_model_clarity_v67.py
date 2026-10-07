@@ -3,7 +3,6 @@ from html.parser import HTMLParser
 import re, sys
 import numpy as np
 import pandas as pd
-from scipy.stats import wilcoxon
 
 R=Path(__file__).resolve().parents[1]
 fail=[]
@@ -13,6 +12,21 @@ def ck(name, cond, detail=""):
     if not cond:
         fail.append(name)
 
+def exact_wilcoxon_greater(x):
+    x=np.asarray(x,float)
+    x=x[np.isfinite(x) & (x!=0)]
+    ranks=pd.Series(np.abs(x)).rank(method="average").values.astype(float)
+    obs=float(ranks[x>0].sum())
+    n=len(ranks); hit=0
+    for mask in range(1<<n):
+        s=0.0
+        for i,r in enumerate(ranks):
+            if mask & (1<<i):
+                s+=r
+        if s>=obs-1e-12:
+            hit+=1
+    return float(hit)/float(1<<n)
+
 for fn in ["index.html","index-zh.html"]:
     s=(R/fn).read_text(encoding="utf-8")
     HTMLParser().feed(s)
@@ -21,7 +35,7 @@ for fn in ["index.html","index-zh.html"]:
     ck(fn+"_five_model_families", s.count('<div class="model-family">')==5, s.count('<div class="model-family">'))
     ck(fn+"_old_framework_removed", 'model-framework-v66' not in s and '<div class="model-framework"' not in s)
     ck(fn+"_three_column_model_map", 'grid-template-columns:repeat(3,minmax(0,1fr))' in s)
-    ck(fn+"_ape_exact", ('actual sampling action − pre-action policy probability' in s) if not zh else ('APE = 实际采样动作 − 动作前采样概率' in s))
+    ck(fn+"_ape_exact", ('actual sampling action − pre-action policy probability' in s) if not zh else ('实际采样动作 − 动作前采样概率' in s))
     ck(fn+"_contract_27", (('27 held' in s) if not zh else ('27 只留出动物' in s)) and 'Brier' in s and 'AUC' in s)
     ck(fn+"_registry_link", 'SOE_MODEL_CONTRACT_REGISTRY_v1.csv' in s)
     ck(fn+"_slm_v67", 'SOE_SLM_default_hierarchy_v67.png' in s and 'SOE_SLM_default_hierarchy_v64.png' not in s)
@@ -30,7 +44,7 @@ for fn in ["index.html","index-zh.html"]:
     ck(fn+"_no_p_div", '<p><div' not in s)
     ck(fn+"_behavior_zoo_table", ('Full behavioral model zoo' in s) if not zh else ('完整行为模型库' in s))
     ck(fn+"_vta_zoo_table", ('Full VTA signal zoo' in s) if not zh else ('完整 VTA 候选信号库' in s))
-    ck(fn+"_build_date", '2026-10-06' in s)
+    ck(fn+"_build_date", '2026-10-07' in s)
 
 for stem in ["SOE_SLM_default_hierarchy_v67","SOE_DA_temporal_logic_v67"]:
     for ext in [".png",".pdf",".svg","_mobile.png"]:
@@ -42,7 +56,8 @@ for name in ["SOE_MODEL_CONTRACT_REGISTRY_v1.csv","SLM_choicekernel_stack_per_an
     ck(name+"_exists",(R/"data"/name).exists())
 
 reg=pd.read_csv(R/"data"/"SOE_MODEL_CONTRACT_REGISTRY_v1.csv")
-ck("registry_six_rows",len(reg)==6,len(reg))
+required_families={'Null / current-state','Classical learning rules','Mechanistic SLM','Flexible nonlinear controls','Social World Model (SWM)','Computational readouts','Relational Social World Model v2'}
+ck("registry_required_families",required_families.issubset(set(reg['family'])),list(reg['family']))
 ck("registry_has_signals",(reg["family"]=="Computational readouts").any())
 
 d=pd.read_csv(R/"data"/"SLM_choicekernel_stack_per_animal_v1.csv")
@@ -56,7 +71,7 @@ ck("vta_post_n9",len(w)==9,len(w))
 expected={"actorRPE":0.01953125,"qAllRPE":0.01953125,"beliefSurprise":0.005859375}
 for m,ep in expected.items():
     g=100*(w["base"]-w[m])/w["base"]
-    pv=float(wilcoxon(g,alternative="greater",method="auto").pvalue)
+    pv=exact_wilcoxon_greater(g)
     ck("vta_post_p_"+m,abs(pv-ep)<1e-12,pv)
 
 da=pd.read_csv(R/"data"/"DA_global_temporal_model_adjudication_v4_authority.csv")
