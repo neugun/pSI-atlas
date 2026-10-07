@@ -175,15 +175,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="section-kicker" style="margin-top:28px">核心发现｜原来的 VTA–SLM 结果先回答“计算顺序是否正确”</div>
 <div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>如果 SLM 描述了真实神经计算，相关变量应出现在与其功能一致的时间位置。</span></div><div class="reader-step"><b>怎么做</b><span>分别检验结果前采样策略、中段 APE 和结果后更新，并用 Q 学习、选择惯性与灵活模型作竞争对照。</span></div><div class="reader-step"><b>结论</b><span>SLM 在三个预设时间轴均得到支持；通用 Q/RPE 主要解释结果后阶段。</span></div></div>
 <div class="cards-3">
-<div class="card good"><div class="metric-label">结果前：是否值得获取社会信息</div><div class="metric">采样策略</div><p>结果前 VTA 信号与 SLM 的采样策略一致，效应=.810，P=.0469；通用 Q/RPE 在这一阶段接近零。</p></div>
-<div class="card info"><div class="metric-label">采样后、结果前：这次动作有多出乎预期</div><div class="metric">APE</div><p>中段 APE 与学习程度保持关系，效应=.667，P=.0416；控制选择惯性和经典 Q 误差后仍保留。</p></div>
-<div class="card violet"><div class="metric-label">结果出现后：根据结果完成更新</div><div class="metric">RPE / 社会归因</div><p>结果后 RPE 得到支持，效应=.867，P=.0195；此时普通 Q/RPE 也有效，因此这一阶段单独看不足以区分完整机制。</p></div>
+<div class="card good"><div class="metric-label">结果前：是否值得获取社会信息</div><div class="metric">采样策略</div><p>结果前 VTA 信号与 SLM 的采样策略一致，秩双列相关=.810，P=.0469；通用 Q/RPE 在这一阶段接近零。</p></div>
+<div class="card info"><div class="metric-label">采样后、结果前：这次动作有多出乎预期</div><div class="metric">APE</div><p>中段 APE 的逐动物耦合强度与学习程度保持关系（Spearman ρ=.667，与 SRI 的精确单侧置换 P=.0416）；控制选择惯性和经典 Q 误差后仍保留。</p></div>
+<div class="card violet"><div class="metric-label">结果出现后：根据结果完成更新</div><div class="metric">RPE / 社会归因</div><p>结果后 RPE 得到支持，秩双列相关=.867，P=.0195；此时普通 Q/RPE 也有效，因此这一阶段单独看不足以区分完整机制。</p></div>
 </div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_DA_temporal_logic_v67.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_DA_temporal_logic_v67_mobile.png"/><img alt="SLM 三阶段计算与 VTA 多巴胺时间顺序" loading="lazy" src="assets/SOE_DA_temporal_logic_v67.png"/></picture></a><figcaption><strong>原始核心结果：SLM 的三个计算阶段按正确的时间顺序出现在 VTA 多巴胺中。</strong>A，结果前采样策略；B，中段 APE；C，结果后 RPE；D，模型家族的时间轴比较。SLM 为 3/3，Q/RPE 主要只在结果后阶段得到支持。这个结果构成行为模型与 VTA 神经计算之间的主要机制桥梁。</figcaption></figure>
 <div class="callout"><strong>先把原结论固定下来｜</strong>VTA 数据最有区分力的地方来自事件内部的时间顺序。结果后 RPE 本身并不特殊；真正增加机制信息的是更早出现的采样策略和 APE。</div>
 <div class="model-contract" id="vta-signal-zoo-v105"><strong>为什么行为模型库到了 VTA 变成“候选计算信号库”｜</strong>行为部分比较完整系统预测“是否观察”的能力；神经部分冻结这些系统产生的计算量，再检验它们分别出现在预设的早期、中段和结果后时间轴上的程度。某一模型家族可以解释结果期多巴胺，同时在更早时间轴缺乏支持。因此结果期 RPE 有效，只说明结果更新家族能解释这一阶段；覆盖完整社会学习链还需要早期采样策略和中段 APE。</div>
 <details><summary>完整 VTA 候选信号库（固定时间轴）</summary><div class="detail-body">
-<p class="small">这里每一行代表候选计算信号家族，和上方“完整行为系统预测排名”属于不同问题。效应量沿冻结的时间轴定义读取：早期检验采样策略相关预测增益，中段检验与学习强度相关的 APE/误差耦合，结果后检验结果期预测增益。</p>
+<p class="small">这里每一行代表候选计算信号家族，和上方“完整行为系统预测排名”属于不同问题。效应量沿冻结的时间轴定义读取：早期检验采样策略相关预测增益，中段检验与学习强度相关的 APE/误差耦合，结果后检验结果期预测增益。<strong>三列效应量使用不同统计尺度：</strong>早期和结果后报告秩双列效应量，中段报告逐动物耦合强度与 SRI 的 Spearman ρ，因此数值大小不做跨列比较。</p>
 <div class="table-wrap"><table class="metric-table"><thead><tr><th>候选信号家族</th><th>早期</th><th>中段</th><th>结果后</th><th>正向且显著</th></tr></thead><tbody>
 <tr><td>SLM</td><td>+0.810 · P=.0469</td><td>+0.667 · P=.0416</td><td>+0.867 · P=.0195</td><td>3/3</td></tr>
 <tr><td>选择惯性</td><td>−0.238 · P=.688</td><td>−0.286 · P=.769</td><td>+0.467 · P=.250</td><td>0/3</td></tr>
