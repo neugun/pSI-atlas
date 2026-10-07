@@ -14,6 +14,7 @@
     <div class="brand"><span class="brand-mark">R</span> Reward history × VTA dopamine</div>
     <nav aria-label="Page navigation">
       <a href="#overview">Overview</a>
+      <a href="#global-status">Global status</a>
       <a href="#theory">Theory</a>
       <a href="#reading-guide">Guide</a>
       <a href="#glossary">Glossary</a>
@@ -111,6 +112,39 @@
   </div>
 </section>
 
+
+
+<section id="global-status" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Current project-wide audit · October 7, 2026</div>
+        <h2>Global progress, evidence boundaries, and the next work</h2>
+      </div>
+      <p>This is the readable on-page overview, not a raw Markdown document. Use the original figures below for evidence and the future experiments section for full designs. Updated code and manuscript audit: October 7, 2026.</p>
+    </div>
+    <div class="cards-3">
+      <article class="card good"><h3>Established</h3><p>History changes responses to physically identical food in 9/9 mice (<a href="#fig1">Fig. 1</a>). Sampling history predicts sustained DA better than current reward alone (<a href="#fig2">Fig. 2</a>; <a href="#fig34">Figs. 3–4</a>). Relative-history coefficients increase during consumption in 11/11 mice (<a href="#fig5">Fig. 5</a>). Acute DA manipulations change feeding termination (<a href="#fig7">Fig. 7</a>).</p></article>
+      <article class="card info"><h3>Boundaries</h3><p>Neural history is not identical to behavioral expression: Stim13 has reliable neural history but no established marginal duration-history effect. Across Natural, QE and Stim13, a universal local-history-independent deep-reference behavioral gate has <strong>not</strong> been demonstrated. The 31-family model registry mixes actual tests, boundary cases, and recovery analyses.</p></article>
+      <article class="card violet"><h3>Critical model correction</h3><p><strong>C=U−R is derived</strong>, not independently estimable alongside unrestricted U and R; cue RPE=U−E has the same constraint. Cross sampled history, trained cue expectation and delivered reward, then compare constrained C, cue-RPE and augmented-state TD/RNN predictions on held-out data. Identical probes do not eliminate all possible history-aware RPEs.</p></article>
+    </div>
+    <h3>What gets done next, and why</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Order</th><th>Immediate execution</th><th>What success looks like</th></tr></thead>
+        <tbody>
+          <tr><td>P0</td><td><a href="#fig5">Fig. 5</a> and full Fig. 0–7 / ED1–10 statistical-source audit</td><td>Each claim has source, mouse n, exact test and plot; evaluate sustained-bout selection, coefficient scale and raw DA.</td></tr>
+          <tr><td>P0</td><td><a href="#fig34">31-family model competition</a> and RPE identification</td><td>Rank-valid models: U+R vs constrained C; cue-RPE vs history-aware TD/RNN; no session leakage.</td></tr>
+          <tr><td>P0</td><td><a href="2p-global/">D1–D9 longitudinal single-cell analysis</a></td><td>Animal×day×ROI×trial source with raw/CaRMA/Suite2p comparison, masks, registration and held-out tuning.</td></tr>
+          <tr><td>P1</td><td><a href="#future-experiments">Fully crossed food-contrast and identical-probe experiments</a></td><td>History × explicit cue expectation × delivered U, along with taste reactivity and termination-hazard outcomes.</td></tr>
+          <tr><td>P2</td><td><a href="#future-experiments">Single-cell mechanism and hedonic-to-social transfer</a></td><td>Dedicated-class vs manifold tests and frozen food decoder transfer to ON/OFF social contrast and SOE.</td></tr>
+          <tr><td>P3</td><td><a href="#roadmap">Circuit and physiological/disease interventions</a></td><td>Separately perturb reference formation, ongoing DA readout and DA-to-action coupling.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>Research decision:</strong> do not add more model names or promote provisional correlations before closing the Fig. 5 and longitudinal raw-signal audits. See <a href="#fig0">all existing main figures</a>, <a href="#supplement">Extended Data</a>, and <a href="#future-experiments">experiment blueprints</a>. The detailed <a href="docs/REWARD_CONTRAST_GLOBAL_STATUS_EXECUTION_EN_v2_20261007.md">source ledger remains available</a> for provenance, but this section is the intended mobile reading experience.</div>
+  </div>
+</section>
 
 <section id="theory" class="alt">
   <div class="container">
@@ -968,7 +1002,7 @@
 
 
     <div class="callout" id="program-audit">
-      <strong>Global audit · October 7, 2026.</strong> Figures 0–7, Extended Data, Natural/QE/Stim13 evidence, 31 model families, single-cell readiness and next-step experiments are now consolidated. <a href="docs/REWARD_CONTRAST_GLOBAL_STATUS_EXECUTION_EN_v2_20261007.md"><strong>Read the complete evidence ledger and execution gates</strong></a>. Critical identifiability correction: C=U−R is a deterministic contrast, not a third independent regression column alongside U and R. Similarly a cue RPE of U−E is derived from its components. Cross history, explicit cue expectation and delivered U, then compare constrained comparator vs cue-RPE vs augmented-state TD/RNN models in held-out data. Matching a physical probe does not guarantee zero generalized RPE.
+      <strong>Global audit · October 7, 2026.</strong> Figures 0–7, Extended Data, Natural/QE/Stim13 evidence, 31 model families, single-cell readiness and next-step experiments are now consolidated. <a href="#global-status"><strong>Read the updated on-page global progress and execution summary</strong></a>. Critical identifiability correction: C=U−R is a deterministic contrast, not a third independent regression column alongside U and R. Similarly a cue RPE of U−E is derived from its components. Cross history, explicit cue expectation and delivered U, then compare constrained comparator vs cue-RPE vs augmented-state TD/RNN models in held-out data. Matching a physical probe does not guarantee zero generalized RPE.
     </div>
 
     <div id="future-experiments" class="future-experiments">

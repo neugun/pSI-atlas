@@ -14,6 +14,7 @@
     <div class="brand"><span class="brand-mark">R</span> 奖赏历史 × VTA 多巴胺</div>
     <nav aria-label="页面导航">
       <a href="#overview">概览</a>
+      <a href="#global-status">全局总结</a>
       <a href="#theory">理论主线</a>
       <a href="#reading-guide">阅读顺序</a>
       <a href="#glossary">术语</a>
@@ -113,6 +114,39 @@
   </div>
 </section>
 
+
+
+<section id="global-status" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">项目全局审计 · 2026 年 10 月 7 日</div>
+        <h2>最新进展、证据边界与下一步执行顺序</h2>
+      </div>
+      <p>这里直接显示在原来的可视化网页内，不再跳转到原始文档。可继续向下查看全部图 0–7、扩展数据、完整模型库以及新实验设计。</p>
+    </div>
+    <div class="cards-3">
+      <article class="card good"><h3>已经建立的核心结果</h3><p>物理上相同的食物，在不同历史后诱发不同的多巴胺和进食反应（9/9 只动物，<a href="#fig1">图 1</a>）。真实采样历史携带超越当前食物的信息（<a href="#fig2">图 2</a>、<a href="#fig34">图 3–4</a>）。进食持续期的相对价值系数在 11/11 只动物增强（<a href="#fig5">图 5</a>）。急性操纵 VTA 多巴胺可改变进食终止概率（<a href="#fig7">图 7</a>）。</p></article>
+      <article class="card info"><h3>不能过度推广的结论</h3><p>神经历史表征不等于必然影响行为。Stim13 的神经历史显著，但进食时长的边际历史效应尚未成立。Natural、QE、Stim13 尚不能共同证明一种独立于近期局部历史的普遍深层行为门控。31 类模型库包含真实检验、不可辨识边界和模拟恢复，不能全当作同等级真实数据拟合。</p></article>
+      <article class="card violet"><h3>必须纠正的计算问题</h3><p><strong>C=U−R 不是独立于 U、R 的第三个自由变量</strong>；线索 RPE=U−E 也一样。应该独立操纵采样历史、明确的线索期待和实际奖赏，再比较受约束的 C 模型、线索 RPE 和扩充状态 TD/RNN。相同的物理探针也不能排除所有包含历史状态的广义 RPE。</p></article>
+    </div>
+    <h3>下一阶段按科学重要性推进</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>优先级</th><th>执行内容</th><th>需要真正得到的结果</th></tr></thead>
+        <tbody>
+          <tr><td>P0</td><td><a href="#fig5">图 5</a> 与图 0–7、扩展数据完整统计溯源</td><td>每个结论对应源表、动物数、统计检验和图；检查长进食段选择偏差、系数尺度与原始 DA 信号。</td></tr>
+          <tr><td>P0</td><td><a href="#fig34">31 类模型竞争</a>及 RPE 解释</td><td>比较 U+R 和受约束 C；线索 RPE 与历史增强 TD/RNN；测试矩阵秩与跨动物泄漏。</td></tr>
+          <tr><td>P0</td><td><a href="../2p-global/zh/">D1–D9 单细胞纵向数据</a></td><td>所有动物×日期×细胞×试次，原始信号/CaRMA/Suite2p 对照、细胞掩膜、跨天配准与留出检验。</td></tr>
+          <tr><td>P1</td><td><a href="#future-experiments">完全交叉的食物对比与相同探针实验</a></td><td>历史 × 线索期待 × 当前食物；同步测量味觉反应、采样动作和进食终止。</td></tr>
+          <tr><td>P2</td><td><a href="#future-experiments">单细胞机制与食物到社会价值的迁移</a></td><td>专门细胞与分布式群体轴之辨；冻结食物模型，再检验社会 ON/OFF 和 SOE。</td></tr>
+          <tr><td>P3</td><td><a href="#roadmap">回路干预及内部/疾病状态</a></td><td>分开操纵参照形成、DA 比较读出及 DA 到行为的转化。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>当前最重要的决策：</strong>不是继续增加模型名字或提前强化弱相关，而是优先解决图 5 的机制检验，以及纵向单细胞原始/校正信号的可靠性。<a href="#fig0">全部主图</a>、<a href="#supplement">扩展数据</a>与<a href="#future-experiments">未来实验</a>仍在本页。<a href="../docs/REWARD_CONTRAST_GLOBAL_STATUS_EXECUTION_CN_v2_20261007.md">原始完整证据记录</a>只作为追溯材料；手机端阅读请直接看这一节。</div>
+  </div>
+</section>
 
 <section id="theory" class="alt">
   <div class="container">
@@ -927,7 +961,7 @@
 
 
     <div class="callout" id="program-audit">
-      <strong>全局科学审计 · 2026 年 10 月 7 日。</strong> Fig.0–7、扩展数据、Natural/QE/Stim13、31 类模型、单细胞准备状态和后续实验已经统一整理。<a href="../docs/REWARD_CONTRAST_GLOBAL_STATUS_EXECUTION_CN_v2_20261007.md"><strong>打开完整证据表与执行方案</strong></a>。关键更正：C=U−R 是由 U、R 计算出的对比量，不能同时作为第三个自由自变量；线索 RPE=U−E 也一样。应交叉操纵历史、显式线索期待 E 和当前结果 U，再在留出数据上竞争受约束的 C、线索 RPE 与扩充状态的 TD/RNN。物理刺激相同并不保证所有广义 RPE 为零。
+      <strong>全局科学审计 · 2026 年 10 月 7 日。</strong> Fig.0–7、扩展数据、Natural/QE/Stim13、31 类模型、单细胞准备状态和后续实验已经统一整理。<a href="#global-status"><strong>返回本页的全局进展与执行方案</strong></a>。关键更正：C=U−R 是由 U、R 计算出的对比量，不能同时作为第三个自由自变量；线索 RPE=U−E 也一样。应交叉操纵历史、显式线索期待 E 和当前结果 U，再在留出数据上竞争受约束的 C、线索 RPE 与扩充状态的 TD/RNN。物理刺激相同并不保证所有广义 RPE 为零。
     </div>
 
     <div id="future-experiments" class="future-experiments">
