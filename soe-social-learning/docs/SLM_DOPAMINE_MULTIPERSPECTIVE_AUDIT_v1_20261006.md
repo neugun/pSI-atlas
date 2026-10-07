@@ -97,17 +97,40 @@ Post06 方向相同但配对证据更弱。
 
 这一组结果把原来的主要结果期结论分成两层。社会结果归因和标量 RPE 的组织方式跨读出稳定；RPE 效应强度受到积分时间范围影响。固定 0–6 秒包含动作结束后的结果评估，因此对持续的 outcome/update 信号更敏感。
 
-### 6.2 Early / middle 不能用整个 observation bout 的平均值直接替代
+### 6.2 Early / middle：保持原分析合同不变的 raw-FP 严格复现
 
-原来的 early policy 和 middle APE 是时间定位后的计算。Codex 的 whole-observation-bout AUC/秒回答的是整个观察片段平均有多少 DA，它改变了 estimand。
+Early / middle 的关键复现不能把原来的模型统计改成一个简化 whole-bout correlation。这里重新从 9 只动物各自的连续 raw FP 中计算 observation-bout DA，同时保持原分析的事件、session 阶段、行为 latent、协变量、交叉验证和动物级统计不变。
 
-把整个 observation bout 直接拿来做镜像检查时：
-- 原 early-policy 动物集：whole-bout policy association 的中位数 ρ=.186，P=.438。
-- 原 middle-APE 动物集：animal-level APE coupling 与 SRI 的关系 ρ=−.119，P=.779；原 middle-window authority 为 ρ=.667，P=.0416。
+首先验证新旧 DA 是否确实对应同一神经量：
+- 9 只动物、1,041 个有效 observation-bout 事件。
+- 新旧 observation DA 的逐动物相关为 .9983–.99999，中位 r=.9994。
+- 因而下面比较主要反映 FP→DA 重建方式，而不是事件集合或行为模型变化。
 
-因此 whole-bout averaging 会稀释事件内部短暂计算。结果期可以进行严格的同事件双读出复现；结果前和中段仍应使用时间分辨分析。这也是 PSTH 和原 temporal adjudication 必须保留的原因。
+Early policy：
+- 原始结果：5/6 动物改善，median MSE gain=1.94%，rank-biserial=.810，P=.046875。
+- raw-FP 重建后：仍为 5/6 动物改善，median gain=2.82%，rank-biserial=.810，P=.046875。
+- 新旧逐动物 gain 的秩相关 ρ=1.0。
 
-来源：data/SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv；data/SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv。
+Middle APE：
+- 原始 authority：8 只动物，APE coupling 与 SRI 的关系 ρ=.667，exact one-sided permutation P=.041566。
+- raw-FP 重建后：ρ=.667，exact one-sided permutation P=.041566。
+- 新旧逐动物 APE coupling 的秩相关 ρ=1.0。
+
+因此 Early policy 与 Middle APE 不只是“方向类似”，而是在保持原 estimand 和统计合同不变时对 raw-FP 重建完全保留了主要推断。这一层是 Early/Middle 的正式复现。
+
+来源：data/SOE_VTA_OBSBOUT_RAW_RECON_AUDIT_v102.csv；data/SOE_VTA_EARLY_POLICY_RAW_RECON_v102.csv；data/SOE_VTA_MIDDLE_APE_RAW_RECON_v102.csv；data/SOE_VTA_EARLY_MIDDLE_RAW_RECON_SUMMARY_v102.csv。
+
+### 6.3 Whole-observation-bout 简化相关只作为边界/敏感性检查
+
+先前 whole-bout mirror 得到：
+- Early 简化 policy association：P=.438。
+- Middle 简化 APE×SRI：ρ=−.119，P=.779。
+
+但这一步同时改变了神经汇总方式和统计 estimand，因此不能再表述为“Early/Middle 没有复现”，也不能把阴性结果直接解释成时间稀释的证据。它只说明：如果把原来的交叉验证/残差化模型合同换成整段平均后的简化相关，判别力会丢失。
+
+PSTH 和 time-resolved 分析仍然用于解释信号在事件内部何时出现；复现结论本身以上面的同合同 raw-FP mirror 为准。
+
+来源：data/SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv。
 
 ## 7. SLM 内部变量与不同学习表型
 

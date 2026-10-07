@@ -13,6 +13,7 @@ for fn in ["index-zh.html","index.html"]:
     ck(fn+"_one_vta",s.count('id="vta"')==1)
     order=[
       "SOE_DA_temporal_logic_v67.png",
+      "SOE_VTA_early_middle_raw_recon_replication_v102.png",
       "SOE_VTA_codex_exact_replication_v96.png",
       "SOE_FP_social_sampling_specificity_v92.png",
       "SOE_FP_PSTH_biological_story_v82.png",
@@ -27,7 +28,7 @@ zh=(R/"index-zh.html").read_text(encoding="utf-8")
 k=zh.find('id="vta"'); a=zh.rfind("<section",0,k); b=zh.find("<section",k+1); z=zh[a:b]
 ck("zh_why_how_result",z.count("为什么做")>=4 and z.count("怎么做")>=4 and z.count("结论")>=4,(z.count("为什么做"),z.count("怎么做"),z.count("结论")))
 ck("zh_smooth_note","轻度高斯平滑" in z and "P 值都使用未平滑数据" in z)
-ck("zh_exact_replication_message","只改变光纤信号转成多巴胺数值的方法" in z and "1,371 个结果事件" in z)
+ck("zh_exact_replication_message","SOE_VTA_early_middle_raw_recon_replication_v102.png" in z and "1,041 个有效事件" in z and "1,371 个结果事件" in z)
 ck("zh_return_to_slm",z.count("回到 SLM")>=2)
 for banned in ["不是","而不是","并不是","不只是"]:
     ck("zh_no_"+banned,banned not in z,z.count(banned))

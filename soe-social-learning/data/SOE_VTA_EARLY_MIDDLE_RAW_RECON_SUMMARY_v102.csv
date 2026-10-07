@@ -1,0 +1,8 @@
+test,n_events_or_animals,n_animals,estimate,effect_size,p,interpretation
+observation_readout_agreement,1041,9,0.9994126783079704,,,raw FP reconstruction matches legacy observation-bout DA
+early_policy_old,6,6,1.9397435,0.8095238095238095,0.046875,legacy primary early-policy result
+early_policy_rawrecon,6,6,2.8217670000000004,0.8095238095238095,0.046875,same session/event/CV/latent contract; DA rebuilt from raw FP
+middle_APE_old,8,8,0.6666666666666666,0.6666666666666666,0.041566429404032636,legacy SRI x APE-coupling authority
+middle_APE_rawrecon,8,8,0.6666666666666669,0.6666666666666669,0.041566429404032636,same period/APE/residualization contract; DA rebuilt from raw FP
+early_gain_rank_agreement,6,6,1.0,,,descriptive old vs raw-reconstruction animal-level early gain rank agreement
+middle_effect_rank_agreement,8,8,1.0,,,descriptive old vs raw-reconstruction animal-level APE-coupling rank agreement
