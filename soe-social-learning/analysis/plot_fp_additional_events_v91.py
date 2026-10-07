@@ -2,6 +2,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter1d
 from soe_figure_style_v52 import *
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -19,7 +20,9 @@ def curves(frame,cols):
     for an,g in frame.groupby("AnmID"):
         out.append(np.nanmean(g[cols].to_numpy(float),axis=0))
     x=np.vstack(out)
-    return np.nanmean(x,axis=0),np.nanstd(x,axis=0,ddof=1)/np.sqrt(x.shape[0]),x.shape[0]
+    sigma=1.5 if len(cols)==90 else 2.0
+    sm=gaussian_filter1d(x,sigma=sigma,axis=1,mode="nearest")
+    return np.nanmean(sm,axis=0),np.nanstd(sm,axis=0,ddof=1)/np.sqrt(sm.shape[0]),sm.shape[0]
 
 def add(ax,x,frame,cols,color,label):
     m,e,n=curves(frame,cols)

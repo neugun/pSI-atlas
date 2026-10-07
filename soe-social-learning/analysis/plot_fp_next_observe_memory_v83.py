@@ -2,6 +2,7 @@
 from pathlib import Path
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
 from scipy.stats import wilcoxon
+from scipy.ndimage import gaussian_filter1d
 from soe_figure_style_v52 import *
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -36,6 +37,8 @@ def pval(window,left,right):
 def curve(frame,condition):
     q=frame[frame.condition.eq(condition)].pivot(index="AnmID",columns="x",values="DA_z").sort_index(axis=1)
     x=q.columns.to_numpy(float); arr=q.to_numpy(float)
+    sigma=1.5 if x[0] < 0 else 2.0
+    arr=gaussian_filter1d(arr,sigma=sigma,axis=1,mode="nearest")
     m=np.nanmean(arr,axis=0); s=np.nanstd(arr,axis=0,ddof=1)/np.sqrt(arr.shape[0])
     return x,m,s
 

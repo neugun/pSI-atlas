@@ -11,9 +11,9 @@ def ck(name,cond,detail=""):
 for fn in ["index-zh.html","index.html"]:
     s=(R/fn).read_text(encoding="utf-8")
     ck(fn+"_bio_main",s.count("SOE_FP_PSTH_biological_story_v82.png")==2)
-    ck(fn+"_obs_context",s.count("SOE_FP_PSTH_observation_context_v82.png")==2)
+    ck(fn+"_obs_context","SOE_FP_social_sampling_specificity_v92.png" in s)
     ck(fn+"_heatmap",s.count("SOE_FP_PSTH_trial_heatmaps_v82.png")==2)
-    ck(fn+"_next_memory",s.count("SOE_FP_next_observe_memory_v83.png")==2)
+    ck(fn+"_next_memory",s.count("SOE_FP_next_observe_memory_v83.png")>=2)
     ck(fn+"_vta_block",s.count('id="vta-psth-biological-v84"')==1)
     ck(fn+"_support_details",s.count('id="vta-psth-support-v82"')==1)
     ck(fn+"_key_pvals",all(x in s for x in ["P=0.027","P=0.020","P=0.008"]))

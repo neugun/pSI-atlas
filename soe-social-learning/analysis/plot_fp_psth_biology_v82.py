@@ -2,6 +2,7 @@
 from pathlib import Path
 import sys, numpy as np, pandas as pd, matplotlib.pyplot as plt
 from scipy.stats import wilcoxon
+from scipy.ndimage import gaussian_filter1d
 from soe_figure_style_v52 import *
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -44,7 +45,10 @@ def ms(rows):
     return np.nanmean(x,axis=0),np.nanstd(x,axis=0,ddof=1)/np.sqrt(x.shape[0]),x
 
 def plot_curve(ax,x,rows,color,label):
-    m,s,_=ms(rows)
+    raw=np.vstack([v for _,v in rows])
+    sigma=1.5 if x[0] < 0 else 2.0
+    sm=gaussian_filter1d(raw,sigma=sigma,axis=1,mode="nearest")
+    m=np.nanmean(sm,axis=0); s=np.nanstd(sm,axis=0,ddof=1)/np.sqrt(sm.shape[0])
     ax.plot(x,m,color=color,lw=1.35,label=label)
     ax.fill_between(x,m-s,m+s,color=color,alpha=.16,lw=0)
 
@@ -136,7 +140,7 @@ def render_main(mobile=False):
     ax.bar(x,means,width=.50,color=[colors[e] for e in order],edgecolor="none",zorder=2)
     ax.errorbar(x,means,yerr=errs,fmt="none",ecolor=BLACK,elinewidth=.8,capsize=2,capthick=.8,zorder=3)
     ax.axhline(0,color=GRAY_LIGHT,lw=.6)
-    ax.set_xticks(x); ax.set_xticklabels(["Active\nprior","Passive\nprior","Unrewarded\nprior"])
+    ax.set_xticks(x); ax.set_xticklabels(["Active\nprior","Passive\nprior","No reward\nprior"])
     ax.set_ylabel("DA z-score, 0–2 s"); ax.set_title("Next-observe VTA state",pad=2)
     ymax=max(means[i]+errs[i] for i in range(3)); ax.set_ylim(min(-.45,min(means)-.2),ymax+.34)
     ax.text(.03,.97,f"Active vs Unrewarded  P={p_post('active','unrewarded'):.3f}\nPassive vs Unrewarded  P={p_post('passive','unrewarded'):.3f}",transform=ax.transAxes,ha="left",va="top",fontsize=5.3)

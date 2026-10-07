@@ -1,0 +1,8 @@
+test,label,post_effect,bout_effect,post_wins,bout_wins,post_p,bout_p,n,replication
+q_signed_unsigned,Signed + unsigned RPE,4.097408632325421,2.672284664162222,8,7,0.0078125,0.0546875,9,same_direction_weaker_duration
+actor_rpe_abs,Actor RPE + |RPE|,2.722279016275859,1.7850406120687554,9,6,0.00390625,0.359375,9,same_direction_weaker_duration
+scalar_full,Scalar RPE family,3.4987264944630456,1.9829214121932823,6,8,0.07421875,0.09765625,9,same_direction
+vector_signed,Outcome-vector PE,1.2531167161530243,0.968709663987504,6,5,0.1640625,0.49609375,9,same_direction_but_weaker_than_scalar
+update_selected_vs_w0p75,Behavior-selected credit vs fixed 0.75,0.003038784762721,0.0029700856189589,7,9,0.0390625,0.00390625,9,full_replication
+update_selected_vs_w1p0,Behavior-selected credit vs fixed 1.0,0.0030177250910702,0.0030731229678881,6,9,0.0546875,0.00390625,9,full_replication
+vector_after_scalar,Vector PE added after scalar RPE,-0.0003535402216932,-0.0005865276714534,5,3,1.0,0.49609375,9,no_increment_in_both

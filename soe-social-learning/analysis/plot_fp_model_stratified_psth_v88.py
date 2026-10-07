@@ -3,6 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter1d
 from soe_figure_style_v52 import *
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -68,7 +69,9 @@ def plot_pair(ax, fixed, group_col, cols, xx, title):
     for grp in ["high","low"]:
         rows=[r for r in animal_mean(fixed,group_col,cols) if r[0]==grp]
         arr=np.vstack([r[2] for r in rows])
-        m=np.nanmean(arr,axis=0); e=np.nanstd(arr,axis=0,ddof=1)/np.sqrt(arr.shape[0])
+        sigma=1.5 if xx[0] < 0 else 2.0
+        arr_display=gaussian_filter1d(arr,sigma=sigma,axis=1,mode="nearest")
+        m=np.nanmean(arr_display,axis=0); e=np.nanstd(arr_display,axis=0,ddof=1)/np.sqrt(arr_display.shape[0])
         ax.plot(xx,m,color=colors[grp],lw=1.3,label=f"{grp} (n={arr.shape[0]} animals)")
         ax.fill_between(xx,m-e,m+e,color=colors[grp],alpha=.16,lw=0)
         for j,(tt,val) in enumerate(zip(xx,m)):

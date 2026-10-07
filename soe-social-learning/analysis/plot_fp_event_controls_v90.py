@@ -3,6 +3,7 @@ from pathlib import Path
 import numpy as np, pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import wilcoxon
+from scipy.ndimage import gaussian_filter1d
 from soe_figure_style_v52 import *
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -28,7 +29,8 @@ def animal_curve(frame):
 def summary(frame):
     ac=animal_curve(frame)
     mat=np.vstack([x[1] for x in ac])
-    return np.nanmean(mat,axis=0), np.nanstd(mat,axis=0,ddof=1)/np.sqrt(mat.shape[0]), mat.shape[0], ac
+    sm=gaussian_filter1d(mat,sigma=1.5,axis=1,mode="nearest")
+    return np.nanmean(sm,axis=0), np.nanstd(sm,axis=0,ddof=1)/np.sqrt(sm.shape[0]), sm.shape[0], ac
 
 def win_animal(frame,lo,hi):
     mask=(t>=lo)&(t<hi)

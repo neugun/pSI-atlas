@@ -1,0 +1,3 @@
+test,n,effect,p,positive,reference,interpretation
+whole_obs_bout_policy,6,0.1860656841437926,0.4375,3,old early ActorPolicy used a temporally localized early observation window,whole-bout averaging does not reproduce the early localized policy signal
+whole_obs_bout_APE_x_SRI,8,-0.11904761904761905,0.7788857260523796,5,"old middle APE x SRI: rho=0.667, P=0.0416",whole-observation-bout averaging does not reproduce the middle localized APE relationship

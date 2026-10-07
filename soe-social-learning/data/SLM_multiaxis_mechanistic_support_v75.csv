@@ -42,3 +42,10 @@ fp_social_sampling,Observe_inside_vs_outside_whole_bout,paired_DA_contrast,0.294
 fp_social_sampling_control,Dem_transition_inside_vs_random_post02,paired_DA_contrast,-0.000296,9.0,1.0,示范鼠状态转换本身在 inside 条件下不能复制观察相关 VTA 信号,SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv
 fp_positive_control,Observer_feeding_post_vs_pre,paired_DA_change,0.347997,9.0,0.01171875,学习者自身进食开始后 VTA 多巴胺相对自身前状态升高，8/9 动物同方向,SOE_FP_EVENT_CONTROL_STATS_v90.csv
 fp_positive_control,Observer_feeding_whole_bout,one_sample_DA,0.349109,9.0,0.00390625,学习者自身进食真实 bout 全程 VTA 多巴胺高于零，9/9 动物同方向,SOE_FP_ADDITIONAL_BOUT_EVENT_STATS_v91.csv
+codex_exact_replication,Q_RPE_signed_abs_both_readouts,median_MSE_gain_pct,4.097_fixed__2.672_bout,9.0,0.0546875,Q-RPE+|RPE| 在两种 DA 读出中方向一致；真实行为时长证据减弱，固定结果后窗口更敏感,SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv
+codex_exact_replication,Actor_RPE_abs_both_readouts,median_MSE_gain_pct,2.722_fixed__1.785_bout,9.0,0.359375,Actor RPE+|RPE| 在两种读出中保持正向，固定结果后窗口更强,SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv
+codex_exact_replication,Passive_credit_vs_fixed075_both,animals_better,7_of_9_fixed__9_of_9_bout,9.0,0.00390625,行为独立学到的社会归因在两种 DA 读出中均迁移到 VTA,SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv
+codex_exact_replication,Passive_credit_vs_fixed100_both,animals_better,6_of_9_fixed__9_of_9_bout,9.0,0.00390625,行为独立学到的社会归因在两种 DA 读出中均保持优势,SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv
+codex_exact_replication,Vector_after_scalar_both,incremental_MSE_gain,-0.000354_fixed__-0.000587_bout,9.0,0.49609375,结果向量误差在两种读出中加入标量 RPE 后均无额外收益,SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv
+codex_temporal_boundary,Whole_observation_bout_policy,median_within_animal_rho,0.186066,6.0,0.4375,整个观察片段平均会稀释原本局限于 early window 的采样策略信号,SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv
+codex_temporal_boundary,Whole_observation_bout_APE_x_SRI,spearman_rho,-0.119048,8.0,0.778886,整个观察片段平均不能替代 middle-window APE 时间定位,SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 import pandas as pd, numpy as np, matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter1d
 from soe_figure_style_v52 import *
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -25,6 +26,8 @@ def render():
             ax=fig.add_subplot(gs[i,j])
             q=df[df.event_type.eq(e)].sort_values("time_s")
             x=q.time_s.to_numpy(); y=q.mean_da.to_numpy(); se=q.sem_da.to_numpy()
+            y=gaussian_filter1d(y,sigma=1.5,mode="nearest")
+            se=gaussian_filter1d(se,sigma=1.5,mode="nearest")
             ax.plot(x,y,color=colors[e],lw=1.35)
             ax.fill_between(x,y-se,y+se,color=colors[e],alpha=.16,lw=0)
             ax.axvline(0,color=GRAY_MID,lw=.7,ls="--"); ax.axhline(0,color=GRAY_LIGHT,lw=.6)

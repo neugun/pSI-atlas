@@ -77,20 +77,37 @@ Post06 方向相同但配对证据更弱。
 
 来源：`SOE_RL_Results_and_Figure_Legends_v3_20260921`。
 
-## 6. Fiber photometry → 多巴胺数值的双定义稳健性
+## 6. Codex FP→DA 读出对原 VTA–SLM 结论的复现
 
-这里比较的是同一条 FP 信号怎样变成事件级多巴胺数值，而非另一套 RPE/APE 模型。
+这一步的目的，是检验原有 VTA–SLM 结论能否在另一种 DA 量化方式下重现。
 
-- 固定 0–6 s：每个事件统一取结果后 0–6 s 的多巴胺 AUC/秒。
-- 真实 bout 时长：从行动起点积分到真实 bout 终点，再除以真实 bout 时长；<0.05 s 的近零 bout 排除。
-- 公平比较只保留两种定义都有效的 1,371 个事件、9 只动物。
-- 两种 DA 数值逐动物相关 ρ=.520–.944，中位数 .785。
-- behavior-selected Passive credit 相对 fixed 0.75/1.0 在两种定义中均保持优势；同一动物的优势跨算法相关分别 ρ=.733（P=.0246）和 .800（P=.00963）。
-- actor |RPE| 有 7/9 动物在两种定义下同时改善。固定 0–6 s 单独统计更强，但 readout 间归一化增益差异 P=.164。
+### 6.1 结果期可以做严格的同事件复现
 
-因此最重要的结论是：**SLM 的行为→神经归因映射不依赖人为挑选一个 FP 积分窗口。** 两种窗口改变灵敏度，但没有改变主方向。
+固定结果后 0–6 秒与 Codex 真实行动片段 AUC/秒都有效的共同数据包括 1,371 个事件、9 只动物。行为参数、事件身份和模型比较保持不变，只替换 DA target。
 
-来源：data/SLM_FP_DA_METHOD_AUDIT_v1.csv；data/SLM_FP_DA_CROSS_READOUT_CONSENSUS_v1.csv。
+- 两种 DA 数值逐动物均正相关：ρ=.520–.944，中位数 .785。
+- Q-RPE+|RPE|：固定 0–6 秒中 8/9 改善，P=.00781；真实行动片段中 7/9 改善，P=.0547。
+- Actor RPE+|RPE|：固定窗口 9/9，P=.00391；真实行动片段 6/9，P=.359。方向仍为正，但证据明显减弱。
+- 行为数据独立选出的 Passive social credit 是最强跨方法复现：
+  - 相对 fixed 0.75：固定窗口 7/9，P=.0391；真实行动片段 9/9，P=.00391。
+  - 相对 fixed 1.0：固定窗口 6/9，P=.0547；真实行动片段 9/9，P=.00391。
+- 标量 RPE 家族在两种读出中都强于测试的 outcome-vector PE；向量项加入标量 RPE 后均无增益：
+  - 固定窗口 incremental MSE gain = −0.000354，P=1.0。
+  - 真实行动片段 = −0.000587，P=.496。
+
+这一组结果把原来的主要结果期结论分成两层。社会结果归因和标量 RPE 的组织方式跨读出稳定；RPE 效应强度受到积分时间范围影响。固定 0–6 秒包含动作结束后的结果评估，因此对持续的 outcome/update 信号更敏感。
+
+### 6.2 Early / middle 不能用整个 observation bout 的平均值直接替代
+
+原来的 early policy 和 middle APE 是时间定位后的计算。Codex 的 whole-observation-bout AUC/秒回答的是整个观察片段平均有多少 DA，它改变了 estimand。
+
+把整个 observation bout 直接拿来做镜像检查时：
+- 原 early-policy 动物集：whole-bout policy association 的中位数 ρ=.186，P=.438。
+- 原 middle-APE 动物集：animal-level APE coupling 与 SRI 的关系 ρ=−.119，P=.779；原 middle-window authority 为 ρ=.667，P=.0416。
+
+因此 whole-bout averaging 会稀释事件内部短暂计算。结果期可以进行严格的同事件双读出复现；结果前和中段仍应使用时间分辨分析。这也是 PSTH 和原 temporal adjudication 必须保留的原因。
+
+来源：data/SOE_VTA_CODEX_EXACT_REPLICATION_v96.csv；data/SOE_VTA_CODEX_OBSERVATION_BOUT_MIRROR_v97.csv。
 
 ## 7. SLM 内部变量与不同学习表型
 
@@ -105,14 +122,27 @@ Post06 方向相同但配对证据更弱。
 
 来源：`SLM_all40_training_dynamics_latent_bridge_stats_v1.csv`。
 
+## 7A. PSTH 的作用：把模型效应展开回真实时间过程
+
+新增 PSTH 回答三个时间问题：
+
+1. 有效社会采样何时招募 VTA？真实观察区内观察高于同区域随机不观察（0–6 秒 8/9，P=.00781），也高于观察区外（0–2 秒和 0–6 秒均 9/9，P=.00391）；示范鼠状态转换控制为阴性。
+2. 不同结果的 DA 时间结构是什么？Active 更快，Passive 更持续，Unrewarded 进入负向状态；这个时间结构解释了为什么固定结果后窗口与真实行动片段对 RPE 有不同灵敏度。
+3. 结果后的状态会不会进入下一次观察？下一次观察开始前，Active 和 Passive 后的 VTA 状态已经高于 Unrewarded；差异在观察开始后和真实观察片段早期继续存在。
+
+PSTH 曲线在页面上仅作轻度高斯平滑以帮助观察趋势：固定时间曲线 σ=1.5 个 0.1 秒时间格，行为片段相位曲线 σ=2 个相位点。统计窗口、逐动物效应和 P 值全部使用未平滑数据。
+
+这三组结果共同补足 SLM 的时间解释：有效社会采样招募 VTA，结果类型形成不同的 update state，这个状态随后进入下一次社会信息采样。
+
 ## 8. 当前整合
 
-现在 SLM 获得六个互补方向的支持：
+当前证据形成一条连续链：
 1. 行为结果会在下一次决策立刻重设社会信息需求。
 2. 分钟级历史与跨天先验继续塑造同一采样策略。
-3. 行为模型需要动作预测成分，并保留较小 reward-dependent update。
-4. VTA 按 policy → APE → post-outcome update 的顺序表达计算。
-5. 结果后误差表示目前以 scalar RPE-like 最简洁；这定义了 SLM 的边界，而不削弱事件内时间结构。
-6. 行为中独立学到的 Passive credit 能直接迁移到 VTA，多巴胺参数无需重新拟合。
+3. 行为模型需要动作预测成分，并保留结果依赖的更新。
+4. 原始 VTA 时间分析把采样策略 → APE → 结果后更新放在正确的事件内顺序。
+5. Codex 真实行动时长读出重复了结果期最关键的行为→神经映射：社会结果归因跨方法成立，标量 RPE 仍比测试的结果向量更简洁。
+6. 固定结果后窗口对 RPE 更敏感，PSTH 显示其时间来源是动作结束后仍持续的结果评估与更新。
+7. 有效社会观察选择性招募 VTA，而上一结果形成的 VTA 状态还能延续到下一次观察。
 
 对应数据总表：`data/SLM_multiaxis_mechanistic_support_v75.csv`。

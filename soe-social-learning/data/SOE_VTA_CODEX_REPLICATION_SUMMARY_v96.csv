@@ -1,0 +1,6 @@
+question,result,meaning
+common_event_contract,1371 events / 9 animals,same events valid for both fixed 0-6 s and strict action-bout AUC/s
+readout_agreement,median rho=0.785,range 0.520-0.944
+social_credit,replicated,behavior-selected passive credit beats fixed 0.75/1.0 under both readouts
+scalar_vs_vector,replicated qualitatively,scalar RPE family remains stronger than tested vector PE; vector adds no benefit after scalar
+post_RPE_strength,window-sensitive,RPE-family gain keeps the same direction but is weaker under strict action-bout readout
