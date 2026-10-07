@@ -36,3 +36,9 @@ fp_cross_event_memory,next_observe_phase25_passive_vs_unrewarded,paired_DA_diff,
 fp_outcome_time_structure,Active_vs_Unrewarded_fixed_minus_bout,paired_readout_difference,0.192237,9.0,0.02734375,主动成功相对未奖赏的 VTA 区分在结果后 0–6 秒显著大于真实行为片段，支持行为结束后的持续结果信号,SOE_FP_OUTCOME_CONTRASTS_BY_READOUT_v85.csv
 fp_outcome_time_structure,Passive_vs_Unrewarded_actual_bout,paired_DA_contrast,0.326449,9.0,0.01953125,被动结果相对未奖赏的多巴胺差异在真实行为片段内仍成立，8/9 动物同方向,SOE_FP_OUTCOME_CONTRASTS_BY_READOUT_v85.csv
 fp_outcome_time_structure,Passive_vs_Active_actual_bout,paired_DA_contrast,0.167553,9.0,0.0390625,真实行为片段内被动结果高于主动成功，8/9 动物同方向；读法间直接差异不显著,SOE_FP_OUTCOME_CONTRASTS_BY_READOUT_v85.csv
+fp_social_sampling,Observe_inside_vs_random_inside_post06,paired_DA_contrast,0.346703,9.0,0.0078125,观察区内真实观察高于同区域随机不观察时刻，8/9 动物同方向；位置本身不足以解释 VTA 招募,SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv
+fp_social_sampling,Observe_inside_vs_outside_post02,paired_DA_contrast,0.301634,9.0,0.00390625,观察开始后 0–2 秒 inside 高于 outside，9/9 动物同方向,SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv
+fp_social_sampling,Observe_inside_vs_outside_whole_bout,paired_DA_contrast,0.29452,9.0,0.0078125,inside 相对 outside 的 VTA 差异贯穿真实观察 bout，8/9 动物同方向,SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv
+fp_social_sampling_control,Dem_transition_inside_vs_random_post02,paired_DA_contrast,-0.000296,9.0,1.0,示范鼠状态转换本身在 inside 条件下不能复制观察相关 VTA 信号,SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv
+fp_positive_control,Observer_feeding_post_vs_pre,paired_DA_change,0.347997,9.0,0.01171875,学习者自身进食开始后 VTA 多巴胺相对自身前状态升高，8/9 动物同方向,SOE_FP_EVENT_CONTROL_STATS_v90.csv
+fp_positive_control,Observer_feeding_whole_bout,one_sample_DA,0.349109,9.0,0.00390625,学习者自身进食真实 bout 全程 VTA 多巴胺高于零，9/9 动物同方向,SOE_FP_ADDITIONAL_BOUT_EVENT_STATS_v91.csv

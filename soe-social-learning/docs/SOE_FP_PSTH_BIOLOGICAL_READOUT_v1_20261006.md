@@ -41,6 +41,21 @@
 
 这组结果把“窗口选择”转化为时间结构问题：主动成功相对未奖赏的区分明确从行为执行期延续到结果后；被动结果相对未奖赏则跨两个时间范围都很稳定。
 
+## 2C. 观察期 VTA 信号属于有效社会信息采样状态
+
+新增位置和事件控制后，观察期信号的来源更清楚：
+
+- **真实观察 vs 同一区域随机不观察**：观察区内，真实观察开始后 0–2 秒为 7/9 动物更高，P=.0273；0–6 秒为 8/9，P=.00781。空间位置本身不能解释观察相关 VTA 上升。
+- **观察区内 vs 观察区外**：0–2 秒和 0–6 秒均为 9/9 动物观察区内更高，P=.00391。
+- **真实观察 bout**：把每次观察按真实持续时间归一化，观察区内相对观察区外的差异贯穿整个 bout；整段 8/9 同方向，P=.00781，前 25% 也成立，P=.0195。
+- **示范鼠状态转换控制**：inside transition 相对同区域随机时刻，0–2 秒 P=1.0；outside transition P=.910。单纯同伴状态变化不能复制观察期 VTA 信号。
+
+这组结果支持一个更具体的解释：**VTA 在动物真正进入有效社会信息采样状态时被选择性招募。** 它与 SLM 的结果前采样策略形成直接的生理对应，同时位置匹配和同伴转换控制排除了两个简单解释。
+
+学习者自身进食提供独立阳性控制：进食开始后 0–2 秒相对自身前状态为 8/9 升高，P=.0117；按真实 feeding bout 归一化后，整段 9/9 高于零，P=.00391。
+
+示范鼠触发与未触发事件在事件后固定时间和真实 bout 全程均没有稳定差异（P=.129），因此这一事件类别本身不足以解释主要观察和结果信号。
+
 ## 3. 上一次结果会延续到下一次观察
 
 只看结果后 60 秒内第一次重新观察的事件：
@@ -89,6 +104,11 @@
 - data/SOE_FP_NEXT_OBSERVE_POST02_PER_ANIMAL_v82.csv
 - data/SOE_FP_NEXT_OBSERVE_POST02_STATS_v82.csv
 - data/SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+- data/SOE_FP_SOCIAL_SAMPLING_SPECIFICITY_v92.csv
+- data/SOE_FP_EVENT_CONTROL_STATS_v90.csv
+- data/SOE_FP_EVENT_CONTROL_ANIMAL_CURVES_v90.csv
+- data/SOE_FP_ADDITIONAL_BOUT_EVENT_STATS_v91.csv
+- data/SOE_FP_ADDITIONAL_EVENT_CURVES_v91.csv
 - data/fp_da_common_event_v1/method_difference_events.csv.gz
 
 ## 7. Figures
@@ -97,3 +117,6 @@
 - assets/SOE_FP_PSTH_observation_context_v82.*
 - assets/SOE_FP_PSTH_trial_heatmaps_v82.*
 - assets/SOE_FP_next_observe_memory_v83.*
+- assets/SOE_FP_social_sampling_specificity_v92.*
+- assets/SOE_FP_PSTH_event_controls_v90.*
+- assets/SOE_FP_PSTH_additional_events_v91.*
