@@ -199,6 +199,31 @@
       </div>
     </div>
 
+
+    <div class="mechanism-fork">
+      <h3>The remaining mechanistic fork</h3>
+      <p class="mechanism-intro">Modern dopamine theory leaves two serious implementations open. The present dataset identifies the missing state variable—sampled reward history—but does not yet force one of these implementations.</p>
+      <div class="mechanism-grid">
+        <article class="mechanism-card">
+          <span class="mechanism-label">Model A</span>
+          <h4>Augmented-state generalized RPE</h4>
+          <p>The learner's hidden state includes recent sampled history <strong>R</strong>. Dopamine still reports a generalized TD/prediction error, but that error is computed over a richer state representation than cue, time or block identity alone.</p>
+          <div class="mechanism-prediction"><b>Key prediction:</b> a sufficiently good learned-state TD/RNN model should absorb the matched-current history effect once it has access to the information needed to infer R.</div>
+        </article>
+        <article class="mechanism-card focal">
+          <span class="mechanism-label">Model B</span>
+          <h4>Sustained reference-relative state / comparator signal</h4>
+          <p>Recent history establishes a reference before the bout, and after sampling the ongoing dopamine signal itself carries a sustained signed comparison between current reward <strong>U</strong> and reference <strong>R</strong>.</p>
+          <div class="mechanism-prediction"><b>Key prediction:</b> even when explicit cue expectation makes classical RPE ~0, the same expected probe should still separate by history during sustained consumption, and that signal should causally control persistence.</div>
+        </article>
+      </div>
+      <div class="mechanism-decision">
+        <b>What the current data already decide:</b> recent sampled history is required in the internal state description.<br>
+        <b>What they do not yet decide:</b> whether sustained VTA dopamine is a generalized prediction error over that augmented state or a distinct ongoing comparator/state signal.<br>
+        <b>Decisive experiment:</b> fully cross history × current reward × explicit expectation, then compare cue/first-sample/0–2 s versus sustained 2–5 s responses in the same cells and fit augmented-state TD/RNN and explicit C=U−R models on held-out trials.
+      </div>
+    </div>
+
     <div class="callout theory-boundary">
       <strong>This framing matters.</strong>
       The strongest claim is <em>not</em> that Reward Contrast disproves RPE.

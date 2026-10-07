@@ -202,6 +202,31 @@
       </div>
     </div>
 
+
+    <div class="mechanism-fork">
+      <h3>现在真正剩下的 mechanistic fork</h3>
+      <p class="mechanism-intro">现代 dopamine theory 允许两个都很严肃的 implementation。当前数据已经识别出“缺失的 state variable”——sampled reward history——但还没有资格强行二选一。</p>
+      <div class="mechanism-grid">
+        <article class="mechanism-card">
+          <span class="mechanism-label">Model A</span>
+          <h4>Augmented-state generalized RPE</h4>
+          <p>learner 的 hidden state 中包含 recent sampled history <strong>R</strong>。dopamine 仍然是 generalized TD / prediction error，只是这个 error 不再在 cue、time 或 block identity 这种贫乏 state 上计算，而是在包含 R 的 richer state representation 上计算。</p>
+          <div class="mechanism-prediction"><b>关键预测：</b>如果给 learned-state TD/RNN 足够的信息去推断 R，那么它应当能够吸收 matched-current history effect。</div>
+        </article>
+        <article class="mechanism-card focal">
+          <span class="mechanism-label">Model B</span>
+          <h4>Sustained reference-relative state / comparator signal</h4>
+          <p>recent history 在 bout 前建立 reference；current reward 真正被 sample 后，ongoing dopamine signal 本身持续携带 current reward <strong>U</strong> 与 reference <strong>R</strong> 的 signed comparison。</p>
+          <div class="mechanism-prediction"><b>关键预测：</b>即使 explicit cue expectation 已经让 classical RPE≈0，完全相同且同样 expected 的 probe 仍会因为不同 history 在 sustained consumption 阶段分离，而且该 signal 会因果改变 persistence。</div>
+        </article>
+      </div>
+      <div class="mechanism-decision">
+        <b>当前数据已经决定的：</b>internal state description 必须保留 recent sampled history。<br>
+        <b>当前数据还没有决定的：</b>sustained VTA dopamine 究竟是 augmented state 上的 generalized prediction error，还是一个不同的 ongoing comparator/state signal。<br>
+        <b>决定性实验：</b>fully cross history × current reward × explicit expectation；在同一细胞中分别比较 cue / first-sample / 0–2 s 与 sustained 2–5 s，再用 held-out trial 直接竞争 augmented-state TD/RNN 与 explicit C=U−R model。
+      </div>
+    </div>
+
     <div class="callout theory-boundary">
       <strong>这个 framing 很关键。</strong>
       最强的说法不是 Reward Contrast “推翻 RPE”。
