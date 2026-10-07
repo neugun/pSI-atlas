@@ -1,0 +1,9 @@
+{
+  "actor_common_events": 1371,
+  "actor_animals": 9,
+  "passive_common_events": 1371,
+  "passive_animals": 9,
+  "definition_Post06": "fixed 0-6 s post-event DA AUC per second",
+  "definition_ActionBout": "actual action-bout duration DA AUC per second; duration >=0.05 s",
+  "common_event_rule": "both targets finite and ActionBoutDur_FP >=0.05 s"
+}

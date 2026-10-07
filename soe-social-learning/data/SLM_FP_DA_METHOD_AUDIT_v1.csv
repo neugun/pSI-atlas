@@ -1,0 +1,7 @@
+analysis_scope,da_definition,test,n_events,n_animals,direction,effect,p,interpretation
+definition,Post06,固定 0–6 s 结果后窗口；AUC/秒,1371,9,,,,共同时间窗
+definition,ActionBout,真实 action-bout 时长；AUC/真实时长；排除 <0.05 s,1371,9,,,,真实行为执行期
+agreement,both,逐动物两种 DA readout 相关,1371,9,positive,median rho=0.785; range=0.520-0.944,,同一底层信号，不同时间加权
+cross_readout,both,actor |RPE| 两种 readout 同时为正,1371,9,7_of_9,Post06 median +1.761%; ActionBout +0.689%,0.164062,方向跨算法保留；readout 间归一化差异不显著
+cross_readout,both,behavior-selected credit vs fixed 0.75,1371,9,7_of_9_both,gain-rank rho=0.733; rho P=0.0246,0.097656,行为→神经归因映射跨算法重复
+cross_readout,both,behavior-selected credit vs fixed 1.0,1371,9,7_of_9_both,gain-rank rho=0.800; rho P=0.00963,0.097656,行为→神经归因映射跨算法重复

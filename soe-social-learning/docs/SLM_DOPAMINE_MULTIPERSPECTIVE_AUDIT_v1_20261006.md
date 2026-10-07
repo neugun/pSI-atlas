@@ -77,33 +77,20 @@ Post06 方向相同但配对证据更弱。
 
 来源：`SOE_RL_Results_and_Figure_Legends_v3_20260921`。
 
-## 6. 旧 Codex 3.2/3.3 的两条多巴胺计算路线
+## 6. Fiber photometry → 多巴胺数值的双定义稳健性
 
-### 路线 A：State + Value + RPE / Full RL
+这里比较的是同一条 FP 信号怎样变成事件级多巴胺数值，而非另一套 RPE/APE 模型。
 
-旧 `v24Aligned` 神经回归：
-- State：R²=.131；animal holdout=.029。
-- State+RPE：.185；holdout=.071。
-- State+Value+RPE：.195；holdout=.093。
-- Full RL：.196；holdout=.092。
-- RPE-only：.014；holdout=−.293。
+- 固定 0–6 s：每个事件统一取结果后 0–6 s 的多巴胺 AUC/秒。
+- 真实 bout 时长：从行动起点积分到真实 bout 终点，再除以真实 bout 时长；<0.05 s 的近零 bout 排除。
+- 公平比较只保留两种定义都有效的 1,371 个事件、9 只动物。
+- 两种 DA 数值逐动物相关 ρ=.520–.944，中位数 .785。
+- behavior-selected Passive credit 相对 fixed 0.75/1.0 在两种定义中均保持优势；同一动物的优势跨算法相关分别 ρ=.733（P=.0246）和 .800（P=.00963）。
+- actor |RPE| 有 7/9 动物在两种定义下同时改善。固定 0–6 s 单独统计更强，但 readout 间归一化增益差异 P=.164。
 
-旧结果的主要信息是当前状态承担大量可泛化多巴胺结构，RPE 在状态基础上增加解释量；RPE 单独跨动物泛化失败。它与现在 SLM 的“state representation + temporally localized update”方向一致。
+因此最重要的结论是：**SLM 的行为→神经归因映射不依赖人为挑选一个 FP 积分窗口。** 两种窗口改变灵敏度，但没有改变主方向。
 
-### 路线 B：same-day fast update + cross-day slow prior
-
-旧行为/DA bridge 输出包括：
-- `day_prior_qdiff`
-- `fast_qdiff_pre`
-- `slow_qdiff_pre`
-- `fast_rpe`
-- `slow_rpe`
-
-Day 1 的 fast Q 在 33/39 动物改善选择预测（P≈3.1×10⁻⁶）；Days 2–14 再加入 day-start prior 继续提高预测（P≈.004）。对应神经解释为：
-- observation/view period：结果前 policy/value/belief；
-- outcome period：当前事件 RPE/surprise/update。
-
-这套旧分解与当前“多时间尺度行为状态 + 事件内 VTA 时间顺序”可以互相对照。旧结果作为历史审计保留；主结论继续由当前严格 held-animal authority 决定。
+来源：data/SLM_FP_DA_METHOD_AUDIT_v1.csv；data/SLM_FP_DA_CROSS_READOUT_CONSENSUS_v1.csv。
 
 ## 7. SLM 内部变量与不同学习表型
 
