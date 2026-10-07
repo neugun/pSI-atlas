@@ -121,13 +121,15 @@ It is that **deeper cumulative sampled history contains predictive information t
 
 ### How the model zoo should be interpreted
 
-The model zoo is not a leaderboard.
+The 31-family model zoo is not a leaderboard.
 
 Each model asks whether a different state representation makes the explicit sampled reference unnecessary.
 
-- **Belief / HMM:** Is categorical hidden state sufficient?
+- **Belief state:** Is an inferred latent task state sufficient?
+- **Continuous-time HMM:** Can a flexible continuously evolving hidden state absorb the cumulative sampled-history effect?
+- **Kalman / Bayesian uncertainty:** Can uncertainty-weighted state estimation explain the history dependence without an explicit cumulative reference?
 - **Reward rate:** Is R just a running average?
-- **Pearce–Hall / Kalman / uncertainty:** Is adaptive uncertainty or learning rate the real state variable?
+- **Pearce–Hall / adaptive learning:** Is changing learning rate the real state variable?
 - **Canonical TD/RW-RPE:** Is a standard actual-minus-expected state enough?
 - **Multi-timescale:** Is generic temporal integration sufficient?
 - **Value-RNN / RNN+time:** Can a flexible learned recurrent state absorb the effect?

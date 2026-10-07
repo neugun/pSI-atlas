@@ -674,15 +674,17 @@
       </figure>
     </div>
 <details class="model-zoo-details" open>
-<summary><strong>Complete dopamine model zoo: tested, historical recovery, boundary, and non-identifiable families</strong></summary>
-<p class="model-zoo-note">Three evidence layers are kept separate: held-out relative MAE in panel C, protocol-matched unique-information horse races in panel D, and the historical model-recovery matrix. They answer different questions and are not collapsed into one leaderboard. Canonical RPE/TD, HMM/belief, reward rate, Pearce–Hall, Kalman, distributional RL, Value-RNN, BlockSampling, ReferenceRW, TwoStage, and task-adapted LC/5-HT/Harkin structural analogues are retained.</p>
+<summary><strong>Complete 31-family dopamine model zoo: tested, historical recovery, boundary, and non-identifiable families</strong></summary>
+<p class="model-zoo-note"><strong>Registry audit: 31 families.</strong> Continuous-time HMM and the task-adapted Gershman/Kalman filter are now explicit rows rather than being folded into broader belief/uncertainty labels. Three evidence layers are kept separate: held-out relative MAE in panel C, protocol-matched unique-information horse races in panel D, and the historical model-recovery matrix. They answer different questions and are not collapsed into one leaderboard. Canonical RPE/TD, HMM/belief, reward rate, Pearce–Hall, Kalman, distributional RL, Value-RNN, BlockSampling, ReferenceRW, TwoStage, and task-adapted LC/5-HT/Harkin structural analogues are retained.</p>
 <div class="model-zoo-table-wrap"><table class="model-zoo-table"><colgroup><col class="mz-c1"><col class="mz-c2"><col class="mz-c3"><col class="mz-c4"></colgroup><thead><tr><th>Model family</th><th>Status</th><th>Key result</th><th>Role</th></tr></thead><tbody>
 <tr><td class="mz-family">Canonical TD RW</td><td><span class="mz-status tested">tested</span></td><td>Schultz_TD_RW mean rel MAE=1.005; baseline-comparable; serves canonical scalar reference</td><td>core comparator</td></tr>
 <tr><td class="mz-family">Reward uncertainty</td><td><span class="mz-status tested">tested</span></td><td>entropy dR2=0.001916 P=0.4755; posterior variance dR2=0.002706 P=0.4037</td><td>boundary/control</td></tr>
 <tr><td class="mz-family">Adaptive value coding</td><td><span class="mz-status tested">tested</span></td><td>mean rel MAE=1.031; TD/RW unique beyond gain dR2=0.01563 P=0.0464; gain beyond TD/RW dR2=0.00047 P=0.698</td><td>strong negative comparator</td></tr>
 <tr><td class="mz-family">Marginal utility</td><td><span class="mz-status boundary">not identifiable</span></td><td>two physical reward levels make any monotonic utility transform affine in reward category; RW error is collinear up to scale</td><td>explicit task-design boundary</td></tr>
 <tr><td class="mz-family">Belief state RPE</td><td><span class="mz-status tested">tested</span></td><td>held-out mean rel MAE=0.971; 9/11 better than baseline P=0.240; FullHistory beyond belief dR2=0.02541 P=0.0124; belief beyond FullHistory dR2=0.000465 P=0.726</td><td>core theoretical comparator</td></tr>
+<tr><td class="mz-family">Continuous-time HMM</td><td><span class="mz-status tested">tested</span></td><td>held-out mean rel MAE=0.923; FullHistory beyond HMM dR2=0.0266 P=0.0090; reverse HMM-specific increment was small/not detected</td><td>core latent-state comparator</td></tr>
 <tr><td class="mz-family">Bayesian uncertainty</td><td><span class="mz-status tested">tested</span></td><td>no unique sustained-DA information beyond FullHistory+belief</td><td>boundary/control</td></tr>
+<tr><td class="mz-family">Kalman state filter</td><td><span class="mz-status tested">tested</span></td><td>Gershman_Kalman mean rel MAE=1.0003; no stable held-out superiority over the scalar cumulative-history family</td><td>uncertainty/state-estimation comparator</td></tr>
 <tr><td class="mz-family">Distributional RL</td><td><span class="mz-status tested">tested</span></td><td>distributional mean r=0.993 with FullHistory; spread beyond FH+mean dR2=0.000012 P=0.941</td><td>single-cell future direction; population boundary</td></tr>
 <tr><td class="mz-family">State uncertainty ramp</td><td><span class="mz-status tested">tested</span></td><td>uncertainty terms add no unique sustained-DA information; clock is already in existing zoo</td><td>supplementary theory control</td></tr>
 <tr><td class="mz-family">Adaptive learning rate</td><td><span class="mz-status tested">tested</span></td><td>mean rel MAE=0.981; 8/11 better than baseline P=0.520; no unique info vs TD/RW in either direction</td><td>supplementary strong comparator</td></tr>
@@ -706,7 +708,7 @@
 <tr><td class="mz-family">Absolute</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.595; confusion matrix retained separately from held-out prediction</td><td>historical absolute-value comparator</td></tr>
 <tr><td class="mz-family">OneShot</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.355; confusion matrix retained separately from held-out prediction</td><td>historical one-shot comparator</td></tr>
 <tr><td class="mz-family">Clock</td><td><span class="mz-status boundary">model recovery audit</span></td><td>self-recovery probability=0.930; confusion matrix retained separately from held-out prediction</td><td>historical passive-clock comparator</td></tr>
-</tbody></table></div><p class="model-zoo-links">Data: <a href="data/NEURON_DOPAMINE_MODEL_ZOO_REGISTRY_v57.csv">complete registry</a> · <a href="data/NEURON_MODEL_ZOO_NUMERIC_v57.csv">held-out numeric ledger</a> · <a href="data/NEURON_HISTORICAL_MODEL_RECOVERY_v57.csv">historical recovery matrix</a> · <a href="data/NEUROMOD_ZOO_SUMMARY_v57.csv">neuromodulator structural zoo</a></p></details>
+</tbody></table></div><p class="model-zoo-links">Data: <a href="data/NEURON_DOPAMINE_MODEL_ZOO_REGISTRY_v58_20261007.csv">complete 31-family registry</a> · <a href="docs/REWARD_CONTRAST_MODEL_ZOO_AUDIT_v58_20261007.md">v58 registry audit</a> · <a href="data/NEURON_MODEL_ZOO_NUMERIC_v57.csv">held-out numeric ledger</a> · <a href="data/NEURON_HISTORICAL_MODEL_RECOVERY_v57.csv">historical recovery matrix</a> · <a href="data/NEUROMOD_ZOO_SUMMARY_v57.csv">neuromodulator structural zoo</a></p></details>
     <div class="callout">
       In leave-one-animal-out prediction across <strong>11 mice</strong>, held-out sustained-dopamine R² was
       .038 for current reward alone, .123 with categorical context, .175 with the continuous history coordinate, and .178 with context plus that coordinate
@@ -974,6 +976,16 @@
         <p>
           The priority is not to add more conditions indiscriminately. It is to make <strong>U, R, C, RPE, identity, internal state and action independently identifiable</strong>, then ask how those variables are represented by the same neurons and circuits.
         </p>
+      </div>
+
+      <div class="callout">
+        <strong>Execution order for the next experiments.</strong>
+        The next phase should not branch into many unrelated manipulations. First make <strong>U, R, C, classical RPE and action jointly identifiable in one food task</strong>; then carry that exact task into longitudinal single-cell recording; only after the food contrast axis is frozen should cross-reward and social transfer be treated as a generalization test.
+      </div>
+      <div class="cards-3">
+        <article class="card good"><h3>Priority A — identifiable food contrast</h3><p>Use a within-animal 2×2 history × current-reward task, add expected identical probes plus unexpected high/low catch outcomes, and analyze cue/first-sample/0–2 s/2–5 s separately. Primary endpoints are sustained VTA dopamine and bout-termination hazard for the same current reward after different histories.</p></article>
+        <article class="card info"><h3>Priority B — hedonic mechanism, not just action</h3><p>Run the same history manipulation in free feeding and a controlled intraoral/probe version. Lick microstructure, acceptance/rejection, re-engagement and persistence separate consummatory liking-like expression from seeking/action and satiety. The same-probe design is the clean bridge to classical hedonic contrast.</p></article>
+        <article class="card violet"><h3>Priority C — single-cell then social transfer</h3><p>Apply the frozen factorial task to longitudinal 2P/CaRMA, assign cells only by held-out competition among U/R/C/RPE/salience/action/state terms, then test whether the resulting population axis transfers to social-access history and observed-reward history. Cross-domain transfer is evidence only after the food decoder is frozen.</p></article>
       </div>
 
       <details class="experiment-blueprint" open>
@@ -1320,24 +1332,23 @@
     </details>
 
     <details>
-      <summary>Alternative models capture distinct biological ideas but do not collapse the result into one algorithm.</summary>
+      <summary>How to read the 31-family model zoo without mistaking it for a leaderboard.</summary>
       <div class="details-body">
+        <p><strong>Authority:</strong> the open 31-family table in Figs. 3–4 is the complete registry. This folded section is an interpretation map, not a second shorter model list. A model can predict well yet fail the unique-information test, and a biologically important model can remain unidentifiable because the present task does not vary the dimension it needs.</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Model family</th><th>Biological idea</th><th>What it explains</th><th>What remains</th></tr></thead>
+            <thead><tr><th>Question</th><th>Families represented</th><th>What the current data decide</th></tr></thead>
             <tbody>
-              <tr><td>Belief state / hidden Markov model (HMM)</td><td>Inference about a latent reward context</td><td>Switch-related state uncertainty and context inference</td><td>Cumulative sampled-history information remains after the inferred state is included.</td></tr>
-              <tr><td>Average reward rate</td><td>Recent opportunity cost or tonic reward environment</td><td>Slow reward-rate adaptation</td><td>Does not absorb the same cumulative path information.</td></tr>
-              <tr><td>Pearce–Hall / adaptive gain</td><td>Uncertainty-dependent learning or response gain</td><td>Changing sensitivity around surprising outcomes</td><td>Does not by itself reproduce the stored-history coordinate.</td></tr>
-              <tr><td>Value recurrent neural network (Value-RNN)</td><td>Learned nonlinear recurrent memory</td><td>Flexible compression of reward sequences</td><td>Stable recurrent improvements beyond the simpler history coordinate are not established.</td></tr>
-              <tr><td>Distributional value</td><td>Reward-distribution width or quantiles</td><td>Population-level distribution coding</td><td>Bulk photometry does not show added spread information beyond the central history state.</td></tr>
-              <tr><td>FullHistory</td><td>A richer representation of the full prior reward sequence</td><td>Tests whether a one-dimensional state discards important path information</td><td>Useful as a strong comparator; its complexity does not provide a unique biological mechanism.</td></tr>
+              <tr><td>Is dopamine simply a prediction error or signed mismatch?</td><td>Canonical TD/RW, signed-vs-unsigned, feature-specific RPE</td><td>The sustained signal favors signed history-relative information over unsigned salience, but a generalized RPE over a richer state remains viable.</td></tr>
+              <tr><td>Can hidden-state inference absorb the history effect?</td><td>Belief-state RPE, continuous-time HMM, Bayesian uncertainty, Kalman filter, prospective-state/RNN</td><td>Belief/HMM can predict well, yet cumulative sampled history remains uniquely informative; Kalman/uncertainty variants do not show stable superiority.</td></tr>
+              <tr><td>Is the result just adaptation, reward rate or another timescale?</td><td>Pearce–Hall, adaptive gain, asymmetric learning, average reward rate, past multi-timescale memory, future-discount boundary</td><td>No single adaptation/timescale account removes the sampled-history requirement; future-discount models remain a task-design boundary because delay was not independently manipulated.</td></tr>
+              <tr><td>Does population coding require a richer reward representation?</td><td>Distributional RL, marginal utility</td><td>Bulk photometry does not require distributional spread beyond the central history state; marginal utility is not identifiable with only two physical reward levels.</td></tr>
+              <tr><td>Can flexible learned or neuromodulatory analogues replace the explicit history coordinate?</td><td>Value-RNN, LC-asymmetric, 5-HT uncertainty, Harkin-filter analogues</td><td>They are useful stress tests, but none has shown a stable unique contribution that absorbs FullHistory in the current task.</td></tr>
+              <tr><td>Can the historical candidate algorithms be recovered at all?</td><td>FullHistoryRW, ReferenceRW, BlockSampling, TwoStage, Absolute, OneShot, Clock</td><td>These belong to a simulation/model-recovery layer. Their self-recovery probabilities quantify identifiability and must not be mixed with held-out neural prediction.</td></tr>
             </tbody>
           </table>
         </div>
-        <p>
-          OOF (out-of-fold) prediction is reported separately from inferential tests because a model can predict well without identifying the biological variable that carries unique information.
-        </p>
+        <p><strong>Interpretation rule:</strong> the model zoo is used to identify which information the neural signal still requires after strong alternatives are granted their best available state representation. It is not used to crown the model with the smallest raw prediction error as the biological mechanism.</p>
       </div>
     </details>
 
@@ -1416,7 +1427,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <span>Reward history and VTA dopamine during feeding</span>
-    <span>Updated October 5, 2026 · prepublication analysis</span>
+    <span>Updated October 7, 2026 · prepublication analysis</span>
   </div>
 </footer>
 </body>

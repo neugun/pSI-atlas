@@ -629,7 +629,7 @@
       <figcaption>
         <strong>A，</strong>因果顺序示意：未采样的被动 时间与真正奖赏 暴露分开（无推断统计）。
         <strong>B，</strong>9只小鼠的first-采样 被动-clock scan：所有候选时间常数中最大的持续性-多巴胺增量仅ΔR²=.00385，所有clock项均不显著（按动物聚类 回归，均P&gt;.55）。
-        <strong>C，</strong>切换后有方向 consumed 暴露四分位与残差 持续性 多巴胺呈梯度关系（11鼠；描述性quartile summary）。
+        <strong>C，</strong>切换后有方向 consumed 暴露四分位与残差 持续性 多巴胺呈梯度关系（11鼠；描述性四分位汇总）。
         <strong>D，</strong>真实消费量的阳性对照：prior 有方向 舔舐 count在进食段 stage之外增加ΔR²=.0321（条件 置换 P=.00180），prior 有方向 进食 时间增加ΔR²=.0451（P=.000400），11只小鼠。
       </figcaption>
     </figure>
@@ -666,11 +666,11 @@
         <img src="../assets/Fig3_true_square_v54_F.png" alt="图 3 F">
       </div>
         <figcaption><strong>A，</strong>递归定义：过去被采样的奖赏更新R，当前相对 价值为C=U−R。
-          <strong>B，</strong>11鼠leave-one-动物-out 持续性-多巴胺 R²：只用当前奖赏 .038；加离散 情境 .123；用C .175；情境+C .178。
-          <strong>C，</strong>固定情境后，残差 持续性 多巴胺随残差 C四分位上升（11鼠；quartile summary）。
-          <strong>D，</strong>显示11只动物各自的描述性历史 slope，并控制当前 奖赏与实验场次 progression；其中10/11为正。该panel用于展示动物-level一致性，不作为额外独立显著性检验。
+          <strong>B，</strong>11鼠留一只动物交叉验证的持续性多巴胺 R²：只用当前奖赏 .038；加离散 情境 .123；用C .175；情境+C .178。
+          <strong>C，</strong>固定情境后，残差 持续性 多巴胺随残差 C四分位上升（11鼠；四分位汇总）。
+          <strong>D，</strong>显示11只动物各自的描述性历史斜率，并控制当前 奖赏与实验进程；其中10/11为正。该panel用于展示动物层面一致性，不作为额外独立显著性检验。
           <strong>E，</strong>在匹配近期/局部 历史后，更深的累积 历史仍增加ΔR²=.027（条件 置换 P=.0067）。
-          <strong>F，</strong>自然任务recency profile峰值约α=.15（selection-aware 置换 P=.0062），说明可辨识的是一个宽的recency regime。</figcaption>
+          <strong>F，</strong>自然任务记忆时间尺度曲线峰值约α=.15（考虑参数选择后的置换检验 P=.0062），说明可辨识的是一个宽的recency regime。</figcaption>
       </figure>
       <figure class="figure strict-panels">
         <div class="strict-panel-grid cols2">
@@ -679,43 +679,47 @@
         <img src="../assets/Fig4_true_square_v57_C.png" alt="图 4 C">
         <img src="../assets/Fig4_true_square_v57_D.png" alt="图 4 D">
       </div>
-        <figcaption><strong>A，</strong>扩展后的模型 room纳入已采样 Full历史、经典 TD/RPE、信念/HMM、平均 奖赏 率、Pearce–Hall、Kalman/不确定性、多时间尺度 历史、无符号显著性、自适应 增益与价值-RNN。<strong>B，</strong>代表性状态适应轨迹，并加入奖赏 切换处的经典 phasic TD/RPE innovation。<strong>C，</strong>10个有留出验证结果的理论模型：HMM、奖赏-率与信念的原始 预测较强，而多种经典RPE/自适应模型接近基线，因此预测 rank本身不能确定机制。<strong>D，</strong>protocol-matched 条件 horse race：Full历史在信念、continuous HMM、奖赏-率与循环 TD 状态s之后仍保留独立信息；经典 TD/RW相对自适应 增益有优势，但对Pearce–Hall、多时间尺度、Kalman与无符号-显著性并不存在统一胜出。实心点为anchor/focal 独立 term，空心点为competitor 独立 term。</figcaption>
+        <figcaption><strong>A，</strong>扩展后的模型空间纳入已采样 Full历史、经典 TD/RPE、信念/HMM、平均 奖赏 率、Pearce–Hall、Kalman/不确定性、多时间尺度 历史、无符号显著性、自适应 增益与价值-RNN。<strong>B，</strong>代表性状态适应轨迹，并加入奖赏 切换处的经典瞬时 TD/RPE 更新信号。<strong>C，</strong>10个有留出验证结果的理论模型：HMM、奖赏-率与信念的原始 预测较强，而多种经典RPE/自适应模型接近基线，因此预测 rank本身不能确定机制。<strong>D，</strong>方案匹配的一对一模型竞争：Full历史在信念、continuous HMM、奖赏-率与循环 TD 状态s之后仍保留独立信息；经典 TD/RW相对自适应 增益有优势，但对Pearce–Hall、多时间尺度、Kalman与无符号-显著性并不存在统一胜出。实心点为主模型的独立项，空心点为竞争模型的独立项。</figcaption>
       </figure>
     </div>
 <details class="model-zoo-details" open>
-<summary><strong>完整 多巴胺 模型 zoo：已测试、历史 恢复、边界与任务不可辨识模型</strong></summary>
-<p class="model-zoo-note">这里明确分开三类证据：主图 C 的 留出验证 相对-MAE、主图 D 的 protocol-matched 独立-信息 horse race、以及历史 模型-恢复 矩阵。它们回答不同问题，不混成一个总排行榜。RPE/TD、HMM/信念、奖赏 率、Pearce–Hall、Kalman、distributional RL、价值-RNN、Block采样、ReferenceRW、TwoStage，以及 LC/5-HT/Harkin 的任务适配结构类比都保留。</p>
-<div class="model-zoo-table-wrap"><table class="model-zoo-table"><colgroup><col class="mz-c1"><col class="mz-c2"><col class="mz-c3"><col class="mz-c4"></colgroup><thead><tr><th>模型 模型族</th><th>状态</th><th>关键结果</th><th>在文章中的作用</th></tr></thead><tbody>
-<tr><td class="mz-family">经典 TD RW</td><td><span class="mz-status tested">已测试</span></td><td>Schultz_TD_RW 均值 rel MAE=1.005; 基线-comparable; serves 经典 scalar 参照值</td><td>core 对照模型</td></tr>
-<tr><td class="mz-family">奖赏 不确定性</td><td><span class="mz-status tested">已测试</span></td><td>entropy dR2=0.001916 P=0.4755; posterior variance dR2=0.002706 P=0.4037</td><td>边界/控制实验</td></tr>
-<tr><td class="mz-family">自适应 价值 coding</td><td><span class="mz-status tested">已测试</span></td><td>均值 rel MAE=1.031; TD/RW 独立 超出 增益 dR2=0.01563 P=0.0464; 增益 超出 TD/RW dR2=0.00047 P=0.698</td><td>strong 负向 对照模型</td></tr>
-<tr><td class="mz-family">边际 效用</td><td><span class="mz-status boundary">当前任务不可辨识</span></td><td>two physical 奖赏 levels make any monotonic 效用 transform affine in 奖赏 category; RW 误差 is collinear up to scale</td><td>显式 任务-design 边界</td></tr>
-<tr><td class="mz-family">信念 状态 RPE</td><td><span class="mz-status tested">已测试</span></td><td>留出验证 均值 rel MAE=0.971; 9/11 更好 than 基线 P=0.240; Full历史 超出 信念 dR2=0.02541 P=0.0124; 信念 超出 Full历史 dR2=0.000465 P=0.726</td><td>core theoretical 对照模型</td></tr>
-<tr><td class="mz-family">Bayesian 不确定性</td><td><span class="mz-status tested">已测试</span></td><td>no 独立 持续性-多巴胺 信息 超出 Full历史+信念</td><td>边界/控制实验</td></tr>
-<tr><td class="mz-family">Distributional RL</td><td><span class="mz-status tested">已测试</span></td><td>distributional 均值 r=0.993 with Full历史; spread 超出 FH+均值 dR2=0.000012 P=0.941</td><td>单细胞 未来 方向; 群体 边界</td></tr>
-<tr><td class="mz-family">状态 不确定性 ramp</td><td><span class="mz-status tested">已测试</span></td><td>不确定性 terms add no 独立 持续性-多巴胺 信息; clock is already in existing zoo</td><td>补充 理论 控制实验</td></tr>
-<tr><td class="mz-family">自适应 学习 率</td><td><span class="mz-status tested">已测试</span></td><td>均值 rel MAE=0.981; 8/11 更好 than 基线 P=0.520; no 独立 info 对比 TD/RW in either 方向</td><td>补充 strong 对照模型</td></tr>
-<tr><td class="mz-family">Asymmetric 学习 rates</td><td><span class="mz-status tested">已测试</span></td><td>asym 对比 symmetric 均值 delta MAE=-0.00337; 7/11; P=0.577</td><td>补充 控制实验</td></tr>
-<tr><td class="mz-family">Past 奖赏 multi 时间尺度</td><td><span class="mz-status tested">已测试</span></td><td>均值 rel MAE=1.015; no 独立 info 对比 scalar TD/RW</td><td>补充 控制实验</td></tr>
-<tr><td class="mz-family">未来 discount 时间尺度</td><td><span class="mz-status boundary">任务不匹配</span></td><td>主要 奖赏-相对价值 任务 does not manipulate 未来 延迟 independently; do not relabel past-历史 mixture as the Masset 模型</td><td>discussion/未来 边界</td></tr>
-<tr><td class="mz-family">价值 RNN</td><td><span class="mz-status tested">已测试</span></td><td>corrected v5 reducer: H50/12-seed ensemble 均值 rel MAE 1.011 奖赏-仅 and 1.013 奖赏+时间 (P=0.465/0.413); Full历史 超出 RNN dR2=0.02685 P=0.0128/0.0078; RNN 超出 Full历史 ~4-5e-5 P~0.86. H2 three-seed nominal 残差 dR2=0.0153 P=0.0226 did not survive 12-config maxT (模型族-wise P=0.0646) and disappeared in H2/12-seed confirmation: RNN 超出 Full历史 P=0.186 奖赏-仅 and 0.686 奖赏+时间 while Full历史 remained significant P=0.0018/0.0120. Fresh 奖赏-仅 H2 seeds100-111 replicate the 边界: 均值 rel MAE=0.969 P=0.240; Full历史 独立 dR2=0.02668 P=0.0070; RNN 独立 dR2=0.00082 P=0.616</td><td>decisive learned-状态 对照模型; supports sufficiency of interpretable 累积-历史 参照值</td></tr>
-<tr><td class="mz-family">Prospective 状态 表征</td><td><span class="mz-status tested">已测试·模型族 level</span></td><td>价值-RNN learns a 历史-相关 状态 but does not robustly add 超出 Full历史; H50 RNN 独立 P~0.86 while Full历史 独立 P=0.0078-0.0128</td><td>补充 模型-room; 任务-特异 prospective-状态 claims remain outside identifiability</td></tr>
-<tr><td class="mz-family">Direct 行为策略 自适应 率</td><td><span class="mz-status boundary">任务不匹配</span></td><td>requires acquisition/行为-行为策略 trajectories</td><td>discussion 边界</td></tr>
-<tr><td class="mz-family">Feature 特异 RPE</td><td><span class="mz-status boundary">主任务不可辨识</span></td><td>20E/100E changes one 奖赏-质量 轴; testable 仅 in richer cross-奖赏 datasets</td><td>未来/补充 边界</td></tr>
-<tr><td class="mz-family">平均 奖赏 率</td><td><span class="mz-status tested">已测试</span></td><td>均值 rel MAE=0.938; 9/11 更好 than 基线 P=0.240; Full历史 超出 奖赏-率 dR2=0.02565 P=0.0122; reverse dR2=0.000432 P=0.722</td><td>core theoretical 对照模型</td></tr>
-<tr><td class="mz-family">有方向 对比 无符号 two 成分</td><td><span class="mz-status tested">已测试</span></td><td>0-2 s not separable; 2-5 s 有方向 超出 无符号 dR2=0.01867 P=0.0328; 无符号 reverse P=0.375</td><td>core 时间 theoretical 对照模型</td></tr>
-<tr><td class="mz-family">奖赏 记忆 timescales</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>多时间尺度 类比模型 does not show 稳定 留出验证 superiority over scalar 历史 状态</td><td>补充 对照模型</td></tr>
-<tr><td class="mz-family">LC asym 类比模型</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>均值 rel MAE=1.0132; 7/11 更好; 对比 Full历史 P=.577</td><td>extended 模型 zoo</td></tr>
-<tr><td class="mz-family">FiveHT 不确定性 类比模型</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>均值 rel MAE=1.0196; 7/11 更好; 对比 Full历史 P=.577</td><td>extended 模型 zoo</td></tr>
-<tr><td class="mz-family">Harkin filter 类比模型</td><td><span class="mz-status tested">已测试·任务适配类比</span></td><td>均值 rel MAE=.9809; 8/11 更好; 对比 Full历史 P=.520</td><td>extended 模型 zoo</td></tr>
-<tr><td class="mz-family">Full历史RW</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.925; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>focal 已采样-历史 恢复 模型</td></tr>
-<tr><td class="mz-family">ReferenceRW</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.580; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>历史 参照值-RW 对照模型</td></tr>
-<tr><td class="mz-family">Block采样</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.225; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>历史 区块-采样 对照模型</td></tr>
-<tr><td class="mz-family">TwoStage</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.520; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>历史 two-stage 对照模型</td></tr>
-<tr><td class="mz-family">Absolute</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.595; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>历史 absolute-价值 对照模型</td></tr>
-<tr><td class="mz-family">OneShot</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.355; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>历史 one-shot 对照模型</td></tr>
-<tr><td class="mz-family">Clock</td><td><span class="mz-status boundary">历史 恢复 审计</span></td><td>self-恢复 概率=0.930; 混淆 矩阵 保留 分别 来自 留出验证 预测</td><td>历史 被动-clock 对照模型</td></tr>
-</tbody></table></div><p class="model-zoo-links">数据：<a href="../data/NEURON_DOPAMINE_MODEL_ZOO_REGISTRY_v57.csv">完整 registry</a> · <a href="../data/NEURON_MODEL_ZOO_NUMERIC_v57.csv">留出验证 数值 ledger</a> · <a href="../data/NEURON_HISTORICAL_MODEL_RECOVERY_v57.csv">历史 恢复 矩阵</a> · <a href="../data/NEUROMOD_ZOO_SUMMARY_v57.csv">neuromodulator structural zoo</a></p></details>
+<summary><strong>完整的 31 类多巴胺模型库：已测试模型、模型恢复、任务边界与当前不可辨识模型</strong></summary>
+<p class="model-zoo-note"><strong>本轮审计把连续时间 HMM 和 Kalman 状态滤波从宽泛的“信念/不确定性”标签中拆成独立条目。</strong> 三类证据始终分开：图4C的留出验证预测、图4D的方案匹配独立信息竞争，以及历史模拟中的模型恢复矩阵。它们回答的问题不同，不能混成一个“总排行榜”。</p>
+<div class="model-zoo-table-wrap"><table class="model-zoo-table"><colgroup><col class="mz-c1"><col class="mz-c2"><col class="mz-c3"><col class="mz-c4"></colgroup><thead><tr><th>模型族</th><th>状态</th><th>关键结果</th><th>在文章中的作用</th></tr></thead><tbody>
+<tr><td class="mz-family">经典 TD/RW</td><td><span class="mz-status tested">已测试</span></td><td>Schultz_TD_RW 平均相对 MAE=1.005，与基线相当；作为经典标量预测误差参照。</td><td>核心对照</td></tr>
+<tr><td class="mz-family">奖赏不确定性</td><td><span class="mz-status tested">已测试</span></td><td>熵项 ΔR²=.001916，P=.4755；后验方差 ΔR²=.002706，P=.4037。</td><td>边界/控制</td></tr>
+<tr><td class="mz-family">自适应价值缩放</td><td><span class="mz-status tested">已测试</span></td><td>平均相对 MAE=1.031；TD/RW 在自适应增益之外仍有 ΔR²=.01563，P=.0464；反向 P=.698。</td><td>强负向对照</td></tr>
+<tr><td class="mz-family">边际效用</td><td><span class="mz-status boundary">当前任务不可辨识</span></td><td>只有两个物理奖赏水平时，任何单调效用变换都与奖赏类别近似共线。</td><td>任务设计边界</td></tr>
+<tr><td class="mz-family">信念状态 RPE</td><td><span class="mz-status tested">已测试</span></td><td>留出验证平均相对 MAE=.971；FullHistory 在信念状态之外仍有 ΔR²=.02541，P=.0124；反向 P=.726。</td><td>核心理论对照</td></tr>
+<tr><td class="mz-family">连续时间 HMM</td><td><span class="mz-status tested">已测试</span></td><td>留出验证平均相对 MAE=.923；FullHistory 在 HMM 之外仍有 ΔR²=.0266，P=.0090；反向独立增量很小、未检出。</td><td>核心潜在状态对照</td></tr>
+<tr><td class="mz-family">贝叶斯不确定性</td><td><span class="mz-status tested">已测试</span></td><td>在 FullHistory + 信念状态之后，不确定性项没有额外的持续性多巴胺信息。</td><td>边界/控制</td></tr>
+<tr><td class="mz-family">Kalman 状态滤波</td><td><span class="mz-status tested">已测试</span></td><td>Gershman_Kalman 平均相对 MAE=1.0003；没有稳定优于标量累积历史模型。</td><td>不确定性/状态估计对照</td></tr>
+<tr><td class="mz-family">分布式强化学习</td><td><span class="mz-status tested">已测试</span></td><td>分布式均值与 FullHistory 高度相关（r=.993）；分布宽度在均值之外 ΔR²≈.000012，P=.941。</td><td>单细胞方向；群体边界</td></tr>
+<tr><td class="mz-family">状态不确定性爬坡</td><td><span class="mz-status tested">已测试</span></td><td>不确定性项未增加独立的持续性多巴胺信息；被动时间项已在模型库中单独控制。</td><td>补充理论控制</td></tr>
+<tr><td class="mz-family">自适应学习率</td><td><span class="mz-status tested">已测试</span></td><td>平均相对 MAE=.981；没有稳定的独立信息优于固定 TD/RW。</td><td>补充强对照</td></tr>
+<tr><td class="mz-family">正负非对称学习率</td><td><span class="mz-status tested">已测试</span></td><td>非对称相对对称模型平均 ΔMAE=-.00337；7/11 动物数值更好，P=.577。</td><td>补充控制</td></tr>
+<tr><td class="mz-family">既往奖赏多时间尺度</td><td><span class="mz-status tested">已测试</span></td><td>平均相对 MAE=1.015；相对标量 TD/RW 没有稳定独立优势。</td><td>补充控制</td></tr>
+<tr><td class="mz-family">未来折扣时间尺度</td><td><span class="mz-status boundary">任务不匹配</span></td><td>主任务没有独立操纵未来延迟，因此不能把既往历史混合项等同于 Masset 的未来折扣模型。</td><td>讨论/未来边界</td></tr>
+<tr><td class="mz-family">Value-RNN</td><td><span class="mz-status tested">已测试</span></td><td>H50/12-seed：相对 MAE≈1.011–1.013；FullHistory 在 RNN 之外仍显著（P=.0128/.0078），RNN 反向约 P=.86；H2 名义例外未通过模型族校正和 12-seed 复验。</td><td>关键学习状态对照</td></tr>
+<tr><td class="mz-family">前瞻性状态表征</td><td><span class="mz-status tested">模型族层面已测试</span></td><td>Value-RNN 能学到历史相关状态，但没有稳定增加 FullHistory 之外的信息。</td><td>补充模型空间</td></tr>
+<tr><td class="mz-family">直接策略学习率</td><td><span class="mz-status boundary">任务不匹配</span></td><td>需要明确的学习获得期和动作策略轨迹；当前已学会的进食任务不能直接识别。</td><td>讨论边界</td></tr>
+<tr><td class="mz-family">特征特异 RPE</td><td><span class="mz-status boundary">主任务不可辨识</span></td><td>20E/100E 主要改变单一奖赏质量轴；需要多种独立变化的奖赏特征。</td><td>未来/补充边界</td></tr>
+<tr><td class="mz-family">平均奖赏率</td><td><span class="mz-status tested">已测试</span></td><td>平均相对 MAE=.938；FullHistory 在奖赏率之外 ΔR²=.02565，P=.0122；反向 P=.722。</td><td>核心理论对照</td></tr>
+<tr><td class="mz-family">有符号与无符号双成分</td><td><span class="mz-status tested">已测试</span></td><td>0–2 s 尚不能分开；2–5 s 有符号项在无符号项之外 ΔR²=.01867，P=.0328；反向 P=.375。</td><td>核心时间对照</td></tr>
+<tr><td class="mz-family">奖赏记忆多时间尺度</td><td><span class="mz-status tested">任务适配类比已测试</span></td><td>快/慢历史混合没有稳定优于单一标量历史状态。</td><td>补充对照</td></tr>
+<tr><td class="mz-family">LC 非对称更新类比</td><td><span class="mz-status tested">任务适配类比已测试</span></td><td>平均相对 MAE=1.0132；7/11 数值更好；相对 FullHistory P=.577。</td><td>扩展模型库</td></tr>
+<tr><td class="mz-family">5-HT 不确定性类比</td><td><span class="mz-status tested">任务适配类比已测试</span></td><td>平均相对 MAE=1.0196；7/11 数值更好；相对 FullHistory P=.577。</td><td>扩展模型库</td></tr>
+<tr><td class="mz-family">Harkin 滤波类比</td><td><span class="mz-status tested">任务适配类比已测试</span></td><td>平均相对 MAE=.9809；8/11 数值更好；相对 FullHistory P=.520。</td><td>扩展模型库</td></tr>
+<tr><td class="mz-family">FullHistoryRW</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.925；与神经留出预测分开解释。</td><td>累积历史恢复模型</td></tr>
+<tr><td class="mz-family">ReferenceRW</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.580。</td><td>历史参照对照</td></tr>
+<tr><td class="mz-family">BlockSampling</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.225。</td><td>区块采样对照</td></tr>
+<tr><td class="mz-family">TwoStage</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.520。</td><td>两阶段对照</td></tr>
+<tr><td class="mz-family">Absolute</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.595。</td><td>绝对价值对照</td></tr>
+<tr><td class="mz-family">OneShot</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.355。</td><td>一次更新对照</td></tr>
+<tr><td class="mz-family">Clock</td><td><span class="mz-status boundary">模型恢复审计</span></td><td>自身恢复概率=.930。</td><td>被动时间对照</td></tr>
+</tbody></table></div>
+<p class="model-zoo-links">数据：<a href="../data/NEURON_DOPAMINE_MODEL_ZOO_REGISTRY_v58_20261007.csv">31 类模型完整登记表</a> · <a href="../docs/REWARD_CONTRAST_MODEL_ZOO_AUDIT_v58_20261007.md">v58 模型库审计说明</a> · <a href="../data/NEURON_MODEL_ZOO_NUMERIC_v57.csv">留出验证数值表</a> · <a href="../data/NEURON_HISTORICAL_MODEL_RECOVERY_v57.csv">历史模型恢复矩阵</a> · <a href="../data/NEUROMOD_ZOO_SUMMARY_v57.csv">神经调质结构类比汇总</a></p>
+</details>
     <div class="callout">
       在<strong>11只小鼠</strong>的leave-one-动物-out 预测中，留出验证 持续性-多巴胺 R²：
       当前 奖赏 仅 = .038；加入离散 情境 = .123；加入continuous 历史 坐标 = .175；
@@ -869,7 +873,7 @@
       （β=.818，按动物聚类 P=.034；within-动物 serial-shift单侧P=.0287），
       但动物-level slope只有5/6为正（P=.156），因此这一行为-历史结果目前标记为<strong>PROVISIONAL</strong>。
       新增的recency 敏感性进一步把奖赏 类别差异拆清楚：Natural在较宽的中等α范围同时表达神经与行为 历史；而Stim13从α=.03一直扫到.60，神经 历史在8/8 时间尺度均显著（BH q≤.0192），但时长在8/8均为null（最小原始 P=.682，BH q≥.906）。
-      进一步的当前-条件化的分析提供了一个重要限定：Stim13在当前OFF与ON下可以出现不同的时长-历史 slope，但这一交互项对近期 局部 历史非常敏感（base 精确-wild P=.0372；加入局部-历史主效应后P=.899；deep-残差 交互项 P=.154）。因此目前最准确的结论是：Stim13存在稳健的神经 历史，但没有建立稳定的边际或deep 行为 参照值 效应；这并不等于所有条件-特异 行为 结构都不存在。
+      进一步的当前-条件化的分析提供了一个重要限定：Stim13在当前OFF与ON下可以出现不同的时长-历史斜率，但这一交互项对近期 局部 历史非常敏感（base 精确-wild P=.0372；加入局部-历史主效应后P=.899；deep-残差 交互项 P=.154）。因此目前最准确的结论是：Stim13存在稳健的神经 历史，但没有建立稳定的边际或deep 行为 参照值 效应；这并不等于所有条件-特异 行为 结构都不存在。
     </div>
   </div>
 </section>
@@ -929,51 +933,61 @@
           <h3>每一个实验都对应当前故事中的一个明确未解决问题，而不是单纯继续增加实验条件。</h3>
         </div>
         <p>
-          核心是先让 <strong>U、R、C、RPE、身份、内部 状态 与 行为 可以被独立估计</strong>，再问这些变量如何由同一神经元、同一回路和同一分子类型实现。
+          核心是先让 <strong>U、R、C、RPE、身份、内部状态与行为可以被独立估计</strong>，再问这些变量如何由同一神经元、同一回路和同一分子类型实现。
         </p>
       </div>
 
+      <div class="callout">
+        <strong>下一轮实验的执行顺序。</strong>
+        不再同时铺开很多互不相干的条件。第一步先在一个食物任务里让 <strong>U、R、C、经典 RPE 与行为可以同时、独立估计</strong>；第二步把完全相同的任务搬到纵向单细胞记录；食物相对价值轴冻结之后，再把跨奖赏和社会迁移当作真正的泛化检验。
+      </div>
+      <div class="cards-3">
+        <article class="card good"><h3>优先级 A——先把食物相对价值做成可辨识任务</h3><p>同一动物完成 2×2 的“历史 × 当前奖赏”，再加入“两个历史都预测同一个完全相同探测奖赏”以及意外高/低奖赏。线索、第一次采样、0–2 秒、2–5 秒分开分析。主要终点是：同一当前奖赏在不同历史后，持续性 VTA 多巴胺与进食终止风险是否仍不同。</p></article>
+        <article class="card info"><h3>优先级 B——把享乐价值与动作真正拆开</h3><p>同一历史操纵同时做自由进食版和受控口腔内给液/探测版。用舔舐微结构、接受/拒绝、再次投入和进食持续性区分“喜欢/享乐表达”与寻找、动作和饱腹。这个完全相同探测刺激的设计，也是与经典享乐对比最干净的连接。</p></article>
+        <article class="card violet"><h3>优先级 C——单细胞后再做社会迁移</h3><p>把冻结的因子任务搬到纵向 2P/CaRMA；只有经过留出验证的 U/R/C/RPE/显著性/动作/状态竞争后才给细胞定义功能。随后再检验该群体轴能否迁移到“社会接触历史”和“观察他人奖赏历史”。只有食物解码器预先冻结后，跨领域迁移才是真正的泛化证据。</p></article>
+      </div>
+
       <details class="experiment-blueprint" open>
-        <summary><strong>1. Fully crossed 食物 历史 × 当前 奖赏：最关键的 identifiability 实验</strong></summary>
+        <summary><strong>1. 完全交叉的食物历史 × 当前奖赏：最关键的可辨识性实验</strong></summary>
         <div class="blueprint-grid">
-          <div><b>设计</b><span>同一动物内完成 高-历史→高、高→低、低→高、低→低；后续可加入 neutral-历史。并行做 free-进食 与 受控/intraoral 探测阶段 两个版本。</span></div>
-          <div><b>控制</b><span>当前 奖赏 完全相同、顺序 counterbalance、线索 timing 匹配、组合-fed/yoked intake、deprivation/实验场次 progress 匹配；受控 版本进一步把 奖赏 delivery 与 舔舐 分开。</span></div>
-          <div><b>记录</b><span>VTA 多巴胺、纵向2P/CaRMA、舔舐、进食段 initiation/终止、pause、re-engagement、locomotion；必要时加 pupil/autonomic 状态。</span></div>
-          <div><b>分析</b><span>在单细胞与 群体 层面同时竞争 U、R、C=U−R、RPE、无符号 surprise、身份、舔舐/行为 与 状态 predictors，并只用 留出验证 trial/实验场次 定义功能类别。</span></div>
-          <div><b>决定性结果</b><span>在完全相同 当前 奖赏 下，历史 在控制 行为 后仍改变 神经 反应 与 行为。固定 细胞 成员归属 支持 dedicated 类别；稳定 群体 decoder 但 细胞 成员归属 旋转则支持 分布式 流形。</span></div>
-          <div><b>意义</b><span>这是解决原始 交替 design 中 U–R 共线问题最直接的实验，会把 奖赏对比 从 descriptive 历史 效应 推进为 identifiable 计算。</span></div>
+          <div><b>设计</b><span>同一动物内完成高奖赏历史→高、 高→低、低奖赏历史→高、低→低；后续可加入中性历史。并行做自由进食版与受控口腔内给液探测版。</span></div>
+          <div><b>控制</b><span>当前奖赏完全相同；顺序做反平衡；线索时序匹配；配对/轭合摄入量匹配；饥饿状态与实验进程匹配；受控版本进一步把奖赏递送与舔舐动作分开。</span></div>
+          <div><b>记录</b><span>VTA 多巴胺、纵向 2P/CaRMA、舔舐、进食段开始/终止、停顿、再次投入、运动；必要时加入瞳孔和自主神经状态。</span></div>
+          <div><b>分析</b><span>在单细胞和群体层面同时比较 U、R、C=U−R、RPE、无符号惊奇、身份、舔舐/动作与状态预测项，并只用留出验证的试次/实验场次定义功能类别。</span></div>
+          <div><b>决定性结果</b><span>在完全相同的当前奖赏下，历史在控制动作后仍改变神经反应与行为。稳定的单细胞成员归属支持专门细胞类群；群体解码轴稳定但单细胞成员轮换则支持分布式流形。</span></div>
+          <div><b>意义</b><span>这是解决原始交替设计中 U–R 共线问题最直接的实验，会把奖赏对比从描述性历史效应推进为可辨识的计算。</span></div>
         </div>
       </details>
 
       <details class="experiment-blueprint" open>
-        <summary><strong>2. 完全相同 physical 探测阶段 + 参照值 formation/decay：R 到底是什么记忆？</strong></summary>
+        <summary><strong>2. 完全相同的物理探测奖赏 + 参照值形成/衰减：R 到底是什么记忆？</strong></summary>
         <div class="blueprint-grid">
-          <div><b>诱导</b><span>一个强版本是30-min 基线 → 60-min rich / neutral / lean 历史 → 完全相同 8% sucrose 探测阶段；同时加入从秒级到几十分钟的更短 历史。</span></div>
-          <div><b>采样 test</b><span>比较 active 进食、奖赏 present but inaccessible、线索-仅、yoked elapsed 时间，以及相同 采样 数但不同时间分布。</span></div>
+          <div><b>诱导</b><span>一个强版本是 30 分钟基线 → 60 分钟丰富/中性/低值历史 → 完全相同的 8% 蔗糖探测；同时加入从秒级到几十分钟的更短历史。</span></div>
+          <div><b>采样 test</b><span>比较主动进食、奖赏存在但不可获得、仅线索暴露、轭合的被动经过时间，以及采样次数相同但时间分布不同的条件。</span></div>
           <div><b>窗口</b><span>切换 后0–30 s、30–120 s、2–5、5–10、10–20、20–30 min；神经信号另外拆 first 采样、0–2 s 与 持续性 2–5 s。</span></div>
-          <div><b>行为</b><span>first-舔舐 latency、acceptance、舔舐 microstructure、进食段 size、pause、re-engagement、切换 away。</span></div>
-          <div><b>模型</b><span>single-exponential、dual-时间尺度、event-count integrator、finite-window 历史、被动 clock、HMM/信念、自适应 学习-率。</span></div>
+          <div><b>行为</b><span>第一次舔舐潜伏期、接受/拒绝、舔舐微结构、进食段大小、停顿、再次投入和离开奖赏。</span></div>
+          <div><b>模型</b><span>单指数参照、双时间尺度参照、事件计数积分器、有限窗口历史、被动时钟、HMM/信念状态和自适应学习率。</span></div>
           <div><b>意义</b><span>直接鉴别 R 是 event-integrator、被动 潜在 状态、physiological 适应，还是 fast + slow 记忆 hierarchy。</span></div>
         </div>
       </details>
 
       <details class="experiment-blueprint" open>
-        <summary><strong>3. 相对价值 对比 经典 RPE：在同一只动物里拆开两种 多巴胺 计算</strong></summary>
+        <summary><strong>3. 奖赏相对价值 vs. 经典 RPE：在同一只动物里拆开两种多巴胺计算</strong></summary>
         <div class="blueprint-grid">
-          <div><b>设计</b><span>不同 历史 情境 都预测同一个 当前 探测阶段，使 expected 探测阶段 的 经典 RPE≈0，但因为 R 不同，C 仍不同；再加入 unexpected 高/低 catch 探测阶段 与 omission。</span></div>
-          <div><b>时间分辨</b><span>分别看 线索、first 采样、0–2 s、持续性 2–5 s 与 之后的进食段，而不是把 多巴胺 压成一个数。</span></div>
-          <div><b>预测</b><span>RPE-like 细胞 对 unexpected 结果 强、预测后减弱；相对价值-like 细胞 在两个同样 predicted、物理完全相同的 探测阶段 上仍随 近期 R 不同而分离。</span></div>
-          <div><b>控制</b><span>加入 intraoral mechanistic version，最大限度降低 approach/seeking confound。</span></div>
-          <div><b>群体 test</b><span>直接测试 早期 多巴胺 是否更像 RPE，而 持续性 多巴胺 是否更像 C；若成立，则说明 多巴胺 multiplexes timescales。</span></div>
+          <div><b>设计</b><span>不同历史条件都预测同一个当前探测奖赏，使预期探测时的经典 RPE≈0；但由于 R 不同，C 仍不同。再加入意外高/低奖赏和 omission 试次，显式建立 RPE 轴。</span></div>
+          <div><b>时间分辨</b><span>分别看线索、第一次采样、0–2 秒、持续性 2–5 秒和进食段结束后，而不是把多巴胺压缩成一个数。</span></div>
+          <div><b>预测</b><span>RPE 型细胞应对意外结果反应更强，并在结果被预测后减弱；相对价值型细胞则应在两个同样可预测、物理完全相同的探测奖赏上，仍因近期 R 不同而分离。</span></div>
+          <div><b>控制</b><span>加入口腔内给液的机制版本，最大限度降低接近/寻找动作的混杂。</span></div>
+          <div><b>群体 test</b><span>直接测试早期多巴胺是否更像 RPE，而持续性多巴胺是否更像 C；若成立，则支持多巴胺在不同时间尺度复用不同计算成分。</span></div>
           <div><b>意义</b><span>这是把 奖赏对比 放到经典 多巴胺 理论 中最关键的实验。</span></div>
         </div>
       </details>
 
       <details class="experiment-blueprint" open>
-        <summary><strong>4. Refined 社会 相对价值：固定 雌鼠 身份，只改变 交互项 access</strong></summary>
+        <summary><strong>4. 精炼的社会相对价值：固定雌鼠身份，只改变互动机会</strong></summary>
         <div class="blueprint-grid">
-          <div><b>设计</b><span>雌鼠 在 ON 与 OFF 都持续可见/存在；ON 允许 交互项，OFF 只保留 暴露。比较 ON→OFF 对比 OFF→OFF，以及 OFF→ON 对比 ON→ON。</span></div>
-          <div><b>pSI 定位</b><span>pSI 只作为 submaximal 行为-阈值 探测阶段。以既往5/10/20/40-Hz为 calibration 起点，选择中间 attack-概率 regime，而不是 ceiling 刺激。</span></div>
+          <div><b>设计</b><span>雌鼠在 ON 与 OFF 条件下都持续可见、持续存在；ON 允许互动，OFF 只保留暴露。比较 ON→OFF 与 OFF→OFF，以及 OFF→ON 与 ON→ON。</span></div>
+          <div><b>pSI 定位</b><span>pSI 只作为亚最大强度的动作阈值探针。以既往 5/10/20/40 Hz 为校准起点，选择中等攻击概率区间，而不是天花板强度。</span></div>
           <div><b>读出</b><span>approach、investigation、contact attempts、withdrawal/re-approach、USV、redirected aggression/object biting、VTA 多巴胺、pSI activity 与候选 PBN/pSI input。</span></div>
           <div><b>身份 扩展</b><span>约30-min 雌鼠 A 历史→雌鼠 A OFF 探测阶段，再做 雌鼠 A 历史→novel 雌鼠 B OFF 探测阶段。</span></div>
           <div><b>决定性结果</b><span>雌鼠 感觉 身份 相同，但相同 pSI input 在不同 社会 历史 后产生不同 attack 概率/I50。</span></div>
@@ -982,7 +996,7 @@
       </details>
 
       <details class="experiment-blueprint" open>
-        <summary><strong>5. Observed 奖赏 历史：别人经历的 奖赏 能否更新 observer 的 参照值？</strong></summary>
+        <summary><strong>5. 观察获得的奖赏历史：他人的奖赏经历能否更新观察者的参照值？</strong></summary>
         <div class="blueprint-grid">
           <div><b>已有基础</b><span>visual access 与 familiarity 很重要；observer VTA 多巴胺 参与 demonstrator 进食；temporally 时间对应的 VTA-多巴胺 抑制 抑制 观察学习 进食，而 replayed timing 不能复制。</span></div>
           <div><b>新 操纵</b><span>demonstrator 经历 palatable、bitter、transient-malaise-associated 或 no-奖赏 结果；observer 后续接受 same/different 食物 或 社会 探测阶段。</span></div>
@@ -994,7 +1008,7 @@
       </details>
 
       <details class="experiment-blueprint" open>
-        <summary><strong>6. Longitudinal 单细胞 → molecule → causality</strong></summary>
+        <summary><strong>6. 纵向单细胞 → 分子身份 → 因果检验</strong></summary>
         <div class="blueprint-grid">
           <div><b>当前线索</b><span>D1–D9 CaRMA 更支持共同 时间/进食 scaffold + 动物-特异 残差 几何结构；D6 奖赏-质量 效应 是 分布式 且存在 舔舐-independent 成分，而 D5/D8 的 concentration/价值 结构 更弱、更不普遍。</span></div>
           <div><b>下一记录</b><span>在 完全交叉 历史×当前 设计中做纵向2P/CaRMA；关键 条件 尽量得到约40–60次可分析重复，并跨日追踪稳定性。</span></div>
@@ -1278,21 +1292,23 @@
     </details>
 
     <details>
-      <summary>替代 模型s各自解释一部分现象，但没有把结果压缩成唯一算法。</summary>
+      <summary>如何阅读这 31 类模型，而不是把模型库误解成一个排行榜。</summary>
       <div class="details-body">
+        <p><strong>权威版本：</strong>图3–4中展开的 31 类模型表才是完整登记表；这里不是另一个缩短版模型清单，而是按“它们在排除什么解释”重新归类。原始预测好并不等于机制正确；反过来，一个重要理论如果当前任务没有操纵它需要的维度，也只能标为“不可辨识”。</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>模型</th><th>生物学想法</th><th>能解释什么</th><th>还解释不了什么</th></tr></thead>
+            <thead><tr><th>核心问题</th><th>代表模型</th><th>当前数据能下的结论</th></tr></thead>
             <tbody>
-              <tr><td>信念 状态 / HMM</td><td>推断当前处于哪个潜在 奖赏 情境</td><td>切换附近的情境 inference与不确定性</td><td>仍不能完全吸收累积 已采样-历史信息</td></tr>
-              <tr><td>平均 奖赏 率</td><td>近期环境的tonic 奖赏 level</td><td>较慢奖赏-率 适应</td><td>无法完全重建同样的path-依赖 历史</td></tr>
-              <tr><td>Pearce–Hall / 自适应 增益</td><td>surprise / 不确定性改变学习 增益</td><td>解释切换后敏感度变化</td><td>不能单独替代储存的 历史 坐标</td></tr>
-              <tr><td>价值-RNN</td><td>非线性循环 记忆压缩奖赏序列</td><td>灵活表示历史</td><td>没有稳定证明比简单历史 坐标更好</td></tr>
-              <tr><td>Distributional 价值</td><td>编码奖赏 distribution width / quantiles</td><td>解释群体-level distribution coding</td><td>群体平均 photometry里spread 信息没有稳定超出central 历史 状态</td></tr>
-              <tr><td>Full历史</td><td>保留更完整的过去奖赏序列</td><td>检验一维C是否遗漏path 信息</td><td>是强对照模型，但不自动对应唯一生物机制</td></tr>
+              <tr><td>多巴胺只是预测误差或有符号差值吗？</td><td>经典 TD/RW、有符号/无符号双成分、特征特异 RPE</td><td>持续期信号更支持有方向的历史相对信息，而不是单纯显著性；但“在更丰富状态空间上计算的广义 RPE”仍然成立。</td></tr>
+              <tr><td>潜在状态推断能否吸收历史效应？</td><td>信念状态 RPE、连续时间 HMM、贝叶斯不确定性、Kalman、前瞻性状态/RNN</td><td>信念和 HMM 的原始预测可以很好，但累积采样历史仍保留独立信息；Kalman/不确定性模型也没有稳定占优。</td></tr>
+              <tr><td>是不是普通适应、奖赏率或时间尺度？</td><td>Pearce–Hall、自适应增益、非对称学习、平均奖赏率、多时间尺度记忆、未来折扣边界</td><td>没有一个普通适应或时间尺度模型能消除“真实采样历史仍然重要”这一点；未来折扣模型因为缺少独立延迟操纵，仍是任务边界。</td></tr>
+              <tr><td>是否必须引入更丰富的奖赏群体编码？</td><td>分布式强化学习、边际效用</td><td>群体平均光纤信号不需要额外的分布宽度；只有两个物理奖赏水平时也无法独立辨识边际效用。</td></tr>
+              <tr><td>灵活学习状态或其他神经调质类比能否替代显式历史？</td><td>Value-RNN、LC、5-HT、Harkin 类比模型</td><td>这些是重要压力测试，但目前没有一个能稳定吸收 FullHistory 的独立信息。</td></tr>
+              <tr><td>历史候选算法本身能否被区分？</td><td>FullHistoryRW、ReferenceRW、BlockSampling、TwoStage、Absolute、OneShot、Clock</td><td>这些属于模拟/模型恢复层；自身恢复率衡量可辨识性，不能和真实神经数据的留出预测混在一起解释。</td></tr>
             </tbody>
           </table>
         </div>
+        <p><strong>阅读规则：</strong>模型库的目的，是问在给每一种替代解释最强版本之后，神经信号还“必须保留什么信息”。不是简单把原始预测误差最小的模型称为生物机制。</p>
       </div>
     </details>
 
@@ -1368,8 +1384,8 @@
 
 <footer class="footer">
   <div class="container footer-inner">
-    <span>奖赏 历史 and VTA 多巴胺 during 进食</span>
-    <span>中文版 · Updated October 5, 2026</span>
+    <span>奖赏历史与进食期 VTA 多巴胺</span>
+    <span>中文版 · 更新于 2026 年 10 月 7 日</span>
   </div>
 </footer>
 </body>
