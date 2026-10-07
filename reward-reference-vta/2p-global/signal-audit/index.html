@@ -70,7 +70,9 @@
 <p>A mean image can look acceptable while individual frames still move. The audit therefore uses the <em>same raw and registered frames</em>. The bottom panels compare current-frame edges (red) against a reference image (cyan); white overlap means better alignment.</p>
 <div class="audit-grid">
 <div class="audit-card">
-<video controls playsinline preload="metadata" poster="../assets/D6_T01_S3_frame_strip.png">
+<img src="../assets/D6_T01_S3_raw_vs_registered.webp" alt="Animated raw-versus-registered frame QC" loading="eager">
+<p class="note"><strong>Inline animated fallback.</strong> This is rendered directly by the page so the frame sequence remains visible even if the native video player is blocked.</p>
+<video controls playsinline muted loop preload="metadata" poster="../assets/D6_T01_S3_frame_strip.png">
 <source src="../assets/D6_T01_S3_raw_vs_registered.mp4" type="video/mp4">
 </video>
 <p><strong>D6 ? S3 ? Trial 1.</strong> All 192 frames are inspected. High-pass frame-to-reference similarity rises from mean r=0.042 before registration to r=0.171 after registration (~4.1?). The registered sequence is clearly more stable, although the edge overlay still shows residual non-rigid mismatch and intensity/z variation that mean-image QC alone would miss.</p>
