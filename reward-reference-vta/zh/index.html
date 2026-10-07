@@ -161,6 +161,19 @@
       </p>
     </div>
 
+    <div class="story-spine">
+      <h3>现有 Fig.1–7 如何真正拼成一个 mechanistic story</h3>
+      <div class="story-spine-grid">
+        <article><span>Fig. 1</span><b>Same U，但 internal state 不同</b><p>完全相同的100E或20E，在不同recent history之后产生不同sustained dopamine和feeding。因此当前reward本身不足以描述动物真正使用的state。</p></article>
+        <article><span>Fig. 2</span><b>Sampling 在写入这个 state</b><p>first new sample之前passive clock贡献极少；真正开始吃以后，consumption history提供额外信息。因此latent state是experience-updated，而不只是time/block-defined。</p></article>
+        <article><span>Figs. 3–4</span><b>给替代模型最强机会后，history仍然必要</b><p>belief/HMM、reward-rate等raw prediction可以很好，但cumulative sampled history仍保留unique information。model zoo的目的不是排行榜，而是问state里必须保留什么information。</p></article>
+        <article><span>Fig. 5</span><b>Reference → comparison</b><p>bout之前dopamine带有positive reference-related information；进入sustained consumption以后，current reward正向、stored reference负向进入模型。这是current-minus-reference computation最强的线索。</p></article>
+        <article><span>Fig. 6</span><b>这种geometry不局限于一个浓度pair</b><p>natural-task冻结的history rule可以transfer到quinine/reward-quality数据，并使多个manipulation沿lower-to-higher value direction对齐。</p></article>
+        <article><span>Fig. 7</span><b>这个 state 会改变 policy</b><p>consumption-period dopamine会因果性改变termination probability。因此reward history改变的是当前reward值不值得继续的action meaning。</p></article>
+      </div>
+      <div class="story-punchline"><strong>整合模型：</strong>sampled history → latent reference R → consumption中的current/reference comparison → sustained VTA dopamine → feeding persistence。</div>
+    </div>
+
     <div class="cards-3 theory-evidence">
       <article class="card good">
         <h3>1. Current reward 相同，但 internal reference 不同</h3>
@@ -211,6 +224,7 @@
       </p>
     </details>
 
+    <p class="roadmap-doc-link"><a href="../docs/REWARD_CONTRAST_STORYLINE_UCHIDA_GERSHMAN_v1_20261007.md"><strong>打开完整 manuscript-level storyline 与 claim hierarchy</strong></a></p>
     <div class="theory-citations">
       <strong>关键理论递进：</strong>
       <a href="https://doi.org/10.1038/nature14855">Eshel et al., Nature 2015</a> ·
