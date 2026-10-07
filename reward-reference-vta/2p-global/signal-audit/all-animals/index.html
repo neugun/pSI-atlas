@@ -39,6 +39,11 @@
 <figure class="figure manuscript-square"><a href="../../assets/d6_event_effect_raw_carma_v3_suite2p_v3.png" target="_blank"><img src="../../assets/d6_event_effect_raw_carma_v3_suite2p_v3.png" alt="D6 event level raw CaRMA Suite2p comparison"></a>
 <figcaption>ROI40 and all 16 D6 cells are evaluated with the same 10-25 s sustained-response regression used in the original signal-source audit, including lick count and trial index covariates.</figcaption></figure>
 
+<h2>Behavior contrasts across every session with verified condition labels</h2>
+<p>In eight condition-verified sessions (164 cell×session entries), the raw-versus-corrected response direction can change, but most flips occur for near-zero effects. The plot therefore distinguishes <em>all sign changes</em> from a descriptive sensitivity subset with absolute raw contrast ≥0.1 baseline Z. This is not a significance threshold, and the trial-mean contrasts are unadjusted; the covariate-adjusted D6 regression above remains the formal D6 analysis.</p>
+<figure class="figure manuscript-square"><a href="../../assets/background_methods_behavior_contrast_8sessions_v1.png" target="_blank"><img src="../../assets/background_methods_behavior_contrast_8sessions_v1.png" alt="Condition contrast effect stability across eight session conditions"></a>
+<figcaption><strong>Across-session sign sensitivity.</strong> Effects are indexed by session rather than treating 164 cell entries as independent animals. CaRMA-v3 and Suite2p agree more strongly with each other than either does with raw fluorescence; modest effect magnitude reductions still require per-cell review even when sign is unchanged.</figcaption></figure>
+<p><a href="../../data/background_methods_behavior_contrast_8sessions_v1.csv">Download per-session contrast sensitivity summary</a>.</p>
 <h2>Ten-mouse coverage: source-level and processed-only tiers are kept separate</h2>
 <table class="audit-table"><thead><tr><th>Mouse</th><th>Capability</th><th>Current background audit</th></tr></thead><tbody>
 <tr><td>54</td><td>RAW_TRACE_FULL_REFERENCE</td><td>8 sessions, exact CaRMA-v3 vs Suite2p source-level rerun complete</td></tr>
@@ -54,6 +59,8 @@
 </tbody></table>
 <p>The ten biological mice are therefore all retained, but only five currently support source-level background re-extraction from recoverable frame data. This distinction is part of the authority model rather than hidden in the methods.</p>
 
+<h2>Every ROI, every source-auditable session</h2>
+<p><a href="../cell-source-atlas/index.html"><strong>Open the complete single-cell source-method atlas →</strong></a>. Each ROI has the full raw/CaRMA-v3/Suite2p single-trial heatmaps, response mean ± SEM, and verified condition effects where trial labels exist. The all-cell maps do not infer behavioral conditions for sessions without trial metadata. <a href="../cell-source-atlas/longitudinal/index.html">ANM54 tracked-cell day-by-day comparisons →</a>.</p>
 <h2>Downloadable result tables</h2>
 <p><a href="../../data/all_animals_carma_v3_vs_suite2p_cell_metrics_v3.csv">Cell x session metrics</a> ? <a href="../../data/all_animals_carma_v3_vs_suite2p_session_metrics_v3.csv">Session metrics</a> ? <a href="../../data/all_animals_carma_v3_vs_suite2p_animal_metrics_v3.csv">Animal metrics</a> ? <a href="../../data/d6_event_effect_raw_carma_v3_suite2p_v3.csv">D6 per-cell event effects</a> ? <a href="../../data/d6_event_effect_summary_v3.csv">D6 event summary</a></p>
 <p><a href="../">Back to signal extraction audit</a> ? <a href="../../pipeline/">Back to 2P pipeline</a></p>

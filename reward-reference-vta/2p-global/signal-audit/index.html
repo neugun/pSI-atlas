@@ -50,6 +50,10 @@
 <p><a href="../assets/D6_T01_S3_raw_vs_registered.mp4">Open MP4 directly</a> ? <a href="../assets/frame_registration_metrics.csv">Frame metrics CSV</a></p>
 </div><div class="audit-card"><img src="../assets/frame_registration_metrics.png" alt="Registration metrics"><p>Registration is visibly improved but residual non-rigid and z/intensity variation remains. Registration QC therefore stays separate from signal-extraction QC.</p></div></div>
 
+<h2>Across-condition extraction sensitivity</h2>
+<p>Eight sessions have independently verified trial-by-trial condition labels, including cue256/cue512, 100E/20E, 100E/50E and 100E/100E+Q. The <a href="all-animals/">full animal audit</a> now separates method-driven sign changes from effects already near zero, so a sign reversal is not automatically interpreted as deletion of a robust neuronal response.</p>
+<h2>Full per-cell signal-source results</h2>
+<div class="policy"><strong>All 21 source-auditable sessions now have a dedicated single-cell explorer.</strong> For each ROI: raw, CaRMA-v3-corrected, and Suite2p-corrected mean ± SEM; full single-trial heatmaps with identical color ranges; and condition effects only when behavioral trial labels are verified. <a href="cell-source-atlas/index.html">Open every cell and every available session →</a> · <a href="cell-source-atlas/longitudinal/index.html">ANM54 same-cell day-by-day extraction comparison →</a></div>
 <h2>Current authority rule</h2>
 <div class="policy"><strong>No single corrected trace is the sole authority.</strong> Raw ROI, exact CaRMA v3 and Suite2p are retained together. A biological conclusion is marked extraction-robust only when its direction remains interpretable across these views. The processed-only five mice remain in their own capability tier and are not given a fake framewise re-extraction.</div>
 <p><a href="../data/d6_event_effect_raw_carma_v3_suite2p_v3.csv">D6 per-cell event table</a> ? <a href="../data/all_animals_carma_v3_vs_suite2p_session_metrics_v3.csv">All-session method table</a> ? <a href="../cell-atlas/daily-cell-matrix.html">Daily same-cell matrix</a> ? <a href="../pipeline/">Back to pipeline</a></p>
