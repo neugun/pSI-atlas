@@ -819,3 +819,31 @@ html[lang="zh-CN"] .concept-node span {
   .figure.future-panels { margin: 14px 0 18px; padding: 2px; }
   .figure.future-panels figcaption { padding: 7px 4px 2px; font-size: .78rem; }
 }
+
+.theory-chain { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: stretch; gap: 8px; margin: 18px 0 22px; }
+.theory-step { border-top: 3px solid #9aa3ad; background: #fff; padding: 12px 12px 13px; }
+.theory-step.focal { border-top-color: #B2232E; background: #fbf4f4; }
+.theory-year { display: block; color: #8a929c; font-size: .68rem; font-weight: 700; margin-bottom: 4px; }
+.theory-step h3 { font-size: .86rem; line-height: 1.25; margin: 0 0 6px; color: #26364d; }
+.theory-step p { font-size: .76rem; line-height: 1.45; color: #596474; margin: 0; }
+.theory-arrow { align-self: center; color: #9aa3ad; font-size: 1.2rem; }
+.story-core { border-left: 4px solid #B2232E; padding: 11px 15px; margin: 18px 0; background: #fff; }
+.story-core h3 { margin: 0 0 5px; font-size: .92rem; color: #26364d; }
+.story-core p { margin: 0; line-height: 1.55; color: #4f5966; }
+.theory-evidence { margin-top: 14px; }
+.theory-equations { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 18px 0; }
+.equation-card { background: #fff; border-top: 2px solid #8a929c; padding: 12px 14px; }
+.equation-card.focal { border-top-color: #B2232E; }
+.equation-card b { display: block; color: #26364d; margin-bottom: 6px; }
+.equation-card span { display: block; font-family: Georgia, serif; font-size: 1rem; color: #111; margin-bottom: 7px; }
+.equation-card p { margin: 0; color: #596474; font-size: .78rem; line-height: 1.45; }
+.theory-citations { margin-top: 14px; padding-top: 11px; border-top: 1px solid #dfe4ea; font-size: .76rem; line-height: 1.6; color: #667080; }
+.theory-citations a { white-space: nowrap; }
+@media (max-width: 820px) {
+  .theory-chain { grid-template-columns: 1fr; }
+  .theory-arrow { transform: rotate(90deg); justify-self: center; }
+}
+@media (max-width: 620px) {
+  .theory-equations { grid-template-columns: 1fr; }
+  .theory-step p, .equation-card p { font-size: .77rem; }
+}

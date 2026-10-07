@@ -14,6 +14,7 @@
     <div class="brand"><span class="brand-mark">R</span> 奖赏历史 × VTA 多巴胺</div>
     <nav aria-label="页面导航">
       <a href="#overview">概览</a>
+      <a href="#theory">理论主线</a>
       <a href="#methods">方法</a>
       <a href="#fig0">Fig. 0</a>
       <a href="#fig1">Fig. 1</a>
@@ -106,6 +107,120 @@
           <span>但神经历史信号并不保证每次都能转化成可测量的行为变化</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="theory" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">当前故事在 dopamine 理论中的位置</div>
+        <h2>最重要的延伸不是“dopamine 不是 RPE”，而是：dopamine 用来计算 value/error 的内部 state，本身会被近期真正 sample 过的 reward history 动态塑造。</h2>
+      </div>
+      <p>
+        Uchida–Gershman 这条工作线不断把 dopamine theory 从“固定、可直接观察的 state”推进到“动物内部推断出的、task-dependent 的 state representation”。
+        Reward Contrast 沿着同一逻辑继续向 ongoing consumption 推进：近期 sample 的 reward 建立一个连续 reference <strong>R</strong>，
+        因而完全相同的当前 reward <strong>U</strong> 会获得不同的 neural 与 behavioral meaning。
+      </p>
+    </div>
+
+    <div class="theory-chain">
+      <article class="theory-step">
+        <span class="theory-year">2015–2016</span>
+        <h3>Subtraction 本身是真实计算</h3>
+        <p><strong>Eshel / Uchida：</strong>dopamine response 符合 actual-minus-expected reward；VTA local circuitry 提供 expectation-dependent subtraction。关键不是 raw reward 大小，而是<strong>比较</strong>。</p>
+      </article>
+      <div class="theory-arrow">→</div>
+      <article class="theory-step">
+        <span class="theory-year">2017–2019</span>
+        <h3>但是 expected reward 取决于动物认为自己处于什么 state</h3>
+        <p><strong>Starkweather、Babayan、Gershman、Uchida：</strong>当 temporal/state information 不确定时，dopamine RPE 应当相对于 hidden-state belief 来计算。Gershman & Uchida 又把 state、value parameter 与 policy uncertainty 放进同一个框架。</p>
+      </article>
+      <div class="theory-arrow">→</div>
+      <article class="theory-step">
+        <span class="theory-year">2022–2025</span>
+        <h3>很多“非经典” dopamine dynamics 其实来自 state representation</h3>
+        <p><strong>Mikhael / Qian / Uchida / Gershman：</strong>ramps、contingency effects 等看似偏离经典 RPE 的现象，可以因为 learner 使用了不同 latent-state representation 而出现；RNN 也可以在 TD framework 中学习到类似 state structure。</p>
+      </article>
+      <div class="theory-arrow">→</div>
+      <article class="theory-step focal">
+        <span class="theory-year">Reward Contrast</span>
+        <h3>Recent consumption history 本身就是一个 state variable</h3>
+        <p>我们的结果提示，在 ongoing feeding 中，相关 state 并不能只用 cue、block identity 或 categorical belief 描述。<strong>动物此前真正吃到了什么，会连续地建立 reference R。</strong></p>
+      </article>
+    </div>
+
+    <div class="story-core">
+      <h3>当前故事用一句话概括</h3>
+      <p>
+        <strong>consumption 期间的 VTA dopamine 是在一个 history-dependent state space 中表征当前 reward：</strong>
+        过去真正 sample 过的 outcome 建立 reference <strong>R</strong>；当前 reward <strong>U</strong> 相对于这个 reference 被重新评价；
+        这个 history-relative signal 在 sustained consumption 中尤其清楚，并参与决定动物是否继续吃。
+      </p>
+    </div>
+
+    <div class="cards-3 theory-evidence">
+      <article class="card good">
+        <h3>1. Current reward 相同，但 internal reference 不同</h3>
+        <p>H vs S、L vs N 把当前 food 固定，只改变 recent reward history。matched-current effect 同时出现在 sustained VTA dopamine 与 feeding persistence。</p>
+      </article>
+      <article class="card info">
+        <h3>2. Reference 依赖 sampling，不只是 context</h3>
+        <p>history-related structure 在 consumption 真正开始后增强。单纯 elapsed clock time 或 categorical task state 因而不足以描述 ongoing dopamine 所需要的 latent variable。</p>
+      </article>
+      <article class="card violet">
+        <h3>3. 这个 signal 直接连接 ongoing policy</h3>
+        <p>consumption-period dopamine manipulation 会改变 bout termination / persistence。因此 reward history 不只是改变一个 retrospective neural code，而是在改变当前 reward 的 action meaning。</p>
+      </article>
+    </div>
+
+    <div class="theory-equations">
+      <div class="equation-card">
+        <b>Canonical TD / belief-state view</b>
+        <span>δ<sub>t</sub> = r<sub>t</sub> + γV(b<sub>t+1</sub>) − V(b<sub>t</sub>)</span>
+        <p>Uchida/Gershman 最重要的启发是：dopamine error 依赖动物内部的 representation <em>b</em>，而不是只依赖实验者看到的 stimulus。</p>
+      </div>
+      <div class="equation-card focal">
+        <b>Reward Contrast 对 state representation 的扩展</b>
+        <span>R<sub>t+1</sub> = R<sub>t</sub> + α(U<sub>t</sub> − R<sub>t</sub>) &nbsp;&nbsp;；&nbsp;&nbsp; C<sub>t</sub> = U<sub>t</sub> − R<sub>t</sub></span>
+        <p>我们的核心主张是：recent consumed outcomes 为内部 state 增加了一个连续 coordinate R。dopamine 可能直接表征 C，也可能是在一个包含 R 的 augmented state 上计算 generalized prediction error。当前数据建立了“history 必须进入 state”；下一批 fully-crossed experiment 才真正区分这两种 implementation。</p>
+      </div>
+    </div>
+
+    <div class="callout theory-boundary">
+      <strong>这个 framing 很关键。</strong>
+      最强的说法不是 Reward Contrast “推翻 RPE”。
+      更准确、也更强的说法是：对 ongoing consumption 而言，observable-state / cue-only RPE 不完整。
+      一个成功的 dopamine theory 必须解释：为什么完全相同的当前 reward 在不同 sampled history 后产生不同 sustained dopamine；
+      为什么 cumulative history 在 belief/HMM/reward-rate/recurrent alternatives 之后仍保留独立信息；
+      以及为什么这个 neural state 会改变 action persistence。
+    </div>
+
+    <details class="roadmap-details">
+      <summary><strong>当前 model zoo 在这个故事里各自负责排除什么</strong></summary>
+      <p>
+        <strong>Belief / HMM：</strong>检验 hidden categorical/task state 是否已经足够。它们 raw prediction 可以很好，但不能完全吸收 cumulative sampled-history information。
+        <strong>Canonical TD/RW-RPE：</strong>提供 actual-minus-expected 的核心计算，但在当前 state representation 下不足以解释全部 sustained history effect。
+        <strong>Pearce–Hall、Kalman、uncertainty：</strong>检验真正隐藏的变量是不是 learning-rate adaptation 或 uncertainty。
+        <strong>Reward-rate、multi-timescale：</strong>检验它是否只是 running average 或 generic temporal integration。
+        <strong>Value-RNN：</strong>给 flexible learned recurrent state 最强机会，看是否无需显式 reference 也能吸收效应。
+        <strong>Unsigned salience：</strong>检验真正重要的是 signed relative value 还是纯 change magnitude。
+        因此保留完整 model zoo 的目的不是做一个“谁 raw prediction 第一名”的排行榜，而是逐个追问：给每种替代解释最强机会以后，哪些 information 仍然是必须的。
+      </p>
+    </details>
+
+    <div class="theory-citations">
+      <strong>关键理论递进：</strong>
+      <a href="https://doi.org/10.1038/nature14855">Eshel et al., Nature 2015</a> ·
+      <a href="https://doi.org/10.1038/nn.4239">Eshel et al., Nat Neurosci 2016</a> ·
+      <a href="https://doi.org/10.1038/nn.4520">Starkweather et al., Nat Neurosci 2017</a> ·
+      <a href="https://doi.org/10.1038/s41467-018-04397-0">Babayan et al., Nat Commun 2018</a> ·
+      <a href="https://doi.org/10.1038/s41583-019-0220-7">Gershman & Uchida, Nat Rev Neurosci 2019</a> ·
+      <a href="https://doi.org/10.1016/j.cub.2022.01.025">Mikhael et al., Curr Biol 2022</a> ·
+      <a href="https://doi.org/10.1038/s41593-024-01705-4">Gershman et al., Nat Neurosci 2024</a> ·
+      <a href="https://doi.org/10.1038/s41593-025-01915-4">Qian et al., Nat Neurosci 2025</a>。
     </div>
   </div>
 </section>

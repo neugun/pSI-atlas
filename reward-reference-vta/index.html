@@ -14,6 +14,7 @@
     <div class="brand"><span class="brand-mark">R</span> Reward history × VTA dopamine</div>
     <nav aria-label="Page navigation">
       <a href="#overview">Overview</a>
+      <a href="#theory">Theory</a>
       <a href="#methods">Methods</a>
       <a href="#fig0">Fig. 0</a>
       <a href="#fig1">Fig. 1</a>
@@ -104,6 +105,119 @@
           <span>downstream context determines how strongly neural state becomes behavior</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="theory" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Where the current story sits in dopamine theory</div>
+        <h2>The key extension is not “dopamine is not an RPE.” It is that the state against which dopamine computes value is itself built from recent sampled reward history.</h2>
+      </div>
+      <p>
+        The Uchida–Gershman line progressively moved dopamine theory from a fixed observable state to an inferred and task-dependent state representation.
+        Reward Contrast extends that logic into ongoing consumption: recent samples create a continuous reference state <strong>R</strong>, and the same current reward <strong>U</strong> can therefore acquire different neural and behavioral meaning.
+      </p>
+    </div>
+
+    <div class="theory-chain">
+      <article class="theory-step">
+        <span class="theory-year">2015–2016</span>
+        <h3>Subtraction is real</h3>
+        <p><strong>Eshel / Uchida:</strong> dopamine responses behave like actual-minus-expected reward, and local VTA circuitry contributes expectation-dependent subtraction. The central operation is comparison, not raw reward magnitude.</p>
+      </article>
+      <div class="theory-arrow">→</div>
+      <article class="theory-step">
+        <span class="theory-year">2017–2019</span>
+        <h3>But “expected” depends on inferred state</h3>
+        <p><strong>Starkweather, Babayan, Gershman & Uchida:</strong> under temporal/state uncertainty, dopamine RPEs are better understood relative to a belief over hidden states. Gershman & Uchida generalized this into a framework in which state, value and policy uncertainty shape dopamine.</p>
+      </article>
+      <div class="theory-arrow">→</div>
+      <article class="theory-step">
+        <span class="theory-year">2022–2025</span>
+        <h3>State representation explains noncanonical dopamine dynamics</h3>
+        <p><strong>Mikhael / Qian / Uchida / Gershman:</strong> ramps, contingency effects and other apparently noncanonical signals can arise when the learner has the right latent-state representation. Recurrent networks can learn such state structure prospectively.</p>
+      </article>
+      <div class="theory-arrow">→</div>
+      <article class="theory-step focal">
+        <span class="theory-year">Reward Contrast</span>
+        <h3>Recent consumption history is a state variable</h3>
+        <p>Our data suggest that during ongoing feeding, the relevant state is not exhausted by cue, block identity or a categorical belief. <strong>What the animal actually sampled before the current bout continuously builds the reference R.</strong></p>
+      </article>
+    </div>
+
+    <div class="story-core">
+      <h3>The current story in one sentence</h3>
+      <p>
+        <strong>VTA dopamine during consumption reflects the current reward in a history-dependent state space:</strong>
+        recent sampled outcomes construct a reference <strong>R</strong>; the same present reward <strong>U</strong> is evaluated relative to that reference;
+        the resulting history-relative signal becomes especially visible during sustained consumption and helps determine whether feeding persists.
+      </p>
+    </div>
+
+    <div class="cards-3 theory-evidence">
+      <article class="card good">
+        <h3>1. Same current reward, different internal reference</h3>
+        <p>H vs S and L vs N hold the current food constant while changing recent reward history. The matched-current effect appears in both sustained VTA dopamine and feeding persistence.</p>
+      </article>
+      <article class="card info">
+        <h3>2. The reference is sampling-dependent, not merely contextual</h3>
+        <p>History-related structure becomes stronger after consumption begins. Elapsed clock time and categorical task state are therefore insufficient descriptions of the latent variable that matters for ongoing dopamine.</p>
+      </article>
+      <article class="card violet">
+        <h3>3. The signal is tied to ongoing policy</h3>
+        <p>Consumption-period dopamine manipulations alter bout termination/persistence. Reward history therefore does not only modify a retrospective neural code; it changes the action meaning of the current reward.</p>
+      </article>
+    </div>
+
+    <div class="theory-equations">
+      <div class="equation-card">
+        <b>Canonical TD / belief-state view</b>
+        <span>δ<sub>t</sub> = r<sub>t</sub> + γV(b<sub>t+1</sub>) − V(b<sub>t</sub>)</span>
+        <p>The important lesson from Uchida/Gershman is that the dopamine error depends on the animal's internal representation <em>b</em>, not only the objectively visible stimulus.</p>
+      </div>
+      <div class="equation-card focal">
+        <b>Reward Contrast state augmentation</b>
+        <span>R<sub>t+1</sub> = R<sub>t</sub> + α(U<sub>t</sub> − R<sub>t</sub>) &nbsp;&nbsp; and &nbsp;&nbsp; C<sub>t</sub> = U<sub>t</sub> − R<sub>t</sub></span>
+        <p>Our claim is that recent consumed outcomes contribute a continuous state coordinate R. Dopamine may represent C directly, or a generalized prediction error computed over a state representation that includes R. The present data establish the necessity of history; the next crossed-history experiments distinguish these implementations.</p>
+      </div>
+    </div>
+
+    <div class="callout theory-boundary">
+      <strong>This framing matters.</strong>
+      The strongest claim is <em>not</em> that Reward Contrast disproves RPE.
+      The stronger and more defensible claim is that standard observable-state or cue-only RPE accounts are incomplete for ongoing consumption.
+      A successful dopamine theory must explain why two physically identical current rewards evoke different sustained dopamine after different sampled histories,
+      why cumulative history retains information beyond belief/HMM/reward-rate/recurrent alternatives,
+      and why this neural state changes action persistence.
+    </div>
+
+    <details class="roadmap-details">
+      <summary><strong>How the main comparator models fit into this story</strong></summary>
+      <p>
+        <strong>Belief / HMM:</strong> important because they test whether hidden categorical/task state is sufficient. They can predict well, but do not fully absorb cumulative sampled-history information.
+        <strong>Canonical TD/RW-RPE:</strong> provides the core actual-minus-expected computation, but with the current state representation it does not explain the full sustained history effect.
+        <strong>Pearce–Hall, Kalman and uncertainty:</strong> ask whether changing learning rate or uncertainty is the key hidden variable.
+        <strong>Reward-rate and multi-timescale models:</strong> ask whether the signal is simply a running average or generic temporal integration.
+        <strong>Value-RNN:</strong> asks whether a flexible learned recurrent state can absorb the effect without an explicit reference variable.
+        <strong>Unsigned salience:</strong> asks whether magnitude of change, rather than signed relative value, is sufficient.
+        The reason to keep this full model zoo is not to crown one raw-prediction winner, but to determine what information remains uniquely necessary after each alternative explanation is given its strongest test.
+      </p>
+    </details>
+
+    <div class="theory-citations">
+      <strong>Key conceptual lineage:</strong>
+      <a href="https://doi.org/10.1038/nature14855">Eshel et al., Nature 2015</a> ·
+      <a href="https://doi.org/10.1038/nn.4239">Eshel et al., Nat Neurosci 2016</a> ·
+      <a href="https://doi.org/10.1038/nn.4520">Starkweather et al., Nat Neurosci 2017</a> ·
+      <a href="https://doi.org/10.1038/s41467-018-04397-0">Babayan et al., Nat Commun 2018</a> ·
+      <a href="https://doi.org/10.1038/s41583-019-0220-7">Gershman & Uchida, Nat Rev Neurosci 2019</a> ·
+      <a href="https://doi.org/10.1016/j.cub.2022.01.025">Mikhael et al., Curr Biol 2022</a> ·
+      <a href="https://doi.org/10.1038/s41593-024-01705-4">Gershman et al., Nat Neurosci 2024</a> ·
+      <a href="https://doi.org/10.1038/s41593-025-01915-4">Qian et al., Nat Neurosci 2025</a>.
     </div>
   </div>
 </section>
