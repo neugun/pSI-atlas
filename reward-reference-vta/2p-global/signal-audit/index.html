@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>2P signal & registration audit</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.audit-page{font-family:Arial,Helvetica,sans-serif;color:#1c2d3b}.audit-page main{max-width:1120px;margin:auto;padding:32px 24px 70px}
+.audit-page h1{font-size:44px;letter-spacing:-.035em;margin:10px 0}.audit-page h2{font-size:30px;color:#173a5e;margin-top:48px}
+.audit-page .lede{font-size:18px;color:#536779;max-width:900px}.audit-page .alert{border-left:5px solid #b75039;background:#fbf5f2;padding:16px 18px;margin:24px 0;border-radius:10px}
+.audit-page .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.audit-page .metric{border:1px solid #dfe6eb;border-radius:12px;padding:14px;background:#fff}.audit-page .metric b{font-size:24px;color:#173a5e;display:block}.audit-page figure{margin:22px auto;max-width:820px}.audit-page figure img,.audit-page video{width:100%;height:auto;display:block}.audit-page figcaption{font-size:13px;color:#607180;margin-top:8px;line-height:1.5}.audit-page table{border-collapse:collapse;width:100%;font-size:13px}.audit-page th,.audit-page td{border-bottom:1px solid #e1e6ea;padding:8px 9px;text-align:left}.audit-page th{background:#f6f9fb}.audit-page .ok{background:#f1f8f5;border-left:4px solid #3c8065;padding:14px 16px;border-radius:9px}.audit-page .links a{margin-right:12px}
+@media(max-width:760px){.audit-page .metric-grid{grid-template-columns:1fr 1fr}.audit-page h1{font-size:34px}}
+</style></head><body class="audit-page"><main>
+<p><a href="../pipeline/">← 2P pipeline</a> · <a href="../cell-atlas/">cell atlas</a></p>
+<h1>Signal subtraction and frame-level registration audit</h1>
+<p class="lede">This audit was triggered by the observation that the local background trace itself has high SNR. The central question is whether the historical <code>ROI − background</code> rule removes nuisance fluorescence or removes real event/condition-locked neural signal together with it.</p>
+<div class="alert"><strong>Current status: do not treat <code>sub1 = raw − 1×background</code> as a uniquely validated biological authority.</strong> It remains a useful sensitivity view, but D6 shows direct evidence that the background channel contains structured condition signal and that unit subtraction materially changes individual-cell effects.</div>
+
+<h2>1 · What the historical subtraction actually does</h2>
+<p>The checkpoint was verified numerically: <strong><code>sub = raw − bg</code> exactly</strong> (maximum absolute difference 0). There is no fitted gain in the frozen sub1 trace. The historical mask code defines background as a <strong>20-pixel disk around the ROI centroid</strong>, with detected somata excluded after a small dilation. It is therefore local neuropil/background, not a remote blank-field estimate.</p>
+<div class="metric-grid">
+<div class="metric"><b>1.0</b>fixed subtraction gain</div>
+<div class="metric"><b>20 px</b>background-disk radius</div>
+<div class="metric"><b>16.8×</b>median BG/ROI pixel count</div>
+<div class="metric"><b>9 / 16</b>D6 cells have baseline-fit α &gt; 1</div>
+</div>
+<figure><img src="../assets/background_mask_geometry_v2.png" alt="ROI and local background geometry"><figcaption>Red: retained soma ROI. Cyan: local 20-px background disk after excluding detected somata. Because the BG mask averages many more pixels than the soma ROI, it can have very high apparent SNR even when it represents spatially shared fluorescence.</figcaption></figure>
+
+<h2>2 · D6: subtraction materially changes condition effects</h2>
+<div class="metric-grid">
+<div class="metric"><b>14 / 16</b>|BG β| &gt; |raw β|</div>
+<div class="metric"><b>11 / 16</b>BG condition effect P&lt;0.05</div>
+<div class="metric"><b>7 / 16</b>&gt;50% effect attenuation</div>
+<div class="metric"><b>6 / 16</b>effect sign flips</div>
+</div>
+<p>Three cells with a nominally significant raw condition effect lose that significance after unit subtraction. Across all 16 cells, the median <code>|sub β| / |raw β|</code> is 0.705. Raw and sub cell effects remain correlated overall (r=0.941), so the whole population is not destroyed, but individual cells are changed strongly enough that a single fixed subtraction should not be the only analysis.</p>
+<figure><a href="../assets/background_subtraction_audit_v3.png"><img src="../assets/background_subtraction_audit_v3.png" alt="background subtraction audit"></a><figcaption>All 16 D6 cells. A, the local background itself carries condition-locked effects. B, unit subtraction changes effect magnitude. C, per-cell effect retention. D, baseline-estimated scaling varies widely rather than clustering at α=1.</figcaption></figure>
+<p><strong>ROI40 illustrates the problem directly:</strong> raw β=0.649; background β=1.417; <code>raw−bg</code> β=0.277. In the α sweep, the condition effect decreases monotonically from 0.649 at α=0 to 0.395 at α=0.7, 0.277 at α=1.0, and 0.197 at α=1.2.</p>
+<p>An even more aggressive background-covariate residualization is not a solution: the original fixed-subtraction sustained cell-axis split-half correlation is 0.436, whereas the background-residualized version falls to −0.152 (whole window −0.171). That loss of cross-trial reliability argues against simply removing more of the background channel.</p>
+<p class="links"><a href="background_subtraction_audit.csv">16-cell audit CSV</a><a href="cell40_alpha_sweep.csv">ROI40 α sweep CSV</a><a href="background_mask_geometry.csv">mask geometry CSV</a></p>
+
+<h2>3 · Registration is now checked frame by frame, not only by a mean image</h2>
+<p>D6 trial 1, plane S3 contains 192 real 512×512 frames before and after registration. The same frames were extracted into a side-by-side movie. Against a common registered-median template, median high-pass frame correlation increases from <strong>0.0446 → 0.1725</strong>. The raw stack has P95 estimated displacement of <strong>3.30 px</strong>; the registered stack is centered at the template shift solution for essentially all ordinary frames.</p>
+<video controls preload="metadata" poster="../assets/D6_T01_S3_frame_strip.png"><source src="../assets/D6_T01_S3_raw_vs_registered.mp4" type="video/mp4">Your browser does not support MP4 video.</video>
+<figure><img src="../assets/D6_T01_S3_frame_strip.png" alt="raw and registered frame strip"><figcaption>Eight timepoints from the actual 192-frame movie. Top: raw; bottom: registered. This exposes temporal jitter/correction directly rather than inferring registration quality from a mean image.</figcaption></figure>
+<figure><img src="../assets/frame_registration_metrics.png" alt="frame registration metrics"><figcaption>Frame-level quantitative QC against a fixed registered template. A few raw frames are very large motion outliers; these should be reviewed directly in the movie rather than hidden by a summary statistic.</figcaption></figure>
+<p class="links"><a href="../assets/frame_registration_metrics.csv">Frame metrics CSV</a><a href="../assets/D6_T01_S3_raw_vs_registered.mp4">Open MP4 directly</a></p>
+
+<h2>4 · Analysis authority being changed</h2>
+<div class="ok"><strong>Immediate rule:</strong> retain raw, BG, fixed α=1, conservative α values, and baseline-fit α as parallel signal sources. Do not let the cell atlas silently collapse them to sub1. The final authority should be chosen using a trade-off between background coupling, preservation of event/condition effects, cross-trial reliability, and frame/mask visual QC. Cross-day analyses should then be regenerated from the selected signal authority while preserving the existing daily same-cell identity map.</div>
+</main></body></html>
