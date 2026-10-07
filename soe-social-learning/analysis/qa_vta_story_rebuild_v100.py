@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 import sys, pandas as pd
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 R=Path(__file__).resolve().parents[1]
 fails=[]
 def ck(name,cond,detail=""):

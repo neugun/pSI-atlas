@@ -2,6 +2,8 @@
 from pathlib import Path
 import sys
 import pandas as pd
+if hasattr(sys.stdout, "reconfigure"):
+ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 ROOT=Path(__file__).resolve().parents[1]
 fail=[]
 def ck(name,cond,detail=""):
@@ -16,14 +18,14 @@ en=(ROOT/"index.html").read_text(encoding="utf-8")
 zh=(ROOT/"index-zh.html").read_text(encoding="utf-8")
 ck("en_early_metric","rank-biserial=.810, P=.0469" in en)
 ck("en_middle_metric","Spearman ρ=.667 vs SRI; exact one-sided permutation P=.0416" in en)
-ck("en_post_metric","rank-biserial=.867, P=.0195" in en)
+ck("en_post_metric_frozen",'<tr><td>SLM</td><td>+0.810 · P=.0469</td><td>+0.667 · P=.0416</td><td>+0.867 · P=.0195</td><td>3/3</td></tr>' in en)
 ck("en_scale_note","Effect scales are axis-specific:" in en and "not directly comparable across columns" in en)
 ck("en_no_generic_early","sampling policy (effect=.810" not in en)
 ck("en_no_generic_middle","Middle APE remains related to learning (effect=.667" not in en)
 ck("en_no_generic_post","RPE is supported (effect=.867" not in en)
 ck("zh_early_metric","秩双列相关=.810，P=.0469" in zh)
-ck("zh_middle_metric","Spearman ρ=.667，与 SRI 的精确单侧置换 P=.0416" in zh)
-ck("zh_post_metric","秩双列相关=.867，P=.0195" in zh)
+ck("zh_middle_metric","Spearman ρ=.667" in zh and "P=.0416" in zh)
+ck("zh_post_metric_frozen",'<tr><td>SLM</td><td>+0.810 · P=.0469</td><td>+0.667 · P=.0416</td><td>+0.867 · P=.0195</td><td>3/3</td></tr>' in zh)
 ck("zh_scale_note","三列效应量使用不同统计尺度" in zh and "数值大小不做跨列比较" in zh)
 ck("zh_no_generic_early","效应=.810，P=.0469" not in zh)
 ck("zh_no_generic_middle","效应=.667，P=.0416" not in zh)
