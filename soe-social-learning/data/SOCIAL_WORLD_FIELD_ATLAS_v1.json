@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "FIELD_SCALE_SOCIAL_WORLD_MODEL_V1",
+  "mission": "Build a mouse-first relational social world model that represents agents, relations, social information, internal motivation, learning, long-term relationship memory, neural state and interventions, then predicts future behavior/neural dynamics and counterfactual outcomes.",
+  "dataset_count": 15,
+  "model_family_count": 24,
+  "biological_prior_count": 16,
+  "ontology_state_count": 19,
+  "priority_datasets": [
+    "User SOE / social-observation feeding",
+    "MABe Challenge 2025",
+    "CalMS21",
+    "MABe22 mouse triplets",
+    "13-region social behavior network multifiber photometry",
+    "VTA DA social interaction / social prediction error",
+    "STFP cortical-amygdala social memory"
+  ],
+  "design_principles": [
+    "Entity-centric: each mouse is a persistent entity with identity and memory.",
+    "Relation-centric: directed agent->target edges carry geometry, interaction, reliability, rank and familiarity.",
+    "Multi-timescale: frame kinematics, event memory, minutes-scale state and cross-day relationship memory are distinct.",
+    "World-state not classifier: latent must support multi-step rollout, content counterfactuals and intervention conditioning.",
+    "Biological grounding: neural recordings and causal perturbations constrain latent coordinates but do not define them.",
+    "Mouse-first pretraining: exploit MABe2025/CalMS21/MABe22 before cross-species transfer.",
+    "Strict generalization: held-animal, held-lab, held-partner, held-context and intervention-aware evaluation."
+  ]
+}

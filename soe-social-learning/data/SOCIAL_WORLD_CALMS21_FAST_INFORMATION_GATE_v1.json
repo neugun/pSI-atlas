@@ -1,0 +1,1127 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "FAST_INFORMATION_GATE_NOT_FINAL_MODEL",
+  "n_train_animals": 70,
+  "n_test_animals": 19,
+  "downsample": 12,
+  "horizons": {
+    "1": "~0.4 s",
+    "2": "~0.8 s",
+    "5": "~2.0 s"
+  },
+  "paired_animal_level": {
+    "1": {
+      "self_only": {
+        "n": 19,
+        "mean_nll_gain": 0.6955509028936687,
+        "median_nll_gain": 0.7163181602954865,
+        "positive": 19,
+        "wilcoxon_one_sided_p": 1.9073486328125e-06,
+        "mean_balanced_accuracy_gain": 0.32473315976638295,
+        "median_ba_gain": 0.3186308344654097
+      },
+      "partner_shuffle": {
+        "n": 19,
+        "mean_nll_gain": 0.6969864399809587,
+        "median_nll_gain": 0.7018389701843262,
+        "positive": 19,
+        "wilcoxon_one_sided_p": 1.9073486328125e-06,
+        "mean_balanced_accuracy_gain": 0.32703880960556986,
+        "median_ba_gain": 0.3102203563019236
+      }
+    },
+    "2": {
+      "self_only": {
+        "n": 19,
+        "mean_nll_gain": 0.5670860629332694,
+        "median_nll_gain": 0.5700735449790955,
+        "positive": 19,
+        "wilcoxon_one_sided_p": 1.9073486328125e-06,
+        "mean_balanced_accuracy_gain": 0.2849075903225948,
+        "median_ba_gain": 0.2649547724233446
+      },
+      "partner_shuffle": {
+        "n": 19,
+        "mean_nll_gain": 0.5682220113904852,
+        "median_nll_gain": 0.5614118576049805,
+        "positive": 19,
+        "wilcoxon_one_sided_p": 1.9073486328125e-06,
+        "mean_balanced_accuracy_gain": 0.2901133503034027,
+        "median_ba_gain": 0.29956375734461566
+      }
+    },
+    "5": {
+      "self_only": {
+        "n": 19,
+        "mean_nll_gain": 0.29372576035951314,
+        "median_nll_gain": 0.31036531925201416,
+        "positive": 19,
+        "wilcoxon_one_sided_p": 1.9073486328125e-06,
+        "mean_balanced_accuracy_gain": 0.1795004673082612,
+        "median_ba_gain": 0.19033955576790063
+      },
+      "partner_shuffle": {
+        "n": 19,
+        "mean_nll_gain": 0.2875803834513614,
+        "median_nll_gain": 0.3128175139427185,
+        "positive": 19,
+        "wilcoxon_one_sided_p": 1.9073486328125e-06,
+        "mean_balanced_accuracy_gain": 0.16497771132810882,
+        "median_ba_gain": 0.16757703081232495
+      }
+    }
+  },
+  "per_animal": {
+    "1": {
+      "self_only": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1984,
+          "nll": 1.1317708492279053,
+          "balanced_accuracy": 0.5496099425188353
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1513,
+          "nll": 1.1639620065689087,
+          "balanced_accuracy": 0.5094649769905474
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1596,
+          "nll": 1.1317194700241089,
+          "balanced_accuracy": 0.5198260770397028
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1568,
+          "nll": 1.4771932363510132,
+          "balanced_accuracy": 0.43253245116136324
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1501,
+          "nll": 1.2797788381576538,
+          "balanced_accuracy": 0.3576751273108496
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1642,
+          "nll": 1.3077837228775024,
+          "balanced_accuracy": 0.3530369002067116
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1575,
+          "nll": 1.1759141683578491,
+          "balanced_accuracy": 0.37020675514653006
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1622,
+          "nll": 1.3381438255310059,
+          "balanced_accuracy": 0.3396589352703927
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1456,
+          "nll": 0.9465025067329407,
+          "balanced_accuracy": 0.49253618633205704
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 514,
+          "nll": 1.105263590812683,
+          "balanced_accuracy": 0.5580022132309713
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 410,
+          "nll": 1.249639868736267,
+          "balanced_accuracy": 0.2590433228359861
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 592,
+          "nll": 1.476218342781067,
+          "balanced_accuracy": 0.4055672288998609
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 406,
+          "nll": 1.5817492008209229,
+          "balanced_accuracy": 0.2977380759027665
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 468,
+          "nll": 1.4640768766403198,
+          "balanced_accuracy": 0.3529900332225913
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1599,
+          "nll": 1.2350373268127441,
+          "balanced_accuracy": 0.5152022237414436
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 718,
+          "nll": 1.2632957696914673,
+          "balanced_accuracy": 0.4141532432957928
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 992,
+          "nll": 1.067786693572998,
+          "balanced_accuracy": 0.5716915377258375
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 735,
+          "nll": 1.2410926818847656,
+          "balanced_accuracy": 0.40356079790306093
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 939,
+          "nll": 1.1944550275802612,
+          "balanced_accuracy": 0.40769069642402095
+        }
+      ],
+      "relational": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1984,
+          "nll": 0.45736637711524963,
+          "balanced_accuracy": 0.8085200081652921
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1513,
+          "nll": 0.38925549387931824,
+          "balanced_accuracy": 0.8673684381591542
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1596,
+          "nll": 0.41540130972862244,
+          "balanced_accuracy": 0.8922327360292154
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1568,
+          "nll": 0.6060130000114441,
+          "balanced_accuracy": 0.7511632856267729
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1501,
+          "nll": 0.39595314860343933,
+          "balanced_accuracy": 0.6392844304122881
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1642,
+          "nll": 0.5641084909439087,
+          "balanced_accuracy": 0.6649239125654219
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1575,
+          "nll": 0.46753689646720886,
+          "balanced_accuracy": 0.6759894877681961
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1622,
+          "nll": 0.8136165738105774,
+          "balanced_accuracy": 0.6107724006853258
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1456,
+          "nll": 0.5212975740432739,
+          "balanced_accuracy": 0.7000872464488159
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 514,
+          "nll": 0.6187620759010315,
+          "balanced_accuracy": 0.7642305822570266
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 410,
+          "nll": 0.5160303115844727,
+          "balanced_accuracy": 0.8506255851561835
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 592,
+          "nll": 0.5331424474716187,
+          "balanced_accuracy": 0.7973010438611112
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 406,
+          "nll": 0.6608549952507019,
+          "balanced_accuracy": 0.7152043744247739
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 468,
+          "nll": 0.5734230875968933,
+          "balanced_accuracy": 0.7682608896271687
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1599,
+          "nll": 0.6484909653663635,
+          "balanced_accuracy": 0.7654996352720653
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 718,
+          "nll": 0.49146345257759094,
+          "balanced_accuracy": 0.7993520554251025
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 992,
+          "nll": 0.5416392683982849,
+          "balanced_accuracy": 0.7198537578809304
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 735,
+          "nll": 0.7388244271278381,
+          "balanced_accuracy": 0.7243769159003065
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 939,
+          "nll": 0.6627369523048401,
+          "balanced_accuracy": 0.765069975055446
+        }
+      ],
+      "partner_shuffle": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1984,
+          "nll": 1.1321179866790771,
+          "balanced_accuracy": 0.5319229196247763
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1513,
+          "nll": 1.181550145149231,
+          "balanced_accuracy": 0.48146943318068414
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1596,
+          "nll": 1.1852680444717407,
+          "balanced_accuracy": 0.4643221772718458
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1568,
+          "nll": 1.467360496520996,
+          "balanced_accuracy": 0.4148729409534179
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1501,
+          "nll": 1.2302021980285645,
+          "balanced_accuracy": 0.3694672502176175
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1642,
+          "nll": 1.2736291885375977,
+          "balanced_accuracy": 0.4030874785591767
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1575,
+          "nll": 1.1658371686935425,
+          "balanced_accuracy": 0.37416907808806926
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1622,
+          "nll": 1.3118903636932373,
+          "balanced_accuracy": 0.37410901629625043
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1456,
+          "nll": 0.9931170344352722,
+          "balanced_accuracy": 0.5195918184076498
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 514,
+          "nll": 1.1159414052963257,
+          "balanced_accuracy": 0.5059648522386108
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 410,
+          "nll": 1.2178692817687988,
+          "balanced_accuracy": 0.37164865094901695
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 592,
+          "nll": 1.45729660987854,
+          "balanced_accuracy": 0.41791814329159166
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 406,
+          "nll": 1.6058067083358765,
+          "balanced_accuracy": 0.23676682366953603
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 468,
+          "nll": 1.467097520828247,
+          "balanced_accuracy": 0.38714700996677737
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1599,
+          "nll": 1.2586669921875,
+          "balanced_accuracy": 0.46840421245995073
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 718,
+          "nll": 1.2257360219955444,
+          "balanced_accuracy": 0.46808436740235543
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 992,
+          "nll": 1.0341604948043823,
+          "balanced_accuracy": 0.4596541488886268
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 735,
+          "nll": 1.3111791610717773,
+          "balanced_accuracy": 0.4141565595983829
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 939,
+          "nll": 1.2239323854446411,
+          "balanced_accuracy": 0.4036224971504327
+        }
+      ]
+    },
+    "2": {
+      "self_only": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1983,
+          "nll": 1.1740137338638306,
+          "balanced_accuracy": 0.5131834204490814
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1512,
+          "nll": 1.1953935623168945,
+          "balanced_accuracy": 0.48417481532031736
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1595,
+          "nll": 1.1657735109329224,
+          "balanced_accuracy": 0.4890375783727933
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1567,
+          "nll": 1.5074217319488525,
+          "balanced_accuracy": 0.3815256764720362
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1500,
+          "nll": 1.3144419193267822,
+          "balanced_accuracy": 0.33136397537467754
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1641,
+          "nll": 1.363423466682434,
+          "balanced_accuracy": 0.31896491783581365
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1574,
+          "nll": 1.2240688800811768,
+          "balanced_accuracy": 0.34731601864264566
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1621,
+          "nll": 1.3915009498596191,
+          "balanced_accuracy": 0.31637959694280476
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1455,
+          "nll": 0.9792730212211609,
+          "balanced_accuracy": 0.4858581832798523
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 513,
+          "nll": 1.1415334939956665,
+          "balanced_accuracy": 0.5404791750053727
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 409,
+          "nll": 1.2767044305801392,
+          "balanced_accuracy": 0.2808926437958696
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 591,
+          "nll": 1.5367978811264038,
+          "balanced_accuracy": 0.3224485218352195
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 405,
+          "nll": 1.611615777015686,
+          "balanced_accuracy": 0.26129126925898755
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 467,
+          "nll": 1.475339651107788,
+          "balanced_accuracy": 0.29416707159054095
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1598,
+          "nll": 1.276877760887146,
+          "balanced_accuracy": 0.48548544385798714
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 717,
+          "nll": 1.2894819974899292,
+          "balanced_accuracy": 0.3757513576548895
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 991,
+          "nll": 1.1197880506515503,
+          "balanced_accuracy": 0.48560367454068243
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 734,
+          "nll": 1.2748184204101562,
+          "balanced_accuracy": 0.4111423728164188
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 938,
+          "nll": 1.216165542602539,
+          "balanced_accuracy": 0.38050005835558415
+        }
+      ],
+      "relational": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1983,
+          "nll": 0.6059877872467041,
+          "balanced_accuracy": 0.7482012518964356
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1512,
+          "nll": 0.5222442746162415,
+          "balanced_accuracy": 0.8167215098887789
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1595,
+          "nll": 0.5998470783233643,
+          "balanced_accuracy": 0.8165848453646846
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1567,
+          "nll": 0.7796970009803772,
+          "balanced_accuracy": 0.6675683639280554
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1500,
+          "nll": 0.5066949129104614,
+          "balanced_accuracy": 0.5287239652554091
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1641,
+          "nll": 0.7755652070045471,
+          "balanced_accuracy": 0.5812666413245822
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1574,
+          "nll": 0.6539953351020813,
+          "balanced_accuracy": 0.6021246145241691
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1621,
+          "nll": 1.0814193487167358,
+          "balanced_accuracy": 0.5065270843762892
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1455,
+          "nll": 0.6860308647155762,
+          "balanced_accuracy": 0.6110009129246973
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 513,
+          "nll": 0.8118109107017517,
+          "balanced_accuracy": 0.6701221865105901
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 409,
+          "nll": 0.6737344861030579,
+          "balanced_accuracy": 0.8079450418160096
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 591,
+          "nll": 0.7363656759262085,
+          "balanced_accuracy": 0.7111895400781939
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 405,
+          "nll": 0.8126831650733948,
+          "balanced_accuracy": 0.6508899214695253
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 467,
+          "nll": 0.763185441493988,
+          "balanced_accuracy": 0.7058430515063168
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1598,
+          "nll": 0.7763531804084778,
+          "balanced_accuracy": 0.7025007907595051
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 717,
+          "nll": 0.6143858432769775,
+          "balanced_accuracy": 0.7384343782854392
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 991,
+          "nll": 0.6805375814437866,
+          "balanced_accuracy": 0.6771478565179353
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 734,
+          "nll": 0.8897680044174194,
+          "balanced_accuracy": 0.6760971452397634
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 938,
+          "nll": 0.7894924879074097,
+          "balanced_accuracy": 0.6999208858644956
+        }
+      ],
+      "partner_shuffle": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1983,
+          "nll": 1.1673996448516846,
+          "balanced_accuracy": 0.5038931163516485
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1512,
+          "nll": 1.2144064903259277,
+          "balanced_accuracy": 0.4710693138643407
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1595,
+          "nll": 1.2257461547851562,
+          "balanced_accuracy": 0.42901013840858143
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1567,
+          "nll": 1.499091386795044,
+          "balanced_accuracy": 0.36800460658343975
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1500,
+          "nll": 1.2676454782485962,
+          "balanced_accuracy": 0.33997142751417897
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1641,
+          "nll": 1.3272571563720703,
+          "balanced_accuracy": 0.36169168764622633
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1574,
+          "nll": 1.2074166536331177,
+          "balanced_accuracy": 0.3659769913266311
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1621,
+          "nll": 1.3571221828460693,
+          "balanced_accuracy": 0.3550540838084733
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1455,
+          "nll": 1.0268222093582153,
+          "balanced_accuracy": 0.4790984041336608
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 513,
+          "nll": 1.147548794746399,
+          "balanced_accuracy": 0.4581137307630545
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 409,
+          "nll": 1.2505241632461548,
+          "balanced_accuracy": 0.3655060590544461
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 591,
+          "nll": 1.5233606100082397,
+          "balanced_accuracy": 0.3518722932279028
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 405,
+          "nll": 1.6418251991271973,
+          "balanced_accuracy": 0.17376973451808375
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 467,
+          "nll": 1.4652653932571411,
+          "balanced_accuracy": 0.34170513443472633
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1598,
+          "nll": 1.3061909675598145,
+          "balanced_accuracy": 0.43005194662927254
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 717,
+          "nll": 1.2537378072738647,
+          "balanced_accuracy": 0.40820552698549156
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 991,
+          "nll": 1.0889124870300293,
+          "balanced_accuracy": 0.44445319335083117
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 734,
+          "nll": 1.3452951908111572,
+          "balanced_accuracy": 0.3738606494201504
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 938,
+          "nll": 1.2404488325119019,
+          "balanced_accuracy": 0.3853482937450832
+        }
+      ]
+    },
+    "5": {
+      "self_only": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1980,
+          "nll": 1.2602300643920898,
+          "balanced_accuracy": 0.43094752349652393
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1509,
+          "nll": 1.288116216659546,
+          "balanced_accuracy": 0.3952181739175966
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1592,
+          "nll": 1.259691596031189,
+          "balanced_accuracy": 0.44318362307172715
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1564,
+          "nll": 1.5868597030639648,
+          "balanced_accuracy": 0.3065561803398926
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1497,
+          "nll": 1.37307870388031,
+          "balanced_accuracy": 0.28303063156767194
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1638,
+          "nll": 1.4065618515014648,
+          "balanced_accuracy": 0.2995970947494488
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1571,
+          "nll": 1.311777949333191,
+          "balanced_accuracy": 0.34014906722246313
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1618,
+          "nll": 1.4652743339538574,
+          "balanced_accuracy": 0.2912547960393728
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1452,
+          "nll": 1.0457981824874878,
+          "balanced_accuracy": 0.4176543073036829
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 510,
+          "nll": 1.2240817546844482,
+          "balanced_accuracy": 0.40990405509350997
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 406,
+          "nll": 1.3359642028808594,
+          "balanced_accuracy": 0.30116129032258065
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 588,
+          "nll": 1.6322320699691772,
+          "balanced_accuracy": 0.23630597830383004
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 402,
+          "nll": 1.5979899168014526,
+          "balanced_accuracy": 0.2553288740245262
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 464,
+          "nll": 1.4895646572113037,
+          "balanced_accuracy": 0.2717145191409897
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1595,
+          "nll": 1.3412954807281494,
+          "balanced_accuracy": 0.39919323591548367
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 714,
+          "nll": 1.3474289178848267,
+          "balanced_accuracy": 0.3498996852745675
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 988,
+          "nll": 1.2252708673477173,
+          "balanced_accuracy": 0.3268552248470406
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 731,
+          "nll": 1.3750213384628296,
+          "balanced_accuracy": 0.24068655420593169
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 935,
+          "nll": 1.270609736442566,
+          "balanced_accuracy": 0.32246454322161483
+        }
+      ],
+      "relational": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1980,
+          "nll": 0.9365575909614563,
+          "balanced_accuracy": 0.5735216241637167
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1509,
+          "nll": 0.8502222299575806,
+          "balanced_accuracy": 0.6597983607460353
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1592,
+          "nll": 0.9452119469642639,
+          "balanced_accuracy": 0.6636025918184624
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1564,
+          "nll": 1.1204535961151123,
+          "balanced_accuracy": 0.49689573610779325
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1497,
+          "nll": 0.8018280863761902,
+          "balanced_accuracy": 0.44719618286114216
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1638,
+          "nll": 1.1228173971176147,
+          "balanced_accuracy": 0.4396032691671036
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1571,
+          "nll": 1.0014126300811768,
+          "balanced_accuracy": 0.4348096990715086
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1618,
+          "nll": 1.374009132385254,
+          "balanced_accuracy": 0.40759882637278055
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1452,
+          "nll": 0.9830848574638367,
+          "balanced_accuracy": 0.5161935629034572
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 510,
+          "nll": 1.1488769054412842,
+          "balanced_accuracy": 0.4925044815783914
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 406,
+          "nll": 1.092948317527771,
+          "balanced_accuracy": 0.5855053763440861
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 588,
+          "nll": 1.2847710847854614,
+          "balanced_accuracy": 0.44107067297185454
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 402,
+          "nll": 1.262885570526123,
+          "balanced_accuracy": 0.4664882943143813
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 464,
+          "nll": 1.0700507164001465,
+          "balanced_accuracy": 0.5122665732959851
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1595,
+          "nll": 1.0625677108764648,
+          "balanced_accuracy": 0.5454855623153757
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 714,
+          "nll": 0.9633601903915405,
+          "balanced_accuracy": 0.5487215481158138
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 988,
+          "nll": 0.9697791337966919,
+          "balanced_accuracy": 0.4762146820485036
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 731,
+          "nll": 1.223711609840393,
+          "balanced_accuracy": 0.4851980778959681
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 935,
+          "nll": 1.0415093898773193,
+          "balanced_accuracy": 0.5389391148230582
+        }
+      ],
+      "partner_shuffle": [
+        {
+          "animal": "task1/test/mouse071_task1_annotator1",
+          "n": 1980,
+          "nll": 1.2493751049041748,
+          "balanced_accuracy": 0.44903167287610235
+        },
+        {
+          "animal": "task1/test/mouse072_task1_annotator1",
+          "n": 1509,
+          "nll": 1.3008331060409546,
+          "balanced_accuracy": 0.39961191311804384
+        },
+        {
+          "animal": "task1/test/mouse073_task1_annotator1",
+          "n": 1592,
+          "nll": 1.3323278427124023,
+          "balanced_accuracy": 0.3769227102848827
+        },
+        {
+          "animal": "task1/test/mouse074_task1_annotator1",
+          "n": 1564,
+          "nll": 1.5755493640899658,
+          "balanced_accuracy": 0.329237303708483
+        },
+        {
+          "animal": "task1/test/mouse075_task1_annotator1",
+          "n": 1497,
+          "nll": 1.287290096282959,
+          "balanced_accuracy": 0.3143632973854381
+        },
+        {
+          "animal": "task1/test/mouse076_task1_annotator1",
+          "n": 1638,
+          "nll": 1.338786244392395,
+          "balanced_accuracy": 0.33706178739902776
+        },
+        {
+          "animal": "task1/test/mouse077_task1_annotator1",
+          "n": 1571,
+          "nll": 1.2748667001724243,
+          "balanced_accuracy": 0.3619724668059027
+        },
+        {
+          "animal": "task1/test/mouse078_task1_annotator1",
+          "n": 1618,
+          "nll": 1.4105069637298584,
+          "balanced_accuracy": 0.3307380186721631
+        },
+        {
+          "animal": "task1/test/mouse079_task1_annotator1",
+          "n": 1452,
+          "nll": 1.0902185440063477,
+          "balanced_accuracy": 0.4070338838590519
+        },
+        {
+          "animal": "task1/test/mouse080_task1_annotator1",
+          "n": 510,
+          "nll": 1.2094452381134033,
+          "balanced_accuracy": 0.3801213766727611
+        },
+        {
+          "animal": "task1/test/mouse081_task1_annotator1",
+          "n": 406,
+          "nll": 1.309328556060791,
+          "balanced_accuracy": 0.39006451612903226
+        },
+        {
+          "animal": "task1/test/mouse082_task1_annotator1",
+          "n": 588,
+          "nll": 1.6228710412979126,
+          "balanced_accuracy": 0.2466686196009504
+        },
+        {
+          "animal": "task1/test/mouse083_task1_annotator1",
+          "n": 402,
+          "nll": 1.6256462335586548,
+          "balanced_accuracy": 0.23474916387959865
+        },
+        {
+          "animal": "task1/test/mouse084_task1_annotator1",
+          "n": 464,
+          "nll": 1.4616072177886963,
+          "balanced_accuracy": 0.3446895424836602
+        },
+        {
+          "animal": "task1/test/mouse085_task1_annotator1",
+          "n": 1595,
+          "nll": 1.3907798528671265,
+          "balanced_accuracy": 0.3926865328313977
+        },
+        {
+          "animal": "task1/test/mouse086_task1_annotator1",
+          "n": 714,
+          "nll": 1.344521164894104,
+          "balanced_accuracy": 0.35250850912447357
+        },
+        {
+          "animal": "task1/test/mouse087_task1_annotator1",
+          "n": 988,
+          "nll": 1.1733074188232422,
+          "balanced_accuracy": 0.32299801927281324
+        },
+        {
+          "animal": "task1/test/mouse088_task1_annotator1",
+          "n": 731,
+          "nll": 1.4521725177764893,
+          "balanced_accuracy": 0.27437818553335536
+        },
+        {
+          "animal": "task1/test/mouse089_task1_annotator1",
+          "n": 935,
+          "nll": 1.270652174949646,
+          "balanced_accuracy": 0.35220020204421204
+        }
+      ]
+    }
+  },
+  "guardrail": "Official identity split; fast multinomial gate only. It tests whether partner/relation channels contain transferable incremental information before deep-model confirmation."
+}

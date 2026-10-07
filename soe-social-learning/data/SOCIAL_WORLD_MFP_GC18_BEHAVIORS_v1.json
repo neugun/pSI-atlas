@@ -1,0 +1,90 @@
+{
+  "n_labels": 14,
+  "n_bouts": 289,
+  "behavior_summary": [
+    {
+      "behavior": "Other",
+      "n_bouts": 107,
+      "total_sec": 6347.245529948238,
+      "median_sec": 15.37498917215395
+    },
+    {
+      "behavior": "Investigate",
+      "n_bouts": 47,
+      "total_sec": 194.83319612192918,
+      "median_sec": 3.791663996384849
+    },
+    {
+      "behavior": "Mount",
+      "n_bouts": 44,
+      "total_sec": 74.20828107210347,
+      "median_sec": 1.270832438348768
+    },
+    {
+      "behavior": "Attempted_Mount",
+      "n_bouts": 41,
+      "total_sec": 47.1666334495346,
+      "median_sec": 0.9583326584269399
+    },
+    {
+      "behavior": "Thrust",
+      "n_bouts": 35,
+      "total_sec": 347.6664218223646,
+      "median_sec": 9.166660211040295
+    },
+    {
+      "behavior": "Intro_Baseline",
+      "n_bouts": 4,
+      "total_sec": 9.958326320175592,
+      "median_sec": 2.4583316020517154
+    },
+    {
+      "behavior": "Rmv_Baseline",
+      "n_bouts": 4,
+      "total_sec": 19.41665299247626,
+      "median_sec": 4.749996654811789
+    },
+    {
+      "behavior": "Intro_F",
+      "n_bouts": 1,
+      "total_sec": 10.999992253248353,
+      "median_sec": 10.999992253248353
+    },
+    {
+      "behavior": "Ejaculate",
+      "n_bouts": 1,
+      "total_sec": 17.041654665070364,
+      "median_sec": 17.041654665070364
+    },
+    {
+      "behavior": "Rmv_F",
+      "n_bouts": 1,
+      "total_sec": 11.66665845041492,
+      "median_sec": 11.66665845041492
+    },
+    {
+      "behavior": "Intro_M",
+      "n_bouts": 1,
+      "total_sec": 5.916662499853281,
+      "median_sec": 5.916662499853281
+    },
+    {
+      "behavior": "Rmv_M",
+      "n_bouts": 1,
+      "total_sec": 4.708330017488879,
+      "median_sec": 4.708330017488879
+    },
+    {
+      "behavior": "Intro_Toy",
+      "n_bouts": 1,
+      "total_sec": 3.791663996384849,
+      "median_sec": 3.791663996384849
+    },
+    {
+      "behavior": "Rmv_Toy",
+      "n_bouts": 1,
+      "total_sec": 5.0833297533950725,
+      "median_sec": 5.0833297533950725
+    }
+  ]
+}

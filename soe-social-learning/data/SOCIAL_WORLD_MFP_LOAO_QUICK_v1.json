@@ -1,0 +1,415 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "MFP_MULTI_ANIMAL_QUICK_SCREEN_NOT_CONFIRMATORY",
+  "animals": [
+    "GC13",
+    "GC16",
+    "GC18",
+    "GC2",
+    "GC20",
+    "GC22",
+    "GC23",
+    "GC30"
+  ],
+  "n_animals": 8,
+  "n_days": 19,
+  "n_events": 2898,
+  "common_regions_exact_name": [
+    "AHN",
+    "BNSTp",
+    "CoAp",
+    "DMH",
+    "LSv",
+    "MPN",
+    "MeAa",
+    "MeAp",
+    "PA",
+    "PMv",
+    "SUBv",
+    "VMHvl"
+  ],
+  "region_guardrail": "PAG excluded because GC2 uses PAGl whereas other animals use lPAG; no synonym mapping is assumed in v1.",
+  "behavior_ontology": [
+    "Other",
+    "Investigate",
+    "Attack",
+    "Reproductive"
+  ],
+  "context_ontology": [
+    "Baseline",
+    "F",
+    "M",
+    "Toy"
+  ],
+  "split": "leave-one-animal-out; all preprocessing statistics fit on training animals only",
+  "summary": {
+    "neural_behavior_nll_gain": {
+      "n_animals": 8,
+      "mean": 0.008667977526783943,
+      "median": 0.009608596563339233,
+      "positive": 5,
+      "negative": 3,
+      "wilcoxon_one_sided_p": 0.19140625,
+      "values": [
+        0.07566520571708679,
+        -0.07301872968673706,
+        0.01748180389404297,
+        -0.0003154873847961426,
+        0.029786959290504456,
+        0.001735389232635498,
+        0.02234441041946411,
+        -0.004335731267929077
+      ]
+    },
+    "neural_future_mse_gain": {
+      "n_animals": 8,
+      "mean": 0.0054031796753406525,
+      "median": 0.004044055938720703,
+      "positive": 6,
+      "negative": 2,
+      "wilcoxon_one_sided_p": 0.07421875,
+      "values": [
+        0.004848659038543701,
+        0.013683080673217773,
+        0.018574923276901245,
+        -0.0016531944274902344,
+        0.003239452838897705,
+        0.01965951919555664,
+        0.001996755599975586,
+        -0.017123758792877197
+      ]
+    }
+  },
+  "folds": [
+    {
+      "held_out_animal": "GC13",
+      "n_test_days": 1,
+      "markov": {
+        "nll": 0.7876809478943376,
+        "balanced_accuracy": 0.6425529649739167
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 180,
+            "core_nll": 0.26653391122817993,
+            "core_balanced_accuracy": 0.9583200255509422,
+            "multimodal_nll": 0.36695167422294617,
+            "multimodal_balanced_accuracy": 0.978122005748962,
+            "next_neural_mse": 0.5912094712257385,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 180,
+            "core_nll": 0.3251510560512543,
+            "core_balanced_accuracy": 0.935217715319919,
+            "multimodal_nll": 0.44261687994003296,
+            "multimodal_balanced_accuracy": 0.9574683274779091,
+            "next_neural_mse": 0.5960581302642822,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.36695167422294617,
+        "without_neural_multimodal_nll": 0.44261687994003296,
+        "neural_behavior_nll_gain": 0.07566520571708679,
+        "with_neural_next_neural_mse": 0.5912094712257385,
+        "without_neural_next_neural_mse": 0.5960581302642822,
+        "neural_future_mse_gain": 0.004848659038543701,
+        "with_neural_balanced_accuracy": 0.978122005748962,
+        "without_neural_balanced_accuracy": 0.9574683274779091
+      }
+    },
+    {
+      "held_out_animal": "GC16",
+      "n_test_days": 3,
+      "markov": {
+        "nll": 0.8075830879694205,
+        "balanced_accuracy": 0.5362245136550692
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 555,
+            "core_nll": 0.5335994362831116,
+            "core_balanced_accuracy": 0.6256760595962907,
+            "multimodal_nll": 0.7018172144889832,
+            "multimodal_balanced_accuracy": 0.5495835319765998,
+            "next_neural_mse": 0.7377107739448547,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 555,
+            "core_nll": 0.499064564704895,
+            "core_balanced_accuracy": 0.6319129408638996,
+            "multimodal_nll": 0.6287984848022461,
+            "multimodal_balanced_accuracy": 0.6497079116302322,
+            "next_neural_mse": 0.7513938546180725,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.7018172144889832,
+        "without_neural_multimodal_nll": 0.6287984848022461,
+        "neural_behavior_nll_gain": -0.07301872968673706,
+        "with_neural_next_neural_mse": 0.7377107739448547,
+        "without_neural_next_neural_mse": 0.7513938546180725,
+        "neural_future_mse_gain": 0.013683080673217773,
+        "with_neural_balanced_accuracy": 0.5495835319765998,
+        "without_neural_balanced_accuracy": 0.6497079116302322
+      }
+    },
+    {
+      "held_out_animal": "GC18",
+      "n_test_days": 1,
+      "markov": {
+        "nll": 0.7121418639471878,
+        "balanced_accuracy": 0.6904984666562711
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 274,
+            "core_nll": 0.3684300482273102,
+            "core_balanced_accuracy": 0.8772285461822339,
+            "multimodal_nll": 0.34651127457618713,
+            "multimodal_balanced_accuracy": 0.939030095119289,
+            "next_neural_mse": 0.32147327065467834,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 274,
+            "core_nll": 0.2632414400577545,
+            "core_balanced_accuracy": 0.9307656323093716,
+            "multimodal_nll": 0.3639930784702301,
+            "multimodal_balanced_accuracy": 0.9378605956650553,
+            "next_neural_mse": 0.3400481939315796,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.34651127457618713,
+        "without_neural_multimodal_nll": 0.3639930784702301,
+        "neural_behavior_nll_gain": 0.01748180389404297,
+        "with_neural_next_neural_mse": 0.32147327065467834,
+        "without_neural_next_neural_mse": 0.3400481939315796,
+        "neural_future_mse_gain": 0.018574923276901245,
+        "with_neural_balanced_accuracy": 0.939030095119289,
+        "without_neural_balanced_accuracy": 0.9378605956650553
+      }
+    },
+    {
+      "held_out_animal": "GC2",
+      "n_test_days": 2,
+      "markov": {
+        "nll": 0.5393927126044188,
+        "balanced_accuracy": 0.7702671711959638
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 307,
+            "core_nll": 0.2763340473175049,
+            "core_balanced_accuracy": 0.8666595494822248,
+            "multimodal_nll": 0.3539716601371765,
+            "multimodal_balanced_accuracy": 0.8616073370263613,
+            "next_neural_mse": 1.3718767166137695,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 307,
+            "core_nll": 0.2881699502468109,
+            "core_balanced_accuracy": 0.8792085295501545,
+            "multimodal_nll": 0.35365617275238037,
+            "multimodal_balanced_accuracy": 0.8456045455084635,
+            "next_neural_mse": 1.3702235221862793,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.3539716601371765,
+        "without_neural_multimodal_nll": 0.35365617275238037,
+        "neural_behavior_nll_gain": -0.0003154873847961426,
+        "with_neural_next_neural_mse": 1.3718767166137695,
+        "without_neural_next_neural_mse": 1.3702235221862793,
+        "neural_future_mse_gain": -0.0016531944274902344,
+        "with_neural_balanced_accuracy": 0.8616073370263613,
+        "without_neural_balanced_accuracy": 0.8456045455084635
+      }
+    },
+    {
+      "held_out_animal": "GC20",
+      "n_test_days": 3,
+      "markov": {
+        "nll": 0.5564617431516922,
+        "balanced_accuracy": 0.643908969210174
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 299,
+            "core_nll": 0.20136164128780365,
+            "core_balanced_accuracy": 0.7061579651941097,
+            "multimodal_nll": 0.22844524681568146,
+            "multimodal_balanced_accuracy": 0.7604802411746725,
+            "next_neural_mse": 0.6349188089370728,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 299,
+            "core_nll": 0.18885888159275055,
+            "core_balanced_accuracy": 0.7055413254066133,
+            "multimodal_nll": 0.2582322061061859,
+            "multimodal_balanced_accuracy": 0.6467444581475509,
+            "next_neural_mse": 0.6381582617759705,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.22844524681568146,
+        "without_neural_multimodal_nll": 0.2582322061061859,
+        "neural_behavior_nll_gain": 0.029786959290504456,
+        "with_neural_next_neural_mse": 0.6349188089370728,
+        "without_neural_next_neural_mse": 0.6381582617759705,
+        "neural_future_mse_gain": 0.003239452838897705,
+        "with_neural_balanced_accuracy": 0.7604802411746725,
+        "without_neural_balanced_accuracy": 0.6467444581475509
+      }
+    },
+    {
+      "held_out_animal": "GC22",
+      "n_test_days": 3,
+      "markov": {
+        "nll": 0.7673887529228132,
+        "balanced_accuracy": 0.5065784503814872
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 566,
+            "core_nll": 0.5224927067756653,
+            "core_balanced_accuracy": 0.6181940275491249,
+            "multimodal_nll": 0.6394523978233337,
+            "multimodal_balanced_accuracy": 0.6074174813777907,
+            "next_neural_mse": 3.3166041374206543,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 566,
+            "core_nll": 0.5352191925048828,
+            "core_balanced_accuracy": 0.6154949628548338,
+            "multimodal_nll": 0.6411877870559692,
+            "multimodal_balanced_accuracy": 0.597540317103686,
+            "next_neural_mse": 3.336263656616211,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.6394523978233337,
+        "without_neural_multimodal_nll": 0.6411877870559692,
+        "neural_behavior_nll_gain": 0.001735389232635498,
+        "with_neural_next_neural_mse": 3.3166041374206543,
+        "without_neural_next_neural_mse": 3.336263656616211,
+        "neural_future_mse_gain": 0.01965951919555664,
+        "with_neural_balanced_accuracy": 0.6074174813777907,
+        "without_neural_balanced_accuracy": 0.597540317103686
+      }
+    },
+    {
+      "held_out_animal": "GC23",
+      "n_test_days": 2,
+      "markov": {
+        "nll": 0.6937501936919068,
+        "balanced_accuracy": 0.678117048346056
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 374,
+            "core_nll": 0.4326232969760895,
+            "core_balanced_accuracy": 0.8181289856438289,
+            "multimodal_nll": 0.5308259129524231,
+            "multimodal_balanced_accuracy": 0.8060032042220336,
+            "next_neural_mse": 0.554263174533844,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 374,
+            "core_nll": 0.4187142252922058,
+            "core_balanced_accuracy": 0.822134263186002,
+            "multimodal_nll": 0.5531703233718872,
+            "multimodal_balanced_accuracy": 0.7865108535167907,
+            "next_neural_mse": 0.5562599301338196,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.5308259129524231,
+        "without_neural_multimodal_nll": 0.5531703233718872,
+        "neural_behavior_nll_gain": 0.02234441041946411,
+        "with_neural_next_neural_mse": 0.554263174533844,
+        "without_neural_next_neural_mse": 0.5562599301338196,
+        "neural_future_mse_gain": 0.001996755599975586,
+        "with_neural_balanced_accuracy": 0.8060032042220336,
+        "without_neural_balanced_accuracy": 0.7865108535167907
+      }
+    },
+    {
+      "held_out_animal": "GC30",
+      "n_test_days": 4,
+      "markov": {
+        "nll": 0.8498463091462372,
+        "balanced_accuracy": 0.6491395154553049
+      },
+      "seeds": [
+        {
+          "seed": 20261006,
+          "with_neural": {
+            "n_test_transitions": 324,
+            "core_nll": 0.31185975670814514,
+            "core_balanced_accuracy": 0.8831326283187644,
+            "multimodal_nll": 0.4609672725200653,
+            "multimodal_balanced_accuracy": 0.8842618741976893,
+            "next_neural_mse": 0.7118517756462097,
+            "params": 136827
+          },
+          "without_neural": {
+            "n_test_transitions": 324,
+            "core_nll": 0.29653027653694153,
+            "core_balanced_accuracy": 0.9115467530615157,
+            "multimodal_nll": 0.45663154125213623,
+            "multimodal_balanced_accuracy": 0.857735802921939,
+            "next_neural_mse": 0.6947280168533325,
+            "params": 136827
+          }
+        }
+      ],
+      "ensemble_summary": {
+        "with_neural_multimodal_nll": 0.4609672725200653,
+        "without_neural_multimodal_nll": 0.45663154125213623,
+        "neural_behavior_nll_gain": -0.004335731267929077,
+        "with_neural_next_neural_mse": 0.7118517756462097,
+        "without_neural_next_neural_mse": 0.6947280168533325,
+        "neural_future_mse_gain": -0.017123758792877197,
+        "with_neural_balanced_accuracy": 0.8842618741976893,
+        "without_neural_balanced_accuracy": 0.857735802921939
+      }
+    }
+  ],
+  "interpretation": "Tests whether current 12-region neural state adds cross-animal information beyond event/context history for future social behavior, while separately testing future neural-state prediction.",
+  "guardrail": "Animal is the inferential unit. This is an external multifiber dataset and not SOE; behavioral labels are deliberately coarsened before model fitting using a fixed ontology."
+}

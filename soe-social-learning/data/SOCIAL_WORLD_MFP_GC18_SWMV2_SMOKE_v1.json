@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "EXTERNAL_NEURAL_SOCIAL_PIPELINE_SMOKE_NOT_POPULATION_CLAIM",
+  "source": "Zenodo 8128564 / MFP-ERa-GC18.mat",
+  "animal": "GC18",
+  "day": "r200911",
+  "regions": [
+    "LSv",
+    "BNSTp",
+    "MPN",
+    "AHN",
+    "VMHvl",
+    "DMH",
+    "PMv",
+    "MeAa",
+    "MeAp",
+    "PA",
+    "CoAp",
+    "SUBv",
+    "lPAG"
+  ],
+  "n_regions": 13,
+  "n_bouts": 289,
+  "n_behavior_labels": 14,
+  "behavior_labels": [
+    "Attempted_Mount",
+    "Ejaculate",
+    "Intro_Baseline",
+    "Intro_F",
+    "Intro_M",
+    "Intro_Toy",
+    "Investigate",
+    "Mount",
+    "Other",
+    "Rmv_Baseline",
+    "Rmv_F",
+    "Rmv_M",
+    "Rmv_Toy",
+    "Thrust"
+  ],
+  "split": {
+    "type": "chronological",
+    "train_transitions": 202,
+    "test_transitions": 86
+  },
+  "swmv2_with_current_neural": {
+    "test_action_nll_core": 1.2079532146453857,
+    "test_action_accuracy_core": 0.8372092843055725,
+    "test_action_nll_multimodal": 1.0583792924880981,
+    "test_action_accuracy_multimodal": 0.7906976938247681,
+    "test_next_neural_mse": 1.371777892112732,
+    "params": 241896
+  },
+  "swmv2_without_current_neural": {
+    "test_action_nll_core": 0.9279348850250244,
+    "test_action_accuracy_core": 0.8372092843055725,
+    "test_action_nll_multimodal": 0.8467515707015991,
+    "test_action_accuracy_multimodal": 0.8720930218696594,
+    "test_next_neural_mse": 1.6861263513565063,
+    "params": 241896
+  },
+  "markov_behavior_baseline": {
+    "test_action_nll": 1.4250120607913814,
+    "test_action_accuracy": 0.5116279069767442
+  },
+  "paired_architecture_delta": {
+    "core_action_nll_without_minus_with": -0.28001832962036133,
+    "multimodal_action_nll_without_minus_with": -0.21162772178649902,
+    "next_neural_mse_without_minus_with": 0.3143484592437744
+  },
+  "guardrail": "One animal/day, chronological smoke test. This validates end-to-end ingestion and neural/social forecasting only; it is not evidence of population generalization or superiority until multi-animal held-out evaluation is run."
+}

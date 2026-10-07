@@ -1,0 +1,20 @@
+﻿state,timescale,examples,observability,role
+self_kinematics,10 ms-2 s,speed; acceleration; body shape; head direction; posture,pose/video,instantaneous embodied state
+partner_kinematics,10 ms-2 s,partner speed; heading; posture; movement,pose/video,other-agent state
+dyadic_geometry,10 ms-10 s,distance; bearing; facing; nose-nose/nose-tail; approach velocity; contact,pose/video,relation edge
+agent_target_action,0.1-10 s,approach; investigate; sniff; chase; attack; mount; groom; avoid; observe; feed,ethogram/latent motifs,directed social action
+social_content,0.1-30 s,partner feeding; reward availability; partner action/outcome; vocalization; threat cue,task/video/audio,information acquired from other
+identity,session-days,individual partner ID; sex; strain; role,metadata + sensory latent,entity memory key
+familiarity_relationship,minutes-days,novel/familiar; interaction history; trust/reliability; affiliation,latent + metadata,long-term relational memory
+rank_capability,minutes-days,dominance; opponent fighting ability; winner/loser history,interaction history,partner belief / strategic state
+social_need_satiety,minutes-days,isolation duration; reunion rebound; contact satisfaction,history/context,homeostatic motivational latent
+social_policy,trials-minutes,P(observe); P(approach); P(engage); action policy,model latent,pre-action decision
+social_efficacy,trials-minutes,expected usefulness of social information; demonstrator reliability,model latent,prospective information value
+credit_value,trials-days,source/outcome-specific credit; Q/value; reward expectancy,model latent + neural,learning state
+prediction_error,100 ms-seconds,APE; social RPE; outcome PE,derived model signal + neural,learning update
+motivation_drive,seconds-minutes,aggressive motivation; mating drive; feeding motivation,latent/neural,separate desire from emitted action
+neural_social_state,10 ms-minutes,VTA DA; 13-region SBN; CA2 identity geometry; VMHvl state,spikes/Ca/photometry,biological grounding
+intervention,experiment-defined,JAWS ON/OFF; optogenetic pattern; chemo; visual block,experimental token,causal action on the world
+context,session-days,arena; lab; device; time of day; hunger; social isolation; sex; genotype,metadata,domain/context conditioning
+communication,10 ms-seconds,USV; olfactory cue; tactile contact,audio/sensory/context,social message channel
+group_state,seconds-hours,triplet/group topology; subgroup; conflict; dominance hierarchy,multi-agent graph,beyond-dyad social world

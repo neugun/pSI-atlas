@@ -1,0 +1,454 @@
+{
+  "n_files": 8,
+  "files": [
+    {
+      "file": "MFP-ERa-GC13.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "lPAG"
+      ],
+      "days": [
+        {
+          "day": "r200716",
+          "frames": 130417,
+          "fps": 24.980247298708225,
+          "n_bouts": 191,
+          "labels": {
+            "Other": 63,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Investigate": 17,
+            "Attempted_Mount": 35,
+            "Mount": 35,
+            "Thrust": 30,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "MFP-ERa-GC16.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "lPAG"
+      ],
+      "days": [
+        {
+          "day": "r200706",
+          "frames": 117187,
+          "fps": 24.98035669596855,
+          "n_bouts": 251,
+          "labels": {
+            "Other": 106,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Investigate": 63,
+            "Mount": 32,
+            "Attempted_Mount": 30,
+            "Thrust": 9,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        },
+        {
+          "day": "r200712",
+          "frames": 82541,
+          "fps": 24.980441707208197,
+          "n_bouts": 186,
+          "labels": {
+            "Other": 80,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_M": 1,
+            "Investigate": 29,
+            "Attack": 19,
+            "Rmv_M": 1,
+            "Intro_F": 1,
+            "Mount": 21,
+            "Thrust": 11,
+            "Attempted_Mount": 16,
+            "Rmv_F": 1
+          }
+        },
+        {
+          "day": "r200719",
+          "frames": 88942,
+          "fps": 24.980423921799044,
+          "n_bouts": 155,
+          "labels": {
+            "Other": 60,
+            "Intro_Baseline": 4,
+            "Rmv_Baseline": 4,
+            "Intro_F": 1,
+            "Investigate": 21,
+            "Attempted_Mount": 19,
+            "Mount": 20,
+            "Thrust": 17,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Attack": 4,
+            "Rmv_M": 1,
+            "Intro_Toy": 1,
+            "Rmv_Toy": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "MFP-ERa-GC18.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "lPAG"
+      ],
+      "days": [
+        {
+          "day": "r200911",
+          "frames": 170394,
+          "fps": 24.000016902015496,
+          "n_bouts": 289,
+          "labels": {
+            "Other": 107,
+            "Intro_Baseline": 4,
+            "Rmv_Baseline": 4,
+            "Intro_F": 1,
+            "Investigate": 47,
+            "Attempted_Mount": 41,
+            "Mount": 44,
+            "Thrust": 35,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1,
+            "Intro_Toy": 1,
+            "Rmv_Toy": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "MFP-ERa-GC2.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "PAGl"
+      ],
+      "days": [
+        {
+          "day": "r191127",
+          "frames": 107283,
+          "fps": 25.295995902955504,
+          "n_bouts": 175,
+          "labels": {
+            "Other": 81,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Investigate": 57,
+            "Attempted_Mount": 13,
+            "Mount": 7,
+            "Thrust": 6,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        },
+        {
+          "day": "r191202",
+          "frames": 78360,
+          "fps": 25.29652230926645,
+          "n_bouts": 154,
+          "labels": {
+            "Other": 74,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Investigate": 59,
+            "Attempted_Mount": 4,
+            "Mount": 4,
+            "Thrust": 2,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "MFP-ERa-GC20.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "lPAG"
+      ],
+      "days": [
+        {
+          "day": "r200803",
+          "frames": 114150,
+          "fps": 24.980364754904652,
+          "n_bouts": 218,
+          "labels": {
+            "Other": 109,
+            "Intro_Baseline": 4,
+            "Rmv_Baseline": 4,
+            "Intro_F": 1,
+            "Investigate": 89,
+            "Attempted_Mount": 4,
+            "Mount": 2,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1,
+            "Intro_Toy": 1,
+            "Rmv_Toy": 1
+          }
+        },
+        {
+          "day": "r200805",
+          "frames": 79706,
+          "fps": 24.98045121265163,
+          "n_bouts": 97,
+          "labels": {
+            "Other": 49,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_M": 1,
+            "Investigate": 38,
+            "Rmv_M": 1,
+            "Intro_F": 1,
+            "Rmv_F": 1
+          }
+        },
+        {
+          "day": "r200808",
+          "frames": 104950,
+          "fps": 24.98038105851598,
+          "n_bouts": 21,
+          "labels": {
+            "Other": 11,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "MFP-ERa-GC22.mat",
+      "error": "OSError('Reader needs file name or open file-like object')"
+    },
+    {
+      "file": "MFP-ERa-GC23.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "lPAG"
+      ],
+      "days": [
+        {
+          "day": "r200810",
+          "frames": 105198,
+          "fps": 24.980379818223913,
+          "n_bouts": 225,
+          "labels": {
+            "Other": 90,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Investigate": 40,
+            "Attempted_Mount": 30,
+            "Mount": 39,
+            "Thrust": 15,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        },
+        {
+          "day": "r200812",
+          "frames": 87707,
+          "fps": 24.980425966290795,
+          "n_bouts": 171,
+          "labels": {
+            "Other": 74,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_M": 1,
+            "Investigate": 41,
+            "Mount": 22,
+            "Rmv_M": 1,
+            "Intro_F": 1,
+            "Attempted_Mount": 15,
+            "Thrust": 8,
+            "Ejaculate": 1,
+            "Rmv_F": 1
+          }
+        }
+      ]
+    },
+    {
+      "file": "MFP-ERa-GC30.mat",
+      "regions": [
+        "LSv",
+        "BNSTp",
+        "MPN",
+        "AHN",
+        "VMHvl",
+        "DMH",
+        "PMv",
+        "MeAa",
+        "MeAp",
+        "PA",
+        "CoAp",
+        "SUBv",
+        "lPAG"
+      ],
+      "days": [
+        {
+          "day": "r201014",
+          "frames": 103471,
+          "fps": 24.000098346799575,
+          "n_bouts": 21,
+          "labels": {
+            "Other": 11,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        },
+        {
+          "day": "r201016",
+          "frames": 63951,
+          "fps": 24.0002431886536,
+          "n_bouts": 21,
+          "labels": {
+            "Other": 11,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        },
+        {
+          "day": "r201024",
+          "frames": 86437,
+          "fps": 24.00015104737751,
+          "n_bouts": 203,
+          "labels": {
+            "Other": 65,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_F": 1,
+            "Investigate": 15,
+            "Attempted_Mount": 38,
+            "Mount": 39,
+            "Thrust": 35,
+            "Ejaculate": 1,
+            "Rmv_F": 1,
+            "Intro_M": 1,
+            "Rmv_M": 1
+          }
+        },
+        {
+          "day": "r201025",
+          "frames": 72246,
+          "fps": 24.00019932064879,
+          "n_bouts": 123,
+          "labels": {
+            "Other": 50,
+            "Intro_Baseline": 3,
+            "Rmv_Baseline": 3,
+            "Intro_M": 1,
+            "Investigate": 26,
+            "Rmv_M": 1,
+            "Intro_F": 1,
+            "Mount": 14,
+            "Attempted_Mount": 12,
+            "Thrust": 10,
+            "Ejaculate": 1,
+            "Rmv_F": 1
+          }
+        }
+      ]
+    }
+  ]
+}

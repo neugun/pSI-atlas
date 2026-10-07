@@ -1,0 +1,71 @@
+{
+  "path": "H:\\brain_world_model_20261005\\external_social_data\\MFP-ERa-GC18.mat",
+  "size_bytes": 17828769,
+  "mat_format": "classic",
+  "variables": [
+    {
+      "name": "FoldZ",
+      "shape": [
+        1,
+        1
+      ],
+      "class": "struct"
+    },
+    {
+      "name": "PETH",
+      "shape": [
+        1,
+        1
+      ],
+      "class": "struct"
+    },
+    {
+      "name": "Entry",
+      "shape": [
+        1,
+        1
+      ],
+      "class": "struct"
+    },
+    {
+      "name": "BA",
+      "shape": [
+        1,
+        1
+      ],
+      "class": "struct"
+    },
+    {
+      "name": "Raw",
+      "shape": [
+        1,
+        1
+      ],
+      "class": "struct"
+    },
+    {
+      "name": "__function_workspace__",
+      "shape": [
+        1,
+        3928
+      ],
+      "class": "uint8"
+    }
+  ],
+  "loaded_keys": [
+    "FoldZ",
+    "PETH",
+    "Entry",
+    "BA",
+    "Raw"
+  ],
+  "raw_fields": [
+    "mID",
+    "rID",
+    "Agg",
+    "Exp",
+    "FM",
+    "regions",
+    "r200911"
+  ]
+}

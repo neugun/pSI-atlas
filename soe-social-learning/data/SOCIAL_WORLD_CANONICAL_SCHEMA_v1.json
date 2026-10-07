@@ -1,0 +1,303 @@
+{
+  "schema_version": "social-world-v1",
+  "generated_at": "2026-10-06",
+  "purpose": "Canonical multi-mouse social-world batch contract shared by SOE, MABe2025, CalMS21, MABe22 and neural/perturbation extensions.",
+  "axes": {
+    "B": "batch/session window",
+    "T": "time/event sequence",
+    "N": "mouse/entity slot, 1-4 initially",
+    "K": "keypoint",
+    "C": "coordinate"
+  },
+  "required": {
+    "time": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "float32",
+      "description": "seconds from session/window start"
+    },
+    "agent_mask": {
+      "shape": [
+        "B",
+        "T",
+        "N"
+      ],
+      "dtype": "bool",
+      "description": "valid entity slots"
+    },
+    "identity_id": {
+      "shape": [
+        "B",
+        "T",
+        "N"
+      ],
+      "dtype": "int64",
+      "unknown": -1,
+      "description": "persistent identity when known; never required for transfer"
+    },
+    "self_state": {
+      "shape": [
+        "B",
+        "T",
+        "N",
+        "F_self"
+      ],
+      "dtype": "float32",
+      "description": "egocentric self pose/kinematics and modality masks"
+    },
+    "pair_state": {
+      "shape": [
+        "B",
+        "T",
+        "N",
+        "N",
+        "F_pair"
+      ],
+      "dtype": "float32",
+      "description": "directed source->target relational features"
+    },
+    "context": {
+      "shape": [
+        "B",
+        "T",
+        "F_context"
+      ],
+      "dtype": "float32",
+      "description": "arena/lab/time/hunger/isolation/sex/task metadata encoded without target leakage"
+    },
+    "intervention_id": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64",
+      "description": "0=no intervention; positive IDs are experimentally defined actions on world"
+    },
+    "focal_agent": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64",
+      "description": "entity whose action/outcome is predicted"
+    }
+  },
+  "optional": {
+    "keypoints_xy": {
+      "shape": [
+        "B",
+        "T",
+        "N",
+        "K",
+        2
+      ],
+      "dtype": "float32"
+    },
+    "keypoint_confidence": {
+      "shape": [
+        "B",
+        "T",
+        "N",
+        "K"
+      ],
+      "dtype": "float32"
+    },
+    "audio_features": {
+      "shape": [
+        "B",
+        "T",
+        "F_audio"
+      ],
+      "dtype": "float32"
+    },
+    "olfactory_identity": {
+      "shape": [
+        "B",
+        "T",
+        "N",
+        "F_olf"
+      ],
+      "dtype": "float32"
+    },
+    "neural_state": {
+      "shape": [
+        "B",
+        "T",
+        "F_neural"
+      ],
+      "dtype": "float32"
+    },
+    "social_content": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64"
+    },
+    "observed_action": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64"
+    },
+    "observed_target": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64"
+    },
+    "observed_outcome": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64"
+    },
+    "session_day": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "int64"
+    },
+    "relationship_memory_key": {
+      "shape": [
+        "B",
+        "T",
+        "N"
+      ],
+      "dtype": "int64"
+    }
+  },
+  "self_features_recommended": [
+    "x_center_egocentric",
+    "y_center_egocentric",
+    "speed",
+    "acceleration",
+    "body_axis_sin",
+    "body_axis_cos",
+    "angular_velocity",
+    "body_length",
+    "body_width",
+    "nose_speed",
+    "tailbase_speed",
+    "pose_confidence",
+    "feeding_state",
+    "lick_state",
+    "locomotion_state",
+    "missing_pose_mask"
+  ],
+  "pair_features_recommended": [
+    "distance",
+    "bearing_sin",
+    "bearing_cos",
+    "relative_heading_sin",
+    "relative_heading_cos",
+    "source_facing_target",
+    "target_facing_source",
+    "approach_velocity",
+    "nose_nose_distance",
+    "nose_tail_distance",
+    "nose_body_distance",
+    "contact",
+    "relative_speed",
+    "target_feeding",
+    "target_action_visible",
+    "target_reward_visible",
+    "visual_access",
+    "tactile_contact"
+  ],
+  "labels": {
+    "action": "directed social/self action ontology: observe/approach/investigate/sniff/chase/attack/mount/groom/feed/avoid/other ...",
+    "target_agent": "target entity slot or self/environment sentinel",
+    "outcome": "reward/social/aversive/neutral outcome class",
+    "social_content": "what was learned/observed from partner or communication channel"
+  },
+  "normalization": {
+    "geometry": "arena-normalized and/or body-length normalized; preserve raw scale metadata",
+    "orientation": "egocentric canonicalization around focal mouse plus invariant sin/cos angles",
+    "training": "normalizers fit on train animals/labs only",
+    "missingness": "explicit masks; never infer missing modality from test target"
+  },
+  "evaluation_splits": [
+    "held_animal",
+    "held_session",
+    "held_lab_or_recording_system",
+    "held_partner_identity",
+    "held_social_context",
+    "held_intervention",
+    "low_data_adaptation"
+  ],
+  "dataset_adapters": {
+    "SOE": {
+      "agent_roles": [
+        "observer",
+        "demonstrator"
+      ],
+      "mapping": "existing pose/social geometry + Observe + demfeed + Active/Passive/Unrewarded + VTA/OXT/JAWS metadata",
+      "special_heads": [
+        "observe_policy",
+        "prospective_social_efficacy",
+        "social_credit",
+        "feeding_conversion",
+        "neural_alignment"
+      ]
+    },
+    "MABe2025": {
+      "agent_roles": "1-4 tracked mice",
+      "mapping": "pose/keypoints -> self_state/pair_state; agent-target annotated actions -> action/target labels; lab/video metadata -> context",
+      "special_heads": [
+        "multi-action frame labels",
+        "held-lab generalization"
+      ]
+    },
+    "CalMS21": {
+      "agent_roles": [
+        "resident",
+        "intruder"
+      ],
+      "mapping": "7-keypoint dyad pose -> self/pair state; attack/mount/investigation and task annotations -> directed actions",
+      "special_heads": [
+        "annotation-style domain transfer",
+        "few-shot behavior"
+      ]
+    },
+    "MABe22": {
+      "agent_roles": "triplet",
+      "mapping": "triplet trajectories -> 3-node relation graph; strain/time-of-day/optogenetic condition -> context/intervention",
+      "special_heads": [
+        "group_state",
+        "condition representation"
+      ]
+    },
+    "multifiber13": {
+      "agent_roles": "social animal(s)",
+      "mapping": "behavior -> social event tokens; 13-region photometry -> neural_state",
+      "special_heads": [
+        "neural_social_state",
+        "region dynamics"
+      ]
+    },
+    "VTA_social_RPE": {
+      "agent_roles": "instrumental social interaction",
+      "mapping": "social task events -> event ontology; VTA spikes -> neural_state",
+      "special_heads": [
+        "social_value",
+        "social_RPE",
+        "policy_vs_RPE timing"
+      ]
+    }
+  },
+  "hard_guardrails": [
+    "Do not use literal mouse ID as required predictive feature in transfer claims.",
+    "Do not mix training and test animals/labs when fitting normalization or motif vocabularies.",
+    "Do not treat behavior classification accuracy as world-model evidence without future prediction.",
+    "Do not call observational social-state decoding causal.",
+    "Intervention claims require true/no-action/wrong-action or shuffled-action controls.",
+    "External datasets without outcome/social-content fields train only compatible objectives."
+  ]
+}

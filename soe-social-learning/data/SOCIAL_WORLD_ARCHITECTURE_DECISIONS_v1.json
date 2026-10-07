@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "ARCHITECTURE_DECISIONS_FROM_EXTERNAL_MOUSE_DATA_V1",
+  "decisions": {
+    "directed_relation_graph": {
+      "decision": "REQUIRED_CORE_COMPONENT",
+      "evidence": {
+        "dataset": "CalMS21 Task1 official animal-identity split",
+        "n_train_animals": 70,
+        "n_test_animals": 19,
+        "quick_deep_screen": {
+          "training_budget": "1 seed, 2 epochs, 12x downsample; screening not final benchmark",
+          "h04s_vs_self_only": {
+            "median_nll_gain": 0.4618525505065918,
+            "positive": "19/19",
+            "p": 0.0000019073486328125
+          },
+          "h04s_vs_partner_shuffle": {
+            "median_nll_gain": 0.47848573327064514,
+            "positive": "19/19",
+            "p": 0.0000019073486328125
+          },
+          "h08s_vs_self_only": {
+            "median_nll_gain": 0.31348198652267456,
+            "positive": "19/19",
+            "p": 0.0000019073486328125
+          },
+          "h08s_vs_partner_shuffle": {
+            "median_nll_gain": 0.302401602268219,
+            "positive": "19/19",
+            "p": 0.0000019073486328125
+          },
+          "h20s_vs_self_only": {
+            "median_nll_gain": 0.05856668949127197,
+            "positive": "14/19",
+            "p": 0.0026645660400390625
+          },
+          "h20s_vs_partner_shuffle": {
+            "median_nll_gain": 0.09742170572280884,
+            "positive": "18/19",
+            "p": 0.0000629425048828125
+          }
+        },
+        "fast_information_gate": "Multinomial held-animal gate independently found 19/19 relational gains at all three horizons."
+      },
+      "interpretation": "Correct time-aligned partner state and directed source-target geometry carry transferable information about future mouse social behavior beyond focal-mouse state or distribution-matched time-shuffled partner channels.",
+      "implementation": "Persistent entity tokens + directed relation edges remain in the default SWM v2 core."
+    },
+    "neural_stream": {
+      "decision": "SEPARATE_AUXILIARY_DYNAMICS_STREAM_BY_DEFAULT",
+      "evidence": {
+        "dataset": "13-region Esr1+ social-behavior-network multifiber",
+        "exact_common_regions": [
+          "AHN",
+          "BNSTp",
+          "CoAp",
+          "DMH",
+          "LSv",
+          "MPN",
+          "MeAa",
+          "MeAp",
+          "PA",
+          "PMv",
+          "SUBv",
+          "VMHvl"
+        ],
+        "fast_linear_gate": {
+          "n_animals": 7,
+          "behavior_nll_gain": {
+            "median": -0.018755489913712953,
+            "positive": "3/7",
+            "p": 0.53125
+          },
+          "future_neural_mse_gain": {
+            "median": 0.2533359209988972,
+            "positive": "7/7",
+            "p": 0.0078125
+          }
+        },
+        "deep_quick_screen": {
+          "n_animals": 8,
+          "behavior_nll_gain": {
+            "median": 0.009608596563339233,
+            "positive": "5/8",
+            "p": 0.19140625
+          },
+          "future_neural_mse_gain": {
+            "median": 0.004044055938720703,
+            "positive": "6/8",
+            "p": 0.07421875
+          }
+        }
+      },
+      "interpretation": "Current network activity is useful for predicting future network activity, but does not provide a stable cross-animal increment for the next coarse social behavior under this dataset. Brain dynamics should therefore align to social world state without being assumed identical to the behavioral policy state.",
+      "implementation": "Behavior/social core is primary. Neural stream receives stop-gradient core context and learns future neural dynamics/alignment. Neural-to-behavior readout is diagnostic/optional and requires dataset-specific held-animal evidence before promotion."
+    },
+    "multi_agent_group_state": {
+      "decision": "PRETRAIN_ON_TRIPLETS; VALIDATION_PENDING",
+      "evidence": {
+        "dataset": "MABe22 mouse triplets",
+        "sequences": 784,
+        "original_frames": 1411200,
+        "cached_frames": 470400,
+        "agents": 3,
+        "keypoints_per_agent": 12,
+        "pretrain_sequences": 718,
+        "validation_sequences": 66
+      },
+      "implementation": "Self-supervised future entity + future pair dynamics with sparse chase auxiliary and light-context token."
+    }
+  },
+  "next_gate": {
+    "name": "Stage30 external-pretraining -> held-SOE transfer",
+    "required": "Externally pretrained entity/relation encoder must beat identical scratch SWM v2 on held-SOE animals, especially low-data adaptation, while losing the advantage under wrong-social/no-social/pair-shuffle controls."
+  }
+}

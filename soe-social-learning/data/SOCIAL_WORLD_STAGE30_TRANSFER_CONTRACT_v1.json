@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-10-06",
+  "stage": "Stage30",
+  "name": "External mouse-social pretraining to held-SOE transfer",
+  "status": "PRE_REGISTERED_EXECUTION_CONTRACT",
+  "scientific_question": "Does broad mouse-social pretraining produce reusable relational dynamics that improve a biologically grounded social world model in completely held-out SOE animals, beyond identical architecture trained from scratch?",
+  "source_pretraining": {
+    "P0": [
+      "MABe2025 pose/action corpus",
+      "CalMS21 dyadic pose/behavior",
+      "MABe22 mouse triplets"
+    ],
+    "optional_neural_auxiliary": [
+      "13-region multifiber social behavior network",
+      "VTA dopamine social interaction/social prediction error"
+    ],
+    "no_SOE_labels_in_source_pretraining": true
+  },
+  "target": {
+    "dataset": "SOE learner cohort",
+    "split": "leave-one-animal-out; secondary leave-one-experimental-cohort-out",
+    "tasks": [
+      "next Observe/action",
+      "future 5-event world",
+      "prospective social efficacy / Active-vs-Unrewarded ranking",
+      "demonstrator-content to native Feed conversion"
+    ]
+  },
+  "models": [
+    "Relational SWM v2 pretrained on external mouse-social data",
+    "identical Relational SWM v2 random/scratch initialization",
+    "current validated SWM",
+    "default mechanistic SLM",
+    "Current+CK strong compact comparator",
+    "full-history nonlinear capacity ceiling"
+  ],
+  "data_budgets": [
+    "5%",
+    "10%",
+    "25%",
+    "50%",
+    "100% of target-animal training context where allowed"
+  ],
+  "primary_metrics": [
+    "held-animal log loss / bits per event",
+    "Brier score",
+    "AUC for prospective efficacy and Observe",
+    "sample efficiency area under target-data curve"
+  ],
+  "world_model_metrics": [
+    "1/3/5/8-step future event NLL",
+    "closed-loop motif/event rollout likelihood",
+    "cross-agent future prediction where source data permit"
+  ],
+  "specificity_controls": [
+    "coherent wrong-social trajectory replacement",
+    "no-social retraining/ablation",
+    "agent identity permutation",
+    "target-partner permutation",
+    "pair-geometry shuffle preserving self kinematics",
+    "time-reversed or block-shuffled social history",
+    "lab/context adversarial readout to measure domain leakage"
+  ],
+  "promotion_gate": {
+    "pretrained_vs_scratch": "positive paired effect in >=22/27 held animals and one-sided paired P<0.01 at full target data; positive median advantage at >=3 target-data budgets",
+    "sample_efficiency": "pretrained model reaches scratch full-data performance using <=50% target data OR shows significant paired gain at <=25%",
+    "social_specificity": "pretraining advantage must materially decrease under wrong-social/no-social/pair-shuffle controls",
+    "future_dynamics": "pretrained model must beat scratch on multistep future-event NLL, not only current-action classification",
+    "no_shortcut": "identity/lab metadata removal must not eliminate the main transfer advantage",
+    "project_relevance": "At least one prespecified SOE primary endpoint must improve versus identical scratch, and the aggregate SOE endpoint family must not degrade. Otherwise the external pretraining branch is rejected regardless of its CalMS/MABe score.",
+    "mechanistic_preservation": "Pretraining must preserve or improve current SLM/SWM biological interpretation: social content, efficacy/credit, multiscale memory and intervention logic.",
+    "negative_transfer_guard": "Neural auxiliary pretraining must not worsen held-SOE behavioral prediction; neural->behavior fusion stays closed unless held-animal SOE evidence opens it."
+  },
+  "secondary_neural_gate": {
+    "goal": "Does the same latent align with independent social neural datasets?",
+    "tests": [
+      "13-region social-network future neural state",
+      "VTA social value / social prediction-error timing"
+    ],
+    "claim_boundary": "neural alignment is convergent biological validation unless held-animal causal perturbation is available"
+  },
+  "claim_if_pass": "Broad mouse-social pretraining yields reusable relational world-state dynamics that lower the data required to model a new animal and preserve social-content specificity.",
+  "claim_if_fail": "External action/pose pretraining does not transfer enough biologically relevant social state into SOE; revise objective/ontology rather than scaling architecture.",
+  "project_priority": "External datasets/models are subordinate to the user's SOE/SLM/SWM. No external benchmark result is a promotion criterion by itself.",
+  "soe_primary_endpoints": [
+    "held-animal prospective social efficacy / Active-vs-Unrewarded ranking",
+    "held-animal Observe policy and Observe->Active conversion",
+    "observed demonstrator-feeding content -> native Feed conversion",
+    "5-event and multistep future world prediction",
+    "wrong-social/no-social/pair-shuffle specificity loss",
+    "VTA/OXT/JAWS mechanistic and causal consistency without leaking neural state into behavior by default"
+  ]
+}

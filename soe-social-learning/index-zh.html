@@ -285,6 +285,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="callout warn"><strong>灵长类 RPE 审计｜</strong>Noritake/Isoda 公开数据提供的是已经按 RPE 分类的人群对象；再用同一批已筛选细胞估计 RPE 斜率会形成选择循环。因此目前只把来源标记的社会归因保留为文献/审计支持，等待逐试次数据进行半样本或独立留出验证。</div>
 <div class="download-grid"><div class="download-card"><a href="data/SOE_crossspecies_evidence_hierarchy_v55.csv">Cross-species hierarchy source</a><p>strong comparator、frozen-core transfer、evidence tier 与 inference-unit 数值。</p></div><div class="download-card"><a href="data/SOE_crossspecies_classical_comparator_audit_v3.csv">Classical comparator audit v3</a><p>Human、Rat、Macaque matched-comparator contract 与 inference unit。</p></div><div class="download-card"><a href="docs/SLM_TRANSFERABLE_CORE_AND_TRANSFER_v4_20261005.md">Transferable-core authority</a><p>evidence tier、transfer boundary 与 primate circularity correction。</p></div></div>
 </div></section>
+<section id="social-foundation"><div class="container">
+<div class="section-head"><div><div class="section-kicker">面向全领域的小鼠社会世界模型</div><h2>SWM v2：从 SOE 扩展到 relational、multi-mouse 的社会世界模型</h2></div><p>现有 SOE/SLM/SWM 仍然是经过验证的机制核心。下一代架构加入全领域小鼠社会行为预训练、partner identity 与 relationship memory、群体交互、social need / rank、多模态沟通、neural-state alignment 与显式 intervention token。</p></div>
+<div class="reader-guide"><div class="reader-step"><b>目标</b><span>学习可复用的“小鼠社会世界状态”，而不是再做一个 behavior classifier。</span></div><div class="reader-step"><b>预训练</b><span>先利用异质的小鼠社会 pose/action 数据，再回到 held-out SOE animals 做迁移检验。</span></div><div class="reader-step"><b>升级门槛</b><span>同一个 backbone 必须跨 animal / lab 迁移，并在 SOE、neural 或 causal prediction 上优于从头训练。</span></div></div>
+<div class="cards-4">
+<div class="card good"><div class="metric-label">大规模 mouse-social 预训练</div><div class="metric">400+ h</div><p>MABe2025 汇集 20+ recording systems、30+ 种 social / non-social behavior 与 1–4 mouse 场景；CalMS21 与 MABe22 补充 dyad 与 triplet。</p></div>
+<div class="card info"><div class="metric-label">统一 social state</div><div class="metric">19 axes</div><p>self/partner kinematics、directed geometry、identity/familiarity、relationship/rank、social need、content、efficacy/credit、motivation、communication、neural state、context 与 intervention 进入同一 schema。</p></div>
+<div class="card violet"><div class="metric-label">已审计模型族</div><div class="metric">24</div><p>registry 已纳入 relation GNN、egocentric Squeezeformer/Transformer、ST-GCN、CS-IGANet、TREBA、SBeA、Keypoint-MoSeq、VAME、CEBRA 与现有 SLM/SWM。</p></div>
+<div class="card good"><div class="metric-label">神经与因果 grounding</div><div class="metric">mouse-first</div><p>VTA social prediction error、13-region social-network photometry、CA2 familiarity/social-memory、STFP、USV 与现有 SOE VTA/OXT/JAWS 共同定义独立生物学检验。</p></div>
+</div>
+<div class="cards-4">
+<div class="card good"><div class="metric-label">CalMS21 held-animal relation gate</div><div class="metric">19/19</div><p>真实同步的 partner + directed relation 在 ~0.4 s 与 ~0.8 s future-behavior 上，对 resident-only 和 partner-shuffle 两个对照均在 19/19 unseen animals 中改善 NLL。</p></div>
+<div class="card good"><div class="metric-label">relation 延续到 ~2 s</div><div class="metric">18/19</div><p>相对更严格的 partner-shuffle，对 ~2 s future 仍有 median +0.097 NLL advantage，one-sided paired P=6.29×10⁻⁵。</p></div>
+<div class="card info"><div class="metric-label">Neural stream 架构决定</div><div class="metric">分流</div><p>13-region LOAO 中 neural→next behavior 没有稳定跨动物增量，但 current neural state 对 future neural dynamics 有稳定信息；因此 neural dynamics 默认作为 auxiliary stream。</p></div>
+<div class="card violet"><div class="metric-label">Triplet group pretraining</div><div class="metric">1.41M frames</div><p>MABe22 已转成 784 条三鼠 sequence；718 条用于 future entity/pair dynamics 预训练，66 条保留作 representation validation。</p></div>
+</div>
+<div class="callout warn"><strong>架构选择边界｜</strong>这里的 CalMS 数字来自 one-seed / two-epoch quick deep screen，并由独立 fast information gate 复现；MFP 是外部 architecture gate。它们用于决定 SWM v2 应该包含什么，不等同于“external pretraining 已经改善 SOE”。后者仍严格留给 Stage30。</div>
+<div class="bio-logic"><strong>架构升级｜</strong>每只小鼠成为持续存在的 entity token；source→target 的有向边编码相对姿态、朝向、接近/接触与交互历史。fast relational temporal model 负责即时交互，独立的 slow memories 分别保存 familiarity/relationship、social need/satiety、rank/capability、social efficacy/credit 与跨日 prior。behavior/social core 默认不被 neural token 直接污染，neural dynamics 由独立但对齐的 stream 建模。intervention identity 被作为作用于世界的 action，而不是事后 covariate。</div>
+<div class="callout"><strong>这里“世界最好”的标准｜</strong>不是某一个行为 benchmark 的 F-score 最高，而是：最完整的小鼠社会状态覆盖 + held-animal / held-lab transfer + multi-step rollout + 长时程 relationship memory + neural alignment + intervention-aware counterfactual prediction。下方外部资源目前是 registered input；只有 transfer gate 真正通过后才升级为 SWM 结果。</div>
+<div class="download-grid">
+<div class="download-card"><a href="docs/SOCIAL_WORLD_FOUNDATION_BLUEPRINT_v1_20261006.md">Field-scale SWM v2 blueprint</a><p>架构、训练目标、mouse-first curriculum 与严格 promotion gate。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_DATASET_REGISTRY_v1.csv">Mouse-social dataset registry</a><p>SOE、MABe2025、CalMS21、MABe22、social-network neural data、social memory、STFP 与 communication data。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_MODEL_ZOO_v1.csv">Social model zoo</a><p>behavior、graph、sequence、unsupervised 与 neural-alignment 模型族及其 SWM 用途。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_STATE_ONTOLOGY_v1.csv">Canonical social-state ontology</a><p>19 个可分离状态维度，从毫秒级 kinematics 到跨日 relationship memory。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_BIOLOGICAL_PRIORS_v1.csv">Biological prior registry</a><p>CA2 identity/familiarity、social homeostasis、VTA value/PE、rank/capability、motivation/action、STFP、USV 等。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_CANONICAL_SCHEMA_v1.json">Canonical multi-mouse schema</a><p>SOE、MABe、CalMS 与 neural/intervention dataset 的统一 tensor/data contract。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_STAGE30_TRANSFER_CONTRACT_v1.json">Stage30 external-pretraining gate</a><p>预注册 pretrained-vs-scratch、sample efficiency、social specificity 与 multi-step future 升级标准。</p></div>
+<div class="download-card"><a href="analysis/social_world_model_v2.py">Relational SWM v2 scaffold</a><p>可编辑 PyTorch entity/relation graph、hierarchical memory、protected behavior core、neural auxiliary stream 与 intervention replay。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_ARCHITECTURE_DECISIONS_v1.json">Architecture decisions v1</a><p>用外部 mouse data 决定 directed relation graph 必须保留，并将 behavioral 与 neural dynamics 默认分流。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_CALMS21_RELATIONAL_QUICK_v1.json">CalMS21 deep relation gate</a><p>19 只 held-out animals；比较真实 relation、resident-only 与 time-shuffled partner，覆盖 ~0.4 / 0.8 / 2 s。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_CALMS21_FAST_INFORMATION_GATE_v1.json">CalMS21 fast information gate</a><p>独立 multinomial sanity check，确认同步 partner/relation 对 future behavior 有跨动物增量信息。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_MFP_FAST_INFORMATION_GATE_v1.json">13-region neural information gate</a><p>leave-one-animal-out 检验 neural state 对 behavior 与 future neural dynamics 的增量信息。</p></div>
+<div class="download-card"><a href="data/SOCIAL_WORLD_MFP_LOAO_QUICK_v1.json">13-region shallow SWM quick screen</a><p>8-animal nonlinear screen，检验 neural→behavior 与 neural→future-neural transfer。</p></div>
+</div>
+</div></section>
 <section class="alt" id="resources"><div class="container">
 <div class="section-head"><div><div class="section-kicker">权威版本与源数据</div><h2>每一个主要结论都可以追溯到对应分析和源数据</h2></div><p>网页负责讲清楚生物学故事；权威版本、源数据表和审计文件负责把机制解释、统计证据和分析来源保持连接，并区分当前证据与已经淘汰的探索结果。</p></div>
 <div class="section-significance"><strong>这项工作推进了什么 · </strong>这部分的贡献是可追溯性：读者可以从总结直接回到具体数据、统计检验和分析约定，形成完整证据链。</div>

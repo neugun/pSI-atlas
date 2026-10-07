@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "MFP_FAST_INFORMATION_GATE_NOT_FINAL_MODEL",
+  "n_animals": 7,
+  "n_days": 17,
+  "n_events": 2589,
+  "common_regions_exact_name": [
+    "AHN",
+    "BNSTp",
+    "CoAp",
+    "DMH",
+    "LSv",
+    "MPN",
+    "MeAa",
+    "MeAp",
+    "PA",
+    "PMv",
+    "SUBv",
+    "VMHvl"
+  ],
+  "behavior_ontology": [
+    "Other",
+    "Investigate",
+    "Attack",
+    "Reproductive"
+  ],
+  "context_ontology": [
+    "Baseline",
+    "F",
+    "M",
+    "Toy"
+  ],
+  "summary": {
+    "behavior_nll_gain_from_neural": {
+      "n": 7,
+      "mean": -0.14720103142491353,
+      "median": -0.018755489913712953,
+      "positive": 3,
+      "negative": 4,
+      "wilcoxon_one_sided_p": 0.53125,
+      "values": [
+        0.07204749659521253,
+        -0.04523832171710329,
+        -0.018755489913712953,
+        0.14375179147639044,
+        -1.1707055896412832,
+        0.05399001580480234,
+        -0.06549712257870072
+      ]
+    },
+    "future_neural_mse_gain": {
+      "n": 7,
+      "mean": 6.239315596588173,
+      "median": 0.2533359209988972,
+      "positive": 7,
+      "negative": 0,
+      "wilcoxon_one_sided_p": 0.0078125,
+      "values": [
+        0.2533359209988972,
+        0.43295765676971676,
+        0.1773422401457802,
+        0.29019930193233867,
+        42.073723906380195,
+        0.22747810816928965,
+        0.22017204172099747
+      ]
+    }
+  },
+  "folds": [
+    {
+      "held_out_animal": "GC13",
+      "n": 180,
+      "behavior_base_nll": 0.39295983098141685,
+      "behavior_neural_nll": 0.3209123343862043,
+      "behavior_nll_gain": 0.07204749659521253,
+      "behavior_base_ba": 0.945863941232833,
+      "behavior_neural_ba": 0.8626073233509309,
+      "future_neural_base_mse": 0.6652752163301331,
+      "future_neural_with_current_neural_mse": 0.4119392953312359,
+      "future_neural_mse_gain": 0.2533359209988972,
+      "persistence_mse": 0.5387504057126333
+    },
+    {
+      "held_out_animal": "GC16",
+      "n": 555,
+      "behavior_base_nll": 0.5141955122701745,
+      "behavior_neural_nll": 0.5594338339872778,
+      "behavior_nll_gain": -0.04523832171710329,
+      "behavior_base_ba": 0.7419181159348318,
+      "behavior_neural_ba": 0.6786789142295802,
+      "future_neural_base_mse": 1.1147966777168814,
+      "future_neural_with_current_neural_mse": 0.6818390209471646,
+      "future_neural_mse_gain": 0.43295765676971676,
+      "persistence_mse": 0.8493644361231608
+    },
+    {
+      "held_out_animal": "GC18",
+      "n": 274,
+      "behavior_base_nll": 0.3724349978948863,
+      "behavior_neural_nll": 0.3911904878085993,
+      "behavior_nll_gain": -0.018755489913712953,
+      "behavior_base_ba": 0.9166044592488882,
+      "behavior_neural_ba": 0.8370077181434431,
+      "future_neural_base_mse": 0.3483838539896299,
+      "future_neural_with_current_neural_mse": 0.1710416138438497,
+      "future_neural_mse_gain": 0.1773422401457802,
+      "persistence_mse": 0.19333791469955738
+    },
+    {
+      "held_out_animal": "GC20",
+      "n": 299,
+      "behavior_base_nll": 0.4860343596885865,
+      "behavior_neural_nll": 0.34228256821219605,
+      "behavior_nll_gain": 0.14375179147639044,
+      "behavior_base_ba": 0.6267431932454226,
+      "behavior_neural_ba": 0.6585765634717347,
+      "future_neural_base_mse": 0.7439288497920048,
+      "future_neural_with_current_neural_mse": 0.4537295478596661,
+      "future_neural_mse_gain": 0.29019930193233867,
+      "persistence_mse": 0.5712745393028151
+    },
+    {
+      "held_out_animal": "GC22",
+      "n": 566,
+      "behavior_base_nll": 0.5879718738389369,
+      "behavior_neural_nll": 1.7586774634802202,
+      "behavior_nll_gain": -1.1707055896412832,
+      "behavior_base_ba": 0.6393793105434167,
+      "behavior_neural_ba": 0.586694802850354,
+      "future_neural_base_mse": 52.2844065619845,
+      "future_neural_with_current_neural_mse": 10.2106826556043,
+      "future_neural_mse_gain": 42.073723906380195,
+      "persistence_mse": 2.725812772879178
+    },
+    {
+      "held_out_animal": "GC23",
+      "n": 374,
+      "behavior_base_nll": 0.6738433487711378,
+      "behavior_neural_nll": 0.6198533329663355,
+      "behavior_nll_gain": 0.05399001580480234,
+      "behavior_base_ba": 0.6530330160525241,
+      "behavior_neural_ba": 0.7217981340118745,
+      "future_neural_base_mse": 0.6847936630244907,
+      "future_neural_with_current_neural_mse": 0.4573155548552011,
+      "future_neural_mse_gain": 0.22747810816928965,
+      "persistence_mse": 0.5886935093686678
+    },
+    {
+      "held_out_animal": "GC30",
+      "n": 324,
+      "behavior_base_nll": 0.4975350134580521,
+      "behavior_neural_nll": 0.5630321360367528,
+      "behavior_nll_gain": -0.06549712257870072,
+      "behavior_base_ba": 0.6736707622715326,
+      "behavior_neural_ba": 0.6542457770442366,
+      "future_neural_base_mse": 0.7774722999286401,
+      "future_neural_with_current_neural_mse": 0.5573002582076426,
+      "future_neural_mse_gain": 0.22017204172099747,
+      "persistence_mse": 0.7514500026704892
+    }
+  ],
+  "guardrail": "Leave-one-animal-out with animal as inferential unit; all normalization/model fitting is training-animal only. This fast linear gate decides whether neural channels contain transferable incremental information before deep-model confirmation."
+}

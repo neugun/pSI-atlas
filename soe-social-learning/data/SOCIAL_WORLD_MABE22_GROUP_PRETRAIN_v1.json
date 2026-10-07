@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-10-06",
+  "status": "MABE22_GROUP_DYNAMICS_PRETRAIN",
+  "n_pretrain_sequences": 718,
+  "n_validation_sequences": 66,
+  "horizons_cached_frames": [
+    1,
+    5,
+    15
+  ],
+  "metrics": {
+    "h1": {
+      "self": 0.23809264914480724,
+      "pair": 0.6611743810600742,
+      "persist_self": 0.360350453464145,
+      "persist_pair": 1.7612167744675131,
+      "self_gain_vs_persistence": 0.12225780431933778,
+      "pair_gain_vs_persistence": 1.1000423934074388
+    },
+    "h5": {
+      "self": 0.3236006966067685,
+      "pair": 0.858353005697471,
+      "persist_self": 0.4163852324709296,
+      "persist_pair": 1.5248161980726405,
+      "self_gain_vs_persistence": 0.09278453586416113,
+      "pair_gain_vs_persistence": 0.6664631923751695
+    },
+    "h15": {
+      "self": 0.4468488721647347,
+      "pair": 0.8973008273063566,
+      "persist_self": 0.5914464073086326,
+      "persist_pair": 1.5830146139410455,
+      "self_gain_vs_persistence": 0.14459753514389795,
+      "pair_gain_vs_persistence": 0.6857137866346888
+    },
+    "chase_brier": 0.001042872667312622,
+    "light_brier": 0.22873514890670776
+  },
+  "checkpoint": "H:\\brain_world_model_20261005\\push_stage23_clean\\soe-social-learning\\data\\SOCIAL_WORLD_MABE22_GROUP_PRETRAIN_v1.pt",
+  "transfer_contract": "Only relation/self encoder weights are eligible for Stage30 initialization; target SOE heads are always newly fit.",
+  "guardrail": "The source user-train bundle does not establish independent animal identities here. This split is only for representation pretraining/validation and must not be reported as held-animal generalization."
+}
