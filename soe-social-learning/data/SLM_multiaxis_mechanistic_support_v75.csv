@@ -27,3 +27,12 @@ learning_axis_bridge,APE_abs_delta_vs_SRI_late,spearman_rho,0.3833021,40.0,0.014
 fp_readout_robustness,Passive_credit_cross_readout_fixed075,gain_rank_spearman_rho,0.7333333,9.0,0.0245542,被动结果归因的神经模型优势在两种 FP→DA 定义间保持动物排序；7/9 两种定义同时为正,SLM_FP_DA_CROSS_READOUT_CONSENSUS_v1.csv
 fp_readout_robustness,Passive_credit_cross_readout_fixed100,gain_rank_spearman_rho,0.8,9.0,0.0096279,被动结果归因的神经模型优势在两种 FP→DA 定义间保持动物排序；7/9 两种定义同时为正,SLM_FP_DA_CROSS_READOUT_CONSENSUS_v1.csv
 fp_readout_robustness,Actor_absRPE_positive_both,animals_positive_in_both,7_of_9,9.0,,actor |RPE| 在固定 0–6 s 与真实 bout 时长两种定义中方向同时为正,SLM_FP_DA_CROSS_READOUT_CONSENSUS_v1.csv
+fp_cross_event_memory,next_observe_pre_active_vs_unrewarded,paired_DA_diff,0.2142727024072186,9.0,0.02734375,下一次观察开始前 −1–0 秒仍保留主动成功相对未奖赏的 VTA 状态差异,SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+fp_cross_event_memory,next_observe_pre_passive_vs_unrewarded,paired_DA_diff,0.30247014829589,9.0,0.01953125,下一次观察开始前 −1–0 秒仍保留被动结果相对未奖赏的 VTA 状态差异,SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+fp_cross_event_memory,next_observe_post_active_vs_unrewarded,paired_DA_diff,0.2869336136451569,9.0,0.0078125,下一次观察开始后 0–2 秒主动成功相对未奖赏的 VTA 状态更高,SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+fp_cross_event_memory,next_observe_post_passive_vs_unrewarded,paired_DA_diff,0.3643716132379948,9.0,0.0078125,下一次观察开始后 0–2 秒被动结果相对未奖赏的 VTA 状态更高,SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+fp_cross_event_memory,next_observe_phase25_active_vs_unrewarded,paired_DA_diff,0.2790789972051686,9.0,0.00390625,真实观察 bout 前 25% 仍保留主动成功相对未奖赏的状态差异,SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+fp_cross_event_memory,next_observe_phase25_passive_vs_unrewarded,paired_DA_diff,0.3032453268734895,9.0,0.00390625,真实观察 bout 前 25% 仍保留被动结果相对未奖赏的状态差异,SOE_FP_NEXT_OBSERVE_STATE_STATS_v83.csv
+fp_outcome_time_structure,Active_vs_Unrewarded_fixed_minus_bout,paired_readout_difference,0.192237,9.0,0.02734375,主动成功相对未奖赏的 VTA 区分在结果后 0–6 秒显著大于真实行为片段，支持行为结束后的持续结果信号,SOE_FP_OUTCOME_CONTRASTS_BY_READOUT_v85.csv
+fp_outcome_time_structure,Passive_vs_Unrewarded_actual_bout,paired_DA_contrast,0.326449,9.0,0.01953125,被动结果相对未奖赏的多巴胺差异在真实行为片段内仍成立，8/9 动物同方向,SOE_FP_OUTCOME_CONTRASTS_BY_READOUT_v85.csv
+fp_outcome_time_structure,Passive_vs_Active_actual_bout,paired_DA_contrast,0.167553,9.0,0.0390625,真实行为片段内被动结果高于主动成功，8/9 动物同方向；读法间直接差异不显著,SOE_FP_OUTCOME_CONTRASTS_BY_READOUT_v85.csv
