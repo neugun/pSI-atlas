@@ -90,6 +90,18 @@ for page in PAGES:
         panel_paths.add(target)
     print(f"{page.relative_to(ROOT)}: strict_figures={n_fig} strict_panel_refs={len(strict_srcs)}")
 
+    future_figs = len(re.findall(r'<figure[^>]*class="[^"]*future-panels[^"]*"', text))
+    future_srcs = [s for s in srcs if re.search(r'Fig(?:8|9|10)_future_.*\.png$', s)]
+    assert future_figs == 3, f"{page}: expected 3 future figure containers, got {future_figs}"
+    assert len(future_srcs) == 9, f"{page}: expected 9 future panel refs, got {len(future_srcs)}"
+    for ref in future_srcs:
+        target = local_target(page, ref)
+        assert target and target.exists(), f"Missing future panel: {page} -> {ref}"
+        w, h = png_size(target)
+        assert w == h, f"Non-square future panel: {target.name} {w}x{h}"
+        panel_paths.add(target)
+    print(f"{page.relative_to(ROOT)}: future_figures={future_figs} future_panel_refs={len(future_srcs)}")
+
 style = (ROOT / "assets" / "style.css").read_text(encoding="utf-8")
 for token in ("aspect-ratio: 1 / 1", "object-fit: contain", "@media (max-width: 620px)"):
     assert token in style, f"Missing strict-panel CSS contract: {token}"
