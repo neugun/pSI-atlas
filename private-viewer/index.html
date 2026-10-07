@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>Private Viewer</title><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:520px;margin:50px auto;padding:0 20px}input,button{font-size:17px;padding:12px;border-radius:10px;border:1px solid #bbb}input{width:100%;box-sizing:border-box}button{margin-top:12px;width:100%}#msg{margin-top:12px}.small{opacity:.65;font-size:13px}iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:white;display:none}</style></head><body><h2>Private Research Viewer</h2><p>Enter the viewer password.</p><input id="pw" type="password" autocomplete="current-password" placeholder="Password"><button id="go">Unlock</button><div id="msg"></div><p class="small">The protected content is AES-256-GCM encrypted; GitHub stores ciphertext only.</p><iframe id="frame"></iframe><script>
+const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function unlock(){
+ const msg=document.getElementById('msg'); msg.textContent='Decrypting…';
+ try{
+  const p=await fetch('payload.json',{cache:'no-store'}).then(r=>r.json());
+  const raw=new TextEncoder().encode(document.getElementById('pw').value);
+  const km=await crypto.subtle.importKey('raw',raw,'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(p.salt),iterations:p.iter,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+  const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(p.iv),tagLength:128},key,b64(p.ct));
+  const inner=new TextDecoder().decode(plain);
+  document.body.querySelectorAll('h2,p,input,button,#msg').forEach(x=>x.style.display='none');
+  const f=document.getElementById('frame'); f.style.display='block'; f.srcdoc=inner;
+ }catch(e){msg.textContent='Wrong password or corrupted payload.'}
+}
+document.getElementById('go').onclick=unlock; document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+</script></body></html>
