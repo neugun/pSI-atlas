@@ -124,7 +124,7 @@ def render_main(mobile=False):
     for event in events:
         rows=animal_curves(nextobs,"prev_outcome",event,trace_cols)
         plot_curve(ax,t,rows,colors[event],f"after {labels[event]}")
-    finish_time(ax,"Prior outcome → next observe")
+    finish_time(ax,"Next-observe state")
     ax.legend(frameon=False,fontsize=5.4); panel_label(ax,"C")
 
     ax=fig.add_subplot(gs[1,1])

@@ -19,6 +19,8 @@ for fn in ["index-zh.html","index.html"]:
     ck(fn+"_key_pvals",all(x in s for x in ["P=0.027","P=0.020","P=0.008"]))
     ck(fn+"_outcome_readout_figure",s.count("SOE_FP_DA_outcome_contrasts_v85.png")==2)
     ck(fn+"_event_selection_figure",s.count("SOE_FP_PSTH_event_selection_v86.png")==2)
+    ck(fn+"_model_psth_figure",s.count("SOE_FP_PSTH_model_variables_v88.png")==2)
+    ck(fn+"_model_psth_source","SOE_FP_PSTH_MODEL_VARIABLES_v88.csv" in s)
     ck(fn+"_clean",all(x not in s for x in ["???","�","Ã","â€"]))
 
 zh=(R/"index-zh.html").read_text(encoding="utf-8")
@@ -47,7 +49,8 @@ for f in [
 "SOE_FP_PSTH_observation_context_v82.png","SOE_FP_PSTH_trial_heatmaps_v82.png",
 "SOE_FP_DA_outcome_contrasts_v85.png","SOE_FP_DA_outcome_contrasts_v85.pdf","SOE_FP_DA_outcome_contrasts_v85.svg","SOE_FP_DA_outcome_contrasts_v85_mobile.png",
 "SOE_FP_PSTH_event_selection_v86.png","SOE_FP_PSTH_event_selection_v86.pdf","SOE_FP_PSTH_event_selection_v86.svg",
-"SOE_FP_next_observe_memory_v83.png","SOE_FP_next_observe_memory_v83.pdf","SOE_FP_next_observe_memory_v83.svg","SOE_FP_next_observe_memory_v83_mobile.png"]:
+"SOE_FP_next_observe_memory_v83.png","SOE_FP_next_observe_memory_v83.pdf","SOE_FP_next_observe_memory_v83.svg","SOE_FP_next_observe_memory_v83_mobile.png",
+"SOE_FP_PSTH_model_variables_v88.png","SOE_FP_PSTH_model_variables_v88.pdf","SOE_FP_PSTH_model_variables_v88.svg","SOE_FP_PSTH_model_variables_v88_mobile.png"]:
     p=R/"assets"/f
     ck("asset_"+f,p.exists() and p.stat().st_size>1000,p.stat().st_size if p.exists() else "missing")
 
@@ -85,3 +88,6 @@ for key in ["Active_vs_Unrewarded_fixed_minus_bout","Passive_vs_Unrewarded_actua
 
 print("FAILURES",fail)
 sys.exit(1 if fail else 0)
+
+modelsrc=R/"data"/"SOE_FP_PSTH_MODEL_VARIABLES_v88.csv"
+ck("model_psth_source_exists",modelsrc.exists() and modelsrc.stat().st_size>1000,modelsrc.stat().st_size if modelsrc.exists() else "missing")
