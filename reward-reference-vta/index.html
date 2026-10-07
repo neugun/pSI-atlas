@@ -15,6 +15,8 @@
     <nav aria-label="Page navigation">
       <a href="#overview">Overview</a>
       <a href="#theory">Theory</a>
+      <a href="#reading-guide">Guide</a>
+      <a href="#glossary">Glossary</a>
       <a href="#methods">Methods</a>
       <a href="#fig0">Fig. 0</a>
       <a href="#fig1">Fig. 1</a>
@@ -133,7 +135,7 @@
       <article class="theory-step">
         <span class="theory-year">2017–2019</span>
         <h3>But “expected” depends on inferred state</h3>
-        <p><strong>Starkweather, Babayan, Gershman & Uchida:</strong> under temporal/state uncertainty, dopamine RPEs are better understood relative to a belief over hidden states. Gershman & Uchida generalized this into a framework in which state, value and policy uncertainty shape dopamine.</p>
+        <p><strong>Starkweather, Babayan, Gershman & Uchida:</strong> under temporal/state uncertainty, dopamine reward-prediction errors (RPEs)—the difference between obtained and expected value—are better understood relative to a belief state, meaning the animal’s probability distribution over hidden task states. Gershman & Uchida generalized this into a framework in which state, value and policy uncertainty shape dopamine.</p>
       </article>
       <div class="theory-arrow">→</div>
       <article class="theory-step">
@@ -261,6 +263,28 @@
   </div>
 </section>
 
+
+<section id="reading-guide" class="reading-guide">
+  <div class="container">
+    <div class="section-head compact">
+      <div>
+        <div class="section-kicker">How to read the story</div>
+        <h2>Each figure answers the next question created by the previous one.</h2>
+      </div>
+      <p>This page separates <strong>phenomenon</strong>, <strong>state update</strong>, <strong>model discrimination</strong>, <strong>temporal computation</strong>, <strong>generalization</strong>, and <strong>causal action</strong>. The same terms are used consistently throughout.</p>
+    </div>
+    <div class="logic-sequence">
+      <article><b>1 · Phenomenon</b><span>Can the same current food evoke different dopamine after different histories?</span></article>
+      <article><b>2 · Update rule</b><span>Is the hidden reference changed by elapsed time, or by actual reward sampling?</span></article>
+      <article><b>3 · Alternatives</b><span>Can context, belief state, reward rate, recurrent memory or salience explain the history effect?</span></article>
+      <article><b>4 · Computation</b><span>When do current reward U, stored reference R and relative value C=U−R appear in dopamine?</span></article>
+      <article><b>5 · Generalization</b><span>Does the same rule extend beyond one 100E/20E concentration contrast?</span></article>
+      <article><b>6 · Causality</b><span>Does changing dopamine during consumption change the probability that feeding continues?</span></article>
+    </div>
+    <div class="plain-language-note"><strong>Plain-language summary:</strong> the animal does not evaluate a mouthful in isolation. What it recently consumed changes an internal reference; that reference changes sustained VTA dopamine during the current bout; and dopamine helps determine whether the animal keeps eating.</div>
+  </div>
+</section>
+
 <section id="methods" class="alt">
   <div class="container">
     <div class="section-head">
@@ -365,7 +389,40 @@
             <td>cSNC = consummatory successive negative contrast; GT = gustatory thalamus.</td>
             <td>Classical contrast literature is discussed as a circuit-level comparison in the folded supplement, not as an assumed identity with the present mechanism.</td>
           </tr>
-        </tbody>
+
+          <tr id="glossary" data-expanded-glossary="1"><td colspan="3"><strong>Additional model and statistics terms</strong></td></tr>
+
+          <tr><td><strong>RPE</strong></td><td><strong>Reward prediction error:</strong> the difference between received reward and the reward expected from the animal's current internal state.</td><td>Used as a major alternative explanation. The present story does not claim that RPE is false; it asks whether the state used to compute it must include recent sampled reward history.</td></tr>
+          <tr><td><strong>TD learning</strong></td><td><strong>Temporal-difference learning:</strong> a reinforcement-learning rule that updates value from moment-to-moment prediction errors.</td><td>The canonical dopamine/RPE framework. “Generalized TD” here means TD computed over a richer inferred state, not only an observable cue or block.</td></tr>
+          <tr><td><strong>Latent / hidden state</strong></td><td>An internal task state that is not directly observable from the current sensory input and must be inferred from history.</td><td>Recent sampled reward history can act as part of such a hidden state.</td></tr>
+          <tr><td><strong>Belief state</strong></td><td>A probability distribution over possible hidden states rather than a single known state.</td><td>Tests whether uncertainty about task state can explain dopamine better than an explicit sampled-history reference.</td></tr>
+          <tr><td><strong>HMM</strong></td><td><strong>Hidden Markov model:</strong> a model in which unobserved states evolve over time and generate the observations.</td><td>Provides a flexible categorical latent-state comparator. Good prediction does not by itself prove that the brain literally implements an HMM.</td></tr>
+          <tr><td><strong>Reward-rate model</strong></td><td>A running estimate of reward received per unit time or experience.</td><td>Tests whether the history effect is simply a generic running average rather than a current-versus-reference comparison.</td></tr>
+          <tr><td><strong>Pearce–Hall model</strong></td><td>An associative-learning model in which surprising outcomes change how strongly future outcomes are learned.</td><td>Tests whether adaptive learning rate, rather than the reference value itself, explains the signal.</td></tr>
+          <tr><td><strong>Kalman model</strong></td><td>A state-estimation model that combines new observations with prior estimates according to their uncertainty.</td><td>Tests whether uncertainty-weighted state estimation absorbs the history effect.</td></tr>
+          <tr><td><strong>RNN / Value-RNN</strong></td><td><strong>Recurrent neural network:</strong> a flexible sequence model with internal memory. Value-RNN learns a recurrent state useful for value prediction.</td><td>Tests whether a learned high-dimensional memory can explain the data without an explicit one-dimensional reference R.</td></tr>
+          <tr><td><strong>Unsigned salience</strong></td><td>The magnitude of change or surprise regardless of whether the change is better or worse.</td><td>Contrasts with signed relative value: a salience signal should respond similarly to equally large positive and negative changes.</td></tr>
+          <tr><td><strong>Held-out prediction</strong></td><td>Prediction evaluated on animals or trials that were not used to fit the model.</td><td>Measures generalization and protects against overfitting. It is different from a within-sample goodness-of-fit statistic.</td></tr>
+          <tr><td><strong>Cross-validation / LOAO</strong></td><td>Cross-validation repeatedly fits a model on one subset and tests it on another. <strong>LOAO</strong> means leave-one-animal-out.</td><td>Used when comparing predictive models across animals.</td></tr>
+          <tr><td><strong>Unique ΔR²</strong></td><td>The increase in explained variance when one predictor is added after the comparison predictors are already in the model.</td><td>Answers “does this variable add information beyond the alternatives?” and should not be confused with raw predictive ranking.</td></tr>
+          <tr><td><strong>OLS + animal-clustered SE</strong></td><td><strong>Ordinary least squares</strong> estimates regression coefficients; animal-clustered standard errors allow observations from the same mouse to be statistically dependent.</td><td>Used for bout-level regression while keeping animal, rather than individual bouts, as the biological replication level.</td></tr>
+          <tr><td><strong>Hazard / hazard ratio</strong></td><td>The instantaneous probability that an ongoing bout terminates. A hazard ratio compares that termination risk between conditions.</td><td>Used to translate dopamine manipulations into a direct measure of feeding persistence.</td></tr>
+
+
+          <tr data-extra-bio-glossary="1"><td colspan="3"><strong>Additional circuit and single-cell terms</strong></td></tr>
+          <tr><td><strong>pSI</strong></td><td><strong>Posterior substantia innominata:</strong> a forebrain region involved in arousal and aggression-related action control.</td><td>In the proposed social experiments, pSI is used as an action-threshold probe; it is not assumed to be the source of social reward value.</td></tr>
+          <tr><td><strong>CaRMA</strong></td><td>The longitudinal calcium-imaging analysis and registration workflow used to follow the same neurons across days.</td><td>Used to ask whether reward-history, identity, contrast, RPE and action components are stable in the same cells or only at the population level.</td></tr>
+          <tr><td><strong>Population manifold</strong></td><td>A low-dimensional pattern formed by activity across many neurons.</td><td>A stable manifold can persist even if individual-neuron tuning changes across days, which distinguishes distributed computation from a fixed cell class.</td></tr>
+          <tr><td><strong>EASI/EASEQ-FISH</strong></td><td>Multiplexed RNA imaging performed after functional recording.</td><td>Used to map functionally characterized neurons to molecular markers and, where possible, projection identity.</td></tr>
+          <tr><td><strong>periLC</strong></td><td>The peri-locus-coeruleus glutamatergic population identified upstream of VTA circuitry in the Science 2025 feeding circuit.</td><td>It anchors the present history-computation story to the previously established feeding circuit.</td></tr>
+
+          <tr data-stat-glossary="1"><td colspan="3"><strong>Additional uncertainty and test statistics</strong></td></tr>
+
+          <tr><td><strong>MAE / normalized MAE</strong></td><td><strong>Mean absolute error</strong> averages the absolute prediction error. A normalized or relative MAE divides by a baseline error so that 1 means “no better than baseline” and values below 1 are better.</td><td>Used for held-out model comparison. A lower raw prediction error does not establish a unique biological mechanism.</td></tr>
+          <tr><td><strong>SEM / confidence interval</strong></td><td><strong>SEM</strong> is the standard error of the mean; a confidence interval gives a range of parameter values compatible with the data under the stated model.</td><td>Displayed as uncertainty around animal-level means or model estimates; neither is the same thing as the spread of individual trials.</td></tr>
+          <tr><td><strong>Permutation test</strong></td><td>A test that builds a null distribution by repeatedly shuffling labels or assignments in a way allowed by the experimental design.</td><td>Used when the reference distribution is more trustworthy under resampling than under a simple parametric assumption.</td></tr>
+          <tr><td><strong>Wilcoxon signed-rank test</strong></td><td>A paired nonparametric test that asks whether within-animal differences are systematically above or below zero without assuming normality.</td><td>Used for animal-level paired effects when sample size is small and a Gaussian assumption is not required.</td></tr>
+</tbody>
       </table>
     </div>
 
@@ -462,6 +519,7 @@
 
 <section id="fig0" class="alt">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig0"><b>Why this comes first.</b> Before asking what dopamine computes, the task, reward identities, feeding-bout definition, recording location and cohort overlap must be explicit; otherwise later coefficient and causal claims are uninterpretable.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 0</div>
@@ -492,6 +550,7 @@
 
 <section id="fig1">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig1"><b>Question 1 — is there a history effect at all?</b> Hold the current food constant and change the recent reward context. If dopamine and feeding still differ, current reward alone cannot describe the animal's internal state.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 1</div>
@@ -541,6 +600,7 @@
 
 <section id="fig2" class="alt">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig2"><b>Question 2 — what writes the reference?</b> Once Fig. 1 establishes a matched-current history effect, the next test asks whether that internal reference changes because time passes or because the animal actually samples the new reward.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 2</div>
@@ -575,6 +635,7 @@
 
 <section id="fig34">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig34"><b>Question 3 — is “history” just another name for context or latent state?</b> The model zoo gives belief-state, hidden-Markov, reward-rate, adaptive-learning and recurrent-memory alternatives a direct test. Raw prediction and unique information are kept separate.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figures 3 and 4</div>
@@ -660,6 +721,7 @@
 
 <section id="fig5" class="alt">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig5"><b>Question 4 — where is the computation in time?</b> After establishing that sampled history matters, the analysis separates pre-bout state, early sampling and sustained consumption to ask when U, R and C=U−R become visible.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 5</div>
@@ -718,6 +780,7 @@
 
 <section id="fig6">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig6"><b>Question 5 — is the rule specific to one concentration pair?</b> A useful computation should survive a change in reward quality and align independent manipulations without refitting the central rule.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 6</div>
@@ -748,6 +811,7 @@
 
 <section id="fig7" class="alt">
   <div class="container">
+    <div class="logic-bridge" data-bridge="fig7"><b>Question 6 — does the signal matter for behavior?</b> Correlation is not enough. Acute and history manipulations test whether VTA dopamine changes bout termination and whether a neural history trace can persist even when a later behavioral effect is weak.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Figure 7</div>
@@ -796,6 +860,7 @@
 
 <section id="roadmap" class="alt">
   <div class="container">
+    <div class="logic-bridge" data-bridge="roadmap"><b>Why the roadmap follows the results.</b> Figures 1–7 identify a computation more clearly than its cellular implementation. The next experiments therefore orthogonalize U and R, move to social reward and resolve the computation at single-cell, molecular and circuit levels.</div>
     <div class="section-head">
       <div>
         <div class="section-kicker">Research roadmap</div>

@@ -133,3 +133,54 @@ else:
             bad_edges.append((path.name, margins))
     assert not bad_edges, f"Panel content too close to edge: {bad_edges[:10]}"
     print(f"FIGURE_EDGE_QA=PASS panels={len(panel_paths)} min_margin_px>=20")
+
+
+# Semantic story contract: prevent later merges from silently dropping the
+# conceptual spine, glossary, roadmap, or future-experiment material.
+required_ids = [
+    "theory", "reading-guide", "methods", "fig0", "fig1", "fig2",
+    "fig34", "fig5", "fig6", "fig7", "roadmap", "future-experiments",
+    "limits", "supplement",
+]
+required_bridges = ["fig0", "fig1", "fig2", "fig34", "fig5", "fig6", "fig7", "roadmap"]
+for page in PAGES:
+    text = page.read_text(encoding="utf-8")
+    for rid in required_ids:
+        assert f'id="{rid}"' in text, f"{page}: missing required section #{rid}"
+    for bid in required_bridges:
+        assert f'data-bridge="{bid}"' in text, f"{page}: missing logic bridge for {bid}"
+    assert 'data-expanded-glossary="1"' in text, f"{page}: expanded model glossary missing"
+    assert 'data-stat-glossary="1"' in text, f"{page}: statistics glossary missing"
+    if page.parent.name == "zh":
+        zh_tokens = (
+            "\u9605\u8bfb\u987a\u5e8f",
+            "\u5956\u8d4f\u9884\u6d4b\u8bef\u5dee\uff08RPE\uff09",
+            "\u9690\u9a6c\u5c14\u53ef\u592b\u6a21\u578b\uff08HMM\uff09",
+            "\u666e\u901a\u6700\u5c0f\u4e8c\u4e58 + \u6309\u52a8\u7269\u805a\u7c7b\u6807\u51c6\u8bef",
+            "\u4ece\u7fa4\u4f53\u5e73\u5747\u7684\u5956\u8d4f\u5386\u53f2\u6548\u5e94",
+        )
+        for token in zh_tokens:
+            assert token in text, f"{page}: Chinese clarity token missing: {token}"
+        forbidden = (
+            "dopamine theory",
+            "mechanistic story",
+            "food experiment",
+            "social experiment",
+            "bulk VTA photometry",
+            "behavioral expression",
+            "readout gain",
+            "alternative model",
+        )
+        hits = [x for x in forbidden if x in text]
+        assert not hits, f"{page}: avoidable English jargon remains in Chinese page: {hits}"
+    else:
+        en_tokens = (
+            "How to read the story",
+            "Reward prediction error",
+            "Hidden Markov model",
+            "Unique \u0394R\u00b2",
+            "Hazard / hazard ratio",
+        )
+        for token in en_tokens:
+            assert token in text, f"{page}: English glossary/story token missing: {token}"
+print("SEMANTIC_STORY_QA=PASS")
