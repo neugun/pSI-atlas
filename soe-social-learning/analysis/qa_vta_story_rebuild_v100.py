@@ -39,9 +39,9 @@ def row(test):
 q=row("q_signed_unsigned")
 ck("q_rpe_rep",q is not None and int(q.post_wins)==8 and int(q.bout_wins)==7 and abs(float(q.post_p)-.0078125)<1e-9)
 q=row("update_selected_vs_w0p75")
-ck("credit075_rep",q is not None and int(q.post_wins)==7 and int(q.bout_wins)==9 and abs(float(q.bout_p)-.00390625)<1e-9)
+ck("credit075_rep",q is not None and int(q.post_wins)==7 and int(q.bout_wins)==9 and abs(float(q.post_p)-.0390625)<1e-9 and abs(float(q.bout_p)-.00390625)<1e-9)
 q=row("update_selected_vs_w1p0")
-ck("credit100_rep",q is not None and int(q.post_wins)==6 and int(q.bout_wins)==9 and abs(float(q.bout_p)-.00390625)<1e-9)
+ck("credit100_rep",q is not None and int(q.post_wins)==6 and int(q.bout_wins)==9 and abs(float(q.post_p)-.0546875)<1e-9 and abs(float(q.bout_p)-.00390625)<1e-9)
 q=row("vector_after_scalar")
 ck("vector_no_increment",q is not None and float(q.post_effect)<0 and float(q.bout_effect)<0)
 

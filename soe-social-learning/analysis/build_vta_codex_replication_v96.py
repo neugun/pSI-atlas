@@ -82,7 +82,7 @@ agree.to_csv(D/"SOE_VTA_CODEX_READOUT_AGREEMENT_v96.csv",index=False)
 summary=pd.DataFrame([
 ["common_event_contract","1371 events / 9 animals","same events valid for both fixed 0-6 s and strict action-bout AUC/s"],
 ["readout_agreement",f"median rho={agree.spearman_rho.median():.3f}",f"range {agree.spearman_rho.min():.3f}-{agree.spearman_rho.max():.3f}"],
-["social_credit","replicated","behavior-selected passive credit beats fixed 0.75/1.0 under both readouts"],
+["social_credit","readout-robust with boundary","vs fixed 0.75: fixed 0-6 s 7/9 P=.0391, real bout 9/9 P=.0039; vs fixed 1.0: fixed 0-6 s 6/9 P=.0547 (borderline), real bout 9/9 P=.0039"],
 ["scalar_vs_vector","replicated qualitatively","scalar RPE family remains stronger than tested vector PE; vector adds no benefit after scalar"],
 ["post_RPE_strength","window-sensitive","RPE-family gain keeps the same direction but is weaker under strict action-bout readout"],
 ],columns=["question","result","meaning"])
