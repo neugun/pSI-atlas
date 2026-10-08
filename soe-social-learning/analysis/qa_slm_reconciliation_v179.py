@@ -26,4 +26,12 @@ for ex in ["png","svg","pdf"]:
 doc=(R/"docs/SOE_SLM_VTA_LEGACY_CURRENT_RECONCILIATION_v179.md").read_text(encoding="utf8")
 for item in ["future Feed","1,714","100*(base-model)/base","a unique","Belief surprise"]:assert item.lower() in doc.lower(),item
 assert "Z:\\" not in doc and "H:\\" not in doc
-print("PASS v179: 45 behavior models, 27 animal held-Feed OOF and sidedness, 9 animal Post exact test and counts, both pages and figure")
+hazard=pd.read_csv(R/"data/SOE_SLM_native_Feed_hazard_sidedness_v180.csv")
+assert len(hazard)==10
+for m,one,two in [("feed_rate_delta",.03773978352546692,.07547956705093384),("residual_delta",.04451450705528259,.08902901411056519)]:
+ x=hazard[hazard.window.eq("age_le_3s")&hazard.metric.eq(m)].iloc[0]
+ assert x.n==26 and x.n_positive==17
+ assert abs(x.original_directional_one_sided_exact_p-one)<1e-12
+ assert abs(x.independent_two_sided_exact_p-two)<1e-12
+print("PASS 3-sec real native Feed hazard: directional and two-sided conventions distinguished")
+print("PASS v179/v180: 45 behavior models, 27 animal held-Feed OOF, n26 hazard, 9 animal Post DA exact tests and counts, both pages and figure")
