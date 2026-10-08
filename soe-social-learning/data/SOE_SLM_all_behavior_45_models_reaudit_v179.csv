@@ -1,0 +1,46 @@
+model,n,brier,auc,logloss,input_contract
+History MLP + formal-all,68624,0.1637221648641617,0.8373648655712769,0.495153369845299,same 27 animals; held-animal OOF; rich/flexible history
+Current + full-history MLP,68624,0.1647489934332695,0.8351238676584866,0.4981933492322556,same 27 animals; held-animal OOF; rich/flexible history
+SLM + Choice-kernel stack,68624,0.1654105683946884,0.8340842591927909,0.499881179052502,OOF meta-stack of SLM full and input-matched choice-kernel logits; held-animal meta-CV
+Current + Choice-kernel,68624,0.1664007482320788,0.8322454119083034,0.5025058054107201,same Current nonlinear state backbone + frozen classical history/RL latent
+Current + Q + choice kernel,68624,0.1666657525796509,0.8315126571860718,0.5032814826467836,same Current nonlinear state backbone + frozen classical history/RL latent
+LDN v2,68624,0.1679898232259505,0.8291390475358177,0.5064637519499469,same 27 animals; held-animal OOF; rich/flexible history
+TinyRNN h3,68624,0.1680305110879573,0.8286052040240466,0.5064509719638168,same 27 animals; held-animal OOF; rich/flexible history
+SLM core + policy + belief,68624,0.1708218093857043,0.8233364304042758,0.5147776766840839,same 27 animals; held-animal OOF; rich/flexible history
+SLM full,68624,0.1708243563726864,0.8233201809723663,0.5147330653811479,shared current-state backbone + policy + belief + Q mechanistic coordinates
+Feature-Q,68624,0.1708914134160901,0.8235580162024958,0.5144612793459964,established current-state behavioral design + one mechanistic latent family
+Direct policy,68624,0.1709936348903188,0.8231906553904562,0.5149791048617893,established current-state behavioral design + one mechanistic latent family
+SLM core + policy + Q,68624,0.1710151446825428,0.8230537013749928,0.515094515972735,same 27 animals; held-animal OOF; rich/flexible history
+SLM core + policy,68624,0.1710151518536098,0.8230487519285062,0.5150782565421482,same 27 animals; held-animal OOF; rich/flexible history
+Actor-Critic,68624,0.1710631794456691,0.8230882937762212,0.515226753122235,established current-state behavioral design + one mechanistic latent family
+Common belief,68624,0.1710930152271955,0.823162992555415,0.5150702267616901,established current-state behavioral design + one mechanistic latent family
+SLM core + belief,68624,0.1711276281413945,0.8229255044005304,0.5152133329634527,same 27 animals; held-animal OOF; rich/flexible history
+SLM core + Q,68624,0.1712016189144161,0.8227774542104141,0.5154672856750886,same 27 animals; held-animal OOF; rich/flexible history
+SLM core,68624,0.1712486410014097,0.8227041872231999,0.5155207879789264,same 27 animals; held-animal OOF; rich/flexible history
+Current + forgetting Q,68624,0.1722169232908317,0.8208554256959741,0.5182658807511658,same Current nonlinear state backbone + frozen classical history/RL latent
+Current + asymmetric Q,68624,0.174906975989496,0.8154045066466956,0.5246964489396124,same Current nonlinear state backbone + frozen classical history/RL latent
+Current + Q-allreward,68624,0.1754714675761384,0.8138722295613998,0.5272848782262652,same Current nonlinear state backbone + frozen classical history/RL latent
+Current + Q-active,68624,0.1757499650238004,0.8134176415771516,0.5271517553842143,same Current nonlinear state backbone + frozen classical history/RL latent
+LCNE asym-Q persistent state,68624,0.1840817933013988,0.7946065291522143,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Current nonlinear,68624,0.1858119932779824,0.7909328182736702,0.5546832214992884,current pre-event state / geometry baseline
+Current + WSLS,68624,0.1859327010999144,0.7903100838457041,0.5547521350744793,same Current nonlinear state backbone + frozen classical history/RL latent
+Current + RW-active,68624,0.1859365707034337,0.7906468581188293,0.5542669646187345,same Current nonlinear state backbone + frozen classical history/RL latent
+UCL dual controller,68624,0.1894231597371093,0.7876841151028403,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Choice kernel / perseveration,68624,0.1901352722735786,0.7813537287026913,0.561294416488696,training day + day^2 + session progress + RL latent; no current geometry
+Q-learning + choice kernel,68624,0.1903982703422062,0.7808220341580371,0.5618853132863824,training day + day^2 + session progress + RL latent; no current geometry
+LCNE asym-Q daily state,68624,0.1908920579312324,0.7784196816462126,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+5HT uncertainty state,68624,0.1930672507689459,0.7731753252389246,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Current linear,68624,0.1941914015506427,0.7714288511354026,0.5742687935917954,current pre-event state / geometry baseline
+5HT uncertainty global,68624,0.1960360084195667,0.766472492137893,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Forgetting Q-learning,68624,0.2036863691258056,0.7493939985215448,0.594510610181578,training day + day^2 + session progress + RL latent; no current geometry
+Q-learning (all reward),68624,0.2113652579088277,0.7287054989629613,0.6124299476660607,training day + day^2 + session progress + RL latent; no current geometry
+Cell deep-RL shallow hetero,68624,0.2122755272638994,0.7359873985421032,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Asymmetric Q-learning,68624,0.2128428816927431,0.7224175231110754,0.6143205670706035,training day + day^2 + session progress + RL latent; no current geometry
+Cell deep-RL deep hetero,68624,0.2131341529936383,0.7346684405537451,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Q-learning (Active reward),68624,0.2175356474828378,0.7100495266140965,0.6260420876529716,training day + day^2 + session progress + RL latent; no current geometry
+UCL RPE-only,68624,0.2272949148698521,0.7057646584415462,,external/fixed model zoo; held-animal SOE target; recovered summary authority
+Previous choice only,68624,0.228179582283465,0.6134238296644068,0.649350343703248,minimal behavioral baseline
+Win-stay/lose-shift,68624,0.2379870613943085,0.6213757042792024,0.6689010521574728,training day + day^2 + session progress + RL latent; no current geometry
+Rescorla-Wagner,68624,0.2442634418250208,0.5784264086807765,0.6817541503492351,training day + day^2 + session progress + RL latent; no current geometry
+Clock only,68624,0.2449239657957313,0.5816579759707613,0.6833474030320791,minimal behavioral baseline
+Constant prevalence,68624,0.256072628395361,0.377564769655711,0.705405134386449,minimal behavioral baseline
