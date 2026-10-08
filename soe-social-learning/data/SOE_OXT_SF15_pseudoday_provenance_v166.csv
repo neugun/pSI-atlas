@@ -1,0 +1,14 @@
+folder_day,folder_animal,source_animal,source_day,kind,n_evt_segments,n_filenames,min_segment,max_segment,acquisition_day_is_virtual,source_animal_disagreement,binary_sha256_status
+41,174,174,22,stimulation,15,15,1,29,True,False,READ_DENIED; only name and size checked
+42,174,173,28,stimulation,15,15,1,29,True,True,READ_DENIED; only name and size checked
+42,174,174,22,stimulation,15,15,0,28,True,False,READ_DENIED; only name and size checked
+43,180,180,22,stimulation,15,15,1,29,True,False,READ_DENIED; only name and size checked
+44,180,180,22,stimulation,15,15,0,28,True,False,READ_DENIED; only name and size checked
+45,184,180,26,unspecified,15,15,1,29,True,True,READ_DENIED; only name and size checked
+46,184,180,26,unspecified,15,15,0,28,True,True,READ_DENIED; only name and size checked
+47,173,173,28,stimulation,15,15,1,29,True,False,READ_DENIED; only name and size checked
+48,173,173,28,stimulation,15,15,0,28,True,False,READ_DENIED; only name and size checked
+49,179,179,31,stimulation,15,15,1,29,True,False,READ_DENIED; only name and size checked
+50,179,179,31,stimulation,15,15,0,28,True,False,READ_DENIED; only name and size checked
+51,305,305,32,contingent,15,15,1,29,True,False,READ_DENIED; only name and size checked
+52,305,305,32,contingent,15,15,0,28,True,False,READ_DENIED; only name and size checked
