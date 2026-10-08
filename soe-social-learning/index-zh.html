@@ -186,6 +186,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <tr><td>历史延长区间</td><td>区间不能超过下一事件，但允许恰好接触边界，n=625</td><td>1/9 动物，P=.1289</td></tr></tbody></table>
 <strong>结论：</strong>目前没有得到 DA 在行为状态模型之外稳定预测下一次观察选择的证据。第二行只是允许边界接触的探索性分析，不能当作完全时间分离的前瞻预测。这不否定已确认的行为学习、VTA 早期/中段分析或独立 JAWS 因果证据。<a href="data/SOE_VTA_next_choice_timing_QC_v131.csv">留出动物的比较表</a> · <a href="data/SOE_VTA_next_choice_event_overlap_v131.csv">事件重叠核查</a>。
 </div>
+<div class="model-contract" id="vta-outcome-source-interaction-v148"><strong>新增探索性神经结果：先前是否观察，会不会改变 VTA 对随后不同结果的 DA 反应？</strong>
+这套 9 只动物的 FP 数据以观察鼠进食相关的 <strong>ObsEat 事件</strong>为筛选条件（有效结果后 0–6 秒 DA 共 1,714 个事件），不能直接拿来预测全部观察机会中的一般性 Observe/No-observe 决策。在它能够回答的结果期问题中，逐动物留出、训练集内选择正则化参数后：
+<ul><li>在当前结果、同伴状态、观察者事件前状态及场次时间之外，只加入“有没有真实社会观察”，没有稳定增量。</li>
+<li>再加入“观察 × 示范鼠是否进食”，也没有稳定增量。</li>
+<li>进一步加入<strong>“观察 × Active/Passive 结果类别”</strong>，则在 <strong>7/9 只动物</strong>上改善结果期 DA 预测：均值 ΔMSE +0.01368，中位数 +0.00309，动物级双侧精确 P=.03125。按场次、结果、示范鼠状态和五分钟区间进行 300 次条件打乱，经验单侧 P=.0233。</li></ul>
+<strong>证据级别：探索性，不能直接升级为已确认机制。</strong>同族比较 BH q≈.0703；去掉影响最大的动物后为 6/8、P=.0625；只有 4/9 动物在场次前后两半都改善。因此它支持“此前观察经历可能调节随后结果 DA 反应”的研究方向，但尚不能证明具体的社会归因学习方程、DA 的直接教学因果作用，或对下一次观察的独立预测。阴性对照全部保留。<a href="data/SOE_VTA_source_outcome_stepwise_v148.csv">分步模型比较</a> · <a href="data/SOE_VTA_source_outcome_loo_sensitivity_v148.csv">逐动物敏感性</a> · <a href="docs/VTA_SOURCE_OUTCOME_INTERACTION_EXPLORATORY_v148.md">方法与局限</a>。</div>
+<figure class="figure evidence-figure manuscript-square" id="vta-source-outcome-plot-v148"><a class="figure-zoom" href="assets/SOE_VTA_source_outcome_interaction_exploratory_v148.png" target="_blank" rel="noopener"><img src="assets/SOE_VTA_source_outcome_interaction_exploratory_v148.png" loading="lazy" alt="社会观察与结果类别交互对应的 VTA 结果期多巴胺探索性分析"/></a><figcaption><strong>社会观察经历与结果 DA 反应的交互。</strong>A，依次加入有无观察、观察到示范鼠进食，以及观察与结果类别的交互；B，9 只留出动物的真实变化；C，300 次按场次、结果、示范鼠状态及时间分层的打乱对照；D，数据选择于观察鼠进食事件，不能冒充完整的观察机会集合。这个图暂列为探索性补充证据，等待独立神经数据和预设模型检验。</figcaption></figure>
+
 <div class="section-head"><div><div class="section-kicker">神经实现</div><h2>VTA 多巴胺沿一条连续学习序列展开：采样策略 → 动作预测误差 → 结果特异社会归因</h2></div><p>早期和中段保留冻结的原始统计合同，并直接从原始光纤信号重建。结果期的延长区间分析保留为探索性历史比较，同时保留固定 0–6 秒分析作为原始统计参照；随后用结果配对的 JAWS 检验 VTA 对社会归因教学分支的必要性。</p></div>
 <div class="section-significance"><strong>这一节的主问题 · </strong>行为模型已经提出采样策略、动作预测误差（APE）、奖励预测误差（RPE）和社会结果归因。VTA 分析检验这些计算能否按照社会学习真实发生的顺序在多巴胺中出现，并检查结论是否依赖某一种 光纤信号→多巴胺 量化方式。</div>
 <div class="section-kicker" style="margin-top:28px">核心发现｜原来的 VTA–SLM 结果先回答“计算顺序是否正确”</div>

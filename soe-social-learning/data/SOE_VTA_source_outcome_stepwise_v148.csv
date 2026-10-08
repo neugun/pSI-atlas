@@ -1,0 +1,4 @@
+left,right,n,wins,mean_delta_mse,median_delta_mse,exact_p
+plus_obs_presence,outcome_state,9,5,-0.0006084697360350296,6.730061873638782e-05,0.4609375
+plus_observed_dem_content,plus_obs_presence,9,4,-5.386653282821483e-05,-0.0005723368272447793,0.94921875
+plus_observation_outcome_interactions,plus_observed_dem_content,9,7,0.013683147388550278,0.0030886519934578693,0.03125
