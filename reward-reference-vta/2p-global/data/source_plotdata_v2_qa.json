@@ -1,0 +1,27 @@
+{
+  "sessions": 21,
+  "source_trial_files": 1150,
+  "cell_by_session_rows": 954,
+  "valid_trial_frame_samples": 169879,
+  "recovered_valid_trial_frame_samples": 9520,
+  "trials_with_authoritative_time": 517,
+  "trials_with_authoritative_condition": 507,
+  "54_D1": {
+    "session": "54_D1",
+    "animal": "54",
+    "cells": 22,
+    "trials": 120,
+    "v1_frames_all": 16,
+    "v2_max_frames": 96,
+    "min_actual_frames": 16,
+    "full_length_trials": 119,
+    "valid_trial_frames": 11440,
+    "time_authority_trials": 0,
+    "condition_known_trials": 120,
+    "condition_label_1": "Cue256",
+    "condition_label_0": "Cue512",
+    "condition_source": "trace_trial_metadata.csv / cue_bit"
+  },
+  "example_roi": 9,
+  "policy": "Never interpolate, infer event time, or treat NaN padding as recorded data."
+}
