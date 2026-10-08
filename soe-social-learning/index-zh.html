@@ -36,11 +36,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="bio-logic"><strong>主要术语｜</strong>社会观察进食（SOE）；社会学习模型（SLM）；社会世界模型（SWM）；腹侧被盖区（VTA）；多巴胺（DA）；动作预测误差（APE）；奖励预测误差（RPE）；强化学习（RL）；社会反应指数（SRI）。JAWS 指本研究使用的红移光遗传抑制工具。预测指标中，AUC 表示曲线下面积，Brier 表示概率校准误差，NLL 表示负对数似然，RMSE 表示均方根误差，SEM 表示均值标准误。</div><div class="hero-grid">
 <div class="card good"><div class="metric-label">紧凑机制模型达到接近灵活模型的预测能力</div><div class="metric">机制与预测兼顾</div><p>默认 SLM 在留出动物上优于“当前状态+选择惯性”对照（20/27），也优于小型循环网络（23/27）；同时保留可直接对应神经和因果实验的内部变量。</p></div>
 <div class="card info"><div class="metric-label">独立世界模型重新找到并扩展同一套计算</div><div class="metric">独立验证并扩展</div><p>不预设 SLM 方程的 SWM 自主学到与 SLM 对齐的决策子空间，并额外学到“现在观察是否会提高之后成功进食概率”的前瞻性社会效益。</p></div>
-<div class="card violet"><div class="metric-label">多巴胺跟随社会学习的真实计算顺序</div><div class="metric">决定 → 评估 → 归因</div><p>一次观察过程中，VTA 多巴胺依次反映结果前采样策略、采样动作预测误差（APE）和行为数据定义的来源/结果特异社会归因。结果期保留固定 0–6 秒原始统计参照；此前称作真实行动片段的长区间信号已发现定义问题，正在重新审查。</p></div>
+<div class="card violet"><div class="metric-label">多巴胺跟随社会学习的真实计算顺序</div><div class="metric">决定 → 评估 → 归因</div><p>VTA 多巴胺在不同时段与结果前采样策略、动作预测误差（APE）及结果后的误差/更新量有关；结果期是否特异编码某个社会归因变量仍须进一步检验。结果期保留固定 0–6 秒原始统计参照；此前称作真实行动片段的长区间信号已发现定义问题，正在重新审查。</p></div>
 <div class="card good"><div class="metric-label">VTA 活动参与结果后的社会教学</div><div class="metric">因果教学信号</div><p>JAWS 光抑制在全部 10 只动物中降低结果后的主动社会归因更新，并在 9/10 动物中降低累积社会归因，同时总体观察行为仍然保留。</p></div>
 <div class="card info"><div class="metric-label">看到同伴进食会改变学习者自己的进食</div><div class="metric">社会内容转为自身行动</div><p>学习者看到示范鼠进食后，自身短时进食概率上升；控制当前自身状态和社会位置关系后，该效应仍然存在。</p></div>
 <div class="card violet"><div class="metric-label">核心计算能够接受跨任务和跨物种检验</div><div class="metric">外部证据分层</div><p>人类和大鼠数据为多时间尺度状态提供最强独立外部支持，其他跨物种结果按证据等级分别作为组成证据或架构支持。</p></div>
 </div>
+<div class="model-contract" id="soe-master-goal-v132"><strong>文章的大目标不是找到拟合最好的模型。</strong>小鼠真正学到的是：<strong>何时从同伴那里获取信息，如何把观察到的具体内容变成自己的进食，以及如何根据结果更新以后是否继续观察</strong>。所以必须区分两个控制过程：<strong>观察是主动获取社会信息</strong>；<strong>自身进食主要受自身状态控制，但会短暂受到观察内容影响</strong>。行为转化、多时间尺度记忆、VTA 神经时间结构、视觉阻断与 JAWS 的不同因果作用，以及能自主生成行为的智能体，最终需要在这条机制链中相互验证。<a href="docs/SOE_GLOBAL_GOAL_EVIDENCE_ACTIONS_20261007.md">查看完整科学目标、证据分级和下一步关键实验</a>。
+<br/><strong>当前 VTA 证据边界：</strong>早期策略和中段动作预测误差保留独立的神经证据；结果后固定 0–6 秒主要检验误差/更新模型。旧的 28.85 秒“行动片段”其实是<strong>模型延长区间</strong>，不是真实中位 2.40 秒的观察 bout；原来 9/9 动物的固定权重比较不能作为真实观察期社会归因的主证据。同一 821 个事件中，延长区间的归因模型相对无归因历史基线仅 6/9 改善（P=.5703）。独立 JAWS 操控支持 VTA 参与主动成功后的归因更新，但尚不能指定唯一的 DA 计算变量。</div>
 <div class="section-significance"><strong>核心贡献 · </strong>这项工作把社会学习从一个现象推进成可检验的闭环机制：主动信息采样、社会内容到自身行动的转化，以及结果依赖的教学过程被连成同一条因果计算链。</div>
 <div class="equation chain">社会状态 → 主动选择观察 → 采到的社会内容 → 自身进食<span class="sub">反馈：社会结果 → 结果后的来源特异归因与价值更新 → 未来观察策略</span></div>
 <p class="prepub">页面按照生物学问题顺序展开：行为获得 → 信息价值 → 多时间尺度记忆 → 社会学习模型 → 数据驱动世界模型 → 社会内容到自身行动的转化 → 神经实现 → 因果拆解 → 机制综合 → 后续泛化 → 跨任务证据。</p>
@@ -52,7 +54,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="card good"><div class="series-index">04</div><h3>一个紧凑机制模型解释动物何时选择观察</h3><p>SLM 把当前状态、多时间尺度记忆、采样策略和结果归因连成可实验检验的计算变量。</p></div>
 <div class="card info"><div class="series-index">05</div><h3>数据驱动世界模型独立验证并扩展这套机制</h3><p>SWM 学到与 SLM 对齐的决策子空间，同时发现新的前瞻性社会效益信号。</p></div>
 <div class="card violet"><div class="series-index">06</div><h3>观察到的具体内容会改变学习者自己的进食</h3><p>示范鼠正在进食这一信息会在几秒内提高学习者自身进食概率。</p></div>
-<div class="card good"><div class="series-index">07</div><h3>多巴胺实时跟随社会学习的计算过程</h3><p>早期采样策略和中段 APE 提供最有区分力的时间证据；此前所谓真实行动片段的 9/9 结果实际来自较长的模型事件区间，已从主证据降级，固定窗口 RPE 保留为冻结的经典参照。</p></div>
+<div class="card good"><div class="series-index">07</div><h3>多巴胺实时跟随社会学习的计算过程</h3><p>早期采样策略和中段 APE 提供最有区分力的时间证据；此前所谓真实行动片段的 9/9 结果实际来自较长的模型事件区间，已从主证据降级。固定窗口的误差/更新信号和独立 JAWS 因果结果仍按各自合同保留。</p></div>
 <div class="card info"><div class="series-index">08</div><h3>视觉信息进入与多巴胺教学承担不同因果作用</h3><p>视觉阻断限制有用社会信息进入，JAWS 主要削弱结果后的社会教学。</p></div>
 <div class="card violet"><div class="series-index">09</div><h3>所有结果汇成一个闭环社会学习架构</h3><p>信息进入、主动采样、行动转化和结果依赖的教学信号组成同一条计算链。</p></div>
 <div class="card good"><div class="series-index">10</div><h3>同一套规则能够生成社会学习行为</h3><p>闭环 SLM 能重建局部社会策略和行为状态组织，独立循环网络也重新利用 SLM 坐标。</p></div>
@@ -177,14 +179,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <strong>修订后的结论：</strong>长区间的相关性不能被称为真实观察期 DA 对社会归因的直接编码。原先 9/9、P=.0039 属于历史延长区间模型比较，必须降低证据等级。真实观察信号多数发生在结果之前，所以观察期的阴性结果也不能否定结果期更新。原有早期/中段分析、固定结果窗口和独立 JAWS 因果证据继续按各自原始统计合同保留。
 </div>
 <figure class="figure evidence-figure manuscript-square" id="vta-real-bout-qa-figure-v126"><a class="figure-zoom" href="assets/SOE_VTA_true_obs_interval_audit_v126.png" target="_blank" rel="noopener"><img src="assets/SOE_VTA_true_obs_interval_audit_v126.png" loading="lazy" alt="真实观察2.4秒与事件后延长区间28.85秒及相同事件的神经模型比较"/></a><figcaption><strong>把真实观察与模型延长区间分开检验。</strong>A，时长分布；B，真实事件的观察、结果后固定窗口和延长区间；C，相同 821 个事件的三读出模型比较；D，加入社会归因是否真正优于不含社会归因的历史基线。P 值为动物级双侧探索性结果，尚未做多重比较校正。<a href="data/SOE_VTA_true_obs_post_action_credit_comparisons_v126.csv">查看完整比较表</a>。</figcaption></figure>
+<div class="model-contract" id="vta-next-choice-goal-test-v134">
+<strong>结果后的 DA 是否真的帮助预测小鼠下一次会不会观察？</strong>这关系到整篇文章的目标：一次社会结果如何改变未来社会信息采样。复查时间轴发现，固定 0–6 秒信号的 <strong>315/1,706（18.5%）</strong> 个事件，以及旧延长区间信号的 <strong>738/1,363（54.1%）</strong> 个事件，实际上与下一次行为时间重叠，不能直接解释为“先有 DA，之后才有行为”。重新按动物留出、只比较原行为模型与行为模型加 DA 的增量：
+<table class="metric-table"><thead><tr><th>信号</th><th>时间筛选</th><th>额外增加 DA 后的改善</th></tr></thead><tbody>
+<tr><td>结果后固定 0–6 秒</td><td>至少 6 秒后才发生下一事件，n=1,391</td><td>5/9 动物，P=.5703</td></tr>
+<tr><td>历史延长区间</td><td>区间不能超过下一事件，但允许恰好接触边界，n=625</td><td>1/9 动物，P=.1289</td></tr></tbody></table>
+<strong>结论：</strong>目前没有得到 DA 在行为状态模型之外稳定预测下一次观察选择的证据。第二行只是允许边界接触的探索性分析，不能当作完全时间分离的前瞻预测。这不否定已确认的行为学习、VTA 早期/中段分析或独立 JAWS 因果证据。<a href="data/SOE_VTA_next_choice_timing_QC_v131.csv">留出动物的比较表</a> · <a href="data/SOE_VTA_next_choice_event_overlap_v131.csv">事件重叠核查</a>。
+</div>
 <div class="section-head"><div><div class="section-kicker">神经实现</div><h2>VTA 多巴胺沿一条连续学习序列展开：采样策略 → 动作预测误差 → 结果特异社会归因</h2></div><p>早期和中段保留冻结的原始统计合同，并直接从原始光纤信号重建。结果期的延长区间分析保留为探索性历史比较，同时保留固定 0–6 秒分析作为原始统计参照；随后用结果配对的 JAWS 检验 VTA 对社会归因教学分支的必要性。</p></div>
 <div class="section-significance"><strong>这一节的主问题 · </strong>行为模型已经提出采样策略、动作预测误差（APE）、奖励预测误差（RPE）和社会结果归因。VTA 分析检验这些计算能否按照社会学习真实发生的顺序在多巴胺中出现，并检查结论是否依赖某一种 光纤信号→多巴胺 量化方式。</div>
 <div class="section-kicker" style="margin-top:28px">核心发现｜原来的 VTA–SLM 结果先回答“计算顺序是否正确”</div>
-<div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>如果 SLM 描述了真实神经计算，相关变量应出现在与其功能一致的时间位置。</span></div><div class="reader-step"><b>怎么做</b><span>早期采样策略和中段 APE 使用冻结的原始合同；结果期用模型延长区间多巴胺检验社会归因，同时把固定窗口保留为锁定参照。</span></div><div class="reader-step"><b>结论</b><span>早期采样策略和中段 APE 经原始光纤重建后保持；结果期模型延长区间最清楚地支持行为数据定义的社会归因；结果配对 JAWS 随后削弱成功结果后的归因更新。</span></div></div>
+<div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>如果 SLM 描述了真实神经计算，相关变量应出现在与其功能一致的时间位置。</span></div><div class="reader-step"><b>怎么做</b><span>早期采样策略和中段 APE 使用冻结的原始合同；结果期分开保留固定 0–6 秒误差/更新分析与历史延长区间探索性比较，不再把延长区间称为真实观察 bout。</span></div><div class="reader-step"><b>结论</b><span>早期采样策略和中段 APE 经原始光纤重建后保持；旧延长区间相对两个固定权重有历史关联，但并未证明其在无归因历史基线之外的稳定增量；结果配对 JAWS 随后削弱成功结果后的归因更新。</span></div></div>
 <div class="cards-4" id="vta-causal-spine-v113">
 <div class="card good"><div class="metric-label">早期 · 决定是否采样</div><div class="metric">采样策略 → VTA</div><p>冻结早期合同下，采样策略在 5/6 动物中提高多巴胺预测，秩双列相关=.810、P=.0469；从原始光纤信号重建后得到同一推断和逐动物排序。</p></div>
 <div class="card info"><div class="metric-label">中段 · 评估这次采样动作</div><div class="metric">APE × 学习强度</div><p>中段 APE 耦合强度随社会学习程度增加，和 SRI 的 Spearman ρ=.667、精确单侧置换 P=.0416；原始光纤重建后保持一致。</p></div>
-<div class="card violet"><div class="metric-label">结果期 · 给结果分配来源特异社会归因</div><div class="metric">延长区间模型比较 → VTA</div><p>同一 1,371 个事件中，行为数据选出的被动结果归因相对固定 0.75 和固定 1.0，在模型延长区间多巴胺下均为 9/9 动物支持（两项 P=.0039）。冻结的固定窗口参照方向一致但较弱。</p></div>
+<div class="card violet"><div class="metric-label">结果期 · 给结果分配来源特异社会归因</div><div class="metric">延长区间模型比较 → VTA</div><p>旧 1,371 事件延长区间的模型权重比较为 9/9、P=.0039，但并非真实观察信号。同一 821 个实际观察事件中，相对无归因历史基线仅 6/9 改善（P=.5703）；不将其作为社会归因的主神经证据。</p></div>
 <div class="card good"><div class="metric-label">因果 · VTA 是否参与教学</div><div class="metric">JAWS → 归因更新</div><p>结果配对 JAWS 使主动社会归因更新在 10/10 动物中下降（P=.001953），累积主动归因在 9/10 动物中下降（P=.003906）。这里检验同一归因教学分支中的成功主动结果，和上方被动结果归因读出属于不同结果分支。</p></div>
 </div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_DA_temporal_logic_v67.png" rel="noopener" target="_blank"><picture><source media="(max-width:620px)" srcset="assets/SOE_DA_temporal_logic_v67_mobile.png"/><img alt="SLM 三阶段计算与 VTA 多巴胺时间顺序" loading="lazy" src="assets/SOE_DA_temporal_logic_v67.png"/></picture></a><figcaption><strong>冻结的原始时间轴参照。</strong>A，结果前采样策略；B，中段 APE；C，原始固定窗口的结果后 RPE；D，模型家族时间轴比较。这张图完整保留原始统计 authority；当前主机制叙事中的结果期读出采用下方模型延长区间的社会归因分析。</figcaption></figure>
@@ -214,10 +223,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 <div class="callout"><strong>这一层回答的是最重要的复现问题｜</strong>采样策略和 APE 的神经结果在保持原估计目标与统计合同不变时，用重新从原始光纤信号得到的多巴胺仍得到同一结论。这是对原问题本身的直接复现，不依赖近似替代统计。早期与中段因此可以继续作为 SLM 区分经典结果期 RPE 的关键时间证据。</div>
 <div class="model-contract" id="vta-readout-explained-v116"><strong>旧读出的数据来源，现已纠正。</strong>以前称为真实行动片段的平均信号，其实来自中位 28.85 秒的结果锚点后延长区间；真正观察 bout 中位为 2.40 秒，大多数发生在结果锚点之前。原先 1,371 个事件中 9/9 动物、P=.0039 的结果保留为历史模型比较，无法证明真实观察期多巴胺直接编码 social credit。上方严格匹配 821 个事件的三读出重新分析，才是当前正确的比较依据。</div>
 <div class="section-kicker" style="margin-top:28px">历史结果期延长区间分析｜已核查真实观察片段，并保留固定 0–6 秒原始参照</div>
-<div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>结果期读出按生物学对齐关系决定主次：模型延长区间 AUC/秒平均完整行动过程，而固定 0–6 秒通常只覆盖行动最初的部分。</span></div><div class="reader-step"><b>怎么做</b><span>锁定同一批 1,371 个结果事件、9 只动物以及同一套行为参数和模型比较，并排比较模型延长区间 AUC/秒与原始固定 0–6 秒参照；持续时间低于 0.05 秒的近零片段排除。</span></div><div class="reader-step"><b>结论</b><span>模型延长区间给出最清楚的社会归因结果：行为数据选出的归因规则相对固定 0.75 和 1.0 均为 9/9 动物支持（两项 P=.0039）。固定窗口的归因结果方向一致但较弱，经典 RPE 则在较短的固定 0–6 秒窗口中更敏感。</span></div></div>
+<div class="reader-guide"><div class="reader-step"><b>为什么做</b><span>结果期读出按生物学对齐关系决定主次：模型延长区间 AUC/秒平均完整行动过程，而固定 0–6 秒通常只覆盖行动最初的部分。</span></div><div class="reader-step"><b>怎么做</b><span>锁定同一批 1,371 个结果事件、9 只动物以及同一套行为参数和模型比较，并排比较模型延长区间 AUC/秒与原始固定 0–6 秒参照；持续时间低于 0.05 秒的近零片段排除。</span></div><div class="reader-step"><b>结论</b><span>旧的模型延长区间给出较强的固定权重对照结果：行为数据选出的归因规则相对固定 0.75 和 1.0 均为 9/9 动物支持（两项 P=.0039）。固定窗口的归因结果方向一致但较弱，经典 RPE 则在较短的固定 0–6 秒窗口中更敏感。</span></div></div>
 <figure class="figure evidence-figure manuscript-square"><a class="figure-zoom" href="assets/SOE_VTA_codex_exact_replication_v96.png" rel="noopener" target="_blank"><img alt="固定结果后窗口与 Codex 真实行为时长读出对 SLM 结果期分析的复现" loading="lazy" src="assets/SOE_VTA_codex_exact_replication_v96.png"/></a><figcaption><strong>历史延长区间分析与冻结固定窗口参照，并非真实观察片段。</strong>A，两种多巴胺数值在每只动物中均正相关，中位 ρ=.785。B，经典 RPE 家族方向一致，在较短的固定 0–6 秒窗口中通常更强。C，行为数据确定的被动结果归因在模型延长区间中最清楚：相对固定 0.75 和固定 1.0 均为 9/9 动物支持（两项 P=.0039）；冻结固定窗口分别为 7/9（P=.0391）和 6/9（P=.0547）。D，两种读出中，结果向量误差加入标量 RPE 后均无额外预测收益。</figcaption></figure>
 <div class="cards-3">
-<div class="card good"><div class="metric-label">行为参数→神经信号迁移</div><div class="metric">社会归因跨读出保持方向</div><p>行为数据独立选出的被动结果归因无需用神经数据重新调参。相对 0.75，两种读出均显著；相对 1.0，固定 0–6 秒为 6/9、P=.0547，模型延长区间为 9/9、P=.0039。</p></div>
+<div class="card good"><div class="metric-label">行为参数→神经信号迁移</div><div class="metric">社会归因跨读出保持方向</div><p>行为选定的被动归因权重不使用 DA 重新调参，但这一比较仍需检验能否超越不含该变量的历史模型。相对 0.75，两种读出均显著；相对 1.0，固定 0–6 秒为 6/9、P=.0547，模型延长区间为 9/9、P=.0039。</p></div>
 <div class="card info"><div class="metric-label">误差表示的结论也保留</div><div class="metric">标量 RPE 更简洁</div><p>两种多巴胺读出中，标量 RPE 家族都强于测试的结果向量误差；在标量 RPE 已进入模型后再加入向量项均无增益。</p></div>
 <div class="card violet"><div class="metric-label">窗口改变的是灵敏度</div><div class="metric">早期与整段行动的窗口差异</div><p>RPE 家族在模型延长区间中方向仍保留，但固定前 6 秒更敏感。绝大多数行动仍未结束，因而这一对比尚不能证明行动结束后的评价或教学更新。</p></div>
 </div>

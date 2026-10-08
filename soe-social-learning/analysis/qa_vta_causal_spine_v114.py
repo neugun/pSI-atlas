@@ -44,7 +44,7 @@ for tag in [
     "8/9 extended intervals (P=.0078)",
     "10/10 animals (P=.001953)",
     "frozen original fixed-window metric",
-    "priority is based on biological alignment rather than a smaller P value",
+    "neither window is promoted to a definitive credit teaching signal on P value alone",
     "Integrated VTA conclusion: Early → Middle → Post → causal."
 ]:
     ck("en_"+tag, tag in en)
@@ -56,7 +56,7 @@ for tag in [
     "因果 · VTA 是否参与教学",
     "延长区间为 8/9（P=.0078）",
     "10/10 动物中下降（P=.001953）",
-    "优先级依据生物学对齐关系，而非单纯依据更小的 P 值",
+    "不将其作为社会归因的主神经证据",
     "VTA 整合主线：早期 → 中段 → 结果期 → 因果。"
 ]:
     ck("zh_"+tag, tag in zh)

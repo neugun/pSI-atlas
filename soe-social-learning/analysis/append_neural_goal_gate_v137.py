@@ -1,0 +1,8 @@
+from pathlib import Path
+R=Path(__file__).resolve().parents[1]
+ADD="""\n## 2026-10-07 strict neural-to-next-choice gate (v131)\n
+This gate tests the article's *learning affects future behavior* link; it is not the primary demonstration of Observe→Feed conversion. In the raw FP event table, next event timing overlaps **315/1706 (18.5%)** valid fixed 0–6 s DA windows and **738/1363 (54.1%)** historical extended-interval windows. Thus neither naive DA readout is inherently a pre-next-choice predictor. Source [event-overlap CSV](../data/SOE_VTA_next_choice_event_overlap_v131.csv).\n
+With the identical nested leave-animal-out behavior baseline and only an additional current DA residual: (a) fixed post-anchor 0–6 s with next-event gap ≥6 s gives **1391 events, 5/9 improving, two-sided P=.5703125**; (b) extended interval not crossing the next event (but possibly touching its onset boundary) gives **625 events, 1/9 improving, P=.12890625**. The latter is explicitly boundary-touch exploratory, NOT a strict 0.1-s separated prospective test; only two events pass that stronger interval gap gate. Source [recomputed model contrasts](../data/SOE_VTA_next_choice_timing_QC_v131.csv). Neither result establishes independent neural teaching-to-future-choice prediction, but neither disproves circuit-level causal teaching measured separately using JAWS. Prioritize actual content→native Feed and correctly timed intervention endpoints rather than rescuing a DA significance claim.\n"""
+for fname in ["SOE_GLOBAL_GOAL_EVIDENCE_ACTIONS_20261007.md","VTA_TRUE_BOUT_SOURCE_CORRECTION_v126_20261007.md"]:
+ p=R/"docs"/fname;s=p.read_text(encoding="utf-8")
+ if "strict neural-to-next-choice gate (v131)" not in s:p.write_text(s+ADD,encoding="utf-8");print("APPENDED",fname)
