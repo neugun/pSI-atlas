@@ -1,0 +1,9 @@
+# Artificial-SLM Observe-to-Feed fidelity audit, v159
+
+Acceptance contract for full autonomous SOE: jointly generate Observe and Feed, make Feed modify physical/motivational state, compute future social sensory opportunities from this new state rather than recorded covariates, and recover held-animal Feed rate, 3/10/30-second observed-content conversion, outcome-conditioned SRI, next-sampling policy and perturbation predictions. Marginal Feed rates alone are not sufficient. Compare against the 40-animal autonomous Observe model separately; it does not generate a physically closed own-Feed world.
+
+Scope: autonomous Observe and generated Feed, but physical self/dyad covariates replay recorded mouse states. The Feed model was trained on held-animal real Observe content. The released run averages 20 stochastic trajectories across 27 learners, 54 sessions and cooldowns 0, 1, 3, 5 seconds. These results are not yet a fully independent physical mouse simulation.
+
+The original trained agent and 27 held-out learner animals / 54 sessions were recovered from the prior Codex source; these results are not from the later synthetic toy prototype.
+
+Three-second matched n24 learner comparison: real Feed after actual Observe +0.03848; real Feed after generated Observe +0.000447; generated Feed after generated Observe +0.04275. The generated-minus-actual within the same generated opportunities is +0.04231 (paired two-sided P=.1074), so the conditional social enhancement remains unvalidated. The sample-shift contrast, biological Feed after generated Observe minus after actual Observe, is −0.03803 (two-sided P=.2897). These conditional contrasts are separate from the previously reported real-behavior n26 effect +0.07541. We must not infer a significant experimental interaction from only one of these comparisons.
