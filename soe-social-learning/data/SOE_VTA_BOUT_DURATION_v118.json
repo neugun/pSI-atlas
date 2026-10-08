@@ -9,6 +9,9 @@
   "fraction_bout_gt6": 0.9438366156090445,
   "fraction_bout_gt10": 0.8329686360320934,
   "fraction_bout_gt20": 0.6105032822757112,
-  "source_ref":"frozen_codex_module25_neural_da/fp_da_raw_timecourse_v1/manifest.json",
-  "interpretation":"For most matched outcome/action events 0-6 s lies inside a longer action bout. Do not describe fixed 0-6 s as a post-action evaluation window."
+  "source_ref": "frozen_codex_module25_neural_da/fp_da_raw_timecourse_v1/manifest.json",
+  "interpretation": "28.85s describes extended modeled post-anchor ActionBout interval; true observed ObsBout median is 2.40s. 94.4% >6s applies to modeled interval, NOT a real observation bout.",
+  "source_semantics_qc": "SUPERSEDED: ActionBout is an extended event interval, not a measured observation bout",
+  "superseding_audit": "SOE_VTA_real_obs_interval_audit_v126.json",
+  "principal_social_credit_mechanism_claim": "ON_HOLD pending true behavior-event / outcome specific matched tests"
 }

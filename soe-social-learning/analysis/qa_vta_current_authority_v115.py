@@ -13,8 +13,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 HERE = Path(__file__).resolve().parent
 QAS = [
-    "qa_vta_duration_v119.py",
-    "qa_vta_readout_explainer_v117.py",
+    "qa_vta_true_obs_authority_v128.py",
     "qa_vta_causal_spine_v114.py",
     "qa_vta_credit_precision_v112.py",
     "qa_vta_axis_metrics_v110.py",

@@ -39,9 +39,9 @@ if len(q)==1:
 
 en=(ROOT/"index.html").read_text(encoding="utf-8")
 zh=(ROOT/"index-zh.html").read_text(encoding="utf-8")
-for tag in ["The frozen fixed-window results are 7/9 (P=.0391) and 6/9 (P=.0547)","9/9 animals favor the selected rule (both P=.0039)","9/9 in real-bout DA (P=.0039)"]:
+for tag in ["The frozen fixed-window results are 7/9 (P=.0391) and 6/9 (P=.0547)","9/9 animals favor the selected rule (both P=.0039)","8/9 extended intervals (P=.0078)"]:
     ck("en_"+tag,tag in en)
-for tag in ["冻结固定窗口分别为 7/9（P=.0391）和 6/9（P=.0547）","均为 9/9 动物支持（两项 P=.0039）","真实行动片段为 9/9、P=.0039"]:
+for tag in ["冻结固定窗口分别为 7/9（P=.0391）和 6/9（P=.0547）","均为 9/9 动物支持（两项 P=.0039）","延长区间为 8/9（P=.0078）"]:
     ck("zh_"+tag,tag in zh)
 
 for old in ["beats fixed weights under both readouts","outperforms fixed credit under both DA definitions"]:

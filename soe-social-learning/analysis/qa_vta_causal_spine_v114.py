@@ -41,7 +41,7 @@ for tag in [
     "Middle · evaluate the sampling action",
     "Post · assign outcome-specific social credit",
     "Causal · is VTA required for teaching?",
-    "9/9 animals under real-bout DA (both P=.0039)",
+    "8/9 extended intervals (P=.0078)",
     "10/10 animals (P=.001953)",
     "frozen original fixed-window metric",
     "priority is based on biological alignment rather than a smaller P value",
@@ -54,7 +54,7 @@ for tag in [
     "中段 · 评估这次采样动作",
     "结果期 · 给结果分配来源特异社会归因",
     "因果 · VTA 是否参与教学",
-    "均为 9/9 动物支持（两项 P=.0039）",
+    "延长区间为 8/9（P=.0078）",
     "10/10 动物中下降（P=.001953）",
     "优先级依据生物学对齐关系，而非单纯依据更小的 P 值",
     "VTA 整合主线：早期 → 中段 → 结果期 → 因果。"

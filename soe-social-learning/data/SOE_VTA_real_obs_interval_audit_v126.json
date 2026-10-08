@@ -1,0 +1,14 @@
+{
+  "n_action_interval": 1371,
+  "n_real_obs": 821,
+  "n_no_observe": 550,
+  "med_extended_s": 28.8506808665111,
+  "med_real_obs_s": 2.39800166527857,
+  "real_obs_q25": 1.19900083263929,
+  "real_obs_q75": 5.19567027477024,
+  "fraction_action_gt6": 0.9438366156090445,
+  "n_obs_ending_before_anchor": 730,
+  "n_obs_ending_after_anchor": 91,
+  "n_action_fixed100": 57,
+  "no_baseline_improvement_n": 6
+}

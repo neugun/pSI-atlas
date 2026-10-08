@@ -1,12 +1,15 @@
 {
-  "source_ref":"frozen_codex_module25_neural_da/fp_da_method_common_events_v2/manifest.json",
-  "n_common":1371,
-  "n_animals":9,
-  "rule":"both DA targets finite; ActionBoutDur_FP>=0.05 s",
-  "target_fixed":"DA_Post06_AUCperSec",
-  "target_real_bout":"DA_ActionBout_AUCperSec",
-  "comparison_contract":"same event IDs and model predictors for both readouts; test statistic is animal-level",
-  "post_bout_only_status":"NOT_YET_TESTED",
-  "source_manifest_date":"2026-10-07 source verified",
-  "interpretation":"Primary social-credit readout based on action-bout alignment; fixed 0-6 s reference retained, stronger for some RPE alternatives. Window readouts alone cannot separate post-action evaluation."
+  "source_ref": "frozen_codex_module25_neural_da/fp_da_method_common_events_v2/manifest.json",
+  "n_common": 1371,
+  "n_animals": 9,
+  "rule": "both DA targets finite; ActionBoutDur_FP>=0.05 s",
+  "target_fixed": "DA_Post06_AUCperSec",
+  "target_real_bout": "DA_ActionBout_AUCperSec",
+  "comparison_contract": "same event IDs and model predictors for both readouts; test statistic is animal-level",
+  "post_bout_only_status": "NOT_YET_TESTED",
+  "source_manifest_date": "2026-10-07 source verified",
+  "interpretation": "The 1,371 event model comparison remains a historical extended-interval association. It cannot be the primary real behavioral bout social-credit readout. Check v126 821-event triple-window audit.",
+  "source_semantics_qc": "SUPERSEDED: ActionBout is an extended event interval, not a measured observation bout",
+  "superseding_audit": "SOE_VTA_real_obs_interval_audit_v126.json",
+  "principal_social_credit_mechanism_claim": "ON_HOLD pending true behavior-event / outcome specific matched tests"
 }

@@ -1,3 +1,5 @@
+> **SOURCE CORRECTION (2026-10-07; v126):** Earlier references below to “real action-bout DA” or genuine real-bout social-credit coding are superseded. The field DA_ActionBout_AUCperSec measures an extended post-anchor model interval (median 28.85 s), not the actual observed 2.40-s observation bout. The historical n=1371 9/9 model-comparator result is preserved solely as a documented prior estimate. See [source-level correction and current 821-event triple-readout results](VTA_TRUE_BOUT_SOURCE_CORRECTION_v126_20261007.md). The frozen Early/Middle estimates and separate JAWS causal experiment have independent statistical contracts.
+
 # VTA Early → Middle → Post → causal authority (v113, 2026-10-07)
 
 ## Current narrative authority

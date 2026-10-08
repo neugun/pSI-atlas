@@ -11,16 +11,16 @@ def ck(name,ok):
 for fn,lang in [("index.html","en"),("index-zh.html","zh")]:
     s=(ROOT/fn).read_text(encoding="utf-8")
     if lang=="en":
-        labels=["Evidence level 1 · strict re-extraction","Evidence level 2 · Post-stage mechanistic readout","Evidence level 3 · temporal localization"]
+        labels=["Evidence level 1 · strict re-extraction","Evidence level 2 · historical interval source audit","Evidence level 3 · temporal localization"]
         strict="Strict re-extraction replication"
-        alt="Post-stage mechanistic readout |"
+        alt="Historical Post extended-interval analysis |"
         psth="Raw time course |"
         ck("en_not_independent","not an independent estimand" in s)
         ck("en_no_second_replication","Second replication |" not in s)
     else:
-        labels=["证据层级 1 · 严格重提取复现","证据层级 2 · 结果期主机制读出","证据层级 3 · 时间与机制定位"]
+        labels=["证据层级 1 · 严格重提取复现","证据层级 2 · 结果期历史窗口对照","证据层级 3 · 时间与机制定位"]
         strict="严格重提取复现｜"
-        alt="结果期主机制读出｜"
+        alt="历史结果期延长区间分析｜"
         psth="原始时间过程｜"
         ck("zh_same_estimand","估计目标本身保持不变" in s)
         ck("zh_no_second_replication","第二层复现｜" not in s)

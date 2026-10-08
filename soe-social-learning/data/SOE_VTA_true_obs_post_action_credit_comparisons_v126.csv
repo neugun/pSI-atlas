@@ -1,0 +1,10 @@
+target,comparison,n,wins_selected,mean_mse_gain_selected,median_mse_gain_selected,p
+DA_ActionBout_AUCperSec,update_selected_vs_baseline,9,6,0.0006399940531605,0.0026199687852,0.5703125
+DA_ActionBout_AUCperSec,update_selected_vs_w0p75,9,8,0.002031581631205,0.0010506817408419,0.0078125
+DA_ActionBout_AUCperSec,update_selected_vs_w1p0,9,8,0.0021307733140449,0.0011528083744761,0.01171875
+DA_ObsBout_AUCperSec,update_selected_vs_baseline,9,2,-0.0024535786401178,-0.0009479915777563,0.0390625
+DA_ObsBout_AUCperSec,update_selected_vs_w0p75,9,4,-0.0001836167197682,-0.0001067330415865,0.8203125
+DA_ObsBout_AUCperSec,update_selected_vs_w1p0,9,3,-6.638061782061734e-05,-0.0005352273628965,0.8203125
+DA_Post06_AUCperSec,update_selected_vs_baseline,9,6,0.0051645496923872,0.0091385280296198,0.42578125
+DA_Post06_AUCperSec,update_selected_vs_w0p75,9,5,0.0039041422780779,0.000981662824542,0.1640625
+DA_Post06_AUCperSec,update_selected_vs_w1p0,9,7,0.0035356553774703,0.0023274111601097,0.07421875
