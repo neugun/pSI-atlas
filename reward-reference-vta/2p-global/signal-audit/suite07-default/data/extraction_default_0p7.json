@@ -1,0 +1,14 @@
+{
+  "method": "Suite2p-style local neuropil",
+  "default": true,
+  "alpha": 0.7,
+  "expression": "F_corrected = F_raw - 0.7 * F_neuropil",
+  "roi_masks": "Source-registered masks preserved; source Suite2p-style neuropil mask, NOT asserted native Suite2p segmentation",
+  "source_arrays": "source-backed private per-session trial bundles (not published)",
+  "extracted_signal": "suite_sub",
+  "raw_signal": "raw",
+  "neuropil_signal": "suite_neu",
+  "existing_carma_alpha1_role": "Historical control only",
+  "qc_source_policy": "Raw and neuropil retained; no invented times/conditions; no fabricated source frames",
+  "downstream_rule": "Use suite_sub for all newly recomputed ROI-level extraction / contrasts. Old pages must be labeled historical until actually rerun."
+}

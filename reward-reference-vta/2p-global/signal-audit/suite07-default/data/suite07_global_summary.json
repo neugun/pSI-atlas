@@ -1,0 +1,24 @@
+{
+  "default": "Suite2p-style F_raw - 0.7 F_neuropil",
+  "default_alpha": 0.7,
+  "source_sessions": 21,
+  "animals": [
+    "112",
+    "113",
+    "181",
+    "185",
+    "54"
+  ],
+  "animal_count": 5,
+  "roi_session_rows": 954,
+  "trial_files": 1150,
+  "source_nonfinite_entries": 812,
+  "eligible_sessions": 4,
+  "eligible_roi_rows": 90,
+  "eligible_trials": 162,
+  "condition_known_trials": 507,
+  "clock_known_trials": 517,
+  "suite_signflips": 8,
+  "carma1_signflips": 11,
+  "note": "Only exact source-backed timing and known condition labels contribute to condition contrasts. Cell rows are not independent mice. Existing frozen downstream analyses are not reinterpreted until rerun with suite07."
+}

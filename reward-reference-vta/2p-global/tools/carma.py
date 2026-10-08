@@ -230,9 +230,24 @@ def run_04(root,sid,row):
     for a in alphas:
         s=raw-a*bg; vals=[abs(np.corrcoef(s[i],bg[i])[0,1]) for i in np.where(accepted)[0] if np.std(s[i])>0 and np.std(bg[i])>0]
         rows.append({"method":f"raw_minus_{a:g}bg","alpha":a,"median_abs_bg_corr":float(np.nanmedian(vals)) if vals else np.inf})
-    tab=pd.DataFrame(rows).sort_values(["median_abs_bg_corr","alpha"]); chosen=tab.iloc[0]; a=float(chosen.alpha); final=raw-a*bg
-    np.savez_compressed(d/"final_signal.npz",signal=final,alpha=a,accepted=accepted); tab.to_csv(d/"signal_selection.csv",index=False); jdump(d/"final_signal_method.json",{"method":chosen.method,"alpha":a,"selection_rule":"min median |corr(signal,bg)|; biology-blind"})
-    metrics={"chosen_method":str(chosen.method),"chosen_alpha":a,"median_abs_bg_corr":float(chosen.median_abs_bg_corr)}
+    # Primary extraction coefficient is prespecified: Suite2p-style α=0.7.
+    # Diagnostics may compare other coefficients but must never silently override the default.
+    a=float(params.get("default_alpha",cfg(root).get("extraction",{}).get("alpha",0.7)))
+    if not np.isfinite(a) or a<0: raise ValueError("Invalid default neuropil alpha")
+    if not any(np.isclose(a,x) for x in alphas):
+        vals=[abs(np.corrcoef(raw[i]-a*bg[i],bg[i])[0,1]) for i in np.where(accepted)[0]
+              if np.std(raw[i]-a*bg[i])>0 and np.std(bg[i])>0]
+        rows.append({"method":f"raw_minus_{a:g}bg","alpha":a,"median_abs_bg_corr":float(np.nanmedian(vals)) if vals else np.inf})
+    tab=pd.DataFrame(rows).sort_values(["alpha"])
+    chosen=tab.loc[np.isclose(tab.alpha,a)].iloc[0]
+    final=raw-a*bg
+    np.savez_compressed(d/"final_signal.npz",signal=final,alpha=a,accepted=accepted)
+    tab["is_default"]=[bool(np.isclose(x,a)) for x in tab.alpha]
+    tab.to_csv(d/"signal_selection.csv",index=False)
+    jdump(d/"final_signal_method.json",{"method":"prespecified_suite2p_style_neuropil",
+          "alpha":a,"selection_rule":"fixed prespecified coefficient (default 0.7); alternative candidates are QC only"})
+    metrics={"chosen_method":"prespecified_suite2p_style_neuropil","chosen_alpha":a,
+             "median_abs_bg_corr":float(chosen.median_abs_bg_corr)}
     write_stage_provenance(root,sid,"04",[stage_dir(root,sid,"03")/"traces.npz"],params,[d/"final_signal.npz",d/"signal_selection.csv",d/"final_signal_method.json"],"PASS",metrics)
     return "PASS",metrics,[d/"final_signal.npz",d/"signal_selection.csv",d/"final_signal_method.json"]
 

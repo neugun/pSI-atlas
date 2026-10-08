@@ -14,6 +14,8 @@ extraction:
   neuropil_outer_px: 7
   alpha: 0.7
 signal_selection:
+  mode: fixed_suite2p_neuropil
+  default_alpha: 0.7
   candidate_alphas:
   - 0.0
   - 0.5
