@@ -30,4 +30,20 @@ for ext in ["png","svg","pdf"]:
 for f in [R/"docs/OXT_SF15_EXPANDED_STIM_PROVENANCE_v166.md",R/"data/SOE_OXT_SF15_pseudoday_provenance_v166.csv"]:
  assert f.exists()
  assert "Z:\\" not in f.read_text(encoding="utf8")
-print("PASS SF15 original MAT n6, NAc n5 vs exact-source n3, rig mismatch/duplicated virtual days, laser flags, English/Chinese website, no private mount leakage")
+D=pd.read_csv(R/"data/SOE_OXT_SF15_D1_22_training_index_v172.csv")
+H=pd.read_csv(R/"data/SOE_OXT_SF15_training_comparisons_v172.csv")
+assert D.animal.nunique()==6 and len(D)==6*22*2*2
+assert D[D.animal.eq(305)].cohort.eq("VTA_JAWS_separate").all()
+assert H.n_shuffles_field.eq(100).all()
+for readout,change,positive,pval in [("Active/SRI",.8899,4,.125),("Passive/PRI",-.9098,1,.125)]:
+ t=H[H.cohort.eq("NAc_5")&H.readout.eq(readout)&H.metric.eq("FeedOB_ratio_index")&H.comparison.eq("D1_3_to_D15_20")]
+ assert len(t)==1 and t.n.iloc[0]==5 and t.n_increase.iloc[0]==positive
+ assert abs(t.change.iloc[0]-change)<.001 and abs(t.exact_two_sided_p.iloc[0]-pval)<1e-9
+for name in ["index.html","index-zh.html"]:
+ s=(R/name).read_text(encoding="utf8")
+ assert s.count('id="oxt-sf15-training-v173"')==1 and s.count('id="oxt-sf15-training-fig-v173"')==1
+ assert "OXT_SF15_training_SRI_PRI_v173.png" in s
+for ext in ["png","pdf","svg"]:
+ img=R/"assets"/("OXT_SF15_training_SRI_PRI_v173."+ext)
+ assert img.exists() and img.stat().st_size>20000
+print("PASS SF15 original MAT n6; NAc n5; D1-22 training 100 actual shuffles; virtual stimulation/rig provenance; laser-state flags; 2 languages")

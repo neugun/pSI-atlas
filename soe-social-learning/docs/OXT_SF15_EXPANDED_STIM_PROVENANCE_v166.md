@@ -6,6 +6,16 @@ The old seven OXT mice and the 2026 Aug-Sep SF15 OXT_NAc_PVH animals are separat
 ## Original 7 mice
 ANM118/119/121/122/125/126/129: original shuffle-corrected SRI contingent D50 OFF 3.222 to D51 ON 2.311; 7/7 declining, exact P=.015625. Noncontingent D52 OFF 3.379 to D53 ON 3.231, P=.796875. Paired contingent-versus-noncontingent interaction P=.25. Normal D21/D60 comparisons must be distinguished from acute OFF/ON.
 
+## Added six-animal training trajectories (source D1–22, September 2026)
+
+A separate full ANM mapping in the original MATLAB source uses Pair_ID 2–7 = 173,174,179,180,184,305. The earliest and latest training periods must be compared before stimulation can be interpreted. Five provisional NAc animals (305 excluded) show:
+- Active/SRI D1–3 mean 1.2261 to D15–20 2.1160, 4/5 increase, exact paired P=.125. For D12–14: 1.5999, 3/5 increase, P=.625.
+- Passive/PRI D1–3 mean +0.4970 to D15–20 −0.4128, 4/5 decrease, P=.125. For D12–14: −0.3723, 5/5 decrease, P=.0625.
+
+Animal trajectories and metrics show heterogeneous learning. These source training windows are not formal stimulus OFF/ON tests, and cannot by themselves assign final learner vs nonlearner labels. Importantly, the MATLAB filename includes 2000, while the actual N_shuffle field equals **100**. Do not describe the new cohort as independently validated using 2,000 shuffles.
+
+[Full day-indexed six-animal data](../data/SOE_OXT_SF15_D1_22_training_index_v172.csv) / [animal-level training window statistics](../data/SOE_OXT_SF15_training_comparisons_v172.csv) / [training SRI and PRI figure](../assets/OXT_SF15_training_SRI_PRI_v173.png).
+
 ## New SF15 data from original September 29 MATLAB batch
 All values are Active SRI in ODD-numbered stimulation segments MINUS EVEN-numbered stimulation segments. This does NOT imply ON minus OFF until hardware/rig status is confirmed.
 
