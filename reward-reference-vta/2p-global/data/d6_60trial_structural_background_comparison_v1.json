@@ -1,0 +1,33 @@
+{
+  "source": "ANM54 Day19 D6, 60 actual trials, planes 3 and 4",
+  "n_roi": 16,
+  "source_reconstruction_raw_r": 1.0,
+  "source_reconstruction_historical_bg_r": 1.0,
+  "n_structure_candidates_plane3": 46,
+  "n_structure_candidates_plane4": 32,
+  "median_historical_bg_exclusion_percent": 7.2192016875380665,
+  "range_historical_bg_exclusion_percent": [
+    2.274641954507161,
+    45.54621848739496
+  ],
+  "methods": {
+    "Historical raw\u2212bg": {
+      "effect_sign_flips_vs_raw": 4,
+      "median_abs_effect_fraction_vs_raw": 0.9759606020278109
+    },
+    "Structure-excluded raw\u2212bg": {
+      "effect_sign_flips_vs_raw": 4,
+      "median_abs_effect_fraction_vs_raw": 0.9000863295031888
+    },
+    "Distant-bg raw\u2212bg": {
+      "effect_sign_flips_vs_raw": 4,
+      "median_abs_effect_fraction_vs_raw": 1.4692153236997005
+    },
+    "Suite2p-style raw\u22120.7neu": {
+      "effect_sign_flips_vs_raw": 2,
+      "median_abs_effect_fraction_vs_raw": 0.8286134832684564
+    }
+  },
+  "authority": "Exact reconstructed CaRMA vs independent image-contrast watershed exclusion; Cellpose CPSAM-v2 model loaded separately but not used in this run.",
+  "notes": "Single mouse, no independent biological ground truth; condition beta is raw fluorescence baseline delta 10-25 s minus 0-5 s, not Z score."
+}
