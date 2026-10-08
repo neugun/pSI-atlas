@@ -1,0 +1,14 @@
+{
+  "n_common": 1371,
+  "n_animals": 9,
+  "duration_s": {
+    "median": 28.8506808665111,
+    "q25": 12.81692948083995,
+    "q75": 64.12125219683945
+  },
+  "fraction_bout_gt6": 0.9438366156090445,
+  "fraction_bout_gt10": 0.8329686360320934,
+  "fraction_bout_gt20": 0.6105032822757112,
+  "source_ref":"frozen_codex_module25_neural_da/fp_da_raw_timecourse_v1/manifest.json",
+  "interpretation":"For most matched outcome/action events 0-6 s lies inside a longer action bout. Do not describe fixed 0-6 s as a post-action evaluation window."
+}
